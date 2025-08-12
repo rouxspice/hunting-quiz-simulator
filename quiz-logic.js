@@ -55,13 +55,12 @@ function displayQuiz(quizIndex) {
     }
 
     questionElement.textContent = `第${quizIndex + 1}問: ${currentQuiz.question}`;
-    optionsContainer.innerHTML = ''; // 以前の選択肢をクリア
+    optionsContainer.innerHTML = '';
 
     currentQuiz.options.forEach(option => {
         const button = document.createElement('button');
         button.textContent = option;
         button.classList.add('option');
-        // ★修正点: イベントリスナー内で直接 checkAnswer を呼び出すように変更
         button.addEventListener('click', checkAnswer);
         optionsContainer.appendChild(button);
     });
@@ -76,21 +75,25 @@ function displayQuiz(quizIndex) {
  * @param {Event} event - クリックイベントオブジェクト
  */
 function checkAnswer(event) {
-    // ★修正点: イベントから選択された選択肢と現在のクイズデータを取得
-    const selectedOption = event.target.textContent;
+    const selectedOptionText = event.target.textContent;
     const currentQuiz = quizData[currentQuizIndex];
     
-    console.log(`[回答処理] ユーザーが「${selectedOption}」を選択しました。`);
-    const isCorrect = selectedOption === currentQuiz.correct;
+    console.log(`[回答処理] ユーザーが「${selectedOptionText}」を選択しました。`);
+
+    // ★★★★★ 最終修正点 ★★★★★
+    // 比較する前に、両方の文字列から前後の空白を完全に取り除く .trim() を追加。
+    // これにより、目に見えない空白による比較ミスを完全に防ぎます。
+    const isCorrect = selectedOptionText.trim() === currentQuiz.correct.trim();
 
     // すべての選択肢ボタンを無効化
     const optionButtons = optionsContainer.querySelectorAll('.option');
     optionButtons.forEach(button => {
         button.disabled = true;
-        if (button.textContent === currentQuiz.correct) {
+        // こちらの比較にも .trim() を追加し、堅牢性を高めます。
+        if (button.textContent.trim() === currentQuiz.correct.trim()) {
             button.classList.add('correct');
         }
-        if (!isCorrect && button.textContent === selectedOption) {
+        if (!isCorrect && button.textContent.trim() === selectedOptionText.trim()) {
             button.classList.add('incorrect');
         }
     });
