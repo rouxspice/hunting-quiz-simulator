@@ -1,445 +1,157 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // =================================================================================
-    // デバッグ機能
-    // =================================================================================
-    const debugToggle = document.getElementById('debug-mode-toggle');
-    const debugLogElement = document.getElementById('debug-log');
-    let isDebugMode = false;
+'use strict';
 
-    const log = (message) => {
-        if (isDebugMode) {
-            const timestamp = new Date().toLocaleTimeString();
-            if (debugLogElement) {
-                const currentHTML = debugLogElement.innerHTML;
-                debugLogElement.innerHTML = `[${timestamp}] ${message}\n` + currentHTML;
-            }
-        }
-        console.log(`[Sim-Log] ${message}`);
-    };
+// --- クイズデータ ---------------------------------------------------------
+// 将来的にはここを外部ファイルから読み込むことも検討できますが、
+// 現状の安定性を最優先し、直接記述する方式を維持します。
+const quizData = [
+    {
+        question: "銃猟における水平射撃の危険性について、最も適切なものはどれか？",
+        options: ["矢先の安全が確認できれば問題ない", "人家、人、家畜等の方向に撃つことは絶対に避けるべきである", "30度以下の角度であれば安全である", "弾丸の到達距離を把握していれば問題ない"],
+        correct: "人家、人、家畜等の方向に撃つことは絶対に避けるべきである",
+        explanation: "水平射撃は弾丸が予期せぬ長距離まで達する可能性があり、極めて危険です。特に、矢先に人家、人、家畜などが存在する可能性がある場所では、絶対に避けるべきです。"
+    },
+    {
+        question: "鳥獣保護管理法において、捕獲が原則として禁止されている鳥獣はどれか？",
+        options: ["ニホンジカ", "イノシシ", "ツキノワグマ（メス）", "カワウ"],
+        correct: "ツキノワグマ（メス）",
+        explanation: "種の保存のため、多くの地域でメスのツキノワグマの捕獲は禁止または厳しく制限されています。ただし、地域や年度によって規定が異なる場合があるため、常に最新の情報を確認する必要があります。"
+    },
+    {
+        question: "散弾銃の保管に関する記述として、正しいものはどれか？",
+        options: ["弾を込めたまま保管できる", "家族がすぐに使えるように、分かりやすい場所に置く", "ガンロッカー等、施錠できる設備に保管する", "分解して、各部品を別々の部屋に保管する"],
+        correct: "ガンロッカー等、施錠できる設備に保管する",
+        explanation: "銃砲刀剣類所持等取締法（銃刀法）により、銃は盗難や不正使用を防ぐため、施錠できる堅牢なガンロッカーなどに保管することが義務付けられています。"
+    }
+    // 今後、ここに新しいクイズデータを追加していきます。
+];
+console.log(`[初期化] クイズデータ読み込み完了。全${quizData.length}問。`); // ★追加ログ
 
-    if (debugToggle && debugLogElement) {
-        debugToggle.addEventListener('change', (e) => {
-            isDebugMode = e.target.checked;
-            debugLogElement.style.display = isDebugMode ? 'block' : 'none';
-            log(`デバッグモードが${isDebugMode ? '有効' : '無効'}になりました。`);
-        });
+// --- グローバル変数 -------------------------------------------------------
+let currentQuizIndex = 0;
+let score = 0;
+console.log("[初期化] グローバル変数を設定しました。"); // ★追加ログ
+
+// --- DOM要素の取得 --------------------------------------------------------
+const quizContainer = document.getElementById('quiz-container');
+const questionElement = document.getElementById('question');
+const optionsContainer = document.getElementById('options');
+const feedbackElement = document.getElementById('feedback');
+const nextButton = document.getElementById('next-button');
+const resultContainer = document.getElementById('result-container');
+const scoreElement = document.getElementById('score');
+const restartButton = document.getElementById('restart-button');
+console.log("[初期化] 必要なDOM要素を取得しました。"); // ★追加ログ
+
+// --- 関数定義 -------------------------------------------------------------
+
+/**
+ * クイズを表示する関数
+ * @param {number} quizIndex - 表示するクイズのインデックス
+ */
+function displayQuiz(quizIndex) {
+    console.log(`[表示処理] ${quizIndex + 1}問目のクイズ表示を開始します。`); // ★追加ログ
+    const currentQuiz = quizData[quizIndex];
+
+    if (!currentQuiz) {
+        console.error(`[エラー] 指定されたインデックス ${quizIndex} にクイズデータが存在しません。処理を中断します。`); // ★追加ログ
+        return;
     }
 
-    log('DOM読み込み完了、スクリプト初期化開始');
+    questionElement.textContent = `第${quizIndex + 1}問: ${currentQuiz.question}`;
+    optionsContainer.innerHTML = ''; // 以前の選択肢をクリア
 
-    // =================================================================================
-    // 最小データセット
-    // =================================================================================
-    const quizDataSources = {
-        "judgement": [
-            {"image": "イノシシ.jpg", "answer": "イノシシ", "explanation": "【狩猟鳥獣】イノシシ。雑食性で、牙が特徴。", "isHuntable": true},
-            {"image": "カモシカ.jpg", "answer": "カモシカ", "explanation": "【非狩猟鳥獣】カモシカ。国の特別天然記念物。", "isHuntable": false},
-            {"image": "キジ.jpg", "answer": "キジ", "explanation": "【狩猟鳥獣】キジ。日本の国鳥。オスのみ狩猟対象。", "isHuntable": true}
-        ],
-        "knowledge-wana": [
-            {"question": "「くくりわな」の輪の直径の制限は？", "options": ["12cm以下", "20cm以下", "30cm以下"], "answer": "12cm以下", "explanation": "輪の直径は12cmを超えてはなりません。"},
-            {"question": "わなを設置した後の見回りの頻度は？", "options": ["毎日", "週に一度", "月に一度"], "answer": "毎日", "explanation": "鳥獣に不必要な苦痛を与えないため、毎日見回る義務があります。"},
-            {"question": "わな猟免許で捕獲できない鳥獣は？", "options": ["キジバト", "イノシシ", "タヌキ"], "answer": "キジバト", "explanation": "わな猟免許は獣類が対象で、鳥類の捕獲はできません。"}
-        ],
-        "knowledge-ami": [
-            {"question": "法律で全面的に使用が禁止されている網は？", "options": ["かすみ網", "むそう網", "つき網"], "answer": "かすみ網", "explanation": "かすみ網は無差別に鳥獣を捕獲するため、使用が禁止されています。"},
-            {"question": "網猟免許で捕獲できる鳥獣は？", "options": ["マガモ", "イノシシ", "ニホンジカ"], "answer": "マガモ", "explanation": "網猟免許は鳥類を捕獲するための免許です。"},
-            {"question": "網猟で禁止されている行為は？", "options": ["音響機器で鳥を集める", "おとり鳥を使う", "餌をまく"], "answer": "音響機器で鳥を集める", "explanation": "テープレコーダー等で鳥の鳴き声を発し、誘引して捕獲することは禁止されています。"}
-        ],
-        "knowledge-ju": [
-            {"question": "銃猟の際、着用が義務付けられている服装は？", "options": ["オレンジ色の帽子やベスト", "迷彩服", "黒い服"], "answer": "オレンジ色の帽子やベスト", "explanation": "他のハンターからの誤射を防ぐため、視認性の高い服装が義務付けられています。"},
-            {"question": "散弾銃で一度に装填できる実包の上限は？", "options": ["3発", "5発", "制限なし"], "answer": "3発", "explanation": "弾倉に2発、薬室に1発の合計3発までです。"},
-            {"question": "銃猟が原則として禁止されている時間帯は？", "options": ["日没後から日の出前", "正午から午後3時", "午前中"], "answer": "日没後から日の出前", "explanation": "視界不良による危険を避けるため、夜間の銃猟は原則禁止です。"}
-        ],
-        "knowledge-shoshinsha": [
-            {"question": "銃の所持許可の申請はどこで行うか？", "options": ["住所地を管轄する警察署", "市役所", "猟友会"], "answer": "住所地を管轄する警察署", "explanation": "銃の所持許可に関する手続きは、すべて住所地の公安委員会（窓口は警察署）で行います。"},
-            {"question": "銃の安全な取り扱いで最も重要なことは？", "options": ["銃口を常に安全な方向に向ける", "常に実包を装填しておく", "分解しない"], "answer": "銃口を常に安全な方向に向ける", "explanation": "「銃口は常に安全な方向へ」は、銃を扱う上での絶対的なルールです。"},
-            {"question": "初心者講習の修了証明書の有効期間は？", "options": ["3年間", "1年間", "5年間"], "answer": "3年間", "explanation": "初心者講習の修了証明書の有効期間は、交付日から3年間です。この期間内に所持許可申請を行う必要があります。"}
-        ]
-    };
-    log('最小データセットの定義完了 (初心者講習追加)');
-
-    // =================================================================================
-    // DOM要素の取得
-    // =================================================================================
-    const screens = {
-        title: document.getElementById('title-screen'),
-        quiz: document.getElementById('quiz-screen'),
-        result: document.getElementById('result-screen'),
-    };
-    const loadingOverlay = document.getElementById('loading-overlay');
-    const loadingMessage = document.getElementById('loading-message');
-    const loadingProgressContainer = document.getElementById('loading-progress-container');
-    const loadingProgressBar = document.getElementById('loading-progress-bar');
-    const loadingProgressText = document.getElementById('loading-progress-text');
-
-    const buttons = {
-        startJudgement: document.getElementById('start-judgement-quiz'),
-        startKnowledgeWana: document.getElementById('start-knowledge-wana-quiz'),
-        startKnowledgeAmi: document.getElementById('start-knowledge-ami-quiz'),
-        startKnowledgeJu: document.getElementById('start-knowledge-ju-quiz'),
-        startKnowledgeShoshinsha: document.getElementById('start-knowledge-shoshinsha-quiz'), // 新しいボタン
-        nextQuestion: document.getElementById('next-question-button'),
-        restart: document.getElementById('restart-quiz-button'),
-        backToTitle: document.getElementById('back-to-title-button'),
-        quitQuiz: document.getElementById('quit-quiz-button'),
-    };
-
-    const quizElements = {
-        counter: document.getElementById('question-counter'),
-        progressBar: document.getElementById('progress-bar'),
-        image: document.getElementById('question-image'),
-        questionArea: document.getElementById('question-area'),
-        text: document.getElementById('question-text'),
-        options: document.getElementById('answer-options'),
-    };
-
-    const feedbackElements = {
-        area: document.getElementById('feedback-area'),
-        result: document.getElementById('feedback-result'),
-        correctAnswer: document.getElementById('correct-answer-text'),
-        explanation: document.getElementById('feedback-explanation'),
-    };
-
-    const resultElements = {
-        score: document.getElementById('score-text'),
-        details: document.getElementById('result-details'),
-    };
-    log('DOM要素の取得完了');
-
-    // =================================================================================
-    // 状態管理変数
-    // =================================================================================
-    let currentQuizData = [];
-    let currentQuestionIndex = 0;
-    let score = 0;
-    let userAnswers = [];
-    let originalQuizType = '';
-    let judgementQuizStep = 1;
-    let missingImages = new Set();
-    let totalQuestions = 0;
-    log('状態管理変数の初期化完了');
-
-    // =================================================================================
-    // 関数定義
-    // =================================================================================
-
-    const showScreen = (screenName) => {
-        log(`画面を「${screenName}」に切り替え`);
-        Object.values(screens).forEach(screen => {
-            if(screen) screen.style.display = 'none';
-        });
-        if (screens[screenName]) {
-            screens[screenName].style.display = 'block';
-        } else {
-            log(`エラー: 画面「${screenName}」が見つかりません`);
-        }
-    };
-
-    const startQuiz = async (type) => {
-        log(`クイズ開始処理: タイプ「${type}」`);
-        originalQuizType = type;
-        currentQuestionIndex = 0;
-        score = 0;
-        userAnswers = [];
-        judgementQuizStep = 1;
-        missingImages.clear();
-
-        const sourceData = quizDataSources[type];
-        if (!sourceData) {
-            log(`エラー: クイズタイプ「${type}」のデータソースが見つかりません。`);
-            alert(`エラー: クイズタイプ「${type}」のデータが見つかりません。`);
-            return;
-        }
-        
-        currentQuizData = [...sourceData];
-        totalQuestions = currentQuizData.length;
-        log(`${totalQuestions}問の問題を準備しました`);
-        
-        if (loadingOverlay) loadingOverlay.style.display = 'flex';
-
-        if (type === 'judgement') {
-            if(loadingMessage) loadingMessage.textContent = '画像データを読み込んでいます...';
-            if(loadingProgressContainer) loadingProgressContainer.style.display = 'block';
-            log('画像プリロード処理を開始');
-            await preloadImagesWithProgress(currentQuizData);
-            log('画像プリロード処理が完了');
-        } else {
-            if(loadingMessage) loadingMessage.textContent = 'クイズを準備しています...';
-            if(loadingProgressContainer) loadingProgressContainer.style.display = 'none';
-        }
-
-        if (loadingOverlay) loadingOverlay.style.display = 'none';
-        showScreen('quiz');
-        displayQuestion();
-    };
-
-    const displayQuestion = () => {
-        log(`問題 ${currentQuestionIndex + 1} の表示処理を開始`);
-        if(feedbackElements.area) feedbackElements.area.style.display = 'none';
-        if(quizElements.options) quizElements.options.innerHTML = '';
-        if(quizElements.text) quizElements.text.style.display = 'block';
-        
-        const existingPlaceholder = quizElements.questionArea ? quizElements.questionArea.querySelector('.no-image-placeholder') : null;
-        if (existingPlaceholder) existingPlaceholder.remove();
-
-        const question = currentQuizData[currentQuestionIndex];
-        
-        if(quizElements.counter) quizElements.counter.textContent = `問題 ${currentQuestionIndex + 1} / ${totalQuestions}`;
-        if(quizElements.progressBar) quizElements.progressBar.style.width = `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`;
-
-        if (originalQuizType === 'judgement') {
-            displayJudgementQuestion(question);
-        } else {
-            displayKnowledgeQuestion(question);
-        }
-        log(`問題 ${currentQuestionIndex + 1} の表示完了`);
-    };
-
-    const displayKnowledgeQuestion = (question) => {
-        if(quizElements.image) quizElements.image.style.display = 'none';
-        if(quizElements.text) quizElements.text.textContent = question.question;
-        const shuffledOptions = [...question.options].sort(() => 0.5 - Math.random());
-        shuffledOptions.forEach(option => createOptionButton(option, () => handleAnswer(option, 'knowledge')));
-    };
-
-    const displayJudgementQuestion = (question) => {
-        const imagePath = `images/${question.image}`;
-        if (missingImages.has(question.image)) {
-            log(`画像なし: ${question.image}`);
-            if(quizElements.image) quizElements.image.style.display = 'none';
-            const placeholder = document.createElement('div');
-            placeholder.className = 'no-image-placeholder';
-            placeholder.textContent = '画像データがありません';
-            if(quizElements.questionArea) quizElements.questionArea.insertBefore(placeholder, quizElements.text);
-        } else {
-            log(`画像表示: ${imagePath}`);
-            if(quizElements.image) {
-                quizElements.image.style.display = 'block';
-                quizElements.image.src = imagePath;
-            }
-        }
-
-        if (judgementQuizStep === 1) {
-            if(quizElements.text) quizElements.text.textContent = 'この鳥獣は狩猟対象？';
-            createOptionButton('狩猟対象である', () => handleAnswer(true, 'judgement_step1'));
-            createOptionButton('狩猟対象ではない', () => handleAnswer(false, 'judgement_step1'));
-        } else {
-            if(quizElements.text) quizElements.text.textContent = 'この鳥獣の名前は？';
-            const correctAnswer = question.answer;
-            const allNames = quizDataSources.judgement.map(item => item.answer);
-            const wrongOptions = allNames.filter(name => name !== correctAnswer);
-            const finalOptions = [correctAnswer, ...[...wrongOptions].sort(() => 0.5 - Math.random()).slice(0, 2)].sort(() => 0.5 - Math.random());
-            finalOptions.forEach(option => createOptionButton(option, () => handleAnswer(option, 'judgement_step2')));
-        }
-    };
-
-    const createOptionButton = (text, onClick) => {
+    currentQuiz.options.forEach(option => {
         const button = document.createElement('button');
-        button.textContent = text;
-        button.classList.add('answer-btn');
-        button.addEventListener('click', onClick);
-        if(quizElements.options) quizElements.options.appendChild(button);
-    };
+        button.textContent = option;
+        button.classList.add('option');
+        button.addEventListener('click', () => checkAnswer(option, currentQuiz));
+        optionsContainer.appendChild(button);
+    });
 
-    const handleAnswer = (selectedValue, answerType) => {
-        log(`回答処理: タイプ「${answerType}」, 回答「${selectedValue}」`);
-        const question = currentQuizData[currentQuestionIndex];
-        let isCorrect = false;
-        let feedbackText = '';
-        let userAnswerText = selectedValue;
+    feedbackElement.textContent = ''; // フィードバックをクリア
+    feedbackElement.className = ''; // クラス名もクリア
+    nextButton.style.display = 'none'; // 「次の問題へ」ボタンを非表示
+    console.log(`[表示処理] ${quizIndex + 1}問目の表示が完了しました。`); // ★追加ログ
+}
+/**
+ * 回答をチェックする関数
+ * @param {string} selectedOption - ユーザーが選択した回答
+ * @param {object} currentQuiz - 現在のクイズオブジェクト
+ */
+function checkAnswer(selectedOption, currentQuiz) {
+    console.log(`[回答処理] ユーザーが「${selectedOption}」を選択しました。`); // ★追加ログ
+    const isCorrect = selectedOption === currentQuiz.correct;
 
-        if (answerType === 'knowledge') {
-            isCorrect = selectedValue === question.answer;
-            feedbackText = `正解は: ${question.answer}`;
-        } else if (answerType === 'judgement_step1') {
-            isCorrect = selectedValue === question.isHuntable;
-            userAnswerText = selectedValue ? '狩猟対象' : '非狩猟対象';
-            if (isCorrect) {
-                if (question.isHuntable) {
-                    log('Step1正解、Step2へ');
-                    judgementQuizStep = 2;
-                    displayQuestion();
-                    return;
-                } else {
-                    feedbackText = `正解: ${question.answer} (非狩猟対象)`;
-                }
-            } else {
-                feedbackText = `正解は「${question.isHuntable ? '狩猟対象' : '非狩猟対象'}」でした。`;
-            }
-        } else if (answerType === 'judgement_step2') {
-            isCorrect = selectedValue === question.answer;
-            userAnswerText = `狩猟対象 > ${selectedValue}`;
-            feedbackText = `正解は: ${question.answer}`;
+    // すべての選択肢ボタンを無効化
+    const optionButtons = optionsContainer.querySelectorAll('.option');
+    optionButtons.forEach(button => {
+        button.disabled = true;
+        // 正解の選択肢をハイライト
+        if (button.textContent === currentQuiz.correct) {
+            button.classList.add('correct');
         }
-
-        if (isCorrect) score++;
-        userAnswers.push({ question, selected: userAnswerText, isCorrect });
-        showFeedback(isCorrect, feedbackText, question.explanation);
-    };
-
-    const showFeedback = (isCorrect, correctAnswerText, explanation) => {
-        log(`フィードバック表示: ${isCorrect ? '正解' : '不正解'}`);
-        if(quizElements.options) {
-            Array.from(quizElements.options.children).forEach(btn => btn.disabled = true);
+        // 不正解の選択肢（かつユーザーが選択したもの）をハイライト
+        if (!isCorrect && button.textContent === selectedOption) {
+            button.classList.add('incorrect');
         }
-        
-        if(feedbackElements.area) {
-            feedbackElements.area.className = isCorrect ? 'correct' : 'incorrect';
-            feedbackElements.area.style.display = 'block';
-        }
-        if(feedbackElements.result) {
-            feedbackElements.result.className = isCorrect ? 'correct' : 'incorrect';
-            feedbackElements.result.textContent = isCorrect ? '正解！' : '不正解...';
-        }
-        if(feedbackElements.correctAnswer) feedbackElements.correctAnswer.textContent = isCorrect ? '' : correctAnswerText;
-        if(feedbackElements.explanation) feedbackElements.explanation.textContent = explanation;
-    };
+    });
 
-    const nextQuestion = () => {
-        log('「次の問題へ」ボタンクリック');
-        judgementQuizStep = 1;
-        currentQuestionIndex++;
-        if (currentQuestionIndex < totalQuestions) {
-            displayQuestion();
-        } else {
-            log('全問題終了、結果表示へ');
-            showResult();
-        }
-    };
-
-    const showResult = () => {
-        showScreen('result');
-        if(resultElements.score) resultElements.score.textContent = `正解率: ${score} / ${totalQuestions} (${(score / totalQuestions) * 100}%)`;
-        if(resultElements.details) resultElements.details.innerHTML = '';
-        
-        userAnswers.forEach((answer, index) => {
-            const item = document.createElement('div');
-            item.classList.add('result-item', answer.isCorrect ? 'correct' : 'incorrect');
-            const questionText = answer.question.image ? `問題 ${index + 1}: この鳥獣は？` : `問題 ${index + 1}: ${answer.question.question}`;
-            item.innerHTML = `
-                <p class="result-question">${questionText}</p>
-                <p class="result-user-answer">あなたの回答: ${answer.selected} (${answer.isCorrect ? '正解' : '不正解'})</p>
-                ${!answer.isCorrect ? `<p class="result-correct-answer">正解: ${answer.question.answer}</p>` : ''}
-                <p class="result-explanation">${answer.question.explanation}</p>
-            `;
-            if(resultElements.details) resultElements.details.appendChild(item);
-        });
-        log('結果画面の生成完了');
-    };
-
-    const preloadImagesWithProgress = (data) => {
-        const imageItems = data.filter(item => item.image);
-        let loadedCount = 0;
-        const totalCount = imageItems.length;
-        if(loadingProgressText) loadingProgressText.textContent = `${loadedCount} / ${totalCount}`;
-        if(loadingProgressBar) loadingProgressBar.style.width = '0%';
-
-        if (totalCount === 0) {
-            log('プリロード対象画像なし');
-            return Promise.resolve();
-        }
-
-        const imagePromises = imageItems.map(item => {
-            return new Promise((resolve) => {
-                const img = new Image();
-                const onFinish = () => {
-                    loadedCount++;
-                    if(loadingProgressText) loadingProgressText.textContent = `${loadedCount} / ${totalCount}`;
-                    if(loadingProgressBar) loadingProgressBar.style.width = `${(loadedCount / totalCount) * 100}%`;
-                    log(`画像ロード進捗: ${loadedCount}/${totalCount}`);
-                    resolve();
-                };
-                img.onload = onFinish;
-                img.onerror = () => {
-                    log(`画像ロードエラー: ${item.image}`);
-                    missingImages.add(item.image);
-                    onFinish();
-                };
-                img.src = `images/${item.image}`;
-            });
-        });
-        return Promise.all(imagePromises);
-    };
-
-    // =================================================================================
-    // イベントリスナーの設定
-    // =================================================================================
-    log('イベントリスナー設定開始');
-    
-    if (buttons.startJudgement) {
-        buttons.startJudgement.addEventListener('click', () => startQuiz('judgement'));
-        log('鳥獣判別クイズボタンにリスナー設定完了');
+    if (isCorrect) {
+        score++;
+        feedbackElement.textContent = `正解！ ${currentQuiz.explanation}`;
+        feedbackElement.className = 'correct';
+        console.log(`[回答処理] 正解です。現在のスコア: ${score}`); // ★追加ログ
     } else {
-        log('警告: 鳥獣判別クイズボタンが見つかりません');
+        feedbackElement.textContent = `不正解。正解は「${currentQuiz.correct}」です。 ${currentQuiz.explanation}`;
+        feedbackElement.className = 'incorrect';
+        console.log(`[回答処理] 不正解です。現在のスコア: ${score}`); // ★追加ログ
     }
 
-    if (buttons.startKnowledgeWana) {
-        buttons.startKnowledgeWana.addEventListener('click', () => startQuiz('knowledge-wana'));
-        log('わな猟クイズボタンにリスナー設定完了');
-    } else {
-        log('警告: わな猟クイズボタンが見つかりません');
-    }
+    nextButton.style.display = 'block'; // 「次の問題へ」ボタンを表示
+}
 
-    if (buttons.startKnowledgeAmi) {
-        buttons.startKnowledgeAmi.addEventListener('click', () => startQuiz('knowledge-ami'));
-        log('網猟クイズボタンにリスナー設定完了');
+/**
+ * 次の問題へ進む、または結果を表示する関数
+ */
+function nextQuiz() {
+    currentQuizIndex++;
+    console.log(`[進行処理] 「次の問題へ」がクリックされました。次のインデックス: ${currentQuizIndex}`); // ★追加ログ
+    if (currentQuizIndex < quizData.length) {
+        displayQuiz(currentQuizIndex);
     } else {
-        log('警告: 網猟クイズボタンが見つかりません');
+        console.log("[進行処理] 全ての問題が終了しました。結果を表示します。"); // ★追加ログ
+        showResult();
     }
+}
 
-    if (buttons.startKnowledgeJu) {
-        buttons.startKnowledgeJu.addEventListener('click', () => startQuiz('knowledge-ju'));
-        log('銃猟クイズボタンにリスナー設定完了');
-    } else {
-        log('警告: 銃猟クイズボタンが見つかりません');
-    }
+/**
+ * 最終結果を表示する関数
+ */
+function showResult() {
+    quizContainer.style.display = 'none';
+    resultContainer.style.display = 'block';
+    scoreElement.textContent = `${quizData.length}問中 ${score}問正解`;
+    console.log(`[結果表示] 最終スコア: ${score}/${quizData.length}`); // ★追加ログ
+}
 
-    if (buttons.startKnowledgeShoshinsha) {
-        buttons.startKnowledgeShoshinsha.addEventListener('click', () => startQuiz('knowledge-shoshinsha'));
-        log('初心者講習クイズボタンにリスナー設定完了');
-    } else {
-        log('警告: 初心者講習クイズボタンが見つかりません');
-    }
-    
-    if (buttons.nextQuestion) {
-        buttons.nextQuestion.addEventListener('click', nextQuestion);
-        log('「次の問題へ」ボタンにリスナー設定完了');
-    } else {
-        log('警告: 「次の問題へ」ボタンが見つかりません');
-    }
+/**
+ * クイズを最初からやり直す関数
+ */
+function restartQuiz() {
+    console.log("[リスタート処理] クイズをリスタートします。"); // ★追加ログ
+    currentQuizIndex = 0;
+    score = 0;
+    resultContainer.style.display = 'none';
+    quizContainer.style.display = 'block';
+    displayQuiz(currentQuizIndex);
+    console.log("[リスタート処理] 初期化が完了し、最初の問題を表示しました。"); // ★追加ログ
+}
 
-    if (buttons.restart) {
-        buttons.restart.addEventListener('click', () => startQuiz(originalQuizType));
-        log('「もう一度挑戦」ボタンにリスナー設定完了');
-    } else {
-        log('警告: 「もう一度挑戦」ボタンが見つかりません');
-    }
+// --- イベントリスナーの設定 -------------------------------------------------
+nextButton.addEventListener('click', nextQuiz);
+restartButton.addEventListener('click', restartQuiz);
+console.log("[初期化] イベントリスナーを設定しました。"); // ★追加ログ
 
-    if (buttons.backToTitle) {
-        buttons.backToTitle.addEventListener('click', () => showScreen('title'));
-        log('「タイトルに戻る」（結果画面）ボタンにリスナー設定完了');
-    } else {
-        log('警告: 「タイトルに戻る」（結果画面）ボタンが見つかりません');
-    }
-    
-    if (buttons.quitQuiz) {
-        buttons.quitQuiz.addEventListener('click', () => {
-            log('「タイトルに戻る」（クイズ中）ボタンクリック');
-            if (confirm('クイズを中断してタイトルに戻りますか？')) {
-                showScreen('title');
-            }
-        });
-        log('「タイトルに戻る」（クイズ中）ボタンにリスナー設定完了');
-    } else {
-        log('警告: 「タイトルに戻る」（クイズ中）ボタンが見つかりません');
-    }
-    
-    log('すべてのイベントリスナー設定処理完了');
-    
-    // =================================================================================
-    // 初期化
-    // =================================================================================
-    showScreen('title');
-    log('初期化完了。タイトル画面を表示しました。');
-});
+// --- 初期実行 -------------------------------------------------------------
+// ページが読み込まれたら最初のクイズを表示
+displayQuiz(currentQuizIndex);
