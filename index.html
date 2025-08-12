@@ -3,82 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>狩猟免許&銃猟等講習 合格特訓クイズ 2025</title>
+    <title>狩猟免許試験シミュレーター ver. 2.0</title>
     <link rel="stylesheet" href="quiz-style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/app-icon.png" type="image/png">
 </head>
 <body>
-    <div class="container">
-        <!-- タイトル画面 -->
-        <div id="title-screen">
-            <header class="main-header">
-                <img src="images/app-icon.png" alt="アプリロゴ" class="app-logo">
-                <h1>狩猟免許&銃猟等講習 合格特訓クイズ 2025</h1>
-                <p class="version-info">v20-beta</p>
-            </header>
-            <div class="quiz-menu">
-                <button id="start-judgement-quiz" class="menu-button">鳥獣判別クイズ</button>
-                <button id="start-knowledge-wana-quiz" class="menu-button">知識クイズ (わな猟 )</button>
-                <button id="start-knowledge-ami-quiz" class="menu-button">知識クイズ (網猟)</button>
-                <button id="start-knowledge-ju-quiz" class="menu-button">知識クイズ (第一種銃猟)</button>
-                <button id="start-knowledge-shoshinsha-quiz" class="menu-button secondary">銃猟等講習会 初心者講習クイズ</button>
+
+    <header>
+        <h1>狩猟免許試験シミュレーター</h1>
+        <p>ver. 2.0</p>
+    </header>
+
+    <main>
+        <div id="quiz-container">
+            <h2 id="question">クイズの質問がここに表示されます。</h2>
+            <div id="options" class="options-grid">
+                <!-- 選択肢ボタンはJSによって動的に生成されます -->
             </div>
-            <div class="debug-controls">
-                <label><input type="checkbox" id="debug-mode-toggle"> デバッグモード</label>
-            </div>
+            <div id="feedback"></div>
+            <button id="next-button" style="display: none;">次の問題へ</button>
         </div>
 
-        <!-- クイズ画面 -->
-        <div id="quiz-screen" style="display: none;">
-            <div class="quiz-header">
-                <span id="question-counter"></span>
-                <button id="quit-quiz-button" class="quit-button">タイトルに戻る</button>
-            </div>
-            <div class="progress-bar-container">
-                <div id="progress-bar"></div>
-            </div>
-            <div id="question-area">
-                <img id="question-image" src="" alt="鳥獣の画像" style="display: none;">
-                <p id="question-text"></p>
-            </div>
-            <div id="answer-options"></div>
-            <div id="feedback-area" style="display: none;">
-                <h3 id="feedback-result"></h3>
-                <p id="correct-answer-text"></p>
-                <p id="feedback-explanation"></p>
-                <button id="next-question-button">次の問題へ</button>
-            </div>
+        <div id="result-container" style="display: none;">
+            <h2>結果発表</h2>
+            <p id="score"></p>
+            <button id="restart-button">もう一度挑戦する</button>
         </div>
+    </main>
 
-        <!-- 結果画面 -->
-        <div id="result-screen" style="display: none;">
-            <h2>クイズ結果</h2>
-            <p id="score-text"></p>
-            <div id="result-details"></div>
-            <div class="result-buttons">
-                <button id="restart-quiz-button">もう一度挑戦</button>
-                <button id="back-to-title-button">タイトルに戻る</button>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
+    </footer>
 
-        <!-- ローディングオーバーレイ -->
-        <div id="loading-overlay" style="display: none;">
-            <div class="loading-spinner"></div>
-            <p id="loading-message">準備中...</p>
-            <div id="loading-progress-container" style="display: none;">
-                <div id="loading-progress-bar-outer">
-                    <div id="loading-progress-bar"></div>
-                </div>
-                <p id="loading-progress-text"></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- デバッグログ表示エリア -->
-    <pre id="debug-log" style="display: none;"></pre>
-
+    <!-- ★★★★★ 最重要修正点 ★★★★★ -->
+    <!-- scriptタグを body タグの閉じタグ直前に移動 -->
     <script src="quiz-logic.js"></script>
 </body>
 </html>
