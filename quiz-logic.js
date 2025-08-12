@@ -1,8 +1,6 @@
 'use strict';
 
 // --- クイズデータ ---------------------------------------------------------
-// 将来的にはここを外部ファイルから読み込むことも検討できますが、
-// 現状の安定性を最優先し、直接記述する方式を維持します。
 const quizData = [
     {
         question: "銃猟における水平射撃の危険性について、最も適切なものはどれか？",
@@ -22,14 +20,13 @@ const quizData = [
         correct: "ガンロッカー等、施錠できる設備に保管する",
         explanation: "銃砲刀剣類所持等取締法（銃刀法）により、銃は盗難や不正使用を防ぐため、施錠できる堅牢なガンロッカーなどに保管することが義務付けられています。"
     }
-    // 今後、ここに新しいクイズデータを追加していきます。
 ];
-console.log(`[初期化] クイズデータ読み込み完了。全${quizData.length}問。`); // ★追加ログ
+console.log(`[初期化] クイズデータ読み込み完了。全${quizData.length}問。`);
 
 // --- グローバル変数 -------------------------------------------------------
 let currentQuizIndex = 0;
 let score = 0;
-console.log("[初期化] グローバル変数を設定しました。"); // ★追加ログ
+console.log("[初期化] グローバル変数を設定しました。");
 
 // --- DOM要素の取得 --------------------------------------------------------
 const quizContainer = document.getElementById('quiz-container');
@@ -40,7 +37,7 @@ const nextButton = document.getElementById('next-button');
 const resultContainer = document.getElementById('result-container');
 const scoreElement = document.getElementById('score');
 const restartButton = document.getElementById('restart-button');
-console.log("[初期化] 必要なDOM要素を取得しました。"); // ★追加ログ
+console.log("[初期化] 必要なDOM要素を取得しました。");
 
 // --- 関数定義 -------------------------------------------------------------
 
@@ -49,11 +46,11 @@ console.log("[初期化] 必要なDOM要素を取得しました。"); // ★追
  * @param {number} quizIndex - 表示するクイズのインデックス
  */
 function displayQuiz(quizIndex) {
-    console.log(`[表示処理] ${quizIndex + 1}問目のクイズ表示を開始します。`); // ★追加ログ
+    console.log(`[表示処理] ${quizIndex + 1}問目のクイズ表示を開始します。`);
     const currentQuiz = quizData[quizIndex];
 
     if (!currentQuiz) {
-        console.error(`[エラー] 指定されたインデックス ${quizIndex} にクイズデータが存在しません。処理を中断します。`); // ★追加ログ
+        console.error(`[エラー] 指定されたインデックス ${quizIndex} にクイズデータが存在しません。処理を中断します。`);
         return;
     }
 
@@ -64,33 +61,35 @@ function displayQuiz(quizIndex) {
         const button = document.createElement('button');
         button.textContent = option;
         button.classList.add('option');
-        button.addEventListener('click', () => checkAnswer(option, currentQuiz));
+        // ★修正点: イベントリスナー内で直接 checkAnswer を呼び出すように変更
+        button.addEventListener('click', checkAnswer);
         optionsContainer.appendChild(button);
     });
 
-    feedbackElement.textContent = ''; // フィードバックをクリア
-    feedbackElement.className = ''; // クラス名もクリア
-    nextButton.style.display = 'none'; // 「次の問題へ」ボタンを非表示
-    console.log(`[表示処理] ${quizIndex + 1}問目の表示が完了しました。`); // ★追加ログ
+    feedbackElement.textContent = '';
+    feedbackElement.className = '';
+    nextButton.style.display = 'none';
+    console.log(`[表示処理] ${quizIndex + 1}問目の表示が完了しました。`);
 }
 /**
  * 回答をチェックする関数
- * @param {string} selectedOption - ユーザーが選択した回答
- * @param {object} currentQuiz - 現在のクイズオブジェクト
+ * @param {Event} event - クリックイベントオブジェクト
  */
-function checkAnswer(selectedOption, currentQuiz) {
-    console.log(`[回答処理] ユーザーが「${selectedOption}」を選択しました。`); // ★追加ログ
+function checkAnswer(event) {
+    // ★修正点: イベントから選択された選択肢と現在のクイズデータを取得
+    const selectedOption = event.target.textContent;
+    const currentQuiz = quizData[currentQuizIndex];
+    
+    console.log(`[回答処理] ユーザーが「${selectedOption}」を選択しました。`);
     const isCorrect = selectedOption === currentQuiz.correct;
 
     // すべての選択肢ボタンを無効化
     const optionButtons = optionsContainer.querySelectorAll('.option');
     optionButtons.forEach(button => {
         button.disabled = true;
-        // 正解の選択肢をハイライト
         if (button.textContent === currentQuiz.correct) {
             button.classList.add('correct');
         }
-        // 不正解の選択肢（かつユーザーが選択したもの）をハイライト
         if (!isCorrect && button.textContent === selectedOption) {
             button.classList.add('incorrect');
         }
@@ -100,14 +99,14 @@ function checkAnswer(selectedOption, currentQuiz) {
         score++;
         feedbackElement.textContent = `正解！ ${currentQuiz.explanation}`;
         feedbackElement.className = 'correct';
-        console.log(`[回答処理] 正解です。現在のスコア: ${score}`); // ★追加ログ
+        console.log(`[回答処理] 正解です。現在のスコア: ${score}`);
     } else {
         feedbackElement.textContent = `不正解。正解は「${currentQuiz.correct}」です。 ${currentQuiz.explanation}`;
         feedbackElement.className = 'incorrect';
-        console.log(`[回答処理] 不正解です。現在のスコア: ${score}`); // ★追加ログ
+        console.log(`[回答処理] 不正解です。現在のスコア: ${score}`);
     }
 
-    nextButton.style.display = 'block'; // 「次の問題へ」ボタンを表示
+    nextButton.style.display = 'block';
 }
 
 /**
@@ -115,11 +114,11 @@ function checkAnswer(selectedOption, currentQuiz) {
  */
 function nextQuiz() {
     currentQuizIndex++;
-    console.log(`[進行処理] 「次の問題へ」がクリックされました。次のインデックス: ${currentQuizIndex}`); // ★追加ログ
+    console.log(`[進行処理] 「次の問題へ」がクリックされました。次のインデックス: ${currentQuizIndex}`);
     if (currentQuizIndex < quizData.length) {
         displayQuiz(currentQuizIndex);
     } else {
-        console.log("[進行処理] 全ての問題が終了しました。結果を表示します。"); // ★追加ログ
+        console.log("[進行処理] 全ての問題が終了しました。結果を表示します。");
         showResult();
     }
 }
@@ -131,27 +130,26 @@ function showResult() {
     quizContainer.style.display = 'none';
     resultContainer.style.display = 'block';
     scoreElement.textContent = `${quizData.length}問中 ${score}問正解`;
-    console.log(`[結果表示] 最終スコア: ${score}/${quizData.length}`); // ★追加ログ
+    console.log(`[結果表示] 最終スコア: ${score}/${quizData.length}`);
 }
 
 /**
  * クイズを最初からやり直す関数
  */
 function restartQuiz() {
-    console.log("[リスタート処理] クイズをリスタートします。"); // ★追加ログ
+    console.log("[リスタート処理] クイズをリスタートします。");
     currentQuizIndex = 0;
     score = 0;
     resultContainer.style.display = 'none';
     quizContainer.style.display = 'block';
     displayQuiz(currentQuizIndex);
-    console.log("[リスタート処理] 初期化が完了し、最初の問題を表示しました。"); // ★追加ログ
+    console.log("[リスタート処理] 初期化が完了し、最初の問題を表示しました。");
 }
 
 // --- イベントリスナーの設定 -------------------------------------------------
 nextButton.addEventListener('click', nextQuiz);
 restartButton.addEventListener('click', restartQuiz);
-console.log("[初期化] イベントリスナーを設定しました。"); // ★追加ログ
+console.log("[初期化] イベントリスナーを設定しました。");
 
 // --- 初期実行 -------------------------------------------------------------
-// ページが読み込まれたら最初のクイズを表示
 displayQuiz(currentQuizIndex);
