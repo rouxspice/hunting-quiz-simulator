@@ -1,4 +1,7 @@
 'use strict';
+// --- 効果音の読み込み ---
+const correctSound = new Audio('sounds/correct.mp3');
+const incorrectSound = new Audio('sounds/incorrect.mp3');
 
 // --- 全てのクイズデータを一元管理するオブジェクト ---
 const allQuizzes = {
@@ -141,15 +144,19 @@ function checkAnswer(event) {
         }
     });
 
+       // 正解・不正解を判定し、フィードバックを表示
     if (selectedOption.trim() === currentQuiz.correct.trim()) {
         score++;
         feedbackElement.textContent = `正解！ ${currentQuiz.explanation}`;
         feedbackElement.className = 'correct';
+        correctSound.play(); // ★★★★★ 正解音を再生 ★★★★★
     } else {
         event.target.classList.add('incorrect');
         feedbackElement.textContent = `不正解。正解は「${currentQuiz.correct}」です。`;
         feedbackElement.className = 'incorrect';
+        incorrectSound.play(); // ★★★★★ 不正解音を再生 ★★★★★
     }
+
 
     feedbackElement.style.display = 'block';
     nextButton.style.display = 'block';
