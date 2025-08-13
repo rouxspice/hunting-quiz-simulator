@@ -115,7 +115,7 @@ function goHome() {
 }
 
 async function startQuiz(quizType, quizName) {
-    const filePath = `data/${quizType}.json`;
+    const filePath = `${quizType}.json`;
     try {
         const response = await fetch(filePath);
         if (!response.ok) throw new Error(`Network response was not ok. Status: ${response.status}`);
