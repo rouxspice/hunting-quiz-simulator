@@ -1,10 +1,12 @@
 'use strict';
+
 // --- 効果音の読み込み ---
 const correctSound = new Audio('sounds/correct.mp3');
 const incorrectSound = new Audio('sounds/incorrect.mp3');
 
-// --- 全てのクイズデータを一元管理するオブジェクト ---
-// 【ステップ1-A】JSON形式のデータを、まずは文字列として定義する
+
+// 【ステップ1-A & 1-B】
+// 1. JSON形式のデータを、まずは文字列として定義する
 const wanaQuizDataString = `
 [
     {
@@ -29,8 +31,25 @@ const wanaQuizDataString = `
 ]
 `;
 
-// 【ステップ1-B】で、この文字列をパース（変換）する処理を追加します。
-// 現時点では、このファイル内にクイズデータの実体は存在しない状態になります。
+// 2. JSON.parse()で、文字列をプログラムが扱えるオブジェクト（配列）に変換する
+const parsedWanaQuizData = JSON.parse(wanaQuizDataString);
+
+// 3. ★★★★★ エラー回避のための重要な修正 ★★★★★
+// 存在しなくなった allQuizzes の代わりに、この変換後のデータを使うように見せかける。
+// これにより、startQuiz関数がエラーで停止するのを防ぐ。
+const allQuizzes = {
+    wana: parsedWanaQuizData, // わな猟のデータとして、パースしたデータを設定
+    ami: [],
+    dai1shu: [],
+    dai2shu: [],
+    koshukai: []
+};
+
+// ★★★★★ チェックポイント① ★★★★★
+// 変換が成功したか、開発者ツールのコンソールで確認するためのログ。
+console.log("【ステップ1 チェック】JSON文字列のパースに成功し、エラーなくプログラムが動作しています。");
+console.log("変換後のデータ:", parsedWanaQuizData);
+// ★★★★★ ここまで ★★★★★
 
 
 // --- グローバル変数 ---
