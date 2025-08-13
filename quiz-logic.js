@@ -4,7 +4,6 @@
 const correctSound = new Audio('sounds/correct.mp3');
 const incorrectSound = new Audio('sounds/incorrect.mp3');
 
-
 // 【ステップ1】
 // 1. JSON形式のデータを、まずは文字列として定義する
 const wanaQuizDataString = `
