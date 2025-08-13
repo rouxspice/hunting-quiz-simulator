@@ -3,19 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>狩猟免許試験シミュレーター ver. 2.0</title>
+    <title>狩猟免許試験シミュレーター ver. 3.0</title>
     <link rel="stylesheet" href="quiz-style.css">
     <link rel="icon" href="images/app-icon.png" type="image/png">
 </head>
 <body>
 
     <header>
+        <img src="images/app-icon.png" alt="ロゴ">
         <h1>狩猟免許試験シミュレーター</h1>
-        <p>ver. 2.0</p>
+        <p>ver. 3.0</p>
     </header>
 
     <main>
-        <div id="quiz-container">
+        <!-- ★★★★★ ステップ1：クイズ選択画面を新設 ★★★★★ -->
+        <div id="home-container">
+            <h2>挑戦する試験の種類を選んでください</h2>
+            <div class="quiz-type-grid">
+                <button class="quiz-type-button" data-quiz-type="wana">わな猟免許</button>
+                <button class="quiz-type-button" data-quiz-type="ami">網猟免許</button>
+                <button class="quiz-type-button" data-quiz-type="dai1shu">第一種銃猟免許</button>
+                <button class="quiz-type-button" data-quiz-type="dai2shu">第二種銃猟免許</button>
+                <button class="quiz-type-button" data-quiz-type="koshukai">猟銃等講習会（初心者）</button>
+            </div>
+        </div>
+
+        <!-- ★★★★★ クイズ本体は、最初は非表示にしておく ★★★★★ -->
+        <div id="quiz-container" style="display: none;">
             <h2 id="question">クイズの質問がここに表示されます。</h2>
             <div id="options" class="options-grid">
                 <!-- 選択肢ボタンはJSによって動的に生成されます -->
@@ -35,8 +49,6 @@
         <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
     </footer>
 
-    <!-- ★★★★★ 最重要修正点 ★★★★★ -->
-    <!-- scriptタグを body タグの閉じタグ直前に移動 -->
     <script src="quiz-logic.js"></script>
 </body>
 </html>
