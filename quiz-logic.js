@@ -31,13 +31,10 @@ const wanaQuizDataString = `
 ]
 `;
 
-// 2. ★★★★★ 実行順序の修正 ★★★★★
-// まず、JSON.parse()で、文字列をプログラムが扱えるオブジェクト（配列）に変換する
+// 2. まず、JSON.parse()で、文字列をプログラムが扱えるオブジェクト（配列）に変換する
 const parsedWanaQuizData = JSON.parse(wanaQuizDataString);
 
-// 3. ★★★★★ 実行順序の修正 ★★★★★
-// 次に、変換済みのデータを使って、allQuizzes オブジェクトを定義する。
-// これにより、「定義前の変数を参照する」というエラーを完全に回避する。
+// 3. 次に、変換済みのデータを使って、allQuizzes オブジェクトを定義する。
 const allQuizzes = {
     wana: parsedWanaQuizData, // わな猟のデータとして、パースしたデータを設定
     ami: [],
@@ -47,10 +44,10 @@ const allQuizzes = {
 };
 
 // ★★★★★ チェックポイント① ★★★★★
-// 変換が成功したか、開発者ツールのコンソールで確認するためのログ。
 console.log("【ステップ1 チェック】JSON文字列のパースに成功し、エラーなくプログラムが動作しています。");
 console.log("変換後のデータ:", parsedWanaQuizData);
 // ★★★★★ ここまで ★★★★★
+
 
 // --- グローバル変数 ---
 let currentQuizData = []; // 現在挑戦中のクイズデータ（今は空）
