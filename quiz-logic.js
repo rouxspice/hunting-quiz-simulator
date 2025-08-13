@@ -1,148 +1,190 @@
 'use strict';
 
-// --- クイズデータ（全てのデータを有効化） ---
-const quizData = [
-    {
-        question: "銃猟における水平射撃の危険性について、最も適切なものはどれか？",
-        options: ["矢先の安全が確認できれば問題ない", "人家、人、家畜等の方向に撃つことは絶対に避けるべきである", "30度以下の角度であれば安全である", "弾丸の到達距離を把握していれば問題ない"],
-        correct: "人家、人、家畜等の方向に撃つことは絶対に避けるべきである",
-        explanation: "水平射撃は弾丸が予期せぬ長距離まで達する可能性があり、極めて危険です。特に、矢先に人家、人、家畜などが存在する可能性がある場所では、絶対に避けるべきです。"
-    },
-    {
-        question: "鳥獣保護管理法において、捕獲が原則として禁止されている鳥獣はどれか？",
-        options: ["ニホンジカ", "イノシシ", "ツキノワグマ（メス）", "カワウ"],
-        correct: "ツキノワグマ（メス）",
-        explanation: "種の保存のため、多くの地域でメスのツキノワグマの捕獲は禁止または厳しく制限されています。ただし、地域や年度によって規定が異なる場合があるため、常に最新の情報を確認する必要があります。"
-    },
-    {
-        question: "散弾銃の保管に関する記述として、正しいものはどれか？",
-        options: ["弾を込めたまま保管できる", "家族がすぐに使えるように、分かりやすい場所に置く", "ガンロッカー等、施錠できる設備に保管する", "分解して、各部品を別々の部屋に保管する"],
-        correct: "ガンロッカー等、施錠できる設備に保管する",
-        explanation: "銃砲刀剣類所持等取締法（銃刀法）により、銃は盗難や不正使用を防ぐため、施錠できる堅牢なガンロッカーなどに保管することが義務付けられています。"
-    }
-];
+// --- 全てのクイズデータを一元管理するオブジェクト ---
+const allQuizzes = {
+    wana: [ // わな猟免許
+        {
+            question: "わな猟における法定猟具でないものはどれか？",
+            options: ["くくりわな", "はこわな", "とらばさみ", "はこおとし"],
+            correct: "とらばさみ",
+            explanation: "とらばさみは、鳥獣に大きな苦痛を与える可能性があるため、現在は使用が禁止されている猟具です。"
+        },
+        {
+            question: "くくりわなの輪の直径の規制について、正しいものはどれか？",
+            options: ["制限はない", "12cm以下", "20cm以下", "30cm以下"],
+            correct: "12cm以下",
+            explanation: "錯誤捕獲（対象外の動物を捕獲すること）を防ぐため、くくりわなの輪の直径は原則として12cm以下と定められています（イノシシ・シカを除く）。"
+        }
+    ],
+    ami: [], // 網猟免許（後で追加）
+    dai1shu: [], // 第一種銃猟免許（後で追加）
+    dai2shu: [], // 第二種銃猟免許（後で追加）
+    koshukai: [] // 猟銃等講習会（後で追加）
+};
+console.log("【初期化】全クイズデータを読み込みました。");
 
 // --- グローバル変数 ---
-let currentQuizIndex = 0; // 現在のクイズが何問目かを示すインデックス
-let score = 0; // 正解数
+let currentQuizData = []; // 現在挑戦中のクイズデータ
+let currentQuizIndex = 0;
+let score = 0;
 
 // --- DOM要素の取得 ---
+const homeContainer = document.getElementById('home-container');
+const quizContainer = document.getElementById('quiz-container');
+const resultContainer = document.getElementById('result-container');
+
 const questionElement = document.getElementById('question');
 const optionsContainer = document.getElementById('options');
 const feedbackElement = document.getElementById('feedback');
 const nextButton = document.getElementById('next-button');
-const resultContainer = document.getElementById('result-container');
 const scoreElement = document.getElementById('score');
 const restartButton = document.getElementById('restart-button');
+console.log("【初期化】必要なDOM要素を取得しました。");
 
 
 // --- 関数定義 ---
 
 /**
- * 指定された番号のクイズを表示する関数
- * @param {number} quizIndex - 表示したいクイズの番号（0から始まる）
+ * 指定された画面を表示し、他を非表示にする関数
+ * @param {string} screenName - 表示したい画面の名前 ('home', 'quiz', 'result')
+ */
+function showScreen(screenName) {
+    // 全てのコンテナを一旦非表示に
+    homeContainer.style.display = 'none';
+    quizContainer.style.display = 'none';
+    resultContainer.style.display = 'none';
+
+    // 指定されたコンテナのみ表示
+    if (screenName === 'home') {
+        homeContainer.style.display = 'block';
+    } else if (screenName === 'quiz') {
+        quizContainer.style.display = 'block';
+    } else if (screenName === 'result') {
+        resultContainer.style.display = 'block';
+    }
+    console.log(`[画面遷移] ${screenName}画面を表示しました。`);
+}
+/**
+ * クイズを開始する関数
+ * @param {string} quizType - 開始するクイズの種類 ('wana', 'ami'など)
+ */
+function startQuiz(quizType) {
+    console.log(`[クイズ開始] ${quizType}が選択されました。`);
+    currentQuizData = allQuizzes[quizType];
+
+    // クイズデータが存在しない、または空の場合は処理を中断
+    if (!currentQuizData || currentQuizData.length === 0) {
+        alert('申し訳ありません。このクイズは現在準備中です。');
+        console.warn(`[クイズ開始失敗] ${quizType}のデータが見つかりません。`);
+        return;
+    }
+
+    // 変数を初期化
+    currentQuizIndex = 0;
+    score = 0;
+
+    // クイズ画面を表示して、最初の問題を描画
+    showScreen('quiz');
+    displayQuiz(currentQuizIndex);
+}
+
+/**
+ * 指定された番号のクイズを表示する関数 (以前のロジックを再利用)
+ * @param {number} quizIndex - 表示したいクイズの番号
  */
 function displayQuiz(quizIndex) {
-    // 以前のフィードバックを隠す
     feedbackElement.style.display = 'none';
     nextButton.style.display = 'none';
 
-    // 表示するクイズデータを取得
-    const currentQuiz = quizData[quizIndex];
-
-    // 質問文を表示
+    const currentQuiz = currentQuizData[quizIndex];
     questionElement.textContent = `第${quizIndex + 1}問: ${currentQuiz.question}`;
-
-    // 選択肢をクリア
     optionsContainer.innerHTML = '';
 
-    // 新しい選択肢ボタンを生成
     currentQuiz.options.forEach(optionText => {
         const button = document.createElement('button');
         button.textContent = optionText;
         button.classList.add('option');
-        button.addEventListener('click', checkAnswer); // クリック時の処理を紐付け
+        button.addEventListener('click', checkAnswer);
         optionsContainer.appendChild(button);
     });
 }
+
 /**
- * 回答をチェックする関数
+ * 回答をチェックする関数 (以前のロジックを再利用)
  * @param {Event} event - クリックイベントオブジェクト
  */
 function checkAnswer(event) {
     const selectedOption = event.target.textContent;
-    const currentQuiz = quizData[currentQuizIndex];
+    const currentQuiz = currentQuizData[currentQuizIndex];
 
-    // 全てのボタンを無効化
     optionsContainer.querySelectorAll('.option').forEach(btn => {
         btn.disabled = true;
+        if (btn.textContent.trim() === currentQuiz.correct.trim()) {
+            btn.classList.add('correct');
+        }
     });
 
-    // 正解・不正解を判定し、フィードバックを表示
     if (selectedOption.trim() === currentQuiz.correct.trim()) {
-        score++; // 正解ならスコアを1増やす
+        score++;
         feedbackElement.textContent = `正解！ ${currentQuiz.explanation}`;
         feedbackElement.className = 'correct';
     } else {
+        event.target.classList.add('incorrect');
         feedbackElement.textContent = `不正解。正解は「${currentQuiz.correct}」です。`;
         feedbackElement.className = 'incorrect';
     }
 
     feedbackElement.style.display = 'block';
-    nextButton.style.display = 'block'; // 「次の問題へ」ボタンを表示
+    nextButton.style.display = 'block';
 }
 
 /**
- * 次の問題へ進む、または結果を表示する関数
+ * 次の問題へ進む、または結果を表示する関数 (以前のロジックを再利用)
  */
 function nextQuiz() {
-    currentQuizIndex++; // 次の問題へインデックスを進める
-
-    // まだ次の問題がある場合
-    if (currentQuizIndex < quizData.length) {
-        displayQuiz(currentQuizIndex); // 次の問題を表示
+    currentQuizIndex++;
+    if (currentQuizIndex < currentQuizData.length) {
+        displayQuiz(currentQuizIndex);
     } else {
-        // 全ての問題が終わった場合
         showResult();
     }
 }
 
 /**
- * 最終結果を表示する関数
+ * 最終結果を表示する関数 (以前のロジックを再利用)
  */
 function showResult() {
-    // クイズ画面を隠し、結果画面を表示
-    document.getElementById('quiz-container').style.display = 'none';
-    resultContainer.style.display = 'block';
-    
-    // 最終スコアを表示
-    scoreElement.textContent = `${quizData.length}問中 ${score}問正解`;
+    scoreElement.textContent = `${currentQuizData.length}問中 ${score}問正解`;
+    showScreen('result');
 }
 
 /**
- * クイズを最初からやり直す関数
+ * ホーム画面に戻る関数 (リスタート処理を改修)
  */
-function restartQuiz() {
-    // 各種変数を初期状態に戻す
-    currentQuizIndex = 0;
-    score = 0;
-
-    // 結果画面を隠し、クイズ画面を表示
-    resultContainer.style.display = 'none';
-    document.getElementById('quiz-container').style.display = 'block';
-
-    // 最初の問題を表示
-    displayQuiz(currentQuizIndex);
+function backToHome() {
+    showScreen('home');
 }
 
 
 // --- イベントリスナーの設定 ---
+
+// ホーム画面の各クイズ選択ボタンにリスナーを設定
+document.querySelectorAll('.quiz-type-button').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const quizType = event.target.dataset.quizType;
+        startQuiz(quizType);
+    });
+});
+
+// 「次の問題へ」ボタン
 nextButton.addEventListener('click', nextQuiz);
-restartButton.addEventListener('click', restartQuiz);
+
+// 「もう一度挑戦する」ボタンは「ホームに戻る」機能に変更
+restartButton.textContent = '他の試験に挑戦する'; // ボタンのテキストも変更
+restartButton.addEventListener('click', backToHome);
 
 
 // --- 初期実行 ---
-// ページが読み込まれたら、最初のクイズを表示する
-displayQuiz(currentQuizIndex);
-
-console.log("【再構築版 ステップ3】スクリプトの読み込みが完了しました。");
+// ページが読み込まれたら、ホーム画面を表示する
+showScreen('home');
+console.log("【初期化完了】アプリケーションの準備が整いました。ユーザーの操作を待っています。");
