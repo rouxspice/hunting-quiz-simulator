@@ -110,31 +110,61 @@ function showScreen(screenName) {
 }
 /**
  * クイズを開始する関数
- * @param {string} quizType - 開始するクイズの種類 ('wana', 'ami'など)
- * @param {string} quizName - 開始するクイズの正式名称
+ * @param {string} quizType - 選択されたクイズの種類 (例: 'wana')
  */
-function startQuiz(quizType, quizName) {
-    console.log(`[クイズ開始] ${quizName}(${quizType})が選択されました。`);
-    currentQuizData = allQuizzes[quizType];
+async function startQuiz(quizType) { // ★★★★★ async を追加 ★★★★★
+    console.log(`[開始処理] ${quizType} のクイズ開始が要求されました。`);
 
+    // ★★★★★ ここからが新しい処理 ★★★★★
+    // ステップA: 外部JSONファイルのパスを指定
+    const filePath = `data/${quizType}.json`;
+    console.log(`[データ取得] ${filePath} からデータを読み込みます...`);
+
+    try {
+        // ステップB: fetchでファイルを非同期に取得
+        const response = await fetch(filePath);
+
+        // ステップC: ネットワークエラーがないかチェック
+        if (!response.ok) {
+            // サーバーが404エラー（ファイルが見つからない）などを返した場合
+            throw new Error(`ネットワーク応答が正常ではありませんでした。ステータス: ${response.status}`);
+        }
+
+        // ステップD: 取得したデータをJSONオブジェクトに変換
+        const data = await response.json();
+        console.log("[データ取得] データの取得とJSONへの変換が成功しました。", data);
+
+        // ステップE: 取得したデータを現在のクイズデータとして設定
+        currentQuizData = data;
+
+    } catch (error) {
+        // ステップF: 途中で何かエラーが起きた場合の処理
+        console.error("[データ取得エラー] クイズデータの読み込みに失敗しました:", error);
+        alert(`「${quizType}」のクイズデータの読み込みに失敗しました。ファイルが存在するか、JSONの形式が正しいか確認してください。`);
+        return; // エラーが起きたら、ここで処理を中断
+    }
+    // ★★★★★ ここまでが新しい処理 ★★★★★
+
+
+    // --- ここから下の処理は、これまでとほぼ同じ ---
     if (!currentQuizData || currentQuizData.length === 0) {
-        alert('申し訳ありません。このクイズは現在準備中です。');
-        console.warn(`[クイズ開始失敗] ${quizType}のデータが見つかりません。`);
+        alert(`「${quizType}」のクイズは準備中です。`);
         return;
     }
 
-    // 変数を初期化
     currentQuizIndex = 0;
     score = 0;
 
-    // ★★★★★ 追加ロジック ★★★★★
-    // クイズのタイトルを表示
-    currentQuizTitle.textContent = quizName;
+    // ヘッダー情報の更新
+    const quizTypeText = document.querySelector(`[data-quiz-type="${quizType}"]`).textContent;
+    quizInfoElement.textContent = `現在挑戦中の試験：${quizTypeText}`;
+    updateQuizProgress();
 
-    // クイズ画面を表示して、最初の問題を描画
+    // 画面遷移
     showScreen('quiz');
     displayQuiz(currentQuizIndex);
 }
+
 
 
 /**
