@@ -188,17 +188,26 @@ function backToHome() {
 // ホーム画面の各クイズ選択ボタンにリスナーを設定
 document.querySelectorAll('.quiz-type-button').forEach(button => {
     button.addEventListener('click', (event) => {
-        const quizType = event.target.dataset.quizType;
-        startQuiz(quizType);
+        const buttonElement = event.currentTarget; // クリックされたボタン要素そのもの
+        const quizType = buttonElement.dataset.quizType;
+        const quizName = buttonElement.dataset.quizName; // ★★★★★ data-quiz-nameを取得 ★★★★★
+        startQuiz(quizType, quizName); // ★★★★★ quizNameも渡す ★★★★★
     });
 });
 
 // 「次の問題へ」ボタン
 nextButton.addEventListener('click', nextQuiz);
 
-// 「もう一度挑戦する」ボタンは「ホームに戻る」機能に変更
-restartButton.textContent = '他の試験に挑戦する'; // ボタンのテキストも変更
+// 「他の試験に挑戦する」ボタン（結果画面）
 restartButton.addEventListener('click', backToHome);
+
+// ★★★★★ UI改善で追加した「ホームに戻る」ボタン（クイズ画面） ★★★★★
+backToHomeButton.addEventListener('click', () => {
+    // 誤操作防止のための確認ダイアログ
+    if (confirm('クイズを中断してホーム画面に戻りますか？\n（現在の成績は保存されません）')) {
+        backToHome();
+    }
+});
 
 
 // --- 初期実行 ---
