@@ -5,25 +5,36 @@ const incorrectSound = new Audio('sounds/incorrect.mp3');
 
 // --- 全てのクイズデータを一元管理するオブジェクト ---
 const allQuizzes = {
-    wana: [ // わな猟免許
+    // わな猟免許データに、画像クイズを追加
+    wana: [
         {
-            question: "わな猟における法定猟具でないものはどれか？",
-            options: ["くくりわな", "はこわな", "とらばさみ", "はこおとし"],
-            correct: "とらばさみ",
-            explanation: "とらばさみは、鳥獣に大きな苦痛を与える可能性があるため、現在は使用が禁止されている猟具です。"
+            question: "この画像に写っている鳥獣の名前として、最も適切なものはどれか？",
+            // ★★★★★ 画像パスを指定 ★★★★★
+            image: "images/tanuki.jpg", 
+            options: ["タヌキ", "アライグマ", "ハクビシン", "アナグマ"],
+            correct: "タヌキ",
+            explanation: "正解はタヌキです。タヌキは目の周りの黒い模様がメガネのように見え、足が黒いのが特徴です。アライグマは尾に縞模様があり、ハクビシンは額から鼻にかけて白い線があります。"
         },
         {
-            question: "くくりわなの輪の直径の規制について、正しいものはどれか？",
-            options: ["制限はない", "12cm以下", "20cm以下", "30cm以下"],
-            correct: "12cm以下",
-            explanation: "錯誤捕獲（対象外の動物を捕獲すること）を防ぐため、くくりわなの輪の直径は原則として12cm以下と定められています（イノシシ・シカを除く）。"
+            question: "銃猟における水平射撃の危険性について、最も適切なものはどれか？",
+            options: ["矢先の安全が確認できれば問題ない", "人家、人、家畜等の方向に撃つことは絶対に避けるべきである", "30度以下の角度であれば安全である", "弾丸の到達距離を把握していれば問題ない"],
+            correct: "人家、人、家畜等の方向に撃つことは絶対に避けるべきである",
+            explanation: "水平射撃は弾丸が予期せぬ長距離まで達する可能性があり、極めて危険です。特に、矢先に人家、人、家畜などが存在する可能性がある場所では、絶対に避けるべきです。"
+        },
+        {
+            question: "鳥獣保護管理法において、捕獲が原則として禁止されている鳥獣はどれか？",
+            options: ["ニホンジカ", "イノシシ", "ツキノワグマ（メス）", "カワウ"],
+            correct: "ツキノワ-グマ（メス）",
+            explanation: "種の保存のため、多くの地域でメスのツキノワグマの捕獲は禁止または厳しく制限されています。ただし、地域や年度によって規定が異なる場合があるため、常に最新の情報を確認する必要があります。"
         }
     ],
-    ami: [], // 網猟免許（後で追加）
-    dai1shu: [], // 第一種銃猟免許（後で追加）
-    dai2shu: [], // 第二種銃猟免許（後で追加）
-    koshukai: [] // 猟銃等講習会（後で追加）
+    // 他免許のデータは、今は空のまま
+    ami: [],
+    dai1shu: [],
+    dai2shu: [],
+    koshukai: []
 };
+
 console.log("【初期化】全クイズデータを読み込みました。");
 
 // --- グローバル変数 ---
@@ -42,6 +53,10 @@ const currentQuizTitle = document.getElementById('current-quiz-title');
 const progressIndicator = document.getElementById('progress-indicator');
 const backToHomeButton = document.getElementById('back-to-home-button');
 
+// ★★★★★ 画像クイズ用の要素を追加 ★★★★★
+const questionImageContainer = document.getElementById('question-image-container');
+const questionImage = document.getElementById('question-image');
+
 const questionElement = document.getElementById('question');
 const optionsContainer = document.getElementById('options');
 const feedbackElement = document.getElementById('feedback');
@@ -49,6 +64,7 @@ const nextButton = document.getElementById('next-button');
 const scoreElement = document.getElementById('score');
 const restartButton = document.getElementById('restart-button');
 console.log("【初期化】必要なDOM要素を取得しました。");
+
 
 
 
@@ -108,17 +124,26 @@ function startQuiz(quizType, quizName) {
  * @param {number} quizIndex - 表示したいクイズの番号
  */
 function displayQuiz(quizIndex) {
+    // まずは不要な要素を隠す
     feedbackElement.style.display = 'none';
     nextButton.style.display = 'none';
+    questionImageContainer.style.display = 'none'; // ★★★★★ 画像コンテナも隠す ★★★★★
 
-    // ★★★★★ 追加ロジック ★★★★★
     // 進捗状況を更新
     progressIndicator.textContent = `${quizIndex + 1} / ${currentQuizData.length} 問`;
 
     const currentQuiz = currentQuizData[quizIndex];
     questionElement.textContent = `第${quizIndex + 1}問: ${currentQuiz.question}`;
-    optionsContainer.innerHTML = '';
 
+    // ★★★★★ 画像がある問題の場合の処理 ★★★★★
+    if (currentQuiz.image) {
+        questionImage.src = currentQuiz.image; // 画像パスを設定
+        questionImageContainer.style.display = 'block'; // 画像コンテナを表示
+        console.log(`[画像表示] ${currentQuiz.image} を表示しました。`);
+    }
+
+    // 選択肢ボタンを生成
+    optionsContainer.innerHTML = '';
     currentQuiz.options.forEach(optionText => {
         const button = document.createElement('button');
         button.textContent = optionText;
@@ -127,6 +152,7 @@ function displayQuiz(quizIndex) {
         optionsContainer.appendChild(button);
     });
 }
+
 
 
 /**
