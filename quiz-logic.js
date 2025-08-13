@@ -184,14 +184,18 @@ function backToHome() {
 
 
 // --- イベントリスナーの設定 ---
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 全ての関数定義が終わった、このファイルの一番最後に移動させることで、
+// 「関数が未定義」というエラーを完全に防ぎます。
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
 // ホーム画面の各クイズ選択ボタンにリスナーを設定
 document.querySelectorAll('.quiz-type-button').forEach(button => {
     button.addEventListener('click', (event) => {
-        const buttonElement = event.currentTarget; // クリックされたボタン要素そのもの
+        const buttonElement = event.currentTarget;
         const quizType = buttonElement.dataset.quizType;
-        const quizName = buttonElement.dataset.quizName; // ★★★★★ data-quiz-nameを取得 ★★★★★
-        startQuiz(quizType, quizName); // ★★★★★ quizNameも渡す ★★★★★
+        const quizName = buttonElement.dataset.quizName;
+        startQuiz(quizType, quizName);
     });
 });
 
@@ -201,9 +205,8 @@ nextButton.addEventListener('click', nextQuiz);
 // 「他の試験に挑戦する」ボタン（結果画面）
 restartButton.addEventListener('click', backToHome);
 
-// ★★★★★ UI改善で追加した「ホームに戻る」ボタン（クイズ画面） ★★★★★
+// 「ホームに戻る」ボタン（クイズ画面）
 backToHomeButton.addEventListener('click', () => {
-    // 誤操作防止のための確認ダイアログ
     if (confirm('クイズを中断してホーム画面に戻りますか？\n（現在の成績は保存されません）')) {
         backToHome();
     }
