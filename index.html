@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>狩猟免許試験シミュレーター ver. 3.0</title>
+    <title>狩猟免許試験シミュレーター ver. 3.1</title>
     <link rel="stylesheet" href="quiz-style.css">
     <link rel="icon" href="images/app-icon.png" type="image/png">
 </head>
@@ -12,36 +12,45 @@
     <header>
         <img src="images/app-icon.png" alt="ロゴ">
         <h1>狩猟免許試験シミュレーター</h1>
-        <p>ver. 3.0</p>
+        <p>ver. 3.1</p>
     </header>
 
     <main>
-        <!-- ★★★★★ ステップ1：クイズ選択画面を新設 ★★★★★ -->
         <div id="home-container">
             <h2>挑戦する試験の種類を選んでください</h2>
             <div class="quiz-type-grid">
-                <button class="quiz-type-button" data-quiz-type="wana">わな猟免許</button>
-                <button class="quiz-type-button" data-quiz-type="ami">網猟免許</button>
-                <button class="quiz-type-button" data-quiz-type="dai1shu">第一種銃猟免許</button>
-                <button class="quiz-type-button" data-quiz-type="dai2shu">第二種銃猟免許</button>
-                <button class="quiz-type-button" data-quiz-type="koshukai">猟銃等講習会（初心者）</button>
+                <button class="quiz-type-button" data-quiz-type="wana" data-quiz-name="わな猟免許">わな猟免許</button>
+                <button class="quiz-type-button" data-quiz-type="ami" data-quiz-name="網猟免許">網猟免許</button>
+                <button class="quiz-type-button" data-quiz-type="dai1shu" data-quiz-name="第一種銃猟免許">第一種銃猟免許</button>
+                <button class="quiz-type-button" data-quiz-type="dai2shu" data-quiz-name="第二種銃猟免許">第二種銃猟免許</button>
+                <button class="quiz-type-button" data-quiz-type="koshukai" data-quiz-name="猟銃等講習会（初心者）">猟銃等講習会（初心者）</button>
             </div>
         </div>
 
-        <!-- ★★★★★ クイズ本体は、最初は非表示にしておく ★★★★★ -->
         <div id="quiz-container" style="display: none;">
-            <h2 id="question">クイズの質問がここに表示されます。</h2>
-            <div id="options" class="options-grid">
-                <!-- 選択肢ボタンはJSによって動的に生成されます -->
+            <!-- ★★★★★ UI/UX改善のための新要素 ★★★★★ -->
+            <div id="quiz-header">
+                <span id="current-quiz-title"></span>
+                <span id="progress-indicator"></span>
             </div>
+            <!-- ★★★★★ ここまで ★★★★★ -->
+
+            <h2 id="question"></h2>
+            <div id="options" class="options-grid"></div>
             <div id="feedback"></div>
-            <button id="next-button" style="display: none;">次の問題へ</button>
+            
+            <!-- ★★★★★ UI/UX改善のための新要素 ★★★★★ -->
+            <div class="quiz-footer">
+                <button id="back-to-home-button">ホームに戻る</button>
+                <button id="next-button" style="display: none;">次の問題へ</button>
+            </div>
+            <!-- ★★★★★ ここまで ★★★★★ -->
         </div>
 
         <div id="result-container" style="display: none;">
             <h2>結果発表</h2>
             <p id="score"></p>
-            <button id="restart-button">もう一度挑戦する</button>
+            <button id="restart-button">他の試験に挑戦する</button>
         </div>
     </main>
 
