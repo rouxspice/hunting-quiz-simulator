@@ -33,6 +33,12 @@ const homeContainer = document.getElementById('home-container');
 const quizContainer = document.getElementById('quiz-container');
 const resultContainer = document.getElementById('result-container');
 
+// UI改善で追加した要素
+const quizHeader = document.getElementById('quiz-header');
+const currentQuizTitle = document.getElementById('current-quiz-title');
+const progressIndicator = document.getElementById('progress-indicator');
+const backToHomeButton = document.getElementById('back-to-home-button');
+
 const questionElement = document.getElementById('question');
 const optionsContainer = document.getElementById('options');
 const feedbackElement = document.getElementById('feedback');
@@ -40,6 +46,7 @@ const nextButton = document.getElementById('next-button');
 const scoreElement = document.getElementById('score');
 const restartButton = document.getElementById('restart-button');
 console.log("【初期化】必要なDOM要素を取得しました。");
+
 
 
 // --- 関数定義 ---
@@ -67,12 +74,12 @@ function showScreen(screenName) {
 /**
  * クイズを開始する関数
  * @param {string} quizType - 開始するクイズの種類 ('wana', 'ami'など)
+ * @param {string} quizName - 開始するクイズの正式名称
  */
-function startQuiz(quizType) {
-    console.log(`[クイズ開始] ${quizType}が選択されました。`);
+function startQuiz(quizType, quizName) {
+    console.log(`[クイズ開始] ${quizName}(${quizType})が選択されました。`);
     currentQuizData = allQuizzes[quizType];
 
-    // クイズデータが存在しない、または空の場合は処理を中断
     if (!currentQuizData || currentQuizData.length === 0) {
         alert('申し訳ありません。このクイズは現在準備中です。');
         console.warn(`[クイズ開始失敗] ${quizType}のデータが見つかりません。`);
@@ -83,18 +90,27 @@ function startQuiz(quizType) {
     currentQuizIndex = 0;
     score = 0;
 
+    // ★★★★★ 追加ロジック ★★★★★
+    // クイズのタイトルを表示
+    currentQuizTitle.textContent = quizName;
+
     // クイズ画面を表示して、最初の問題を描画
     showScreen('quiz');
     displayQuiz(currentQuizIndex);
 }
 
+
 /**
- * 指定された番号のクイズを表示する関数 (以前のロジックを再利用)
+ * 指定された番号のクイズを表示する関数
  * @param {number} quizIndex - 表示したいクイズの番号
  */
 function displayQuiz(quizIndex) {
     feedbackElement.style.display = 'none';
     nextButton.style.display = 'none';
+
+    // ★★★★★ 追加ロジック ★★★★★
+    // 進捗状況を更新
+    progressIndicator.textContent = `${quizIndex + 1} / ${currentQuizData.length} 問`;
 
     const currentQuiz = currentQuizData[quizIndex];
     questionElement.textContent = `第${quizIndex + 1}問: ${currentQuiz.question}`;
@@ -108,6 +124,7 @@ function displayQuiz(quizIndex) {
         optionsContainer.appendChild(button);
     });
 }
+
 
 /**
  * 回答をチェックする関数 (以前のロジックを再利用)
