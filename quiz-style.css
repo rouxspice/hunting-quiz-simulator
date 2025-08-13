@@ -206,3 +206,63 @@ footer {
     border-color: #3498db;
     background-color: #f8f9fa;
 }
+/* --- クイズ画面のヘッダーとフッター --- */
+#quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+#current-quiz-title {
+    font-weight: 700;
+    color: #495057;
+}
+
+#progress-indicator {
+    font-size: 0.9em;
+    color: #6c757d;
+    background-color: #e9ecef;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+.quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #e9ecef;
+}
+
+/* 「ホームに戻る」ボタン（ゴーストボタンスタイル） */
+#back-to-home-button {
+    background-color: transparent;
+    color: #6c757d;
+    border: 2px solid #ced4da;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#back-to-home-button:hover {
+    background-color: #f8f9fa;
+    color: #212529;
+    border-color: #adb5bd;
+}
+
+/* 「次の問題へ」ボタンの幅を調整 */
+#next-button {
+    width: auto; /* 幅を自動調整に変更 */
+    flex-grow: 1; /* 残りのスペースを埋める */
+    max-width: 400px; /* 最大幅は維持 */
+    margin: 0; /* マージンをリセット */
+}
