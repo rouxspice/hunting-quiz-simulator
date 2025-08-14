@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズページ</title>
+    <link rel="stylesheet" href="quiz-style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h2 id="category-title">【カテゴリ名】</h2>
+        <div id="question-container">
+            <p id="question">ここに問題文が表示されます。</p>
+        </div>
+        <div id="options" class="options-grid">
+            <!-- 選択肢がここに動的に生成されます -->
+        </div>
+        <div id="feedback"></div>
+        <footer>
+            <button id="next-btn" class="btn" style="display: none;">次の問題へ</button>
+            <a href="index.html" class="btn-secondary">トップに戻る</a>
+        </footer>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
