@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>狩猟免許試験シミュレーター</title>
+    <!-- ▼▼▼ Google Fonts 読み込み ▼▼▼ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <!-- ▲▲▲ Google Fonts 読み込み ▲▲▲ -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/app-icon.png">
 </head>
@@ -12,7 +17,7 @@
         <header>
             <img src="/images/app-icon.png" alt="ロゴ" class="logo">
             <h1>狩猟免許試験シミュレーター</h1>
-            <span class="version">ver. 3.2</span>
+            <span class="version">ver. 4.0</span>
         </header>
         <main>
             <div id="home-screen">
@@ -23,7 +28,7 @@
                     <button class="category-btn" data-category="juuryou_1" data-name="第一種銃猟免許">第一種銃猟免許</button>
                     <button class="category-btn" data-category="juuryou_2" data-name="第二種銃猟免許">第二種銃猟免許</button>
                     <button class="category-btn" data-category="choujuu_hnb" data-name="狩猟鳥獣判別クイズ">狩猟鳥獣判別クイズ</button>
-                    <button class="category-btn" data-category="shoshinsha" data-name="猟銃等講習会（初心者）">猟銃等講習会（初心者）</button>
+                    <button class="category-btn" data-category="shoshinsha" data-name="猟銃等講習会（初心者 ）">猟銃等講習会（初心者）</button>
                 </div>
                 <div class="custom-quiz-section">
                     <button id="custom-quiz-btn" class="custom-quiz-btn-main">カスタム模擬試験を作成する</button>
@@ -35,7 +40,6 @@
         </footer>
     </div>
 
-    <!-- ▼▼▼ ここからモーダルウィンドウのHTML ▼▼▼ -->
     <div id="custom-quiz-modal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
@@ -72,7 +76,6 @@
             </div>
         </div>
     </div>
-    <!-- ▲▲▲ ここまでモーダルウィンドウのHTML ▲▲▲ -->
 
     <script src="script.js"></script>
 </body>
