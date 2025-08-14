@@ -4,29 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(papaParseScript );
 
     papaParseScript.onload = async () => {
-        // --- DOM要素の取得 ---
+        // ... (DOM取得部分は変更なし) ...
         const questionElement = document.getElementById('question');
         const optionsElement = document.getElementById('options');
         const feedbackElement = document.getElementById('feedback');
         const nextButton = document.getElementById('next-btn');
         const quizCategoryElement = document.getElementById('quiz-category');
         const quizProgressElement = document.getElementById('quiz-progress');
-        
-        // 鳥獣判別クイズ専用DOM
         const choujuuQuizArea = document.getElementById('choujuu-quiz-area');
         const choujuuImage = document.getElementById('choujuu-image');
         const choujuuInstruction = document.getElementById('choujuu-instruction');
         const huntableOptions = document.getElementById('huntable-options');
         const questionContainer = document.getElementById('question-container');
 
-        // --- 変数定義 ---
         let questions = [];
         let currentQuestionIndex = 0;
         const categoryFile = localStorage.getItem('selectedCategory');
         const categoryName = localStorage.getItem('selectedCategoryName');
         const IS_CHOUJUU_QUIZ = categoryFile === 'choujuu_hnb';
 
-        // --- 初期化処理 ---
         if (!categoryFile || !categoryName) {
             questionElement.textContent = 'エラー: カテゴリが選択されていません。';
             return;
@@ -34,8 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
         quizCategoryElement.textContent = `現在挑戦中の試験：${categoryName}`;
 
         try {
-            const response = await fetch(`data/${categoryFile}.csv`);
-            if (!response.ok) throw new Error(`CSVファイルが見つかりません`);
+            // ★★★ fetchのパスをルート相対パスに修正 ★★★
+            const response = await fetch(`/data/${categoryFile}.csv`);
+            if (!response.ok) {
+                 // 404エラーの場合、より詳細なエラーメッセージを表示
+                throw new Error(`CSVファイルが見つかりません: /data/${categoryFile}.csv`);
+            }
             const csvText = await response.text();
             
             const parsedData = Papa.parse(csvText, { header: true, skipEmptyLines: true });
@@ -49,10 +49,30 @@ document.addEventListener('DOMContentLoaded', () => {
             displayQuestion();
         } catch (error) {
             console.error('CSV読み込みエラー:', error);
-            questionElement.textContent = '問題の読み込みに失敗しました。';
+            questionElement.textContent = `問題の読み込みに失敗しました。(${error.message})`;
         }
 
-        // --- 関数定義 ---
+        // ... (displayNormalQuestionなどの関数は変更なし) ...
+
+        function displayChoujuuQuestion() {
+            const q = questions[currentQuestionIndex];
+            questionContainer.style.display = 'none';
+            choujuuQuizArea.style.display = 'block';
+            huntableOptions.style.display = 'grid';
+            
+            // ★★★ 鳥獣画像のパスをルート相対パスに修正 ★★★
+            choujuuImage.src = `/images/${encodeURIComponent(q.image_file)}`;
+            choujuuImage.alt = `鳥獣の写真: ${q.correct_name}`;
+            choujuuInstruction.textContent = 'この鳥獣は、狩猟鳥獣ですか？（獲れますか？）';
+
+            document.querySelectorAll('.huntable-btn').forEach(btn => {
+                const newBtn = btn.cloneNode(true);
+                btn.parentNode.replaceChild(newBtn, btn);
+                newBtn.addEventListener('click', () => checkHuntableAnswer(newBtn.dataset.answer === 'true'));
+            });
+        }
+        
+        // (これ以降の関数は変更なし)
         function updateProgress() {
             quizProgressElement.textContent = `残り ${questions.length - currentQuestionIndex} / ${questions.length} 問`;
         }
@@ -72,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // 通常の4択問題を表示
         function displayNormalQuestion() {
             const q = questions[currentQuestionIndex];
             questionElement.textContent = `第${currentQuestionIndex + 1}問：${q.question_text}`;
@@ -85,33 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // 鳥獣判別問題を表示 (第1段階)
-        function displayChoujuuQuestion() {
-            const q = questions[currentQuestionIndex];
-            questionContainer.style.display = 'none';
-            choujuuQuizArea.style.display = 'block';
-            huntableOptions.style.display = 'grid';
-            
-            // ★★★ 修正箇所 ★★★
-            choujuuImage.src = `/images/${encodeURIComponent(q.image_file)}`;
-            choujuuImage.alt = `鳥獣の写真: ${q.correct_name}`;
-            choujuuInstruction.textContent = 'この鳥獣は、狩猟鳥獣ですか？（獲れますか？）';
-
-            document.querySelectorAll('.huntable-btn').forEach(btn => {
-                const newBtn = btn.cloneNode(true);
-                btn.parentNode.replaceChild(newBtn, btn);
-                newBtn.addEventListener('click', () => checkHuntableAnswer(newBtn.dataset.answer === 'true'));
-            });
-        }
-
-        // 通常問題の正誤判定
         function checkNormalAnswer(selected) {
             const q = questions[currentQuestionIndex];
             const correct = parseInt(q.correct_answer, 10);
             showFeedback(selected === correct, q.explanation, q[`option_${correct}`]);
         }
 
-        // 鳥獣判別問題の正誤判定 (第1段階)
         function checkHuntableAnswer(userAnswer) {
             const q = questions[currentQuestionIndex];
             const isCorrect = (q.is_huntable.toLowerCase() === 'true') === userAnswer;
@@ -125,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // 鳥獣判別問題を表示 (第2段階 - 名称選択)
         function displayChoujuuNameQuestion() {
             const q = questions[currentQuestionIndex];
             huntableOptions.style.display = 'none';
@@ -143,14 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // 鳥獣判別問題の正誤判定 (第2段階)
         function checkChoujuuNameAnswer(selectedName) {
             const q = questions[currentQuestionIndex];
             const isCorrect = selectedName === q.correct_name;
             showFeedback(isCorrect, q.explanation, q.correct_name);
         }
 
-        // 正誤判定と解説の表示 (共通)
         function showFeedback(isCorrect, explanation, correctAnswerText = '') {
             Array.from(optionsElement.children).forEach(btn => btn.disabled = true);
             Array.from(huntableOptions.children).forEach(btn => btn.disabled = true);
@@ -166,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
             nextButton.style.display = 'block';
         }
 
-        // 「次の問題へ」ボタンの処理
         nextButton.addEventListener('click', () => {
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {

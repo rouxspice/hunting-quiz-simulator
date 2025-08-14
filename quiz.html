@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>クイズ - 狩猟免許試験シミュレーター</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/images/favicon.ico"> <!-- パスを修正 -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/app-icon.png">
 </head>
 <body>
     <div class="main-container">
         <header class="main-header">
             <div class="logo">
-                <img src="/images/logo.png" alt="ロゴ"> <!-- ★★★ パスを修正 ★★★ -->
+                <img src="/images/app-icon.png" alt="ロゴ"> <!-- ★ ルート相対パスに修正 -->
                 <h1>狩猟免許試験シミュレーター</h1>
             </div>
             <span class="version">ver. 3.1</span>
@@ -37,7 +37,7 @@
             <div id="options" class="options-grid quiz-options"></div>
             <div id="feedback"></div>
             <div class="quiz-footer">
-                <a href="index.html" class="btn-secondary">ホームに戻る</a>
+                <a href="/index.html" class="btn-secondary">ホームに戻る</a> <!-- ★ ルート相対パスに修正 -->
                 <button id="next-btn" class="btn" style="display: none;">次の問題へ</button>
             </div>
         </main>
@@ -45,6 +45,6 @@
             <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
         </footer>
     </div>
-    <script src="quiz.js"></script>
+    <script src="/quiz.js"></script>
 </body>
 </html>
