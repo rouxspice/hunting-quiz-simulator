@@ -1,226 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap' );
-
-:root {
-    --primary-color: #4a5568;
-    --secondary-color: #a0aec0;
-    --bg-color: #f7fafc;
-    --card-bg-color: #ffffff;
-    --border-color: #e2e8f0;
-    --font-family: 'Noto Sans JP', sans-serif;
-}
-
+/* 基本スタイル */
 body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
     margin: 0;
-    font-family: var(--font-family);
-    background-color: var(--bg-color);
-    color: var(--primary-color);
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
 }
 
-.main-container {
+.container {
     width: 100%;
     max-width: 800px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.main-header {
+header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e8e8e8;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
+    width: 40px;
     height: 40px;
-    margin-right: 1rem;
+    margin-right: 16px;
 }
 
-.logo h1 {
-    font-size: 1.5rem;
+h1 {
+    font-size: 24px;
     margin: 0;
-    font-weight: 700;
+    flex-grow: 1;
 }
 
 .version {
-    font-size: 1rem;
-    color: var(--secondary-color);
+    font-size: 14px;
+    color: #888;
+    font-weight: 500;
 }
 
-.card {
-    background-color: var(--card-bg-color);
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border: 1px solid var(--border-color);
+main {
+    padding: 32px;
 }
 
-.card h2 {
+h2 {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 2rem;
-    font-weight: 700;
+    margin-bottom: 24px;
+    font-size: 20px;
+    color: #555;
 }
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
 }
 
-.btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-    font-family: var(--font-family);
-    font-weight: 700;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background-color: var(--card-bg-color);
-    color: var(--primary-color);
+.category-btn {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.btn:hover {
-    background-color: #edf2f7;
-    border-color: #cbd5e0;
-}
-
-.main-footer {
+    transition: all 0.2s ease;
     text-align: center;
-    margin-top: 2rem;
-    color: var(--secondary-color);
-    font-size: 0.875rem;
 }
 
-/* Quiz Page Specific Styles */
-.quiz-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: #edf2f7;
-    border-radius: 6px;
-    margin-bottom: 2rem;
-    font-size: 0.875rem;
+.category-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-#question-container h3 {
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    line-height: 1.6;
+.custom-quiz-section {
+    margin-top: 32px;
+    text-align: center;
+    border-top: 1px solid #e8e8e8;
+    padding-top: 32px;
 }
 
-.options-grid.quiz-options {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.option-btn {
-    width: 100%;
-    padding: 1.5rem 1rem;
-    font-size: 1rem;
-    font-family: var(--font-family);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background-color: var(--card-bg-color);
-    color: var(--primary-color);
+.custom-quiz-btn-main {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    text-align: left;
-    line-height: 1.5;
+    transition: background-color 0.2s ease;
 }
 
-.option-btn:hover:not(:disabled) {
-    background-color: #edf2f7;
-    border-color: #cbd5e0;
+.custom-quiz-btn-main:hover {
+    background-color: #218838;
 }
 
-.option-btn:disabled {
-    cursor: not-allowed;
+footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 12px;
+    color: #888;
+    background-color: #f9f9f9;
 }
 
-#feedback {
-    margin-top: 2rem;
-    padding: 1rem;
-    border-radius: 6px;
-    font-size: 1rem;
+/* ▼▼▼ ここからモーダル用のスタイル ▼▼▼ */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.feedback-correct {
-    background-color: #c6f6d5;
-    color: #2f855a;
-    border: 1px solid #9ae6b4;
+.modal-content {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
-.feedback-incorrect {
-    background-color: #fed7d7;
-    color: #c53030;
-    border: 1px solid #feb2b2;
-}
-
-.quiz-footer {
-    margin-top: 2rem;
+.modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--border-color);
-    padding-top: 2rem;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
 }
 
-.btn-secondary {
-    font-size: 1rem;
-    color: var(--secondary-color);
-    text-decoration: none;
+.modal-header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.close-btn {
     background: none;
     border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal-section {
+    margin-bottom: 24px;
+}
+
+.modal-section h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.checkbox-group div, .radio-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.checkbox-group label, .radio-group label {
     cursor: pointer;
 }
 
-.btn-secondary:hover {
-    text-decoration: underline;
+.checkbox-group input, .radio-group input {
+    margin-right: 8px;
 }
 
-#next-btn {
-    width: auto;
-    padding: 0.75rem 2rem;
-}
-/* style.css の末尾に追記 */
-
-/* --- Choujuu Quiz Specific Styles --- */
-.image-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 1.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-#choujuu-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-#choujuu-instruction {
+.modal-footer {
     text-align: center;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+    padding-top: 16px;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 24px;
 }
 
-.huntable-options-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+.start-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
 }
+
+.start-btn:hover {
+    background-color: #0056b3;
+}
+/* ▲▲▲ ここまでモーダル用のスタイル ▲▲▲ */
