@@ -193,3 +193,34 @@ body {
     width: auto;
     padding: 0.75rem 2rem;
 }
+/* style.css の末尾に追記 */
+
+/* --- Choujuu Quiz Specific Styles --- */
+.image-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#choujuu-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#choujuu-instruction {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.huntable-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}

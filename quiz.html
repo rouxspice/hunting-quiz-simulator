@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>クイズ - 狩猟免許試験シミュレーター</title>
-    <link rel="stylesheet" href="style.css"> <!-- 共通のCSSを読み込む -->
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
@@ -19,11 +19,25 @@
 
         <main class="card">
             <div class="quiz-header">
-                <span id="quiz-category">現在挑戦中の試験：わな猟免許</span>
-                <span id="quiz-progress">残り1 / 2問</span>
+                <span id="quiz-category">現在挑戦中の試験：</span>
+                <span id="quiz-progress"></span>
             </div>
+
+            <!-- ▼▼▼ 狩猟鳥獣判別クイズ専用UI ▼▼▼ -->
+            <div id="choujuu-quiz-area" style="display: none;">
+                <div class="image-container">
+                    <img id="choujuu-image" src="" alt="鳥獣の写真">
+                </div>
+                <p id="choujuu-instruction">この鳥獣は、狩猟鳥獣ですか？（獲れますか？）</p>
+                <div id="huntable-options" class="huntable-options-grid">
+                    <button class="btn huntable-btn" data-answer="true">獲れる（狩猟鳥獣）</button>
+                    <button class="btn huntable-btn" data-answer="false">獲れない（非狩猟鳥獣）</button>
+                </div>
+            </div>
+            <!-- ▲▲▲ 狩猟鳥獣判別クイズ専用UI ▲▲▲ -->
+
             <div id="question-container">
-                <h3 id="question">第1問：法定猟具である「くくりわな」の使用に関する記述として、正しいものはどれか？</h3>
+                <h3 id="question"></h3>
             </div>
             <div id="options" class="options-grid quiz-options">
                 <!-- 選択肢はここに動的に生成されます -->
