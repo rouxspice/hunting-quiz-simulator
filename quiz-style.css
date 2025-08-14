@@ -50,12 +50,15 @@
 
 #choujuu-image {
     display: block;
-    max-width: 100%;
-    max-height: 400px;
+    width: 100%; /* ←幅を100%に指定 */
+    height: auto; /* ←高さは自動調整に */
+    max-height: 500px; /* ←念のため、大きくなりすぎない上限を設定 */
+    object-fit: contain; /* ←画像の比率を保ったまま表示 */
     margin: 0 auto 20px auto;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
+
 
 /* --- 選択肢ボタン --- */
 .options-grid {
@@ -155,13 +158,25 @@
     box-shadow: 0 6px 20px rgba(44, 94, 26, 0.4);
 }
 
-.home-link {
-    background: none;
-    border: 2px solid var(--primary-green);
-    color: var(--primary-green);
-    box-shadow: none;
-    margin-top: 24px;
+#next-btn, .home-link {
+    display: block;
+    width: 100%;
+    background: linear-gradient(45deg, var(--primary-green), #3a7d24);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 15px rgba(44, 94, 26, 0.3);
+    box-sizing: border-box; /* ← ★★★この1行を追加！★★★ */
 }
+
 
 .home-link:hover {
     background-color: var(--primary-green);
