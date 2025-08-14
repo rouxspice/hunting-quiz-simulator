@@ -14,17 +14,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     const huntableButtons = document.querySelectorAll('.huntable-btn');
     const questionContainer = document.getElementById('question-container');
 
-    // ★★★ ここから追記 ★★★
     // --- 効果音再生関数 ---
     function playSound(type) {
         try {
-            const audio = new Audio(`/sound/${type}.mp3`);
+            // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+            // ★★★ フォルダ名を `sounds` (複数形) に修正 ★★★
+            // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+            const audio = new Audio(`/sounds/${type}.mp3`); 
             audio.play();
         } catch (error) {
             console.error('サウンドの再生に失敗しました:', error);
         }
     }
-    // ★★★ ここまで追記 ★★★
 
     // --- クイズ情報の取得と初期設定 ---
     const quizInfoString = localStorage.getItem('quizInfo');
@@ -164,7 +165,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         if (isCorrect && userAnswer) {
-            playSound('correct'); // ★★★ 正解音を再生 ★★★
+            playSound('correct');
             feedbackElement.textContent = '正解です！では、この鳥獣の名前は？';
             feedbackElement.className = 'feedback-container feedback-correct';
             displayChoujuuNameQuestion();
@@ -177,7 +178,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const q = currentQuestions[currentQuestionIndex];
         huntableOptions.style.display = 'none';
         choujuuInstruction.textContent = 'この鳥獣の名前を答えてください。';
-        optionsElement.innerHTML = ''; // 古い選択肢をクリア
+        optionsElement.innerHTML = '';
 
         const nameOptions = [q.correct_name, q.option_2, q.option_3, q.option_4].filter(opt => opt && opt.trim() !== '');
         nameOptions.sort(() => Math.random() - 0.5);
@@ -210,11 +211,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         huntableButtons.forEach(btn => btn.disabled = true);
 
         if (isCorrect) {
-            playSound('correct'); // ★★★ 正解音を再生 ★★★
+            playSound('correct');
             feedbackElement.textContent = `正解！ 解説：${explanation}`;
             feedbackElement.className = 'feedback-container feedback-correct';
         } else {
-            playSound('incorrect'); // ★★★ 不正解音を再生 ★★★
+            playSound('incorrect');
             feedbackElement.textContent = `不正解。解説：${explanation}`;
             feedbackElement.className = 'feedback-container feedback-incorrect';
         }
