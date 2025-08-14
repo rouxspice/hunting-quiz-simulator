@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     // --- DOM要素の取得 ---
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 効果音再生関数 ---
     function playSound(type) {
         try {
-            const audio = new Audio(`/sounds/${type}.mp3`);
+            // ★★★ フォルダ名を `sounds` (複数形) に修正 ★★★
+            const audio = new Audio(`/sounds/${type}.mp3`); 
             audio.play();
         } catch (error) {
             console.error('サウンドの再生に失敗しました:', error);
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const quizInfo = JSON.parse(quizInfoString);
     quizCategoryElement.textContent = `現在挑戦中の試験：${quizInfo.categoryName}`;
+    let allQuestions = [];
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
@@ -39,41 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- PapaParseの動的ロード ---
     const papaParseScript = document.createElement('script');
     papaParseScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js';
-    document.head.appendChild(papaParseScript );
+    document.head.appendChild(papaParseScript  );
 
     papaParseScript.onload = async () => {
         try {
-            if (quizInfo.type === 'real') {
-                const commonPromise = fetch('/data/common.csv').then(res => res.text());
-                const methodPromise = fetch(`/data/${quizInfo.categories[1]}.csv`).then(res => res.text());
-                const [commonCsv, methodCsv] = await Promise.all([commonPromise, methodPromise]);
-                const commonQuestions = Papa.parse(commonCsv, { header: true, skipEmptyLines: true }).data.filter(q => q.question_text || q.image_file);
-                const methodQuestions = Papa.parse(methodCsv, { header: true, skipEmptyLines: true }).data.filter(q => q.question_text || q.image_file);
-                commonQuestions.sort(() => Math.random() - 0.5);
-                methodQuestions.sort(() => Math.random() - 0.5);
-                const selectedCommon = commonQuestions.slice(0, 24);
-                const selectedMethod = methodQuestions.slice(0, 6);
-                currentQuestions = [...selectedCommon, ...selectedMethod];
-            } else { // 'custom' と 'single' の両方をここで処理
-                const fetchPromises = quizInfo.categories.map(category =>
-                    fetch(`/data/${category}.csv`)
-                        .then(response => {
-                            if (!response.ok) throw new Error(`CSVが見つかりません: ${category}.csv`);
-                            return response.text();
-                        })
-                        .then(csvText => Papa.parse(csvText, { header: true, skipEmptyLines: true }).data)
-                );
-                const results = await Promise.all(fetchPromises);
-                let allQuestions = results.flat().filter(q => q.question_text || q.image_file);
-                allQuestions.sort(() => Math.random() - 0.5);
-                if (quizInfo.numQuestions === 'all' || allQuestions.length < quizInfo.numQuestions) {
-                    currentQuestions = allQuestions;
-                } else {
-                    currentQuestions = allQuestions.slice(0, parseInt(quizInfo.numQuestions, 10));
-                }
-            }
+            const fetchPromises = quizInfo.categories.map(category =>
+                fetch(`/data/${category}.csv`)
+                    .then(response => {
+                        if (!response.ok) throw new Error(`CSVが見つかりません: ${category}.csv`);
+                        return response.text();
+                    })
+                    .then(csvText => Papa.parse(csvText, { header: true, skipEmptyLines: true }).data)
+            );
+            const results = await Promise.all(fetchPromises);
+            allQuestions = results.flat().filter(q => q.question_text || q.image_file);
+            allQuestions.sort(() => Math.random() - 0.5);
 
-            currentQuestions.sort(() => Math.random() - 0.5);
+            if (quizInfo.numQuestions === 'all' || allQuestions.length < quizInfo.numQuestions) {
+                currentQuestions = allQuestions;
+            } else {
+                currentQuestions = allQuestions.slice(0, parseInt(quizInfo.numQuestions, 10));
+            }
 
             if (currentQuestions.length === 0) {
                 questionElement.textContent = '選択されたカテゴリに、まだ問題がありません。';
@@ -106,8 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
         optionsElement.innerHTML = '';
         questionContainer.style.display = 'block';
         choujuuQuizArea.style.display = 'none';
+
         const q = currentQuestions[currentQuestionIndex];
-        const isChoujuuQuestion = (q.is_huntable !== undefined && q.is_huntable !== '');
+        const isChoujuuQuestion = (quizInfo.categories.includes('choujuu_hnb') || quizInfo.categories.includes('common')) && q.image_file;
+
         if (isChoujuuQuestion) {
              displayChoujuuQuestion();
         } else {
@@ -133,10 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
         questionContainer.style.display = 'none';
         choujuuQuizArea.style.display = 'block';
         huntableOptions.style.display = 'grid';
+        
         huntableButtons.forEach(btn => {
             btn.disabled = false;
             btn.classList.remove('correct', 'incorrect');
         });
+
         choujuuImage.src = `/images/${q.image_file}`;
         choujuuImage.alt = `鳥獣の写真: ${q.correct_name}`;
         choujuuInstruction.textContent = 'この鳥獣は、狩猟鳥獣ですか？（獲れますか？）';
@@ -146,7 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const q = currentQuestions[currentQuestionIndex];
         const correctIndex = parseInt(q.correct_answer, 10);
         const isCorrect = selected === correctIndex;
-        if (isCorrect) score++;
+        if(isCorrect) score++;
+        
         Array.from(optionsElement.children).forEach((btn, i) => {
             if ((i + 1) === correctIndex) {
                 btn.classList.add('correct');
@@ -154,12 +147,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.add('incorrect');
             }
         });
+
         showFeedback(isCorrect, q.explanation);
     }
 
     function checkHuntableAnswer(userAnswer) {
         const q = currentQuestions[currentQuestionIndex];
         const isCorrect = (q.is_huntable.toLowerCase() === 'true') === userAnswer;
+
         huntableButtons.forEach(btn => {
             const btnAnswer = btn.dataset.answer === 'true';
             if (btnAnswer === (q.is_huntable.toLowerCase() === 'true')) {
@@ -168,12 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.add('incorrect');
             }
         });
+
         if (isCorrect && userAnswer) {
             feedbackElement.textContent = '正解です！では、この鳥獣の名前は？';
             feedbackElement.className = 'feedback-container feedback-correct';
             displayChoujuuNameQuestion();
         } else {
-            if (isCorrect) score++;
+            if(isCorrect) score++;
             showFeedback(isCorrect, q.explanation);
         }
     }
@@ -183,8 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
         huntableOptions.style.display = 'none';
         choujuuInstruction.textContent = 'この鳥獣の名前を答えてください。';
         optionsElement.innerHTML = '';
+
         const nameOptions = [q.correct_name, q.option_2, q.option_3, q.option_4].filter(opt => opt && opt.trim() !== '');
         nameOptions.sort(() => Math.random() - 0.5);
+
         nameOptions.forEach(opt => {
             const button = document.createElement('button');
             button.textContent = opt;
@@ -197,7 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkChoujuuNameAnswer(selectedName) {
         const q = currentQuestions[currentQuestionIndex];
         const isCorrect = selectedName === q.correct_name;
-        if (isCorrect) score++;
+        if(isCorrect) score++;
+
         Array.from(optionsElement.children).forEach(btn => {
             if (btn.textContent === q.correct_name) {
                 btn.classList.add('correct');
@@ -211,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showFeedback(isCorrect, explanation) {
         Array.from(optionsElement.children).forEach(btn => btn.disabled = true);
         huntableButtons.forEach(btn => btn.disabled = true);
+
         if (isCorrect) {
             playSound('correct');
             feedbackElement.textContent = `正解！ 解説：${explanation}`;
@@ -231,7 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const resultInfo = {
                 score: score,
                 total: currentQuestions.length,
-                quizInfo: quizInfo
+                quizInfo: quizInfo,
+                mistakes: [] // ここに間違えた問題を入れるロジックを後で追加
             };
             localStorage.setItem('resultInfo', JSON.stringify(resultInfo));
             window.location.href = 'result.html';
