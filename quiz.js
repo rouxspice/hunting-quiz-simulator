@@ -17,9 +17,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     // --- 効果音再生関数 ---
     function playSound(type) {
         try {
-            // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-            // ★★★ フォルダ名を `sounds` (複数形) に修正 ★★★
-            // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
             const audio = new Audio(`/sounds/${type}.mp3`); 
             audio.play();
         } catch (error) {
@@ -165,11 +162,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         if (isCorrect && userAnswer) {
-            playSound('correct');
+            // ★★★ 正解（獲れる）だが、まだ名前を答えていないので、ここでは音を鳴らさない ★★★
             feedbackElement.textContent = '正解です！では、この鳥獣の名前は？';
             feedbackElement.className = 'feedback-container feedback-correct';
             displayChoujuuNameQuestion();
         } else {
+            // ★★★ 不正解の場合は、ここで結果が確定するので音を鳴らす ★★★
             showFeedback(isCorrect, q.explanation);
         }
     }
@@ -203,6 +201,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 btn.classList.add('incorrect');
             }
         });
+        // ★★★ 名前の正誤判定後、ここで最終的なフィードバックと音を出す ★★★
         showFeedback(isCorrect, q.explanation);
     }
 
@@ -211,11 +210,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         huntableButtons.forEach(btn => btn.disabled = true);
 
         if (isCorrect) {
-            playSound('correct');
+            playSound('correct'); // ★★★ 正解音はここで一括管理 ★★★
             feedbackElement.textContent = `正解！ 解説：${explanation}`;
             feedbackElement.className = 'feedback-container feedback-correct';
         } else {
-            playSound('incorrect');
+            playSound('incorrect'); // ★★★ 不正解音はここで一括管理 ★★★
             feedbackElement.textContent = `不正解。解説：${explanation}`;
             feedbackElement.className = 'feedback-container feedback-incorrect';
         }
