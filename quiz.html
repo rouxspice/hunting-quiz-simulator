@@ -5,50 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>クイズ - 狩猟免許試験シミュレーター</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico"> <!-- パスを修正 -->
 </head>
 <body>
     <div class="main-container">
         <header class="main-header">
             <div class="logo">
-                <img src="images/logo.png" alt="ロゴ">
+                <img src="/images/logo.png" alt="ロゴ"> <!-- ★★★ パスを修正 ★★★ -->
                 <h1>狩猟免許試験シミュレーター</h1>
             </div>
             <span class="version">ver. 3.1</span>
         </header>
-
         <main class="card">
             <div class="quiz-header">
                 <span id="quiz-category">現在挑戦中の試験：</span>
                 <span id="quiz-progress"></span>
             </div>
-
-            <!-- ▼▼▼ 狩猟鳥獣判別クイズ専用UI ▼▼▼ -->
             <div id="choujuu-quiz-area" style="display: none;">
                 <div class="image-container">
                     <img id="choujuu-image" src="" alt="鳥獣の写真">
                 </div>
-                <p id="choujuu-instruction">この鳥獣は、狩猟鳥獣ですか？（獲れますか？）</p>
+                <p id="choujuu-instruction"></p>
                 <div id="huntable-options" class="huntable-options-grid">
                     <button class="btn huntable-btn" data-answer="true">獲れる（狩猟鳥獣）</button>
                     <button class="btn huntable-btn" data-answer="false">獲れない（非狩猟鳥獣）</button>
                 </div>
             </div>
-            <!-- ▲▲▲ 狩猟鳥獣判別クイズ専用UI ▲▲▲ -->
-
             <div id="question-container">
                 <h3 id="question"></h3>
             </div>
-            <div id="options" class="options-grid quiz-options">
-                <!-- 選択肢はここに動的に生成されます -->
-            </div>
+            <div id="options" class="options-grid quiz-options"></div>
             <div id="feedback"></div>
             <div class="quiz-footer">
                 <a href="index.html" class="btn-secondary">ホームに戻る</a>
                 <button id="next-btn" class="btn" style="display: none;">次の問題へ</button>
             </div>
         </main>
-
         <footer class="main-footer">
             <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
         </footer>
