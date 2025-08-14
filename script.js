@@ -1,20 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- DOM要素の取得 ---
     const customExamBtn = document.getElementById('custom-exam-btn');
-    const realExamBtn = document.getElementById('real-exam-btn'); // ★ 新しいボタンを取得
+    const realExamBtn = document.getElementById('real-exam-btn');
+    const categoryButtons = document.querySelectorAll('.category-btn'); // ★★★ 破壊した個別ボタンを再取得 ★★★
     const modal = document.getElementById('category-modal');
     const closeModalBtn = document.querySelector('.close-btn');
     const startQuizBtn = document.getElementById('start-quiz-btn');
     const categoryCheckboxes = document.querySelectorAll('.category-checkbox');
     const numQuestionsSelect = document.getElementById('num-questions');
-    
-    // --- 猟具選択モーダル用の要素 ---
     const huntingMethodModal = document.getElementById('hunting-method-modal');
     const closeMethodModalBtn = document.getElementById('close-method-modal-btn');
     const startRealExamBtn = document.getElementById('start-real-exam-btn');
 
-
     // --- イベントリスナー ---
+
+    // ★★★★★ 個別カテゴリボタンのクリックイベントを完全修復 ★★★★★
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.dataset.category;
+            const categoryName = button.textContent;
+            
+            const quizInfo = {
+                type: 'single', // 個別カテゴリ用のタイプ
+                categories: [category],
+                categoryName: categoryName,
+                numQuestions: 'all' // 個別カテゴリは常に全問出題
+            };
+
+            localStorage.setItem('quizInfo', JSON.stringify(quizInfo));
+            window.location.href = 'quiz.html';
+        });
+    });
 
     // 「カスタム模擬試験」ボタンのクリックイベント
     if (customExamBtn) {
@@ -23,33 +39,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ★★★ 「本番模擬試験」ボタンのクリックイベントを新設 ★★★
+    // 「本番模擬試験」ボタンのクリックイベント
     if (realExamBtn) {
         realExamBtn.addEventListener('click', () => {
             huntingMethodModal.style.display = 'block';
         });
     }
 
-    // カスタムモーダルの閉じるボタン
+    // モーダルの閉じるボタン
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', () => {
             modal.style.display = 'none';
         });
     }
-    
-    // ★★★ 猟具選択モーダルの閉じるボタン ★★★
     if (closeMethodModalBtn) {
         closeMethodModalBtn.addEventListener('click', () => {
             huntingMethodModal.style.display = 'none';
         });
     }
 
-    // カスタムモーダルの外側クリックで閉じる
+    // モーダルの外側クリックで閉じる
     window.addEventListener('click', (event) => {
         if (event.target == modal) {
             modal.style.display = 'none';
         }
-        // ★★★ 猟具選択モーダルの外側クリックで閉じる ★★★
         if (event.target == huntingMethodModal) {
             huntingMethodModal.style.display = 'none';
         }
@@ -82,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ★★★ 「本番試験開始」ボタンのクリックイベントを新設 ★★★
+    // 「本番試験開始」ボタンのクリックイベント
     if (startRealExamBtn) {
         startRealExamBtn.addEventListener('click', () => {
             const selectedMethodRadio = document.querySelector('input[name="hunting-method"]:checked');
@@ -92,15 +105,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const selectedMethod = selectedMethodRadio.value; // 例: "wana"
-            const methodName = selectedMethodRadio.parentElement.textContent.trim(); // 例: "わな猟免許"
+            const selectedMethod = selectedMethodRadio.value;
+            const methodName = selectedMethodRadio.parentElement.textContent.trim();
 
-            // 本番試験用の情報を設定
             const quizInfo = {
                 type: 'real',
-                categories: ['common', selectedMethod], // 共通問題 + 選択した猟具
+                categories: ['common', selectedMethod],
                 categoryName: `本番模擬試験（${methodName}）`,
-                numQuestions: 30 // 問題数は30問で固定
+                numQuestions: 30
             };
 
             localStorage.setItem('quizInfo', JSON.stringify(quizInfo));
