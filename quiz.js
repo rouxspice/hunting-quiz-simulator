@@ -6,11 +6,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const nextButton = document.getElementById('next-btn');
     const quizCategoryElement = document.getElementById('quiz-category');
     const quizProgressElement = document.getElementById('quiz-progress');
+    const progressBar = document.getElementById('progress-bar'); // ★追加
     const choujuuQuizArea = document.getElementById('choujuu-quiz-area');
     const choujuuImage = document.getElementById('choujuu-image');
     const choujuuInstruction = document.getElementById('choujuu-instruction');
     const huntableOptions = document.getElementById('huntable-options');
-    const huntableButtons = document.querySelectorAll('.huntable-btn'); // ボタンを最初に取得
+    const huntableButtons = document.querySelectorAll('.huntable-btn');
     const questionContainer = document.getElementById('question-container');
 
     // --- クイズ情報の取得と初期設定 ---
@@ -54,7 +55,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 questionElement.textContent = '選択されたカテゴリに、まだ問題がありません。';
                 return;
             }
-            // ★★★ 修正点1: イベントリスナーを最初に一度だけ設定 ★★★
             huntableButtons.forEach(btn => {
                 btn.addEventListener('click', () => checkHuntableAnswer(btn.dataset.answer === 'true'));
             });
@@ -66,14 +66,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
+    // ★★★ プログレスバー更新関数 ★★★
     function updateProgress() {
-        quizProgressElement.textContent = `残り ${currentQuestions.length - currentQuestionIndex} / ${currentQuestions.length} 問`;
+        const total = currentQuestions.length;
+        const current = currentQuestionIndex + 1;
+        quizProgressElement.textContent = `残り ${total - currentQuestionIndex} / ${total} 問`;
+        const progressPercentage = (current / total) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
     }
 
     function displayQuestion() {
         updateProgress();
         feedbackElement.textContent = '';
-        feedbackElement.className = '';
+        feedbackElement.className = 'feedback-container';
         nextButton.style.display = 'none';
         optionsElement.innerHTML = '';
         questionContainer.style.display = 'block';
@@ -92,11 +97,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     function displayNormalQuestion() {
         const q = currentQuestions[currentQuestionIndex];
         questionElement.textContent = `第${currentQuestionIndex + 1}問：${q.question_text}`;
-        [q.option_1, q.option_2, q.option_3, q.option_4].filter(opt => opt && opt.trim() !== '').forEach((opt, i) => {
+        const options = [q.option_1, q.option_2, q.option_3, q.option_4].filter(opt => opt && opt.trim() !== '');
+        options.forEach((opt, i) => {
             const button = document.createElement('button');
             button.textContent = opt;
             button.classList.add('option-btn');
-            button.addEventListener('click', () => checkNormalAnswer(i + 1));
+            button.addEventListener('click', (event) => checkNormalAnswer(i + 1, event.target));
             optionsElement.appendChild(button);
         });
     }
@@ -107,7 +113,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         choujuuQuizArea.style.display = 'block';
         huntableOptions.style.display = 'grid';
         
-        // ★★★ 修正点2: ボタンの状態をリセット ★★★
         huntableButtons.forEach(btn => btn.disabled = false);
 
         choujuuImage.src = `/images/${q.image_file}`;
@@ -115,19 +120,39 @@ document.addEventListener('DOMContentLoaded', async () => {
         choujuuInstruction.textContent = 'この鳥獣は、狩猟鳥獣ですか？（獲れますか？）';
     }
 
-    function checkNormalAnswer(selected) {
+    // ★★★ 解答チェック関数に、クリックされたボタンを渡すように変更 ★★★
+    function checkNormalAnswer(selected, clickedButton) {
         const q = currentQuestions[currentQuestionIndex];
-        const correct = parseInt(q.correct_answer, 10);
-        showFeedback(selected === correct, q.explanation, q[`option_${correct}`]);
+        const correctIndex = parseInt(q.correct_answer, 10);
+        const isCorrect = selected === correctIndex;
+        
+        Array.from(optionsElement.children).forEach((btn, i) => {
+            if ((i + 1) === correctIndex) {
+                btn.classList.add('correct');
+            } else if ((i + 1) === selected) {
+                btn.classList.add('incorrect');
+            }
+        });
+
+        showFeedback(isCorrect, q.explanation);
     }
 
     function checkHuntableAnswer(userAnswer) {
         const q = currentQuestions[currentQuestionIndex];
         const isCorrect = (q.is_huntable.toLowerCase() === 'true') === userAnswer;
 
+        huntableButtons.forEach(btn => {
+            const btnAnswer = btn.dataset.answer === 'true';
+            if (btnAnswer === (q.is_huntable.toLowerCase() === 'true')) {
+                btn.classList.add('correct');
+            } else if (btnAnswer === userAnswer) {
+                btn.classList.add('incorrect');
+            }
+        });
+
         if (isCorrect && userAnswer) {
             feedbackElement.textContent = '正解です！では、この鳥獣の名前は？';
-            feedbackElement.className = 'feedback-correct';
+            feedbackElement.className = 'feedback-container feedback-correct';
             displayChoujuuNameQuestion();
         } else {
             showFeedback(isCorrect, q.explanation);
@@ -154,21 +179,27 @@ document.addEventListener('DOMContentLoaded', async () => {
     function checkChoujuuNameAnswer(selectedName) {
         const q = currentQuestions[currentQuestionIndex];
         const isCorrect = selectedName === q.correct_name;
-        showFeedback(isCorrect, q.explanation, q.correct_name);
+
+        Array.from(optionsElement.children).forEach(btn => {
+            if (btn.textContent === q.correct_name) {
+                btn.classList.add('correct');
+            } else if (btn.textContent === selectedName) {
+                btn.classList.add('incorrect');
+            }
+        });
+        showFeedback(isCorrect, q.explanation);
     }
 
-    function showFeedback(isCorrect, explanation, correctAnswerText = '') {
+    function showFeedback(isCorrect, explanation) {
         Array.from(optionsElement.children).forEach(btn => btn.disabled = true);
-        // ★★★ 修正点3: huntableButtonsを無効化 ★★★
         huntableButtons.forEach(btn => btn.disabled = true);
 
         if (isCorrect) {
             feedbackElement.textContent = `正解！ 解説：${explanation}`;
-            feedbackElement.className = 'feedback-correct';
+            feedbackElement.className = 'feedback-container feedback-correct';
         } else {
-            const answerPart = correctAnswerText ? `正解は「${correctAnswerText}」です。` : '';
-            feedbackElement.textContent = `不正解。${answerPart}解説：${explanation}`;
-            feedbackElement.className = 'feedback-incorrect';
+            feedbackElement.textContent = `不正解。解説：${explanation}`;
+            feedbackElement.className = 'feedback-container feedback-incorrect';
         }
         nextButton.style.display = 'block';
     }
@@ -178,6 +209,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (currentQuestionIndex < currentQuestions.length) {
             displayQuestion();
         } else {
+            // ここにリザルト画面への遷移処理を後で追加
             questionElement.textContent = '全問終了です！お疲れ様でした。';
             optionsElement.innerHTML = '';
             feedbackElement.textContent = '';
