@@ -3,48 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>クイズ - 狩猟免許試験シミュレーター</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>狩猟免許試験 - クイズ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quiz-style.css">
     <link rel="icon" href="/app-icon.png">
 </head>
 <body>
-    <div class="main-container">
-        <header class="main-header">
-            <div class="logo">
-                <img src="/images/app-icon.png" alt="ロゴ"> <!-- ★ ルート相対パスに修正 -->
-                <h1>狩猟免許試験シミュレーター</h1>
-            </div>
-            <span class="version">ver. 3.1</span>
+    <div class="container">
+        <header>
+            <img src="/images/app-icon.png" alt="ロゴ" class="logo">
+            <h1>狩猟免許試験シミュレーター</h1>
+            <span class="version">ver. 3.2</span>
         </header>
-        <main class="card">
-            <div class="quiz-header">
-                <span id="quiz-category">現在挑戦中の試験：</span>
-                <span id="quiz-progress"></span>
-            </div>
-            <div id="choujuu-quiz-area" style="display: none;">
-                <div class="image-container">
+        <main>
+            <div id="quiz-screen">
+                <div class="quiz-header">
+                    <span id="quiz-category">現在挑戦中の試験：...</span>
+                    <span id="quiz-progress">残り ... / ... 問</span>
+                </div>
+
+                <!-- 鳥獣判別クイズ用エリア -->
+                <div id="choujuu-quiz-area" style="display: none;">
                     <img id="choujuu-image" src="" alt="鳥獣の写真">
+                    <p id="choujuu-instruction"></p>
+                    <div id="huntable-options" class="options-grid">
+                        <button class="option-btn huntable-btn" data-answer="true">獲れる（狩猟鳥獣）</button>
+                        <button class="option-btn huntable-btn" data-answer="false">獲れない（非狩猟鳥獣）</button>
+                    </div>
                 </div>
-                <p id="choujuu-instruction"></p>
-                <div id="huntable-options" class="huntable-options-grid">
-                    <button class="btn huntable-btn" data-answer="true">獲れる（狩猟鳥獣）</button>
-                    <button class="btn huntable-btn" data-answer="false">獲れない（非狩猟鳥獣）</button>
+
+                <!-- 通常問題用エリア -->
+                <div id="question-container">
+                    <p id="question">問題文を読み込んでいます...</p>
                 </div>
+                
+                <div id="options" class="options-grid">
+                    <!-- 選択肢ボタンはJSで生成 -->
+                </div>
+                <div id="feedback" class="feedback-container"></div>
+                <button id="next-btn" style="display: none;">次の問題へ</button>
             </div>
-            <div id="question-container">
-                <h3 id="question"></h3>
-            </div>
-            <div id="options" class="options-grid quiz-options"></div>
-            <div id="feedback"></div>
-            <div class="quiz-footer">
-                <a href="/index.html" class="btn-secondary">ホームに戻る</a> <!-- ★ ルート相対パスに修正 -->
-                <button id="next-btn" class="btn" style="display: none;">次の問題へ</button>
-            </div>
+            <a href="index.html" class="home-link">ホームに戻る</a>
         </main>
-        <footer class="main-footer">
+        <footer>
             <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
         </footer>
     </div>
-    <script src="/quiz.js"></script>
+    <script src="quiz.js"></script>
 </body>
 </html>
