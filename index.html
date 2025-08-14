@@ -4,47 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>狩猟免許試験シミュレーター</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="quiz-style.css">
+    <link rel="icon" href="/images/app-icon.png">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="header-logo">
-                <img src="images/logo.svg" alt="ロゴ">
-                <h1 class="header-title">狩猟免許試験シミュレーター</h1>
+    <header>
+        <div class="logo-container">
+            <img src="/images/app-icon.png" alt="ロゴ" class="logo-icon">
+            <h1>狩猟免許試験シミュレーター</h1>
+        </div>
+        <span class="version">ver. 4.1</span>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <h2>挑戦する試験の種類を選んでください</h2>
+            
+            <!-- 個別カテゴリ挑戦ボタン -->
+            <div class="category-grid">
+                <button class="category-btn" data-category="wana">わな猟免許</button>
+                <button class="category-btn" data-category="ami">網猟免許</button>
+                <button class="category-btn" data-category="juuryou_1">第一種銃猟免許</button>
+                <button class="category-btn" data-category="juuryou_2">第二種銃猟免許</button>
+                <button class="category-btn" data-category="choujuu_hnb">狩猟鳥獣判別クイズ</button>
+                <button class="category-btn" data-category="syoshinsya">猟銃等講習会(初心者)</button>
             </div>
-            <span class="header-version">ver. 4.0</span>
-        </header>
 
-        <main class="main-content">
-            <!-- クイズ選択画面 -->
-            <section id="quiz-selection">
-                <h2 class="quiz-selection-title">挑戦する試験を選んでください</h2>
-                <ul class="quiz-list">
-                    <li><a href="#" class="quiz-btn" data-quiz-id="chouju-hantei">狩猟鳥獣判別クイズ</a></li>
-                    <li><a href="#" class="quiz-btn" data-quiz-id="wana-hantei">わな猟具判別クイズ</a></li>
-                    <li><a href="#" class="quiz-btn" data-quiz-id="dai-nishu">第二種銃猟免許</a></li>
-                </ul>
-            </section>
+            <hr class="divider">
 
-            <!-- クイズ画面 -->
-            <section id="quiz-container" class="hidden">
-                <div id="quiz-status" class="quiz-status"></div>
-                <div id="question-container" class="question-container">
-                    <!-- 問題はここに動的に挿入されます -->
-                </div>
-                <!-- ★★★★★ 修正箇所 ★★★★★ -->
-                <a href="#" id="back-to-home" class="back-to-home">ホームに戻る</a>
-                <!-- ★★★★★ ここまで ★★★★★ -->
-            </section>
-        </main>
+            <!-- 模擬試験ボタン群 -->
+            <div class="button-group">
+                <button id="real-exam-btn" class="btn btn-primary btn-large">本番模擬試験</button>
+                <button id="custom-exam-btn" class="btn btn-secondary btn-large">カスタム模擬試験を作成する</button>
+            </div>
+        </div>
+    </main>
 
-        <footer class="footer">
-            <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
-        </footer>
+    <footer>
+        <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
+    </footer>
+
+    <!-- カスタム模擬試験用モーダル -->
+    <div id="category-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>カスタム模擬試験の作成</h3>
+            <p>挑戦したいカテゴリをすべて選択してください。</p>
+            <div class="checkbox-group">
+                <label><input type="checkbox" class="category-checkbox" value="common"> 共通問題（法令・鳥獣知識）</label>
+                <label><input type="checkbox" class="category-checkbox" value="wana"> わな猟免許</label>
+                <label><input type="checkbox" class="category-checkbox" value="ami"> 網猟免許</label>
+                <label><input type="checkbox" class="category-checkbox" value="juuryou_1"> 第一種銃猟免許</label>
+                <label><input type="checkbox" class="category-checkbox" value="juuryou_2"> 第二種銃猟免許</label>
+                <label><input type="checkbox" class="category-checkbox" value="choujuu_hnb"> 狩猟鳥獣判別クイズ</label>
+                <label><input type="checkbox" class="category-checkbox" value="syoshinsya"> 猟銃等講習会(初心者)</label>
+            </div>
+            <div class="num-questions-group">
+                <label for="num-questions">出題数を選択:</label>
+                <select id="num-questions">
+                    <option value="10">10問</option>
+                    <option value="20">20問</option>
+                    <option value="30">30問</option>
+                    <option value="all">全問</option>
+                </select>
+            </div>
+            <button id="start-quiz-btn" class="btn btn-primary">カスタム試験 開始</button>
+        </div>
     </div>
 
-    <script src="quiz.js"></script>
+    <!-- 本番模擬試験用モーダル -->
+    <div id="hunting-method-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-method-modal-btn">&times;</span>
+            <h3>本番模擬試験</h3>
+            <p>受験する猟具を1つ選択してください。</p>
+            <div class="radio-group">
+                <label><input type="radio" name="hunting-method" value="wana"> わな猟免許</label>
+                <label><input type="radio" name="hunting-method" value="ami"> 網猟免許</label>
+                <label><input type="radio" name="hunting-method" value="juuryou_1"> 第一種銃猟免許</label>
+                <label><input type="radio" name="hunting-method" value="juuryou_2"> 第二種銃猟免許</label>
+            </div>
+            <button id="start-real-exam-btn" class="btn btn-primary">試験開始</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
