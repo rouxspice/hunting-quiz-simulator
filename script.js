@@ -1,67 +1,108 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const homeScreen = document.getElementById('home-screen');
-    if (homeScreen) {
-        // --- 個別カテゴリ開始処理 ---
-        const categoryButtons = document.querySelectorAll('.category-btn');
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const quizInfo = {
-                    type: 'single',
-                    categories: [button.dataset.category],
-                    categoryName: button.dataset.name,
-                    numQuestions: 'all' // 個別カテゴリは常に全問出題
-                };
-                localStorage.setItem('quizInfo', JSON.stringify(quizInfo));
-                window.location.href = 'quiz.html';
-            });
-        });
+    // --- DOM要素の取得 ---
+    const customExamBtn = document.getElementById('custom-exam-btn');
+    const realExamBtn = document.getElementById('real-exam-btn'); // ★ 新しいボタンを取得
+    const modal = document.getElementById('category-modal');
+    const closeModalBtn = document.querySelector('.close-btn');
+    const startQuizBtn = document.getElementById('start-quiz-btn');
+    const categoryCheckboxes = document.querySelectorAll('.category-checkbox');
+    const numQuestionsSelect = document.getElementById('num-questions');
+    
+    // --- 猟具選択モーダル用の要素 ---
+    const huntingMethodModal = document.getElementById('hunting-method-modal');
+    const closeMethodModalBtn = document.getElementById('close-method-modal-btn');
+    const startRealExamBtn = document.getElementById('start-real-exam-btn');
 
-        // --- モーダル関連処理 ---
-        const customQuizBtn = document.getElementById('custom-quiz-btn');
-        const modal = document.getElementById('custom-quiz-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-        const selectAllCheckbox = document.getElementById('select-all-categories');
-        const categoryCheckboxes = document.querySelectorAll('.checkbox-group input[name="category"]');
-        const startCustomQuizBtn = document.getElementById('start-custom-quiz-btn');
 
-        customQuizBtn.addEventListener('click', () => { modal.style.display = 'flex'; });
-        closeModalBtn.addEventListener('click', () => { modal.style.display = 'none'; });
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
+    // --- イベントリスナー ---
 
-        selectAllCheckbox.addEventListener('change', () => {
-            categoryCheckboxes.forEach(checkbox => { checkbox.checked = selectAllCheckbox.checked; });
+    // 「カスタム模擬試験」ボタンのクリックイベント
+    if (customExamBtn) {
+        customExamBtn.addEventListener('click', () => {
+            modal.style.display = 'block';
         });
+    }
 
-        categoryCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                selectAllCheckbox.checked = Array.from(categoryCheckboxes).every(cb => cb.checked);
-            });
+    // ★★★ 「本番模擬試験」ボタンのクリックイベントを新設 ★★★
+    if (realExamBtn) {
+        realExamBtn.addEventListener('click', () => {
+            huntingMethodModal.style.display = 'block';
         });
-        
-        // ▼▼▼ 「試験を開始する」ボタンの最終ロジック ▼▼▼
-        startCustomQuizBtn.addEventListener('click', () => {
+    }
+
+    // カスタムモーダルの閉じるボタン
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
+    
+    // ★★★ 猟具選択モーダルの閉じるボタン ★★★
+    if (closeMethodModalBtn) {
+        closeMethodModalBtn.addEventListener('click', () => {
+            huntingMethodModal.style.display = 'none';
+        });
+    }
+
+    // カスタムモーダルの外側クリックで閉じる
+    window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+        // ★★★ 猟具選択モーダルの外側クリックで閉じる ★★★
+        if (event.target == huntingMethodModal) {
+            huntingMethodModal.style.display = 'none';
+        }
+    });
+
+    // 「カスタム試験開始」ボタンのクリックイベント
+    if (startQuizBtn) {
+        startQuizBtn.addEventListener('click', () => {
             const selectedCategories = Array.from(categoryCheckboxes)
                 .filter(cb => cb.checked)
                 .map(cb => cb.value);
 
             if (selectedCategories.length === 0) {
-                alert('試験の種類を1つ以上選択してください。');
+                alert('挑戦するカテゴリを1つ以上選択してください。');
                 return;
             }
 
-            const selectedNum = document.querySelector('input[name="num-questions"]:checked').value;
+            const categoryName = "カスタム模擬試験";
+            const numQuestions = numQuestionsSelect.value;
 
             const quizInfo = {
                 type: 'custom',
                 categories: selectedCategories,
-                categoryName: 'カスタム模擬試験',
-                numQuestions: selectedNum
+                categoryName: categoryName,
+                numQuestions: numQuestions
             };
+
+            localStorage.setItem('quizInfo', JSON.stringify(quizInfo));
+            window.location.href = 'quiz.html';
+        });
+    }
+
+    // ★★★ 「本番試験開始」ボタンのクリックイベントを新設 ★★★
+    if (startRealExamBtn) {
+        startRealExamBtn.addEventListener('click', () => {
+            const selectedMethodRadio = document.querySelector('input[name="hunting-method"]:checked');
             
+            if (!selectedMethodRadio) {
+                alert('受験する猟具を1つ選択してください。');
+                return;
+            }
+
+            const selectedMethod = selectedMethodRadio.value; // 例: "wana"
+            const methodName = selectedMethodRadio.parentElement.textContent.trim(); // 例: "わな猟免許"
+
+            // 本番試験用の情報を設定
+            const quizInfo = {
+                type: 'real',
+                categories: ['common', selectedMethod], // 共通問題 + 選択した猟具
+                categoryName: `本番模擬試験（${methodName}）`,
+                numQuestions: 30 // 問題数は30問で固定
+            };
+
             localStorage.setItem('quizInfo', JSON.stringify(quizInfo));
             window.location.href = 'quiz.html';
         });
