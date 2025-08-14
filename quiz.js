@@ -88,18 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // 鳥獣判別問題を表示 (第1段階)
         function displayChoujuuQuestion() {
             const q = questions[currentQuestionIndex];
-            questionContainer.style.display = 'none'; // 問題文エリアを隠す
+            questionContainer.style.display = 'none';
             choujuuQuizArea.style.display = 'block';
             huntableOptions.style.display = 'grid';
             
-            // 日本語ファイル名をエンコードしてパスを設定
-            choujuuImage.src = `images/${encodeURIComponent(q.image_file)}`;
+            // ★★★ 修正箇所 ★★★
+            choujuuImage.src = `/images/${encodeURIComponent(q.image_file)}`;
             choujuuImage.alt = `鳥獣の写真: ${q.correct_name}`;
             choujuuInstruction.textContent = 'この鳥獣は、狩猟鳥獣ですか？（獲れますか？）';
 
-            // ボタンのイベントリスナーを再設定
             document.querySelectorAll('.huntable-btn').forEach(btn => {
-                // 古いリスナーを削除して新しいのを設定
                 const newBtn = btn.cloneNode(true);
                 btn.parentNode.replaceChild(newBtn, btn);
                 newBtn.addEventListener('click', () => checkHuntableAnswer(newBtn.dataset.answer === 'true'));
@@ -119,12 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const isCorrect = (q.is_huntable.toLowerCase() === 'true') === userAnswer;
 
             if (isCorrect && userAnswer) {
-                // 正解、かつ「獲れる」と答えた場合 -> 第2段階へ
                 feedbackElement.textContent = '正解です！では、この鳥獣の名前は？';
                 feedbackElement.className = 'feedback-correct';
                 displayChoujuuNameQuestion();
             } else {
-                // 上記以外の場合 (不正解、または「獲れない」と答えて正解) -> 問題終了
                 showFeedback(isCorrect, q.explanation);
             }
         }
@@ -132,11 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // 鳥獣判別問題を表示 (第2段階 - 名称選択)
         function displayChoujuuNameQuestion() {
             const q = questions[currentQuestionIndex];
-            huntableOptions.style.display = 'none'; // 「獲れる/獲れない」ボタンを隠す
+            huntableOptions.style.display = 'none';
             choujuuInstruction.textContent = 'この鳥獣の名前を答えてください。';
 
             const nameOptions = [q.correct_name, q.option_2, q.option_3, q.option_4].filter(opt => opt && opt.trim() !== '');
-            nameOptions.sort(() => Math.random() - 0.5); // 選択肢をシャッフル
+            nameOptions.sort(() => Math.random() - 0.5);
 
             nameOptions.forEach(opt => {
                 const button = document.createElement('button');
@@ -174,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nextButton.addEventListener('click', () => {
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
-                choujuuQuizArea.style.display = 'none'; // 次の問題のために一旦隠す
+                choujuuQuizArea.style.display = 'none';
                 displayQuestion();
             } else {
                 questionElement.textContent = '全問終了です！お疲れ様でした。';
