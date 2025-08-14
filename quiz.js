@@ -6,13 +6,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     const nextButton = document.getElementById('next-btn');
     const quizCategoryElement = document.getElementById('quiz-category');
     const quizProgressElement = document.getElementById('quiz-progress');
-    const progressBar = document.getElementById('progress-bar'); // ★追加
+    const progressBar = document.getElementById('progress-bar');
     const choujuuQuizArea = document.getElementById('choujuu-quiz-area');
     const choujuuImage = document.getElementById('choujuu-image');
     const choujuuInstruction = document.getElementById('choujuu-instruction');
     const huntableOptions = document.getElementById('huntable-options');
     const huntableButtons = document.querySelectorAll('.huntable-btn');
     const questionContainer = document.getElementById('question-container');
+
+    // ★★★ ここから追記 ★★★
+    // --- 効果音再生関数 ---
+    function playSound(type) {
+        try {
+            const audio = new Audio(`/sound/${type}.mp3`);
+            audio.play();
+        } catch (error) {
+            console.error('サウンドの再生に失敗しました:', error);
+        }
+    }
+    // ★★★ ここまで追記 ★★★
 
     // --- クイズ情報の取得と初期設定 ---
     const quizInfoString = localStorage.getItem('quizInfo');
@@ -66,7 +78,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
-    // ★★★ プログレスバー更新関数 ★★★
     function updateProgress() {
         const total = currentQuestions.length;
         const current = currentQuestionIndex + 1;
@@ -113,14 +124,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         choujuuQuizArea.style.display = 'block';
         huntableOptions.style.display = 'grid';
         
-        huntableButtons.forEach(btn => btn.disabled = false);
+        huntableButtons.forEach(btn => {
+            btn.disabled = false;
+            btn.classList.remove('correct', 'incorrect');
+        });
 
         choujuuImage.src = `/images/${q.image_file}`;
         choujuuImage.alt = `鳥獣の写真: ${q.correct_name}`;
         choujuuInstruction.textContent = 'この鳥獣は、狩猟鳥獣ですか？（獲れますか？）';
     }
 
-    // ★★★ 解答チェック関数に、クリックされたボタンを渡すように変更 ★★★
     function checkNormalAnswer(selected, clickedButton) {
         const q = currentQuestions[currentQuestionIndex];
         const correctIndex = parseInt(q.correct_answer, 10);
@@ -151,6 +164,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         if (isCorrect && userAnswer) {
+            playSound('correct'); // ★★★ 正解音を再生 ★★★
             feedbackElement.textContent = '正解です！では、この鳥獣の名前は？';
             feedbackElement.className = 'feedback-container feedback-correct';
             displayChoujuuNameQuestion();
@@ -163,6 +177,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const q = currentQuestions[currentQuestionIndex];
         huntableOptions.style.display = 'none';
         choujuuInstruction.textContent = 'この鳥獣の名前を答えてください。';
+        optionsElement.innerHTML = ''; // 古い選択肢をクリア
 
         const nameOptions = [q.correct_name, q.option_2, q.option_3, q.option_4].filter(opt => opt && opt.trim() !== '');
         nameOptions.sort(() => Math.random() - 0.5);
@@ -195,9 +210,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         huntableButtons.forEach(btn => btn.disabled = true);
 
         if (isCorrect) {
+            playSound('correct'); // ★★★ 正解音を再生 ★★★
             feedbackElement.textContent = `正解！ 解説：${explanation}`;
             feedbackElement.className = 'feedback-container feedback-correct';
         } else {
+            playSound('incorrect'); // ★★★ 不正解音を再生 ★★★
             feedbackElement.textContent = `不正解。解説：${explanation}`;
             feedbackElement.className = 'feedback-container feedback-incorrect';
         }
