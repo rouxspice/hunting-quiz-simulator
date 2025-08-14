@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const choujuuImage = document.getElementById('choujuu-image');
     const choujuuInstruction = document.getElementById('choujuu-instruction');
     const huntableOptions = document.getElementById('huntable-options');
+    const huntableButtons = document.querySelectorAll('.huntable-btn'); // ボタンを最初に取得
     const questionContainer = document.getElementById('question-container');
 
     // --- クイズ情報の取得と初期設定 ---
@@ -31,7 +32,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     papaParseScript.onload = async () => {
         try {
-            // --- 複数のCSVファイルを並行して読み込む ---
             const fetchPromises = quizInfo.categories.map(category =>
                 fetch(`/data/${category}.csv`)
                     .then(response => {
@@ -40,15 +40,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                     })
                     .then(csvText => Papa.parse(csvText, { header: true, skipEmptyLines: true }).data)
             );
-
             const results = await Promise.all(fetchPromises);
-            allQuestions = results.flat(); // すべての問題を一つの配列に統合
-
-            // --- 問題のフィルタリングとシャッフル ---
-            allQuestions = allQuestions.filter(q => q.question_text || q.image_file);
+            allQuestions = results.flat().filter(q => q.question_text || q.image_file);
             allQuestions.sort(() => Math.random() - 0.5);
 
-            // --- 出題数の決定 ---
             if (quizInfo.numQuestions === 'all' || allQuestions.length < quizInfo.numQuestions) {
                 currentQuestions = allQuestions;
             } else {
@@ -59,6 +54,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 questionElement.textContent = '選択されたカテゴリに、まだ問題がありません。';
                 return;
             }
+            // ★★★ 修正点1: イベントリスナーを最初に一度だけ設定 ★★★
+            huntableButtons.forEach(btn => {
+                btn.addEventListener('click', () => checkHuntableAnswer(btn.dataset.answer === 'true'));
+            });
             displayQuestion();
 
         } catch (error) {
@@ -67,7 +66,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
-    // --- 以下、既存の関数群（変更なし） ---
     function updateProgress() {
         quizProgressElement.textContent = `残り ${currentQuestions.length - currentQuestionIndex} / ${currentQuestions.length} 問`;
     }
@@ -82,7 +80,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         choujuuQuizArea.style.display = 'none';
 
         const q = currentQuestions[currentQuestionIndex];
-        if (quizInfo.categories.includes('choujuu_hnb') && q.image_file) {
+        const isChoujuuQuestion = (quizInfo.categories.includes('choujuu_hnb') || quizInfo.categories.includes('common')) && q.image_file;
+
+        if (isChoujuuQuestion) {
              displayChoujuuQuestion();
         } else {
              displayNormalQuestion();
@@ -107,15 +107,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         choujuuQuizArea.style.display = 'block';
         huntableOptions.style.display = 'grid';
         
+        // ★★★ 修正点2: ボタンの状態をリセット ★★★
+        huntableButtons.forEach(btn => btn.disabled = false);
+
         choujuuImage.src = `/images/${q.image_file}`;
         choujuuImage.alt = `鳥獣の写真: ${q.correct_name}`;
         choujuuInstruction.textContent = 'この鳥獣は、狩猟鳥獣ですか？（獲れますか？）';
-
-        document.querySelectorAll('.huntable-btn').forEach(btn => {
-            const newBtn = btn.cloneNode(true);
-            btn.parentNode.replaceChild(newBtn, btn);
-            newBtn.addEventListener('click', () => checkHuntableAnswer(newBtn.dataset.answer === 'true'));
-        });
     }
 
     function checkNormalAnswer(selected) {
@@ -162,7 +159,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function showFeedback(isCorrect, explanation, correctAnswerText = '') {
         Array.from(optionsElement.children).forEach(btn => btn.disabled = true);
-        Array.from(huntableOptions.children).forEach(btn => btn.disabled = true);
+        // ★★★ 修正点3: huntableButtonsを無効化 ★★★
+        huntableButtons.forEach(btn => btn.disabled = true);
 
         if (isCorrect) {
             feedbackElement.textContent = `正解！ 解説：${explanation}`;
