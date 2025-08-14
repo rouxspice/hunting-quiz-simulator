@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const optionsElement = document.getElementById('options');
         const feedbackElement = document.getElementById('feedback');
         const nextButton = document.getElementById('next-btn');
-        const categoryTitleElement = document.getElementById('category-title');
+        
+        // 新しいUI要素
+        const quizCategoryElement = document.getElementById('quiz-category');
+        const quizProgressElement = document.getElementById('quiz-progress');
 
         let questions = [];
         let currentQuestionIndex = 0;
@@ -16,36 +19,46 @@ document.addEventListener('DOMContentLoaded', () => {
         const categoryFile = localStorage.getItem('selectedCategory');
         const categoryName = localStorage.getItem('selectedCategoryName');
 
-        if (!categoryFile) {
-            questionElement.textContent = 'エラー: カテゴリが選択されていません。';
+        if (!categoryFile || !categoryName) {
+            if(questionElement) questionElement.textContent = 'エラー: カテゴリが選択されていません。トップページからやり直してください。';
             return;
         }
 
-        if (categoryTitleElement && categoryName) {
-            categoryTitleElement.textContent = `【${categoryName}】`;
-        }
+        if(quizCategoryElement) quizCategoryElement.textContent = `現在挑戦中の試験：${categoryName}`;
 
         try {
             const response = await fetch(`data/${categoryFile}.csv`);
-            if (!response.ok) throw new Error(`CSVファイルが見つかりません`);
+            if (!response.ok) throw new Error(`CSVファイルが見つかりません: data/${categoryFile}.csv`);
             const csvText = await response.text();
             
             const parsedData = Papa.parse(csvText, { header: true, skipEmptyLines: true });
-            questions = parsedData.data.sort(() => Math.random() - 0.5);
+            questions = parsedData.data.filter(q => q.question_text && q.question_text.trim() !== '');
+            questions.sort(() => Math.random() - 0.5);
             
+            if (questions.length === 0) {
+                questionElement.textContent = 'このカテゴリには、まだ問題がありません。';
+                return;
+            }
+
             displayQuestion();
         } catch (error) {
-            console.error('CSV読み込みエラー:', error);
+            console.error('CSV読み込みまたは解析エラー:', error);
             questionElement.textContent = '問題の読み込みに失敗しました。';
         }
 
+        function updateProgress() {
+            if(quizProgressElement) quizProgressElement.textContent = `残り ${questions.length - currentQuestionIndex} / ${questions.length} 問`;
+        }
+
         function displayQuestion() {
+            updateProgress();
             feedbackElement.textContent = '';
+            feedbackElement.className = '';
             nextButton.style.display = 'none';
             optionsElement.innerHTML = '';
 
             const q = questions[currentQuestionIndex];
-            questionElement.textContent = `Q${currentQuestionIndex + 1}: ${q.question_text}`;
+            questionElement.textContent = `第${currentQuestionIndex + 1}問：${q.question_text}`;
 
             [q.option_1, q.option_2, q.option_3, q.option_4].filter(opt => opt && opt.trim() !== '').forEach((opt, i) => {
                 const button = document.createElement('button');
@@ -57,7 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function checkAnswer(selected) {
-            Array.from(optionsElement.children).forEach(btn => btn.disabled = true);
+            Array.from(optionsElement.children).forEach(btn => {
+                btn.disabled = true;
+                // 正解・不正解でスタイルを変える場合はここに追加
+            });
             const q = questions[currentQuestionIndex];
             const correct = parseInt(q.correct_answer, 10);
 
@@ -80,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 optionsElement.innerHTML = '';
                 feedbackElement.textContent = '';
                 nextButton.style.display = 'none';
+                if(quizProgressElement) quizProgressElement.textContent = '完了';
             }
         });
     };

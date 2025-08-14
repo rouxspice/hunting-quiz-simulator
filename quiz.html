@@ -3,22 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>クイズページ</title>
-    <link rel="stylesheet" href="quiz-style.css">
+    <title>クイズ - 狩猟免許試験シミュレーター</title>
+    <link rel="stylesheet" href="style.css"> <!-- 共通のCSSを読み込む -->
+    <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
-    <div class="quiz-container">
-        <h2 id="category-title">【カテゴリ名】</h2>
-        <div id="question-container">
-            <p id="question">ここに問題文が表示されます。</p>
-        </div>
-        <div id="options" class="options-grid">
-            <!-- 選択肢がここに動的に生成されます -->
-        </div>
-        <div id="feedback"></div>
-        <footer>
-            <button id="next-btn" class="btn" style="display: none;">次の問題へ</button>
-            <a href="index.html" class="btn-secondary">トップに戻る</a>
+    <div class="main-container">
+        <header class="main-header">
+            <div class="logo">
+                <img src="images/logo.png" alt="ロゴ">
+                <h1>狩猟免許試験シミュレーター</h1>
+            </div>
+            <span class="version">ver. 3.1</span>
+        </header>
+
+        <main class="card">
+            <div class="quiz-header">
+                <span id="quiz-category">現在挑戦中の試験：わな猟免許</span>
+                <span id="quiz-progress">残り1 / 2問</span>
+            </div>
+            <div id="question-container">
+                <h3 id="question">第1問：法定猟具である「くくりわな」の使用に関する記述として、正しいものはどれか？</h3>
+            </div>
+            <div id="options" class="options-grid quiz-options">
+                <!-- 選択肢はここに動的に生成されます -->
+            </div>
+            <div id="feedback"></div>
+            <div class="quiz-footer">
+                <a href="index.html" class="btn-secondary">ホームに戻る</a>
+                <button id="next-btn" class="btn" style="display: none;">次の問題へ</button>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
         </footer>
     </div>
     <script src="quiz.js"></script>
