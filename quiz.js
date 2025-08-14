@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
     // --- DOM要素の取得 ---
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // --- 効果音再生関数 ---
     function playSound(type) {
         try {
-            const audio = new Audio(`/sounds/${type}.mp3`); 
+            const audio = new Audio(`/sounds/${type}.mp3`);
             audio.play();
         } catch (error) {
             console.error('サウンドの再生に失敗しました:', error);
@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     const quizInfo = JSON.parse(quizInfoString);
     quizCategoryElement.textContent = `現在挑戦中の試験：${quizInfo.categoryName}`;
-    let allQuestions = [];
     let currentQuestions = [];
     let currentQuestionIndex = 0;
+    let score = 0; // スコアを記録する変数を追加
 
     // --- PapaParseの動的ロード ---
     const papaParseScript = document.createElement('script');
@@ -43,23 +43,46 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     papaParseScript.onload = async () => {
         try {
-            const fetchPromises = quizInfo.categories.map(category =>
-                fetch(`/data/${category}.csv`)
-                    .then(response => {
-                        if (!response.ok) throw new Error(`CSVが見つかりません: ${category}.csv`);
-                        return response.text();
-                    })
-                    .then(csvText => Papa.parse(csvText, { header: true, skipEmptyLines: true }).data)
-            );
-            const results = await Promise.all(fetchPromises);
-            allQuestions = results.flat().filter(q => q.question_text || q.image_file);
-            allQuestions.sort(() => Math.random() - 0.5);
+            if (quizInfo.type === 'real') {
+                // --- 本番模擬試験モードのロジック ---
+                const commonPromise = fetch('/data/common.csv').then(res => res.text());
+                const methodPromise = fetch(`/data/${quizInfo.categories[1]}.csv`).then(res => res.text());
 
-            if (quizInfo.numQuestions === 'all' || allQuestions.length < quizInfo.numQuestions) {
-                currentQuestions = allQuestions;
+                const [commonCsv, methodCsv] = await Promise.all([commonPromise, methodPromise]);
+
+                const commonQuestions = Papa.parse(commonCsv, { header: true, skipEmptyLines: true }).data.filter(q => q.question_text || q.image_file);
+                const methodQuestions = Papa.parse(methodCsv, { header: true, skipEmptyLines: true }).data.filter(q => q.question_text || q.image_file);
+
+                commonQuestions.sort(() => Math.random() - 0.5);
+                methodQuestions.sort(() => Math.random() - 0.5);
+
+                const selectedCommon = commonQuestions.slice(0, 24);
+                const selectedMethod = methodQuestions.slice(0, 6);
+
+                currentQuestions = [...selectedCommon, ...selectedMethod];
+                
             } else {
-                currentQuestions = allQuestions.slice(0, parseInt(quizInfo.numQuestions, 10));
+                // --- カスタム模擬試験モードのロジック ---
+                const fetchPromises = quizInfo.categories.map(category =>
+                    fetch(`/data/${category}.csv`)
+                        .then(response => {
+                            if (!response.ok) throw new Error(`CSVが見つかりません: ${category}.csv`);
+                            return response.text();
+                        })
+                        .then(csvText => Papa.parse(csvText, { header: true, skipEmptyLines: true }).data)
+                );
+                const results = await Promise.all(fetchPromises);
+                let allQuestions = results.flat().filter(q => q.question_text || q.image_file);
+                allQuestions.sort(() => Math.random() - 0.5);
+
+                if (quizInfo.numQuestions === 'all' || allQuestions.length < quizInfo.numQuestions) {
+                    currentQuestions = allQuestions;
+                } else {
+                    currentQuestions = allQuestions.slice(0, parseInt(quizInfo.numQuestions, 10));
+                }
             }
+
+            currentQuestions.sort(() => Math.random() - 0.5);
 
             if (currentQuestions.length === 0) {
                 questionElement.textContent = '選択されたカテゴリに、まだ問題がありません。';
@@ -94,7 +117,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         choujuuQuizArea.style.display = 'none';
 
         const q = currentQuestions[currentQuestionIndex];
-        const isChoujuuQuestion = (quizInfo.categories.includes('choujuu_hnb') || quizInfo.categories.includes('common')) && q.image_file;
+        const isChoujuuQuestion = (q.is_huntable !== undefined && q.is_huntable !== '');
 
         if (isChoujuuQuestion) {
              displayChoujuuQuestion();
@@ -137,6 +160,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const correctIndex = parseInt(q.correct_answer, 10);
         const isCorrect = selected === correctIndex;
         
+        if (isCorrect) score++; // 正解ならスコアを加算
+
         Array.from(optionsElement.children).forEach((btn, i) => {
             if ((i + 1) === correctIndex) {
                 btn.classList.add('correct');
@@ -162,12 +187,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         if (isCorrect && userAnswer) {
-            // ★★★ 正解（獲れる）だが、まだ名前を答えていないので、ここでは音を鳴らさない ★★★
             feedbackElement.textContent = '正解です！では、この鳥獣の名前は？';
             feedbackElement.className = 'feedback-container feedback-correct';
             displayChoujuuNameQuestion();
         } else {
-            // ★★★ 不正解の場合は、ここで結果が確定するので音を鳴らす ★★★
+            if (isCorrect) score++; // 「獲れない」で正解の場合
             showFeedback(isCorrect, q.explanation);
         }
     }
@@ -193,6 +217,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     function checkChoujuuNameAnswer(selectedName) {
         const q = currentQuestions[currentQuestionIndex];
         const isCorrect = selectedName === q.correct_name;
+        
+        if (isCorrect) score++; // 名前も正解して初めてスコア加算
 
         Array.from(optionsElement.children).forEach(btn => {
             if (btn.textContent === q.correct_name) {
@@ -201,7 +227,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 btn.classList.add('incorrect');
             }
         });
-        // ★★★ 名前の正誤判定後、ここで最終的なフィードバックと音を出す ★★★
         showFeedback(isCorrect, q.explanation);
     }
 
@@ -210,11 +235,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         huntableButtons.forEach(btn => btn.disabled = true);
 
         if (isCorrect) {
-            playSound('correct'); // ★★★ 正解音はここで一括管理 ★★★
+            playSound('correct');
             feedbackElement.textContent = `正解！ 解説：${explanation}`;
             feedbackElement.className = 'feedback-container feedback-correct';
         } else {
-            playSound('incorrect'); // ★★★ 不正解音はここで一括管理 ★★★
+            playSound('incorrect');
             feedbackElement.textContent = `不正解。解説：${explanation}`;
             feedbackElement.className = 'feedback-container feedback-incorrect';
         }
@@ -226,13 +251,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (currentQuestionIndex < currentQuestions.length) {
             displayQuestion();
         } else {
-            // ここにリザルト画面への遷移処理を後で追加
-            questionElement.textContent = '全問終了です！お疲れ様でした。';
-            optionsElement.innerHTML = '';
-            feedbackElement.textContent = '';
-            nextButton.style.display = 'none';
-            quizProgressElement.textContent = '完了';
-            if(choujuuQuizArea) choujuuQuizArea.style.display = 'none';
+            // ★★★ リザルト画面への情報受け渡し ★★★
+            const resultInfo = {
+                score: score,
+                total: currentQuestions.length,
+                quizInfo: quizInfo
+            };
+            localStorage.setItem('resultInfo', JSON.stringify(resultInfo));
+            window.location.href = 'result.html'; // result.htmlへ遷移
         }
     });
 });
