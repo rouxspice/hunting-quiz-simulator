@@ -1,4 +1,8 @@
-document.addEventListener('DOMContentLoaded', async () => {
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★ すべての元凶、ブラウザ拡張機能の干渉から、私たちのコードを守る ★★★
+// ★★★ DOMContentLoaded から、window.onload へ、変更する ★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+window.onload = async () => {
     // --- DOM要素の取得 ---
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
@@ -47,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const papaParseConfig = {
                 header: true,
                 skipEmptyLines: true,
-                bom: true // ★★★ BOM付きUTF-8に対応する魔法の言葉 ★★★
+                bom: true
             };
 
             if (quizInfo.type === 'retry') {
@@ -111,4 +115,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     function checkChoujuuNameAnswer(selectedName) { /* ... */ }
     function showFeedback(isCorrect, explanation) { /* ... */ }
     nextButton.addEventListener('click', () => { /* ... */ });
-});
+};
