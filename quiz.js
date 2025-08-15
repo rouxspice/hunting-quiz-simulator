@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
-    let mistakenQuestions = []; // ★ 間違えた問題を記録
+    let mistakenQuestions = [];
 
     // --- PapaParseの動的ロード ---
     const papaParseScript = document.createElement('script');
@@ -44,17 +44,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     papaParseScript.onload = async () => {
         try {
-            // ★★★ もし「間違えた問題の再挑戦」モードなら、localStorageから問題を取得 ★★★
+            const papaParseConfig = {
+                header: true,
+                skipEmptyLines: true,
+                bom: true // ★★★ BOM付きUTF-8に対応する魔法の言葉 ★★★
+            };
+
             if (quizInfo.type === 'retry') {
                 currentQuestions = quizInfo.questions;
             } else {
-                // --- 通常のクイズモード ---
                 if (quizInfo.type === 'real') {
                     const commonPromise = fetch('/data/common.csv').then(res => res.text());
                     const methodPromise = fetch(`/data/${quizInfo.categories[1]}.csv`).then(res => res.text());
                     const [commonCsv, methodCsv] = await Promise.all([commonPromise, methodPromise]);
-                    const commonQuestions = Papa.parse(commonCsv, { header: true, skipEmptyLines: true }).data.filter(q => q.question_text || q.image_file);
-                    const methodQuestions = Papa.parse(methodCsv, { header: true, skipEmptyLines: true }).data.filter(q => q.question_text || q.image_file);
+                    const commonQuestions = Papa.parse(commonCsv, papaParseConfig).data.filter(q => q.question_text || q.image_file);
+                    const methodQuestions = Papa.parse(methodCsv, papaParseConfig).data.filter(q => q.question_text || q.image_file);
                     commonQuestions.sort(() => Math.random() - 0.5);
                     methodQuestions.sort(() => Math.random() - 0.5);
                     const selectedCommon = commonQuestions.slice(0, 24);
@@ -65,7 +69,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                         fetch(`/data/${category}.csv`).then(res => res.text())
                     );
                     const results = await Promise.all(fetchPromises);
-                    let allQuestions = results.flat().filter(q => q.question_text || q.image_file);
+                    let allQuestions = [];
+                    results.forEach(csvText => {
+                        const parsed = Papa.parse(csvText, papaParseConfig).data;
+                        allQuestions.push(...parsed);
+                    });
+                    allQuestions = allQuestions.filter(q => q.question_text || q.image_file);
                     allQuestions.sort(() => Math.random() - 0.5);
                     if (quizInfo.numQuestions === 'all' || allQuestions.length < quizInfo.numQuestions) {
                         currentQuestions = allQuestions;
@@ -92,69 +101,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
-    function updateProgress() { /* ... 変更なし ... */ }
-    function displayQuestion() { /* ... 変更なし ... */ }
-    function displayNormalQuestion() { /* ... 変更なし ... */ }
-    function displayChoujuuQuestion() { /* ... 変更なし ... */ }
-
-    function checkNormalAnswer(selected, clickedButton) {
-        const q = currentQuestions[currentQuestionIndex];
-        const correctIndex = parseInt(q.correct_answer, 10);
-        const isCorrect = selected === correctIndex;
-        if (isCorrect) { score++; } else { mistakenQuestions.push(q); }
-        Array.from(optionsElement.children).forEach((btn, i) => {
-            if ((i + 1) === correctIndex) { btn.classList.add('correct'); } 
-            else if ((i + 1) === selected) { btn.classList.add('incorrect'); }
-        });
-        showFeedback(isCorrect, q.explanation);
-    }
-
-    function checkHuntableAnswer(userAnswer) {
-        const q = currentQuestions[currentQuestionIndex];
-        const isCorrect = (q.is_huntable.toLowerCase() === 'true') === userAnswer;
-        huntableButtons.forEach(btn => {
-            const btnAnswer = btn.dataset.answer === 'true';
-            if (btnAnswer === (q.is_huntable.toLowerCase() === 'true')) { btn.classList.add('correct'); } 
-            else if (btnAnswer === userAnswer) { btn.classList.add('incorrect'); }
-        });
-        if (isCorrect && userAnswer) {
-            feedbackElement.textContent = '正解です！では、この鳥獣の名前は？';
-            feedbackElement.className = 'feedback-container feedback-correct';
-            displayChoujuuNameQuestion();
-        } else {
-            if (isCorrect) { score++; } else { mistakenQuestions.push(q); }
-            showFeedback(isCorrect, q.explanation);
-        }
-    }
-
-    function displayChoujuuNameQuestion() { /* ... 変更なし ... */ }
-
-    function checkChoujuuNameAnswer(selectedName) {
-        const q = currentQuestions[currentQuestionIndex];
-        const isCorrect = selectedName === q.correct_name;
-        if (isCorrect) { score++; } else { mistakenQuestions.push(q); }
-        Array.from(optionsElement.children).forEach(btn => {
-            if (btn.textContent === q.correct_name) { btn.classList.add('correct'); } 
-            else if (btn.textContent === selectedName) { btn.classList.add('incorrect'); }
-        });
-        showFeedback(isCorrect, q.explanation);
-    }
-
-    function showFeedback(isCorrect, explanation) { /* ... 変更なし ... */ }
-
-    nextButton.addEventListener('click', () => {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < currentQuestions.length) {
-            displayQuestion();
-        } else {
-            const resultInfo = {
-                score: score,
-                total: currentQuestions.length,
-                quizInfo: quizInfo,
-                mistakes: mistakenQuestions // ★ 間違えた問題リストを保存
-            };
-            localStorage.setItem('resultInfo', JSON.stringify(resultInfo));
-            window.location.href = 'result.html';
-        }
-    });
+    function updateProgress() { /* ... */ }
+    function displayQuestion() { /* ... */ }
+    function displayNormalQuestion() { /* ... */ }
+    function displayChoujuuQuestion() { /* ... */ }
+    function checkNormalAnswer(selected, clickedButton) { /* ... */ }
+    function checkHuntableAnswer(userAnswer) { /* ... */ }
+    function displayChoujuuNameQuestion() { /* ... */ }
+    function checkChoujuuNameAnswer(selectedName) { /* ... */ }
+    function showFeedback(isCorrect, explanation) { /* ... */ }
+    nextButton.addEventListener('click', () => { /* ... */ });
 });
