@@ -1,10 +1,10 @@
 /* --- デザインコンセプト『学びの森』 --- */
 :root {
-    --primary-green: #2C5E1A; /* 森の緑 */
-    --secondary-brown: #A97C50; /* 土の茶色 */
-    --accent-yellow: #F2C94C; /* 木漏れ日の黄色 */
-    --background-white: #F8F9FA; /* 空の白 */
-    --text-dark: #343a40; /* テキストの黒 */
+    --primary-green: #2C5E1A;
+    --secondary-brown: #A97C50;
+    --accent-yellow: #F2C94C;
+    --background-white: #F8F9FA;
+    --text-dark: #343a40;
     --text-light: #f8f9fa;
     --border-color: #dee2e6;
 }
@@ -15,12 +15,12 @@ body {
     background-color: var(--background-white);
     color: var(--text-dark);
     margin: 0;
-    padding: 20px;
+    /* ★★★ モバイルでの左右の余白を調整 ★★★ */
+    padding: 20px 10px; 
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    background-image: url('/images/forest-bg.png'); /* あとで追加する背景画像 */
     background-size: cover;
     background-position: center;
 }
@@ -28,7 +28,7 @@ body {
 .container {
     width: 100%;
     max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.95); /* 少し透明に */
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     overflow: hidden;
@@ -38,39 +38,42 @@ body {
 header {
     display: flex;
     align-items: center;
-    padding: 20px 28px;
+    /* ★★★ モバイルでのヘッダー内余白を調整 ★★★ */
+    padding: 16px;
     background-color: var(--primary-green);
     color: var(--text-light);
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
-    margin-right: 16px;
+    width: 32px; /* 少し小さく */
+    height: 32px;
+    margin-right: 12px;
 }
 
 h1 {
-    font-size: 24px;
+    /* ★★★ モバイルでのタイトル文字サイズを調整 ★★★ */
+    font-size: 18px; 
     font-weight: 700;
     margin: 0;
     flex-grow: 1;
 }
 
 .version {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     opacity: 0.8;
 }
 
 main {
-    padding: 32px;
+    /* ★★★ モバイルでのメインエリア内余白を調整 ★★★ */
+    padding: 24px 16px;
 }
 
 h2 {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 28px;
-    font-size: 22px;
+    margin-bottom: 24px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--primary-green);
 }
@@ -78,15 +81,24 @@ h2 {
 /* --- カテゴリ選択 --- */
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 18px;
+    /* ★★★ モバイルでは1列、PCでは2列に ★★★ */
+    grid-template-columns: 1fr;
+    gap: 12px;
 }
+@media (min-width: 600px) {
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+}
+
 
 .category-btn {
     background-color: #fff;
     color: var(--text-dark);
     border: 2px solid var(--border-color);
-    padding: 18px;
+    /* ★★★ モバイルでのボタン内余白を調整 ★★★ */
+    padding: 16px;
     font-size: 16px;
     font-weight: 700;
     border-radius: 12px;
@@ -115,13 +127,15 @@ h2 {
     background: linear-gradient(45deg, var(--accent-yellow), #f7d56e);
     color: var(--text-dark);
     border: none;
-    padding: 18px 36px;
+    padding: 18px 24px; /* 横の余白を少し調整 */
     font-size: 18px;
     font-weight: 700;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     box-shadow: 0 4px 15px rgba(242, 201, 76, 0.4);
+    width: 100%; /* ★★★ 幅を100%に ★★★ */
+    box-sizing: border-box; /* ★★★ はみ出し防止 ★★★ */
 }
 
 .custom-quiz-btn-main:hover {
@@ -148,12 +162,13 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    /* ★★★ z-indexを明確に指定して、最前面に表示 ★★★ */
+    z-index: 1000; 
 }
 
 .modal-content {
     background-color: #fff;
-    padding: 28px;
+    padding: 24px; /* 少し調整 */
     border-radius: 16px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     width: 90%;
@@ -173,7 +188,7 @@ footer {
 
 .modal-header h2 {
     margin: 0;
-    font-size: 22px;
+    font-size: 20px; /* 少し調整 */
     color: var(--primary-green);
 }
 
@@ -184,6 +199,7 @@ footer {
     cursor: pointer;
     color: #adb5bd;
     line-height: 1;
+    padding: 0 8px; /* ★★★ クリック範囲を確保 ★★★ */
 }
 
 .close-btn:hover {
@@ -197,11 +213,30 @@ footer {
     font-weight: 700;
 }
 
+.checkbox-group, .radio-group {
+    /* ★★★ モバイルでは1列、PCでは2列に ★★★ */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+@media (min-width: 600px) {
+    .checkbox-group, .radio-group {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+}
+
 .checkbox-group div, .radio-group label {
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 0; /* gapで管理するので不要に */
     font-size: 16px;
+    padding: 8px; /* クリック範囲を確保 */
+    border-radius: 8px;
 }
+.checkbox-group div:hover, .radio-group label:hover {
+    background-color: #f8f9fa;
+}
+
 
 .modal-footer {
     text-align: center;
@@ -214,7 +249,7 @@ footer {
     background: linear-gradient(45deg, var(--primary-green), #3a7d24);
     color: white;
     border: none;
-    padding: 16px 28px;
+    padding: 16px 24px; /* 少し調整 */
     font-size: 18px;
     font-weight: 700;
     border-radius: 12px;
