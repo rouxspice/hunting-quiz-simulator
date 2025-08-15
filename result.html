@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>試験結果 - 狩猟免許試験シミュレーター</title>
+    
+    <!-- Google Fonts と 共通スタイルを読み込み -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="quiz-style.css">
-    <link rel="stylesheet" href="result-style.css"> <!-- ★ リザルト専用CSSを追加 -->
+    <link rel="stylesheet" href="quiz-style.css"> <!-- クイズ画面と共通のスタイルも利用 -->
+    
     <link rel="icon" href="/app-icon.png">
 </head>
 <body>
@@ -17,35 +19,28 @@
         <header>
             <img src="/images/app-icon.png" alt="ロゴ" class="logo">
             <h1>狩猟免許試験シミュレーター</h1>
-            <span class="version">ver. 4.2</span>
+            <span class="version">ver. 4.1</span>
         </header>
         <main>
             <div id="result-screen" class="quiz-content-area">
                 <h2 id="result-title">試験結果</h2>
+                
                 <div id="result-summary">
-                    <!-- result.jsによって結果が挿入されます -->
+                    <!-- result.jsによって、ここに結果が動的に挿入されます -->
                 </div>
+
                 <div class="result-actions">
+                    <button id="retry-btn" class="btn" style="display: none;">もう一度挑戦する</button>
                     <a href="index.html" class="home-link">トップページに戻る</a>
                 </div>
             </div>
-
-            <!-- ★★★ ここから復習ポイントセクション ★★★ -->
-            <div id="review-section" class="quiz-content-area" style="display: none;">
-                <h3>今回の復習ポイント</h3>
-                <div id="mistakes-list">
-                    <!-- result.jsによって間違えた問題が挿入されます -->
-                </div>
-                <div class="result-actions">
-                    <button id="retry-mistakes-btn" class="btn">間違えた問題だけを再挑戦する</button>
-                </div>
-            </div>
-            <!-- ★★★ ここまで復習ポイントセクション ★★★ -->
         </main>
         <footer>
             <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
         </footer>
     </div>
+
+    <!-- 既存のresult.jsと連携 -->
     <script src="result.js"></script>
 </body>
 </html>
