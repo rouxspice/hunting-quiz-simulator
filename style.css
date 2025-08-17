@@ -1,17 +1,47 @@
-/* ===== トップページ用のスタイルを追加 ===== */
+/* ==================================================
+   狩猟クイズシミュレーター 統合スタイルシート
+   - トップページとクイズ実行画面の両方に対応
+   ================================================== */
+
+/* ===== 1. Wikiのデザイン定義と基本設定 ===== */
+:root {
+  --primary-color: #4a5568;   /* Primary Color (濃いグレー) */
+  --secondary-color: #a0aec0; /* Secondary Color (薄いグレー) */
+  --accent-color: #f6ad55;    /* Accent Color (オレンジ) */
+  --background-color: #f7fafc;/* Background Color (ページ背景) */
+  --text-color: #1a202c;      /* Text Color (基本テキスト) */
+  --white-color: #ffffff;     /* White Color (コンテナ背景) */
+  --header-bg-color: #556B2F; /* Header BG Color (トップページのヘッダー背景) */
+
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Noto Sans JP', sans-serif;
+}
+
+/* Google Fontsの読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@700&display=swap' );
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--font-secondary);
+  margin: 0;
+  /* body直下の要素を中央に配置する設定は、ページごとに異なるため削除 */
+}
+
+
+/* ===== 2. トップページ（クイズ選択画面）のスタイル ===== */
 
 /* ヘッダー */
 header {
-  background-color: #556B2F; /* 画像で見た緑色 */
-  color: white;
+  background-color: var(--header-bg-color);
+  color: var(--white-color);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  position: absolute; /* ページ上部に固定 */
-  top: 0;
-  left: 0;
 }
 
 .logo-container {
@@ -19,15 +49,15 @@ header {
   align-items: center;
 }
 
-/* ↓↓↓ ロゴが巨大化している問題の修正 ↓↓↓ */
+/* ロゴ巨大化の修正 */
 .logo-container img {
-  width: 40px;  /* ロゴの幅を適切なサイズに指定 */
-  height: auto; /* 高さは自動調整 */
+  width: 40px;
+  height: auto;
   margin-right: 15px;
 }
 
 .logo-container h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-primary);
   font-size: 1.8rem;
   margin: 0;
 }
@@ -40,13 +70,6 @@ header {
 main {
   padding: 2rem;
   text-align: center;
-  /* ヘッダーの高さ分だけコンテンツを下げる */
-  margin-top: 80px; 
-}
-
-.quiz-selection {
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .quiz-selection h2 {
@@ -63,15 +86,16 @@ main {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .quiz-card {
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: var(--white-color);
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 1.5rem;
   width: 280px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -80,31 +104,35 @@ main {
 
 .quiz-card h3 {
   font-size: 1.2rem;
-  color: #556B2F;
+  color: var(--header-bg-color);
   margin-top: 0;
 }
 
 .quiz-card p {
   flex-grow: 1;
+  color: var(--primary-color);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .quiz-card .status {
   color: var(--secondary-color);
   font-style: italic;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .challenge-btn {
-  background-color: #556B2F;
-  color: white;
+  background-color: var(--header-bg-color);
+  color: var(--white-color);
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: var(--font-secondary);
   transition: opacity 0.3s ease;
-  width: 100%; /* ボタン幅をカードに合わせる */
+  width: 100%;
 }
 
 .challenge-btn:hover {
@@ -114,4 +142,73 @@ main {
 .challenge-btn:disabled {
   background-color: var(--secondary-color);
   cursor: not-allowed;
+}
+
+
+/* ===== 3. クイズ実行画面のスタイル ===== */
+
+/* クイズ実行画面の時だけbodyに適用される中央寄せスタイル */
+body.quiz-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.quiz-container {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  /* トップページでは非表示、クイズ画面で表示される */
+  display: none; 
+}
+
+.quiz-container .quiz-header {
+  padding: 2rem;
+}
+
+/* クイズ画面と結果画面のh2 */
+.quiz-container h2 {
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+  font-family: var(--font-primary);
+  color: var(--primary-color);
+}
+
+.quiz-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.quiz-container ul li {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.quiz-container ul li label {
+  cursor: pointer;
+  display: block;
+}
+
+/* クイズ画面のボタン (Submit, Reload) */
+.quiz-container button {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 1.3rem;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-container button:hover {
+  background-color: #e99e43;
 }
