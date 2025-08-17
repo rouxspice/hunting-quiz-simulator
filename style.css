@@ -1,261 +1,257 @@
-/* --- [style.css] トップページ専用スタイル --- */
-
-/* --- 基本設定とフォント --- */
-:root {
-    --primary-green: #2C5E1A;
-    --secondary-brown: #A97C50;
-    --accent-yellow: #F2C94C;
-    --background-white: #F8F9FA;
-    --text-dark: #343a40;
-    --text-light: #f8f9fa;
-    --border-color: #dee2e6;
-}
-
+/* 基本的なスタイル */
 body {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    background-color: var(--background-white);
-    color: var(--text-dark);
+    font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
     min-height: 100vh;
 }
 
-.container {
-    width: 100%;
-    max-width: 800px;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-}
-
-/* --- ヘッダー --- */
+/* ヘッダー */
 header {
-    display: flex;
-    align-items: center;
-    padding: 20px 28px;
-    background-color: var(--primary-green);
-    color: var(--text-light);
-}
-
-.logo {
-    width: 40px;
-    height: 40px;
-    margin-right: 16px;
-}
-
-h1 {
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0;
-    flex-grow: 1;
-}
-
-.version {
-    font-size: 14px;
-    font-weight: 700;
-    opacity: 0.8;
-}
-
-/* --- メインコンテンツ --- */
-main {
-    padding: 32px;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 28px;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--primary-green);
-}
-
-.divider {
-    border: 0;
-    height: 1px;
-    background-color: #e0e0e0;
-    margin: 2rem 0;
-}
-
-/* --- ボタン共通 --- */
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 18px;
-}
-
-.category-btn {
-    background-color: #fff;
-    color: var(--text-dark);
-    border: 2px solid var(--border-color);
-    padding: 18px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.category-btn:hover {
-    border-color: var(--secondary-brown);
-    color: var(--secondary-brown);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.custom-quiz-btn-main {
-    background: linear-gradient(45deg, var(--accent-yellow), #f7d56e);
-    color: var(--text-dark);
-    border: none;
-    padding: 18px 36px;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 4px 15px rgba(242, 201, 76, 0.4);
-}
-
-.custom-quiz-btn-main:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(242, 201, 76, 0.5);
-}
-
-/* --- 特訓コース --- */
-.training-section h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.training-section .icon {
-    font-size: 1.5rem;
-}
-
-.training-btn {
-    background-color: #e6f4ff;
-    border-color: #007bff;
-    color: #004085;
-}
-
-.training-btn:hover {
-    background-color: #007bff;
+    background-color: #4a6e46; /* 落ち着いた緑 */
     color: white;
-    border-color: #007bff;
-}
-
-/* --- フッター --- */
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 12px;
-    color: #6c757d;
-    background-color: #e9ecef;
-}
-
-/* --- モーダルウィンドウ --- */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background-color: #fff;
-    padding: 28px;
-    border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    width: 90%;
-    max-width: 600px;
-    max-height: 90vh;
-    overflow-y: auto;
-}
-
-.modal-header {
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 16px;
-    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.modal-header h2 {
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+/* ★★★ セレクタを「.header-content .logo」に修正し、確実性を向上させます ★★★ */
+/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+.header-content .logo {
+    height: 50px; /* ロゴの高さを50pxに設定 */
+    margin-right: 15px;
+}
+
+.header-content h1 {
     margin: 0;
-    font-size: 22px;
-    color: var(--primary-green);
+    font-size: 1.5rem;
 }
 
-.close-btn {
-    background: none;
-    border: none;
-    font-size: 32px;
-    cursor: pointer;
-    color: #adb5bd;
-    line-height: 1;
+.version-info {
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
-.close-btn:hover {
-    color: var(--text-dark);
+
+/* メインコンテンツ */
+main {
+    flex: 1;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.modal-section h3 {
-    font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 16px;
-    font-weight: 700;
-}
-
-.checkbox-group div, .radio-group label {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 16px;
-}
-
-.modal-footer {
-    text-align: center;
-    padding-top: 24px;
-    border-top: 1px solid var(--border-color);
-    margin-top: 24px;
-}
-
-.start-btn {
-    background: linear-gradient(45deg, var(--primary-green), #3a7d24);
-    color: white;
-    border: none;
-    padding: 16px 28px;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 12px;
-    cursor: pointer;
+.container, .quiz-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 100%;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 4px 15px rgba(44, 94, 26, 0.4);
+    max-width: 800px;
 }
 
-.start-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(44, 94, 26, 0.5);
+h2 {
+    border-bottom: 2px solid #4a6e46;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.quiz-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.quiz-card h3 {
+    margin-top: 0;
+    color: #4a6e46;
+}
+
+.quiz-card p {
+    font-size: 0.9rem;
+    color: #666;
+    min-height: 40px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #4a6e46;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #3b5a38;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: #e9e9e9;
+}
+
+
+/* フッター */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 5%;
+    font-size: 0.8rem;
+}
+
+/* クイズ画面のスタイル */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    height: 10px;
+    width: 0%;
+    background-color: #ffc107; /* 進捗バーの色 */
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+#question, .instruction-text {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.option-btn {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: #f0f0f0;
+    border-color: #4a6e46;
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.feedback-container {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.correct-feedback {
+    background-color: #e8f5e9; /* 正解の背景色 */
+    color: #2e7d32;
+}
+
+.incorrect-feedback {
+    background-color: #ffebee; /* 不正解の背景色 */
+    color: #c62828;
+}
+
+.correct {
+    background-color: #a5d6a7;
+    border-color: #388e3c;
+    color: #1b5e20;
+}
+
+.incorrect {
+    background-color: #ef9a9a;
+    border-color: #d32f2f;
+    color: #b71c1c;
+}
+
+.navigation-buttons {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* 鳥獣判別クイズ専用スタイル */
+.choujuu-image-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#choujuu-image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
