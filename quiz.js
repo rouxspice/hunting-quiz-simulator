@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM要素の取得
+    // DOM要素の取得 (変更なし)
     const quizCategorySpan = document.getElementById('quiz-category');
-    const questionText = document.getElementById('question');
-    // ... (他のDOM要素取得は変更なし) ...
     const quizProgressSpan = document.getElementById('quiz-progress');
     const progressBar = document.getElementById('progress-bar');
+    const questionContainer = document.getElementById('question-container');
+    const questionText = document.getElementById('question');
     const optionsContainer = document.getElementById('options');
     const feedbackContainer = document.getElementById('feedback');
     const nextBtn = document.getElementById('next-btn');
@@ -13,6 +13,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const choujuuInstruction = document.getElementById('choujuu-instruction');
     const huntableOptions = document.getElementById('huntable-options');
 
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    // ★★★ 存在しない「questions.json」の代わりに、ダミーの問題データをここに定義 ★★★
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    const allQuestions = {
+        "choujuu_hnb": [
+            {
+                "name": "イノシシ",
+                "type": "獣類",
+                "image": "https://images.unsplash.com/photo-1541542942445-89a33524f33b?q=80&w=800", // 仮の画像
+                "huntable": true
+            },
+            {
+                "name": "タヌキ",
+                "type": "獣類",
+                "image": "https://images.unsplash.com/photo-1583523780938-9199a484c27b?q=80&w=800", // 仮の画像
+                "huntable": true
+            },
+            {
+                "name": "ニホンザル",
+                "type": "獣類",
+                "image": "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?q=80&w=800", // 仮の画像
+                "huntable": false
+            }
+        ],
+        // 他のカテゴリの問題は空にしておく
+        "wanaryou": [],
+        "amiryouchou": [],
+        "juuryou_1": [],
+        "juuryou_2": [],
+        "shoshinsha": []
+    };
+
 
     let currentQuestions = [];
     let currentQuestionIndex = 0;
@@ -20,63 +52,42 @@ document.addEventListener('DOMContentLoaded', () => {
     let quizCategory = '';
     let quizCategoryName = '';
 
-    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    // ★★★ クイズ初期化処理を、URLクエリパラメータ方式に、完全準拠させる ★★★
-    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    function initializeQuiz() {
+    function initializeQuiz( ) {
         const urlParams = new URLSearchParams(window.location.search);
         const categoryFromUrl = urlParams.get('category');
         const nameFromUrl = urlParams.get('name');
-        const categoryFromSession = sessionStorage.getItem('quizCategory');
-
+        
         if (categoryFromUrl && nameFromUrl) {
-            // 【通常クイズ】URLパラメータから情報を取得
             quizCategory = categoryFromUrl;
             quizCategoryName = decodeURIComponent(nameFromUrl);
-        } else if (categoryFromSession === 'custom') {
-            // 【カスタムクイズ】sessionStorageから情報を取得
-            quizCategory = 'custom';
-            quizCategoryName = sessionStorage.getItem('quizCategoryName');
-            // カスタムクイズの設定も読み込む（今はまだ使わない）
-            const customConfig = JSON.parse(sessionStorage.getItem('customQuizConfig'));
-            if (!customConfig) {
-                 questionText.textContent = 'エラー: カスタム試験の設定が見つかりません。';
-                 return;
-            }
         } else {
+            // カスタムクイズのロジックは一旦省略して、エラー表示に倒す
             questionText.textContent = 'エラー: クイズの情報を取得できませんでした。ホームに戻ってやり直してください。';
             return;
         }
 
-        // ヘッダーの表示を更新
         quizCategorySpan.textContent = `現在挑戦中の試験：${quizCategoryName}`;
+        
+        // ★★★ ファイル読み込み(fetch)を削除し、定義済みのオブジェクトから問題を取得 ★★★
         loadQuestions();
     }
 
-    // 問題データを読み込む
-    async function loadQuestions() {
-        try {
-            const response = await fetch('questions.json');
-            if (!response.ok) throw new Error('問題ファイル(questions.json)の読み込みに失敗しました。');
-            const allQuestions = await response.json();
-
-            // ★★★ カテゴリに応じて問題を選択 ★★★
-            if (allQuestions[quizCategory]) {
-                currentQuestions = allQuestions[quizCategory];
-                if(currentQuestions.length === 0){
-                    throw new Error(`カテゴリ「${quizCategoryName}」の問題がありません。`);
-                }
-                startQuiz();
-            } else {
-                throw new Error(`カテゴリ「${quizCategoryName}」の問題データが見つかりません。`);
+    // ★★★ asyncを削除し、ファイル読み込み処理を完全に撤廃 ★★★
+    function loadQuestions() {
+        if (allQuestions[quizCategory]) {
+            currentQuestions = allQuestions[quizCategory];
+            if (currentQuestions.length === 0) {
+                questionText.textContent = `カテゴリ「${quizCategoryName}」の問題は、現在準備中です。`;
+                return;
             }
-        } catch (error) {
-            questionText.textContent = error.message;
-            console.error(error);
+            startQuiz();
+        } else {
+            questionText.textContent = `カテゴリ「${quizCategoryName}」は存在しません。`;
         }
     }
     
-    // クイズを開始する
+    // --- これ以降の関数 (startQuiz, showQuestionなど) は変更なし ---
+    
     function startQuiz() {
         currentQuestionIndex = 0;
         score = 0;
@@ -84,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showQuestion();
     }
 
-    // 問題を表示する
     function showQuestion() {
         resetState();
         const question = currentQuestions[currentQuestionIndex];
@@ -110,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } else {
             questionText.textContent = question.question;
-            // 通常クイズの選択肢表示ロジックは今後実装
         }
     }
 
@@ -166,6 +175,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nextBtn.addEventListener('click', handleNextButton);
 
-    // ページの読み込み完了時に、クイズの初期化処理を呼び出す
     initializeQuiz();
 });
