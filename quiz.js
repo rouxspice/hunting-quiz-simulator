@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (DOM要素の取得部分は変更なし) ...
     const quizCategorySpan = document.getElementById('quiz-category');
     const quizProgressSpan = document.getElementById('quiz-progress');
     const progressBar = document.getElementById('progress-bar');
@@ -14,23 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let huntableOptions = document.getElementById('huntable-options');
 
     // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    // ★★★ すべての画像パスを、index.html にならい、相対パスに、完全に戻します ★★★
+    // ★★★ 1. 実際のファイル名に合わせて、画像の拡張子を、すべて、修正します。 ★★★
+    // ★★★ 2. ご指摘に基づき、ハクビシンのデータを「huntable: true」に、修正します。 ★★★
     // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
     const allQuestions = {
         "choujuu_hnb": [
-            { "name": "カルガモ", "type": "鳥類", "image": "images/choujuu/karugamo.jpg", "huntable": true },
-            { "name": "ニホンジカ", "type": "獣類", "image": "images/choujuu/nihonjika.jpg", "huntable": true },
-            { "name": "キジ", "type": "鳥類", "image": "images/choujuu/kiji.jpg", "huntable": true },
-            { "name": "タヌキ", "type": "獣類", "image": "images/choujuu/tanuki.jpg", "huntable": true },
+            { "name": "カルガモ", "type": "鳥類", "image": "images/choujuu/karugamo.png", "huntable": true },
+            { "name": "ニホンジカ", "type": "獣類", "image": "images/choujuu/nihonjika.png", "huntable": true },
+            { "name": "キジ", "type": "鳥類", "image": "images/choujuu/kiji.png", "huntable": true },
+            { "name": "タヌキ", "type": "獣類", "image": "images/choujuu/tanuki.png", "huntable": true },
             { "name": "ドバト", "type": "鳥類", "image": "images/choujuu/dobato.png", "huntable": false },
-            { "name": "ニホンザル", "type": "獣類", "image": "images/choujuu/nihonzaru.jpg", "huntable": false },
-            { "name": "ハクビシン", "type": "獣類", "image": "images/choujuu/hakubishin.jpg", "huntable": false },
-            { "name": "メジロ", "type": "鳥類", "image": "images/choujuu/mejiro.jpg", "huntable": false }
+            { "name": "ニホンザル", "type": "獣類", "image": "images/choujuu/nihonzaru.png", "huntable": false },
+            { "name": "ハクビシン", "type": "獣類", "image": "images/choujuu/hakubishin.png", "huntable": true }, // ← 修正
+            { "name": "メジロ", "type": "鳥類", "image": "images/choujuu/mejiro.png", "huntable": false }
         ],
         "wanaryou": [], "amiryouchou": [], "juuryou_1": [], "juuryou_2": [], "shoshinsha": []
     };
 
-    // --- これ以降のロジックは、前回安定したバージョンと同一です ---
+    // --- これ以降のロジックに変更はありません ---
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
@@ -177,4 +177,3 @@ document.addEventListener('DOMContentLoaded', () => {
     
     initializeQuiz();
 });
-
