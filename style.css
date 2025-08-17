@@ -1,88 +1,117 @@
-/* ===== Wikiのデザイン定義をCSS変数として設定 ===== */
-:root {
-  --primary-color: #4a5568;   /* Primary Color */
-  --secondary-color: #a0aec0; /* Secondary Color */
-  --accent-color: #f6ad55;    /* Accent Color */
-  --background-color: #f7fafc;/* Background Color */
-  --text-color: #1a202c;      /* Text Color */
-  --white-color: #ffffff;
+/* ===== トップページ用のスタイルを追加 ===== */
+
+/* ヘッダー */
+header {
+  background-color: #556B2F; /* 画像で見た緑色 */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute; /* ページ上部に固定 */
+  top: 0;
+  left: 0;
 }
 
-/* ===== Google Fontsの読み込み（HTML側で対応） ===== */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@700&display=swap' );
-
-/* ===== 基本スタイルの設定 ===== */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--background-color);
-  font-family: 'Noto Sans JP', sans-serif;
+.logo-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
 }
 
-/* ===== クイズコンテナの共通スタイル ===== */
-.quiz-container {
-  background-color: var(--white-color);
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
-  overflow: hidden; /* 角丸を維持するため */
+/* ↓↓↓ ロゴが巨大化している問題の修正 ↓↓↓ */
+.logo-container img {
+  width: 40px;  /* ロゴの幅を適切なサイズに指定 */
+  height: auto; /* 高さは自動調整 */
+  margin-right: 15px;
 }
 
-.quiz-header {
-  padding: 2rem;
-}
-
-/* ===== クイズ中と結果表示の両方に対応するh2のスタイル ===== */
-h2 {
-  padding: 1rem;
-  text-align: center;
-  margin: 0;
+.logo-container h1 {
   font-family: 'Roboto', sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.version-info {
+  font-size: 1rem;
+}
+
+/* メインコンテンツエリア */
+main {
+  padding: 2rem;
+  text-align: center;
+  /* ヘッダーの高さ分だけコンテンツを下げる */
+  margin-top: 80px; 
+}
+
+.quiz-selection {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.quiz-selection h2 {
+  font-size: 1.5rem;
   color: var(--primary-color);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+  display: inline-block;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.quiz-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-ul li {
-  font-size: 1.1rem;
-  margin: 1rem 0;
+.quiz-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
 }
 
-ul li label {
-  cursor: pointer;
-  display: block; /* クリック範囲を広げる */
+.quiz-card h3 {
+  font-size: 1.2rem;
+  color: #556B2F;
+  margin-top: 0;
 }
 
-/* ===== ボタンの共通スタイル（SubmitボタンとReloadボタン） ===== */
-button {
-  background-color: var(--accent-color);
-  color: var(--white-color);
+.quiz-card p {
+  flex-grow: 1;
+}
+
+.quiz-card .status {
+  color: var(--secondary-color);
+  font-style: italic;
+  text-align: center;
+}
+
+.challenge-btn {
+  background-color: #556B2F;
+  color: white;
   border: none;
-  display: block;
-  width: 100%;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 1.1rem;
-  font-family: inherit;
-  font-weight: bold;
-  padding: 1.3rem;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  transition: opacity 0.3s ease;
+  width: 100%; /* ボタン幅をカードに合わせる */
 }
 
-button:hover {
-  background-color: #e99e43;
+.challenge-btn:hover {
+  opacity: 0.85;
 }
 
-button:focus {
-  outline: none;
+.challenge-btn:disabled {
+  background-color: var(--secondary-color);
+  cursor: not-allowed;
 }
