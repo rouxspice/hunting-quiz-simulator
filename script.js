@@ -1,66 +1,109 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 通常のカテゴリボタン
-    document.querySelectorAll('.category-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const category = button.dataset.category;
-            const name = encodeURIComponent(button.dataset.name); // URL用にエンコード
-            // ★★★ URLクエリパラメータで情報を渡す ★★★
-            window.location.href = `quiz.html?category=${category}&name=${name}`;
-        });
-    });
+const quizData = [
+    {
+        question: "日本の狩猟鳥獣ではないものは次のうちどれ？",
+        a: "キジ",
+        b: "ヒヨドリ",
+        c: "ドバト",
+        d: "スズメ",
+        correct: "c",
+    },
+    {
+        question: "銃の保管に関する説明で正しいものは？",
+        a: "弾と一緒に保管する",
+        b: "鍵のかかるロッカーに銃と弾を別々に保管する",
+        c: "家族も使えるように鍵の場所を共有する",
+        d: "車の中に保管する",
+        correct: "b",
+    },
+    {
+        question: "わな猟で禁止されている猟具は？",
+        a: "はこわな",
+        b: "くくりわな",
+        c: "とらばさみ",
+        d: "囲いわな",
+        correct: "c",
+    },
+    {
+        question: "狩猟期間として一般的に定められている期間は？",
+        a: "一年中",
+        b: "11月15日から翌年2月15日",
+        c: "春から夏にかけて",
+        d: "冬の間だけ",
+        correct: "b",
+    },
+];
 
-    // --- カスタムクイズ関連の要素取得 ---
-    const customQuizBtn = document.getElementById('custom-quiz-btn');
-    const modal = document.getElementById('custom-quiz-modal');
-    const closeModalBtn = document.getElementById('close-modal-btn');
-    const startCustomQuizBtn = document.getElementById('start-custom-quiz-btn');
-    const selectAllCheckbox = document.getElementById('select-all-categories');
-    const categoryCheckboxes = document.querySelectorAll('input[name="category"]');
+// HTML要素を取得
+const topPageContainer = document.getElementById('top-page-container');
+const quizContainer = document.getElementById('quiz');
+const startQuizBtn = document.getElementById('start-quiz-btn');
 
-    // --- モーダル表示/非表示 ---
-    customQuizBtn.addEventListener('click', () => {
-        modal.style.display = 'flex';
-    });
+const answerEls = document.querySelectorAll('.answer');
+const questionEl = document.getElementById('question');
+const a_text = document.getElementById('a_text');
+const b_text = document.getElementById('b_text');
+const c_text = document.getElementById('c_text');
+const d_text = document.getElementById('d_text');
+const submitBtn = document.getElementById('submit');
 
-    const closeModal = () => {
-        modal.style.display = 'none';
-    };
+let currentQuiz = 0;
+let score = 0;
 
-    closeModalBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
+// --- 関数定義 ---
+
+function loadQuiz() {
+    deselectAnswers();
+    const currentQuizData = quizData[currentQuiz];
+    questionEl.innerText = currentQuizData.question;
+    a_text.innerText = currentQuizData.a;
+    b_text.innerText = currentQuizData.b;
+    c_text.innerText = currentQuizData.c;
+    d_text.innerText = currentQuizData.d;
+}
+
+function deselectAnswers() {
+    answerEls.forEach(answerEl => answerEl.checked = false);
+}
+
+function getSelected() {
+    let answer;
+    answerEls.forEach(answerEl => {
+        if (answerEl.checked) {
+            answer = answerEl.id;
         }
     });
+    return answer;
+}
 
-    // --- カスタムクイズのロジック ---
-    selectAllCheckbox.addEventListener('change', () => {
-        categoryCheckboxes.forEach(checkbox => {
-            checkbox.checked = selectAllCheckbox.checked;
-        });
-    });
+// --- イベントリスナーの設定 ---
 
-    startCustomQuizBtn.addEventListener('click', () => {
-        const selectedCategories = Array.from(categoryCheckboxes)
-            .filter(cb => cb.checked)
-            .map(cb => cb.value);
+// 「挑戦する」ボタンがクリックされた時の処理
+startQuizBtn.addEventListener('click', () => {
+    // トップページを隠し、クイズコンテナを表示する
+    topPageContainer.style.display = 'none';
+    quizContainer.style.display = 'block';
+    
+    // クイズの初期化と最初の問題の読み込み
+    currentQuiz = 0;
+    score = 0;
+    loadQuiz();
+});
 
-        const numQuestions = document.querySelector('input[name="num-questions"]:checked').value;
-
-        if (selectedCategories.length === 0) {
-            alert('試験の種類を1つ以上選択してください。');
-            return;
+// 「Submit」ボタンがクリックされた時の処理
+submitBtn.addEventListener('click', () => {
+    const answer = getSelected();
+    if (answer) {
+        if (answer === quizData[currentQuiz].correct) {
+            score++;
         }
-
-        // ★★★ カスタムクイズの情報はsessionStorageで渡す（これは仕様通り） ★★★
-        sessionStorage.setItem('customQuizConfig', JSON.stringify({
-            categories: selectedCategories,
-            numQuestions: numQuestions
-        }));
-        sessionStorage.setItem('quizCategory', 'custom'); // 識別用
-        sessionStorage.setItem('quizCategoryName', 'カスタム模擬試験');
-
-        window.location.href = 'quiz.html';
-        closeModal();
-    });
+        currentQuiz++;
+        if (currentQuiz < quizData.length) {
+            loadQuiz();
+        } else {
+            quizContainer.innerHTML = `
+                <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+                <button onclick="location.reload()">Reload</button>
+            `;
+        }
+    }
 });

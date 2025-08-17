@@ -1,54 +1,64 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>狩猟免許試験シミュレーター</title>
-    
-    <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
-    <!-- ★★★ 「css/」を削除し、正しいパス「style.css」に修正します ★★★ -->
-    <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
+    <title>Hunting Quiz Simulator</title>
     <link rel="stylesheet" href="style.css">
-    
-    <link rel="icon" href="images/app-icon.png" type="image/png">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img src="images/app-icon.png" alt="ロゴ" class="logo">
-            <h1>狩猟免許試験シミュレーター</h1>
-        </div>
-        <div class="version-info">ver. 4.2</div>
-    </header>
-
-    <main>
-        <div class="container">
-            <h2>挑戦する試験を選ぶ</h2>
-            <div class="quiz-grid">
-                <!-- 鳥獣判別クイズ -->
-                <div class="quiz-card">
-                    <h3>狩猟鳥獣判別クイズ</h3>
-                    <p>写真を見て、狩猟対象の鳥獣かどうかを判別するクイズです。</p>
-                    <a href="quiz.html?category=choujuu_hnb&name=狩猟鳥獣判別クイズ" class="btn-primary">挑戦する</a>
-                </div>
-
-                <!-- 他のクイズカード（準備中） -->
-                <div class="quiz-card">
-                    <h3>網猟・わな猟クイズ</h3>
-                    <p>法令や猟具に関する知識を問う、択一式のクイズです。（準備中）</p>
-                    <a href="quiz.html?category=wanaryou&name=網猟・わな猟クイズ" class="btn-primary">挑戦する</a>
-                </div>
-                 <div class="quiz-card">
-                    <h3>第一種銃猟クイズ</h3>
-                    <p>銃の取り扱いや安全性に関する知識を問う、択一式のクイズです。（準備中）</p>
-                    <a href="quiz.html?category=juuryou_1&name=第一種銃猟クイズ" class="btn-primary">挑戦する</a>
-                </div>
+    <!-- トップページ全体を囲むdivを追加し、IDを付与 -->
+    <div id="top-page-container">
+        <header>
+            <div class="logo-container">
+                <img src="assets/images/logo.png" alt="ロゴ">
+                <h1>狩猟免許試験シミュレーター</h1>
             </div>
-        </div>
-    </main>
+            <div class="version-info">
+                <span>ver. 4.2</span>
+            </div>
+        </header>
+        <main>
+            <section class="quiz-selection">
+                <h2>挑戦する試験を選ぶ</h2>
+                <div class="quiz-options">
+                    <div class="quiz-card">
+                        <h3>狩猟鳥獣判別クイズ</h3>
+                        <p>写真を見て、狩猟対象の鳥獣かどうかを判別するクイズです。</p>
+                        <!-- このボタンにIDを付与 -->
+                        <button class="challenge-btn" id="start-quiz-btn">挑戦する</button>
+                    </div>
+                    <div class="quiz-card">
+                        <h3>網猟・わな猟クイズ</h3>
+                        <p>法令や猟具に関する知識を問う、択一式のクイズです。</p>
+                        <p class="status">(準備中)</p>
+                        <button class="challenge-btn" disabled>挑戦する</button>
+                    </div>
+                    <div class="quiz-card">
+                        <h3>第一種銃猟クイズ</h3>
+                        <p>銃の取り扱いや安全性に関する知識を問う、択一式のクイズです。</p>
+                        <p class="status">(準備中)</p>
+                        <button class="challenge-btn" disabled>挑戦する</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
-    </footer>
+    <!-- クイズコンテナ（変更なし） -->
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+            <h2 id="question">Question text</h2>
+            <ul>
+                <li><input type="radio" name="answer" id="a" class="answer"><label for="a" id="a_text">Answer</label></li>
+                <li><input type="radio" name="answer" id="b" class="answer"><label for="b" id="b_text">Answer</label></li>
+                <li><input type="radio" name="answer" id="c" class="answer"><label for="c" id="c_text">Answer</label></li>
+                <li><input type="radio" name="answer" id="d" class="answer"><label for="d" id="d_text">Answer</label></li>
+            </ul>
+        </div>
+        <button id="submit">Submit</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
