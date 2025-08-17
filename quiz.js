@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const allQuestions = {
         "choujuu_hnb": [
             { "name": "カルガモ", "type": "鳥類", "image": "images/karugamo.jpg", "huntable": true },
-            { "name": "ニホンジカ", "type": "獣類", "image": "images/nihonjika.jpg", "huntable": true },
+            { "name": "ニホンジカ", "type": "獣類", "image": "images/nihonjika-osu.jpg", "huntable": true },
             { "name": "キジ", "type": "鳥類", "image": "images/kiji.jpg", "huntable": true },
             { "name": "タヌキ", "type": "獣類", "image": "images/tanuki.jpg", "huntable": true },
             // { "name": "ドバト", "type": "鳥類", "image": "images/dobato.png", "huntable": false }, // ← 存在しないため、完全に削除
