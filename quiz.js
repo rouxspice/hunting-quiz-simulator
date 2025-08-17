@@ -1,107 +1,191 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    // (DOM取得、効果音再生関数などは変更なし)
-    // ...
+document.addEventListener('DOMContentLoaded', () => {
+    // DOM要素の取得
+    const quizCategorySpan = document.getElementById('quiz-category');
+    const quizProgressSpan = document.getElementById('quiz-progress');
+    const progressBar = document.getElementById('progress-bar');
+    const questionContainer = document.getElementById('question-container');
+    const questionText = document.getElementById('question');
+    const optionsContainer = document.getElementById('options');
+    const feedbackContainer = document.getElementById('feedback');
+    const nextBtn = document.getElementById('next-btn');
+    const choujuuQuizArea = document.getElementById('choujuu-quiz-area');
+    const choujuuImage = document.getElementById('choujuu-image');
+    const choujuuInstruction = document.getElementById('choujuu-instruction');
+    const huntableOptions = document.getElementById('huntable-options');
 
-    // --- クイズ情報の取得と初期設定 ---
-    const quizInfoString = localStorage.getItem('quizInfo');
-    // ...
-    const quizInfo = JSON.parse(quizInfoString);
-    
-    // ★★★ 特訓モードの場合はタイトルを書き換え ★★★
-    quizCategoryElement.textContent = `現在挑戦中の試験：${quizInfo.type === 'training' ? quizInfo.title : quizInfo.categoryName}`;
-    
-    // (変数定義は変更なし)
-    // ...
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    // ★★★ ここからが追加する、クイズ初期化のための最重要コードです ★★★
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
-    papaParseScript.onload = async () => {
+    let currentQuestions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let quizCategory = '';
+    let quizCategoryName = '';
+
+    // sessionStorageからクイズ情報を取得して初期化
+    function initializeQuiz() {
+        quizCategory = sessionStorage.getItem('quizCategory');
+        quizCategoryName = sessionStorage.getItem('quizCategoryName');
+
+        if (!quizCategory || !quizCategoryName) {
+            questionText.textContent = 'エラー: クイズの情報を取得できませんでした。ホームに戻ってやり直してください。';
+            return;
+        }
+
+        // ヘッダーの表示を更新
+        quizCategorySpan.textContent = `現在挑戦中の試験：${quizCategoryName}`;
+        
+        // 問題データをロードしてクイズを開始
+        loadQuestions();
+    }
+
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    // ★★★ ここまでが追加するコードです ★★★
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+
+    // 問題データをJSONファイルから読み込む
+    async function loadQuestions() {
         try {
-            // ★★★ 特訓モードの問題取得ロジックを追加 ★★★
-            if (quizInfo.type === 'training') {
-                const response = await fetch(`/data/${quizInfo.csvFile}.csv`);
-                if (!response.ok) throw new Error(`CSVが見つかりません: ${quizInfo.csvFile}.csv`);
-                const csvText = await response.text();
-                const allData = Papa.parse(csvText, { header: true, skipEmptyLines: true }).data;
-                // 答えの列が存在するデータのみを対象にする
-                currentQuestions = allData.filter(q => q[quizInfo.answerColumn] && q[quizInfo.answerColumn].trim() !== '');
-
-            } else if (quizInfo.type === 'real') {
-                // (本番モードのロジックは変更なし)
-                // ...
-            } else { // 'custom' と 'single'
-                // (カスタム/シングルモードのロジックは変更なし)
-                // ...
+            // 本来はカテゴリごとにファイルを分けるべきだが、今は仮で一つのファイルから読み込む
+            const response = await fetch('questions.json'); 
+            if (!response.ok) {
+                throw new Error('問題ファイルの読み込みに失敗しました。');
             }
-
-            currentQuestions.sort(() => Math.random() - 0.5);
-
-            // (以降の初期化処理は変更なし)
-            // ...
-
-        } catch (error) {
-            // ...
-        }
-    };
-
-    // ...
-
-    function displayQuestion() {
-        // ...
-        const q = currentQuestions[currentQuestionIndex];
-
-        // ★★★ 特訓モードの表示処理を追加 ★★★
-        if (quizInfo.type === 'training') {
-            displayTrainingQuestion(q);
-        } else {
-            // (既存の通常/鳥獣判別クイズのロジック)
-            const isChoujuuQuestion = (q.is_huntable !== undefined && q.is_huntable !== '');
-            if (isChoujuuQuestion) {
-                 displayChoujuuQuestion(q);
+            const allQuestions = await response.json();
+            
+            // 選択されたカテゴリの問題をフィルタリング
+            // 現状は仮で 'choujuu_hnb' のみ対応
+            if (allQuestions[quizCategory]) {
+                currentQuestions = allQuestions[quizCategory];
+                startQuiz();
             } else {
-                 displayNormalQuestion(q);
+                throw new Error('選択されたカテゴリの問題が見つかりません。');
             }
+        } catch (error) {
+            questionText.textContent = error.message;
+            console.error(error);
         }
     }
 
-    // ★★★ 特訓モード専用の表示関数を新設 ★★★
-    function displayTrainingQuestion(q) {
-        // 問題のタイプに応じて表示を切り替え
-        if (quizInfo.questionType === 'image_and_text') {
-            questionContainer.style.display = 'none';
-            choujuuQuizArea.style.display = 'block';
-            huntableOptions.style.display = 'none'; // 「獲れる/獲れない」は非表示
-            choujuuImage.src = `/images/${q.image_file}`;
-            choujuuImage.alt = `写真: ${q[quizInfo.questionColumn]}`;
-            choujuuInstruction.textContent = `「${q[quizInfo.questionColumn]}」は、どれに分類されますか？`;
-        } else { // text_only
-            questionElement.textContent = `「${q[quizInfo.questionColumn]}」は、どれに分類されますか？`;
+    // クイズを開始する
+    function startQuiz() {
+        currentQuestionIndex = 0;
+        score = 0;
+        nextBtn.style.display = 'none';
+        showQuestion();
+    }
+
+    // 問題を表示する
+    function showQuestion() {
+        resetState();
+        const question = currentQuestions[currentQuestionIndex];
+
+        // UIの表示切り替え
+        const isChoujuuQuiz = quizCategory === 'choujuu_hnb';
+        choujuuQuizArea.style.display = isChoujuuQuiz ? 'block' : 'none';
+        questionContainer.style.display = isChoujuuQuiz ? 'none' : 'block';
+
+        // プログレス表示を更新
+        quizProgressSpan.textContent = `残り ${currentQuestions.length - currentQuestionIndex} / ${currentQuestions.length} 問`;
+        const progressPercentage = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
+
+
+        if (isChoujuuQuiz) {
+            // 鳥獣判別クイズの場合
+            choujuuImage.src = question.image;
+            choujuuImage.alt = question.name;
+            choujuuInstruction.textContent = `この鳥獣は「${question.type}」です。狩猟対象ですか？`;
+            
+            // 既存のイベントリスナーを削除してから再設定
+            const newHuntableOptions = huntableOptions.cloneNode(true);
+            huntableOptions.parentNode.replaceChild(newHuntableOptions, huntableOptions);
+            
+            newHuntableOptions.querySelectorAll('.option-btn').forEach(button => {
+                button.addEventListener('click', handleChoujuuAnswer);
+            });
+
+        } else {
+            // 通常の択一クイズの場合 (未実装)
+            questionText.textContent = question.question;
+            // ここに選択肢を作成するロジック
+        }
+    }
+    
+    // 回答の選択状態をリセット
+    function resetState() {
+        feedbackContainer.textContent = '';
+        feedbackContainer.className = 'feedback-container';
+        nextBtn.style.display = 'none';
+        
+        // 鳥獣判別クイズのボタンの状態をリセット
+        document.querySelectorAll('.huntable-btn').forEach(btn => {
+            btn.disabled = false;
+            btn.classList.remove('correct', 'incorrect');
+        });
+    }
+
+    // 鳥獣判別クイズの回答を処理
+    function handleChoujuuAnswer(e) {
+        const selectedBtn = e.target;
+        const isCorrect = (selectedBtn.dataset.answer === String(currentQuestions[currentQuestionIndex].huntable));
+
+        // 全てのボタンを無効化
+        document.querySelectorAll('.huntable-btn').forEach(btn => {
+            btn.disabled = true;
+        });
+
+        if (isCorrect) {
+            selectedBtn.classList.add('correct');
+            feedbackContainer.textContent = '正解！';
+            feedbackContainer.classList.add('correct-feedback');
+            score++;
+        } else {
+            selectedBtn.classList.add('incorrect');
+            feedbackContainer.textContent = `不正解。正解は「${currentQuestions[currentQuestionIndex].huntable ? '獲れる' : '獲れない'}」です。`;
+            feedbackContainer.classList.add('incorrect-feedback');
+            
+            // 正解のボタンをハイライト
+            document.querySelector(`.huntable-btn[data-answer="${currentQuestions[currentQuestionIndex].huntable}"]`).classList.add('correct');
         }
 
-        // data-options属性から選択肢ボタンを生成
-        quizInfo.options.forEach(opt => {
-            const button = document.createElement('button');
-            button.textContent = opt;
-            button.classList.add('option-btn');
-            button.addEventListener('click', () => checkTrainingAnswer(opt, q));
-            optionsElement.appendChild(button);
-        });
+        nextBtn.style.display = 'block';
     }
 
-    // ★★★ 特訓モード専用の正誤判定関数を新設 ★★★
-    function checkTrainingAnswer(selectedOption, q) {
-        const correctAnswer = q[quizInfo.answerColumn];
-        const isCorrect = selectedOption === correctAnswer;
 
-        Array.from(optionsElement.children).forEach(btn => {
-            if (btn.textContent === correctAnswer) {
-                btn.classList.add('correct');
-            } else if (btn.textContent === selectedOption) {
-                btn.classList.add('incorrect');
-            }
-        });
-
-        showFeedback(isCorrect, q.explanation || `${q[quizInfo.questionColumn]}は「${correctAnswer}」です。`);
+    // 次の問題へ進む
+    function handleNextButton() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < currentQuestions.length) {
+            showQuestion();
+        } else {
+            showResults();
+        }
     }
 
-    // (既存の表示・判定関数は変更なし)
-    // ...
+    // 結果を表示する
+    function showResults() {
+        // 全ての表示をクリア
+        choujuuQuizArea.style.display = 'none';
+        questionContainer.style.display = 'block'; // 結果表示に再利用
+        optionsContainer.innerHTML = '';
+        feedbackContainer.textContent = '';
+        nextBtn.style.display = 'none';
+        quizProgressSpan.textContent = '試験終了';
+
+        questionText.textContent = `試験終了！あなたのスコアは ${currentQuestions.length} 問中 ${score} 問正解です。`;
+        
+        // ここにリザルト画面の詳細なロジックを追加していく
+    }
+
+
+    // イベントリスナーの設定
+    nextBtn.addEventListener('click', handleNextButton);
+
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    // ★★★ ページの読み込み完了時に、クイズの初期化処理を呼び出す ★★★
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    initializeQuiz();
 });
