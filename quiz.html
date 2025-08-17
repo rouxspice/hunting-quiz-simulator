@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>狩猟免許試験シミュレーター - クイズ</title>
+    
+    <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
+    <!-- ★★★ 正常に動作している index.html と、完全に、同じ、相対パス指定に戻します ★★★ -->
+    <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="/images/app-icon.png" type="image/png">
+    
+    <!-- ★★★ 画像も、相対パスに、統一します ★★★ -->
+    <link rel="icon" href="images/app-icon.png" type="image/png">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <img src="/images/app-icon.png" alt="ロゴ" class="logo">
+            <!-- ★★★ 画像も、相対パスに、統一します ★★★ -->
+            <img src="images/app-icon.png" alt="ロゴ" class="logo">
             <h1>狩猟免許試験シミュレーター</h1>
         </div>
         <div class="version-info">ver. 4.2</div>
@@ -26,28 +33,20 @@
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
 
-            <!-- 鳥獣判別クイズ専用エリア -->
             <div id="choujuu-quiz-area" style="display: none;">
                 <div class="choujuu-image-container">
                     <img id="choujuu-image" src="" alt="鳥獣の画像">
                 </div>
                 <p id="choujuu-instruction" class="instruction-text"></p>
-                
-                <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
-                <!-- ★★★ ここに、欠落していた id="huntable-options" を追加します ★★★ -->
-                <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
                 <div id="huntable-options" class="options-grid">
                     <button class="option-btn huntable-btn" data-answer="true">獲れる（狩猟鳥獣）</button>
                     <button class="option-btn huntable-btn" data-answer="false">獲れない（非狩猟鳥獣）</button>
                 </div>
             </div>
 
-            <!-- 択一問題用エリア -->
             <div id="question-container">
                 <p id="question">問題文を読み込んでいます...</p>
-                <div id="options" class="options-grid">
-                    <!-- 択一問題の選択肢はJSで生成 -->
-                </div>
+                <div id="options" class="options-grid"></div>
             </div>
 
             <div id="feedback" class="feedback-container"></div>
@@ -63,6 +62,7 @@
         <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
     </footer>
 
+    <!-- ★★★ quiz.js のパスも、当然、相対パスです ★★★ -->
     <script src="quiz.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ... (DOM要素の取得部分は変更なし) ...
     const quizCategorySpan = document.getElementById('quiz-category');
     const quizProgressSpan = document.getElementById('quiz-progress');
     const progressBar = document.getElementById('progress-bar');
@@ -10,24 +11,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const choujuuQuizArea = document.getElementById('choujuu-quiz-area');
     const choujuuImage = document.getElementById('choujuu-image');
     const choujuuInstruction = document.getElementById('choujuu-instruction');
-    
-    // ★★★ この変数の取得方法を、より安全なものにします ★★★
     let huntableOptions = document.getElementById('huntable-options');
 
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    // ★★★ すべての画像パスを、index.html にならい、相対パスに、完全に戻します ★★★
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
     const allQuestions = {
         "choujuu_hnb": [
-            { "name": "カルガモ", "type": "鳥類", "image": "/images/choujuu/karugamo.jpg", "huntable": true },
-            { "name": "ニホンジカ", "type": "獣類", "image": "/images/choujuu/nihonjika.jpg", "huntable": true },
-            { "name": "キジ", "type": "鳥類", "image": "/images/choujuu/kiji.jpg", "huntable": true },
-            { "name": "タヌキ", "type": "獣類", "image": "/images/choujuu/tanuki.jpg", "huntable": true },
-            { "name": "ドバト", "type": "鳥類", "image": "/images/choujuu/dobato.png", "huntable": false },
-            { "name": "ニホンザル", "type": "獣類", "image": "/images/choujuu/nihonzaru.jpg", "huntable": false },
-            { "name": "ハクビシン", "type": "獣類", "image": "/images/choujuu/hakubishin.jpg", "huntable": false },
-            { "name": "メジロ", "type": "鳥類", "image": "/images/choujuu/mejiro.jpg", "huntable": false }
+            { "name": "カルガモ", "type": "鳥類", "image": "images/choujuu/karugamo.jpg", "huntable": true },
+            { "name": "ニホンジカ", "type": "獣類", "image": "images/choujuu/nihonjika.jpg", "huntable": true },
+            { "name": "キジ", "type": "鳥類", "image": "images/choujuu/kiji.jpg", "huntable": true },
+            { "name": "タヌキ", "type": "獣類", "image": "images/choujuu/tanuki.jpg", "huntable": true },
+            { "name": "ドバト", "type": "鳥類", "image": "images/choujuu/dobato.png", "huntable": false },
+            { "name": "ニホンザル", "type": "獣類", "image": "images/choujuu/nihonzaru.jpg", "huntable": false },
+            { "name": "ハクビシン", "type": "獣類", "image": "images/choujuu/hakubishin.jpg", "huntable": false },
+            { "name": "メジロ", "type": "鳥類", "image": "images/choujuu/mejiro.jpg", "huntable": false }
         ],
         "wanaryou": [], "amiryouchou": [], "juuryou_1": [], "juuryou_2": [], "shoshinsha": []
     };
 
+    // --- これ以降のロジックは、前回安定したバージョンと同一です ---
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
@@ -98,15 +101,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if(choujuuInstruction) choujuuInstruction.textContent = `この鳥獣は「${question.type}」です。狩猟対象ですか？`;
             
-            // ★★★ エラーの根本原因だった箇所を、より安全なコードに修正 ★★★
-            huntableOptions = document.getElementById('huntable-options'); // 毎回再取得
+            huntableOptions = document.getElementById('huntable-options');
             if (huntableOptions) {
                 const newHuntableOptions = huntableOptions.cloneNode(true);
                 huntableOptions.parentNode.replaceChild(newHuntableOptions, huntableOptions);
                 newHuntableOptions.querySelectorAll('.option-btn').forEach(button => {
                     button.addEventListener('click', handleChoujuuAnswer);
                 });
-                huntableOptions = newHuntableOptions; // 変数を更新
+                huntableOptions = newHuntableOptions;
             }
 
         } else {
