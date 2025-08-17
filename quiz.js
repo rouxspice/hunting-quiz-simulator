@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM要素の取得 (変更なし)
     const quizCategorySpan = document.getElementById('quiz-category');
     const quizProgressSpan = document.getElementById('quiz-progress');
     const progressBar = document.getElementById('progress-bar');
@@ -11,66 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const choujuuQuizArea = document.getElementById('choujuu-quiz-area');
     const choujuuImage = document.getElementById('choujuu-image');
     const choujuuInstruction = document.getElementById('choujuu-instruction');
-    const huntableOptions = document.getElementById('huntable-options');
+    
+    // ★★★ この変数の取得方法を、より安全なものにします ★★★
+    let huntableOptions = document.getElementById('huntable-options');
 
-    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    // ★★★ すべての画像パスを、先頭に「/」を付けた、絶対パスに、完全統一 ★★★
-    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
     const allQuestions = {
         "choujuu_hnb": [
-            {
-                "name": "カルガモ",
-                "type": "鳥類",
-                "image": "/images/choujuu/karugamo.jpg",
-                "huntable": true
-            },
-            {
-                "name": "ニホンジカ",
-                "type": "獣類",
-                "image": "/images/choujuu/nihonjika.jpg",
-                "huntable": true
-            },
-            {
-                "name": "キジ",
-                "type": "鳥類",
-                "image": "/images/choujuu/kiji.jpg",
-                "huntable": true
-            },
-            {
-                "name": "タヌキ",
-                "type": "獣類",
-                "image": "/images/choujuu/tanuki.jpg",
-                "huntable": true
-            },
-            {
-                "name": "ドバト",
-                "type": "鳥類",
-                "image": "/images/choujuu/dobato.png",
-                "huntable": false
-            },
-            {
-                "name": "ニホンザル",
-                "type": "獣類",
-                "image": "/images/choujuu/nihonzaru.jpg",
-                "huntable": false
-            },
-            {
-                "name": "ハクビシン",
-                "type": "獣類",
-                "image": "/images/choujuu/hakubishin.jpg",
-                "huntable": false
-            },
-             {
-                "name": "メジロ",
-                "type": "鳥類",
-                "image": "/images/choujuu/mejiro.jpg",
-                "huntable": false
-            }
+            { "name": "カルガモ", "type": "鳥類", "image": "/images/choujuu/karugamo.jpg", "huntable": true },
+            { "name": "ニホンジカ", "type": "獣類", "image": "/images/choujuu/nihonjika.jpg", "huntable": true },
+            { "name": "キジ", "type": "鳥類", "image": "/images/choujuu/kiji.jpg", "huntable": true },
+            { "name": "タヌキ", "type": "獣類", "image": "/images/choujuu/tanuki.jpg", "huntable": true },
+            { "name": "ドバト", "type": "鳥類", "image": "/images/choujuu/dobato.png", "huntable": false },
+            { "name": "ニホンザル", "type": "獣類", "image": "/images/choujuu/nihonzaru.jpg", "huntable": false },
+            { "name": "ハクビシン", "type": "獣類", "image": "/images/choujuu/hakubishin.jpg", "huntable": false },
+            { "name": "メジロ", "type": "鳥類", "image": "/images/choujuu/mejiro.jpg", "huntable": false }
         ],
         "wanaryou": [], "amiryouchou": [], "juuryou_1": [], "juuryou_2": [], "shoshinsha": []
     };
-
-    // --- これ以降のロジックは変更ありません ---
 
     let currentQuestions = [];
     let currentQuestionIndex = 0;
@@ -86,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
             quizCategory = categoryFromUrl;
             quizCategoryName = decodeURIComponent(nameFromUrl);
         } else {
-            questionText.textContent = 'エラー: クイズの情報を取得できませんでした。ホームに戻ってやり直してください。';
+            if(questionText) questionText.textContent = 'エラー: クイズの情報を取得できませんでした。ホームに戻ってやり直してください。';
             return;
         }
-        quizCategorySpan.textContent = `現在挑戦中の試験：${quizCategoryName}`;
+        if(quizCategorySpan) quizCategorySpan.textContent = `現在挑戦中の試験：${quizCategoryName}`;
         loadQuestions();
     }
 
@@ -97,12 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (allQuestions[quizCategory]) {
             currentQuestions = shuffleArray(allQuestions[quizCategory]);
             if (currentQuestions.length === 0) {
-                questionText.textContent = `カテゴリ「${quizCategoryName}」の問題は、現在準備中です。`;
+                if(questionText) questionText.textContent = `カテゴリ「${quizCategoryName}」の問題は、現在準備中です。`;
                 return;
             }
             startQuiz();
         } else {
-            questionText.textContent = `カテゴリ「${quizCategoryName}」は存在しません。`;
+            if(questionText) questionText.textContent = `カテゴリ「${quizCategoryName}」は存在しません。`;
         }
     }
     
@@ -117,37 +73,54 @@ document.addEventListener('DOMContentLoaded', () => {
     function startQuiz() {
         currentQuestionIndex = 0;
         score = 0;
-        nextBtn.style.display = 'none';
+        if(nextBtn) nextBtn.style.display = 'none';
         showQuestion();
     }
 
     function showQuestion() {
         resetState();
         const question = currentQuestions[currentQuestionIndex];
+        if (!question) return; 
+
         const isChoujuuQuiz = quizCategory === 'choujuu_hnb';
-        choujuuQuizArea.style.display = isChoujuuQuiz ? 'block' : 'none';
-        questionContainer.style.display = isChoujuuQuiz ? 'none' : 'block';
-        quizProgressSpan.textContent = `残り ${currentQuestions.length - currentQuestionIndex} / ${currentQuestions.length} 問`;
-        const progressPercentage = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
-        progressBar.style.width = `${progressPercentage}%`;
+        if(choujuuQuizArea) choujuuQuizArea.style.display = isChoujuuQuiz ? 'block' : 'none';
+        if(questionContainer) questionContainer.style.display = isChoujuuQuiz ? 'none' : 'block';
+        if(quizProgressSpan) quizProgressSpan.textContent = `残り ${currentQuestions.length - currentQuestionIndex} / ${currentQuestions.length} 問`;
+        if(progressBar) {
+            const progressPercentage = ((currentQuestionIndex) / currentQuestions.length) * 100;
+            progressBar.style.width = `${progressPercentage}%`;
+        }
+
         if (isChoujuuQuiz) {
-            choujuuImage.src = question.image;
-            choujuuImage.alt = question.name;
-            choujuuInstruction.textContent = `この鳥獣は「${question.type}」です。狩猟対象ですか？`;
-            const newHuntableOptions = huntableOptions.cloneNode(true);
-            huntableOptions.parentNode.replaceChild(newHuntableOptions, huntableOptions);
-            newHuntableOptions.querySelectorAll('.option-btn').forEach(button => {
-                button.addEventListener('click', handleChoujuuAnswer);
-            });
+            if(choujuuImage) {
+                choujuuImage.src = question.image;
+                choujuuImage.alt = question.name;
+            }
+            if(choujuuInstruction) choujuuInstruction.textContent = `この鳥獣は「${question.type}」です。狩猟対象ですか？`;
+            
+            // ★★★ エラーの根本原因だった箇所を、より安全なコードに修正 ★★★
+            huntableOptions = document.getElementById('huntable-options'); // 毎回再取得
+            if (huntableOptions) {
+                const newHuntableOptions = huntableOptions.cloneNode(true);
+                huntableOptions.parentNode.replaceChild(newHuntableOptions, huntableOptions);
+                newHuntableOptions.querySelectorAll('.option-btn').forEach(button => {
+                    button.addEventListener('click', handleChoujuuAnswer);
+                });
+                huntableOptions = newHuntableOptions; // 変数を更新
+            }
+
         } else {
-            questionText.textContent = question.question;
+            if(questionText) questionText.textContent = question.question;
         }
     }
 
     function resetState() {
-        feedbackContainer.textContent = '';
-        feedbackContainer.className = 'feedback-container';
-        nextBtn.style.display = 'none';
+        if(feedbackContainer) {
+            feedbackContainer.textContent = '';
+            feedbackContainer.className = 'feedback-container';
+        }
+        if(nextBtn) nextBtn.style.display = 'none';
+        
         document.querySelectorAll('.huntable-btn').forEach(btn => {
             btn.disabled = false;
             btn.classList.remove('correct', 'incorrect');
@@ -158,18 +131,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedBtn = e.target;
         const isCorrect = (selectedBtn.dataset.answer === String(currentQuestions[currentQuestionIndex].huntable));
         document.querySelectorAll('.huntable-btn').forEach(btn => btn.disabled = true);
+
         if (isCorrect) {
             selectedBtn.classList.add('correct');
-            feedbackContainer.textContent = '正解！';
-            feedbackContainer.classList.add('correct-feedback');
+            if(feedbackContainer) {
+                feedbackContainer.textContent = '正解！';
+                feedbackContainer.classList.add('correct-feedback');
+            }
             score++;
         } else {
             selectedBtn.classList.add('incorrect');
-            feedbackContainer.textContent = `不正解。正解は「${currentQuestions[currentQuestionIndex].huntable ? '獲れる' : '獲れない'}」です。`;
-            feedbackContainer.classList.add('incorrect-feedback');
-            document.querySelector(`.huntable-btn[data-answer="${currentQuestions[currentQuestionIndex].huntable}"]`).classList.add('correct');
+            if(feedbackContainer) {
+                feedbackContainer.textContent = `不正解。正解は「${currentQuestions[currentQuestionIndex].huntable ? '獲れる' : '獲れない'}」です。`;
+                feedbackContainer.classList.add('incorrect-feedback');
+            }
+            const correctBtn = document.querySelector(`.huntable-btn[data-answer="${currentQuestions[currentQuestionIndex].huntable}"]`);
+            if(correctBtn) correctBtn.classList.add('correct');
         }
-        nextBtn.style.display = 'block';
+        if(nextBtn) nextBtn.style.display = 'block';
     }
 
     function handleNextButton() {
@@ -182,16 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showResults() {
-        choujuuQuizArea.style.display = 'none';
-        questionContainer.style.display = 'block';
-        optionsContainer.innerHTML = '';
-        feedbackContainer.textContent = '';
-        nextBtn.style.display = 'none';
-        quizProgressSpan.textContent = '試験終了';
-        questionText.textContent = `試験終了！あなたのスコアは ${currentQuestions.length} 問中 ${score} 問正解です。`;
+        if(choujuuQuizArea) choujuuQuizArea.style.display = 'none';
+        if(questionContainer) questionContainer.style.display = 'block';
+        if(optionsContainer) optionsContainer.innerHTML = '';
+        if(feedbackContainer) feedbackContainer.textContent = '';
+        if(nextBtn) nextBtn.style.display = 'none';
+        if(quizProgressSpan) quizProgressSpan.textContent = '試験終了';
+        if(questionText) questionText.textContent = `試験終了！あなたのスコアは ${currentQuestions.length} 問中 ${score} 問正解です。`;
+        if(progressBar) progressBar.style.width = '100%';
     }
 
-    nextBtn.addEventListener('click', handleNextButton);
+    if(nextBtn) nextBtn.addEventListener('click', handleNextButton);
+    
     initializeQuiz();
 });
-
