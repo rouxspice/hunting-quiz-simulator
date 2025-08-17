@@ -1,6 +1,7 @@
 /* ==================================================
    狩猟クイズシミュレーター 統合スタイルシート
    - トップページとクイズ実行画面の両方に対応
+   - 2025/08/17 Manus提案
    ================================================== */
 
 /* ===== 1. Wikiのデザイン定義と基本設定 ===== */
@@ -28,9 +29,7 @@ body {
   background-color: var(--background-color);
   font-family: var(--font-secondary);
   margin: 0;
-  /* body直下の要素を中央に配置する設定は、ページごとに異なるため削除 */
 }
-
 
 /* ===== 2. トップページ（クイズ選択画面）のスタイル ===== */
 
@@ -49,7 +48,7 @@ header {
   align-items: center;
 }
 
-/* ロゴ巨大化の修正 */
+/* ロゴ巨大化を修正 */
 .logo-container img {
   width: 40px;
   height: auto;
@@ -62,11 +61,7 @@ header {
   margin: 0;
 }
 
-.version-info {
-  font-size: 1rem;
-}
-
-/* メインコンテンツエリア */
+/* メインコンテンツ */
 main {
   padding: 2rem;
   text-align: center;
@@ -95,10 +90,9 @@ main {
   border-radius: 8px;
   padding: 1.5rem;
   width: 280px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-align: left;
 }
 
@@ -111,8 +105,7 @@ main {
 .quiz-card p {
   flex-grow: 1;
   color: var(--primary-color);
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin: 0.5rem 0 1rem 0;
 }
 
 .quiz-card .status {
@@ -133,44 +126,39 @@ main {
   font-family: var(--font-secondary);
   transition: opacity 0.3s ease;
   width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .challenge-btn:hover {
   opacity: 0.85;
 }
 
-.challenge-btn:disabled {
+button.challenge-btn:disabled {
   background-color: var(--secondary-color);
   cursor: not-allowed;
 }
 
-
 /* ===== 3. クイズ実行画面のスタイル ===== */
 
-/* クイズ実行画面の時だけbodyに適用される中央寄せスタイル */
-body.quiz-active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
+/* クイズ実行画面は初期状態では非表示にする */
 .quiz-container {
+  display: none;
   background-color: var(--white-color);
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
   overflow: hidden;
-  /* トップページでは非表示、クイズ画面で表示される */
-  display: none; 
+  /* JavaScriptで表示を切り替えた際に中央寄せにするためのマージン */
+  margin: auto;
 }
 
 .quiz-container .quiz-header {
   padding: 2rem;
 }
 
-/* クイズ画面と結果画面のh2 */
 .quiz-container h2 {
   padding: 1rem;
   text-align: center;
@@ -194,7 +182,6 @@ body.quiz-active {
   display: block;
 }
 
-/* クイズ画面のボタン (Submit, Reload) */
 .quiz-container button {
   background-color: var(--accent-color);
   color: var(--white-color);
@@ -206,7 +193,6 @@ body.quiz-active {
   font-family: inherit;
   font-weight: bold;
   padding: 1.3rem;
-  transition: background-color 0.3s ease;
 }
 
 .quiz-container button:hover {
