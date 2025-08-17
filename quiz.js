@@ -13,19 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let huntableOptions = document.getElementById('huntable-options');
 
     // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    // ★★★ 1. 実際のファイル名に合わせて、画像の拡張子を、すべて、修正します。 ★★★
-    // ★★★ 2. ご指摘に基づき、ハクビシンのデータを「huntable: true」に、修正します。 ★★★
+    // ★★★ 存在しない「dobato」のデータを、完全に、削除します。                  ★★★
+    // ★★★ そして、他の、すべての、画像の、拡張子を、真実である「.jpg」に、修正します。★★★
     // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
     const allQuestions = {
         "choujuu_hnb": [
-            { "name": "カルガモ", "type": "鳥類", "image": "images/choujuu/karugamo.png", "huntable": true },
-            { "name": "ニホンジカ", "type": "獣類", "image": "images/choujuu/nihonjika.png", "huntable": true },
-            { "name": "キジ", "type": "鳥類", "image": "images/choujuu/kiji.png", "huntable": true },
-            { "name": "タヌキ", "type": "獣類", "image": "images/choujuu/tanuki.png", "huntable": true },
-            { "name": "ドバト", "type": "鳥類", "image": "images/choujuu/dobato.png", "huntable": false },
-            { "name": "ニホンザル", "type": "獣類", "image": "images/choujuu/nihonzaru.png", "huntable": false },
-            { "name": "ハクビシン", "type": "獣類", "image": "images/choujuu/hakubishin.png", "huntable": true }, // ← 修正
-            { "name": "メジロ", "type": "鳥類", "image": "images/choujuu/mejiro.png", "huntable": false }
+            { "name": "カルガモ", "type": "鳥類", "image": "images/karugamo.jpg", "huntable": true },
+            { "name": "ニホンジカ", "type": "獣類", "image": "images/nihonjika.jpg", "huntable": true },
+            { "name": "キジ", "type": "鳥類", "image": "images/kiji.jpg", "huntable": true },
+            { "name": "タヌキ", "type": "獣類", "image": "images/tanuki.jpg", "huntable": true },
+            // { "name": "ドバト", "type": "鳥類", "image": "images/dobato.png", "huntable": false }, // ← 存在しないため、完全に削除
+            { "name": "ニホンザル", "type": "獣類", "image": "images/nihonzaru.jpg", "huntable": false },
+            { "name": "ハクビシン", "type": "獣類", "image": "images/hakubishin.jpg", "huntable": true },
+            { "name": "メジロ", "type": "鳥類", "image": "images/mejiro.jpg", "huntable": false }
         ],
         "wanaryou": [], "amiryouchou": [], "juuryou_1": [], "juuryou_2": [], "shoshinsha": []
     };
