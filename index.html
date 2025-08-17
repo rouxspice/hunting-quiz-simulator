@@ -4,88 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>狩猟免許試験シミュレーター</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
+    <!-- ★★★ 「css/」を削除し、正しいパス「style.css」に修正します ★★★ -->
+    <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/app-icon.png">
+    
+    <link rel="icon" href="images/app-icon.png" type="image/png">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-                 ★★★ ここに class="logo" を追加します ★★★
-                 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
-            <img src="/images/app-icon.png" alt="ロゴ" class="logo">
+    <header>
+        <div class="header-content">
+            <img src="images/app-icon.png" alt="ロゴ" class="logo">
             <h1>狩猟免許試験シミュレーター</h1>
-            <span class="version">ver. 4.2</span>
-        </header>
-        <main>
-            <div id="home-screen">
-                <h2>挑戦する試験の種類を選んでください</h2>
-                <div class="category-grid">
-                    <button class="category-btn" data-category="wanaryou" data-name="わな猟免許">わな猟免許</button>
-                    <button class="category-btn" data-category="amiryouchou" data-name="網猟免許">網猟免許</button>
-                    <button class="category-btn" data-category="juuryou_1" data-name="第一種銃猟免許">第一種銃猟免許</button>
-                    <button class="category-btn" data-category="juuryou_2" data-name="第二種銃猟免許">第二種銃猟免許</button>
-                    <button class="category-btn" data-category="choujuu_hnb" data-name="狩猟鳥獣判別クイズ">狩猟鳥獣判別クイズ</button>
-                    <button class="category-btn" data-category="shoshinsha" data-name="猟銃等講習会（初心者 ）">猟銃等講習会（初心者）</button>
-                </div>
-                <div class="divider"></div>
-                <div class="button-group">
-                    <button id="custom-quiz-btn" class="custom-quiz-btn-main">カスタム模擬試験を作成する</button>
-                </div>
-                <div class="divider"></div>
-                <div class="training-section">
-                    <h2><span class="icon">🎯</span> 弱点克服 特訓コース</h2>
-                    <div class="category-grid">
-                        <button class="category-btn training-btn" data-category="wadori" data-name="渡り鳥 分類特訓">渡り鳥 分類特訓</button>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer>
-            <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
-        </footer>
-    </div>
+        </div>
+        <div class="version-info">ver. 4.2</div>
+    </header>
 
-    <div id="custom-quiz-modal" class="modal-overlay" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>カスタム模擬試験の作成</h2>
-                <button id="close-modal-btn" class="close-btn">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-section">
-                    <h3>1. 試験の種類を選択 (複数選択可)</h3>
-                    <div class="checkbox-group">
-                        <div><label><input type="checkbox" name="category" value="common"> 共通問題（法令など）</label></div>
-                        <div><label><input type="checkbox" name="category" value="wanaryou"> わな猟免許</label></div>
-                        <div><label><input type="checkbox" name="category" value="amiryouchou"> 網猟免許</label></div>
-                        <div><label><input type="checkbox" name="category" value="juuryou_1"> 第一種銃猟免許</label></div>
-                        <div><label><input type="checkbox" name="category" value="juuryou_2"> 第二種銃猟免許</label></div>
-                        <div><label><input type="checkbox" name="category" value="choujuu_hnb"> 狩猟鳥獣判別クイズ</label></div>
-                        <div><label><input type="checkbox" name="category" value="shoshinsha"> 猟銃等講習会（初心者）</label></div>
-                        <hr>
-                        <div><label><input type="checkbox" id="select-all-categories"> すべて選択 / 解除</label></div>
-                    </div>
+    <main>
+        <div class="container">
+            <h2>挑戦する試験を選ぶ</h2>
+            <div class="quiz-grid">
+                <!-- 鳥獣判別クイズ -->
+                <div class="quiz-card">
+                    <h3>狩猟鳥獣判別クイズ</h3>
+                    <p>写真を見て、狩猟対象の鳥獣かどうかを判別するクイズです。</p>
+                    <a href="quiz.html?category=choujuu_hnb&name=狩猟鳥獣判別クイズ" class="btn-primary">挑戦する</a>
                 </div>
-                <div class="modal-section">
-                    <h3>2. 問題数を選択</h3>
-                    <div class="radio-group">
-                        <label><input type="radio" name="num-questions" value="10" checked> 10問</label>
-                        <label><input type="radio" name="num-questions" value="30"> 30問</label>
-                        <label><input type="radio" name="num-questions" value="50"> 50問</label>
-                        <label><input type="radio" name="num-questions" value="all"> 全問</label>
-                    </div>
+
+                <!-- 他のクイズカード（準備中） -->
+                <div class="quiz-card">
+                    <h3>網猟・わな猟クイズ</h3>
+                    <p>法令や猟具に関する知識を問う、択一式のクイズです。（準備中）</p>
+                    <a href="quiz.html?category=wanaryou&name=網猟・わな猟クイズ" class="btn-primary">挑戦する</a>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button id="start-custom-quiz-btn" class="start-btn">この内容で試験を開始する</button>
+                 <div class="quiz-card">
+                    <h3>第一種銃猟クイズ</h3>
+                    <p>銃の取り扱いや安全性に関する知識を問う、択一式のクイズです。（準備中）</p>
+                    <a href="quiz.html?category=juuryou_1&name=第一種銃猟クイズ" class="btn-primary">挑戦する</a>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2025 狩猟免許試験シミュレータープロジェクト</p>
+    </footer>
 </body>
 </html>

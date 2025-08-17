@@ -10,6 +10,13 @@ body {
     min-height: 100vh;
 }
 
+/* 汎用的な画像スタイル */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* ヘッダー */
 header {
     background-color: #4a6e46; /* 落ち着いた緑 */
@@ -26,11 +33,8 @@ header {
     align-items: center;
 }
 
-/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
-/* ★★★ セレクタを「.header-content .logo」に修正し、確実性を向上させます ★★★ */
-/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
 .header-content .logo {
-    height: 50px; /* ロゴの高さを50pxに設定 */
+    height: 50px !important; /* ロゴの高さを50pxに設定 */
     margin-right: 15px;
 }
 
