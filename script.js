@@ -176,16 +176,17 @@ function startChoujuuQuiz() {
     if (topPageContainer) topPageContainer.style.display = 'none';
     if (quizContainer) quizContainer.style.display = 'none';
 
-    // 判別クイズ用エリア生成・表示
+    // 判別クイズ用エリア生成・表示（top-page-containerの直後に挿入）
     let choujuuArea = document.getElementById('choujuu-area');
     if (!choujuuArea) {
         choujuuArea = document.createElement('div');
         choujuuArea.id = 'choujuu-area';
         choujuuArea.className = 'quiz-container';
-        // bodyの最後に追加
-        document.body.appendChild(choujuuArea);
+        // topPageContainerの直後に挿入
+        topPageContainer.insertAdjacentElement('afterend', choujuuArea);
     }
     choujuuArea.style.display = 'block';
+    choujuuArea.innerHTML = ''; // 前回の内容をクリア
 
     loadChoujuuQuiz();
 }
@@ -252,5 +253,3 @@ function nextChoujuuQuiz() {
         `;
     }
 }
-
-// ...existing code...
