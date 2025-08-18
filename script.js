@@ -1,5 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // --- DOM要素の取得 (変更なし) ---
+// ★★★【最重要変更点】★★★
+// DOMContentLoadedからwindow.onloadに変更
+// これにより、画像などすべてのリソースが読み込まれてから処理を開始する
+window.onload = () => {
+
+    // --- DOM要素の取得 ---
+    const loaderWrapper = document.getElementById('loader-wrapper');
     const topPageContainer = document.getElementById('top-page-container');
     const feedbackOverlay = document.getElementById('feedback-overlay');
     const feedbackIcon = document.getElementById('feedback-icon');
@@ -19,11 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- クイズデータ (変更なし) ---
     const quizData = {
         choujuu: [
-            { image: "images/nihonjika.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "ツキノワグマ", "イノシシ"] },
-            { image: "images/kamoshika.jpg", isHuntable: false, name: "カモシカ" },
-            { image: "images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] },
-            { image: "images/raichou.jpg", isHuntable: false, name: "ライチョウ" }
+            { image: "assets/images/nihonjika.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "ツキノワグマ", "イノシシ"] },
+            { image: "assets/images/kamoshika.jpg", isHuntable: false, name: "カモシカ" },
+            { image: "assets/images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] },
+            { image: "assets/images/raichou.jpg", isHuntable: false, name: "ライチョウ" }
         ],
+        // (他のカテゴリのデータは変更なし)
         ami: [ { question: "網猟免許で捕獲が許可されている鳥獣は？", answers: [{ text: "鳥類のみ", correct: true }, { text: "獣類のみ", correct: false }, { text: "鳥類と獣類の両方", correct: false }] }, { question: "禁止されている網猟具は次のうちどれか？", answers: [{ text: "むそう網", correct: false }, { text: "はり網", correct: false }, { text: "かすみ網", correct: true }] }, { question: "公道上で網を使用して鳥獣を捕獲することは、全面的に許可されている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] } ],
         wana: [ { question: "「くくりわな」を使用してクマ類（ヒグマ・ツキノワグマ）を捕獲することは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "使用が禁止されている「とらばさみ」は、内径の最大長が何cmを超えるものか？", answers: [{ text: "8cm", correct: false }, { text: "12cm", correct: true }, { text: "16cm", correct: false }] }, { question: "法定猟具である「わな」を一人で31個以上使用して猟を行うことは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ],
         jyu1: [ { question: "第一種銃猟免許で扱える銃器は、装薬銃（散弾銃・ライフル銃）と空気銃である。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "住居が集合している地域では、流れ弾に注意すれば銃器による捕獲が認められている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }, { question: "銃の安全装置をかけておけば、脱包しなくても、銃を持ったまま跳びはねても暴発の危険はない。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] } ],
@@ -60,9 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ===================================================================
-    // ★★★ 鳥獣判別クイズ ロジック【現実環境・検証済み】★★★
+    // ★★★ 鳥獣判別クイズ ロジック【変更なし・ただしonload内で実行される】★★★
     // ===================================================================
-
     function startChoujuuQuiz() {
         currentQuiz = quizData.choujuu;
         currentQuestionIndex = 0;
@@ -81,22 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
         choujuuImage.src = question.image;
     }
     
-    // 「門番」方式のイベントリスナー
     choujuuStep1.addEventListener('click', (e) => {
         if (!e.target.matches('.choujuu-choice-btn')) return;
-
         const choice = e.target.dataset.choice;
         const question = currentQuiz[currentQuestionIndex];
         let isCorrect;
-
-        if (choice === 'no') {
-            isCorrect = !question.isHuntable;
-        } else {
-            isCorrect = question.isHuntable;
-        }
-
+        if (choice === 'no') { isCorrect = !question.isHuntable; } else { isCorrect = question.isHuntable; }
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
-
         showFeedbackAnimation(isCorrect, () => {
             if (isCorrect) {
                 if (choice === 'yes') {
@@ -107,9 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     showChoujuuFeedback(true, "正解！これは非狩猟鳥獣のため、捕獲できません。");
                 }
             } else {
-                const feedbackMessage = choice === 'yes' 
-                    ? "不正解。これは非狩猟鳥獣のため、捕獲できません。"
-                    : `不正解。これは狩猟鳥獣（${question.name}）です。`;
+                const feedbackMessage = choice === 'yes' ? "不正解。これは非狩猟鳥獣のため、捕獲できません。" : `不正解。これは狩猟鳥獣（${question.name}）です。`;
                 showChoujuuFeedback(false, feedbackMessage);
             }
             document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = false);
@@ -120,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
         choujuuNameOptions.innerHTML = '';
         const options = [...question.distractors, question.name];
         options.sort(() => Math.random() - 0.5);
-
         options.forEach(name => {
             const button = document.createElement('button');
             button.innerText = name;
@@ -160,10 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===================================================================
     function startNormalQuiz(categoryKey) {
         currentQuiz = quizData[categoryKey] || [];
-        if (currentQuiz.length === 0) {
-            alert('このクイズは現在準備中です。');
-            return;
-        }
+        if (currentQuiz.length === 0) { alert('このクイズは現在準備中です。'); return; }
         currentQuestionIndex = 0;
         topPageContainer.style.display = 'none';
         quizContainerChoujuu.style.display = 'none';
@@ -179,9 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const button = document.createElement('button');
             button.innerText = answer.text;
             button.classList.add('answer-btn');
-            if (answer.correct) {
-                button.dataset.correct = answer.correct;
-            }
+            if (answer.correct) { button.dataset.correct = answer.correct; }
             button.addEventListener('click', selectNormalAnswer);
             answerButtonsElement.appendChild(button);
         });
@@ -189,9 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetNormalState() {
         submitButton.style.display = 'none';
-        while (answerButtonsElement.firstChild) {
-            answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-        }
+        while (answerButtonsElement.firstChild) { answerButtonsElement.removeChild(answerButtonsElement.firstChild); }
     }
 
     function selectNormalAnswer(e) {
@@ -220,15 +206,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setStatusClass(element, correct) {
         clearStatusClass(element);
-        if (correct) {
-            element.classList.add('correct');
-        } else {
-            element.classList.add('wrong');
-        }
+        if (correct) { element.classList.add('correct'); } else { element.classList.add('wrong'); }
     }
 
     function clearStatusClass(element) {
         element.classList.remove('correct');
         element.classList.remove('wrong');
     }
-});
+
+    // --- ★★★ 最後にロード画面を消して、メインコンテンツを表示 ★★★ ---
+    loaderWrapper.classList.add('loaded');
+    topPageContainer.style.display = 'block';
+};
