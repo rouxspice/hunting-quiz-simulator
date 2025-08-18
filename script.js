@@ -144,13 +144,13 @@ submitBtn.addEventListener('click', () => {
 // 狩猟鳥獣判別クイズ用データ
 const choujuuQuizData = [
     {
-        image: "images/kiji.jpg",
+        image: "images/kiji.jpg", // ←ここを修正
         isHuntable: true,
         options: ["キジ", "ヒヨドリ", "スズメ", "ドバト"],
         correct: "キジ"
     },
     {
-        image: "images/suzume.jpg",
+        image: "images/suzume.jpg", // ←ここを修正
         isHuntable: false,
         options: [],
         correct: ""
@@ -163,18 +163,25 @@ let choujuuScore = 0;
 
 // 狩猟鳥獣判別クイズの表示・進行
 function startChoujuuQuiz() {
-    topPageContainer.style.display = 'none';
-    quizContainer.style.display = 'none';
+    // スコアとカウンタをリセット
+    choujuuCurrent = 0;
+    choujuuScore = 0;
 
-    // クイズ用エリア生成
+    // トップページと通常クイズ画面を非表示
+    if (topPageContainer) topPageContainer.style.display = 'none';
+    if (quizContainer) quizContainer.style.display = 'none';
+
+    // 判別クイズ用エリア生成・表示
     let choujuuArea = document.getElementById('choujuu-area');
     if (!choujuuArea) {
         choujuuArea = document.createElement('div');
         choujuuArea.id = 'choujuu-area';
         choujuuArea.className = 'quiz-container';
+        // bodyの最後に追加
         document.body.appendChild(choujuuArea);
     }
     choujuuArea.style.display = 'block';
+
     loadChoujuuQuiz();
 }
 
@@ -197,7 +204,6 @@ function loadChoujuuQuiz() {
 
     document.getElementById('huntable-yes').onclick = () => {
         if (data.isHuntable) {
-            // 鳥獣名選択肢表示
             let optionsHtml = `<p>この鳥獣の名前を選んでください：</p>`;
             data.options.forEach(opt => {
                 optionsHtml += `<button class="option-btn choujuu-name-btn">${opt}</button>`;
@@ -242,24 +248,10 @@ function nextChoujuuQuiz() {
     }
 }
 
-// クイズ選択ボタンのイベント修正
-quizTypes.forEach(type => {
-    const btn = document.getElementById(type.id);
-    if (btn) {
-        btn.addEventListener("click", () => {
-            if (type.id === "start-choujuu-btn") {
-                startChoujuuQuiz();
-            } else {
-                // 他のクイズは従来通り
-                topPageContainer.style.display = "none";
-                quizContainer.style.display = "block";
-                questionEl.textContent = `${type.name} - 問題`;
-                currentQuiz = 0;
-                score = 0;
-                loadQuiz();
-            }
-        });
-    }
-});
+// イベントリスナー（重複防止のため一度だけ設定）
+const choujuuBtn = document.getElementById('start-choujuu-btn');
+if (choujuuBtn) {
+    choujuuBtn.addEventListener('click', startChoujuuQuiz);
+}
 
-// --- ここまでがスクリプト ---
+// ...他のクイズボタンのイベントは従来通り...
