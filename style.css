@@ -170,3 +170,91 @@ main {
     border-radius: 5px;
     cursor: pointer;
 }
+/* --- 狩猟鳥獣判別クイズ専用スタイル --- */
+.quiz-container-choujuu {
+    padding: 20px;
+}
+
+.choujuu-image-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.choujuu-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#choujuu-step1 h2, #choujuu-step2 h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.choujuu-step1-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.choujuu-choice-btn {
+    width: 150px;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid;
+    transition: all 0.2s;
+}
+
+.choujuu-choice-btn[data-choice="yes"] {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+    color: #1e88e5;
+}
+
+.choujuu-choice-btn[data-choice="no"] {
+    background-color: #ffebee;
+    border-color: #f44336;
+    color: #d32f2f;
+}
+
+.feedback-container {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    display: none; /* 初期状態では非表示 */
+}
+
+.feedback-container.correct {
+    background-color: #a5d6a7;
+    color: #1b5e20;
+    display: block;
+}
+
+.feedback-container.wrong {
+    background-color: #ef9a9a;
+    color: #c62828;
+    display: block;
+}
+
+#choujuu-submit {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #4a7c59;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

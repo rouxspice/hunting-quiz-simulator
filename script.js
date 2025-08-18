@@ -1,20 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- DOM要素の取得 ---
     const topPageContainer = document.getElementById('top-page-container');
+    
+    // 通常クイズ用
     const quizContainer = document.getElementById('quiz');
     const questionElement = document.getElementById('question');
     const answerButtonsElement = document.getElementById('answer-buttons');
     const submitButton = document.getElementById('submit');
+    
+    // 鳥獣判別クイズ用
+    const quizContainerChoujuu = document.getElementById('quiz-choujuu');
+    const choujuuImage = document.getElementById('choujuu-image');
+    const choujuuStep1 = document.getElementById('choujuu-step1');
+    const choujuuStep2 = document.getElementById('choujuu-step2');
+    const choujuuNameOptions = document.getElementById('choujuu-name-options');
+    const choujuuFeedback = document.getElementById('choujuu-feedback');
+    const choujuuSubmitButton = document.getElementById('choujuu-submit');
+
     const challengeButtons = document.querySelectorAll('.challenge-btn');
 
     // --- クイズデータ ---
     const quizData = {
         choujuu: [
-            { question: "「ニホンジカ」は狩猟鳥獣である。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] },
-            { question: "「ニホンザル」は狩猟鳥獣である。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] },
-            { question: "メスの「イタチ」は狩猟鳥獣である。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] },
-            { question: "「ドバト」は狩猟鳥獣である。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }
+            { image: "images/nihonjika.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "ツキノワグマ", "イノシシ"] },
+            { image: "images/kamoshika.jpg", isHuntable: false, name: "カモシカ" },
+            { image: "images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] },
+            { image: "images/raichou.jpg", isHuntable: false, name: "ライチョウ" }
         ],
+        // ... (他のカテゴリのデータは変更なし)
         ami: [
             { question: "網猟免許で捕獲が許可されている鳥獣は？", answers: [{ text: "鳥類のみ", correct: true }, { text: "獣類のみ", correct: false }, { text: "鳥類と獣類の両方", correct: false }] },
             { question: "禁止されている網猟具は次のうちどれか？", answers: [{ text: "むそう網", correct: false }, { text: "はり網", correct: false }, { text: "かすみ網", correct: true }] },
@@ -45,28 +58,115 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuiz = [];
     let currentQuestionIndex = 0;
 
-    // --- イベントリスナー ---
+    // --- イベントリスナーの初期化 ---
     challengeButtons.forEach(button => {
         button.addEventListener('click', (event) => {
             const buttonId = event.target.id;
-            const quizCategoryKey = buttonId.replace('start-', '').replace('-btn', ''); 
-            startQuiz(quizCategoryKey);
+            const quizCategoryKey = buttonId.replace('start-', '').replace('-btn', '');
+            
+            // カテゴリによって開始するクイズを分岐
+            if (quizCategoryKey === 'choujuu') {
+                startChoujuuQuiz();
+            } else {
+                startNormalQuiz(quizCategoryKey);
+            }
         });
     });
 
-    submitButton.addEventListener('click', () => {
+    // --- 鳥獣判別クイズ専用ロジック ---
+    function startChoujuuQuiz() {
+        currentQuiz = quizData.choujuu;
+        currentQuestionIndex = 0;
+        topPageContainer.style.display = 'none';
+        quizContainerChoujuu.style.display = 'block';
+        showChoujuuQuestion();
+    }
+
+    function showChoujuuQuestion() {
+        resetChoujuuState();
+        const question = currentQuiz[currentQuestionIndex];
+        choujuuImage.src = question.image;
+    }
+
+    function resetChoujuuState() {
+        choujuuStep1.style.display = 'block';
+        choujuuStep2.style.display = 'none';
+        choujuuFeedback.style.display = 'none';
+        choujuuSubmitButton.style.display = 'none';
+        while (choujuuNameOptions.firstChild) {
+            choujuuNameOptions.removeChild(choujuuNameOptions.firstChild);
+        }
+    }
+
+    document.querySelectorAll('.choujuu-choice-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const choice = e.target.dataset.choice; // 'yes' or 'no'
+            const question = currentQuiz[currentQuestionIndex];
+
+            if (choice === 'no') {
+                if (!question.isHuntable) {
+                    showFeedback(true, "正解！これは非狩猟鳥獣（カモシカなど）のため、捕獲できません。");
+                } else {
+                    showFeedback(false, `不正解。これは狩猟鳥獣（${question.name}）です。`);
+                }
+            } else { // choice === 'yes'
+                if (!question.isHuntable) {
+                    showFeedback(false, "不正解。これは非狩猟鳥獣のため、捕獲できません。");
+                } else {
+                    // 正しいルートなので、ステップ2（名前選択）へ
+                    choujuuStep1.style.display = 'none';
+                    choujuuStep2.style.display = 'block';
+                    setupNameSelection(question);
+                }
+            }
+        });
+    });
+
+    function setupNameSelection(question) {
+        const options = [...question.distractors, question.name];
+        // 選択肢をシャッフル
+        options.sort(() => Math.random() - 0.5);
+
+        options.forEach(name => {
+            const button = document.createElement('button');
+            button.innerText = name;
+            button.classList.add('answer-btn');
+            button.addEventListener('click', () => {
+                if (name === question.name) {
+                    showFeedback(true, `正解！これは${question.name}です。`);
+                } else {
+                    showFeedback(false, `不正解。正しくは${question.name}です。`);
+                }
+                // 回答後はボタンを無効化
+                Array.from(choujuuNameOptions.children).forEach(btn => btn.disabled = true);
+            });
+            choujuuNameOptions.appendChild(button);
+        });
+    }
+
+    function showFeedback(isCorrect, message) {
+        choujuuFeedback.textContent = message;
+        choujuuFeedback.className = 'feedback-container'; // 一旦リセット
+        choujuuFeedback.classList.add(isCorrect ? 'correct' : 'wrong');
+        
+        choujuuSubmitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "トップに戻る";
+        choujuuSubmitButton.style.display = 'block';
+    }
+
+    choujuuSubmitButton.addEventListener('click', () => {
         currentQuestionIndex++;
         if (currentQuestionIndex < currentQuiz.length) {
-            showQuestion();
+            showChoujuuQuestion();
         } else {
-            alert('クイズ終了です！お疲れ様でした。');
-            quizContainer.style.display = 'none';
+            alert('鳥獣判別クイズ終了です！');
+            quizContainerChoujuu.style.display = 'none';
             topPageContainer.style.display = 'block';
         }
     });
 
-    // --- 関数定義 ---
-    function startQuiz(categoryKey) {
+
+    // --- 通常クイズ用ロジック (既存のものを関数化) ---
+    function startNormalQuiz(categoryKey) {
         currentQuiz = quizData[categoryKey] || [];
         if (currentQuiz.length === 0) {
             alert('このクイズは現在準備中です。');
@@ -75,11 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
         currentQuestionIndex = 0;
         topPageContainer.style.display = 'none';
         quizContainer.style.display = 'block';
-        showQuestion();
+        showNormalQuestion();
     }
 
-    function showQuestion() {
-        resetState();
+    function showNormalQuestion() {
+        resetNormalState();
         const question = currentQuiz[currentQuestionIndex];
         questionElement.innerText = question.question;
         
@@ -90,30 +190,38 @@ document.addEventListener('DOMContentLoaded', () => {
             if (answer.correct) {
                 button.dataset.correct = answer.correct;
             }
-            button.addEventListener('click', selectAnswer);
+            button.addEventListener('click', selectNormalAnswer);
             answerButtonsElement.appendChild(button);
         });
     }
 
-    function resetState() {
+    function resetNormalState() {
         submitButton.style.display = 'none';
         while (answerButtonsElement.firstChild) {
             answerButtonsElement.removeChild(answerButtonsElement.firstChild);
         }
     }
 
-    function selectAnswer(e) {
+    function selectNormalAnswer(e) {
         const selectedButton = e.target;
-        const correct = selectedButton.dataset.correct === "true";
-
         Array.from(answerButtonsElement.children).forEach(button => {
             setStatusClass(button, button.dataset.correct === "true");
-            button.disabled = true; // 回答後は他のボタンを押せないようにする
+            button.disabled = true;
         });
-
         submitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る";
         submitButton.style.display = 'block';
     }
+    
+    submitButton.addEventListener('click', () => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < currentQuiz.length) {
+            showNormalQuestion();
+        } else {
+            alert('クイズ終了です！お疲れ様でした。');
+            quizContainer.style.display = 'none';
+            topPageContainer.style.display = 'block';
+        }
+    });
 
     function setStatusClass(element, correct) {
         clearStatusClass(element);
