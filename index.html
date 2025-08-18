@@ -14,8 +14,6 @@
         <p>Now Loading...</p>
     </div>
 
-    <!-- ★★★ フィードバック演出用オーバーレイは、ここから削除されました ★★★ -->
-
     <!-- トップページ (変更なし) -->
     <div id="top-page-container" style="display: none;">
         <header>
@@ -76,17 +74,35 @@
         </main>
     </div>
 
-    <!-- 通常クイズコンテナ (変更なし) -->
+    <!-- ====================================================== -->
+    <!-- ★★★ 通常クイズコンテナ (ここから変更) ★★★ -->
+    <!-- ====================================================== -->
     <div class="quiz-container" id="quiz">
+        <!-- ↓↓↓ このブロックを、追加 ↓↓↓ -->
+        <div class="quiz-header-bar">
+            <button class="back-to-top-btn">← トップに戻る</button>
+        </div>
+        <!-- ↑↑↑ ここまでを追加 ↑↑↑ -->
         <div class="quiz-header">
             <h2 id="question">Question text</h2>
             <div id="answer-buttons" class="answer-buttons-grid"></div>
         </div>
         <button id="submit" style="display: none;">次へ</button>
     </div>
+    <!-- ====================================================== -->
+    <!-- ★★★ 通常クイズコンテナ (ここまで変更) ★★★ -->
+    <!-- ====================================================== -->
 
-    <!-- 狩猟鳥獣判別クイズ専用コンテナ (変更なし) -->
+
+    <!-- ====================================================== -->
+    <!-- ★★★ 狩猟鳥獣判別クイズ専用コンテナ (ここから変更) ★★★ -->
+    <!-- ====================================================== -->
     <div class="quiz-container-choujuu" id="quiz-choujuu" style="display: none;">
+        <!-- ↓↓↓ このブロックを、追加 ↓↓↓ -->
+        <div class="quiz-header-bar">
+            <button class="back-to-top-btn">← トップに戻る</button>
+        </div>
+        <!-- ↑↑↑ ここまでを追加 ↑↑↑ -->
         <div class="choujuu-image-container">
             <img id="choujuu-image" src="" alt="鳥獣の画像">
         </div>
@@ -104,6 +120,9 @@
         <div id="choujuu-feedback" class="feedback-container"></div>
         <button id="choujuu-submit" style="display: none;">次の問題へ</button>
     </div>
+    <!-- ====================================================== -->
+    <!-- ★★★ 狩猟鳥獣判別クイズ専用コンテナ (ここまで変更) ★★★ -->
+    <!-- ====================================================== -->
 
     <script src="script.js"></script>
 </body>
