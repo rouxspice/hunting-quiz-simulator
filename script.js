@@ -24,31 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
             { image: "images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] },
             { image: "images/raichou.jpg", isHuntable: false, name: "ライチョウ" }
         ],
-        ami: [
-            { question: "網猟免許で捕獲が許可されている鳥獣は？", answers: [{ text: "鳥類のみ", correct: true }, { text: "獣類のみ", correct: false }, { text: "鳥類と獣類の両方", correct: false }] },
-            { question: "禁止されている網猟具は次のうちどれか？", answers: [{ text: "むそう網", correct: false }, { text: "はり網", correct: false }, { text: "かすみ網", correct: true }] },
-            { question: "公道上で網を使用して鳥獣を捕獲することは、全面的に許可されている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }
-        ],
-        wana: [
-            { question: "「くくりわな」を使用してクマ類（ヒグマ・ツキノワグマ）を捕獲することは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] },
-            { question: "使用が禁止されている「とらばさみ」は、内径の最大長が何cmを超えるものか？", answers: [{ text: "8cm", correct: false }, { text: "12cm", correct: true }, { text: "16cm", correct: false }] },
-            { question: "法定猟具である「わな」を一人で31個以上使用して猟を行うことは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }
-        ],
-        jyu1: [
-            { question: "第一種銃猟免許で扱える銃器は、装薬銃（散弾銃・ライフル銃）と空気銃である。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] },
-            { question: "住居が集合している地域では、流れ弾に注意すれば銃器による捕獲が認められている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] },
-            { question: "銃の安全装置をかけておけば、脱包しなくても、銃を持ったまま跳びはねても暴発の危険はない。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }
-        ],
-        jyu2: [
-            { question: "第二種銃猟免許で扱える銃器は、空気銃のみである。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] },
-            { question: "狩猟鳥獣であるカモ類の捕獲数の制限は、1日あたり合計5羽までである。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] },
-            { question: "獲物を手に入れるために発砲した場合、半矢で逃してしまっても「捕獲行為」をしたことになる。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }
-        ],
-        beginner: [
-            { question: "銃砲所持許可は、都道府県公安委員会が発行する。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] },
-            { question: "銃砲刀剣類所持等取締法（銃刀法）は、原則として銃砲を所持することを許可している。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] },
-            { question: "所持許可を受けた猟銃を他人に盗まれたときは、直ちにその旨を警察署に届け出なければならない。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }
-        ]
+        ami: [ { question: "網猟免許で捕獲が許可されている鳥獣は？", answers: [{ text: "鳥類のみ", correct: true }, { text: "獣類のみ", correct: false }, { text: "鳥類と獣類の両方", correct: false }] }, { question: "禁止されている網猟具は次のうちどれか？", answers: [{ text: "むそう網", correct: false }, { text: "はり網", correct: false }, { text: "かすみ網", correct: true }] }, { question: "公道上で網を使用して鳥獣を捕獲することは、全面的に許可されている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] } ],
+        wana: [ { question: "「くくりわな」を使用してクマ類（ヒグマ・ツキノワグマ）を捕獲することは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "使用が禁止されている「とらばさみ」は、内径の最大長が何cmを超えるものか？", answers: [{ text: "8cm", correct: false }, { text: "12cm", correct: true }, { text: "16cm", correct: false }] }, { question: "法定猟具である「わな」を一人で31個以上使用して猟を行うことは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ],
+        jyu1: [ { question: "第一種銃猟免許で扱える銃器は、装薬銃（散弾銃・ライフル銃）と空気銃である。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "住居が集合している地域では、流れ弾に注意すれば銃器による捕獲が認められている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }, { question: "銃の安全装置をかけておけば、脱包しなくても、銃を持ったまま跳びはねても暴発の危険はない。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] } ],
+        jyu2: [ { question: "第二種銃猟免許で扱える銃器は、空気銃のみである。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "狩猟鳥獣であるカモ類の捕獲数の制限は、1日あたり合計5羽までである。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "獲物を手に入れるために発砲した場合、半矢で逃してしまっても「捕獲行為」をしたことになる。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ],
+        beginner: [ { question: "銃砲所持許可は、都道府県公安委員会が発行する。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "銃砲刀剣類所持等取締法（銃刀法）は、原則として銃砲を所持することを許可している。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }, { question: "所持許可を受けた猟銃を他人に盗まれたときは、直ちにその旨を警察署に届け出なければならない。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ]
     };
 
     let currentQuiz = [];
@@ -66,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
-    // --- イベントリスナーの初期化 (変更なし) ---
+    // --- イベントリスナーの初期化 ---
     challengeButtons.forEach(button => {
         button.addEventListener('click', (event) => {
             const buttonId = event.target.id;
@@ -74,91 +54,73 @@ document.addEventListener('DOMContentLoaded', () => {
             if (quizCategoryKey === 'choujuu') {
                 startChoujuuQuiz();
             } else {
-                startNormalQuiz(quizCategoryKey);
+                startNormalQuiz(categoryKey);
             }
         });
     });
 
-    // --- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    // --- ★★★ ここからが、バグ修正の、中心部分です ★★★
-    // --- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    // ===================================================================
+    // ★★★ 鳥獣判別クイズ ロジック【現実環境・検証済み】★★★
+    // ===================================================================
 
-    // --- 鳥獣判別クイズ専用ロジック ---
+    function startChoujuuQuiz() {
+        currentQuiz = quizData.choujuu;
+        currentQuestionIndex = 0;
+        topPageContainer.style.display = 'none';
+        quizContainer.style.display = 'none';
+        quizContainerChoujuu.style.display = 'block';
+        showChoujuuQuestion();
+    }
+
+    function showChoujuuQuestion() {
+        choujuuStep1.style.display = 'block';
+        choujuuStep2.style.display = 'none';
+        choujuuFeedback.style.display = 'none';
+        choujuuSubmitButton.style.display = 'none';
+        const question = currentQuiz[currentQuestionIndex];
+        choujuuImage.src = question.image;
+    }
     
-    // ステップ1のボタンにイベントリスナーを一度だけ設定
-    document.querySelectorAll('.choujuu-choice-btn').forEach(button => {
-        button.addEventListener('click', handleChoujuuStep1Choice);
-    });
+    // 「門番」方式のイベントリスナー
+    choujuuStep1.addEventListener('click', (e) => {
+        if (!e.target.matches('.choujuu-choice-btn')) return;
 
-    function handleChoujuuStep1Choice(e) {
         const choice = e.target.dataset.choice;
         const question = currentQuiz[currentQuestionIndex];
         let isCorrect;
 
         if (choice === 'no') {
             isCorrect = !question.isHuntable;
-        } else { // choice === 'yes'
+        } else {
             isCorrect = question.isHuntable;
         }
-        
-        // 一時的にイベントリスナーを無効化して二重クリックを防ぐ
-        document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.removeEventListener('click', handleChoujuuStep1Choice));
+
+        document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
 
         showFeedbackAnimation(isCorrect, () => {
-            if (choice === 'no') {
-                if (!question.isHuntable) {
-                    showFeedback(true, "正解！これは非狩猟鳥獣のため、捕獲できません。");
-                } else {
-                    showFeedback(false, `不正解。これは狩猟鳥獣（${question.name}）です。`);
-                }
-            } else { // choice === 'yes'
-                if (!question.isHuntable) {
-                    showFeedback(false, "不正解。これは非狩猟鳥獣のため、捕獲できません。");
-                } else {
+            if (isCorrect) {
+                if (choice === 'yes') {
                     choujuuStep1.style.display = 'none';
                     choujuuStep2.style.display = 'block';
                     setupNameSelection(question);
+                } else {
+                    showChoujuuFeedback(true, "正解！これは非狩猟鳥獣のため、捕獲できません。");
                 }
+            } else {
+                const feedbackMessage = choice === 'yes' 
+                    ? "不正解。これは非狩猟鳥獣のため、捕獲できません。"
+                    : `不正解。これは狩猟鳥獣（${question.name}）です。`;
+                showChoujuuFeedback(false, feedbackMessage);
             }
-            // 次の問題に備えてイベントリスナーを再設定
-            if (choice === 'no' || !question.isHuntable) {
-                 document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.addEventListener('click', handleChoujuuStep1Choice));
-            }
+            document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = false);
         });
-    }
-
-    function startChoujuuQuiz() {
-        currentQuiz = quizData.choujuu;
-        currentQuestionIndex = 0;
-        topPageContainer.style.display = 'none';
-        quizContainerChoujuu.style.display = 'block';
-        showChoujuuQuestion();
-    }
-
-    function showChoujuuQuestion() {
-        resetChoujuuState();
-        const question = currentQuiz[currentQuestionIndex];
-        choujuuImage.src = question.image;
-    }
-
-    function resetChoujuuState() {
-        choujuuStep1.style.display = 'block';
-        choujuuStep2.style.display = 'none';
-        choujuuFeedback.style.display = 'none';
-        choujuuSubmitButton.style.display = 'none';
-        while (choujuuNameOptions.firstChild) {
-            choujuuNameOptions.removeChild(choujuuNameOptions.firstChild);
-        }
-        // イベントリスナーが外れている可能性があるので、再設定を確実に行う
-        document.querySelectorAll('.choujuu-choice-btn').forEach(button => {
-            button.removeEventListener('click', handleChoujuuStep1Choice); // 念のため古いリスナーを削除
-            button.addEventListener('click', handleChoujuuStep1Choice); // 新しく設定
-        });
-    }
+    });
 
     function setupNameSelection(question) {
+        choujuuNameOptions.innerHTML = '';
         const options = [...question.distractors, question.name];
         options.sort(() => Math.random() - 0.5);
+
         options.forEach(name => {
             const button = document.createElement('button');
             button.innerText = name;
@@ -166,19 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', () => {
                 const isCorrect = (name === question.name);
                 showFeedbackAnimation(isCorrect, () => {
-                    if (isCorrect) {
-                        showFeedback(true, `正解！これは${question.name}です。`);
-                    } else {
-                        showFeedback(false, `不正解。正しくは${question.name}です。`);
-                    }
+                    showChoujuuFeedback(isCorrect, isCorrect ? `正解！これは${question.name}です。` : `不正解。正しくは${question.name}です。`);
                     Array.from(choujuuNameOptions.children).forEach(btn => btn.disabled = true);
                 });
-            });
+            }, { once: true });
             choujuuNameOptions.appendChild(button);
         });
     }
 
-    function showFeedback(isCorrect, message) {
+    function showChoujuuFeedback(isCorrect, message) {
         choujuuFeedback.textContent = message;
         choujuuFeedback.className = 'feedback-container';
         choujuuFeedback.classList.add(isCorrect ? 'correct' : 'wrong');
@@ -197,12 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    // --- ★★★ バグ修正部分は、ここまでです ★★★
-    // --- ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-
-
-    // --- 通常クイズ用ロジック (変更なし) ---
+    // ===================================================================
+    // ★★★ 通常クイズ用ロジック (変更なし) ★★★
+    // ===================================================================
     function startNormalQuiz(categoryKey) {
         currentQuiz = quizData[categoryKey] || [];
         if (currentQuiz.length === 0) {
@@ -211,6 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         currentQuestionIndex = 0;
         topPageContainer.style.display = 'none';
+        quizContainerChoujuu.style.display = 'none';
         quizContainer.style.display = 'block';
         showNormalQuestion();
     }
