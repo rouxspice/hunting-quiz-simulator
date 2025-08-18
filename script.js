@@ -89,16 +89,21 @@ quizTypes.forEach(type => {
     const btn = document.getElementById(type.id);
     if (btn) {
         btn.addEventListener("click", () => {
-            // トップページを非表示
-            document.getElementById("top-page-container").style.display = "none";
-            // クイズ画面を表示
-            document.getElementById("quiz").style.display = "block";
-            // クイズ種別を表示（必要なら）
-            const questionHeader = document.getElementById("question");
-            if (questionHeader) {
-                questionHeader.textContent = `${type.name} - 問題`;
+            if (type.id === "start-choujuu-btn") {
+                // 狩猟鳥獣判別クイズだけは専用関数で表示
+                startChoujuuQuiz();
+            } else {
+                // 通常クイズの表示
+                document.getElementById("top-page-container").style.display = "none";
+                document.getElementById("quiz").style.display = "block";
+                const questionHeader = document.getElementById("question");
+                if (questionHeader) {
+                    questionHeader.textContent = `${type.name} - 問題`;
+                }
+                currentQuiz = 0;
+                score = 0;
+                loadQuiz();
             }
-            // ここで選択したクイズ種別に応じて問題をロードする処理を追加できます
         });
     }
 });
@@ -248,10 +253,4 @@ function nextChoujuuQuiz() {
     }
 }
 
-// イベントリスナー（重複防止のため一度だけ設定）
-const choujuuBtn = document.getElementById('start-choujuu-btn');
-if (choujuuBtn) {
-    choujuuBtn.addEventListener('click', startChoujuuQuiz);
-}
-
-// ...他のクイズボタンのイベントは従来通り...
+// ...existing code...
