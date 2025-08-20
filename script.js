@@ -34,7 +34,7 @@ window.onload = () => {
             { image: "/images/nihonjika-osu.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "ツキノワグマ", "イノシシ"] },
             { image: "/images/kamoshika.jpg", isHuntable: false, name: "カモシカ" },
             { image: "/images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] },
-            { image: "/images/raichou.jpg", isHuntable: false, name: "ライチョウ" }
+
         ],
         //
         // ===================================================================
