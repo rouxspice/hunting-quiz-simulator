@@ -1,6 +1,6 @@
 window.onload = () => {
 
-    // --- DOM要素の取得 (変更あり) ---
+    // --- DOM要素の取得 (変更なし) ---
     const loaderWrapper = document.getElementById('loader-wrapper');
     const topPageContainer = document.getElementById('top-page-container');
     const quizContainer = document.getElementById('quiz');
@@ -14,11 +14,27 @@ window.onload = () => {
     const choujuuNameOptions = document.getElementById('choujuu-name-options');
     const choujuuFeedback = document.getElementById('choujuu-feedback');
     const choujuuSubmitButton = document.getElementById('choujuu-submit');
-    
-    // ★★★【最重要変更点①】★★★
-    // 個々のボタンではなく、その親要素を取得する
     const quizOptionsContainer = document.querySelector('.quiz-options'); 
     const quizContainers = document.querySelectorAll('.quiz-container, .quiz-container-choujuu');
+
+    // ===================================================================
+    // ★★★【共同確認済みの事実に基づく変更点】★★★
+    //
+    // 事実A: 正解音のファイル名は `correct.mp3` である。
+    // 事実B: 不正解音のファイル名は `incorrect.mp3` である。
+    // 事実C: 上記ファイルは `sounds/` フォルダ内に存在する。
+    //
+    // 上記の事実に基づき、音声ファイルを読み込む。
+    //
+    const correctSound = new Audio('sounds/correct.mp3');
+    const wrongSound = new Audio('sounds/incorrect.mp3');
+    //
+    // ===================================================================
+
+    // 音量を少し調整（お好みで変更してください）
+    correctSound.volume = 0.5;
+    wrongSound.volume = 0.5;
+
 
     // --- クイズデータ (変更なし) ---
     const quizData = {
@@ -45,42 +61,26 @@ window.onload = () => {
         topPageContainer.style.display = 'block';
     }
 
-    // --- イベントリスナーの初期化 ---
-
-    // ★★★【最重要変更点②】★★★
-    // イベント委任パターンで、トップページのクイズ開始ボタンを処理する
+    // --- イベントリスナーの初期化 (変更なし) ---
     if (quizOptionsContainer) {
         quizOptionsContainer.addEventListener('click', (event) => {
-            // クリックされたのが .challenge-btn か、その子要素でなければ何もしない
             const button = event.target.closest('.challenge-btn');
             if (!button) return;
-
             const buttonId = button.id;
             const quizCategoryKey = buttonId.replace('start-', '').replace('-btn', '');
-            
-            if (quizCategoryKey === 'choujuu') {
-                startChoujuuQuiz();
-            } else {
-                startNormalQuiz(quizCategoryKey);
-            }
+            if (quizCategoryKey === 'choujuu') { startChoujuuQuiz(); } else { startNormalQuiz(quizCategoryKey); }
         });
     }
-
-    // ★★★【最重要変更点③】★★★
-    // イベント委任パターンで、クイズ画面の「トップに戻る」ボタンを処理する
     quizContainers.forEach(container => {
         container.addEventListener('click', (event) => {
-            // クリックされたのが .back-to-top-btn か、その子要素でなければ何もしない
             const button = event.target.closest('.back-to-top-btn');
             if (!button) return;
-
             goToTopPage();
         });
     });
 
-
     // ===================================================================
-    // 鳥獣判別クイズ ロジック (変更なし)
+    // 鳥獣判別クイズ ロジック (音声再生部分以外、変更なし)
     // ===================================================================
     function startChoujuuQuiz() {
         currentQuiz = quizData.choujuu;
@@ -111,6 +111,9 @@ window.onload = () => {
         const question = currentQuiz[currentQuestionIndex];
         let isCorrect;
         if (choice === 'no') { isCorrect = !question.isHuntable; } else { isCorrect = question.isHuntable; }
+        
+        if (isCorrect) { correctSound.play(); } else { wrongSound.play(); }
+
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
         selectedBtn.classList.add(isCorrect ? 'correct' : 'wrong');
         setTimeout(() => {
@@ -139,6 +142,9 @@ window.onload = () => {
             button.classList.add('answer-btn');
             button.addEventListener('click', (e) => {
                 const isCorrect = (name === question.name);
+
+                if (isCorrect) { correctSound.play(); } else { wrongSound.play(); }
+
                 e.target.classList.add(isCorrect ? 'correct' : 'wrong');
                 Array.from(choujuuNameOptions.children).forEach(btn => btn.disabled = true);
                 setTimeout(() => {
@@ -168,7 +174,7 @@ window.onload = () => {
     });
     
     // ===================================================================
-    // 通常クイズ用ロジック (変更なし)
+    // 通常クイズ用ロジック (音声再生部分以外、変更なし)
     // ===================================================================
     function startNormalQuiz(categoryKey) {
         currentQuiz = quizData[categoryKey] || [];
@@ -202,6 +208,9 @@ window.onload = () => {
     function selectNormalAnswer(e) {
         const selectedButton = e.target;
         const isCorrect = selectedButton.dataset.correct === "true";
+
+        if (isCorrect) { correctSound.play(); } else { wrongSound.play(); }
+
         Array.from(answerButtonsElement.children).forEach(button => {
             button.disabled = true;
             if (button.dataset.correct === "true") {
