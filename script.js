@@ -23,13 +23,7 @@ window.onload = () => {
     correctSound.volume = 0.5;
     wrongSound.volume = 0.5;
 
-
-    // ===================================================================
-    // ★★★【共同確認済みの事実に基づく変更点】★★★
-    //
-    // 画像ファイルは `images/` フォルダに存在するという事実に基づき、
-    // `image` プロパティのパスを修正する。
-    //
+    // --- クイズデータ (変更なし) ---
     const quizData = {
         choujuu: [
             { image: "images/nihonjika.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "ツキノワグマ", "イノシシ"] },
@@ -37,8 +31,6 @@ window.onload = () => {
             { image: "images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] },
             { image: "images/raichou.jpg", isHuntable: false, name: "ライチョウ" }
         ],
-        //
-        // ===================================================================
         ami: [ { question: "網猟免許で捕獲が許可されている鳥獣は？", answers: [{ text: "鳥類のみ", correct: true }, { text: "獣類のみ", correct: false }, { text: "鳥類と獣類の両方", correct: false }] }, { question: "禁止されている網猟具は次のうちどれか？", answers: [{ text: "むそう網", correct: false }, { text: "はり網", correct: false }, { text: "かすみ網", correct: true }] }, { question: "公道上で網を使用して鳥獣を捕獲することは、全面的に許可されている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] } ],
         wana: [ { question: "「くくりわな」を使用してクマ類（ヒグマ・ツキノワグマ）を捕獲することは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "使用が禁止されている「とらばさみ」は、内径の最大長が何cmを超えるものか？", answers: [{ text: "8cm", correct: false }, { text: "12cm", correct: true }, { text: "16cm", correct: false }] }, { question: "法定猟具である「わな」を一人で31個以上使用して猟を行うことは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ],
         jyu1: [ { question: "第一種銃猟免許で扱える銃器は、装薬銃（散弾銃・ライフル銃）と空気銃である。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "住居が集合している地域では、流れ弾に注意すれば銃器による捕獲が認められている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }, { question: "銃の安全装置をかけておけば、脱包しなくても、銃を持ったまま跳びはねても暴発の危険はない。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] } ],
@@ -48,6 +40,23 @@ window.onload = () => {
 
     let currentQuiz = [];
     let currentQuestionIndex = 0;
+
+    // ===================================================================
+    // ★★★【新規追加】★★★
+    // 画像プリロード関数
+    // 画像パスの配列を受け取り、すべての読み込みが完了したら解決するPromiseを返す
+    function preloadImages(urls) {
+        const promises = urls.map(url => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve(img);
+                img.onerror = () => reject(new Error(`Failed to load image's URL: ${url}`));
+                img.src = url;
+            });
+        });
+        return Promise.all(promises);
+    }
+    // ===================================================================
 
     // --- 汎用関数 (変更なし) ---
     function goToTopPage() {
@@ -63,7 +72,11 @@ window.onload = () => {
             if (!button) return;
             const buttonId = button.id;
             const quizCategoryKey = buttonId.replace('start-', '').replace('-btn', '');
-            if (quizCategoryKey === 'choujuu') { startChoujuuQuiz(); } else { startNormalQuiz(quizCategoryKey); }
+            if (quizCategoryKey === 'choujuu') { 
+                startChoujuuQuiz(); // async関数を呼び出す
+            } else { 
+                startNormalQuiz(quizCategoryKey); 
+            }
         });
     }
     quizContainers.forEach(container => {
@@ -75,17 +88,40 @@ window.onload = () => {
     });
 
     // ===================================================================
-    // 鳥獣判別クイズ ロジック (変更なし)
+    // ★★★【大幅改修】★★★
+    // 鳥獣判別クイズ ロジック
+    // async/await を使用して、画像プリロード処理を組み込む
     // ===================================================================
-    function startChoujuuQuiz() {
-        currentQuiz = quizData.choujuu;
-        currentQuestionIndex = 0;
-        topPageContainer.style.display = 'none';
-        quizContainer.style.display = 'none';
-        quizContainerChoujuu.style.display = 'block';
-        showChoujuuQuestion();
+    async function startChoujuuQuiz() {
+        // 1. まずローディング画面を表示する
+        loaderWrapper.classList.remove('loaded');
+
+        try {
+            // 2. クイズデータから画像URLのリストを作成
+            const imageUrls = quizData.choujuu.map(q => q.image);
+            
+            // 3. すべての画像のプリロードが完了するのを待つ
+            await preloadImages(imageUrls);
+
+            // 4. プリロード完了後、クイズを開始する
+            currentQuiz = quizData.choujuu;
+            currentQuestionIndex = 0;
+            topPageContainer.style.display = 'none';
+            quizContainer.style.display = 'none';
+            quizContainerChoujuu.style.display = 'block';
+            showChoujuuQuestion();
+
+        } catch (error) {
+            console.error("画像の読み込みに失敗しました:", error);
+            alert("クイズ画像の読み込みに失敗しました。トップページに戻ります。");
+            goToTopPage();
+        } finally {
+            // 5. 成功・失敗にかかわらず、最後にローディング画面を非表示にする
+            loaderWrapper.classList.add('loaded');
+        }
     }
 
+    // --- 以降の鳥獣判別クイズ関連関数は変更なし ---
     function showChoujuuQuestion() {
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => {
             btn.disabled = false;
@@ -232,6 +268,7 @@ window.onload = () => {
     });
 
     // --- 最後にロード画面を消して、メインコンテンツを表示 (変更なし) ---
+    // ただし、初期ロード時のみ。クイズ開始時のローダーは個別制御。
     loaderWrapper.classList.add('loaded');
     topPageContainer.style.display = 'block';
 };
