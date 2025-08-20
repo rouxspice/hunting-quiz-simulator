@@ -17,33 +17,28 @@ window.onload = () => {
     const quizOptionsContainer = document.querySelector('.quiz-options'); 
     const quizContainers = document.querySelectorAll('.quiz-container, .quiz-container-choujuu');
 
-    // ===================================================================
-    // ★★★【共同確認済みの事実に基づく変更点】★★★
-    //
-    // 事実A: 正解音のファイル名は `correct.mp3` である。
-    // 事実B: 不正解音のファイル名は `incorrect.mp3` である。
-    // 事実C: 上記ファイルは `sounds/` フォルダ内に存在する。
-    //
-    // 上記の事実に基づき、音声ファイルを読み込む。
-    //
+    // --- 音声ファイルの読み込み (変更なし) ---
     const correctSound = new Audio('sounds/correct.mp3');
     const wrongSound = new Audio('sounds/incorrect.mp3');
-    //
-    // ===================================================================
-
-    // 音量を少し調整（お好みで変更してください）
     correctSound.volume = 0.5;
     wrongSound.volume = 0.5;
 
 
-    // --- クイズデータ (変更なし) ---
+    // ===================================================================
+    // ★★★【共同確認済みの事実に基づく変更点】★★★
+    //
+    // 画像ファイルは `images/` フォルダに存在するという事実に基づき、
+    // `image` プロパティのパスを修正する。
+    //
     const quizData = {
         choujuu: [
-            { image: "assets/images/nihonjika.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "ツキノワグマ", "イノシシ"] },
-            { image: "assets/images/kamoshika.jpg", isHuntable: false, name: "カモシカ" },
-            { image: "assets/images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] },
-            { image: "assets/images/raichou.jpg", isHuntable: false, name: "ライチョウ" }
+            { image: "images/nihonjika.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "ツキノワグマ", "イノシシ"] },
+            { image: "images/kamoshika.jpg", isHuntable: false, name: "カモシカ" },
+            { image: "images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] },
+            { image: "images/raichou.jpg", isHuntable: false, name: "ライチョウ" }
         ],
+        //
+        // ===================================================================
         ami: [ { question: "網猟免許で捕獲が許可されている鳥獣は？", answers: [{ text: "鳥類のみ", correct: true }, { text: "獣類のみ", correct: false }, { text: "鳥類と獣類の両方", correct: false }] }, { question: "禁止されている網猟具は次のうちどれか？", answers: [{ text: "むそう網", correct: false }, { text: "はり網", correct: false }, { text: "かすみ網", correct: true }] }, { question: "公道上で網を使用して鳥獣を捕獲することは、全面的に許可されている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] } ],
         wana: [ { question: "「くくりわな」を使用してクマ類（ヒグマ・ツキノワグマ）を捕獲することは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "使用が禁止されている「とらばさみ」は、内径の最大長が何cmを超えるものか？", answers: [{ text: "8cm", correct: false }, { text: "12cm", correct: true }, { text: "16cm", correct: false }] }, { question: "法定猟具である「わな」を一人で31個以上使用して猟を行うことは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ],
         jyu1: [ { question: "第一種銃猟免許で扱える銃器は、装薬銃（散弾銃・ライフル銃）と空気銃である。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "住居が集合している地域では、流れ弾に注意すれば銃器による捕獲が認められている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }, { question: "銃の安全装置をかけておけば、脱包しなくても、銃を持ったまま跳びはねても暴発の危険はない。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] } ],
@@ -80,7 +75,7 @@ window.onload = () => {
     });
 
     // ===================================================================
-    // 鳥獣判別クイズ ロジック (音声再生部分以外、変更なし)
+    // 鳥獣判別クイズ ロジック (変更なし)
     // ===================================================================
     function startChoujuuQuiz() {
         currentQuiz = quizData.choujuu;
@@ -174,7 +169,7 @@ window.onload = () => {
     });
     
     // ===================================================================
-    // 通常クイズ用ロジック (音声再生部分以外、変更なし)
+    // 通常クイズ用ロジック (変更なし)
     // ===================================================================
     function startNormalQuiz(categoryKey) {
         currentQuiz = quizData[categoryKey] || [];
