@@ -325,3 +325,76 @@ main {
     border-color: #999;
     color: #222;
 }
+/* =================================================================== */
+/* レスポンシブ対応 (メディアクエリ)                                  */
+/* =================================================================== */
+
+/* 画面幅が940px以下のデバイス（タブレットや小さめのPC画面）に適用 */
+@media (max-width: 940px) {
+    body {
+        padding: 10px; /* 全体の余白を少し減らす */
+    }
+
+    main {
+        padding: 15px 20px; /* メインコンテンツの余白を調整 */
+    }
+}
+
+
+/* 画面幅が768px以下のデバイス（スマートフォン）に適用 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* ヘッダーの要素を縦並びにする */
+        text-align: center;
+        gap: 10px; /* 要素間の隙間 */
+    }
+
+    .logo-container h1 {
+        font-size: 1.3em; /* スマホ用にタイトルを少し小さく */
+    }
+
+    .quiz-options {
+        /* スマホでは必ず1列表示にする */
+        grid-template-columns: 1fr; 
+    }
+
+    .quiz-card {
+        padding: 15px; /* カードの余白を調整 */
+    }
+
+    .choujuu-choice-btn {
+        width: 120px; /* 「獲れます」「獲れません」ボタンを少し小さく */
+        padding: 15px;
+        font-size: 1.2em;
+    }
+
+    /* 鳥獣判別クイズの選択肢ボタンのグリッドを1列にする */
+    .answer-buttons-grid:has(> button:nth-child(4)) {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 画面幅が480px以下の、さらに小さいデバイスに適用 */
+@media (max-width: 480px) {
+    body {
+        padding: 5px; /* 余白をさらに詰める */
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .logo-container img {
+        width: 30px; /* ロゴをさらに小さく */
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .logo-container h1 {
+        font-size: 1.1em; /* タイトルもさらに小さく */
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+}
