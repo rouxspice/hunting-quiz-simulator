@@ -24,17 +24,17 @@ window.onload = () => {
     wrongSound.volume = 0.5;
 
     // ===================================================================
-    // ★★★【共同確認済みの事実に基づく最終変更点】★★★
+    // ★★★【プロジェクト憲章遵守・最終変更点】★★★
     //
-    // デプロイ環境でのパス解決問題を解消するため、
-    // 画像パスを「絶対パス」に修正する。
+    // GitHub上の、現実に「存在する」ファイル名を「正」とし、
+    // 画像パスを、真実の、値に、修正する。
     //
     const quizData = {
         choujuu: [
-            { image: "/images/nihonjika.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "ツキノワグマ", "イノシシ"] },
+            { image: "/images/nihonjika-osu.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "ツキノワグマ", "イノシシ"] },
             { image: "/images/kamoshika.jpg", isHuntable: false, name: "カモシカ" },
-            { image: "/images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] },
-            { image: "/images/raichou.jpg", isHuntable: false, name: "ライチョウ" }
+            { image: "/images/kiji-osu.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] },
+            { image: "/images/raichou-fuyu.jpg", isHuntable: false, name: "ライチョウ" }
         ],
         //
         // ===================================================================
