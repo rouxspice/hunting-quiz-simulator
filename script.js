@@ -1,6 +1,6 @@
 window.onload = () => {
 
-    // --- DOM要素の取得 (新しい要素を追加) ---
+    // --- DOM要素の取得 ---
     const loaderWrapper = document.getElementById('loader-wrapper');
     const topPageContainer = document.getElementById('top-page-container');
     const quizContainer = document.getElementById('quiz');
@@ -30,13 +30,13 @@ window.onload = () => {
     const additionalInfoText = document.getElementById('additional-info-text');
     const resultDetailsSection = document.getElementById('result-details-section');
 
-    // --- 音声ファイルの読み込み (変更なし) ---
+    // --- 音声ファイルの読み込み ---
     const correctSound = new Audio('sounds/correct.mp3');
     const wrongSound = new Audio('sounds/incorrect.mp3');
     correctSound.volume = 0.5;
     wrongSound.volume = 0.5;
 
-    // --- クイズデータ (網猟クイズを新形式に更新) ---
+    // --- クイズデータ ---
     const quizData = {
         choujuu: [
             { image: "/images/anaguma.jpg", isHuntable: true, name: "アナグマ", distractors: ["タヌキ", "ハクビシン", "テン"] },
@@ -89,11 +89,11 @@ window.onload = () => {
             { 
                 question: "網猟免許で捕獲が許可されている鳥獣は？",
                 answers: [
-                    { text: "鳥類のみ", correct: true },
+                    { text: "鳥類のみ", correct: false },
                     { text: "獣類のみ", correct: false },
-                    { text: "鳥類と獣類の両方", correct: false }
+                    { text: "鳥類と獣類の両方", correct: true }
                 ],
-                additionalInfo: "網猟免許では、鳥類のみが捕獲対象です。獣類を捕獲するには、わな猟免許または銃猟免許が必要です。"
+                additionalInfo: "網猟免許では、鳥類と獣類（ノウサギ）が可能です。"
             },
             { 
                 question: "禁止されている網猟具は次のうちどれか？",
@@ -163,34 +163,34 @@ window.onload = () => {
         beginner: [ { question: "銃砲所持許可は、都道府県公安委員会が発行する。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "銃砲刀剣類所持等取締法（銃刀法）は、原則として銃砲を所持することを許可している。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }, { question: "所持許可を受けた猟銃を他人に盗まれたときは、直ちにその旨を警察署に届け出なければならない。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ]
     };
 
-    // --- 状態管理変数 (変更なし) ---
+    // --- 状態管理変数 ---
     let currentQuiz = [];
     let currentQuestionIndex = 0;
     let currentQuizCategoryKey = '';
     let score = 0;
     let wrongQuestions = [];
 
-    // --- ローカルストレージ関連関数 (変更なし) ---
+    // --- ローカルストレージ関連関数 ---
     const storageKey = 'huntingQuizScores';
     function getScoresFromStorage() { const storedScores = localStorage.getItem(storageKey); return storedScores ? JSON.parse(storedScores) : {}; }
     function saveScoresToStorage(scores) { localStorage.setItem(storageKey, JSON.stringify(scores)); }
     function updateTopPageUI() { const scores = getScoresFromStorage(); document.querySelectorAll('.quiz-card').forEach(card => { const category = card.dataset.quizCategory; const categoryScores = scores[category] || { highScore: 0, cleared: false }; const highScoreEl = card.querySelector('.quiz-card-highscore'); const clearMarkEl = card.querySelector('.quiz-card-clear-mark'); highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`; if (categoryScores.cleared) { clearMarkEl.textContent = '👑'; } else { clearMarkEl.textContent = ''; } }); }
 
-    // --- 画像プリロード関数 (変更なし) ---
+    // --- 画像プリロード関数 ---
     function preloadImages(urls) { const promises = urls.map(url => { return new Promise((resolve, reject) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = () => reject(new Error(`Failed to load image's URL: ${url}`)); img.src = url; }); }); return Promise.all(promises); }
 
-    // --- 汎用関数 (変更なし) ---
+    // --- 汎用関数 ---
     function goToTopPage() { quizContainers.forEach(container => container.style.display = 'none'); resultContainer.style.display = 'none'; topPageContainer.style.display = 'block'; updateTopPageUI(); }
     function resetQuizState(categoryKey) { currentQuizCategoryKey = categoryKey; const originalQuizData = quizData[categoryKey] || []; currentQuiz = [...originalQuizData].sort(() => Math.random() - 0.5); currentQuestionIndex = 0; score = 0; wrongQuestions = []; }
 
-    // --- イベントリスナーの初期化 (変更なし) ---
+    // --- イベントリスナーの初期化 ---
     if (quizOptionsContainer) { quizOptionsContainer.addEventListener('click', (event) => { const button = event.target.closest('.challenge-btn'); if (!button) return; const quizCard = button.closest('.quiz-card'); const quizCategoryKey = quizCard.dataset.quizCategory; if (quizCategoryKey === 'choujuu') { startChoujuuQuiz(); } else { startNormalQuiz(quizCategoryKey); } }); }
     quizContainers.forEach(container => { container.addEventListener('click', (event) => { const button = event.target.closest('.back-to-top-btn'); if (!button) return; goToTopPage(); }); });
     retryQuizBtn.addEventListener('click', () => { if (currentQuizCategoryKey === 'choujuu') { startChoujuuQuiz(); } else { startNormalQuiz(currentQuizCategoryKey); } });
     backToTopFromResultBtn.addEventListener('click', goToTopPage);
     resetScoresBtn.addEventListener('click', () => { const isConfirmed = confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。'); if (isConfirmed) { localStorage.removeItem(storageKey); updateTopPageUI(); alert('すべてのハイスコアがリセットされました。'); } });
 
-    // --- 鳥獣判別クイズ ロジック (変更なし) ---
+    // --- 鳥獣判別クイズ ロジック ---
     async function startChoujuuQuiz() { 
         resetQuizState('choujuu'); 
         loaderWrapper.classList.remove('loaded'); 
