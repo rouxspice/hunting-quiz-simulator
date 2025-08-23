@@ -95,145 +95,45 @@ window.onload = () => {
     let score = 0;
     let wrongQuestions = [];
 
-        // ===================================================================
-    // ★★★ ローカルストレージ関連の、新しい、関数 (ここから) ★★★
-    // ===================================================================
+    // --- ローカルストレージ関連関数 ---
     const storageKey = 'huntingQuizScores';
+    function getScoresFromStorage() { const storedScores = localStorage.getItem(storageKey); return storedScores ? JSON.parse(storedScores) : {}; }
+    function saveScoresToStorage(scores) { localStorage.setItem(storageKey, JSON.stringify(scores)); }
+    function updateTopPageUI() { const scores = getScoresFromStorage(); document.querySelectorAll('.quiz-card').forEach(card => { const category = card.dataset.quizCategory; const categoryScores = scores[category] || { highScore: 0, cleared: false }; const highScoreEl = card.querySelector('.quiz-card-highscore'); const clearMarkEl = card.querySelector('.quiz-card-clear-mark'); highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`; if (categoryScores.cleared) { clearMarkEl.textContent = '👑'; } else { clearMarkEl.textContent = ''; } }); }
 
-    function getScoresFromStorage() {
-        const storedScores = localStorage.getItem(storageKey);
-        return storedScores ? JSON.parse(storedScores) : {};
-    }
+    // --- 画像プリロード関数 ---
+    function preloadImages(urls) { const promises = urls.map(url => { return new Promise((resolve, reject) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = () => reject(new Error(`Failed to load image's URL: ${url}`)); img.src = url; }); }); return Promise.all(promises); }
 
-    function saveScoresToStorage(scores) {
-        localStorage.setItem(storageKey, JSON.stringify(scores));
-    }
+    // --- 汎用関数 ---
+    function goToTopPage() { quizContainers.forEach(container => container.style.display = 'none'); resultContainer.style.display = 'none'; topPageContainer.style.display = 'block'; updateTopPageUI(); }
+    function resetQuizState(categoryKey) { currentQuizCategoryKey = categoryKey; const originalQuizData = quizData[categoryKey] || []; currentQuiz = [...originalQuizData].sort(() => Math.random() - 0.5); currentQuestionIndex = 0; score = 0; wrongQuestions = []; }
 
-    function updateTopPageUI() {
-        const scores = getScoresFromStorage();
-        document.querySelectorAll('.quiz-card').forEach(card => {
-            const category = card.dataset.quizCategory;
-            const categoryScores = scores[category] || { highScore: 0, cleared: false };
-            
-            const highScoreEl = card.querySelector('.quiz-card-highscore');
-            const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
-
-            highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`;
-            if (categoryScores.cleared) {
-                clearMarkEl.textContent = '👑';
-            } else {
-                clearMarkEl.textContent = '';
-            }
-        });
-    }
-    // ===================================================================
-    // ★★★ ローカルストレージ関連の、新しい、関数 (ここまで) ★★★
-    // ===================================================================
-
-
-    // --- 画像プリロード関数 (変更なし) ---
-    function preloadImages(urls) {
-        const promises = urls.map(url => {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.onload = () => resolve(img);
-                img.onerror = () => reject(new Error(`Failed to load image's URL: ${url}`));
-                img.src = url;
-            });
-        });
-        return Promise.all(promises);
-    }
-
-    // --- 汎用関数 (変更なし) ---
-    function goToTopPage() {
-        quizContainer.style.display = 'none';
-        quizContainerChoujuu.style.display = 'none';
-        resultContainer.style.display = 'none';
-        topPageContainer.style.display = 'block';
-    }
-
-    function resetQuizState(categoryKey) {
-        currentQuizCategoryKey = categoryKey;
-        // ★★★ クイズ開始時に、問題をシャッフルするロジックを追加 ★★★
-        const originalQuizData = quizData[categoryKey] || [];
-        currentQuiz = [...originalQuizData].sort(() => Math.random() - 0.5);
-        currentQuestionIndex = 0;
-        score = 0;
-        wrongQuestions = [];
-    }
-
-    // --- イベントリスナーの初期化 (変更なし) ---
-    if (quizOptionsContainer) {
-        quizOptionsContainer.addEventListener('click', (event) => {
-            const button = event.target.closest('.challenge-btn');
-            if (!button) return;
-            const buttonId = button.id;
-            const quizCategoryKey = buttonId.replace('start-', '').replace('-btn', '');
-            if (quizCategoryKey === 'choujuu') { 
-                startChoujuuQuiz();
-            } else { 
-                startNormalQuiz(quizCategoryKey); 
-            }
-        });
-    }
-    quizContainers.forEach(container => {
-        container.addEventListener('click', (event) => {
-            const button = event.target.closest('.back-to-top-btn');
-            if (!button) return;
-            goToTopPage();
-        });
-    });
-    retryQuizBtn.addEventListener('click', () => {
-        if (currentQuizCategoryKey === 'choujuu') {
-            startChoujuuQuiz();
-        } else {
-            startNormalQuiz(currentQuizCategoryKey);
-        }
-    });
+    // --- イベントリスナーの初期化 ---
+    if (quizOptionsContainer) { quizOptionsContainer.addEventListener('click', (event) => { const button = event.target.closest('.challenge-btn'); if (!button) return; const quizCard = button.closest('.quiz-card'); const quizCategoryKey = quizCard.dataset.quizCategory; if (quizCategoryKey === 'choujuu') { startChoujuuQuiz(); } else { startNormalQuiz(quizCategoryKey); } }); }
+    quizContainers.forEach(container => { container.addEventListener('click', (event) => { const button = event.target.closest('.back-to-top-btn'); if (!button) return; goToTopPage(); }); });
+    retryQuizBtn.addEventListener('click', () => { if (currentQuizCategoryKey === 'choujuu') { startChoujuuQuiz(); } else { startNormalQuiz(currentQuizCategoryKey); } });
     backToTopFromResultBtn.addEventListener('click', goToTopPage);
 
-    // --- 鳥獣判別クイズ ロジック  ---
-    async function startChoujuuQuiz() {
-        resetQuizState('choujuu');
-        loaderWrapper.classList.remove('loaded');
-        try {
-            const imageUrls = currentQuiz.map(q => q.image); // シャッフル後のリストからURLを取得
-            await preloadImages(imageUrls);
-            topPageContainer.style.display = 'none';
-            resultContainer.style.display = 'none';
-            quizContainer.style.display = 'none';
-            quizContainerChoujuu.style.display = 'block';
-            showChoujuuQuestion();
-        } catch (error) {
-            console.error("画像の読み込みに失敗しました:", error);
-            alert("クイズ画像の読み込みに失敗しました。トップページに戻ります。");
-            goToTopPage();
-        } finally {
-            loaderWrapper.classList.add('loaded');
-        }
-    }
-
-    function showChoujuuQuestion() {
-        document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); });
-        choujuuStep1.style.display = 'block';
-        choujuuStep2.style.display = 'none';
-        choujuuFeedback.style.display = 'none';
-        choujuuSubmitButton.style.display = 'none';
-        const question = currentQuiz[currentQuestionIndex];
-        choujuuImage.src = question.image;
-    }
-       // ===================================================================
-    // ★★★ ここから、フィードバック強化の、ロジック変更 ★★★
-    // ===================================================================
+    // --- 鳥獣判別クイズ ロジック ---
+    async function startChoujuuQuiz() { resetQuizState('choujuu'); loaderWrapper.classList.remove('loaded'); try { const imageUrls = currentQuiz.map(q => q.image); await preloadImages(imageUrls); topPageContainer.style.display = 'none'; quizContainers.forEach(container => container.style.display = 'none'); quizContainerChoujuu.style.display = 'block'; showChoujuuQuestion(); } catch (error) { console.error("画像の読み込みに失敗しました:", error); alert("クイズ画像の読み込みに失敗しました。トップページに戻ります。"); goToTopPage(); } finally { loaderWrapper.classList.add('loaded'); } }
+    function showChoujuuQuestion() { document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); }); choujuuStep1.style.display = 'block'; choujuuStep2.style.display = 'none'; choujuuFeedback.style.display = 'none'; choujuuSubmitButton.style.display = 'none'; const question = currentQuiz[currentQuestionIndex]; choujuuImage.src = question.image; }
+    
     choujuuStep1.addEventListener('click', (e) => {
         if (!e.target.matches('.choujuu-choice-btn')) return;
         const selectedBtn = e.target;
         const choice = selectedBtn.dataset.choice;
         const question = currentQuiz[currentQuestionIndex];
-        let isCorrect;
-        if (choice === 'no') { isCorrect = !question.isHuntable; } else { isCorrect = question.isHuntable; }
+        const isCorrect = (choice === 'no') ? !question.isHuntable : question.isHuntable;
         
-        if (isCorrect) { correctSound.play(); score++; } else { wrongSound.play(); }
+        if (isCorrect) {
+            correctSound.play();
+            if (choice === 'no') {
+                score++;
+            }
+        } else {
+            wrongSound.play();
+        }
+        
         if (!isCorrect) { wrongQuestions.push({ question: `この鳥獣（${question.name}）は捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' }); }
 
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
@@ -248,46 +148,12 @@ window.onload = () => {
                     showChoujuuFeedback(true, `正解！この鳥獣（${question.name}）は非狩猟鳥獣のため、捕獲できません。`);
                 }
             } else {
-                // ↓↓↓ 不正解時の、フィードバックメッセージを、変更 ↓↓↓
                 let feedbackMessage = '';
-                if (choice === 'yes') { // 「獲れます」と答えて間違い（＝非狩猟鳥獣）
+                if (choice === 'yes') {
                     feedbackMessage = `不正解。この鳥獣（${question.name}）は、非狩猟鳥獣のため、捕獲できません。`;
-                } else { // 「獲れません」と答えて間違い（＝狩猟鳥獣）
+                } else {
                     feedbackMessage = `不正解。この鳥獣は「${question.name}」といい、狩猟対象です。`;
                 }
-                showChoujuuFeedback(false, feedbackMessage);
-                // ↑↑↑ ここまでが、変更点 ↑↑↑
-            }
-        }, 500);
-    });
-    // ===================================================================
-    // ★★★ ここまで、フィードバック強化の、ロジック変更 ★★★
-    // ===================================================================
-
-    choujuuStep1.addEventListener('click', (e) => {
-        if (!e.target.matches('.choujuu-choice-btn')) return;
-        const selectedBtn = e.target;
-        const choice = selectedBtn.dataset.choice;
-        const question = currentQuiz[currentQuestionIndex];
-        let isCorrect;
-        if (choice === 'no') { isCorrect = !question.isHuntable; } else { isCorrect = question.isHuntable; }
-        
-        if (isCorrect) { correctSound.play(); } else { wrongSound.play(); }
-        if (isCorrect) { score++; } else { wrongQuestions.push({ question: `この鳥獣（${question.name}）は捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' }); }
-
-        document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
-        selectedBtn.classList.add(isCorrect ? 'correct' : 'wrong');
-        setTimeout(() => {
-            if (isCorrect) {
-                if (choice === 'yes') {
-                    choujuuStep1.style.display = 'none';
-                    choujuuStep2.style.display = 'block';
-                    setupNameSelection(question);
-                } else {
-                    showChoujuuFeedback(true, "正解！これは非狩猟鳥獣のため、捕獲できません。");
-                }
-            } else {
-                const feedbackMessage = choice === 'yes' ? "不正解。これは非狩猟鳥獣のため、捕獲できません。" : `不正解。これは狩猟鳥獣（${question.name}）です。`;
                 showChoujuuFeedback(false, feedbackMessage);
             }
         }, 500);
@@ -303,7 +169,14 @@ window.onload = () => {
             button.classList.add('answer-btn');
             button.addEventListener('click', (e) => {
                 const isCorrect = (name === question.name);
-                if (isCorrect) { correctSound.play(); } else { wrongSound.play(); }
+                             
+                if (isCorrect) {
+                    correctSound.play();
+                    score++;
+                } else {
+                    wrongSound.play();
+                }
+                
                 if (!isCorrect) { wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name }); }
 
                 e.target.classList.add(isCorrect ? 'correct' : 'wrong');
@@ -316,135 +189,20 @@ window.onload = () => {
         });
     }
 
-    function showChoujuuFeedback(isCorrect, message) {
-        choujuuFeedback.textContent = message;
-        choujuuFeedback.className = 'feedback-container';
-        choujuuFeedback.classList.add(isCorrect ? 'correct' : 'wrong');
-        choujuuSubmitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る";
-        choujuuSubmitButton.style.display = 'block';
-    }
-
-    choujuuSubmitButton.addEventListener('click', () => {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < currentQuiz.length) {
-            showChoujuuQuestion();
-        } else {
-            showResult();
-        }
-    });
+    function showChoujuuFeedback(isCorrect, message) { choujuuFeedback.textContent = message; choujuuFeedback.className = 'feedback-container'; choujuuFeedback.classList.add(isCorrect ? 'correct' : 'wrong'); choujuuSubmitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る"; choujuuSubmitButton.style.display = 'block'; }
+    choujuuSubmitButton.addEventListener('click', () => { currentQuestionIndex++; if (currentQuestionIndex < currentQuiz.length) { showChoujuuQuestion(); } else { showResult(); } });
     
     // --- 通常クイズ用ロジック ---
-     function startNormalQuiz(categoryKey) {
-        resetQuizState(categoryKey);
-        if (currentQuiz.length === 0) { alert('このクイズは現在準備中です。'); return; }
-        topPageContainer.style.display = 'none';
-        quizContainers.forEach(container => container.style.display = 'none');
-        quizContainer.style.display = 'block';
-        showNormalQuestion();
-    }
+    function startNormalQuiz(categoryKey) { resetQuizState(categoryKey); if (currentQuiz.length === 0) { alert('このクイズは現在準備中です。'); return; } topPageContainer.style.display = 'none'; quizContainers.forEach(container => container.style.display = 'none'); resultContainer.style.display = 'none'; quizContainer.style.display = 'block'; showNormalQuestion(); }
+    function showNormalQuestion() { resetNormalState(); const question = currentQuiz[currentQuestionIndex]; questionElement.innerText = question.question; question.answers.forEach(answer => { const button = document.createElement('button'); button.innerText = answer.text; button.classList.add('answer-btn'); if (answer.correct) { button.dataset.correct = answer.correct; } button.addEventListener('click', selectNormalAnswer); answerButtonsElement.appendChild(button); }); }
+    function resetNormalState() { submitButton.style.display = 'none'; while (answerButtonsElement.firstChild) { answerButtonsElement.removeChild(answerButtonsElement.firstChild); } }
+    function selectNormalAnswer(e) { const selectedButton = e.target; const isCorrect = selectedButton.dataset.correct === "true"; if (isCorrect) { correctSound.play(); score++; } else { wrongSound.play(); } if (!isCorrect) { const question = currentQuiz[currentQuestionIndex]; const correctAnswer = question.answers.find(ans => ans.correct).text; wrongQuestions.push({ question: question.question, correctAnswer: correctAnswer }); } Array.from(answerButtonsElement.children).forEach(button => { button.disabled = true; if (button.dataset.correct === "true") { if (!isCorrect && button !== selectedButton) { button.classList.add('reveal-correct'); } } }); selectedButton.classList.add(isCorrect ? 'correct' : 'wrong'); setTimeout(() => { submitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る"; submitButton.style.display = 'block'; }, 500); }
+    submitButton.addEventListener('click', () => { currentQuestionIndex++; if (currentQuestionIndex < currentQuiz.length) { showNormalQuestion(); } else { showResult(); } });
 
-    function showNormalQuestion() {
-        resetNormalState();
-        const question = currentQuiz[currentQuestionIndex];
-        questionElement.innerText = question.question;
-        question.answers.forEach(answer => {
-            const button = document.createElement('button');
-            button.innerText = answer.text;
-            button.classList.add('answer-btn');
-            if (answer.correct) { button.dataset.correct = answer.correct; }
-            button.addEventListener('click', selectNormalAnswer);
-            answerButtonsElement.appendChild(button);
-        });
-    }
-
-    function resetNormalState() {
-        submitButton.style.display = 'none';
-        while (answerButtonsElement.firstChild) { answerButtonsElement.removeChild(answerButtonsElement.firstChild); }
-    }
-
-    function selectNormalAnswer(e) {
-        const selectedButton = e.target;
-        const isCorrect = selectedButton.dataset.correct === "true";
-        if (isCorrect) { correctSound.play(); score++; } else { wrongSound.play(); }
-
-        if (!isCorrect) {
-            const question = currentQuiz[currentQuestionIndex];
-            const correctAnswer = question.answers.find(ans => ans.correct).text;
-            wrongQuestions.push({ question: question.question, correctAnswer: correctAnswer });
-        }
-
-        Array.from(answerButtonsElement.children).forEach(button => {
-            button.disabled = true;
-            if (button.dataset.correct === "true") { if (!isCorrect && button !== selectedButton) { button.classList.add('reveal-correct'); } }
-        });
-        selectedButton.classList.add(isCorrect ? 'correct' : 'wrong');
-        setTimeout(() => {
-            submitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る";
-            submitButton.style.display = 'block';
-        }, 500);
-    }
-    
-    submitButton.addEventListener('click', () => {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < currentQuiz.length) {
-            showNormalQuestion();
-        } else {
-            showResult();
-        }
-    });
-
-    // --- リザルト画面表示用の関数  ---
-        function showResult() {
-        quizContainers.forEach(container => container.style.display = 'none');
-        resultContainer.style.display = 'block';
-
-        const totalQuestions = currentQuiz.length;
-        const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
-
-        // ★★★ スコアをローカルストレージに保存するロジックを追加 ★★★
-        const scores = getScoresFromStorage();
-        const currentCategoryScores = scores[currentQuizCategoryKey] || { highScore: 0, cleared: false };
-        if (percentage > currentCategoryScores.highScore) {
-            currentCategoryScores.highScore = percentage;
-        }
-        if (percentage === 100) {
-            currentCategoryScores.cleared = true;
-        }
-        scores[currentQuizCategoryKey] = currentCategoryScores;
-        saveScoresToStorage(scores);
-        // ★★★ ここまで追加 ★★★
-
-        resultScore.textContent = `正答率: ${percentage}% (${score}/${totalQuestions}問)`;
-
-        if (percentage === 100) {
-            resultMessage.textContent = '素晴らしい！全問正解です！';
-        } else if (percentage >= 80) {
-            resultMessage.textContent = 'お見事！あと一歩です！';
-        } else if (percentage >= 50) {
-            resultMessage.textContent = 'お疲れ様でした！';
-        } else {
-            resultMessage.textContent = 'もう少し頑張りましょう！';
-        }
-
-        wrongQuestionsList.innerHTML = '';
-        if (wrongQuestions.length > 0) {
-            noWrongQuestionsMessage.style.display = 'none';
-            wrongQuestionsList.style.display = 'block';
-            wrongQuestions.forEach(item => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <div class="question-text">${item.question}</div>
-                    <div class="correct-answer-text">正解: ${item.correctAnswer}</div>
-                `;
-                wrongQuestionsList.appendChild(li);
-            });
-        } else {
-            wrongQuestionsList.style.display = 'none';
-            noWrongQuestionsMessage.style.display = 'block';
-        }
-    }
+    // --- リザルト画面表示用の関数 ---
+    function showResult() { quizContainers.forEach(container => container.style.display = 'none'); resultContainer.style.display = 'block'; const totalQuestions = currentQuiz.length; const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0; const scores = getScoresFromStorage(); const currentCategoryScores = scores[currentQuizCategoryKey] || { highScore: 0, cleared: false }; if (percentage > currentCategoryScores.highScore) { currentCategoryScores.highScore = percentage; } if (percentage === 100) { currentCategoryScores.cleared = true; } scores[currentQuizCategoryKey] = currentCategoryScores; saveScoresToStorage(scores); resultScore.textContent = `正答率: ${percentage}% (${score}/${totalQuestions}問)`; if (percentage === 100) { resultMessage.textContent = '素晴らしい！全問正解です！'; } else if (percentage >= 80) { resultMessage.textContent = 'お見事！あと一歩です！'; } else if (percentage >= 50) { resultMessage.textContent = 'お疲れ様でした！'; } else { resultMessage.textContent = 'もう少し頑張りましょう！'; } wrongQuestionsList.innerHTML = ''; if (wrongQuestions.length > 0) { noWrongQuestionsMessage.style.display = 'none'; wrongQuestionsList.style.display = 'block'; wrongQuestions.forEach(item => { const li = document.createElement('li'); li.innerHTML = ` <div class="question-text">${item.question}</div> <div class="correct-answer-text">正解: ${item.correctAnswer}</div> `; wrongQuestionsList.appendChild(li); }); } else { wrongQuestionsList.style.display = 'none'; noWrongQuestionsMessage.style.display = 'block'; } }
 
     // --- 最後にロード画面を消して、メインコンテンツを表示 ---
     loaderWrapper.classList.add('loaded');
-    goToTopPage(); // ★★★ 初期表示時もUI更新をかけるように変更
+    goToTopPage();
 };
