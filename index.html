@@ -120,33 +120,24 @@
         </main>
     </div>
 
-    <!-- ====================================================== -->
-    <!-- ★★★ 通常クイズコンテナ (ここから、変更) ★★★ -->
-    <!-- ====================================================== -->
+    <!-- 通常クイズコンテナ (変更なし) -->
     <div class="quiz-container" id="quiz">
         <div class="quiz-header-bar">
             <button class="back-to-top-btn">← トップに戻る</button>
         </div>
         <div class="quiz-header">
-            <!-- ↓↓↓ 画像表示用の、コンテナを、追加 ↓↓↓ -->
             <div class="normal-quiz-image-container" id="normal-quiz-image-container" style="display: none;">
                 <img id="normal-quiz-image" src="" alt="問題の画像">
             </div>
-            <!-- ↑↑↑ ここまで、追加 ↑↑↑ -->
             <h2 id="question">Question text</h2>
             <div id="answer-buttons" class="answer-buttons-grid"></div>
         </div>
-        <!-- ↓↓↓ 補足情報表示用の、コンテナを、追加 ↓↓↓ -->
         <div class="additional-info-container" id="additional-info-container" style="display: none;">
             <h4>💡 補足情報</h4>
             <p id="additional-info-text"></p>
         </div>
-        <!-- ↑↑↑ ここまで、追加 ↑↑↑ -->
         <button id="submit" style="display: none;">次へ</button>
     </div>
-    <!-- ====================================================== -->
-    <!-- ★★★ 通常クイズコンテナ (ここまで、変更) ★★★ -->
-    <!-- ====================================================== -->
 
     <!-- 狩猟鳥獣判別クイズコンテナ (変更なし) -->
     <div class="quiz-container-choujuu" id="quiz-choujuu" style="display: none;">
@@ -171,7 +162,9 @@
         <button id="choujuu-submit" style="display: none;">次の問題へ</button>
     </div>
 
-    <!-- リザルト画面 (変更なし) -->
+    <!-- ====================================================== -->
+    <!-- ★★★ リザルト画面 (ここから、変更) ★★★ -->
+    <!-- ====================================================== -->
     <div id="result-container" style="display: none;">
         <div class="result-header">
             <h2>クイズ結果</h2>
@@ -180,18 +173,23 @@
             <div id="result-message">素晴らしい！</div>
             <div id="result-score">正答率: 100% (3/3問)</div>
         </div>
-        <div class="result-details">
+        <!-- ↓↓↓ この、divに、IDを、追加 ↓↓↓ -->
+        <div class="result-details" id="result-details-section">
             <h3>間違えた問題の、おさらい</h3>
             <ul id="wrong-questions-list"></ul>
             <div id="no-wrong-questions-message" style="display: none;">
                 <p>全問正解です！おめでとうございます！</p>
             </div>
         </div>
+        <!-- ↑↑↑ ここまで、変更 ↑↑↑ -->
         <div class="result-actions">
             <button id="retry-quiz-btn">もう一度挑戦する</button>
             <button id="back-to-top-from-result-btn">トップに戻る</button>
         </div>
     </div>
+    <!-- ====================================================== -->
+    <!-- ★★★ リザルト画面 (ここまで、変更) ★★★ -->
+    <!-- ====================================================== -->
 
     <script src="script.js"></script>
 

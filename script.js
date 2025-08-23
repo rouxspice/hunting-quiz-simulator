@@ -28,6 +28,7 @@ window.onload = () => {
     const normalQuizImage = document.getElementById('normal-quiz-image');
     const additionalInfoContainer = document.getElementById('additional-info-container');
     const additionalInfoText = document.getElementById('additional-info-text');
+    const resultDetailsSection = document.getElementById('result-details-section');
 
     // --- 音声ファイルの読み込み (変更なし) ---
     const correctSound = new Audio('sounds/correct.mp3');
@@ -360,35 +361,45 @@ window.onload = () => {
 
     // --- リザルト画面表示用の関数 (変更なし) ---
     function showResult() { 
-        quizContainers.forEach(container => container.style.display = 'none'); 
-        resultContainer.style.display = 'block'; 
-        const totalQuestions = currentQuiz.length; 
-        const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0; 
-        const scores = getScoresFromStorage(); 
-        const currentCategoryScores = scores[currentQuizCategoryKey] || { highScore: 0, cleared: false }; 
-        if (percentage > currentCategoryScores.highScore) { currentCategoryScores.highScore = percentage; } 
-        if (percentage === 100) { currentCategoryScores.cleared = true; } 
-        scores[currentQuizCategoryKey] = currentCategoryScores; 
-        saveScoresToStorage(scores); 
-        resultScore.textContent = `正答率: ${percentage}% (${score}/${totalQuestions}問)`; 
-        if (percentage === 100) { resultMessage.textContent = '素晴らしい！全問正解です！'; } else if (percentage >= 80) { resultMessage.textContent = 'お見事！あと一歩です！'; } else if (percentage >= 50) { resultMessage.textContent = 'お疲れ様でした！'; } else { resultMessage.textContent = 'もう少し頑張りましょう！'; } 
-        wrongQuestionsList.innerHTML = ''; 
-        if (wrongQuestions.length > 0) { 
-            noWrongQuestionsMessage.style.display = 'none'; 
-            wrongQuestionsList.style.display = 'block'; 
-            wrongQuestions.forEach(item => { 
-                const li = document.createElement('li'); 
-                let additionalInfoHTML = '';
-                if (item.additionalInfo) {
-                    additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, '<br>')}</div>`;
-                }
-                li.innerHTML = ` <div class="question-text">${item.question}</div> <div class="correct-answer-text">正解: ${item.correctAnswer}</div> ${additionalInfoHTML} `; 
-                wrongQuestionsList.appendChild(li); 
-            }); 
-        } else { 
-            wrongQuestionsList.style.display = 'none'; 
-            noWrongQuestionsMessage.style.display = 'block'; 
-        } 
+        quizContainers.forEach(container => container.style.display = 'none');
+        resultContainer.style.display = 'block';
+
+        const totalQuestions = currentQuiz.length;
+        const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
+
+        const scores = getScoresFromStorage();
+        const currentCategoryScores = scores[currentQuizCategoryKey] || { highScore: 0, cleared: false };
+        if (percentage > currentCategoryScores.highScore) {
+            currentCategoryScores.highScore = percentage;
+        }
+        if (percentage === 100) {
+            currentCategoryScores.cleared = true;
+        }
+        scores[currentQuizCategoryKey] = currentCategoryScores;
+        saveScoresToStorage(scores);
+
+        resultScore.textContent = `正答率: ${percentage}% (${score}/${totalQuestions}問)`;
+
+        if (percentage === 100) {resultMessage.textContent = '素晴らしい！全問正解です！';
+    } else if (percentage >= 80) {resultMessage.textContent = 'お見事！あと一歩です！';
+    } else if (percentage >= 50) {resultMessage.textContent = 'お疲れ様でした！';
+    } else {resultMessage.textContent = 'もう少し頑張りましょう！';
+    }
+    if (wrongQuestions.length > 0) {
+        resultDetailsSection.style.display = 'block'; // 「おさらい」セクションを表示
+        wrongQuestionsList.innerHTML = '';
+        wrongQuestions.forEach(item => {
+            const li = document.createElement('li');
+            let additionalInfoHTML = '';
+if (item.additionalInfo) {
+    additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, '<br>')}</div>`;
+}
+            li.innerHTML = ` <div class="question-text">${item.question}</div> <div class="correct-answer-text">正解: ${item.correctAnswer}</div> ${additionalInfoHTML} `;
+            wrongQuestionsList.appendChild(li);
+        });
+    } else {
+        resultDetailsSection.style.display = 'none'; // 「おさらい」セクションを非表示
+    }
     }
 
     // --- 最後にロード画面を消して、メインコンテンツを表示 ---
