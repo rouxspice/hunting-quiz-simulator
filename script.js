@@ -1,6 +1,6 @@
 window.onload = () => {
 
-    // --- DOM要素の取得 (変更なし) ---
+    // --- DOM要素の取得 ---
     const loaderWrapper = document.getElementById('loader-wrapper');
     const topPageContainer = document.getElementById('top-page-container');
     const quizContainer = document.getElementById('quiz');
@@ -24,18 +24,13 @@ window.onload = () => {
     const retryQuizBtn = document.getElementById('retry-quiz-btn');
     const backToTopFromResultBtn = document.getElementById('back-to-top-from-result-btn');
 
-    // --- 音声ファイルの読み込み (変更なし) ---
+    // --- 音声ファイルの読み込み ---
     const correctSound = new Audio('sounds/correct.mp3');
     const wrongSound = new Audio('sounds/incorrect.mp3');
     correctSound.volume = 0.5;
     wrongSound.volume = 0.5;
 
-    // ===================================================================
-    // ★★★【プロジェクト憲章遵守・最終変更点】★★★
-    //
-    // あなたと、私が、共に、確認し、承認した、45種類の、
-    // 鳥獣データを、ここに、実装する。
-    //
+    // 鳥獣データと通常クイズデータ
     const quizData = {
         choujuu: [
             { image: "/images/anaguma.jpg", isHuntable: true, name: "アナグマ", distractors: ["タヌキ", "ハクビシン", "テン"] },
@@ -261,7 +256,7 @@ window.onload = () => {
         }
     });
     
-    // --- 通常クイズ用ロジック (変更なし) ---
+    // --- 通常クイズ用ロジック ---
     function startNormalQuiz(categoryKey) {
         resetQuizState(categoryKey);
         if (currentQuiz.length === 0) { alert('このクイズは現在準備中です。'); return; }

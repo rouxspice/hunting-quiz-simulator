@@ -1,4 +1,4 @@
-/* 基本スタイル */
+/* 基本スタイル (変更なし) */
 body {
     font-family: sans-serif;
     background-color: #f0f2f5;
@@ -7,7 +7,7 @@ body {
     padding: 20px;
 }
 
-/* トップページコンテナ */
+/* トップページコンテナ (変更なし) */
 #top-page-container {
     max-width: 900px;
     margin: 0 auto;
@@ -17,490 +17,153 @@ body {
     overflow: hidden;
 }
 
+/* ヘッダー関連 (変更なし) */
 header {
-    background-color: #4a7c59; /* 落ち着いた緑 */
+    background-color: #4a7c59;
     color: white;
     padding: 15px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.logo-container { display: flex; align-items: center; }
+.logo-container img { width: 40px; height: 40px; margin-right: 15px; }
+.logo-container h1 { font-size: 1.6em; margin: 0; }
+.version-info { font-size: 0.9em; }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-}
+/* メインコンテンツ関連 (変更なし) */
+main { padding: 20px 30px; }
+.app-summary { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+.app-summary h2 { font-size: 1.4em; color: #4a7c59; }
+.app-summary p { line-height: 1.6; }
+.quiz-selection h2 { font-size: 1.4em; margin-bottom: 20px; }
+.quiz-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
 
-.logo-container img {
-    width: 40px; /* ロゴのサイズを適切に指定 */
-    height: 40px;
-    margin-right: 15px;
-}
-
-.logo-container h1 {
-    font-size: 1.6em;
-    margin: 0;
-}
-
-.version-info {
-    font-size: 0.9em;
-}
-
-main {
-    padding: 20px 30px;
-}
-
-/* 概要セクション */
-.app-summary {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.app-summary h2 {
-    font-size: 1.4em;
-    color: #4a7c59;
-}
-
-.app-summary p {
-    line-height: 1.6;
-}
-
-/* クイズ選択セクション */
-.quiz-selection h2 {
-    font-size: 1.4em;
-    margin-bottom: 20px;
-}
-
-.quiz-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
+/* =================================================================== */
+/* ★★★ クイズカードのデザインを、全面的に、刷新 (ここから) ★★★ */
+/* =================================================================== */
 .quiz-card {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* ホバーエフェクト用 */
+    position: relative; /* クリアマークの位置決めの基点 */
 }
 
-.quiz-card h3 {
-    margin-top: 0;
+.quiz-card:hover {
+    transform: translateY(-5px); /* 少し浮き上がる */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.quiz-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.quiz-card-icon {
+    font-size: 1.8em;
+    margin-right: 10px;
+}
+
+.quiz-card-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+    flex-grow: 1; /* タイトルが長くなってもレイアウトを維持 */
+}
+
+.quiz-card-clear-mark {
+    font-size: 1.5em;
+    color: #ffc107; /* 王冠の色 */
 }
 
 .quiz-card p {
-    flex-grow: 1; /* 説明文の長さを揃える */
+    flex-grow: 1;
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.quiz-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* フッターをカードの下部に固定 */
+}
+
+.quiz-card-highscore {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #4a7c59;
 }
 
 .challenge-btn {
     background-color: #4a7c59;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 8px 15px; /* 少し小さく調整 */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 0.9em;
     transition: background-color 0.3s;
 }
 
 .challenge-btn:hover {
     background-color: #3b6347;
 }
-
-/* クイズコンテナ（初期状態では非表示） */
-.quiz-container, .quiz-container-choujuu {
-    display: none;
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 20px 30px;
-}
-
-/* --- クイズ画面の汎用スタイル --- */
-.answer-buttons-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* 基本は1列 */
-    gap: 10px;
-    margin-top: 20px;
-}
-
-/* 選択肢が4つの場合は2x2のグリッドにする */
-.answer-buttons-grid:has(> button:nth-child(4)) {
-    grid-template-columns: 1fr 1fr;
-}
-
-#submit, #choujuu-submit {
-    margin-top: 20px;
-    width: 100%;
-    padding: 15px;
-    font-size: 1.2em;
-    font-weight: bold;
-    background-color: #4a7c59;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* --- 狩猟鳥獣判別クイズ専用スタイル --- */
-.choujuu-image-container {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 20px auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.choujuu-image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-#choujuu-step1 h2, #choujuu-step2 h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.choujuu-step1-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.feedback-container {
-    margin-top: 20px;
-    padding: 15px;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 5px;
-    display: none; /* 初期状態では非表示 */
-}
-
-.feedback-container.correct {
-    background-color: #e8f5e9;
-    color: #2e7d32;
-    display: block;
-}
-
-.feedback-container.wrong {
-    background-color: #ffebee;
-    color: #c62828;
-    display: block;
-}
-
-/* --- ロード画面用のスタイル (変更なし) --- */
-#loader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #2c3e50; /* 背景色 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 3000; /* 最前面に表示 */
-    transition: opacity 0.5s ease;
-}
-
-#loader-wrapper.loaded {
-    opacity: 0;
-    pointer-events: none; /* クリックを透過させる */
-}
-
-.loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db; /* スピナーの色 */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1.5s linear infinite;
-}
-
-#loader-wrapper p {
-    margin-top: 20px;
-    color: #f3f3f3;
-    font-size: 1.2em;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-
 /* =================================================================== */
-/* ★★★ 新しいインライン・フィードバック用のスタイル (ここから) ★★★ */
+/* ★★★ クイズカードのデザイン (ここまで) ★★★ */
 /* =================================================================== */
 
-/* 汎用の回答ボタンの基本スタイル */
-.answer-btn,
-.choujuu-choice-btn {
-    padding: 15px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 8px;
-    border: 2px solid #ccc;
-    background-color: #f8f9fa;
-    text-align: center;
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
-}
 
-.answer-btn:hover:not(:disabled),
-.choujuu-choice-btn:hover:not(:disabled) {
-    background-color: #e9ecef;
-    border-color: #999;
-}
-
-/* 正解ボタンのスタイル */
-.answer-btn.correct,
-.choujuu-choice-btn.correct {
-    background-color: #28a745; /* 正解の緑 */
-    color: white;
-    border-color: #218838;
-    transform: scale(1.05); /* 少し拡大して強調 */
-}
-
-/* 不正解ボタンのスタイル */
-.answer-btn.wrong,
-.choujuu-choice-btn.wrong {
-    background-color: #dc3545; /* 不正解の赤 */
-    color: white;
-    border-color: #c82333;
-    opacity: 0.7; /* 選択されなかったボタンと区別 */
-}
-
-/* ユーザーが不正解だった場合に、正解の選択肢を教えるためのスタイル */
-.answer-btn.reveal-correct {
-    background-color: #17a2b8; /* ヒントの青緑 */
-    color: white;
-    border-color: #138496;
-}
-
-/* ボタンが無効化されたときのスタイル */
-.answer-btn:disabled,
-.choujuu-choice-btn:disabled {
-    cursor: not-allowed;
-    opacity: 0.9; /* 選択後は少し透明にする */
-}
-
-/* 選択されなかったボタンのスタイル */
-.answer-btn:disabled:not(.correct):not(.wrong):not(.reveal-correct),
-.choujuu-choice-btn:disabled:not(.correct):not(.wrong) {
-    opacity: 0.5;
-}
-/* =================================================================== */
-/* ★★★ トップへ戻るボタン用のスタイル (ここから追記) ★★★ */
-/* =================================================================== */
-
-.quiz-header-bar {
-    display: flex;
-    justify-content: flex-start; /* 左寄せにする */
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
-}
-
-.back-to-top-btn {
-    background-color: transparent;
-    border: 1px solid #ccc;
-    color: #555;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: all 0.2s ease-in-out;
-}
-
-.back-to-top-btn:hover {
-    background-color: #f0f0f0;
-    border-color: #999;
-    color: #222;
-}
-/* =================================================================== */
-/* レスポンシブ対応 (メディアクエリ)                                  */
-/* =================================================================== */
-
-/* 画面幅が940px以下のデバイス（タブレットや小さめのPC画面）に適用 */
-@media (max-width: 940px) {
-    body {
-        padding: 10px; /* 全体の余白を少し減らす */
-    }
-
-    main {
-        padding: 15px 20px; /* メインコンテンツの余白を調整 */
-    }
-}
-
-
-/* 画面幅が768px以下のデバイス（スマートフォン）に適用 */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* ヘッダーの要素を縦並びにする */
-        text-align: center;
-        gap: 10px; /* 要素間の隙間 */
-    }
-
-    .logo-container h1 {
-        font-size: 1.3em; /* スマホ用にタイトルを少し小さく */
-    }
-
-    .quiz-options {
-        /* スマホでは必ず1列表示にする */
-        grid-template-columns: 1fr; 
-    }
-
-    .quiz-card {
-        padding: 15px; /* カードの余白を調整 */
-    }
-
-    .choujuu-choice-btn {
-        width: 120px; /* 「獲れます」「獲れません」ボタンを少し小さく */
-        padding: 15px;
-        font-size: 1.2em;
-    }
-
-    /* 鳥獣判別クイズの選択肢ボタンのグリッドを1列にする */
-    .answer-buttons-grid:has(> button:nth-child(4)) {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* 画面幅が480px以下の、さらに小さいデバイスに適用 */
-@media (max-width: 480px) {
-    body {
-        padding: 5px; /* 余白をさらに詰める */
-    }
-
-    main {
-        padding: 10px;
-    }
-
-    .logo-container img {
-        width: 30px; /* ロゴをさらに小さく */
-        height: 30px;
-        margin-right: 10px;
-    }
-
-    .logo-container h1 {
-        font-size: 1.1em; /* タイトルもさらに小さく */
-    }
-
-    header {
-        padding: 10px 15px;
-    }
-}
-/* =================================================================== */
-/* ★★★ リザルト画面用のスタイル (ここから追加) ★★★ */
-/* =================================================================== */
-
-#result-container {
-    display: none; /* 初期状態は非表示 */
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 20px 30px;
-    text-align: center;
-}
-
-.result-header h2 {
-    font-size: 1.8em;
-    color: #4a7c59;
-    margin-bottom: 20px;
-}
-
-.result-summary {
-    margin-bottom: 30px;
-}
-
-#result-message {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-#result-score {
-    font-size: 1.2em;
-    color: #555;
-}
-
-.result-details {
-    text-align: left;
-    margin-bottom: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-.result-details h3 {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-}
-
-#wrong-questions-list {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-#wrong-questions-list li {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 10px;
-}
-
-#wrong-questions-list .question-text {
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-#wrong-questions-list .correct-answer-text {
-    color: #28a745;
-}
-
-#no-wrong-questions-message p {
-    text-align: center;
-    color: #555;
-    padding: 20px;
-}
-
-.result-actions {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-#retry-quiz-btn, #back-to-top-from-result-btn {
-    padding: 12px 25px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    transition: background-color 0.3s;
-}
-
-#retry-quiz-btn {
-    background-color: #4a7c59;
-    color: white;
-}
-#retry-quiz-btn:hover {
-    background-color: #3b6347;
-}
-
-#back-to-top-from-result-btn {
-    background-color: #6c757d;
-    color: white;
-}
-#back-to-top-from-result-btn:hover {
-    background-color: #5a6268;
-}
+/* クイズコンテナ、フィードバックなど、以下のスタイルは変更なし */
+.quiz-container, .quiz-container-choujuu { display: none; max-width: 900px; margin: 0 auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px 30px; }
+.answer-buttons-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 20px; }
+.answer-buttons-grid:has(> button:nth-child(4)) { grid-template-columns: 1fr 1fr; }
+#submit, #choujuu-submit { margin-top: 20px; width: 100%; padding: 15px; font-size: 1.2em; font-weight: bold; background-color: #4a7c59; color: white; border: none; border-radius: 5px; cursor: pointer; }
+.choujuu-image-container { width: 100%; max-width: 500px; margin: 0 auto 20px auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+.choujuu-image-container img { width: 100%; height: auto; display: block; }
+#choujuu-step1 h2, #choujuu-step2 h2 { text-align: center; margin-bottom: 20px; }
+.choujuu-step1-buttons { display: flex; justify-content: center; gap: 20px; }
+.feedback-container { margin-top: 20px; padding: 15px; font-size: 1.2em; font-weight: bold; text-align: center; border-radius: 5px; display: none; }
+.feedback-container.correct { background-color: #e8f5e9; color: #2e7d32; display: block; }
+.feedback-container.wrong { background-color: #ffebee; color: #c62828; display: block; }
+#loader-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #2c3e50; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 3000; transition: opacity 0.5s ease; }
+#loader-wrapper.loaded { opacity: 0; pointer-events: none; }
+.loader { border: 8px solid #f3f3f3; border-top: 8px solid #3498db; border-radius: 50%; width: 60px; height: 60px; animation: spin 1.5s linear infinite; }
+#loader-wrapper p { margin-top: 20px; color: #f3f3f3; font-size: 1.2em; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.answer-btn, .choujuu-choice-btn { padding: 15px; font-size: 1em; cursor: pointer; border-radius: 8px; border: 2px solid #ccc; background-color: #f8f9fa; text-align: center; transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out; }
+.answer-btn:hover:not(:disabled), .choujuu-choice-btn:hover:not(:disabled) { background-color: #e9ecef; border-color: #999; }
+.answer-btn.correct, .choujuu-choice-btn.correct { background-color: #28a745; color: white; border-color: #218838; transform: scale(1.05); }
+.answer-btn.wrong, .choujuu-choice-btn.wrong { background-color: #dc3545; color: white; border-color: #c82333; opacity: 0.7; }
+.answer-btn.reveal-correct { background-color: #17a2b8; color: white; border-color: #138496; }
+.answer-btn:disabled, .choujuu-choice-btn:disabled { cursor: not-allowed; opacity: 0.9; }
+.answer-btn:disabled:not(.correct):not(.wrong):not(.reveal-correct), .choujuu-choice-btn:disabled:not(.correct):not(.wrong) { opacity: 0.5; }
+.quiz-header-bar { display: flex; justify-content: flex-start; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+.back-to-top-btn { background-color: transparent; border: 1px solid #ccc; color: #555; padding: 8px 12px; border-radius: 5px; cursor: pointer; font-size: 0.9em; transition: all 0.2s ease-in-out; }
+.back-to-top-btn:hover { background-color: #f0f0f0; border-color: #999; color: #222; }
+@media (max-width: 940px) { body { padding: 10px; } main { padding: 15px 20px; } }
+@media (max-width: 768px) { header { flex-direction: column; text-align: center; gap: 10px; } .logo-container h1 { font-size: 1.3em; } .quiz-options { grid-template-columns: 1fr; } .quiz-card { padding: 15px; } .choujuu-choice-btn { width: 120px; padding: 15px; font-size: 1.2em; } .answer-buttons-grid:has(> button:nth-child(4)) { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { body { padding: 5px; } main { padding: 10px; } .logo-container img { width: 30px; height: 30px; margin-right: 10px; } .logo-container h1 { font-size: 1.1em; } header { padding: 10px 15px; } }
+#result-container { display: none; max-width: 900px; margin: 0 auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px 30px; text-align: center; }
+.result-header h2 { font-size: 1.8em; color: #4a7c59; margin-bottom: 20px; }
+.result-summary { margin-bottom: 30px; }
+#result-message { font-size: 1.5em; font-weight: bold; margin-bottom: 10px; }
+#result-score { font-size: 1.2em; color: #555; }
+.result-details { text-align: left; margin-bottom: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+.result-details h3 { font-size: 1.2em; margin-bottom: 15px; }
+#wrong-questions-list { list-style-type: none; padding-left: 0; }
+#wrong-questions-list li { background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin-bottom: 10px; }
+#wrong-questions-list .question-text { font-weight: bold; margin-bottom: 8px; }
+#wrong-questions-list .correct-answer-text { color: #28a745; }
+#no-wrong-questions-message p { text-align: center; color: #555; padding: 20px; }
+.result-actions { display: flex; justify-content: center; gap: 20px; }
+#retry-quiz-btn, #back-to-top-from-result-btn { padding: 12px 25px; font-size: 1em; cursor: pointer; border-radius: 5px; border: none; transition: background-color 0.3s; }
+#retry-quiz-btn { background-color: #4a7c59; color: white; }
+#retry-quiz-btn:hover { background-color: #3b6347; }
+#back-to-top-from-result-btn { background-color: #6c757d; color: white; }
+#back-to-top-from-result-btn:hover { background-color: #5a6268; }

@@ -7,154 +7,170 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- ローディング画面 (変更なし) -->
+<div id="loader-wrapper">
+    <div class="loader"></div>
+    <p>Now Loading...</p>
+</div>
 
-    <!-- ローディング画面 (変更なし) -->
-    <div id="loader-wrapper">
-        <div class="loader"></div>
-        <p>Now Loading...</p>
-    </div>
+<!-- トップページ (★★★ ここから変更) ★★★ -->
+<div id="top-page-container" style="display: none;">
+    <header>
+        <div class="logo-container">
+            <img src="assets/images/app-icon.png" alt="ロゴ">
+            <h1>狩猟免許試験シミュレーター</h1>
+        </div>
+        <div class="version-info">
+            <span>ver. 5.0</span> <!-- バージョンアップ！ -->
+        </div>
+    </header>
+    <main>
+        <section class="app-summary">
+            <h2>アプリ概要</h2>
+            <p>
+                狩猟免許試験シミュレーターは、狩猟免許取得を目指す方や知識を深めたい方のための学習支援アプリです。  
 
-    <!-- トップページ (変更なし) -->
-    <div id="top-page-container" style="display: none;">
-        <header>
-            <div class="logo-container">
-                <img src="assets/images/app-icon.png" alt="ロゴ">
-                <h1>狩猟免許試験シミュレーター</h1>
-            </div>
-            <div class="version-info">
-                <span>ver. 4.2</span>
-            </div>
-        </header>
-        <main>
-            <section class="app-summary">
-                <h2>アプリ概要</h2>
-                <p>
-                    狩猟免許試験シミュレーターは、狩猟免許取得を目指す方や知識を深めたい方のための学習支援アプリです。  
+                網猟、わな猟、第一種銃猟、第二種銃猟、狩猟鳥獣判別、初心者講習用の6種類のクイズに挑戦できます。  
 
-                    網猟、わな猟、第一種銃猟、第二種銃猟、狩猟鳥獣判別、初心者講習用の6種類のクイズに挑戦できます。  
-
-                    各クイズは実際の試験形式に近い内容で構成されており、繰り返し挑戦することで理解度を高めることができます。
-                </p>
-            </section>
-            <section class="quiz-selection">
-                <h2>挑戦する試験を選ぶ</h2>
-                <div class="quiz-options">
-                    <div class="quiz-card">
+                各クイズは実際の試験形式に近い内容で構成されており、繰り返し挑戦することで理解度を高めることができます。
+            </p>
+        </section>
+        <section class="quiz-selection">
+            <h2>挑戦する試験を選ぶ</h2>
+            <div class="quiz-options">
+                <!-- ↓↓↓ quiz-card の中身が、大きく変わります ↓↓↓ -->
+                <div class="quiz-card" data-quiz-category="choujuu">
+                    <div class="quiz-card-header">
+                        <div class="quiz-card-icon">🦌</div>
                         <h3>狩猟鳥獣判別クイズ</h3>
-                        <p>写真を見て、狩猟対象の鳥獣かどうかを判別するクイズです。</p>
+                        <div class="quiz-card-clear-mark"></div>
+                    </div>
+                    <p>写真を見て、狩猟対象の鳥獣かどうかを判別するクイズです。</p>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-card-highscore">ハイスコア: ---%</div>
                         <button class="challenge-btn" id="start-choujuu-btn">挑戦する</button>
                     </div>
-                    <div class="quiz-card">
+                </div>
+                <div class="quiz-card" data-quiz-category="ami">
+                    <div class="quiz-card-header">
+                        <div class="quiz-card-icon">🕸️</div>
                         <h3>網猟クイズ</h3>
-                        <p>網猟に関する法令や猟具の知識を問うクイズです。</p>
+                        <div class="quiz-card-clear-mark"></div>
+                    </div>
+                    <p>網猟に関する法令や猟具の知識を問うクイズです。</p>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-card-highscore">ハイスコア: ---%</div>
                         <button class="challenge-btn" id="start-ami-btn">挑戦する</button>
                     </div>
-                    <div class="quiz-card">
+                </div>
+                <div class="quiz-card" data-quiz-category="wana">
+                    <div class="quiz-card-header">
+                        <div class="quiz-card-icon">🪤</div>
                         <h3>わな猟クイズ</h3>
-                        <p>わな猟に関する法令や猟具の知識を問うクイズです。</p>
+                        <div class="quiz-card-clear-mark"></div>
+                    </div>
+                    <p>わな猟に関する法令や猟具の知識を問うクイズです。</p>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-card-highscore">ハイスコア: ---%</div>
                         <button class="challenge-btn" id="start-wana-btn">挑戦する</button>
                     </div>
-                    <div class="quiz-card">
+                </div>
+                <div class="quiz-card" data-quiz-category="jyu1">
+                    <div class="quiz-card-header">
+                        <div class="quiz-card-icon">💥</div>
                         <h3>第一種銃猟クイズ</h3>
-                        <p>銃の取り扱いや安全性に関する知識を問うクイズです。</p>
+                        <div class="quiz-card-clear-mark"></div>
+                    </div>
+                    <p>銃の取り扱いや安全性に関する知識を問うクイズです。</p>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-card-highscore">ハイスコア: ---%</div>
                         <button class="challenge-btn" id="start-jyu1-btn">挑戦する</button>
                     </div>
-                    <div class="quiz-card">
+                </div>
+                <div class="quiz-card" data-quiz-category="jyu2">
+                    <div class="quiz-card-header">
+                        <div class="quiz-card-icon">💨</div>
                         <h3>第二種銃猟クイズ</h3>
-                        <p>第二種銃猟に関する知識を問うクイズです。</p>
+                        <div class="quiz-card-clear-mark"></div>
+                    </div>
+                    <p>第二種銃猟に関する知識を問うクイズです。</p>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-card-highscore">ハイスコア: ---%</div>
                         <button class="challenge-btn" id="start-jyu2-btn">挑戦する</button>
                     </div>
-                    <div class="quiz-card">
+                </div>
+                <div class="quiz-card" data-quiz-category="beginner">
+                    <div class="quiz-card-header">
+                        <div class="quiz-card-icon">🔰</div>
                         <h3>初心者講習用クイズ</h3>
-                        <p>初心者講習向けの基礎知識を問うクイズです。</p>
+                        <div class="quiz-card-clear-mark"></div>
+                    </div>
+                    <p>初心者講習向けの基礎知識を問うクイズです。</p>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-card-highscore">ハイスコア: ---%</div>
                         <button class="challenge-btn" id="start-beginner-btn">挑戦する</button>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
-
-    <!-- ====================================================== -->
-    <!-- ★★★ 通常クイズコンテナ (ここから変更) ★★★ -->
-    <!-- ====================================================== -->
-    <div class="quiz-container" id="quiz">
-        <!-- ↓↓↓ このブロックを、追加 ↓↓↓ -->
-        <div class="quiz-header-bar">
-            <button class="back-to-top-btn">← トップに戻る</button>
-        </div>
-        <!-- ↑↑↑ ここまでを追加 ↑↑↑ -->
-        <div class="quiz-header">
-            <h2 id="question">Question text</h2>
-            <div id="answer-buttons" class="answer-buttons-grid"></div>
-        </div>
-        <button id="submit" style="display: none;">次へ</button>
-    </div>
-    <!-- ====================================================== -->
-    <!-- ★★★ 通常クイズコンテナ (ここまで変更) ★★★ -->
-    <!-- ====================================================== -->
-
-
-    <!-- ====================================================== -->
-    <!-- ★★★ 狩猟鳥獣判別クイズ専用コンテナ (ここから変更) ★★★ -->
-    <!-- ====================================================== -->
-    <div class="quiz-container-choujuu" id="quiz-choujuu" style="display: none;">
-        <!-- ↓↓↓ このブロックを、追加 ↓↓↓ -->
-        <div class="quiz-header-bar">
-            <button class="back-to-top-btn">← トップに戻る</button>
-        </div>
-        <!-- ↑↑↑ ここまでを追加 ↑↑↑ -->
-        <div class="choujuu-image-container">
-            <img id="choujuu-image" src="" alt="鳥獣の画像">
-        </div>
-        <div id="choujuu-step1">
-            <h2 id="choujuu-question-step1">この鳥獣は捕獲できますか？</h2>
-            <div class="choujuu-step1-buttons">
-                <button class="choujuu-choice-btn" data-choice="yes">獲れます</button>
-                <button class="choujuu-choice-btn" data-choice="no">獲れません</button>
+                <!-- ↑↑↑ ここまで ↑↑↑ -->
             </div>
-        </div>
-        <div id="choujuu-step2" style="display: none;">
-            <h2 id="choujuu-question-step2">この鳥獣の名前は？</h2>
-            <div id="choujuu-name-options" class="answer-buttons-grid"></div>
-        </div>
-        <div id="choujuu-feedback" class="feedback-container"></div>
-        <button id="choujuu-submit" style="display: none;">次の問題へ</button>
-    </div>
-    <!-- ====================================================== -->
-    <!-- ★★★ 狩猟鳥獣判別クイズ専用コンテナ (ここまで変更) ★★★ -->
-    <!-- ====================================================== -->
+        </section>
+    </main>
+</div>
 
-    <script src="script.js"></script>
-        <!-- ====================================================== -->
-    <!-- ★★★ リザルト画面コンテナ (ここから追加) ★★★ -->
-    <!-- ====================================================== -->
-    <div id="result-container" style="display: none;">
-        <div class="result-header">
-            <h2>クイズ結果</h2>
-        </div>
-        <div class="result-summary">
-            <div id="result-message">素晴らしい！</div>
-            <div id="result-score">正答率: 100% (3/3問)</div>
-        </div>
-        <div class="result-details">
-            <h3>間違えた問題の、おさらい</h3>
-            <ul id="wrong-questions-list">
-                <!-- ここに、間違えた問題が、動的に、追加されます -->
-            </ul>
-            <div id="no-wrong-questions-message" style="display: none;">
-                <p>全問正解です！おめでとうございます！</p>
-            </div>
-        </div>
-        <div class="result-actions">
-            <button id="retry-quiz-btn">もう一度挑戦する</button>
-            <button id="back-to-top-from-result-btn">トップに戻る</button>
+<!-- クイズコンテナ、リザルト画面などは変更なし -->
+<div class="quiz-container" id="quiz">
+    <div class="quiz-header-bar">
+        <button class="back-to-top-btn">← トップに戻る</button>
+    </div>
+    <div class="quiz-header">
+        <h2 id="question">Question text</h2>
+        <div id="answer-buttons" class="answer-buttons-grid"></div>
+    </div>
+    <button id="submit" style="display: none;">次へ</button>
+</div>
+<div class="quiz-container-choujuu" id="quiz-choujuu" style="display: none;">
+    <div class="quiz-header-bar">
+        <button class="back-to-top-btn">← トップに戻る</button>
+    </div>
+    <div class="choujuu-image-container">
+        <img id="choujuu-image" src="" alt="鳥獣の画像">
+    </div>
+    <div id="choujuu-step1">
+        <h2 id="choujuu-question-step1">この鳥獣は捕獲できますか？</h2>
+        <div class="choujuu-step1-buttons">
+            <button class="choujuu-choice-btn" data-choice="yes">獲れます</button>
+            <button class="choujuu-choice-btn" data-choice="no">獲れません</button>
         </div>
     </div>
-    <!-- ====================================================== -->
-    <!-- ★★★ リザルト画面コンテナ (ここまで追加) ★★★ -->
-    <!-- ====================================================== -->
+    <div id="choujuu-step2" style="display: none;">
+        <h2 id="choujuu-question-step2">この鳥獣の名前は？</h2>
+        <div id="choujuu-name-options" class="answer-buttons-grid"></div>
+    </div>
+    <div id="choujuu-feedback" class="feedback-container"></div>
+    <button id="choujuu-submit" style="display: none;">次の問題へ</button>
+</div>
+<div id="result-container" style="display: none;">
+    <div class="result-header">
+        <h2>クイズ結果</h2>
+    </div>
+    <div class="result-summary">
+        <div id="result-message">素晴らしい！</div>
+        <div id="result-score">正答率: 100% (3/3問)</div>
+    </div>
+    <div class="result-details">
+        <h3>間違えた問題の、おさらい</h3>
+        <ul id="wrong-questions-list"></ul>
+        <div id="no-wrong-questions-message" style="display: none;">
+            <p>全問正解です！おめでとうございます！</p>
+        </div>
+    </div>
+    <div class="result-actions">
+        <button id="retry-quiz-btn">もう一度挑戦する</button>
+        <button id="back-to-top-from-result-btn">トップに戻る</button>
+    </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
