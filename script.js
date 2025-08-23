@@ -210,7 +210,7 @@ window.onload = () => {
         // ===================================================================
     // ★★★ ここから、新しい、イベントリスナーを、追加 ★★★
     // ===================================================================
-    esetScoresBtn.addEventListener('click', () => {
+    resetScoresBtn.addEventListener('click', () => {
         const isConfirmed = confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。');
         if (isConfirmed) {
             localStorage.removeItem(storageKey);
