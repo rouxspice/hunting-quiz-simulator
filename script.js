@@ -23,6 +23,7 @@ window.onload = () => {
     const noWrongQuestionsMessage = document.getElementById('no-wrong-questions-message');
     const retryQuizBtn = document.getElementById('retry-quiz-btn');
     const backToTopFromResultBtn = document.getElementById('back-to-top-from-result-btn');
+    const resetScoresBtn = document.getElementById('reset-scores-btn');
 
     // --- 音声ファイルの読み込み ---
     const correctSound = new Audio('sounds/correct.mp3');

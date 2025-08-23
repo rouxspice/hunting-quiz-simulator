@@ -39,9 +39,7 @@ main { padding: 20px 30px; }
 .quiz-selection h2 { font-size: 1.4em; margin-bottom: 20px; }
 .quiz-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
 
-/* =================================================================== */
-/* ★★★ クイズカードのデザインを、全面的に、刷新 (ここから) ★★★ */
-/* =================================================================== */
+/* クイズカードのデザイン (変更なし) */
 .quiz-card {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -49,75 +47,19 @@ main { padding: 20px 30px; }
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* ホバーエフェクト用 */
-    position: relative; /* クリアマークの位置決めの基点 */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    position: relative;
 }
-
-.quiz-card:hover {
-    transform: translateY(-5px); /* 少し浮き上がる */
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-
-.quiz-card-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.quiz-card-icon {
-    font-size: 1.8em;
-    margin-right: 10px;
-}
-
-.quiz-card-header h3 {
-    margin: 0;
-    font-size: 1.2em;
-    flex-grow: 1; /* タイトルが長くなってもレイアウトを維持 */
-}
-
-.quiz-card-clear-mark {
-    font-size: 1.5em;
-    color: #ffc107; /* 王冠の色 */
-}
-
-.quiz-card p {
-    flex-grow: 1;
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-.quiz-card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto; /* フッターをカードの下部に固定 */
-}
-
-.quiz-card-highscore {
-    font-size: 0.9em;
-    font-weight: bold;
-    color: #4a7c59;
-}
-
-.challenge-btn {
-    background-color: #4a7c59;
-    color: white;
-    border: none;
-    padding: 8px 15px; /* 少し小さく調整 */
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s;
-}
-
-.challenge-btn:hover {
-    background-color: #3b6347;
-}
-/* =================================================================== */
-/* ★★★ クイズカードのデザイン (ここまで) ★★★ */
-/* =================================================================== */
-
+.quiz-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+.quiz-card-header { display: flex; align-items: center; margin-bottom: 10px; }
+.quiz-card-icon { font-size: 1.8em; margin-right: 10px; }
+.quiz-card-header h3 { margin: 0; font-size: 1.2em; flex-grow: 1; }
+.quiz-card-clear-mark { font-size: 1.5em; color: #ffc107; }
+.quiz-card p { flex-grow: 1; font-size: 0.9em; color: #555; margin-bottom: 15px; }
+.quiz-card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+.quiz-card-highscore { font-size: 0.9em; font-weight: bold; color: #4a7c59; }
+.challenge-btn { background-color: #4a7c59; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; transition: background-color 0.3s; }
+.challenge-btn:hover { background-color: #3b6347; }
 
 /* クイズコンテナ、フィードバックなど、以下のスタイルは変更なし */
 .quiz-container, .quiz-container-choujuu { display: none; max-width: 900px; margin: 0 auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px 30px; }
@@ -167,3 +109,63 @@ main { padding: 20px 30px; }
 #retry-quiz-btn:hover { background-color: #3b6347; }
 #back-to-top-from-result-btn { background-color: #6c757d; color: white; }
 #back-to-top-from-result-btn:hover { background-color: #5a6268; }
+
+/* =================================================================== */
+/* ★★★ ここから、新しい、スタイルを、追加 ★★★ */
+/* =================================================================== */
+.app-settings {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.app-settings h2 {
+    font-size: 1.4em;
+    color: #4a7c59;
+    margin-bottom: 15px;
+}
+
+.setting-item {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.setting-item p {
+    margin: 0;
+    line-height: 1.5;
+    color: #555;
+    flex-grow: 1;
+}
+
+.danger-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    flex-shrink: 0; /* ボタンが縮まないようにする */
+}
+
+.danger-btn:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+    .setting-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* =================================================================== */
+/* ★★★ ここまで、追加 ★★★ */
+/* =================================================================== */
