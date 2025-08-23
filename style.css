@@ -1,55 +1,17 @@
-/* 基本スタイル (変更なし) */
-body {
-    font-family: sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-}
-
-/* トップページコンテナ (変更なし) */
-#top-page-container {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-
-/* ヘッダー関連 (変更なし) */
-header {
-    background-color: #4a7c59;
-    color: white;
-    padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* 基本スタイル、トップページ、クイズカード、レスポンシブなど、大部分は変更なし */
+body { font-family: sans-serif; background-color: #f0f2f5; color: #333; margin: 0; padding: 20px; }
+#top-page-container { max-width: 900px; margin: 0 auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; }
+header { background-color: #4a7c59; color: white; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; }
 .logo-container { display: flex; align-items: center; }
 .logo-container img { width: 40px; height: 40px; margin-right: 15px; }
 .logo-container h1 { font-size: 1.6em; margin: 0; }
 .version-info { font-size: 0.9em; }
-
-/* メインコンテンツ関連 (変更なし) */
 main { padding: 20px 30px; }
 .app-summary { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-.app-summary h2 { font-size: 1.4em; color: #4a7c59; }
 .app-summary p { line-height: 1.6; }
-.quiz-selection h2 { font-size: 1.4em; margin-bottom: 20px; }
+.quiz-selection h2, .app-settings h2 { font-size: 1.4em; color: #4a7c59; margin-bottom: 15px; }
 .quiz-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-
-/* クイズカードのデザイン (変更なし) */
-.quiz-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    position: relative;
-}
+.quiz-card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; background-color: #fff; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; position: relative; }
 .quiz-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
 .quiz-card-header { display: flex; align-items: center; margin-bottom: 10px; }
 .quiz-card-icon { font-size: 1.8em; margin-right: 10px; }
@@ -60,8 +22,6 @@ main { padding: 20px 30px; }
 .quiz-card-highscore { font-size: 0.9em; font-weight: bold; color: #4a7c59; }
 .challenge-btn { background-color: #4a7c59; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; transition: background-color 0.3s; }
 .challenge-btn:hover { background-color: #3b6347; }
-
-/* クイズコンテナ、フィードバックなど、以下のスタイルは変更なし */
 .quiz-container, .quiz-container-choujuu { display: none; max-width: 900px; margin: 0 auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px 30px; }
 .answer-buttons-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 20px; }
 .answer-buttons-grid:has(> button:nth-child(4)) { grid-template-columns: 1fr 1fr; }
@@ -88,9 +48,6 @@ main { padding: 20px 30px; }
 .quiz-header-bar { display: flex; justify-content: flex-start; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
 .back-to-top-btn { background-color: transparent; border: 1px solid #ccc; color: #555; padding: 8px 12px; border-radius: 5px; cursor: pointer; font-size: 0.9em; transition: all 0.2s ease-in-out; }
 .back-to-top-btn:hover { background-color: #f0f0f0; border-color: #999; color: #222; }
-@media (max-width: 940px) { body { padding: 10px; } main { padding: 15px 20px; } }
-@media (max-width: 768px) { header { flex-direction: column; text-align: center; gap: 10px; } .logo-container h1 { font-size: 1.3em; } .quiz-options { grid-template-columns: 1fr; } .quiz-card { padding: 15px; } .choujuu-choice-btn { width: 120px; padding: 15px; font-size: 1.2em; } .answer-buttons-grid:has(> button:nth-child(4)) { grid-template-columns: 1fr; } }
-@media (max-width: 480px) { body { padding: 5px; } main { padding: 10px; } .logo-container img { width: 30px; height: 30px; margin-right: 10px; } .logo-container h1 { font-size: 1.1em; } header { padding: 10px 15px; } }
 #result-container { display: none; max-width: 900px; margin: 0 auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px 30px; text-align: center; }
 .result-header h2 { font-size: 1.8em; color: #4a7c59; margin-bottom: 20px; }
 .result-summary { margin-bottom: 30px; }
@@ -109,62 +66,52 @@ main { padding: 20px 30px; }
 #retry-quiz-btn:hover { background-color: #3b6347; }
 #back-to-top-from-result-btn { background-color: #6c757d; color: white; }
 #back-to-top-from-result-btn:hover { background-color: #5a6268; }
+.app-settings { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+.setting-item { background-color: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; padding: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.setting-item p { margin: 0; line-height: 1.5; color: #555; flex-grow: 1; }
+.danger-btn { background-color: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: bold; transition: background-color 0.3s; flex-shrink: 0; }
+.danger-btn:hover { background-color: #c82333; }
+@media (max-width: 940px) { body { padding: 10px; } main { padding: 15px 20px; } }
+@media (max-width: 768px) { header { flex-direction: column; text-align: center; gap: 10px; } .logo-container h1 { font-size: 1.3em; } .quiz-options { grid-template-columns: 1fr; } .quiz-card { padding: 15px; } .choujuu-choice-btn { width: 120px; padding: 15px; font-size: 1.2em; } .answer-buttons-grid:has(> button:nth-child(4)) { grid-template-columns: 1fr; } .setting-item { flex-direction: column; text-align: center; } }
+@media (max-width: 480px) { body { padding: 5px; } main { padding: 10px; } .logo-container img { width: 30px; height: 30px; margin-right: 10px; } .logo-container h1 { font-size: 1.1em; } header { padding: 10px 15px; } }
 
 /* =================================================================== */
 /* ★★★ ここから、新しい、スタイルを、追加 ★★★ */
 /* =================================================================== */
-.app-settings {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-.app-settings h2 {
-    font-size: 1.4em;
-    color: #4a7c59;
-    margin-bottom: 15px;
-}
-
-.setting-item {
-    background-color: #f8f9fa;
+.normal-quiz-image-container {
+    width: 100%;
+    max-width: 400px; /* 画像サイズを少し控えめに */
+    margin: 0 auto 25px auto; /* 上下左右の余白を調整 */
     border: 1px solid #ddd;
     border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.normal-quiz-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.additional-info-container {
+    margin-top: 25px;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+    background-color: #e9f7fd; /* 落ち着いた水色 */
+    border: 1px solid #b3e5fc;
+    border-radius: 8px;
 }
 
-.setting-item p {
+.additional-info-container h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+    color: #0277bd;
+}
+
+.additional-info-container p {
     margin: 0;
-    line-height: 1.5;
-    color: #555;
-    flex-grow: 1;
-}
-
-.danger-btn {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    flex-shrink: 0; /* ボタンが縮まないようにする */
-}
-
-.danger-btn:hover {
-    background-color: #c82333;
-}
-
-@media (max-width: 768px) {
-    .setting-item {
-        flex-direction: column;
-        text-align: center;
-    }
+    line-height: 1.6;
+    white-space: pre-wrap; /* 改行をそのまま表示する */
 }
 /* =================================================================== */
 /* ★★★ ここまで、追加 ★★★ */

@@ -14,7 +14,7 @@
         <p>Now Loading...</p>
     </div>
 
-    <!-- トップページ -->
+    <!-- トップページ (変更なし) -->
     <div id="top-page-container" style="display: none;">
         <header>
             <div class="logo-container">
@@ -22,16 +22,14 @@
                 <h1>狩猟免許試験シミュレーター</h1>
             </div>
             <div class="version-info">
-                <span>ver. 5.1</span> <!-- 最終バージョンアップ！ -->
+                <span>ver. 5.1</span>
             </div>
         </header>
         <main>
             <section class="app-summary">
                 <p>
                     狩猟免許取得を目指す方や知識を深めたい方のための学習支援アプリです。  
-
                     網猟、わな猟、第一種銃猟、第二種銃猟、狩猟鳥獣判別、猟銃初心者講習用の6種類のクイズに挑戦できます。  
-
                     各クイズは実際の試験形式に近い内容で構成されており、繰り返し挑戦することで理解度を高めることができます。
                 </p>
             </section>
@@ -47,7 +45,7 @@
                         <p>狩猟対象の鳥獣かどうかを判別するクイズです。</p>
                         <div class="quiz-card-footer">
                             <div class="quiz-card-highscore">ハイスコア: ---%</div>
-                            <button class="challenge-btn" id="start-choujuu-btn">挑戦する</button>
+                            <button class="challenge-btn">挑戦する</button>
                         </div>
                     </div>
                     <div class="quiz-card" data-quiz-category="ami">
@@ -59,7 +57,7 @@
                         <p>網猟に関する法令や猟具の知識を問うクイズです。</p>
                         <div class="quiz-card-footer">
                             <div class="quiz-card-highscore">ハイスコア: ---%</div>
-                            <button class="challenge-btn" id="start-ami-btn">挑戦する</button>
+                            <button class="challenge-btn">挑戦する</button>
                         </div>
                     </div>
                     <div class="quiz-card" data-quiz-category="wana">
@@ -71,7 +69,7 @@
                         <p>わな猟に関する法令や猟具の知識を問うクイズです。</p>
                         <div class="quiz-card-footer">
                             <div class="quiz-card-highscore">ハイスコア: ---%</div>
-                            <button class="challenge-btn" id="start-wana-btn">挑戦する</button>
+                            <button class="challenge-btn">挑戦する</button>
                         </div>
                     </div>
                     <div class="quiz-card" data-quiz-category="jyu1">
@@ -83,7 +81,7 @@
                         <p>第一種銃猟に関する知識を問うクイズです</p>
                         <div class="quiz-card-footer">
                             <div class="quiz-card-highscore">ハイスコア: ---%</div>
-                            <button class="challenge-btn" id="start-jyu1-btn">挑戦する</button>
+                            <button class="challenge-btn">挑戦する</button>
                         </div>
                     </div>
                     <div class="quiz-card" data-quiz-category="jyu2">
@@ -95,7 +93,7 @@
                         <p>第二種銃猟に関する知識を問うクイズです。</p>
                         <div class="quiz-card-footer">
                             <div class="quiz-card-highscore">ハイスコア: ---%</div>
-                            <button class="challenge-btn" id="start-jyu2-btn">挑戦する</button>
+                            <button class="challenge-btn">挑戦する</button>
                         </div>
                     </div>
                     <div class="quiz-card" data-quiz-category="beginner">
@@ -107,12 +105,11 @@
                         <p>猟銃初心者講習向けの基礎知識を問うクイズです。</p>
                         <div class="quiz-card-footer">
                             <div class="quiz-card-highscore">ハイスコア: ---%</div>
-                            <button class="challenge-btn" id="start-beginner-btn">挑戦する</button>
+                            <button class="challenge-btn">挑戦する</button>
                         </div>
                     </div>
                 </div>
             </section>
-
             <section class="app-settings">
                 <h2>設定</h2>
                 <div class="setting-item">
@@ -120,21 +117,38 @@
                     <button id="reset-scores-btn" class="danger-btn">全ハイスコアをリセット</button>
                 </div>
             </section>
-
         </main>
     </div>
 
-    <!-- クイズコンテナ、リザルト画面 -->
+    <!-- ====================================================== -->
+    <!-- ★★★ 通常クイズコンテナ (ここから、変更) ★★★ -->
+    <!-- ====================================================== -->
     <div class="quiz-container" id="quiz">
         <div class="quiz-header-bar">
             <button class="back-to-top-btn">← トップに戻る</button>
         </div>
         <div class="quiz-header">
+            <!-- ↓↓↓ 画像表示用の、コンテナを、追加 ↓↓↓ -->
+            <div class="normal-quiz-image-container" id="normal-quiz-image-container" style="display: none;">
+                <img id="normal-quiz-image" src="" alt="問題の画像">
+            </div>
+            <!-- ↑↑↑ ここまで、追加 ↑↑↑ -->
             <h2 id="question">Question text</h2>
             <div id="answer-buttons" class="answer-buttons-grid"></div>
         </div>
+        <!-- ↓↓↓ 補足情報表示用の、コンテナを、追加 ↓↓↓ -->
+        <div class="additional-info-container" id="additional-info-container" style="display: none;">
+            <h4>💡 補足情報</h4>
+            <p id="additional-info-text"></p>
+        </div>
+        <!-- ↑↑↑ ここまで、追加 ↑↑↑ -->
         <button id="submit" style="display: none;">次へ</button>
     </div>
+    <!-- ====================================================== -->
+    <!-- ★★★ 通常クイズコンテナ (ここまで、変更) ★★★ -->
+    <!-- ====================================================== -->
+
+    <!-- 狩猟鳥獣判別クイズコンテナ (変更なし) -->
     <div class="quiz-container-choujuu" id="quiz-choujuu" style="display: none;">
         <div class="quiz-header-bar">
             <button class="back-to-top-btn">← トップに戻る</button>
@@ -156,6 +170,8 @@
         <div id="choujuu-feedback" class="feedback-container"></div>
         <button id="choujuu-submit" style="display: none;">次の問題へ</button>
     </div>
+
+    <!-- リザルト画面 (変更なし) -->
     <div id="result-container" style="display: none;">
         <div class="result-header">
             <h2>クイズ結果</h2>
