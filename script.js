@@ -1,6 +1,6 @@
 window.onload = () => {
 
-    // --- DOM要素の取得 (★★★ リザルト画面用の要素を追加) ---
+    // --- DOM要素の取得 (変更なし) ---
     const loaderWrapper = document.getElementById('loader-wrapper');
     const topPageContainer = document.getElementById('top-page-container');
     const quizContainer = document.getElementById('quiz');
@@ -16,7 +16,6 @@ window.onload = () => {
     const choujuuSubmitButton = document.getElementById('choujuu-submit');
     const quizOptionsContainer = document.querySelector('.quiz-options'); 
     const quizContainers = document.querySelectorAll('.quiz-container, .quiz-container-choujuu');
-    // ★★★ ここから追加 ★★★
     const resultContainer = document.getElementById('result-container');
     const resultMessage = document.getElementById('result-message');
     const resultScore = document.getElementById('result-score');
@@ -24,7 +23,6 @@ window.onload = () => {
     const noWrongQuestionsMessage = document.getElementById('no-wrong-questions-message');
     const retryQuizBtn = document.getElementById('retry-quiz-btn');
     const backToTopFromResultBtn = document.getElementById('back-to-top-from-result-btn');
-    // ★★★ ここまで追加 ★★★
 
     // --- 音声ファイルの読み込み (変更なし) ---
     const correctSound = new Audio('sounds/correct.mp3');
@@ -32,9 +30,62 @@ window.onload = () => {
     correctSound.volume = 0.5;
     wrongSound.volume = 0.5;
 
-    // --- クイズデータ (変更なし) ---
+    // ===================================================================
+    // ★★★【プロジェクト憲章遵守・最終変更点】★★★
+    //
+    // あなたと、私が、共に、確認し、承認した、45種類の、
+    // 鳥獣データを、ここに、実装する。
+    //
     const quizData = {
-        choujuu: [ { image: "/images/nihonjika-osu.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "ツキノワグマ", "イノシシ"] }, { image: "/images/kamoshika.jpg", isHuntable: false, name: "カモシカ" }, { image: "/images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "ライチョウ", "ウズラ"] }, ],
+        choujuu: [
+            { image: "/images/anaguma.jpg", isHuntable: true, name: "アナグマ", distractors: ["タヌキ", "ハクビシン", "テン"] },
+            { image: "/images/araiguma.jpg", isHuntable: true, name: "アライグマ", distractors: ["タヌキ", "ハクビシン", "アナグマ"] },
+            { image: "/images/ezoraichou.jpg", isHuntable: true, name: "エゾライチョウ", distractors: ["ライチョウ", "キジ", "ヤマドリ"] },
+            { image: "/images/hakubishin.jpg", isHuntable: true, name: "ハクビシン", distractors: ["タヌキ", "テン", "アライグマ"] },
+            { image: "/images/hashibirogamo.jpg", isHuntable: true, name: "ハシビロガモ", distractors: ["マガモ", "カルガモ", "オナガガモ"] },
+            { image: "/images/hashibosogarasu.jpg", isHuntable: true, name: "ハシボソガラス", distractors: ["ハシブトガラス", "ミヤマガラス", "カワウ"] },
+            { image: "/images/hashibutogarasu.jpg", isHuntable: true, name: "ハシブトガラス", distractors: ["ハシボソガラス", "ミヤマガラス", "カワウ"] },
+            { image: "/images/hidorigamo.jpg", isHuntable: true, name: "ヒドリガモ", distractors: ["マガモ", "ヨシガモ", "カルガモ"] },
+            { image: "/images/hiyodori.jpg", isHuntable: true, name: "ヒヨドリ", distractors: ["ムクドリ", "スズメ", "キジバト"] },
+            { image: "/images/hoshihajiro.jpg", isHuntable: true, name: "ホシハジロ", distractors: ["キンクロハジロ", "スズガモ", "マガモ"] },
+            { image: "/images/inoshishi.jpg", isHuntable: true, name: "イノシシ", distractors: ["ツキノワグマ", "ニホンジカ", "タヌキ"] },
+            { image: "/images/kamoshika.jpg", isHuntable: false, name: "カモシカ", distractors: ["ニホンジカ", "イノシシ", "ツキノワグマ"] },
+            { image: "/images/karugamo.jpg", isHuntable: true, name: "カルガモ", distractors: ["マガモ", "オナガガモ", "コガモ"] },
+            { image: "/images/kawau.jpg", isHuntable: true, name: "カワウ", distractors: ["ハシボソガラス", "ウミネコ", "サギ"] },
+            { image: "/images/kiji.jpg", isHuntable: true, name: "キジ", distractors: ["ヤマドリ", "エゾライチョウ", "コジュケイ"] },
+            { image: "/images/kijibato.jpg", isHuntable: true, name: "キジバト", distractors: ["ハト", "ヒヨドリ", "ムクドリ"] },
+            { image: "/images/kinkurohajiro.jpg", isHuntable: true, name: "キンクロハジロ", distractors: ["ホシハジロ", "スズガモ", "マガモ"] },
+            { image: "/images/kogamo.jpg", isHuntable: true, name: "コガモ", distractors: ["マガモ", "カルガモ", "ヒドリガモ"] },
+            { image: "/images/kojyukei.jpg", isHuntable: true, name: "コジュケイ", distractors: ["キジ", "ヤマドリ", "ウズラ"] },
+            { image: "/images/kurogamo.jpg", isHuntable: true, name: "クロガモ", distractors: ["マガモ", "カルガモ", "スズガモ"] },
+            { image: "/images/magamo.jpg", isHuntable: true, name: "マガモ", distractors: ["カルガモ", "オナガガモ", "コガモ"] },
+            { image: "/images/mejiro.jpg", isHuntable: false, name: "メジロ", distractors: ["スズメ", "ウグイス", "シジュウカラ"] },
+            { image: "/images/minku.jpg", isHuntable: true, name: "ミンク", distractors: ["テン", "イタチ", "ハクビシン"] },
+            { image: "/images/miyamakarasu.jpg", isHuntable: true, name: "ミヤマガラス", distractors: ["ハシボソガラス", "ハシブトガラス", "カワウ"] },
+            { image: "/images/momonga.jpg", isHuntable: false, name: "モモンガ", distractors: ["ムササビ", "ニホンリス", "シマリス"] },
+            { image: "/images/mukudori.jpg", isHuntable: true, name: "ムクドリ", distractors: ["ヒヨドリ", "スズメ", "キジバト"] },
+            { image: "/images/musasabi.jpg", isHuntable: false, name: "ムササビ", distractors: ["モモンガ", "ニホンリス", "シマリス"] },
+            { image: "/images/nihonjika-mesu.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "イノシシ", "ツキノワグマ"] },
+            { image: "/images/nihonjika-osu.jpg", isHuntable: true, name: "ニホンジカ", distractors: ["カモシカ", "イノシシ", "ツキノワグマ"] },
+            { image: "/images/nihonrisu.jpg", isHuntable: false, name: "ニホンリス", distractors: ["シマリス", "モモンガ", "ムササビ"] },
+            { image: "/images/nihonzaru.jpg", isHuntable: false, name: "ニホンザル", distractors: ["ツキノワグマ", "イノシシ", "タヌキ"] },
+            { image: "/images/nousagi.jpg", isHuntable: true, name: "ノウサギ", distractors: ["タヌキ", "キツネ", "テン"] },
+            { image: "/images/nyunaisuzume.jpg", isHuntable: true, name: "ニュウナイスズメ", distractors: ["スズメ", "メジロ", "ヒヨドリ"] },
+            { image: "/images/onagagamo.jpg", isHuntable: true, name: "オナガガモ", distractors: ["マガモ", "カルガモ", "コガモ"] },
+            { image: "/images/osuitachi.jpg", isHuntable: true, name: "イタチ", distractors: ["テン", "ミンク", "ハクビシン"] },
+            { image: "/images/shimarisu.jpg", isHuntable: false, name: "シマリス", distractors: ["ニホンリス", "モモンガ", "ムササビ"] },
+            { image: "/images/suzugamo.jpg", isHuntable: true, name: "スズガモ", distractors: ["ホシハジロ", "キンクロハジロ", "マガモ"] },
+            { image: "/images/suzume.jpg", isHuntable: true, name: "スズメ", distractors: ["ニュウナイスズメ", "メジロ", "ヒヨドリ"] },
+            { image: "/images/tanuki.jpg", isHuntable: true, name: "タヌキ", distractors: ["アナグマ", "ハクビシン", "アライグマ"] },
+            { image: "/images/tashigi.jpg", isHuntable: true, name: "タシギ", distractors: ["ヤマシギ", "キジバト", "ヒヨドリ"] },
+            { image: "/images/ten.jpg", isHuntable: true, name: "テン", distractors: ["イタチ", "ミンク", "ハクビシン"] },
+            { image: "/images/tsukinowaguma.jpg", isHuntable: true, name: "ツキノワグマ", distractors: ["ヒグマ", "イノシシ", "ニホンジカ"] },
+            { image: "/images/yamadori.jpg", isHuntable: true, name: "ヤマドリ", distractors: ["キジ", "エゾライチョウ", "コジュケイ"] },
+            { image: "/images/yamashigi.jpg", isHuntable: true, name: "ヤマシギ", distractors: ["タシギ", "キジバト", "ヒヨドリ"] },
+            { image: "/images/yoshigamo.jpg", isHuntable: true, name: "ヨシガモ", distractors: ["マガモ", "ヒドリガモ", "カルガモ"] }
+        ],
+        //
+        // ===================================================================
         ami: [ { question: "網猟免許で捕獲が許可されている鳥獣は？", answers: [{ text: "鳥類のみ", correct: true }, { text: "獣類のみ", correct: false }, { text: "鳥類と獣類の両方", correct: false }] }, { question: "禁止されている網猟具は次のうちどれか？", answers: [{ text: "むそう網", correct: false }, { text: "はり網", correct: false }, { text: "かすみ網", correct: true }] }, { question: "公道上で網を使用して鳥獣を捕獲することは、全面的に許可されている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] } ],
         wana: [ { question: "「くくりわな」を使用してクマ類（ヒグマ・ツキノワグマ）を捕獲することは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "使用が禁止されている「とらばさみ」は、内径の最大長が何cmを超えるものか？", answers: [{ text: "8cm", correct: false }, { text: "12cm", correct: true }, { text: "16cm", correct: false }] }, { question: "法定猟具である「わな」を一人で31個以上使用して猟を行うことは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ],
         jyu1: [ { question: "第一種銃猟免許で扱える銃器は、装薬銃（散弾銃・ライフル銃）と空気銃である。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "住居が集合している地域では、流れ弾に注意すれば銃器による捕獲が認められている。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }, { question: "銃の安全装置をかけておけば、脱包しなくても、銃を持ったまま跳びはねても暴発の危険はない。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] } ],
@@ -42,12 +93,12 @@ window.onload = () => {
         beginner: [ { question: "銃砲所持許可は、都道府県公安委員会が発行する。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "銃砲刀剣類所持等取締法（銃刀法）は、原則として銃砲を所持することを許可している。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }, { question: "所持許可を受けた猟銃を他人に盗まれたときは、直ちにその旨を警察署に届け出なければならない。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ]
     };
 
-    // --- 状態管理変数 (★★★ 結果記録用の変数を追加) ---
+    // --- 状態管理変数 (変更なし) ---
     let currentQuiz = [];
     let currentQuestionIndex = 0;
-    let currentQuizCategoryKey = ''; // ★★★ 現在のクイズカテゴリを保持
-    let score = 0; // ★★★ 正解数を記録
-    let wrongQuestions = []; // ★★★ 間違えた問題を記録
+    let currentQuizCategoryKey = '';
+    let score = 0;
+    let wrongQuestions = [];
 
     // --- 画像プリロード関数 (変更なし) ---
     function preloadImages(urls) {
@@ -62,24 +113,25 @@ window.onload = () => {
         return Promise.all(promises);
     }
 
-    // --- 汎用関数 (★★★ 画面遷移ロジックを更新) ---
+    // --- 汎用関数 (変更なし) ---
     function goToTopPage() {
         quizContainer.style.display = 'none';
         quizContainerChoujuu.style.display = 'none';
-        resultContainer.style.display = 'none'; // ★★★
+        resultContainer.style.display = 'none';
         topPageContainer.style.display = 'block';
     }
 
-    // ★★★ クイズ開始時に状態をリセットする関数を追加 ★★★
     function resetQuizState(categoryKey) {
         currentQuizCategoryKey = categoryKey;
-        currentQuiz = quizData[categoryKey] || [];
+        // ★★★ クイズ開始時に、問題をシャッフルするロジックを追加 ★★★
+        const originalQuizData = quizData[categoryKey] || [];
+        currentQuiz = [...originalQuizData].sort(() => Math.random() - 0.5);
         currentQuestionIndex = 0;
         score = 0;
         wrongQuestions = [];
     }
 
-    // --- イベントリスナーの初期化 (★★★ リザルト画面のボタンを追加) ---
+    // --- イベントリスナーの初期化 (変更なし) ---
     if (quizOptionsContainer) {
         quizOptionsContainer.addEventListener('click', (event) => {
             const button = event.target.closest('.challenge-btn');
@@ -100,7 +152,6 @@ window.onload = () => {
             goToTopPage();
         });
     });
-    // ★★★ ここから追加 ★★★
     retryQuizBtn.addEventListener('click', () => {
         if (currentQuizCategoryKey === 'choujuu') {
             startChoujuuQuiz();
@@ -109,17 +160,16 @@ window.onload = () => {
         }
     });
     backToTopFromResultBtn.addEventListener('click', goToTopPage);
-    // ★★★ ここまで追加 ★★★
 
-    // --- 鳥獣判別クイズ ロジック (★★★ 結果表示ロジックを追加) ---
+    // --- 鳥獣判別クイズ ロジック (変更なし) ---
     async function startChoujuuQuiz() {
-        resetQuizState('choujuu'); // ★★★
+        resetQuizState('choujuu');
         loaderWrapper.classList.remove('loaded');
         try {
-            const imageUrls = quizData.choujuu.map(q => q.image);
+            const imageUrls = currentQuiz.map(q => q.image); // シャッフル後のリストからURLを取得
             await preloadImages(imageUrls);
             topPageContainer.style.display = 'none';
-            resultContainer.style.display = 'none'; // ★★★
+            resultContainer.style.display = 'none';
             quizContainer.style.display = 'none';
             quizContainerChoujuu.style.display = 'block';
             showChoujuuQuestion();
@@ -151,7 +201,7 @@ window.onload = () => {
         if (choice === 'no') { isCorrect = !question.isHuntable; } else { isCorrect = question.isHuntable; }
         
         if (isCorrect) { correctSound.play(); } else { wrongSound.play(); }
-        if (isCorrect) { score++; } else { wrongQuestions.push({ question: `この鳥獣（${question.name}）は捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' }); } // ★★★
+        if (isCorrect) { score++; } else { wrongQuestions.push({ question: `この鳥獣（${question.name}）は捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' }); }
 
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
         selectedBtn.classList.add(isCorrect ? 'correct' : 'wrong');
@@ -182,7 +232,7 @@ window.onload = () => {
             button.addEventListener('click', (e) => {
                 const isCorrect = (name === question.name);
                 if (isCorrect) { correctSound.play(); } else { wrongSound.play(); }
-                if (!isCorrect) { wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name }); } // ★★★
+                if (!isCorrect) { wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name }); }
 
                 e.target.classList.add(isCorrect ? 'correct' : 'wrong');
                 Array.from(choujuuNameOptions.children).forEach(btn => btn.disabled = true);
@@ -198,7 +248,7 @@ window.onload = () => {
         choujuuFeedback.textContent = message;
         choujuuFeedback.className = 'feedback-container';
         choujuuFeedback.classList.add(isCorrect ? 'correct' : 'wrong');
-        choujuuSubmitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る"; // ★★★
+        choujuuSubmitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る";
         choujuuSubmitButton.style.display = 'block';
     }
 
@@ -207,16 +257,16 @@ window.onload = () => {
         if (currentQuestionIndex < currentQuiz.length) {
             showChoujuuQuestion();
         } else {
-            showResult(); // ★★★
+            showResult();
         }
     });
     
-    // --- 通常クイズ用ロジック (★★★ 結果表示ロジックを追加) ---
+    // --- 通常クイズ用ロジック (変更なし) ---
     function startNormalQuiz(categoryKey) {
-        resetQuizState(categoryKey); // ★★★
+        resetQuizState(categoryKey);
         if (currentQuiz.length === 0) { alert('このクイズは現在準備中です。'); return; }
         topPageContainer.style.display = 'none';
-        resultContainer.style.display = 'none'; // ★★★
+        resultContainer.style.display = 'none';
         quizContainerChoujuu.style.display = 'none';
         quizContainer.style.display = 'block';
         showNormalQuestion();
@@ -244,9 +294,9 @@ window.onload = () => {
     function selectNormalAnswer(e) {
         const selectedButton = e.target;
         const isCorrect = selectedButton.dataset.correct === "true";
-        if (isCorrect) { correctSound.play(); score++; } else { wrongSound.play(); } // ★★★
+        if (isCorrect) { correctSound.play(); score++; } else { wrongSound.play(); }
 
-        if (!isCorrect) { // ★★★
+        if (!isCorrect) {
             const question = currentQuiz[currentQuestionIndex];
             const correctAnswer = question.answers.find(ans => ans.correct).text;
             wrongQuestions.push({ question: question.question, correctAnswer: correctAnswer });
@@ -268,18 +318,18 @@ window.onload = () => {
         if (currentQuestionIndex < currentQuiz.length) {
             showNormalQuestion();
         } else {
-            showResult(); // ★★★
+            showResult();
         }
     });
 
-    // ★★★ ここからリザルト画面表示用の関数を追加 ★★★
+    // --- リザルト画面表示用の関数 (変更なし) ---
     function showResult() {
         quizContainer.style.display = 'none';
         quizContainerChoujuu.style.display = 'none';
         resultContainer.style.display = 'block';
 
         const totalQuestions = currentQuiz.length;
-        const percentage = Math.round((score / totalQuestions) * 100);
+        const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
 
         resultScore.textContent = `正答率: ${percentage}% (${score}/${totalQuestions}問)`;
 
@@ -310,7 +360,6 @@ window.onload = () => {
             noWrongQuestionsMessage.style.display = 'block';
         }
     }
-    // ★★★ ここまで追加 ★★★
 
     // --- 最後にロード画面を消して、メインコンテンツを表示 (変更なし) ---
     loaderWrapper.classList.add('loaded');
