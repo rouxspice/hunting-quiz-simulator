@@ -27,11 +27,10 @@
         </header>
         <main>
             <section class="app-summary">
-                <h2>アプリ概要</h2>
                 <p>
-                    狩猟免許試験シミュレーターは、狩猟免許取得を目指す方や知識を深めたい方のための学習支援アプリです。  
+                    狩猟免許取得を目指す方や知識を深めたい方のための学習支援アプリです。  
 
-                    網猟、わな猟、第一種銃猟、第二種銃猟、狩猟鳥獣判別、初心者講習用の6種類のクイズに挑戦できます。  
+                    網猟、わな猟、第一種銃猟、第二種銃猟、狩猟鳥獣判別、猟銃初心者講習用の6種類のクイズに挑戦できます。  
 
                     各クイズは実際の試験形式に近い内容で構成されており、繰り返し挑戦することで理解度を高めることができます。
                 </p>
@@ -45,7 +44,7 @@
                             <h3>狩猟鳥獣判別クイズ</h3>
                             <div class="quiz-card-clear-mark"></div>
                         </div>
-                        <p>写真を見て、狩猟対象の鳥獣かどうかを判別するクイズです。</p>
+                        <p>狩猟対象の鳥獣かどうかを判別するクイズです。</p>
                         <div class="quiz-card-footer">
                             <div class="quiz-card-highscore">ハイスコア: ---%</div>
                             <button class="challenge-btn" id="start-choujuu-btn">挑戦する</button>
@@ -81,7 +80,7 @@
                             <h3>第一種銃猟クイズ</h3>
                             <div class="quiz-card-clear-mark"></div>
                         </div>
-                        <p>銃の取り扱いや安全性に関する知識を問うクイズです。</p>
+                        <p>第一種銃猟に関する知識を問うクイズです</p>
                         <div class="quiz-card-footer">
                             <div class="quiz-card-highscore">ハイスコア: ---%</div>
                             <button class="challenge-btn" id="start-jyu1-btn">挑戦する</button>
@@ -102,10 +101,10 @@
                     <div class="quiz-card" data-quiz-category="beginner">
                         <div class="quiz-card-header">
                             <div class="quiz-card-icon">🔰</div>
-                            <h3>初心者講習用クイズ</h3>
+                            <h3>猟銃初心者講習用クイズ</h3>
                             <div class="quiz-card-clear-mark"></div>
                         </div>
-                        <p>初心者講習向けの基礎知識を問うクイズです。</p>
+                        <p>猟銃初心者講習向けの基礎知識を問うクイズです。</p>
                         <div class="quiz-card-footer">
                             <div class="quiz-card-highscore">ハイスコア: ---%</div>
                             <button class="challenge-btn" id="start-beginner-btn">挑戦する</button>
@@ -114,24 +113,18 @@
                 </div>
             </section>
 
-            <!-- ====================================================== -->
-            <!-- ★★★ ここから、新しい、セクションを、追加 ★★★ -->
-            <!-- ====================================================== -->
             <section class="app-settings">
-                <h2>アプリ設定</h2>
+                <h2>設定</h2>
                 <div class="setting-item">
                     <p>すべてのクイズのハイスコアとクリア状況をリセットします。この操作は取り消せません。</p>
                     <button id="reset-scores-btn" class="danger-btn">全ハイスコアをリセット</button>
                 </div>
             </section>
-            <!-- ====================================================== -->
-            <!-- ★★★ ここまで、追加 ★★★ -->
-            <!-- ====================================================== -->
 
         </main>
     </div>
 
-    <!-- クイズコンテナ、リザルト画面などは変更なし -->
+    <!-- クイズコンテナ、リザルト画面 -->
     <div class="quiz-container" id="quiz">
         <div class="quiz-header-bar">
             <button class="back-to-top-btn">← トップに戻る</button>
