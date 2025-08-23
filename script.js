@@ -210,11 +210,15 @@ window.onload = () => {
         // ===================================================================
     // ★★★ ここから、新しい、イベントリスナーを、追加 ★★★
     // ===================================================================
-resetScoresBtn.addEventListener('click', () => {
-    const isConfirmed = confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。');
-    if (isConfirmed) {
-        localStorage.removeItem(storageKey);
-        updateTopPageUI();
-        alert('すべてのハイスコアがリセットされました。');
-    }
-});
+    esetScoresBtn.addEventListener('click', () => {
+        const isConfirmed = confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。');
+        if (isConfirmed) {
+            localStorage.removeItem(storageKey);
+            updateTopPageUI();
+            alert('すべてのハイスコアがリセットされました。');
+     }
+    });
+    // ===================================================================
+    // ★★★ ここまで、追加 ★★★
+    // ===================================================================
+};
