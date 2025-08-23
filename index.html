@@ -125,5 +125,36 @@
     <!-- ====================================================== -->
 
     <script src="script.js"></script>
+        <!-- ====================================================== -->
+    <!-- ★★★ リザルト画面コンテナ (ここから追加) ★★★ -->
+    <!-- ====================================================== -->
+    <div id="result-container" style="display: none;">
+        <div class="result-header">
+            <h2>クイズ結果</h2>
+        </div>
+        <div class="result-summary">
+            <div id="result-message">素晴らしい！</div>
+            <div id="result-score">正答率: 100% (3/3問)</div>
+        </div>
+        <div class="result-details">
+            <h3>間違えた問題の、おさらい</h3>
+            <ul id="wrong-questions-list">
+                <!-- ここに、間違えた問題が、動的に、追加されます -->
+            </ul>
+            <div id="no-wrong-questions-message" style="display: none;">
+                <p>全問正解です！おめでとうございます！</p>
+            </div>
+        </div>
+        <div class="result-actions">
+            <button id="retry-quiz-btn">もう一度挑戦する</button>
+            <button id="back-to-top-from-result-btn">トップに戻る</button>
+        </div>
+    </div>
+    <!-- ====================================================== -->
+    <!-- ★★★ リザルト画面コンテナ (ここまで追加) ★★★ -->
+    <!-- ====================================================== -->
+
+    <script src="script.js"></script>
+
 </body>
 </html>
