@@ -126,7 +126,7 @@ window.onload = () => {
     },
     {
         question: "図の矢先の名称として、正しいものはどれか。",
-        image: "/images/arrow-parts.png",
+        image: "/images/test01.jpg",
         answers: [
             { text: "羽根（ベイン）", correct: false },
             { text: "矢先（ポイント）", correct: true },
