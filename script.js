@@ -95,6 +95,42 @@ window.onload = () => {
     let score = 0;
     let wrongQuestions = [];
 
+        // ===================================================================
+    // ★★★ ローカルストレージ関連の、新しい、関数 (ここから) ★★★
+    // ===================================================================
+    const storageKey = 'huntingQuizScores';
+
+    function getScoresFromStorage() {
+        const storedScores = localStorage.getItem(storageKey);
+        return storedScores ? JSON.parse(storedScores) : {};
+    }
+
+    function saveScoresToStorage(scores) {
+        localStorage.setItem(storageKey, JSON.stringify(scores));
+    }
+
+    function updateTopPageUI() {
+        const scores = getScoresFromStorage();
+        document.querySelectorAll('.quiz-card').forEach(card => {
+            const category = card.dataset.quizCategory;
+            const categoryScores = scores[category] || { highScore: 0, cleared: false };
+            
+            const highScoreEl = card.querySelector('.quiz-card-highscore');
+            const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
+
+            highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`;
+            if (categoryScores.cleared) {
+                clearMarkEl.textContent = '👑';
+            } else {
+                clearMarkEl.textContent = '';
+            }
+        });
+    }
+    // ===================================================================
+    // ★★★ ローカルストレージ関連の、新しい、関数 (ここまで) ★★★
+    // ===================================================================
+
+
     // --- 画像プリロード関数 (変更なし) ---
     function preloadImages(urls) {
         const promises = urls.map(url => {
@@ -156,7 +192,7 @@ window.onload = () => {
     });
     backToTopFromResultBtn.addEventListener('click', goToTopPage);
 
-    // --- 鳥獣判別クイズ ロジック (変更なし) ---
+    // --- 鳥獣判別クイズ ロジック  ---
     async function startChoujuuQuiz() {
         resetQuizState('choujuu');
         loaderWrapper.classList.remove('loaded');
@@ -186,7 +222,48 @@ window.onload = () => {
         const question = currentQuiz[currentQuestionIndex];
         choujuuImage.src = question.image;
     }
-    
+       // ===================================================================
+    // ★★★ ここから、フィードバック強化の、ロジック変更 ★★★
+    // ===================================================================
+    choujuuStep1.addEventListener('click', (e) => {
+        if (!e.target.matches('.choujuu-choice-btn')) return;
+        const selectedBtn = e.target;
+        const choice = selectedBtn.dataset.choice;
+        const question = currentQuiz[currentQuestionIndex];
+        let isCorrect;
+        if (choice === 'no') { isCorrect = !question.isHuntable; } else { isCorrect = question.isHuntable; }
+        
+        if (isCorrect) { correctSound.play(); score++; } else { wrongSound.play(); }
+        if (!isCorrect) { wrongQuestions.push({ question: `この鳥獣（${question.name}）は捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' }); }
+
+        document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
+        selectedBtn.classList.add(isCorrect ? 'correct' : 'wrong');
+        setTimeout(() => {
+            if (isCorrect) {
+                if (choice === 'yes') {
+                    choujuuStep1.style.display = 'none';
+                    choujuuStep2.style.display = 'block';
+                    setupNameSelection(question);
+                } else {
+                    showChoujuuFeedback(true, `正解！この鳥獣（${question.name}）は非狩猟鳥獣のため、捕獲できません。`);
+                }
+            } else {
+                // ↓↓↓ 不正解時の、フィードバックメッセージを、変更 ↓↓↓
+                let feedbackMessage = '';
+                if (choice === 'yes') { // 「獲れます」と答えて間違い（＝非狩猟鳥獣）
+                    feedbackMessage = `不正解。この鳥獣（${question.name}）は、非狩猟鳥獣のため、捕獲できません。`;
+                } else { // 「獲れません」と答えて間違い（＝狩猟鳥獣）
+                    feedbackMessage = `不正解。この鳥獣は「${question.name}」といい、狩猟対象です。`;
+                }
+                showChoujuuFeedback(false, feedbackMessage);
+                // ↑↑↑ ここまでが、変更点 ↑↑↑
+            }
+        }, 500);
+    });
+    // ===================================================================
+    // ★★★ ここまで、フィードバック強化の、ロジック変更 ★★★
+    // ===================================================================
+
     choujuuStep1.addEventListener('click', (e) => {
         if (!e.target.matches('.choujuu-choice-btn')) return;
         const selectedBtn = e.target;
@@ -257,12 +334,11 @@ window.onload = () => {
     });
     
     // --- 通常クイズ用ロジック ---
-    function startNormalQuiz(categoryKey) {
+     function startNormalQuiz(categoryKey) {
         resetQuizState(categoryKey);
         if (currentQuiz.length === 0) { alert('このクイズは現在準備中です。'); return; }
         topPageContainer.style.display = 'none';
-        resultContainer.style.display = 'none';
-        quizContainerChoujuu.style.display = 'none';
+        quizContainers.forEach(container => container.style.display = 'none');
         quizContainer.style.display = 'block';
         showNormalQuestion();
     }
@@ -317,14 +393,26 @@ window.onload = () => {
         }
     });
 
-    // --- リザルト画面表示用の関数 (変更なし) ---
-    function showResult() {
-        quizContainer.style.display = 'none';
-        quizContainerChoujuu.style.display = 'none';
+    // --- リザルト画面表示用の関数  ---
+        function showResult() {
+        quizContainers.forEach(container => container.style.display = 'none');
         resultContainer.style.display = 'block';
 
         const totalQuestions = currentQuiz.length;
         const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
+
+        // ★★★ スコアをローカルストレージに保存するロジックを追加 ★★★
+        const scores = getScoresFromStorage();
+        const currentCategoryScores = scores[currentQuizCategoryKey] || { highScore: 0, cleared: false };
+        if (percentage > currentCategoryScores.highScore) {
+            currentCategoryScores.highScore = percentage;
+        }
+        if (percentage === 100) {
+            currentCategoryScores.cleared = true;
+        }
+        scores[currentQuizCategoryKey] = currentCategoryScores;
+        saveScoresToStorage(scores);
+        // ★★★ ここまで追加 ★★★
 
         resultScore.textContent = `正答率: ${percentage}% (${score}/${totalQuestions}問)`;
 
@@ -356,7 +444,7 @@ window.onload = () => {
         }
     }
 
-    // --- 最後にロード画面を消して、メインコンテンツを表示 (変更なし) ---
+    // --- 最後にロード画面を消して、メインコンテンツを表示 ---
     loaderWrapper.classList.add('loaded');
-    topPageContainer.style.display = 'block';
+    goToTopPage(); // ★★★ 初期表示時もUI更新をかけるように変更
 };
