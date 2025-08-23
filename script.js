@@ -73,7 +73,7 @@ window.onload = () => {
             { image: "/images/nyunaisuzume.jpg", isHuntable: true, name: "ニュウナイスズメ", distractors: ["スズメ", "メジロ", "ヒヨドリ"] },
             { image: "/images/onagagamo.jpg", isHuntable: true, name: "オナガガモ", distractors: ["マガモ", "カルガモ", "コガモ"] },
             { image: "/images/osuitachi.jpg", isHuntable: true, name: "イタチ", distractors: ["テン", "ミンク", "ハクビシン"] },
-            { image: "/images/shimarisu.jpg", isHuntable: false, name: "シマリス", distractors: ["ニホンリス", "モモンガ", "ムササビ"] },
+            { image: "/images/shimarisu.jpg", isHuntable: true, name: "シマリス", distractors: ["ニホンリス", "モモンガ", "ムササビ"] },
             { image: "/images/suzugamo.jpg", isHuntable: true, name: "スズガモ", distractors: ["ホシハジロ", "キンクロハジロ", "マガモ"] },
             { image: "/images/suzume.jpg", isHuntable: true, name: "スズメ", distractors: ["ニュウナイスズメ", "メジロ", "ヒヨドリ"] },
             { image: "/images/tanuki.jpg", isHuntable: true, name: "タヌキ", distractors: ["アナグマ", "ハクビシン", "アライグマ"] },
