@@ -206,4 +206,15 @@ window.onload = () => {
     // --- 最後にロード画面を消して、メインコンテンツを表示 ---
     loaderWrapper.classList.add('loaded');
     goToTopPage();
+
+        // ===================================================================
+    // ★★★ ここから、新しい、イベントリスナーを、追加 ★★★
+    // ===================================================================
+    resetScoresBtn.addEventListener('click', () => {
+        const isConfirmed = confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。');
+        if (isConfirmed) {
+            localStorage.removeItem(storageKey);
+            updateTopPageUI();
+            alert('すべてのハイスコアがリセットされました。');
+        }
 };
