@@ -107,9 +107,48 @@ window.onload = () => {
 
 
     // --- イベントリスナーの初期化 ---
-    if (quizOptionsContainer) { quizOptionsContainer.addEventListener('click', (event) => { const button = event.target.closest('.challenge-btn'); if (!button) return; const quizCard = button.closest('.quiz-card'); const quizCategoryKey = quizCard.dataset.quizCategory; if (quizCategoryKey === 'choujuu') { startChoujuuQuiz(); } else { startNormalQuiz(quizCategoryKey); } }); }
+    if (quizOptionsContainer) {
+    quizContainers.forEach(container => {
+        container.addEventListener('click', (event) => {
+            const button = event.target.closest('.back-to-top-btn');
+            if (!button) return;
+            event.stopPropagation();
+            goToTopPage();
+        });
+    });
+            const button = event.target.closest('.challenge-btn');
+            if (!button) return;
+            const quizCard = button.closest('.quiz-card');
+            if (!quizCard) return;
+            const quizCategoryKey = quizCard.dataset.quizCategory;
+            if (quizCategoryKey === 'choujuu') {
+    if (retryQuizBtn) {
+        retryQuizBtn.addEventListener('click', () => {
+            if (currentQuizCategoryKey === 'choujuu') {
+                startChoujuuQuiz();
+            } else {
+                startNormalQuiz(currentQuizCategoryKey);
+            }
+        });
+    if (backToTopFromResultBtn) {
+        backToTopFromResultBtn.addEventListener('click', goToTopPage);
+    }
+            } else {
+                startNormalQuiz(quizCategoryKey);
+            }
+        });
+    }
     quizContainers.forEach(container => { container.addEventListener('click', (event) => { const button = event.target.closest('.back-to-top-btn'); if (!button) return; goToTopPage(); }); });
-    retryQuizBtn.addEventListener('click', () => { if (currentQuizCategoryKey === 'choujuu') { startChoujuuQuiz(); } else { startNormalQuiz(currentQuizCategoryKey); } });
+    if (resetScoresBtn) {
+        resetScoresBtn.addEventListener('click', () => {
+            const isConfirmed = confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。');
+            if (isConfirmed) {
+                localStorage.removeItem(storageKey);
+                updateTopPageUI();
+                alert('すべてのハイスコアがリセットされました。');
+            }
+        });
+    }
     backToTopFromResultBtn.addEventListener('click', goToTopPage);
     resetScoresBtn.addEventListener('click', () => { const isConfirmed = confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。'); if (isConfirmed) { localStorage.removeItem(storageKey); updateTopPageUI(); alert('すべてのハイスコアがリセットされました。'); } });
 
