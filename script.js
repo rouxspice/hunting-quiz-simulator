@@ -29,6 +29,8 @@ window.onload = () => {
     const additionalInfoContainer = document.getElementById('additional-info-container');
     const additionalInfoText = document.getElementById('additional-info-text');
     const resultDetailsSection = document.getElementById('result-details-section');
+    const normalQuizProgress = document.getElementById('normal-quiz-progress');
+    const choujuuQuizProgress = document.getElementById('choujuu-quiz-progress');
 
     // --- 音声ファイルの読み込み ---
     const correctSound = new Audio('sounds/correct.mp3');
@@ -210,6 +212,7 @@ window.onload = () => {
         } 
     }
     function showChoujuuQuestion() { 
+        choujuuQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); }); 
         choujuuStep1.style.display = 'block'; 
         choujuuStep2.style.display = 'none'; 
@@ -317,6 +320,7 @@ window.onload = () => {
     }
 
     function showNormalQuestion() {
+        normalQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         resetNormalState();
         const question = currentQuiz[currentQuestionIndex];
         
