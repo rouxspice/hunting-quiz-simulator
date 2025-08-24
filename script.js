@@ -30,7 +30,7 @@ window.onload = () => {
     const additionalInfoText = document.getElementById('additional-info-text');
     const resultDetailsSection = document.getElementById('result-details-section');
     const normalQuizProgress = document.getElementById('normal-quiz-progress');
-    const choujuuQuizProgress = document.getElementById('choujuu-quiz-progress');
+    const choujuuQuizProgress = document.getElementById('choujuu-quiz-progress'); 
 
     // --- 音声ファイルの読み込み ---
     const correctSound = new Audio('sounds/correct.mp3');
