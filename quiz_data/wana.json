@@ -1,0 +1,5 @@
+[
+    { "question": "「くくりわな」を使用してクマ類（ヒグマ・ツキノワグマ）を捕獲することは禁止されている。", "answers": [{ "text": "正しい", "correct": true }, { "text": "誤り", "correct": false }] },
+    { "question": "使用が禁止されている「とらばさみ」は、内径の最大長が何cmを超えるものか？", "answers": [{ "text": "8cm", "correct": false }, { "text": "12cm", "correct": true }, { "text": "16cm", "correct": false }] },
+    { "question": "法定猟具である「わな」を一人で31個以上使用して猟を行うことは禁止されている。", "answers": [{ "text": "正しい", "correct": true }, { "text": "誤り", "correct": false }] }
+]

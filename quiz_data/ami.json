@@ -1,0 +1,28 @@
+[
+    { 
+        "question": "網猟免許で捕獲が許可されている鳥獣は？",
+        "answers": [
+            { "text": "鳥類のみ", "correct": false },
+            { "text": "獣類のみ", "correct": false },
+            { "text": "鳥類と獣類の両方", "correct": true }
+        ],
+        "additionalInfo": "網猟免許では、鳥類と獣類（ノウサギ）が可能です。"
+    },
+    { 
+        "question": "禁止されている網猟具は次のうちどれか？",
+        "answers": [
+            { "text": "むそう網", "correct": false },
+            { "text": "はり網", "correct": false },
+            { "text": "かすみ網", "correct": true }
+        ],
+        "additionalInfo": "かすみ網は、鳥類保護の観点から、狩猟での使用が全面的に禁止されています。"
+    },
+    { 
+        "question": "公道上で網を使用して鳥獣を捕獲することは、全面的に許可されている。",
+        "answers": [
+            { "text": "正しい", "correct": false },
+            { "text": "誤り", "correct": true }
+        ],
+        "additionalInfo": "公道上での狩猟は、安全確保の観点から、網猟を含め、すべての猟法で禁止されています。"
+    }
+]

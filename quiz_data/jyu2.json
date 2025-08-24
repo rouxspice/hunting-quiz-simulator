@@ -1,0 +1,5 @@
+[
+    { "question": "第二種銃猟免許で扱える銃器は、空気銃のみである。", "answers": [{ "text": "正しい", "correct": true }, { "text": "誤り", "correct": false }] },
+    { "question": "狩猟鳥獣であるカモ類の捕獲数の制限は、1日あたり合計5羽までである。", "answers": [{ "text": "正しい", "correct": true }, { "text": "誤り", "correct": false }] },
+    { "question": "獲物を手に入れるために発砲した場合、半矢で逃してしまっても「捕獲行為」をしたことになる。", "answers": [{ "text": "正しい", "correct": true }, { "text": "誤り", "correct": false }] }
+]

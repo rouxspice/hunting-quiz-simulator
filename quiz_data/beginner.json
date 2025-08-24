@@ -1,0 +1,5 @@
+[
+    { "question": "銃砲所持許可は、都道府県公安委員会が発行する。", "answers": [{ "text": "正しい", "correct": true }, { "text": "誤り", "correct": false }] },
+    { "question": "銃砲刀剣類所持等取締法（銃刀法）は、原則として銃砲を所持することを許可している。", "answers": [{ "text": "正しい", "correct": false }, { "text": "誤り", "correct": true }] },
+    { "question": "所持許可を受けた猟銃を他人に盗まれたときは、直ちにその旨を警察署に届け出なければならない。", "answers": [{ "text": "正しい", "correct": true }, { "text": "誤り", "correct": false }] }
+]
