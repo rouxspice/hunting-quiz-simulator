@@ -438,8 +438,7 @@ window.onload = () => {
             const li = document.createElement('li');
             let additionalInfoHTML = '';
 if (item.additionalInfo) {
-    additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, '  
-')}</div>`;
+additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, '<br>')}</div>`;
 }
             li.innerHTML = ` <div class="question-text">${item.question}</div> <div class="correct-answer-text">正解: ${item.correctAnswer}</div> ${additionalInfoHTML} `;
             wrongQuestionsList.appendChild(li);
