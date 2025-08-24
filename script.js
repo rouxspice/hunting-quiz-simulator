@@ -313,9 +313,10 @@ window.onload = () => {
         } catch (error) {
             console.error("画像の読み込みに失敗しました:", error);
             alert("クイズ画像の読み込みに失敗しました。トップページに戻ります。");
+            loaderWrapper.classList.add('loaded');
             goToTopPage();
         } finally {
-            loaderWrapper.classList.add('loaded');
+            // 画像読み込み失敗時はcatchでローダーを消すので、ここは何もしない
         }
     }
 
