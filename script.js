@@ -1,3 +1,6 @@
+// ===================================================================
+// ★★★ script.js パート１／２ 開始 ★★★
+// ===================================================================
 window.onload = () => {
 
     // --- DOM要素の取得 ---
@@ -38,7 +41,7 @@ window.onload = () => {
     correctSound.volume = 0.5;
     wrongSound.volume = 0.5;
 
-    // --- クイズデータ ---
+    // --- クイズデータ (jyu1は削除し、他はフォールバック用に残す) ---
     const quizData = {
         choujuu: [
             { image: "/images/anaguma.jpg", isHuntable: true, name: "アナグマ", distractors: ["タヌキ", "ハクビシン", "テン"] },
@@ -116,51 +119,6 @@ window.onload = () => {
             }
         ],
         wana: [ { question: "「くくりわな」を使用してクマ類（ヒグマ・ツキノワグマ）を捕獲することは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "使用が禁止されている「とらばさみ」は、内径の最大長が何cmを超えるものか？", answers: [{ text: "8cm", correct: false }, { text: "12cm", correct: true }, { text: "16cm", correct: false }] }, { question: "法定猟具である「わな」を一人で31個以上使用して猟を行うことは禁止されている。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ],
-        jyu1: [
-    {
-        question: "散弾についての次の記述のうち、適切なものはどれか。",
-        answers: [
-            { text: "キジバトやコジュケイには、4号前後の散弾を使用する。", correct: false },
-            { text: "イノシシやニホンジカには、OOB号散弾やスラッグ弾を使用する。", correct: true },
-            { text: "カモやノウサギには、OOB号散弾やスラッグ弾を使用する。", correct: false }
-        ],
-        additionalInfo: "対象鳥獣の大きさに応じて適切な散弾を選ぶ必要があります。\n・キジバトやコジュケイ：7～8号\n・カモやノウサギ：3～4号\n・イノシシやニホンジカ：スラッグ弾、OOB号（ダブルオーバック）など"
-    },
-    {
-        question: "図の矢先の名称として、正しいものはどれか。",
-        image: "/images/test01.jpg",
-        answers: [
-            { text: "羽根（ベイン）", correct: false },
-            { text: "矢先（ポイント）", correct: true },
-            { text: "筈（ノック）", correct: false }
-        ],
-        additionalInfo: "矢は、矢先（ポイント）、矢柄（シャフト）、羽根（ベイン）、筈（ノック）から構成されます。図の矢印が指しているのは、先端部分である「矢先」です。"
-    },
-    {
-        question: "第一種銃猟免許で扱える銃器は、装薬銃（散弾銃・ライフル銃）と空気銃である。",
-        answers: [
-            { text: "正しい", correct: true },
-            { text: "誤り", correct: false }
-        ],
-        additionalInfo: "第一種銃猟免許は、装薬銃（散弾銃、ライフル銃）と空気銃の両方を扱えます。第二種銃猟免許は空気銃のみです。"
-    },
-    {
-        question: "住居が集合している地域や、広場や駅など公衆の集まる場所での発砲は、全面的に禁止されている。",
-        answers: [
-            { text: "正しい", correct: true },
-            { text: "誤り", correct: false }
-        ],
-        additionalInfo: "安全確保のため、これらの場所での発砲は、たとえ獲物がいたとしても、絶対に許されません。"
-    },
-    {
-        question: "銃の安全装置をかけておけば、脱包しなくても、銃を持ったまま跳びはねても暴発の危険はない。",
-        answers: [
-            { text: "正しい", correct: false },
-            { text: "誤り", correct: true }
-        ],
-        additionalInfo: "安全装置は、あくまで補助的なものです。銃の暴発を防ぐ最も確実な方法は、実包を薬室から抜いておく「脱包」です。移動時や休憩時は、必ず脱包しましょう。"
-    }
-],
         jyu2: [ { question: "第二種銃猟免許で扱える銃器は、空気銃のみである。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "狩猟鳥獣であるカモ類の捕獲数の制限は、1日あたり合計5羽までである。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "獲物を手に入れるために発砲した場合、半矢で逃してしまっても「捕獲行為」をしたことになる。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ],
         beginner: [ { question: "銃砲所持許可は、都道府県公安委員会が発行する。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] }, { question: "銃砲刀剣類所持等取締法（銃刀法）は、原則として銃砲を所持することを許可している。", answers: [{ text: "正しい", correct: false }, { text: "誤り", correct: true }] }, { question: "所持許可を受けた猟銃を他人に盗まれたときは、直ちにその旨を警察署に届け出なければならない。", answers: [{ text: "正しい", correct: true }, { text: "誤り", correct: false }] } ]
     };
@@ -183,7 +141,48 @@ window.onload = () => {
 
     // --- 汎用関数 ---
     function goToTopPage() { quizContainers.forEach(container => container.style.display = 'none'); resultContainer.style.display = 'none'; topPageContainer.style.display = 'block'; updateTopPageUI(); }
-    function resetQuizState(categoryKey) { currentQuizCategoryKey = categoryKey; const originalQuizData = quizData[categoryKey] || []; currentQuiz = [...originalQuizData].sort(() => Math.random() - 0.5); currentQuestionIndex = 0; score = 0; wrongQuestions = []; }
+    
+    // ===================================================================
+    // ★★★ ここから、アーキテクチャ革命の、中核部分 ★★★
+    // ===================================================================
+
+    /**
+     * 適応的ロード機能：指定されたカテゴリのクイズデータを、外部JSONファイルから非同期で読み込む。
+     * 失敗した場合は、quizDataオブジェクト内の、従来のデータに、フォールバックする。
+     * @param {string} categoryKey - 読み込むクイズのカテゴリキー (例: 'jyu1')
+     * @returns {Promise<Array>} クイズデータの配列を解決するPromise
+     */
+    async function loadQuizData(categoryKey) {
+        try {
+            const response = await fetch(`quiz_data/${categoryKey}.json`);
+            if (!response.ok) {
+                // レスポンスがOKでない場合 (404 Not Foundなど) は、エラーを投げてcatchブロックに移行
+                throw new Error(`Failed to fetch quiz_data/${categoryKey}.json. Status: ${response.status}`);
+            }
+            const data = await response.json();
+            console.log(`Successfully loaded quiz data for '${categoryKey}' from external JSON.`);
+            return data;
+        } catch (error) {
+            console.warn(`Could not load from quiz_data/${categoryKey}.json. Reason: ${error.message}. Falling back to internal data.`);
+            // 外部ファイルの読み込みに失敗した場合、quizDataオブジェクトからデータを返す
+            return quizData[categoryKey] || [];
+        }
+    }
+
+    async function resetQuizState(categoryKey) {
+        currentQuizCategoryKey = categoryKey;
+        // ★★★ 適応的ロード機能を、ここで、呼び出す ★★★
+        const originalQuizData = await loadQuizData(categoryKey);
+        currentQuiz = [...originalQuizData].sort(() => Math.random() - 0.5);
+        currentQuestionIndex = 0;
+        score = 0;
+        wrongQuestions = [];
+    }
+    
+    // ===================================================================
+    // ★★★ ここまで、アーキテクチャ革命の、中核部分 ★★★
+    // ===================================================================
+
 
     // --- イベントリスナーの初期化 ---
     if (quizOptionsContainer) { quizOptionsContainer.addEventListener('click', (event) => { const button = event.target.closest('.challenge-btn'); if (!button) return; const quizCard = button.closest('.quiz-card'); const quizCategoryKey = quizCard.dataset.quizCategory; if (quizCategoryKey === 'choujuu') { startChoujuuQuiz(); } else { startNormalQuiz(quizCategoryKey); } }); }
@@ -194,7 +193,7 @@ window.onload = () => {
 
     // --- 鳥獣判別クイズ ロジック ---
     async function startChoujuuQuiz() { 
-        resetQuizState('choujuu'); 
+        await resetQuizState('choujuu'); // resetQuizStateが非同期になったため、awaitを使用
         loaderWrapper.classList.remove('loaded'); 
         try { 
             const imageUrls = currentQuiz.map(q => q.image); 
@@ -211,6 +210,12 @@ window.onload = () => {
             loaderWrapper.classList.add('loaded'); 
         } 
     }
+// ===================================================================
+// ★★★ script.js パート１／２ 終了 ★★★
+// ===================================================================
+// ===================================================================
+// ★★★ script.js パート２／２ 開始 ★★★
+// ===================================================================
     function showChoujuuQuestion() { 
         choujuuQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); }); 
@@ -288,11 +293,9 @@ window.onload = () => {
         } 
     });
     
-    // ===================================================================
-    // ★★★ ここから、通常クイズの、ロジックを、大幅に、改修 ★★★
-    // ===================================================================
+    // --- 通常クイズのロジック (startNormalQuizの変更) ---
     async function startNormalQuiz(categoryKey) {
-        resetQuizState(categoryKey);
+        await resetQuizState(categoryKey); // resetQuizStateが非同期になったため、awaitを使用
         if (currentQuiz.length === 0) {
             alert('このクイズは現在準備中です。');
             return;
@@ -300,7 +303,6 @@ window.onload = () => {
         
         loaderWrapper.classList.remove('loaded');
         try {
-            // 画像を持つ問題のみ、プリロードの対象とする
             const imageUrls = currentQuiz.filter(q => q.image).map(q => q.image);
             if (imageUrls.length > 0) {
                 await preloadImages(imageUrls);
@@ -313,10 +315,9 @@ window.onload = () => {
         } catch (error) {
             console.error("画像の読み込みに失敗しました:", error);
             alert("クイズ画像の読み込みに失敗しました。トップページに戻ります。");
-            loaderWrapper.classList.add('loaded');
             goToTopPage();
         } finally {
-            // 画像読み込み失敗時はcatchでローダーを消すので、ここは何もしない
+            loaderWrapper.classList.add('loaded');
         }
     }
 
@@ -325,7 +326,6 @@ window.onload = () => {
         resetNormalState();
         const question = currentQuiz[currentQuestionIndex];
         
-        // 画像の表示/非表示を制御
         if (question.image) {
             normalQuizImage.src = question.image;
             normalQuizImageContainer.style.display = 'block';
@@ -349,8 +349,8 @@ window.onload = () => {
 
     function resetNormalState() {
         submitButton.style.display = 'none';
-        additionalInfoContainer.style.display = 'none'; // 補足情報も隠す
-        normalQuizImageContainer.style.display = 'none'; // 画像も隠す
+        additionalInfoContainer.style.display = 'none';
+        normalQuizImageContainer.style.display = 'none';
         while (answerButtonsElement.firstChild) {
             answerButtonsElement.removeChild(answerButtonsElement.firstChild);
         }
@@ -404,9 +404,6 @@ window.onload = () => {
             showResult();
         }
     });
-    // ===================================================================
-    // ★★★ ここまで、通常クイズの、ロジック改修 ★★★
-    // ===================================================================
 
     // --- リザルト画面表示用の関数 (変更なし) ---
     function showResult() { 
@@ -441,7 +438,8 @@ window.onload = () => {
             const li = document.createElement('li');
             let additionalInfoHTML = '';
 if (item.additionalInfo) {
-    additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, '<br>')}</div>`;
+    additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, '  
+')}</div>`;
 }
             li.innerHTML = ` <div class="question-text">${item.question}</div> <div class="correct-answer-text">正解: ${item.correctAnswer}</div> ${additionalInfoHTML} `;
             wrongQuestionsList.appendChild(li);
@@ -455,3 +453,6 @@ if (item.additionalInfo) {
     loaderWrapper.classList.add('loaded');
     goToTopPage();
 };
+// ===================================================================
+// ★★★ script.js パート２／２ 終了 ★★★
+// ===================================================================
