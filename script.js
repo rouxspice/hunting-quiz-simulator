@@ -146,7 +146,11 @@ window.onload = () => {
         choujuuFeedback.style.display = 'none'; 
         choujuuSubmitButton.style.display = 'none'; 
         const question = currentQuiz[currentQuestionIndex]; 
-        choujuuImage.src = question.image; 
+        if (question && question.image) {
+            choujuuImage.src = question.image;
+        } else {
+            choujuuImage.src = '';
+        }
     }
     choujuuStep1.addEventListener('click', (e) => {
         if (!e.target.matches('.choujuu-choice-btn')) return;
