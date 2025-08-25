@@ -202,10 +202,11 @@ window.onload = () => {
         const choice = selectedBtn.dataset.choice;
         const question = currentQuiz[currentQuestionIndex];
         const isCorrect = (choice === 'no') ? !question.isHuntable : question.isHuntable;
-        if (isCorrect) { correctSound.play(); if (choice === 'no') { score++; } } else { wrongSound.play(); }
-        if (!isCorrect) { wrongQuestions.push({ question: `この鳥獣（${question.name}）は捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' }); }
+        if (isCorrect) { correctSound.play(); score++; } else { wrongSound.play(); }
+        if (!isCorrect) { wrongQuestions.push({ question: `この鳥獣は「${question.name}」です。捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' }); }
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
         selectedBtn.classList.add(isCorrect ? 'correct' : 'wrong');
+        // 500ms後に次の処理を実行
         setTimeout(() => {
             if (isCorrect) {
                 if (choice === 'yes') {
