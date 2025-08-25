@@ -136,7 +136,7 @@ window.onload = () => {
             } else {
                 startNormalQuiz(quizCategoryKey);
             }
-        });
+        }
     }
     quizContainers.forEach(container => { container.addEventListener('click', (event) => { const button = event.target.closest('.back-to-top-btn'); if (!button) return; goToTopPage(); }); });
     if (resetScoresBtn) {
