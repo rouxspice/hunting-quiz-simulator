@@ -423,6 +423,77 @@ if (item.additionalInfo) {
     // --- 最後にロード画面を消して、メインコンテンツを表示 ---
     loaderWrapper.classList.add('loaded');
     goToTopPage();
+        // ===================================================================
+    // ★★★ ここから、キーボード操作機能の、実装 ★★★
+    // ===================================================================
+    document.addEventListener('keydown', (event) => {
+        // クイズ画面が表示されていない場合は、何もしない
+        const isQuizActive = quizContainer.style.display === 'block' || quizContainerChoujuu.style.display === 'block';
+        if (!isQuizActive) {
+            return;
+        }
+
+        // 押されたキーによって、処理を、分岐
+        switch (event.key) {
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+                handleNumericKeyPress(parseInt(event.key, 10));
+                break;
+            case 'Enter':
+                handleEnterKeyPress();
+                break;
+            case 'Escape':
+                // トップに戻るボタンが、存在すれば、クリックする
+                const backButton = document.querySelector('.quiz-container:not([style*="display: none"]) .back-to-top-btn, .quiz-container-choujuu:not([style*="display: none"]) .back-to-top-btn');
+                if (backButton) {
+                    backButton.click();
+                }
+                break;
+        }
+    });
+
+    function handleNumericKeyPress(number) {
+        // 現在、表示されている、クイズの、種類を、判別
+        const isChoujuuQuiz = quizContainerChoujuu.style.display === 'block';
+        let targetButtons;
+
+        if (isChoujuuQuiz) {
+            // 鳥獣判別クイズの場合
+            const isStep1 = choujuuStep1.style.display === 'block';
+            if (isStep1) {
+                // ステップ1：「獲れますか？」の、選択肢
+                targetButtons = choujuuStep1.querySelectorAll('.choujuu-choice-btn');
+            } else {
+                // ステップ2：名前の、選択肢
+                targetButtons = choujuuNameOptions.querySelectorAll('.answer-btn');
+            }
+        } else {
+            // 通常クイズの場合
+            targetButtons = answerButtonsElement.querySelectorAll('.answer-btn');
+        }
+
+        // 対応する、番号の、ボタンが、存在し、かつ、無効化されていなければ、クリック
+        if (targetButtons && targetButtons.length >= number) {
+            const buttonToClick = targetButtons[number - 1];
+            if (!buttonToClick.disabled) {
+                buttonToClick.click();
+            }
+        }
+    }
+
+    function handleEnterKeyPress() {
+        // 現在、表示されている、「次へ」または、「結果を見る」ボタンを、探して、クリック
+        const visibleSubmitButton = document.querySelector('#submit:not([style*="display: none"]), #choujuu-submit:not([style*="display: none"])');
+        if (visibleSubmitButton) {
+            visibleSubmitButton.click();
+        }
+    }
+    // ===================================================================
+    // ★★★ ここまで、キーボード操作機能の、実装 ★★★
+    // ===================================================================
+
 };
 // ===================================================================
 // ★★★ script.js パート２／２ 終了 ★★★
