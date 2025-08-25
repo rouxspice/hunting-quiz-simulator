@@ -108,34 +108,39 @@ window.onload = () => {
 
     // --- イベントリスナーの初期化 ---
     if (quizOptionsContainer) {
-    quizContainers.forEach(container => {
-        container.addEventListener('click', (event) => {
-            const button = event.target.closest('.back-to-top-btn');
-            if (!button) return;
-            event.stopPropagation();
-            goToTopPage();
-        });
-    });
+        quizOptionsContainer.addEventListener('click', (event) => {
             const button = event.target.closest('.challenge-btn');
             if (!button) return;
             const quizCard = button.closest('.quiz-card');
             if (!quizCard) return;
             const quizCategoryKey = quizCard.dataset.quizCategory;
             if (quizCategoryKey === 'choujuu') {
-    if (retryQuizBtn) {
-        retryQuizBtn.addEventListener('click', () => {
-            if (currentQuizCategoryKey === 'choujuu') {
                 startChoujuuQuiz();
-            } else {
-                startNormalQuiz(currentQuizCategoryKey);
-            }
-        });
-    if (backToTopFromResultBtn) {
-        backToTopFromResultBtn.addEventListener('click', goToTopPage);
-    }
             } else {
                 startNormalQuiz(quizCategoryKey);
             }
+        });
+
+        quizContainers.forEach(container => {
+            container.addEventListener('click', (event) => {
+                const button = event.target.closest('.back-to-top-btn');
+                if (!button) return;
+                event.stopPropagation();
+                goToTopPage();
+            });
+        });
+
+        if (retryQuizBtn) {
+            retryQuizBtn.addEventListener('click', () => {
+                if (currentQuizCategoryKey === 'choujuu') {
+                    startChoujuuQuiz();
+                } else {
+                    startNormalQuiz(currentQuizCategoryKey);
+                }
+            });
+        }
+        if (backToTopFromResultBtn) {
+            backToTopFromResultBtn.addEventListener('click', goToTopPage);
         }
     }
     quizContainers.forEach(container => { container.addEventListener('click', (event) => { const button = event.target.closest('.back-to-top-btn'); if (!button) return; goToTopPage(); }); });
