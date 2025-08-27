@@ -170,23 +170,34 @@ window.onload = () => {
     backToTopFromResultBtn.addEventListener('click', goToTopPage);
     resetScoresBtn.addEventListener('click', () => { const isConfirmed = confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。'); if (isConfirmed) { localStorage.removeItem(storageKey); updateTopPageUI(); alert('すべてのハイスコアがリセットされました。'); } });
 
-    // --- 鳥獣判別クイズ ロジック ---
+     // --- 鳥獣判別クイズ ロジック (UI同期 修正版) ---
     async function startChoujuuQuiz() { 
-        await resetQuizState('choujuu'); // resetQuizStateが非同期になったため、awaitを使用
-        loaderWrapper.classList.remove('loaded'); 
+        loaderWrapper.classList.remove('loaded'); // ★★★ まず、ローディングを、開始 ★★★
+        
         try { 
+            await resetQuizState('choujuu'); // データを、ロード
+            
+            if (currentQuiz.length === 0) {
+                alert('狩猟鳥獣判別クイズのデータの読み込みに失敗しました。');
+                goToTopPage();
+                return; // 処理を中断
+            }
+
             const imageUrls = currentQuiz.map(q => q.image); 
-            await preloadImages(imageUrls); 
+            await preloadImages(imageUrls); // 画像を、プリロード
+            
+            // ★★★ すべての、準備が、整ってから、画面を、切り替える ★★★
             topPageContainer.style.display = 'none'; 
             quizContainers.forEach(container => container.style.display = 'none'); 
             quizContainerChoujuu.style.display = 'block'; 
             showChoujuuQuestion(); 
+
         } catch (error) { 
-            console.error("画像の読み込みに失敗しました:", error); 
-            alert("クイズ画像の読み込みに失敗しました。トップページに戻ります。"); 
+            console.error("クイズの開始に失敗しました:", error); 
+            alert("クイズの開始に失敗しました。トップページに戻ります。"); 
             goToTopPage(); 
         } finally { 
-            loaderWrapper.classList.add('loaded'); 
+            loaderWrapper.classList.add('loaded'); // ★★★ 最後に、必ず、ローディングを、終了 ★★★
         } 
     }
 // ===================================================================
@@ -277,34 +288,40 @@ window.onload = () => {
         } 
     });
     
-    // --- 通常クイズのロジック (startNormalQuizの変更) ---
+    // --- 通常クイズのロジック (UI同期 修正版) ---
     async function startNormalQuiz(categoryKey) {
-        await resetQuizState(categoryKey); // resetQuizStateが非同期になったため、awaitを使用
-        if (currentQuiz.length === 0) {
-            alert('このクイズは現在準備中です。');
-            return;
-        }
-        
-        loaderWrapper.classList.remove('loaded');
+        loaderWrapper.classList.remove('loaded'); // ★★★ まず、ローディングを、開始 ★★★
+
         try {
+            await resetQuizState(categoryKey);
+            
+            if (currentQuiz.length === 0) {
+                alert('このクイズは現在準備中です。');
+                goToTopPage();
+                return; // 処理を中断
+            }
+            
             const imageUrls = currentQuiz.filter(q => q.image).map(q => q.image);
             if (imageUrls.length > 0) {
                 await preloadImages(imageUrls);
             }
+
+            // ★★★ すべての、準備が、整ってから、画面を、切り替える ★★★
             topPageContainer.style.display = 'none';
             quizContainers.forEach(container => container.style.display = 'none');
             resultContainer.style.display = 'none';
             quizContainer.style.display = 'block';
             showNormalQuestion();
+
         } catch (error) {
-            console.error("画像の読み込みに失敗しました:", error);
-            alert("クイズ画像の読み込みに失敗しました。トップページに戻ります。");
+            console.error("クイズの開始に失敗しました:", error);
+            alert("クイズの開始に失敗しました。トップページに戻ります。");
             goToTopPage();
         } finally {
-            loaderWrapper.classList.add('loaded');
+            loaderWrapper.classList.add('loaded'); // ★★★ 最後に、必ず、ローディングを、終了 ★★★
         }
     }
-
+    
     function showNormalQuestion() {
         normalQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         resetNormalState();
