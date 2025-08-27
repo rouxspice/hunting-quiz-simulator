@@ -107,7 +107,7 @@ window.onload = () => {
         currentQuizCategoryKey = categoryKey;
         // ★★★ 適応的ロード機能を、ここで、呼び出す ★★★
         const originalQuizData = await loadQuizData(categoryKey);
-        const validQuizData = originalQuizData.filter(q => q.question); 
+        const validQuizData = originalQuizData.filter(q => q.question || q.image); 
         currentQuiz = [...validQuizData].sort(() => Math.random() - 0.5);
         currentQuestionIndex = 0;
         score = 0;
