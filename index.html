@@ -165,7 +165,7 @@
     </div>
 
     <!-- ====================================================== -->
-    <!-- ★★★ リザルト画面 (ここから、変更) ★★★ -->
+    <!-- ★★★ リザルト画面 (修正版) ★★★ -->
     <!-- ====================================================== -->
     <div id="result-container" style="display: none;">
         <div class="result-header">
@@ -175,20 +175,21 @@
             <div id="result-message">素晴らしい！</div>
             <div id="result-score">正答率: 100% (3/3問)</div>
         </div>
-        <!-- result-details-section: リザルト画面で間違えた問題リストの表示・操作用ID -->
+
+        <!-- 「おさらい」セクション -->
         <div class="result-details" id="result-details-section">
             <h3>間違えた問題のおさらい</h3>
             <ul id="wrong-questions-list"></ul>
-            <div id="no-wrong-questions-message" style="display: none;">
-                <p>全問正解です！おめでとうございます！</p>
-            </div>
+        </div>
+
+        <!-- ★★★ ボタンは、常に、ここに、表示される ★★★ -->
         <div class="result-actions">
             <button id="retry-quiz-btn">もう一度挑戦する</button>
             <button id="back-to-top-from-result-btn">トップに戻る</button>
         </div>
     </div> 
     <!-- ====================================================== -->
-    <!-- ★★★ リザルト画面 (ここまで、変更) ★★★ -->
+    <!-- ★★★ リザルト画面 (修正版) ★★★ -->
     <!-- ====================================================== -->
 
     <script src="script.js"></script>
