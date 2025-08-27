@@ -57,9 +57,22 @@ window.onload = () => {
     function saveScoresToStorage(scores) { localStorage.setItem(storageKey, JSON.stringify(scores)); }
     function updateTopPageUI() { const scores = getScoresFromStorage(); document.querySelectorAll('.quiz-card').forEach(card => { const category = card.dataset.quizCategory; const categoryScores = scores[category] || { highScore: 0, cleared: false }; const highScoreEl = card.querySelector('.quiz-card-highscore'); const clearMarkEl = card.querySelector('.quiz-card-clear-mark'); highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`; if (categoryScores.cleared) { clearMarkEl.textContent = '👑'; } else { clearMarkEl.textContent = ''; } }); }
 
-    // --- 画像プリロード関数 ---
-    function preloadImages(urls) { const promises = urls.map(url => { return new Promise((resolve, reject) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = () => reject(new Error(`Failed to load image's URL: ${url}`)); img.src = url; }); }); return Promise.all(promises); }
-
+    // --- 画像プリロード関数 (堅牢性向上版) ---
+    function preloadImages(urls) {
+        const promises = urls.map(url => {
+            return new Promise((resolve) => { // rejectを削除し、必ずresolveさせる
+                const img = new Image();
+                img.onload = () => resolve({url, status: 'ok'});
+                img.onerror = () => {
+                    console.warn(`Warning: Failed to load image, but continuing. URL: ${url}`);
+                    resolve({url, status: 'error'}); // エラーの場合も、エラー情報を含めてresolve
+                };
+                img.src = url;
+            });
+        });
+        return Promise.all(promises);
+    }
+    
     // --- 汎用関数 ---
     function goToTopPage() { quizContainers.forEach(container => container.style.display = 'none'); resultContainer.style.display = 'none'; topPageContainer.style.display = 'block'; updateTopPageUI(); }
     
