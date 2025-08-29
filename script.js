@@ -169,14 +169,6 @@ window.onload = () => {
         });
     }
     backToTopFromResultBtn.addEventListener('click', goToTopPage);
-    resetScoresBtn.addEventListener('click', () => { 
-            const isConfirmed = confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。');
-            if (isConfirmed) {
-                localStorage.removeItem(storageKey);
-                updateTopPageUI();
-                alert('すべてのハイスコアがリセットされました。');
-            }
-        });
 
      // --- 鳥獣判別クイズ ロジック (UI同期 修正版) ---
     async function startChoujuuQuiz() { 
