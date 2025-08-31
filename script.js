@@ -1,6 +1,3 @@
-// ===================================================================
-// ★★★ script.js パート１／２ 開始 ★★★
-// ===================================================================
 window.onload = () => {
 
     // --- DOM要素の取得 ---
@@ -41,7 +38,7 @@ window.onload = () => {
     correctSound.volume = 0.5;
     wrongSound.volume = 0.5;
 
-    // --- クイズデータ (jyu1は削除し、他はフォールバック用に残す) ---
+    // --- クイズデータ ---
     const quizData = {};
 
     // --- 状態管理変数 ---
@@ -57,7 +54,7 @@ window.onload = () => {
     function saveScoresToStorage(scores) { localStorage.setItem(storageKey, JSON.stringify(scores)); }
     function updateTopPageUI() { const scores = getScoresFromStorage(); document.querySelectorAll('.quiz-card').forEach(card => { const category = card.dataset.quizCategory; const categoryScores = scores[category] || { highScore: 0, cleared: false }; const highScoreEl = card.querySelector('.quiz-card-highscore'); const clearMarkEl = card.querySelector('.quiz-card-clear-mark'); highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`; if (categoryScores.cleared) { clearMarkEl.textContent = '👑'; } else { clearMarkEl.textContent = ''; } }); }
 
-    // --- 画像プリロード関数 (堅牢性向上版) ---
+    // --- 画像プリロード関数  ---
     function preloadImages(urls, onProgress) { // ★★★ 第2引数に、コールバック関数を、追加 ★★★
         let loadedCount = 0;
         const totalCount = urls.length;
@@ -90,9 +87,6 @@ window.onload = () => {
     // --- 汎用関数 ---
     function goToTopPage() { quizContainers.forEach(container => container.style.display = 'none'); resultContainer.style.display = 'none'; topPageContainer.style.display = 'block'; updateTopPageUI(); }
     
-    // ===================================================================
-    // ★★★ ここから、アーキテクチャ革命の、中核部分 ★★★
-    // ===================================================================
 
     /**
      * 適応的ロード機能：指定されたカテゴリのクイズデータを、外部JSONファイルから非同期で読み込む。
@@ -134,11 +128,6 @@ window.onload = () => {
         wrongQuestions = [];
     }
 
-    
-    // ===================================================================
-    // ★★★ ここまで、アーキテクチャ革命の、中核部分 ★★★
-    // ===================================================================
-
     // --- イベントリスナーの初期化 ---
     if (quizOptionsContainer) {
         quizOptionsContainer.addEventListener('click', (event) => {
@@ -159,9 +148,6 @@ window.onload = () => {
             }
         });
     }
-
-
-
 
     quizContainers.forEach(container => {
         container.addEventListener('click', (event) => {
@@ -196,7 +182,7 @@ window.onload = () => {
         });
     }
 
-    // --- 鳥獣判別クイズ ロジック (UI同期 修正版) ---
+    // --- 鳥獣判別クイズ ロジック ---
     async function startChoujuuQuiz() { 
         const progressBar = document.getElementById('progress-bar');
         const progressText = document.getElementById('progress-text');
@@ -228,8 +214,7 @@ window.onload = () => {
             
             topPageContainer.style.display = 'none'; 
 
-            
-            // ★★★ すべての、準備が、整ってから、画面を、切り替える ★★★
+
             topPageContainer.style.display = 'none'; 
             quizContainers.forEach(container => container.style.display = 'none'); 
             quizContainerChoujuu.style.display = 'block'; 
@@ -243,12 +228,7 @@ window.onload = () => {
             loaderWrapper.classList.add('loaded'); // ★★★ 最後に、必ず、ローディングを、終了 ★★★
         } 
     }
-// ===================================================================
-// ★★★ script.js パート１／２ 終了 ★★★
-// ===================================================================
-// ===================================================================
-// ★★★ script.js パート２／２ 開始 ★★★
-// ===================================================================
+
     function showChoujuuQuestion() { 
         choujuuQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); }); 
@@ -341,7 +321,6 @@ window.onload = () => {
                             }
                         }
                     }
-                    // ★★★ ここまでが、進化の、ロジック ★★★
                 });
 
                 // 選択したボタンの色付け
@@ -352,7 +331,6 @@ window.onload = () => {
                     showChoujuuFeedback(isCorrect, isCorrect ? `正解！これは${question.name}です。` : `不正解。正しくは${question.name}です。`);
                 }, 500);
             });
-
                 // 選択したボタンの色付け
                 selectedButton.classList.add(isCorrect ? 'correct' : 'wrong');
 
@@ -441,11 +419,9 @@ window.onload = () => {
 
         questionElement.innerText = question.question;
         
-        // ★★★ ここからが、進化の、ロジック ★★★
-        // 1. 元の、選択肢配列を、コピーして、シャッフルする
+
         const shuffledAnswers = [...question.answers].sort(() => Math.random() - 0.5);
 
-        // 2. シャッフルされた、配列を、使って、ボタンを、生成する
         shuffledAnswers.forEach(answer => {
             const button = document.createElement('button');
             button.innerText = answer.text;
@@ -516,7 +492,7 @@ window.onload = () => {
         }
     });
 
-    // --- リザルト画面表示用の関数 (変更なし) ---
+    // --- リザルト画面表示用の関数 ---
     function showResult() { 
         quizContainers.forEach(container => container.style.display = 'none');
         resultContainer.style.display = 'block';
@@ -565,10 +541,7 @@ window.onload = () => {
     loaderWrapper.classList.add('loaded');
     goToTopPage();
     
-    // ===================================================================
-    // ★★★ ここから、キーボード操作機能の、実装 ★★★
-    // ===================================================================
-    
+
     document.addEventListener('keydown', (event) => {
         // クイズ画面が表示されていない場合は、何もしない
         const isQuizActive = quizContainer.style.display === 'block' || quizContainerChoujuu.style.display === 'block';
@@ -633,11 +606,3 @@ window.onload = () => {
             visibleSubmitButton.click();
         }
     }
-    // ===================================================================
-    // ★★★ ここまで、キーボード操作機能の、実装 ★★★
-    // ===================================================================
-
-
-// ===================================================================
-// ★★★ script.js パート２／２ 終了 ★★★
-// ===================================================================
