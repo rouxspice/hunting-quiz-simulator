@@ -169,28 +169,3 @@ main { padding: 20px 30px; }
     font-weight: bold;
     color: #555;
 }
-/* =================================================================== */
-/* ★★★ クイズ進捗表示用の、スタイル (ここから、追加) ★★★ */
-/* =================================================================== */
- <div class="quiz-content-wrapper">
-            <div class="quiz-main-content">
-                <div class="choujuu-image-container">
-                    <img id="choujuu-image" src="" alt="鳥獣の画像">
-                </div>
-                <div id="choujuu-step1">
-                    <h2 id="choujuu-question-step1">この鳥獣は捕獲できますか？</h2>
-                    <div class="choujuu-step1-buttons">
-                        <button class="choujuu-choice-btn" data-choice="yes">獲れます</button>
-                        <button class="choujuu-choice-btn" data-choice="no">獲れません</button>
-                    </div>
-                </div>
-                <div id="choujuu-step2" style="display: none;">
-                    <h2 id="choujuu-question-step2">この鳥獣の名前は？</h2>
-                    <div id="choujuu-name-options" class="answer-buttons-grid"></div>
-                </div>
-            </div>
-            <div class="quiz-footer-content">
-                <div id="choujuu-feedback" class="feedback-container"></div>
-                <button id="choujuu-submit" style="display: none;">次の問題へ</button>
-            </div>
-        </div>
