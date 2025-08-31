@@ -388,7 +388,12 @@ window.onload = () => {
 
         questionElement.innerText = question.question;
         
-        question.answers.forEach(answer => {
+        // ★★★ ここからが、進化の、ロジック ★★★
+        // 1. 元の、選択肢配列を、コピーして、シャッフルする
+        const shuffledAnswers = [...question.answers].sort(() => Math.random() - 0.5);
+
+        // 2. シャッフルされた、配列を、使って、ボタンを、生成する
+        shuffledAnswers.forEach(answer => {
             const button = document.createElement('button');
             button.innerText = answer.text;
             button.classList.add('answer-btn');

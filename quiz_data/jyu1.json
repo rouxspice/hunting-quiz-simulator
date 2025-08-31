@@ -827,6 +827,36 @@
         ],
         "additionalInfo": "狩猟免許状はその本人にしか効力がなく、いかなる理由があっても他人に譲渡したり貸与したりすることは、法律で禁止されています。"
     },
+        {
+        "question": "一般のスラッグ弾の最大有効射程距離を正しく示したものはどれか",
+        "answers": [
+            { "text": "70メートル", "correct": false },
+            { "text": "100メートル", "correct": true },
+            { "text": "130メートル", "correct": false }
+        ],
+        "additionalInfo": "スラッグが100m、OOB～4号が50m、5～6号が45m",
+        "importance": "high"
+    },
+        {
+        "question": "OOB号散弾の最大有効射程距離を正しく示したものはどれか",
+        "answers": [
+            { "text": "50メートル", "correct": true },
+            { "text": "70メートル", "correct": false },
+            { "text": "90メートル", "correct": false }
+        ],
+        "additionalInfo": "OOB～4号が50m、5～6号が45m",
+        "importance": "high"
+    },    
+    {
+        "question": "散弾の最大有効射程距離についての次の記述のうち、適切なものはどれか",
+        "answers": [
+            { "text": "散弾が散開して鳥獣を捕獲するとき、ほぼ確実に捕獲できる最も遠い飛距離のことである", "correct": true },
+            { "text": "散弾の散開が、直径約１メートルの円になったときの距離のことをいう", "correct": false },
+            { "text": "散弾が包んでいるワッズが大気中を飛行して、最も遠くまで飛んだ時の距離をいう", "correct": false }
+        ],
+        "additionalInfo": "最大有効射程距離は、獲物を捕獲できる最も遠い距離のことをいう。",
+        "importance": "high"
+    },
     {
         "question": "散弾の最大到達距離についての次の記述のうち、適切なものはどれか",
         "answers": [
@@ -844,7 +874,7 @@
             { "text": "イノシシやニホンジカには、OOB号散弾やスラッグ弾を使用する。", "correct": true },
             { "text": "カモやノウサギには、OOB号散弾やスラッグ弾を使用する。", "correct": false }
         ],
-        "additionalInfo": "対象鳥獣の大きさに応じて適切な散弾を選ぶ必要があります...",
+        "additionalInfo": "イノシシ・シカにはOOB号やスラッグ弾、カモ・ノウサギには5,6号、キジバト・コジュケイには7,7.5,8号",
         "importance": "high"
     }
 ]
