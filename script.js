@@ -118,7 +118,6 @@ window.onload = () => {
     // ★★★ ここまで、アーキテクチャ革命の、中核部分 ★★★
     // ===================================================================
 
-
     // --- イベントリスナーの初期化 ---
     if (quizOptionsContainer) {
         quizOptionsContainer.addEventListener('click', (event) => {
@@ -133,31 +132,30 @@ window.onload = () => {
                 startNormalQuiz(quizCategoryKey);
             }
         });
-
-        quizContainers.forEach(container => {
-            container.addEventListener('click', (event) => {
-                const button = event.target.closest('.back-to-top-btn');
-                if (!button) return;
-                event.stopPropagation();
-                goToTopPage();
-            });
-        });
-
-        if (retryQuizBtn) {
-            retryQuizBtn.addEventListener('click', () => {
-                if (currentQuizCategoryKey === 'choujuu') {
-                    startChoujuuQuiz();
-                } else {
-                    startNormalQuiz(currentQuizCategoryKey);
-                }
-            });
-        }
-        if (backToTopFromResultBtn) {
-            backToTopFromResultBtn.addEventListener('click', goToTopPage);
-        }
     }
-    quizContainers.forEach(container => { container.addEventListener('click', (event) => { const button = event.target.closest('.back-to-top-btn');
-    if (!button) return; goToTopPage(); }); });
+
+    quizContainers.forEach(container => {
+        container.addEventListener('click', (event) => {
+            const button = event.target.closest('.back-to-top-btn');
+            if (!button) return;
+            goToTopPage();
+        });
+    });
+
+    if (retryQuizBtn) {
+        retryQuizBtn.addEventListener('click', () => {
+            if (currentQuizCategoryKey === 'choujuu') {
+                startChoujuuQuiz();
+            } else {
+                startNormalQuiz(currentQuizCategoryKey);
+            }
+        });
+    }
+
+    if (backToTopFromResultBtn) {
+        backToTopFromResultBtn.addEventListener('click', goToTopPage);
+    }
+
     if (resetScoresBtn) {
         resetScoresBtn.addEventListener('click', () => {
             const isConfirmed = confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。');
@@ -168,9 +166,8 @@ window.onload = () => {
             }
         });
     }
-    backToTopFromResultBtn.addEventListener('click', goToTopPage);
 
-     // --- 鳥獣判別クイズ ロジック (UI同期 修正版) ---
+    // --- 鳥獣判別クイズ ロジック (UI同期 修正版) ---
     async function startChoujuuQuiz() { 
         loaderWrapper.classList.remove('loaded'); // ★★★ まず、ローディングを、開始 ★★★
         
@@ -495,9 +492,11 @@ if (item.additionalInfo) {
     // --- 最後にロード画面を消して、メインコンテンツを表示 ---
     loaderWrapper.classList.add('loaded');
     goToTopPage();
-        // ===================================================================
+    
+    // ===================================================================
     // ★★★ ここから、キーボード操作機能の、実装 ★★★
     // ===================================================================
+    
     document.addEventListener('keydown', (event) => {
         // クイズ画面が表示されていない場合は、何もしない
         const isQuizActive = quizContainer.style.display === 'block' || quizContainerChoujuu.style.display === 'block';
