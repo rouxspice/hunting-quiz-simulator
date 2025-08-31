@@ -1,5 +1,5 @@
 // ===================================================================
-// ★★★ script.js (完全再構築版) ★★★
+// ★★★ script.js (完全再構築・最終版) ★★★
 // ===================================================================
 window.onload = () => {
 
@@ -46,7 +46,7 @@ window.onload = () => {
     let currentQuiz = [];
     let currentQuestionIndex = 0;
     let currentQuizCategoryKey = '';
-    let currentQuizMode = 'all'; // ★★★ 現在のクイズモードを、保持する、変数を、追加 ★★★
+    let currentQuizMode = 'all';
     let score = 0;
     let wrongQuestions = [];
 
@@ -61,15 +61,15 @@ window.onload = () => {
         let loadedCount = 0;
         const totalCount = urls.length;
         if (totalCount === 0) {
-            onProgress(1, 1, "画像なし");
+            if(onProgress) onProgress(1, 1, "画像なし");
             return Promise.resolve([]);
         }
-        onProgress(0, totalCount, '');
+        if(onProgress) onProgress(0, totalCount, '');
         const promises = urls.map(url => {
             return new Promise((resolve) => {
                 const img = new Image();
-                img.onload = () => { loadedCount++; onProgress(loadedCount, totalCount, url.split('/').pop()); resolve({ url, status: 'ok' }); };
-                img.onerror = () => { loadedCount++; console.warn(`Warning: Failed to load image, but continuing. URL: ${url}`); onProgress(loadedCount, totalCount, url.split('/').pop()); resolve({ url, status: 'error' }); };
+                img.onload = () => { loadedCount++; if(onProgress) onProgress(loadedCount, totalCount, url.split('/').pop()); resolve({ url, status: 'ok' }); };
+                img.onerror = () => { loadedCount++; console.warn(`Warning: Failed to load image, but continuing. URL: ${url}`); if(onProgress) onProgress(loadedCount, totalCount, url.split('/').pop()); resolve({ url, status: 'error' }); };
                 img.src = url;
             });
         });
@@ -100,7 +100,7 @@ window.onload = () => {
 
     async function resetQuizState(categoryKey, mode = 'all') {
         currentQuizCategoryKey = categoryKey;
-        currentQuizMode = mode; // ★★★ モードを、状態として、保存 ★★★
+        currentQuizMode = mode;
         const originalQuizData = await loadQuizData(categoryKey);
         let filteredData = originalQuizData.filter(q => q.question || q.image);
         if (mode === 'cram') {
@@ -142,7 +142,7 @@ window.onload = () => {
                 if (currentQuizCategoryKey === 'choujuu') {
                     startChoujuuQuiz();
                 } else {
-                    startNormalQuiz(currentQuizCategoryKey, currentQuizMode); // ★★★ 保存した、モードで、再挑戦 ★★★
+                    startNormalQuiz(currentQuizCategoryKey, currentQuizMode);
                 }
             });
         }
