@@ -349,7 +349,7 @@ window.onload = () => {
             await resetQuizState(categoryKey, mode);
             
             if (currentQuiz.length === 0) {
-                alert('このクイズは現在準備中です。');
+                alert('このモードで表示できる問題がありません。');
                 goToTopPage();
                 return; 
             }
@@ -374,7 +374,6 @@ window.onload = () => {
         }
     }
 
-    }
     
     function showNormalQuestion() {
         normalQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
