@@ -103,9 +103,6 @@ window.onload = () => {
         }
     }
 
-    async function resetQuizState(categoryKey) {
-        currentQuizCategoryKey = categoryKey;
-        // ★★★ 適応的ロード機能を、ここで、呼び出す ★★★
     async function resetQuizState(categoryKey, mode = 'all') {
         currentQuizCategoryKey = categoryKey;
         
@@ -122,6 +119,7 @@ window.onload = () => {
         score = 0;
         wrongQuestions = [];
     }
+
     
     // ===================================================================
     // ★★★ ここまで、アーキテクチャ革命の、中核部分 ★★★
@@ -147,6 +145,8 @@ window.onload = () => {
             }
         });
     }
+
+
 
 
     quizContainers.forEach(container => {
@@ -342,21 +342,16 @@ window.onload = () => {
     });
     
     // --- 通常クイズのロジック (UI同期 修正版) ---
-    async function startNormalQuiz(categoryKey, mode = 'all') { // ★★★ 引数を追加 ★★★
-        loaderWrapper.classList.remove('loaded');
+    async function startNormalQuiz(categoryKey, mode = 'all') {
+        loaderWrapper.classList.remove('loaded'); 
 
         try {
-            await resetQuizState(categoryKey, mode); // ★★★ resetQuizStateに、modeを、渡す ★★★
-            // ...
-        loaderWrapper.classList.remove('loaded'); // ★★★ まず、ローディングを、開始 ★★★
-
-        try {
-            await resetQuizState(categoryKey);
+            await resetQuizState(categoryKey, mode);
             
             if (currentQuiz.length === 0) {
                 alert('このクイズは現在準備中です。');
                 goToTopPage();
-                return; // 処理を中断
+                return; 
             }
             
             const imageUrls = currentQuiz.filter(q => q.image).map(q => q.image);
@@ -364,7 +359,6 @@ window.onload = () => {
                 await preloadImages(imageUrls);
             }
 
-            // ★★★ すべての、準備が、整ってから、画面を、切り替える ★★★
             topPageContainer.style.display = 'none';
             quizContainers.forEach(container => container.style.display = 'none');
             resultContainer.style.display = 'none';
@@ -376,8 +370,10 @@ window.onload = () => {
             alert("クイズの開始に失敗しました。トップページに戻ります。");
             goToTopPage();
         } finally {
-            loaderWrapper.classList.add('loaded'); // ★★★ 最後に、必ず、ローディングを、終了 ★★★
+            loaderWrapper.classList.add('loaded');
         }
+    }
+
     }
     
     function showNormalQuestion() {
