@@ -272,11 +272,40 @@ window.onload = () => {
             button.innerText = name;
             button.classList.add('answer-btn');
             button.addEventListener('click', (e) => {
+                const selectedButton = e.target;
                 const isCorrect = (name === question.name);
-                if (isCorrect) { correctSound.play(); score++; } else { wrongSound.play(); }
-                if (!isCorrect) { wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name }); }
-                e.target.classList.add(isCorrect ? 'correct' : 'wrong');
-                Array.from(choujuuNameOptions.children).forEach(btn => btn.disabled = true);
+
+                if (isCorrect) {
+                    correctSound.play();
+                    score++;
+                } else {
+                    wrongSound.play();
+                    if (!isCorrect) {
+                        wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name });
+                    }
+                }
+
+                // すべてのボタンを無効化
+                Array.from(choujuuNameOptions.children).forEach(btn => {
+                    btn.disabled = true;
+                    // ★★★ ここからが、追加ロジック ★★★
+                    // もし、このボタンが、正解の、ボタンだったら...
+                    if (btn.innerText === question.name) {
+                        // ...そして、ユーザーが、不正解だったら...
+                        if (!isCorrect) {
+                            // ...ユーザーが、選んだ、ボタンと、違う場合に限り、正解を、ハイライトする
+                            if (btn !== selectedButton) {
+                                btn.classList.add('reveal-correct');
+                            }
+                        }
+                    }
+                    // ★★★ ここまでが、追加ロジック ★★★
+                });
+
+                // 選択したボタンの色付け
+                selectedButton.classList.add(isCorrect ? 'correct' : 'wrong');
+
+                // フィードバック表示
                 setTimeout(() => {
                     showChoujuuFeedback(isCorrect, isCorrect ? `正解！これは${question.name}です。` : `不正解。正しくは${question.name}です。`);
                 }, 500);
