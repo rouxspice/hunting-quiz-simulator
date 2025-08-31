@@ -58,7 +58,30 @@ main { padding: 20px 30px; }
 #loader-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #2c3e50; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 3000; transition: opacity 0.5s ease; }
 #loader-wrapper.loaded { opacity: 0; pointer-events: none; }
 .loader { border: 8px solid #f3f3f3; border-top: 8px solid #3498db; border-radius: 50%; width: 60px; height: 60px; animation: spin 1.5s linear infinite; }
-#loader-wrapper p { margin-top: 20px; color: #f3f3f3; font-size: 1.2em; }
+#loader-wrapper #progress-text { /* IDセレクタに、変更 */
+    margin-top: 20px;
+    color: #f3f3f3;
+    font-size: 1.2em;
+    min-height: 1.5em; /* テキストが、変わっても、ガタつかないように、高さを、確保 */
+}
+/* ★★★ ここからが、追加の、スタイル ★★★ */
+.progress-container {
+    width: 80%;
+    max-width: 300px;
+    height: 10px;
+    background-color: #555;
+    border-radius: 5px;
+    margin-top: 25px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%; /* 初期値は、0% */
+    height: 100%;
+    background-color: #3498db;
+    border-radius: 5px;
+    transition: width 0.2s ease-out; /* 幅が、滑らかに、変化するように */
+}
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 .answer-btn, .choujuu-choice-btn { padding: 15px; font-size: 1em; cursor: pointer; border-radius: 8px; border: 2px solid #ccc; background-color: #f8f9fa; text-align: center; transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out; }
 .answer-btn:hover:not(:disabled), .choujuu-choice-btn:hover:not(:disabled) { background-color: #e9ecef; border-color: #999; }

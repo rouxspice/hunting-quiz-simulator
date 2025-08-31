@@ -58,14 +58,28 @@ window.onload = () => {
     function updateTopPageUI() { const scores = getScoresFromStorage(); document.querySelectorAll('.quiz-card').forEach(card => { const category = card.dataset.quizCategory; const categoryScores = scores[category] || { highScore: 0, cleared: false }; const highScoreEl = card.querySelector('.quiz-card-highscore'); const clearMarkEl = card.querySelector('.quiz-card-clear-mark'); highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`; if (categoryScores.cleared) { clearMarkEl.textContent = '👑'; } else { clearMarkEl.textContent = ''; } }); }
 
     // --- 画像プリロード関数 (堅牢性向上版) ---
-    function preloadImages(urls) {
+    function preloadImages(urls, onProgress) { // ★★★ 第2引数に、コールバック関数を、追加 ★★★
+        let loadedCount = 0;
+        const totalCount = urls.length;
+
+        // 進捗を、初期化
+        onProgress(0, totalCount, ''); 
+
         const promises = urls.map(url => {
-            return new Promise((resolve) => { // rejectを削除し、必ずresolveさせる
+            return new Promise((resolve) => {
                 const img = new Image();
-                img.onload = () => resolve({url, status: 'ok'});
+                img.onload = () => {
+                    loadedCount++;
+                    // ★★★ 1枚、読み込むごとに、進捗を、更新 ★★★
+                    onProgress(loadedCount, totalCount, url.split('/').pop());
+                    resolve({url, status: 'ok'});
+                };
                 img.onerror = () => {
+                    loadedCount++;
                     console.warn(`Warning: Failed to load image, but continuing. URL: ${url}`);
-                    resolve({url, status: 'error'}); // エラーの場合も、エラー情報を含めてresolve
+                    // ★★★ エラーでも、進捗は、進める ★★★
+                    onProgress(loadedCount, totalCount, url.split('/').pop());
+                    resolve({url, status: 'error'});
                 };
                 img.src = url;
             });
@@ -184,8 +198,13 @@ window.onload = () => {
 
     // --- 鳥獣判別クイズ ロジック (UI同期 修正版) ---
     async function startChoujuuQuiz() { 
-        loaderWrapper.classList.remove('loaded'); // ★★★ まず、ローディングを、開始 ★★★
-        
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        loaderWrapper.classList.remove('loaded');
+        progressText.textContent = 'クイズデータを、読み込み中...';
+        progressBar.style.width = '0%';
+    
         try { 
             await resetQuizState('choujuu'); // データを、ロード
             
@@ -196,7 +215,19 @@ window.onload = () => {
             }
 
             const imageUrls = currentQuiz.map(q => q.image); 
-            await preloadImages(imageUrls); // 画像を、プリロード
+
+            const onProgressCallback = (loaded, total, filename) => {
+                const percentage = total > 0 ? (loaded / total) * 100 : 0;
+                progressBar.style.width = `${percentage}%`;
+                progressText.textContent = `画像を、読み込み中... (${loaded}/${total}) ${filename}`;
+            };
+
+            await preloadImages(imageUrls, onProgressCallback);
+            
+            progressText.textContent = 'クイズを、開始します...';
+            
+            topPageContainer.style.display = 'none'; 
+
             
             // ★★★ すべての、準備が、整ってから、画面を、切り替える ★★★
             topPageContainer.style.display = 'none'; 
@@ -343,7 +374,13 @@ window.onload = () => {
     
     // --- 通常クイズのロジック (UI同期 修正版) ---
     async function startNormalQuiz(categoryKey, mode = 'all') {
-        loaderWrapper.classList.remove('loaded'); 
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        loaderWrapper.classList.remove('loaded');
+        progressText.textContent = 'クイズデータを、読み込み中...';
+        progressBar.style.width = '0%';
+
 
         try {
             await resetQuizState(categoryKey, mode);
@@ -356,8 +393,16 @@ window.onload = () => {
             
             const imageUrls = currentQuiz.filter(q => q.image).map(q => q.image);
             if (imageUrls.length > 0) {
-                await preloadImages(imageUrls);
+                const onProgressCallback = (loaded, total, filename) => {
+                    const percentage = total > 0 ? (loaded / total) * 100 : 0;
+                    progressBar.style.width = `${percentage}%`;
+                    progressText.textContent = `画像を、読み込み中... (${loaded}/${total}) ${filename}`;
+                };
+                await preloadImages(imageUrls, onProgressCallback);
             }
+
+            progressText.textContent = 'クイズを、開始します...';
+
 
             topPageContainer.style.display = 'none';
             quizContainers.forEach(container => container.style.display = 'none');
