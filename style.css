@@ -18,7 +18,7 @@ main { padding: 20px 30px; }
 .quiz-card-header h3 { margin: 0; font-size: 1.2em; flex-grow: 1; }
 .quiz-card-clear-mark { font-size: 1.5em; color: #ffc107; }
 .quiz-card p { flex-grow: 1; font-size: 0.9em; color: #555; margin-bottom: 15px; }
-.quiz-card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+.quiz-card-footer { display: flex; justify-content: space-between; align-items: center; }
 .quiz-card-highscore { font-size: 0.9em; font-weight: bold; color: #4a7c59; }
 .challenge-btn { background-color: #4a7c59; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; transition: background-color 0.3s; }
 .challenge-btn:hover { background-color: #3b6347; }
