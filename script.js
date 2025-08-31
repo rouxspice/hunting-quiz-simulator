@@ -362,7 +362,7 @@ window.onload = () => {
                 }, 500);
             });
             choujuuNameOptions.appendChild(button);
-        };
+        }
     }
     function showChoujuuFeedback(isCorrect, message) { 
         choujuuFeedback.textContent = message; 
