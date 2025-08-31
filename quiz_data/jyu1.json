@@ -820,6 +820,7 @@
     },
     {
         "question": "狩猟免許状を、他人に貸す行為について、正しいものはどれか。",
+        "importance": "high",
         "answers": [
             { "text": "家族になら貸してもよい", "correct": false },
             { "text": "法律で固く禁止されている", "correct": true },
