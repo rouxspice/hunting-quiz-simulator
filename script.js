@@ -106,9 +106,22 @@ window.onload = () => {
     async function resetQuizState(categoryKey) {
         currentQuizCategoryKey = categoryKey;
         // ★★★ 適応的ロード機能を、ここで、呼び出す ★★★
-        const originalQuizData = await loadQuizData(categoryKey);
-        const validQuizData = originalQuizData.filter(q => q.question || q.image); 
-        currentQuiz = [...validQuizData].sort(() => Math.random() - 0.5);
+        async function resetQuizState(categoryKey, mode = 'all') { // ★★★ 引数を追加（デフォルトは'all'） ★★★
+            currentQuizCategoryKey = categoryKey;
+            
+            const originalQuizData = await loadQuizData(categoryKey);
+            let filteredData = originalQuizData.filter(q => q.question || q.image); 
+
+            // ★★★ ここが、フィルタリングの、ロジック ★★★
+            if (mode === 'cram') {
+                filteredData = filteredData.filter(q => q.importance === 'high');
+            }
+            
+            currentQuiz = [...filteredData].sort(() => Math.random() - 0.5);
+            currentQuestionIndex = 0;
+            score = 0;
+            wrongQuestions = [];
+        }
         currentQuestionIndex = 0;
         score = 0;
         wrongQuestions = [];
@@ -121,9 +134,21 @@ window.onload = () => {
     // --- イベントリスナーの初期化 ---
     if (quizOptionsContainer) {
         quizOptionsContainer.addEventListener('click', (event) => {
-            const button = event.target.closest('.challenge-btn');
-            if (!button) return;
-            const quizCard = button.closest('.quiz-card');
+        const button = event.target.closest('.challenge-btn');
+        if (!button) return;
+
+        const quizCard = button.closest('.quiz-card');
+        if (!quizCard) return;
+
+        const quizCategoryKey = quizCard.dataset.quizCategory;
+        const selectedMode = button.dataset.mode; // ★★★ 押されたボタンの、モードを取得 ★★★
+
+        if (quizCategoryKey === 'choujuu') {
+            // 鳥獣判別は、モードがないので、そのまま
+            startChoujuuQuiz(); 
+        } else {
+            startNormalQuiz(quizCategoryKey, selectedMode); // ★★★ モード情報を、引数で、渡す ★★★
+        }
             if (!quizCard) return;
             const quizCategoryKey = quizCard.dataset.quizCategory;
             if (quizCategoryKey === 'choujuu') {

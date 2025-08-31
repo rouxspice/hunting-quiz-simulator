@@ -22,6 +22,28 @@ main { padding: 20px 30px; }
 .quiz-card-highscore { font-size: 0.9em; font-weight: bold; color: #4a7c59; }
 .challenge-btn { background-color: #4a7c59; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; transition: background-color 0.3s; }
 .challenge-btn:hover { background-color: #3b6347; }
+.challenge-buttons-wrapper {
+    display: flex;
+    flex-direction: column; /* ボタンを、縦に、並べる */
+    gap: 8px; /* ボタン間の、余白 */
+    margin-left: auto; /* 右寄せにする */
+}
+
+.cram-mode-btn {
+    background-color: #e67e22; /* 厳選モードは、オレンジ色に */
+    border-color: #d35400;
+}
+
+.cram-mode-btn:hover {
+    background-color: #d35400;
+}
+
+/* フッターの、レイアウトを、調整 */
+.quiz-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* 要素を、下揃えに */
+}
 .quiz-container, .quiz-container-choujuu { display: none; max-width: 900px; margin: 0 auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px 30px; }
 .answer-buttons-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 20px; }
 .answer-buttons-grid:has(> button:nth-child(4)) { grid-template-columns: 1fr 1fr; }
