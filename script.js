@@ -227,11 +227,11 @@ window.onload = () => {
         const question = currentQuiz[currentQuestionIndex];
         const isCorrect = (choice === 'no') ? !question.isHuntable : question.isHuntable;
        
-         if (isCorrect) {
+        if (isCorrect) {
             // 「獲れます」が正解（choice === 'yes'）の時点では音を鳴らさず、
             // 「獲れません」が正解（choice === 'no'）の場合のみ、正解音を鳴らす
             if (choice === 'no') {
-                correctSound.play();
+                correctSound.play(); // ★★★ 失われた、一行を、ここへ ★★★
                 score++;
             }
             // 「獲れます」が正解の場合は、ここでは何もせず、名前選択の正解を待つ
