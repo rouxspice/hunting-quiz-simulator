@@ -373,7 +373,6 @@ window.onload = () => {
             loaderWrapper.classList.add('loaded');
         }
     }
-
     
     function showNormalQuestion() {
         normalQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
