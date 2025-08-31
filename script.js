@@ -323,27 +323,35 @@ window.onload = () => {
                     score++;
                 } else {
                     wrongSound.play();
-                    if (!isCorrect) {
-                        wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name });
-                    }
+                    wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name });
                 }
 
-                // すべてのボタンを無効化
+                // すべてのボタンを無効化し、正解をハイライトする
                 Array.from(choujuuNameOptions.children).forEach(btn => {
                     btn.disabled = true;
-                    // ★★★ ここからが、追加ロジック ★★★
+                    // ★★★ ここからが、進化の、ロジック ★★★
                     // もし、このボタンが、正解の、ボタンだったら...
                     if (btn.innerText === question.name) {
                         // ...そして、ユーザーが、不正解だったら...
                         if (!isCorrect) {
                             // ...ユーザーが、選んだ、ボタンと、違う場合に限り、正解を、ハイライトする
+                            // （ユーザーが選んだボタンは、次の行で 'wrong' になるので、ここでは何もしない）
                             if (btn !== selectedButton) {
-                                btn.classList.add('reveal-correct');
+                                btn.classList.add('reveal-correct'); // 正解を、青色などで、表示する
                             }
                         }
                     }
-                    // ★★★ ここまでが、追加ロジック ★★★
+                    // ★★★ ここまでが、進化の、ロジック ★★★
                 });
+
+                // 選択したボタンの色付け
+                selectedButton.classList.add(isCorrect ? 'correct' : 'wrong');
+
+                // フィードバック表示
+                setTimeout(() => {
+                    showChoujuuFeedback(isCorrect, isCorrect ? `正解！これは${question.name}です。` : `不正解。正しくは${question.name}です。`);
+                }, 500);
+            });
 
                 // 選択したボタンの色付け
                 selectedButton.classList.add(isCorrect ? 'correct' : 'wrong');
