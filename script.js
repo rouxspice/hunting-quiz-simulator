@@ -362,7 +362,7 @@ window.onload = () => {
                 }, 500);
             });
             choujuuNameOptions.appendChild(button);
-        });
+        };
     }
     function showChoujuuFeedback(isCorrect, message) { 
         choujuuFeedback.textContent = message; 
@@ -380,7 +380,7 @@ window.onload = () => {
         } 
     });
     
-    // --- 通常クイズのロジック (UI同期 修正版) ---
+    // --- 通常クイズのロジック ---
     async function startNormalQuiz(categoryKey, mode = 'all') {
         const progressBar = document.getElementById('progress-bar');
         const progressText = document.getElementById('progress-text');
