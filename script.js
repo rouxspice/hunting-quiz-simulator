@@ -547,10 +547,10 @@ window.onload = () => {
         wrongQuestionsList.innerHTML = '';
         wrongQuestions.forEach(item => {
             const li = document.createElement('li');
-let additionalInfoHTML = '';
-if (item.additionalInfo) {
-    additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, '<br>')}</div>`;
-}
+    let additionalInfoHTML = '';
+    if (item.additionalInfo) {
+        additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, '<br>')}</div>`;
+    }
 
             li.innerHTML = ` <div class="question-text">${item.question}</div> <div class="correct-answer-text">正解: ${item.correctAnswer}</div> ${additionalInfoHTML} `;
 
@@ -637,7 +637,7 @@ if (item.additionalInfo) {
     // ★★★ ここまで、キーボード操作機能の、実装 ★★★
     // ===================================================================
 
-};
+
 // ===================================================================
 // ★★★ script.js パート２／２ 終了 ★★★
 // ===================================================================
