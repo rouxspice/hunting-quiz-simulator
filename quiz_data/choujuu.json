@@ -42,6 +42,12 @@
     { "image": "quiz_data/images/ten.jpg", "isHuntable": true, "name": "テン", "distractors": ["イタチ", "ミンク", "ハクビシン"] },
     { "image": "quiz_data/images/tsukinowaguma.jpg", "isHuntable": true, "name": "ツキノワグマ", "distractors": ["ヒグマ", "イノシシ", "ニホンジカ"] },
     { "image": "quiz_data/images/yamadori.jpg", "isHuntable": true, "name": "ヤマドリ", "distractors": ["キジ", "エゾライチョウ", "コジュケイ"] },
-    { "image": "quiz_data/images/yamashigi.jpg", "isHuntable": true, "name": "ヤマシギ", "distractors": ["タシギ", "キジバト", "ヒヨドリ"] },
+    { "image": "quiz_data/images/ban.jpg", "isHuntable": false, "name": "バン", "distractors": ["タシギ", "キジバト", "ヒヨドリ"] },
+    { "image": "quiz_data/images/goisagi.jpg", "isHuntable": false, "name": "ゴイサギ", "distractors": ["タシギ", "キジバト", "ヒヨドリ"] },
+    { "image": "quiz_data/images/hikuina.jpg", "isHuntable": false, "name": "ヒクイナ", "distractors": ["タシギ", "キジバト", "ヒヨドリ"] },
+    { "image": "quiz_data/images/hoojirogamo.jpg", "isHuntable": false, "name": "ホオジロガモ", "distractors": ["タシギ", "キジバト", "ヒヨドリ"] },
+    { "image": "quiz_data/images/kakesu.jpg", "isHuntable": false, "name": "カケス", "distractors": ["タシギ", "キジバト", "ヒヨドリ"] },
+    { "image": "quiz_data/images/kashiradaka.jpg", "isHuntable": false, "name": "カシラダカ", "distractors": ["タシギ", "キジバト", "ヒヨドリ"] },
+    { "image": "quiz_data/images/magan.jpg", "isHuntable": false, "name": "マガン", "distractors": ["タシギ", "キジバト", "ヒヨドリ"] },    
     { "image": "quiz_data/images/yoshigamo.jpg", "isHuntable": true, "name": "ヨシガモ", "distractors": ["マガモ", "ヒドリガモ", "カルガモ"] }
 ]
