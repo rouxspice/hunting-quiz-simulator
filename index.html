@@ -120,25 +120,36 @@
         </main>
     </div>
 
-    <!-- 通常クイズコンテナ (変更なし) -->
+    <!-- 通常クイズコンテナ -->
     <div class="quiz-container" id="quiz">
         <div class="quiz-header-bar">
             <button class="back-to-top-btn">← トップに戻る</button>
             <span class="quiz-progress" id="normal-quiz-progress"></span>
         </div>
-        <div class="quiz-header">
-            <div class="normal-quiz-image-container" id="normal-quiz-image-container" style="display: none;">
-                <img id="normal-quiz-image" src="" alt="問題の画像">
+        
+         <div class="quiz-content-wrapper">
+            <div class="quiz-main-content">
+                <div class="choujuu-image-container">
+                    <img id="choujuu-image" src="" alt="鳥獣の画像">
+                </div>
+                <div id="choujuu-step1">
+                    <h2 id="choujuu-question-step1">この鳥獣は捕獲できますか？</h2>
+                    <div class="choujuu-step1-buttons">
+                        <button class="choujuu-choice-btn" data-choice="yes">獲れます</button>
+                        <button class="choujuu-choice-btn" data-choice="no">獲れません</button>
+                    </div>
+                </div>
+                <div id="choujuu-step2" style="display: none;">
+                    <h2 id="choujuu-question-step2">この鳥獣の名前は？</h2>
+                    <div id="choujuu-name-options" class="answer-buttons-grid"></div>
+                </div>
             </div>
-            <h2 id="question">Question text</h2>
-            <div id="answer-buttons" class="answer-buttons-grid"></div>
+            <div class="quiz-footer-content">
+                <div id="choujuu-feedback" class="feedback-container"></div>
+                <button id="choujuu-submit" style="display: none;">次の問題へ</button>
+            </div>
         </div>
-        <div class="additional-info-container" id="additional-info-container" style="display: none;">
-            <h4>💡 補足情報</h4>
-            <p id="additional-info-text"></p>
-        </div>
-        <button id="submit" style="display: none;">次へ</button>
-    </div>
+     </div>
 
     <!-- 狩猟鳥獣判別クイズコンテナ (変更なし) -->
     <div class="quiz-container-choujuu" id="quiz-choujuu" style="display: none;">
