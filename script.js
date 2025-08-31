@@ -466,4 +466,14 @@ window.onload = () => {
     // --- 初期化処理の、実行 ---
     initializeEventListeners();
     goToTopPage();
+
+    // ★★★ ここから追加 ★★★
+    // ページの初期読み込みが完了したら、ローディング画面を非表示にする
+    // 少し遅延させることで、表示のチラつきを防ぐ
+    setTimeout(() => {
+        if (loaderWrapper) {
+            loaderWrapper.classList.add('loaded');
+        }
+    }, 100); 
+    // ★★★ ここまで追加 ★★★
 };
