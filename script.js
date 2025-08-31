@@ -1,5 +1,5 @@
 // ===================================================================
-// ★★★ script.js (完全再構築・最終版) ★★★
+// ★★★ script.js (真・完全再構築・最終版) ★★★
 // ===================================================================
 window.onload = () => {
 
@@ -431,7 +431,8 @@ window.onload = () => {
                 const li = document.createElement('li');
                 let additionalInfoHTML = '';
                 if (item.additionalInfo) {
-                    additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, '  
+                    // ★★★ ここが、最後の、修正箇所 ★★★
+                    additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g,'
 ')}</div>`;
                 }
                 li.innerHTML = ` <div class="question-text">${item.question}</div> <div class="correct-answer-text">正解: ${item.correctAnswer}</div> ${additionalInfoHTML} `;
