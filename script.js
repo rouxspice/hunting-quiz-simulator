@@ -543,7 +543,6 @@ window.onload = () => {
                     visibleSubmitButton.click();
                 }
             }
-        // ★★★ この部分をコピーして、すぐ下に追加してください ★★★
         document.addEventListener('keydown', (event) => {
             const isQuizActive = quizContainer.style.display === 'block' || quizContainerChoujuu.style.display === 'block';
             if (!isQuizActive) return;
@@ -555,6 +554,7 @@ window.onload = () => {
                 case '4':
                     handleNumericKeyPress(parseInt(event.key, 10));
                     break;
+                case ' ': 
                 case 'Enter':
                     handleEnterKeyPress();
                     break;
@@ -566,10 +566,6 @@ window.onload = () => {
                     break;
             }
         });
-        // ★★★ ここまで ★★★
-
-
-
 
     // --- キーボード操作 ---
     function handleNumericKeyPress(number) {
