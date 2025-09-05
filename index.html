@@ -170,10 +170,17 @@
     </div>
 
     <!-- 狩猟鳥獣判別クイズコンテナ -->
-    <div class="quiz-container-choujuu" id="quiz-choujuu" style="display: none;">
-        <div class="quiz-header-bar">
-            <button class="back-to-top-btn">← トップに戻る</button>
-            <span class="quiz-progress" id="choujuu-quiz-progress"></span>
+<div class="quiz-container-choujuu" id="quiz-choujuu" style="display: none;">
+    <div class="quiz-header-bar">
+        <button class="back-to-top-btn">← トップに戻る</button>
+        <!-- ★ここを通常クイズと同じ構造に修正★ -->
+        <div class="progress-area">
+            <div class="progress-bar-container">
+                <div class="progress-bar-inner" id="choujuu-quiz-progress-bar"></div>
+            </div>
+            <span class="quiz-progress" id="choujuu-quiz-progress-text"></span>
+        </div>
+        <!-- ★ここまで修正★ -->
         </div>
         <div class="choujuu-image-container">
             <img id="choujuu-image" src="" alt="鳥獣の画像">
