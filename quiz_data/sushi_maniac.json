@@ -713,5 +713,225 @@
             { "text": "見た目を華やかにするため", "correct": false }
         ],
         "additionalInfo": "寿司職人は、粘りの強い米や、味がしっかりした米など、特性の異なる複数の米をブレンドすることで、自身の目指す理想のシャリを作り上げます。"
+    },
+    {
+        "question": "江戸前寿司で、魚に下仕事を施す最も基本的な理由は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "魚の味を濃くするため", "correct": false },
+            { "text": "冷蔵技術が未発達だった時代に、保存が効くようにするため", "correct": true },
+            { "text": "見た目を美しくするため", "correct": false },
+            { "text": "調理時間を短縮するため", "correct": false }
+        ],
+        "additionalInfo": "冷蔵技術がなかった江戸時代、魚の鮮度を保ち、安全に食べるために様々な下仕事が考案されました。これが江戸前寿司の技術の基本となっています。"
+    },
+    {
+        "question": "コハダなどに行う「酢締め」。この仕事の第一段階として、酢に漬ける前に必ず行う工程は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "塩を振って軽く締める", "correct": true },
+            { "text": "水でよく洗う", "correct": false },
+            { "text": "軽く炙る", "correct": false },
+            { "text": "醤油に漬ける", "correct": false }
+        ],
+        "additionalInfo": "酢締めは、まず魚に塩を振って余分な水分を抜き、身を締めることから始まります。この塩加減が、その後の酢の浸透具合や最終的な味を大きく左右します。"
+    },
+    {
+        "question": "酢締めの工程で、塩を振る主な目的は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "魚に塩味を付けるため", "correct": false },
+            { "text": "魚の臭みを取るため", "correct": false },
+            { "text": "魚の余分な水分を抜き、身を締めるため", "correct": true },
+            { "text": "酢の浸透を早めるため", "correct": false }
+        ],
+        "additionalInfo": "塩を振ることで浸透圧により魚の身から水分が抜け、身が締まります。これにより、酢が浸透しやすくなり、独特の風味が生まれます。"
+    },
+    {
+        "question": "酢締めの際の「漬け込み時間」や「塩・酢の濃度」は、何によって調整されるでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "職人の好みのみ", "correct": false },
+            { "text": "魚の大きさや身の厚さ、脂肪の乗り具合など", "correct": true },
+            { "text": "季節や天候", "correct": false },
+            { "text": "客の要望", "correct": false }
+        ],
+        "additionalInfo": "酢締めは、魚の個体差（大きさ、厚み、脂の乗りなど）を見極め、塩や酢の量、漬ける時間を微調整する、非常に繊細な技術です。"
+    },
+    {
+        "question": "写真のような「酢締め」を施した寿司ネタとして、最も代表的な魚は何でしょう？",
+        "image": "quiz_data/images/sushi/sushi_shime_saba.jpg",
+        "answers": [
+            { "text": "マグロ", "correct": false },
+            { "text": "タイ", "correct": false },
+            { "text": "サバやコハダ", "correct": true },
+            { "text": "サーモン", "correct": false }
+        ],
+        "additionalInfo": "サバやコハダ、アジなどの「光り物」は、酢で締めることで特有のうま味を引き出し、江戸前寿司を代表する仕事の一つとされています。"
+    },
+    {
+        "question": "「昆布締め」の主な目的として、保存性を高める他に何が挙げられるでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "魚の水分を完全に抜くこと", "correct": false },
+            { "text": "魚の食感を硬くすること", "correct": false },
+            { "text": "魚のうま味と昆布の風味を引き出すこと", "correct": true },
+            { "text": "魚の色を鮮やかにすること", "correct": false }
+        ],
+        "additionalInfo": "昆布締めは、昆布のうま味成分であるグルタミン酸を魚に移し、魚自身のイノシン酸と合わせることで、相乗効果によりうま味を格段に強くする伝統的な技法です。"
+    },
+    {
+        "question": "昆布締めの工程で、魚の身に軽く塩を振る目的は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "塩味を付けるため", "correct": false },
+            { "text": "余分な水分を抜き、昆布のうま味が移りやすくするため", "correct": true },
+            { "text": "殺菌効果を高めるため", "correct": false },
+            { "text": "身を柔らかくするため", "correct": false }
+        ],
+        "additionalInfo": "昆布で締める前に軽く塩を振ることで、魚の余分な水分が抜け、その水分を昆布が吸い、代わりに昆布のうま味成分が魚の身に移りやすくなります。"
+    },
+    {
+        "question": "昆布締めにすることで、魚のうま味成分であるイノシン酸と合わさり、うま味を強くする昆布のうま味成分は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "グアニル酸", "correct": false },
+            { "text": "アスパラギン酸", "correct": false },
+            { "text": "グルタミン酸", "correct": true },
+            { "text": "コハク酸", "correct": false }
+        ],
+        "additionalInfo": "昆布のうま味の主成分は「グルタミン酸」です。これが魚の「イノシン酸」と合わさることで、うま味の相乗効果が生まれます。"
+    },
+    {
+        "question": "写真のような「昆布締め」に適しているとされる魚の種類はどれでしょう？",
+        "image": "quiz_data/images/sushi/sushi_kobujime.jpg",
+        "answers": [
+            { "text": "サバやイワシなどの光り物", "correct": false },
+            { "text": "ヒラメやタイなどの白身魚", "correct": true },
+            { "text": "マグロやカツオなどの赤身魚", "correct": false },
+            { "text": "アナゴやタコなどの煮物種", "correct": false }
+        ],
+        "additionalInfo": "昆布締めは、淡白な味わいの白身魚に施すことで、昆布の繊細なうま味と風味が加わり、そのおいしさを引き立てます。マグロやイカにも応用されます。"
+    },
+    {
+        "question": "マグロの赤身などに行う「漬け」。その伝統的な目的は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "魚の味を薄めるため", "correct": false },
+            { "text": "魚の風味を引き立て、保存性を高めるため", "correct": true },
+            { "text": "魚の食感を硬くするため", "correct": false },
+            { "text": "魚の色を濃くするため", "correct": false }
+        ],
+        "additionalInfo": "「漬け」は、醤油をベースにしたタレに魚を漬け込むことで、風味を加え、表面をコーティングして空気との接触を減らし、保存性を高めるための伝統的な仕事です。"
+    },
+    {
+        "question": "「漬け」に使うタレ（漬け汁）の基本的な材料として、醤油、酒、みりんの他に何が使われることが多いでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "酢", "correct": false },
+            { "text": "砂糖", "correct": false },
+            { "text": "煮切った醤油", "correct": true },
+            { "text": "出汁", "correct": false }
+        ],
+        "additionalInfo": "漬け汁は、一般的に醤油、酒、みりんを煮切ったもの（アルコールを飛ばしたもの）をベースに作られます。これにより、まろやかな風味と深いコクが生まれます。"
+    },
+    {
+        "question": "写真のような「漬け」を施したマグロの握り寿司。提供する直前に行う仕上げは何でしょう？",
+        "image": "quiz_data/images/sushi/sushi_zuke_maguro.jpg",
+        "answers": [
+            { "text": "塩を振る", "correct": false },
+            { "text": "軽く炙る", "correct": false },
+            { "text": "煮切り醤油を塗る", "correct": true },
+            { "text": "ワサビを多めに乗せる", "correct": false }
+        ],
+        "additionalInfo": "漬けにしたネタは、握る直前に余分な水分を拭き取り、仕上げに煮切り醤油をひと塗りすることで、美しいツヤと深い味わいが加わります。"
+    },
+    {
+        "question": "アナゴやタコ、ハマグリなどに行う「煮仕事」。この仕事の主な目的は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "ネタを加熱し、表面の雑菌や生臭みの原因を取り除くこと", "correct": true },
+            { "text": "ネタの水分を完全に飛ばすこと", "correct": false },
+            { "text": "ネタのうま味を抜き取ること", "correct": false },
+            { "text": "ネタの保存期間を短くすること", "correct": false }
+        ],
+        "additionalInfo": "「煮仕事」は、ネタを加熱することで殺菌し、生臭みの原因を取り除くと同時に、調味料で味を含ませて柔らかく仕上げるための重要な工程です。"
+    },
+    {
+        "question": "アナゴなどの煮仕事で使う、甘いタレのことを一般的に何と呼ぶでしょう？",
+        "image": "quiz_data/images/sushi/sushi_nitsume_anago.jpg",
+        "answers": [
+            { "text": "煮切り", "correct": false },
+            { "text": "ムラサキ", "correct": false },
+            { "text": "ツメ", "correct": true },
+            { "text": "出汁", "correct": false }
+        ],
+        "additionalInfo": "アナゴなどを煮た煮汁を煮詰めて作る甘いタレのことを「煮詰め（につめ）」、略して「ツメ」と呼びます。店の個性が表れる重要な要素です。"
+    },
+    {
+        "question": "伝統的な江戸前寿司の「玉子焼き」。その主な材料として、鶏卵の他に何が使われるでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "魚のすり身", "correct": false },
+            { "text": "エビのすり身", "correct": true },
+            { "text": "山芋のすりおろし", "correct": false },
+            { "text": "豆腐", "correct": false }
+        ],
+        "additionalInfo": "伝統的な店の玉子焼きは、鶏卵にエビや白身魚のすり身、山芋などを加えて作られます。これにより、カステラのような独特の食感と深い味わいが生まれます。"
+    },
+    {
+        "question": "写真のようなカステラ風の玉子焼き。その焼き方として正しいものはどれでしょう？",
+        "image": "quiz_data/images/sushi/sushi_tamagoyaki.jpg",
+        "answers": [
+            { "text": "強火で一気に焼き上げる", "correct": false },
+            { "text": "弱火でじっくりと蒸し焼きにする", "correct": true },
+            { "text": "オーブンで焼き上げる", "correct": false },
+            { "text": "油で揚げる", "correct": false }
+        ],
+        "additionalInfo": "カステラ風の玉子焼きは、焦げ付かないように弱火で時間をかけてじっくりと焼き上げます。これにより、プリンのような滑らかな食感に仕上がります。"
+    },
+    {
+        "question": "寿司屋の玉子焼きが「店の顔」とも言われる理由は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "最も高価なネタだから", "correct": false },
+            { "text": "最も人気のあるネタだから", "correct": false },
+            { "text": "多くの手間と職人の技が詰まっているから", "correct": true },
+            { "text": "最初に食べるべきネタだから", "correct": false }
+        ],
+        "additionalInfo": "玉子焼きは、材料の配合から焼き加減まで、多くの手間と職人の経験、そして店の個性が凝縮されています。そのため、その店の技術力を示すバロメーターとされています。"
+    },
+    {
+        "question": "「おぼろ」の主な原料として使われるものは何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "マグロの赤身", "correct": false },
+            { "text": "白身魚やエビのすり身", "correct": true },
+            { "text": "イカのすり身", "correct": false },
+            { "text": "卵の黄身", "correct": false }
+        ],
+        "additionalInfo": "「おぼろ」は、主に白身魚やエビのすり身を煎りつけてそぼろ状にしたものです。ほんのり甘く、寿司の彩りや味わいのアクセントとして使われます。"
+    },
+    {
+        "question": "写真のようなピンク色の「おぼろ」。この色は何で付けられているでしょう？",
+        "image": "quiz_data/images/sushi/sushi_oboro.jpg",
+        "answers": [
+            { "text": "食紅", "correct": true },
+            { "text": "梅酢", "correct": false },
+            { "text": "ビーツ", "correct": false },
+            { "text": "パプリカ", "correct": false }
+        ],
+        "additionalInfo": "おぼろの美しいピンク色は、一般的に食紅で色付けされます。これにより、寿司全体の見た目が華やかになります。"
+    },
+    {
+        "question": "「おぼろ」を挟んで仕込むことで知られる、江戸前寿司の代表的なネタは何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "マグロ", "correct": false },
+            { "text": "アナゴ", "correct": false },
+            { "text": "コハダ", "correct": true },
+            { "text": "イカ", "correct": false }
+        ],
+        "additionalInfo": "コハダの握りでは、ネタとシャリの間におぼろを挟むのが伝統的な仕事の一つです。これにより、コハダの酸味とおぼろの甘みが絶妙なバランスを生み出します。"
     }
 ]
