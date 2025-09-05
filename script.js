@@ -343,11 +343,9 @@ window.onload = () => {
     function setupNameSelection(question) {
         choujuuNameOptions.innerHTML = '';
         const options = [...question.distractors, question.name].sort(() => Math.random() - 0.5);
-        options.forEach(name => {
+        options.forEach((name, index) => { // ← (name, index) のように index を受け取る
             const button = document.createElement('button');
-            // ★★★ ここを変更 ★★★
-            button.innerText = `${index + 1}. ${name}`; // 番号とドット、スペースを追加
-            // ★★★ ここまで ★★★
+            button.innerText = `${index + 1}. ${name}`; 
             button.classList.add('answer-btn');
             button.addEventListener('click', (e) => {
                 const selectedButton = e.target;
