@@ -169,3 +169,43 @@ main { padding: 20px 30px; }
     font-weight: bold;
     color: #555;
 }
+/* =================================================================== */
+/* ★★★ クイズ進捗バー用のスタイル (ここから追加) ★★★ */
+/* =================================================================== */
+.progress-area {
+    flex-grow: 1; /* ヘッダーバー内で可能な限り幅をとる */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* バーとテキストの間の余白 */
+    margin-left: 20px; /* 戻るボタンとの余白 */
+}
+
+.progress-bar-container {
+    flex-grow: 1;
+    height: 18px;
+    background-color: #e0e0e0; /* バーの背景色（薄いグレー） */
+    border-radius: 9px; /* 角を丸くする */
+    overflow: hidden; /* 中のバーがはみ出ないように */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2); /* 内側に影をつけて立体感を出す */
+}
+
+.progress-bar-inner {
+    height: 100%;
+    width: 0%; /* 初期値は0% */
+    background: linear-gradient(45deg, #4caf50, #81c784); /* グラデーションで楽しい見た目に */
+    border-radius: 9px;
+    transition: width 0.4s ease-in-out; /* 幅が滑らかに変化するアニメーション */
+    text-align: right;
+    color: white;
+    font-size: 12px;
+    line-height: 18px;
+    padding-right: 8px;
+    box-sizing: border-box;
+}
+
+.quiz-progress {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    flex-shrink: 0; /* テキストが潰れないように */
+}

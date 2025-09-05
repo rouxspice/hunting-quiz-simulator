@@ -326,9 +326,20 @@ window.onload = () => {
 
     // --- 鳥獣判別クイズ表示 ---
     function showChoujuuQuestion() {
-        choujuuQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
-        document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); });
-        choujuuStep1.style.display = 'block';
+    // ★ここから変更・追加★
+    const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
+    const progressBarEl = document.getElementById('choujuu-quiz-progress-bar'); // IDを修正
+    const progressTextEl = document.getElementById('choujuu-quiz-progress-text'); // IDを修正
+
+    if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
+    if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
+    // ★ここまで変更・追加★
+
+    // 元の進捗表示テキストを削除（またはコメントアウト）
+    // choujuuQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
+
+    document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); });
+    choujuuStep1.style.display = 'block';
         choujuuStep2.style.display = 'none';
         choujuuFeedback.style.display = 'none';
         choujuuSubmitButton.style.display = 'none';
@@ -384,8 +395,19 @@ window.onload = () => {
 
     // --- 通常クイズ表示 ---
     function showNormalQuestion() {
-        normalQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
-        resetNormalState();
+    // ★ここから変更・追加★
+    const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
+    const progressBarEl = document.getElementById('normal-quiz-progress-bar');
+    const progressTextEl = document.getElementById('normal-quiz-progress-text');
+
+    if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
+    if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
+    // ★ここまで変更・追加★
+
+    // 元の進捗表示テキストを削除（またはコメントアウト）
+    // normalQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
+    
+    resetNormalState();
         const question = currentQuiz[currentQuestionIndex];
         if (question.image) {
             normalQuizImage.src = question.image;
