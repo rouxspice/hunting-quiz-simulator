@@ -2418,5 +2418,247 @@
       { "text": "芳醇で豊かな香り", "correct": false }
     ],
     "additionalInfo": "「トロトロな」という表現は、使いすぎると安易で陳腐な印象を与えかねないため、食レポなどではより具体的で独創的な表現が求められることがあります。"
+  },
+    {
+    "question": "天保の改革によって起きたことはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "寿司屋台は衛生の観点から禁止され、徐々に姿を消した", "correct": false },
+      { "text": "与兵衛ずしなどの高級寿司職人が手鎖の刑に処された", "correct": true },
+      { "text": "寿司屋が花街以外の場所では営業不可となった", "correct": false },
+      { "text": "立って握ることが禁止され、寿司屋は内店が中心となった", "correct": false }
+    ],
+    "additionalInfo": "天保の改革による贅沢禁止令で、高級な寿司を提供していた「与兵衛ずし」の華屋与兵衛などが風紀を乱したとして処罰されました。"
+  },
+  {
+    "question": "明治期の水産業に関連する技術の発展として適切とは言えないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "保存技術に加熱、燻製が加わった", "correct": false },
+      { "text": "漁船の動力化", "correct": false },
+      { "text": "鉄道・汽船輸送による流通網の拡大", "correct": false },
+      { "text": "氷式冷蔵庫の登場", "correct": true }
+    ],
+    "additionalInfo": "氷を使った冷蔵技術は明治期に発展しましたが、家庭用の「氷式冷蔵庫」が一般に普及し始めるのは大正時代に入ってからです。"
+  },
+  {
+    "question": "内店で座敷に設けた寿司職人の調理場を何というか。",
+    "image": "",
+    "answers": [
+      { "text": "仕事場", "correct": false },
+      { "text": "握り処", "correct": false },
+      { "text": "漬け場", "correct": true },
+      { "text": "たね処", "correct": false }
+    ],
+    "additionalInfo": "客の目の前で寿司を握る場所を「つけ場（漬け場）」と呼びます。ネタを醤油に漬けて提供していた名残とも言われています。"
+  },
+  {
+    "question": "1883年に出版された『東京名物独案内』で、江戸三鮨に加えて紹介された寿司屋は次のうちどれか。",
+    "image": "",
+    "answers": [
+      { "text": "寿し亀", "correct": false },
+      { "text": "菊水鮓", "correct": false },
+      { "text": "東寿司", "correct": false },
+      { "text": "みやこ寿司", "correct": true }
+    ],
+    "additionalInfo": "江戸三鮨（松ヶ鮓、与兵衛ずし、毛抜き鮓）に、明治期に評判となった「みやこ寿司」を加えて紹介されることがありました。"
+  },
+  {
+    "question": "大正期に寿司が全国に広がるきっかけとなった要因として当てはまらないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "関東大震災や戦災による寿司職人の移住", "correct": false },
+      { "text": "明治政府による東京文化の推奨", "correct": true },
+      { "text": "戦後の握り寿司のみ営業可とした緊急措置令", "correct": false },
+      { "text": "寿司学校の全国的開校による寿司職人の増加", "correct": false }
+    ],
+    "additionalInfo": "明治政府が特定の食文化を推奨したという事実はなく、寿司の全国的な普及は、職人の移住や戦後の社会事情などが複合的に影響しました。"
+  },
+  {
+    "question": "1940年頃に登場したとされる寿司ネタはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "サーモン寿司", "correct": false },
+      { "text": "イナリ寿司", "correct": false },
+      { "text": "トロ握り", "correct": false },
+      { "text": "軍艦巻き", "correct": true }
+    ],
+    "additionalInfo": "ウニやイクラなど、握りにくいネタを提供するために考案された「軍艦巻き」は、1940年頃に銀座「久兵衛」で生まれたとされています。"
+  },
+  {
+    "question": "昭和期の寿司の形態の変化として当てはまらないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "寿司ネタを見て選べるネタケースの登場", "correct": false },
+      { "text": "寿司職人は立ち仕事から座って握るようになった", "correct": true },
+      { "text": "衛生などの観点から寿司屋台が姿を消した", "correct": false },
+      { "text": "回転寿司や持ち帰り・宅配寿司の専門店が誕生した", "correct": false }
+    ],
+    "additionalInfo": "寿司職人は伝統的に立ち仕事であり、座って握るのが一般的になったという事実はありません。むしろカウンター越しに客と対面するスタイルが定着しました。"
+  },
+  {
+    "question": "「コンベア旋回式食事台」という特許を持っていた回転寿司店はどこか。",
+    "image": "",
+    "answers": [
+      { "text": "かっぱ寿司", "correct": false },
+      { "text": "すし太郎", "correct": false },
+      { "text": "回転寿司可ら（から）く", "correct": false },
+      { "text": "元禄寿司", "correct": true }
+    ],
+    "additionalInfo": "回転寿司の生みの親である白石義明氏が創業した「元禄寿司」は、「コンベア旋回式食事台」の特許を取得していました。"
+  },
+  {
+    "question": "アメリカで誕生したサーモンとクリームチーズを使った巻き寿司の名前はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "フィラデルフィアロール", "correct": true },
+      { "text": "カリフォルニアロール", "correct": false },
+      { "text": "ペンシルベニアロール", "correct": false },
+      { "text": "バージニアロール", "correct": false }
+    ],
+    "additionalInfo": "フィラデルフィアロールは、アメリカのフィラデルフィア社製のクリームチーズを使用したことからその名が付きました。"
+  },
+  {
+    "question": "世界中に増えた日本食レストランは令和5年で約何店舗といわれるか。",
+    "image": "",
+    "answers": [
+      { "text": "5.6万店", "correct": false },
+      { "text": "18.7万店", "correct": true },
+      { "text": "21.4万店", "correct": false },
+      { "text": "59.5万店", "correct": false }
+    ],
+    "additionalInfo": "農林水産省の調査によると、海外の日本食レストランの数は年々増加しており、2023年（令和5年）時点で約18.7万店とされています。"
+  },
+  {
+    "question": "平成以降の寿司業界の変化について適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "立ち食い寿司の人気が廃れた", "correct": true },
+      { "text": "各国の嗜好に合わせてSUSHIのローカライズ化が進んだ", "correct": false },
+      { "text": "グルメ回転寿司という高価格帯の回転寿司が登場した", "correct": false },
+      { "text": "高級店では「おまかせ」コースが主流になった", "correct": false }
+    ],
+    "additionalInfo": "平成以降、むしろ手軽さや本格的な味を求めるニーズから、立ち食い寿司は人気を取り戻し、新たなスタイルで注目を集めています。"
+  },
+  {
+    "question": "馬喰町にあったとされる与兵衛ずしの支店はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "御慶ずし", "correct": false },
+      { "text": "二葉鮨", "correct": false },
+      { "text": "すし忠", "correct": true },
+      { "text": "美寿志", "correct": false }
+    ],
+    "additionalInfo": "江戸前寿司の祖、華屋与兵衛の店「与兵衛ずし」は、馬喰町に「すし忠」という支店を出していたと記録されています。"
+  },
+  {
+    "question": "「二葉鮨四天王」の一人で「握りの神様」などの異名を持つのは誰か。",
+    "image": "",
+    "answers": [
+      { "text": "藤本 繁蔵", "correct": true },
+      { "text": "新家 寅蔵", "correct": false },
+      { "text": "中田 一男", "correct": false },
+      { "text": "岡田 源四郎", "correct": false }
+    ],
+    "additionalInfo": "藤本繁蔵は、戦後の寿司業界を牽引した伝説的な職人で、その卓越した技術から「握りの神様」と称されました。"
+  },
+  {
+    "question": "「野口元夫」名義で俳優業も行った寿司職人は誰か。",
+    "image": "",
+    "answers": [
+      { "text": "小泉 清", "correct": false },
+      { "text": "小西 道太郎", "correct": false },
+      { "text": "取出 武九郎", "correct": true },
+      { "text": "吉野 昇雄", "correct": false }
+    ],
+    "additionalInfo": "浅草「千代乃寿司」の取出武九郎は、「野口元夫」という芸名で俳優としても活躍した異色の経歴を持つ寿司職人です。"
+  },
+  {
+    "question": "「すきやばし次郎」の小野二郎が修業した寿司屋はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "みやこ寿司", "correct": false },
+      { "text": "二葉鮨", "correct": false },
+      { "text": "与志乃本店", "correct": true },
+      { "text": "すし忠", "correct": false }
+    ],
+    "additionalInfo": "世界的に有名な「すきやばし次郎」の店主、小野二郎氏は、京橋の名店「与志乃本店」で修業を積みました。"
+  },
+  {
+    "question": "カジキなどに見られる尖った上顎のことを何というか。",
+    "image": "",
+    "answers": [
+      { "text": "剣先", "correct": false },
+      { "text": "吻", "correct": true },
+      { "text": "棘", "correct": false },
+      { "text": "針口", "correct": false }
+    ],
+    "additionalInfo": "魚類の長く突き出た口や鼻の部分を「吻（ふん）」と呼びます。カジキの吻は特に有名です。"
+  },
+  {
+    "question": "3歳頃までのクロマグロの幼魚のことを何というか。",
+    "image": "",
+    "answers": [
+      { "text": "カジキマグロ", "correct": false },
+      { "text": "ハタマグロ", "correct": false },
+      { "text": "ビンチョウマグロ", "correct": false },
+      { "text": "メジマグロ", "correct": true }
+    ],
+    "additionalInfo": "クロマグロは成長段階で呼び名が変わり、3歳頃までの幼魚は「メジ」または「メジマグロ」と呼ばれます。"
+  },
+  {
+    "question": "アマダイの京都・大阪での呼び名は何になるか。",
+    "image": "",
+    "answers": [
+      { "text": "グジ", "correct": true },
+      { "text": "メジ", "correct": false },
+      { "text": "キジ", "correct": false },
+      { "text": "カブ", "correct": false }
+    ],
+    "additionalInfo": "アマダイは、関西地方、特に京都や大阪では「グジ」という名前で呼ばれ、高級魚として珍重されています。"
+  },
+  {
+    "question": "河川に残るサクラマスの陸封型を何とよぶか。",
+    "image": "",
+    "answers": [
+      { "text": "ニジマス", "correct": false },
+      { "text": "トラウト", "correct": false },
+      { "text": "ヤマメ", "correct": true },
+      { "text": "イワナ", "correct": false }
+    ],
+    "additionalInfo": "サクラマスは海に下る個体と、一生を川で過ごす個体に分かれます。川に残った個体（陸封型）が「ヤマメ」です。"
+  },
+  {
+    "question": "富山湾で漁獲される「富山湾の宝石」と呼ばれるエビはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "シバエビ", "correct": false },
+      { "text": "アカエビ", "correct": false },
+      { "text": "クルマエビ", "correct": false },
+      { "text": "シロエビ", "correct": true }
+    ],
+    "additionalInfo": "富山湾で獲れるシロエビは、その透き通るような美しい姿から「富山湾の宝石」と称され、独特の甘みととろけるような食感が特徴です。"
+  },
+  {
+    "question": "ブランド魚「釣りキンキ」はどこで漁獲されるか。",
+    "image": "",
+    "answers": [
+      { "text": "銚子", "correct": false },
+      { "text": "網走", "correct": true },
+      { "text": "八戸", "correct": false },
+      { "text": "焼津", "correct": false }
+    ],
+    "additionalInfo": "北海道の網走（あばしり）で、延縄（はえなわ）漁で一匹ずつ丁寧に釣り上げられたキンキは、「釣りキンキ」として最高級のブランド魚とされています。"
+  },
+  {
+    "question": "昭和5年発行の『すし通』で関西から東京に流行してきたものとして紹介されたのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ひょうこ", "correct": false },
+      { "text": "新香巻き", "correct": false },
+      { "text": "トロタク巻き", "correct": false },
+      { "text": "肉寿司", "correct": true }
+    ],
+    "additionalInfo": "昭和初期の文献『すし通』には、当時まだ珍しかった「肉寿司」が、関西方面から東京に伝わってきた新しい流行として紹介されています。"
   }
 ]
