@@ -240,5 +240,412 @@
       { "text": "魚へんの漢字が難しすぎたから", "correct": false }
     ],
     "additionalInfo": "「寿司」は江戸時代に生まれた当て字で、「寿を司る」など縁起の良さから、お祝いの席などで好まれ、一般的に広まったと考えられています。"
+  },
+  {
+    "question": "奈良時代以前の「なれずし」に関する説明として、間違っているものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "魚などの保存食だった", "correct": false },
+      { "text": "権力者への献上品に用いられた", "correct": false },
+      { "text": "米と一緒に発酵させた", "correct": false },
+      { "text": "米も食べた", "correct": true }
+    ],
+    "additionalInfo": "なれずしは、魚を米と塩で発酵させた保存食で、主に魚だけを食べ、米は食べずに捨てていました。"
+  },
+  {
+    "question": "8世紀頃に「鮓」の文字が書かれた木簡（荷札）が見つかった場所はどこでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "唐招提寺", "correct": false },
+      { "text": "高松塚古墳", "correct": false },
+      { "text": "平城宮跡", "correct": true },
+      { "text": "藤原宮跡", "correct": false }
+    ],
+    "additionalInfo": "平城宮跡から出土した木簡に「鮓」の文字が見つかっており、これが日本におけるすしの存在を示す古い記録の一つとされています。"
+  },
+  {
+    "question": "「すし」を示す言葉として、歴史上存在しなかった（当て字ではない）ものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "寿司", "correct": false },
+      { "text": "鮨", "correct": false },
+      { "text": "酒志", "correct": true },
+      { "text": "鮓", "correct": false }
+    ],
+    "additionalInfo": "「鮨」や「鮓」は古くから使われている漢字で、「寿司」は江戸時代に生まれた当て字です。「酒志」という表記は一般的ではありません。"
+  },
+  {
+    "question": "すしの起源とされる地域として、適切でないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "マレーシア北部", "correct": true },
+      { "text": "タイ北部", "correct": false },
+      { "text": "東北タイとラオスの国境地帯", "correct": false },
+      { "text": "中国の雲南省", "correct": false }
+    ],
+    "additionalInfo": "すしの起源は、東南アジアの山岳地帯や中国の雲南省などで、魚を米で発酵させて保存した食文化にあると考えられています。"
+  },
+  {
+    "question": "中国最古の辞典『爾雅』に記載されていた「鮓」は、どのようなものでしたか？",
+    "image": "",
+    "answers": [
+      { "text": "鮓は米と塩を用いた魚の漬物", "correct": true },
+      { "text": "鮓は呉越地方の古代料理", "correct": false },
+      { "text": "鮨は蜀から伝わった魚醤", "correct": false },
+      { "text": "鮨は魚の塩辛", "correct": false }
+    ],
+    "additionalInfo": "紀元前3世紀頃の中国の辞典『爾雅』には、「鮓」は米と塩で魚を漬けたものであると記されており、これがすしのルーツに関する古い記述とされています。"
+  },
+  {
+    "question": "室町時代になって、すしの世界で起きた大きな変化は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "米を食べるようになった", "correct": true },
+      { "text": "糞を食べるようになった", "correct": false },
+      { "text": "酢を使うようになった", "correct": false },
+      { "text": "発酵させないようになった", "correct": false }
+    ],
+    "additionalInfo": "室町時代に、それまで捨てていた米も魚と一緒に食べる「生なれずし」が登場しました。これがすしの歴史における大きな転換点です。"
+  },
+  {
+    "question": "江戸時代に始まった制度はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "律令制", "correct": false },
+      { "text": "荘園制度", "correct": false },
+      { "text": "日明貿易", "correct": false },
+      { "text": "時献上", "correct": true }
+    ],
+    "additionalInfo": "江戸時代の制度で関連するものとしては、特定の時期に旬の魚を将軍に献上する「時献上」などがありました。"
+  },
+    {
+    "question": "1680年頃から登場した「早ずし」の正しい説明はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "発酵期間がなれずしよりも短くなった", "correct": false },
+      { "text": "米を発酵させずに、お酢で味つけするようになった", "correct": true },
+      { "text": "米を発酵させてから、お酢で味つけをするようになった", "correct": false },
+      { "text": "箱を使わずに手で握るようになった", "correct": false }
+    ],
+    "additionalInfo": "「早ずし」の最大の特徴は、時間のかかる乳酸発酵ではなく、酢を使うことで酸味をつけ、調理時間を大幅に短縮した点です。"
+  },
+  {
+    "question": "「早ずし」の登場がすしの歴史における大きな変革だった理由として、正しくないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "早ずしがきっかけで、なれずしがなくなってしまったから", "correct": true },
+      { "text": "すしの主流が乳酸発酵から、酢で味つけしたものに変わったから", "correct": false },
+      { "text": "押しずしや握りずしなど、多くのバリエーションが生まれたから", "correct": false },
+      { "text": "この頃から急速に現代の「すし」に近づいていったから", "correct": false }
+    ],
+    "additionalInfo": "「早ずし」登場後も、「なれずし」は郷土料理として各地に残りました。早ずしの登場は、すしの多様性を大きく広げるきっかけとなりました。"
+  },
+  {
+    "question": "現在の形の「握りずし」が誕生したのはいつ頃でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "1420年頃", "correct": false },
+      { "text": "1603年頃", "correct": false },
+      { "text": "1750年頃", "correct": false },
+      { "text": "1820年頃", "correct": true }
+    ],
+    "additionalInfo": "握りずしは、江戸の文政年間（1818年～1831年）、1820年頃に江戸のすし職人、華屋与兵衛が考案したと言われています。"
+  },
+  {
+    "question": "「江戸前寿司」の名前の由来として正しいものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "江戸城の前にある江戸湾でとれた魚介が寿司ネタの主流だったから", "correct": true },
+      { "text": "江戸の商人が商売繁盛を願って食べたから", "correct": false },
+      { "text": "江戸時代が始まると、江戸ですしが大ブームになったから", "correct": false },
+      { "text": "当時人気だった箱ずしの発祥が江戸だったから", "correct": false }
+    ],
+    "additionalInfo": "「江戸前」とは、現在の東京湾を指す「江戸湾」の前で獲れた新鮮な魚介類を使ったことに由来します。"
+  },
+  {
+    "question": "江戸時代、特に高級であることで知られた寿司屋はどこでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "玄海鮨", "correct": false },
+      { "text": "千代乃寿司", "correct": false },
+      { "text": "菊水鮓", "correct": false },
+      { "text": "松ヶ鮓", "correct": true }
+    ],
+    "additionalInfo": "「松ヶ鮓（まつがすし）」は、当時最も高級な寿司屋として知られ、大名屋敷などに出前をしていたと言われています。"
+  },
+  {
+    "question": "終戦後、握りずしが全国へ広がるきっかけとなったとされる法令はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "漁業法施行令", "correct": false },
+      { "text": "食品衛生法", "correct": false },
+      { "text": "水産資源保護法", "correct": false },
+      { "text": "飲食営業緊急措置令", "correct": true }
+    ],
+    "additionalInfo": "1947年の「飲食営業緊急措置令」により、飲食店での米の提供が制限されましたが、すし屋は例外的に許可され、これが全国に広まる一因となりました。"
+  },
+  {
+    "question": "日本で回転寿司1号店が初めて登場したのはいつでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "1855年", "correct": false },
+      { "text": "1920年", "correct": false },
+      { "text": "1958年", "correct": true },
+      { "text": "1970年", "correct": false }
+    ],
+    "additionalInfo": "1958年、大阪府布施市（現在の東大阪市）にオープンした「廻る元禄寿司」が、日本初の回転寿司店です。"
+  },
+  {
+    "question": "2023年の日本の寿司業界の市場規模はどれくらいでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "約2800億円", "correct": false },
+      { "text": "約5200億円", "correct": false },
+      { "text": "約7900億円", "correct": true },
+      { "text": "1兆円以上", "correct": false }
+    ],
+    "additionalInfo": "2023年の寿司業界（すし店）の市場規模は、約7900億円とされています。※このデータはテキストに基づきます。"
+  },
+    {
+    "question": "「早ずし」を大きく2つの系統に分けると、「押しずし系」ともう一つは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "起こしずし系", "correct": false },
+      { "text": "巻きずし系", "correct": false },
+      { "text": "姿ずし系", "correct": false },
+      { "text": "包みずし系", "correct": true }
+    ],
+    "additionalInfo": "早ずしは、箱や木枠で押す「押しずし系」と、笹の葉などで包む「包みずし系」に大別されます。"
+  },
+  {
+    "question": "押しずし系に分類されない寿司はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "起こしずし", "correct": false },
+      { "text": "箱ずし", "correct": false },
+      { "text": "包みずし", "correct": true },
+      { "text": "押し抜きずし", "correct": false }
+    ],
+    "additionalInfo": "包みずしは、柿の葉寿司のように葉で包むタイプの寿司で、押しずし系とは区別されます。"
+  },
+  {
+    "question": "「なれずし」と「早ずし」の製法に関する正しい説明はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "なれずしも早ずしも乳酸発酵させたものである", "correct": false },
+      { "text": "なれずしも早ずしも酢酸で味付けしたものである", "correct": false },
+      { "text": "なれずしは乳酸発酵させたもので、早ずしは酢酸で味付けしたもの", "correct": true },
+      { "text": "早ずしは乳酸発酵させたもので、なれずしは酢酸で味付けしたもの", "correct": false }
+    ],
+    "additionalInfo": "なれずしは米の乳酸菌で発酵させるのに対し、早ずしは酢（酢酸）を使って人工的に酸味をつけ、調理時間を短縮したものです。"
+  },
+  {
+    "question": "なれずしは、何を利用して自然発酵させる保存食でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "酢に含まれる酢酸", "correct": false },
+      { "text": "糖を分解して生じたアルコール", "correct": false },
+      { "text": "魚から生じる酵母菌", "correct": false },
+      { "text": "米のデンプンを利用して乳酸菌が産生した乳酸", "correct": true }
+    ],
+    "additionalInfo": "なれずしは、米のデンプンを元に乳酸菌が増殖し、その乳酸菌が作り出す乳酸によって魚の腐敗を防ぎ、独特の風味を生み出します。"
+  },
+  {
+    "question": "すしの原形とされる「酸っぱい魚」は、現在も東南アジアで食べられています。その料理名は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "Gai Yang（ガイヤーン）", "correct": false },
+      { "text": "Pla Som（プラーソム）", "correct": true },
+      { "text": "Som Tum（ソムタム）", "correct": false },
+      { "text": "Mok Pa（モクパー）", "correct": false }
+    ],
+    "additionalInfo": "タイなどで食べられている「プラーソム」は、魚と米、塩などを発酵させた料理で、日本のなれずしによく似ています。"
+  },
+  {
+    "question": "日本の「三大なれずし」に含まれないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "和歌山県のなれずし", "correct": false },
+      { "text": "滋賀県の鮒ずし", "correct": false },
+      { "text": "秋田県のハタハタずし", "correct": false },
+      { "text": "佐賀県の須古ずし", "correct": true }
+    ],
+    "additionalInfo": "一般的に、滋賀の「鮒ずし」、秋田の「ハタハタずし」、和歌山の「なれずし（鮎やサンマなど）」が日本の三大なれずしと呼ばれます。佐賀の須古ずしは押し寿司の一種です。"
+  },
+  {
+    "question": "大阪名物の「バッテラ」。この寿司はどの種類に分類されるでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "押しずし", "correct": true },
+      { "text": "棒ずし", "correct": false },
+      { "text": "姿ずし", "correct": false },
+      { "text": "ばらずし", "correct": false }
+    ],
+    "additionalInfo": "バッテラは、鯖と白板昆布を木枠で押して作る「押しずし」の一種です。名前の由来は、ポルトガル語で小舟を意味する「bateira」から来ています。"
+  },
+    {
+    "question": "写真の寿司の名前は何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_iizushi.jpg",
+    "answers": [
+      { "text": "須古ずし", "correct": false },
+      { "text": "飯寿司", "correct": true },
+      { "text": "おしずし", "correct": false },
+      { "text": "まつりずし", "correct": false }
+    ],
+    "additionalInfo": "これは「飯寿司（いずし）」といい、主に北海道や東北地方で作られる郷土料理です。魚、米、野菜、麹を重ねて乳酸発酵させます。"
+  },
+  {
+    "question": "1750年の料理本『料理山海郷』で見られた、現代のちらし寿司の原型とされるすしは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "巻きずし", "correct": false },
+      { "text": "野菜ずし", "correct": false },
+      { "text": "芋ずし", "correct": true },
+      { "text": "江戸前寿司", "correct": false }
+    ],
+    "additionalInfo": "『料理山海郷』には、酢飯に芋の茎や椎茸などを混ぜ込んだ「芋ずし」が記されており、これがちらし寿司のルーツの一つと考えられています。"
+  },
+  {
+    "question": "マグロやカツオなどの魚が「赤身」に分類されるのは、筋肉に含まれる何という色素によるものでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "アントシアニン", "correct": false },
+      { "text": "アスタキサンチン", "correct": false },
+      { "text": "カロチノイド", "correct": false },
+      { "text": "ミオグロビン", "correct": true }
+    ],
+    "additionalInfo": "ミオグロビンは筋肉中に酸素を貯蔵する役割を持つ色素たんぱく質で、この量が多い魚が「赤身魚」に分類されます。"
+  },
+  {
+    "question": "次のうち、赤身魚ではない魚はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "ブリ", "correct": false },
+      { "text": "ヒラマサ", "correct": false },
+      { "text": "アジ", "correct": false },
+      { "text": "サーモン", "correct": true }
+    ],
+    "additionalInfo": "サーモンは身が赤いですが、これはアスタキサンチンという色素によるもので、成分的には白身魚に分類されます。"
+  },
+  {
+    "question": "代表的なツブ貝とされ、高級寿司ネタとしても知られる貝はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "エゾボラ", "correct": true },
+      { "text": "シライトマキバイ", "correct": false },
+      { "text": "コエゾバイ", "correct": false },
+      { "text": "ヨーロッパエゾバイ", "correct": false }
+    ],
+    "additionalInfo": "一般的に「ツブ貝」として流通しているのは、エゾボラ科の巻き貝です。特にエゾボラ（マツブ）は高級品として扱われます。"
+  },
+  {
+    "question": "写真の寿司ネタの貝は、正式名称を何というでしょう？",
+    "image": "quiz_data/images/sushi/sushi_ubagai.jpg",
+    "answers": [
+      { "text": "バカガイ", "correct": false },
+      { "text": "ウバガイ", "correct": true },
+      { "text": "ミルクイ", "correct": false },
+      { "text": "フネガイ", "correct": false }
+    ],
+    "additionalInfo": "この貝は一般的に「ホッキ貝」と呼ばれますが、正式な和名は「ウバガイ」です。バカガイはアオヤギ、フネガイは赤貝の仲間です。"
+  },
+  {
+    "question": "写真の寿司ネタのエビは何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_kurumaebi.jpg",
+    "answers": [
+      { "text": "アカエビ", "correct": false },
+      { "text": "ボタンエビ", "correct": false },
+      { "text": "クルマエビ", "correct": true },
+      { "text": "ホッコクアカエビ", "correct": false }
+    ],
+    "additionalInfo": "クルマエビは江戸前寿司を代表する高級ネタの一つです。茹でることで鮮やかな赤色と美しい縞模様が現れます。"
+  },
+    {
+    "question": "写真の寿司ネタは何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_rainbow_roll.jpg",
+    "answers": [
+      { "text": "カリフォルニアロール", "correct": false },
+      { "text": "フィラデルフィアロール", "correct": false },
+      { "text": "レインボーロール", "correct": true },
+      { "text": "キャンディドラゴンロール", "correct": false }
+    ],
+    "additionalInfo": "これは「レインボーロール」です。カリフォルニアロールの上に、マグロ、サーモン、アボカドなど複数のネタを乗せて虹のように見せた、海外で人気の巻き寿司です。"
+  },
+  {
+    "question": "写真の寿司ネタは何と呼ばれますか？",
+    "image": "quiz_data/images/sushi/sushi_castella_maki.jpg",
+    "answers": [
+      { "text": "クラカケ", "correct": false },
+      { "text": "ダテマキ", "correct": false },
+      { "text": "カステラマキ", "correct": true },
+      { "text": "タマゴマキ", "correct": false }
+    ],
+    "additionalInfo": "これは「カステラマキ」または「ギョク」と呼ばれる厚焼き玉子です。エビのすり身などを加えて焼き上げる、カステラのように甘くしっとりとした食感が特徴です。"
+  },
+  {
+    "question": "江戸前寿司の発祥当時、シャリの味付けに主に使われた酢は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "米酢", "correct": false },
+      { "text": "黒酢", "correct": false },
+      { "text": "粕酢（赤酢）", "correct": true },
+      { "text": "穀物酢", "correct": false }
+    ],
+    "additionalInfo": "江戸前寿司では、酒粕を原料として作られる「粕酢（かすず）」、通称「赤酢（あかず）」が伝統的に使われてきました。豊かな香りとまろやかな酸味が特徴です。"
+  },
+  {
+    "question": "外洋のアジよりも脂がのっているとされる、内湾に棲みついたアジは何と呼ばれるでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "近海アジ", "correct": false },
+      { "text": "瀬付きアジ", "correct": true },
+      { "text": "平アジ", "correct": false },
+      { "text": "シマアジ", "correct": false }
+    ],
+    "additionalInfo": "「瀬付きアジ」は、回遊せずに湾内の瀬（岩礁）に棲みついたマアジのことです。餌が豊富なため、脂のりが良く、高級魚として扱われます。"
+  },
+  {
+    "question": "ホタルイカ漁で特に有名な県はどこでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "青森県", "correct": false },
+      { "text": "富山県", "correct": true },
+      { "text": "福島県", "correct": false },
+      { "text": "岡山県", "correct": false }
+    ],
+    "additionalInfo": "富山湾はホタルイカの群遊海面として有名で、国の特別天然記念物にも指定されています。春の風物詩として知られています。"
+  },
+  {
+    "question": "ウニの二大巨頭といえば、「エゾバフンウニ」と何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "アカウニ", "correct": false },
+      { "text": "シラヒゲウニ", "correct": false },
+      { "text": "キタムラサキウニ", "correct": true },
+      { "text": "ツガルウニ", "correct": false }
+    ],
+    "additionalInfo": "濃厚な甘みの「エゾバフンウニ」と、上品な味わいの「キタムラサキウニ」が、国産ウニの二大巨頭として知られています。"
+  },
+  {
+    "question": "一般的に「大トロ」がとれないとされるマグロはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "ミナミマグロ", "correct": false },
+      { "text": "クロマグロ", "correct": false },
+      { "text": "メバチマグロ", "correct": false },
+      { "text": "キハダマグロ", "correct": true }
+    ],
+    "additionalInfo": "キハダマグロは脂肪分が少なく、さっぱりとした赤身が特徴です。そのため、大トロや中トロといった部位はほとんどとれません。"
+  },
+  {
+    "question": "寿司のシャリには、新米よりも古米が向いているとされる理由は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "古米は酸味があるため", "correct": false },
+      { "text": "古米は保存性が高いため", "correct": false },
+      { "text": "新米より水分が少ないため", "correct": true },
+      { "text": "寿司業界では伝統を重んじるため", "correct": false }
+    ],
+    "additionalInfo": "古米は水分量が少なく、酢を混ぜたときにベチャッとなりにくいのが特徴です。酢が米粒の内部まで均一に浸透し、パラリとした理想的なシャリに仕上がります。"
   }
 ]
