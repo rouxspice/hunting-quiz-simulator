@@ -142,4 +142,114 @@
     ],
     "additionalInfo": "握り寿司は通常「貫（かん）」で数えます。ラーメンや出前などで使われる「丁（ちょう）」は、寿司を数える単位としては一般的ではありません。"
   }
+    {
+    "question": "「すし」の原型とされる「なれずし」は、どのような特徴を持つ保存食だったでしょう？",
+    "image": "quiz_data/images/sushi/sushi_narezushi.jpg",
+    "answers": [
+      { "text": "発酵させた魚と米を一緒に食べた", "correct": false },
+      { "text": "魚だけを食べ、米は食べなかった", "correct": true },
+      { "text": "酢で味付けし、発酵はさせなかった", "correct": false },
+      { "text": "魚を生のまま米と合わせた", "correct": false }
+    ],
+    "additionalInfo": "すしの原形である「なれずし」は、魚を米で発酵させた保存食で、魚のみを食べて米は捨てていました。"
+  },
+  {
+    "question": "15世紀頃に登場した、米も一緒に食べるようになったすしを何と呼びますか？",
+    "image": "quiz_data/images/sushi/sushi_namanare.jpg",
+    "answers": [
+      { "text": "本なれ", "correct": false },
+      { "text": "早ずし", "correct": false },
+      { "text": "生なれ（半なれ）", "correct": true },
+      { "text": "握りずし", "correct": false }
+    ],
+    "additionalInfo": "従来の「なれずし」より発酵期間を短くし、まだ魚が生々しい状態であったため「生なれ（半なれ）」と呼ばれました。"
+  },
+  {
+    "question": "1680年頃、発酵させずに酢で酸味を加える「早ずし」が誕生しました。この「早ずし」の総称に含まれないものはどれでしょう？",
+    "image": "quiz_data/images/sushi/sushi_hayazushi.jpg",
+    "answers": [
+      { "text": "押しずし", "correct": false },
+      { "text": "ちらしずし", "correct": false },
+      { "text": "巻きずし", "correct": false },
+      { "text": "握りずし", "correct": true }
+    ],
+    "additionalInfo": "「早ずし」として、押しずし、姿ずし、ちらしずし、巻きずしなどが登場しました。「握りずし」が誕生するのは、さらに後の時代です。"
+  },
+  {
+    "question": "現在、私たちがよく目にする「握りずし」が誕生したのは、いつ頃でしょう？",
+    "image": "quiz_data/images/sushi/sushi_nigirizushi.jpg",
+    "answers": [
+      { "text": "奈良時代", "correct": false },
+      { "text": "室町時代", "correct": false },
+      { "text": "江戸時代（1820年頃）", "correct": true },
+      { "text": "明治時代", "correct": false }
+    ],
+    "additionalInfo": "1820年頃、江戸の文化が栄えた時代に「握りずし」の原形が生まれ、「江戸前寿司」として人気を博しました。"
+  },
+  {
+    "question": "「すし」の語源は、どのような意味から来ていると考えられているでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "「寿を司る」という縁起の良い言葉から", "correct": false },
+      { "text": "「酢し（すし）」、つまり酢で味付けした飯から", "correct": true },
+      { "text": "魚の「ス」とご飯の「シ」を合わせた言葉から", "correct": false },
+      { "text": "「涼し（すずし）」、夏に食べる涼しい食べ物から", "correct": false }
+    ],
+    "additionalInfo": "一般的に、酸っぱいことを指す「酸し（すし）」が語源とされています。酢飯の酸味から来ています。"
+  },
+  {
+    "question": "中国から伝わった漢字のうち、「すし」を指す最も古い字はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "寿司", "correct": false },
+      { "text": "鮨", "correct": true },
+      { "text": "酒志", "correct": false },
+      { "text": "須子", "correct": false }
+    ],
+    "additionalInfo": "「鮨」と「鮓」が中国から伝わった古い漢字で、特に「鮨」が最も古いとされています。「寿司」は江戸時代に登場した当て字（和字）です。"
+  },
+  {
+    "question": "「すし」が日本に伝わったのは、何と同時期の弥生時代と考えられているでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "仏教の伝来", "correct": false },
+      { "text": "鉄器の使用", "correct": false },
+      { "text": "稲作の伝来", "correct": true },
+      { "text": "漢字の伝来", "correct": false }
+    ],
+    "additionalInfo": "すしの原形は、稲作と共に東南アジアや中国から伝わったと考えられています。米と魚を使う保存食がルーツです。"
+  },
+  {
+    "question": "江戸時代に「握りずし」が人気を博した際、どのような形態で提供されることが多かったでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "高級料亭のコース料理", "correct": false },
+      { "text": "家庭で作るお祝いの料理", "correct": false },
+      { "text": "将軍に献上される特別な料理", "correct": false },
+      { "text": "気軽に立ち寄れる屋台", "correct": true }
+    ],
+    "additionalInfo": "江戸では多くの「すし屋台」が登場し、握りずしは庶民が気軽に楽しめるファストフードのような存在として人気を集めました。"
+  },
+  {
+    "question": "「なれずし」から「生なれ」への変化で、最も大きなポイントは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "酢を使い始めたこと", "correct": false },
+      { "text": "米も一緒に食べるようになったこと", "correct": true },
+      { "text": "魚だけでなく野菜も使うようになったこと", "correct": false },
+      { "text": "屋台で売られるようになったこと", "correct": false }
+    ],
+    "additionalInfo": "「なれずし」では捨てていた米を、「生なれ」では魚と一緒に食べるようになったのが、すしの歴史における第1の変革でした。"
+  },
+  {
+    "question": "現在、最も一般的に使われる「寿司」という表記が普及した理由は何と考えられているでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "最も歴史が古い漢字だから", "correct": false },
+      { "text": "中国の皇帝が使っていた字だから", "correct": false },
+      { "text": "縁起の良い当て字（和字）だから", "correct": true },
+      { "text": "魚へんの漢字が難しすぎたから", "correct": false }
+    ],
+    "additionalInfo": "「寿司」は江戸時代に生まれた当て字で、「寿を司る」など縁起の良さから、お祝いの席などで好まれ、一般的に広まったと考えられています。"
+  }
 ]
