@@ -85,15 +85,27 @@ window.onload = () => {
     }
 
     // --- クイズデータ読み込み＆状態リセット ---
-    async function loadQuizData(categoryKey) {
+    async function loadQuizData(categoryKey, mode = 'all') {
+        // デフォルトのファイル名を決定
+        let fileName = `${categoryKey}.json`;
+
+        // 寿司クイズの場合、モードによってファイル名を変更
+        if (categoryKey === 'sushi') {
+            if (mode === 'basic') {
+                fileName = 'sushi_basic.json';
+            } else if (mode === 'maniac') {
+                fileName = 'sushi_maniac.json';
+            }
+        }
+
         try {
-            const response = await fetch(`quiz_data/${categoryKey}.json`);
-            if (!response.ok) { throw new Error(`Failed to fetch quiz_data/${categoryKey}.json. Status: ${response.status}`); }
+            const response = await fetch(`quiz_data/${fileName}`);
+            if (!response.ok) { throw new Error(`Failed to fetch quiz_data/${fileName}. Status: ${response.status}`); }
             const data = await response.json();
-            console.log(`Successfully loaded quiz data for '${categoryKey}' from external JSON.`);
+            console.log(`Successfully loaded quiz data for '${categoryKey}' (mode: ${mode}) from external JSON: ${fileName}`);
             return data;
         } catch (error) {
-            console.warn(`Could not load from quiz_data/${categoryKey}.json. Reason: ${error.message}.`);
+            console.warn(`Could not load from quiz_data/${fileName}. Reason: ${error.message}.`);
             return [];
         }
     }
@@ -101,7 +113,7 @@ window.onload = () => {
     async function resetQuizState(categoryKey, mode = 'all') {
         currentQuizCategoryKey = categoryKey;
         currentQuizMode = mode;
-        const originalQuizData = await loadQuizData(categoryKey);
+        const originalQuizData = await loadQuizData(categoryKey, mode);
         let filteredData = originalQuizData.filter(q => q.question || q.image);
         if (mode === 'cram') {
             filteredData = filteredData.filter(q => q.importance === 'high');

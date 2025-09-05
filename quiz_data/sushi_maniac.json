@@ -1,0 +1,13 @@
+[
+  {
+    "question": "これはマニアッククイズの最初の問題です。準備はいいですか？",
+    "image": "",
+    "answers": [
+      { "text": "はい", "correct": true },
+      { "text": "いいえ", "correct": false },
+      { "text": "多分", "correct": false },
+      { "text": "後で", "correct": false }
+    ],
+    "additionalInfo": "ここから先は、さらにディープな寿司の世界が待っています。"
+  }
+]
