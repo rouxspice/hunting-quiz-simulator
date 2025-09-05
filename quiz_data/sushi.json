@@ -141,8 +141,8 @@
       { "text": "一ツ（ひとつ）", "correct": false }
     ],
     "additionalInfo": "握り寿司は通常「貫（かん）」で数えます。ラーメンや出前などで使われる「丁（ちょう）」は、寿司を数える単位としては一般的ではありません。"
-  }
-    {
+  },
+  {
     "question": "「すし」の原型とされる「なれずし」は、どのような特徴を持つ保存食だったでしょう？",
     "image": "quiz_data/images/sushi/sushi_narezushi.jpg",
     "answers": [
