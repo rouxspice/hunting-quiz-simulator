@@ -933,5 +933,170 @@
             { "text": "イカ", "correct": false }
         ],
         "additionalInfo": "コハダの握りでは、ネタとシャリの間におぼろを挟むのが伝統的な仕事の一つです。これにより、コハダの酸味とおぼろの甘みが絶妙なバランスを生み出します。"
+    },
+        {
+        "question": "寿司職人の服装で最も重要視されることは何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "動きやすさ", "correct": false },
+            { "text": "高級感", "correct": false },
+            { "text": "清潔感", "correct": true },
+            { "text": "伝統的なデザイン", "correct": false }
+        ],
+        "additionalInfo": "寿司職人の身だしなみで最も重要なのは清潔感です。汚れやシワのない服装、清潔な髪型や爪は、お客様に安心感と信頼を与える基本です。"
+    },
+    {
+        "question": "寿司職人がかぶる「和帽子（板前帽子）」の正しいかぶり方はどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "少し斜めにかぶる", "correct": false },
+            { "text": "折り目が真ん中に来るようにかぶる", "correct": true },
+            { "text": "後ろ向きにかぶる", "correct": false },
+            { "text": "深く目元までかぶる", "correct": false }
+        ],
+        "additionalInfo": "和帽子は、髪の毛が落ちるのを防ぐだけでなく、身だしなみの一部です。折り目が正面の真ん中に来るように、きちんとかぶるのが基本です。"
+    },
+    {
+        "question": "寿司を握る職人の「手」に関する注意点として、適切でないものはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "手洗いを徹底する", "correct": false },
+            { "text": "爪を短く切る", "correct": false },
+            { "text": "指輪は業務中でも外さない", "correct": true },
+            { "text": "香水は厳禁である", "correct": false }
+        ],
+        "additionalInfo": "お客様に直接触れる食材を扱う手は、常に清潔でなければなりません。衛生上の観点や、ネタを傷つける可能性があるため、指輪などの装飾品は業務中は外すのが原則です。"
+    },
+    {
+        "question": "寿司職人が履く「靴」として、適切でないものはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "厨房靴（コックシューズ）", "correct": false },
+            { "text": "衛生長靴", "correct": false },
+            { "text": "サンダル", "correct": true },
+            { "text": "安全かつ動きやすい靴", "correct": false }
+        ],
+        "additionalInfo": "厨房は水や油で滑りやすく、また包丁などの危険物もあるため、安全性が非常に重要です。つま先やかかとが保護されていないサンダルは不適切です。"
+    },
+    {
+        "question": "職人が身につける「前掛け」の着こなしで、だらしなく見えないようにするためのポイントは何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "緩めに締める", "correct": false },
+            { "text": "きっちりと締め、アイロンをかけておく", "correct": true },
+            { "text": "少し汚れている方が味がある", "correct": false },
+            { "text": "腰より低い位置で締める", "correct": false }
+        ],
+        "additionalInfo": "前掛けも清潔感を左右する重要な要素です。シワがないようにアイロンをかけ、だらしなく見えないようにきっちりと締めることが求められます。"
+    },
+    {
+        "question": "寿司職人が使う和包丁で、鋼に鉄を混合したものを何と呼ぶでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "本焼き", "correct": false },
+            { "text": "霞焼き", "correct": true },
+            { "text": "ステンレス", "correct": false },
+            { "text": "全鋼", "correct": false }
+        ],
+        "additionalInfo": "「霞焼き（かすみやき）」は、硬い「鋼（はがね）」と柔らかい「鉄（地金）」を鍛接した包丁です。切れ味と研ぎやすさのバランスが取れています。"
+    },
+    {
+        "question": "鋼だけで作られ、切れ味の持続性が非常に良いとされる一方、高価で研ぎにくく、衝撃に弱いという特徴を持つ和包丁は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "本焼き", "correct": true },
+            { "text": "霞焼き", "correct": false },
+            { "text": "ステンレス", "correct": false },
+            { "text": "割り込み", "correct": false }
+        ],
+        "additionalInfo": "「本焼き（ほんやき）」は、すべて鋼で作られた最高級の和包丁です。非常に硬く、最高の切れ味と持続性を誇りますが、扱いには熟練の技術が必要です。"
+    },
+    {
+        "question": "初心者や家庭で使うのに向いているとされる「ステンレス包丁」のメリットとして、挙げられていないものはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "管理しやすい", "correct": false },
+            { "text": "錆びにくい", "correct": false },
+            { "text": "切れ味が鋼に勝る", "correct": true },
+            { "text": "価格が比較的安い", "correct": false }
+        ],
+        "additionalInfo": "ステンレス包丁は、錆びにくく手入れが簡単な点が大きなメリットですが、一般的に切れ味やその持続性においては、鋼の和包丁に劣るとされています。"
+    },
+    {
+        "question": "包丁を選ぶ際に重要な要素として、挙げられていないものはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "切れ味の持続性", "correct": false },
+            { "text": "耐久性", "correct": false },
+            { "text": "ブランド名", "correct": true },
+            { "text": "使いやすさ", "correct": false }
+        ],
+        "additionalInfo": "包丁選びでは、切れ味の持続性や耐久性、そして自分の手に合った使いやすさが重要です。ブランド名よりも、自分の力量に合った包丁を選ぶことが大切です。"
+    },
+    {
+        "question": "包丁を洗う際の正しい方法として、説明されているものはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "利き手で刃を持ち、反対の手で柄を洗う", "correct": false },
+            { "text": "利き手で柄を持ち、反対の手でスポンジを持ち、背中側から洗う", "correct": true },
+            { "text": "刃先から根本に向かってスポンジを動かす", "correct": false },
+            { "text": "食洗機で高温洗浄する", "correct": false }
+        ],
+        "additionalInfo": "安全に洗うため、利き手でしっかりと柄を持ち、反対の手でスポンジを持って、峰（背中）側から刃の両面を洗うのが正しい方法です。"
+    },
+    {
+        "question": "包丁を洗った後、水分を拭き取らずに放置すると、どのような問題が起こるでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "切れ味が良くなる", "correct": false },
+            { "text": "柄が腐食する", "correct": false },
+            { "text": "錆や雑菌繁殖の原因となる", "correct": true },
+            { "text": "包丁が硬くなる", "correct": false }
+        ],
+        "additionalInfo": "洗い終わった後に水分が残っていると、特に鋼の包丁は錆びやすく、また雑菌が繁殖する原因にもなります。清潔な布巾などで完全に水分を拭き取ることが重要です。"
+    },
+    {
+        "question": "図に示された包丁の部位のうち、柄と刃の境目にある金属部分を何と呼ぶでしょう？",
+        "image": "quiz_data/images/sushi/sushi_knife_01_parts.jpg",
+        "answers": [
+            { "text": "あご", "correct": false },
+            { "text": "口金", "correct": true },
+            { "text": "しのぎ筋", "correct": false },
+            { "text": "刃元", "correct": false }
+        ],
+        "additionalInfo": "柄と刃の接合部にある、柄を補強するための金属部品を「口金（くちがね）」と呼びます。ここもしっかり洗う必要があります。"
+    },
+    {
+        "question": "図に示された包丁の部位のうち、刃の背中側を何と呼ぶでしょう？",
+        "image": "quiz_data/images/sushi/sushi_knife_02_parts.jpg",
+        "answers": [
+            { "text": "そり", "correct": false },
+            { "text": "刃渡り", "correct": false },
+            { "text": "峰（みね）", "correct": true },
+            { "text": "しのぎ筋", "correct": false }
+        ],
+        "additionalInfo": "刃の付いていない背中側の部分を「峰（みね）」と呼びます。包丁を洗う際は、この峰側からスポンジを当てると安全です。"
+    },
+    {
+        "question": "図に示された包丁の部位のうち、刃の先端部分を何と呼ぶでしょう？",
+        "image": "quiz_data/images/sushi/sushi_knife_03_parts.jpg",
+        "answers": [
+            { "text": "切っ先", "correct": true },
+            { "text": "刃元", "correct": false },
+            { "text": "あご", "correct": false },
+            { "text": "刃先", "correct": false }
+        ],
+        "additionalInfo": "包丁の最も先端の尖った部分を「切っ先（きっさき）」と呼びます。細かい作業に使われる重要な部分です。"
+    },
+    {
+        "question": "図に示された包丁の部位のうち、柄に最も近い刃の部分を何と呼ぶでしょう？",
+        "image": "quiz_data/images/sushi/sushi_knife_04_parts.jpg",
+        "answers": [
+            { "text": "切っ先", "correct": false },
+            { "text": "刃元", "correct": true },
+            { "text": "腹", "correct": false },
+            { "text": "あご", "correct": false }
+        ],
+        "additionalInfo": "柄に一番近い刃の部分を「刃元（はもと）」と呼びます。硬いものを切る際など、力を入れる作業で使われることが多いです。"
     }
 ]
