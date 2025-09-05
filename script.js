@@ -35,13 +35,23 @@ window.onload = () => {
     const choujuuQuizProgress = document.getElementById('choujuu-quiz-progress');
     const progressBar = document.getElementById('progress-bar');
     const progressText = document.getElementById('progress-text');
-
+    const soundToggleCheckbox = document.getElementById('sound-toggle-checkbox');
+    
     // --- 音声ファイルの読み込み ---
     const correctSound = new Audio('sounds/correct.mp3');
     const wrongSound = new Audio('sounds/incorrect.mp3');
     correctSound.volume = 0.5;
     wrongSound.volume = 0.5;
-
+    /**
+     * 設定に応じて効果音を再生する関数
+     * @param {HTMLAudioElement} sound - 再生するAudioオブジェクト
+     */
+    function playSound(sound) {
+        if (soundToggleCheckbox && soundToggleCheckbox.checked) {
+            sound.play();
+        }
+    }
+    
     // --- 状態管理変数 ---
     let currentQuiz = [];
     let currentQuestionIndex = 0;
@@ -157,6 +167,19 @@ window.onload = () => {
 
     // --- イベントリスナー初期化 ---
     function initializeEventListeners() {
+ 
+        // サウンド設定の読み込みとイベントリスナー
+        if (soundToggleCheckbox) {
+            // ページ読み込み時に保存された設定を反映
+            const isSoundEnabled = localStorage.getItem('soundEnabled') !== 'false'; // デフォルトはON
+            soundToggleCheckbox.checked = isSoundEnabled;
+
+            // トグルが変更されたら設定を保存
+            soundToggleCheckbox.addEventListener('change', () => {
+                localStorage.setItem('soundEnabled', soundToggleCheckbox.checked);
+            });
+        }
+        
         if (quizOptionsContainer) {
             quizOptionsContainer.addEventListener('click', (event) => {
                 const button = event.target.closest('.challenge-btn');
@@ -235,9 +258,9 @@ window.onload = () => {
                 const question = currentQuiz[currentQuestionIndex];
                 const isCorrect = (choice === 'no') ? !question.isHuntable : question.isHuntable;
                 if (isCorrect) {
-                    if (choice === 'no') { correctSound.play(); score++; }
+                    if (choice === 'no') { playSound(correctSound); score++; }
                 } else {
-                    wrongSound.play();
+                    playSound(wrongSound);
                 }
                 if (!isCorrect) { wrongQuestions.push({ question: `この鳥獣は「${question.name}」です。捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' }); }
                 document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
@@ -351,10 +374,10 @@ window.onload = () => {
                 const selectedButton = e.target;
                 const isCorrect = (name === question.name);
                 if (isCorrect) {
-                    correctSound.play();
+                    playSound(correctSound);
                     score++;
                 } else {
-                    wrongSound.play();
+                    playSound(wrongSound);
                     wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name });
                 }
                 Array.from(choujuuNameOptions.children).forEach(btn => {
@@ -434,10 +457,10 @@ window.onload = () => {
         const isCorrect = selectedButton.dataset.correct === "true";
         const question = currentQuiz[currentQuestionIndex];
         if (isCorrect) {
-            correctSound.play();
+            playSound(correctSound);
             score++;
         } else {
-            wrongSound.play();
+            playSound(wrongSound);
             const correctAnswer = question.answers.find(ans => ans.correct).text;
             wrongQuestions.push({ question: question.question, correctAnswer: correctAnswer, additionalInfo: question.additionalInfo });
         }
