@@ -1,35 +1,113 @@
 [
+  // ... (既存の3問はここに残す) ... ,
+  {
+    "question": "この光り物の寿司ネタは何でしょう？",
+    "image": "images/sushi/sushi_kohada.jpg",
+    "answers": [
+      { "text": "サバ", "correct": false },
+      { "text": "コハダ", "correct": true },
+      { "text": "イワシ", "correct": false },
+      { "text": "サンマ", "correct": false }
+    ],
+    "additionalInfo": "コハダはシンコ→コハダ→ナカズミ→コノシロと名前が変わる出世魚です。江戸前寿司を代表するネタの一つです。"
+  },
   {
     "question": "この寿司ネタは何でしょう？",
-    "image": "images/sushi/maguro.jpg",
+    "image": "images/sushi/sushi_aji.jpg",
     "answers": [
-      { "text": "マグロ", "correct": true },
-      { "text": "サーモン", "correct": false },
-      { "text": "ブリ", "correct": false },
-      { "text": "カツオ", "correct": false }
+      { "text": "アジ", "correct": true },
+      { "text": "サワラ", "correct": false },
+      { "text": "キス", "correct": false },
+      { "text": "カマス", "correct": false }
     ],
-    "additionalInfo": "マグロは寿司の王様とも呼ばれる人気のネタです。"
+    "additionalInfo": "アジは光り物の中でも人気が高く、薬味としておろし生姜やネギがよく合います。"
   },
   {
-    "question": "「ガリ」の主な原料は何でしょう？",
+    "question": "この独特の食感が人気の寿司ネタは何でしょう？",
+    "image": "images/sushi/sushi_engawa.jpg",
+    "answers": [
+      { "text": "イカの耳", "correct": false },
+      { "text": "ホタテのヒモ", "correct": false },
+      { "text": "エンガワ", "correct": true },
+      { "text": "タコの吸盤", "correct": false }
+    ],
+    "additionalInfo": "エンガワは、ヒラメやカレイのヒレを動かすための筋肉の部分です。コリコリとした食感と脂の旨味が特徴です。"
+  },
+  {
+    "question": "この寿司ネタは何でしょう？",
+    "image": "images/sushi/sushi_shako.jpg",
+    "answers": [
+      { "text": "エビ", "correct": false },
+      { "text": "シャコ", "correct": true },
+      { "text": "カニ", "correct": false },
+      { "text": "アナゴ", "correct": false }
+    ],
+    "additionalInfo": "シャコは甲殻類の一種で、独特の風味と食感があります。甘い煮詰めたタレ（ツメ）で食べることが多いです。"
+  },
+  {
+    "question": "この細巻き寿司の名前は何でしょう？",
+    "image": "images/sushi/sushi_kappa.jpg",
+    "answers": [
+      { "text": "鉄火巻き", "correct": false },
+      { "text": "かんぴょう巻き", "correct": false },
+      { "text": "納豆巻き", "correct": false },
+      { "text": "かっぱ巻き", "correct": true }
+    ],
+    "additionalInfo": "かっぱ巻きの由来は、キュウリが河童の好物であるという言い伝えから来ています。"
+  },
+  {
+    "question": "寿司屋で使われる、お茶を意味する隠語（専門用語）はどれでしょう？",
     "image": "",
     "answers": [
-      { "text": "大根", "correct": false },
-      { "text": "生姜", "correct": true },
-      { "text": "わさび", "correct": false },
-      { "text": "きゅうり", "correct": false }
+      { "text": "アガリ", "correct": true },
+      { "text": "ガリ", "correct": false },
+      { "text": "ムラサキ", "correct": false },
+      { "text": "ギョク", "correct": false }
     ],
-    "additionalInfo": "ガリは、口の中をさっぱりさせ、次の寿司を美味しく味わうための口直しの役割があります。"
+    "additionalInfo": "「アガリ」は、お客さんが出す最後のお茶を意味し、「上がり花」に由来します。ガリは生姜、ムラサキは醤油、ギョクは卵焼きのことです。"
   },
   {
-    "question": "「軍艦巻き」を考案したとされる寿司屋はどこでしょう？",
-    "image": "images/sushi/gunkan.jpg",
+    "question": "寿司のシャリ（ご飯）一貫あたりの米粒の数は、およそ何粒と言われているでしょう？",
+    "image": "",
     "answers": [
-      { "text": "すきやばし次郎", "correct": false },
-      { "text": "寿司善", "correct": false },
-      { "text": "久兵衛", "correct": true },
-      { "text": "鮨さいとう", "correct": false }
+      { "text": "約100粒", "correct": false },
+      { "text": "約300粒", "correct": true },
+      { "text": "約500粒", "correct": false },
+      { "text": "約1000粒", "correct": false }
     ],
-    "additionalInfo": "銀座「久兵衛」の初代店主が、ウニやイクラのような崩れやすいネタを提供するために考案したと言われています。"
+    "additionalInfo": "職人が握るシャリは、口の中でほろりとほどけるように計算されており、その理想的な米粒の数が約300粒と言われています。"
+  },
+  {
+    "question": "寿司ネタの「トロ」は、マグロのどの部位のことでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "背中", "correct": false },
+      { "text": "尻尾", "correct": false },
+      { "text": "腹", "correct": true },
+      { "text": "頭", "correct": false }
+    ],
+    "additionalInfo": "トロはマグロの腹部の身で、脂肪の含有量が多い部位です。特に脂肪が多い部分を「大トロ」、それに次ぐ部分を「中トロ」と呼びます。"
+  },
+  {
+    "question": "「涙巻き」という巻き寿司に入っている、主な具材は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "唐辛子", "correct": false },
+      { "text": "わさび", "correct": true },
+      { "text": "からし", "correct": false },
+      { "text": "山椒", "correct": false }
+    ],
+    "additionalInfo": "涙巻きは、すりおろしたわさびをたっぷりと入れた巻き寿司で、その辛さに思わず涙が出てしまうことからこの名前が付きました。"
+  },
+  {
+    "question": "寿司を数える単位として、適切でないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "一貫（いっかん）", "correct": false },
+      { "text": "一丁（いっちょう）", "correct": true },
+      { "text": "一個（いっこ）", "correct": false },
+      { "text": "一ツ（ひとつ）", "correct": false }
+    ],
+    "additionalInfo": "握り寿司は通常「貫（かん）」で数えます。ラーメンや出前などで使われる「丁（ちょう）」は、寿司を数える単位としては一般的ではありません。"
   }
 ]
