@@ -1,7 +1,7 @@
 [
   {
     "question": "この寿司ネタは何でしょう？",
-    "image": "images/sushi/maguro.jpg",
+    "image": "quiz_data/images/sushi/maguro.jpg",
     "answers": [
       { "text": "マグロ", "correct": true },
       { "text": "サーモン", "correct": false },
@@ -23,7 +23,7 @@
   },
   {
     "question": "「軍艦巻き」を考案したとされる寿司屋はどこでしょう？",
-    "image": "images/sushi/gunkan.jpg",
+    "image": "quiz_data/images/sushi/gunkan.jpg",
     "answers": [
       { "text": "すきやばし次郎", "correct": false },
       { "text": "寿司善", "correct": false },
@@ -32,9 +32,9 @@
     ],
     "additionalInfo": "銀座「久兵衛」の初代店主が、ウニやイクラのような崩れやすいネタを提供するために考案したと言われています。"
   },
-  {
+{
     "question": "この光り物の寿司ネタは何でしょう？",
-    "image": "images/sushi/sushi_kohada.jpg",
+    "image": "quiz_data/images/sushi/sushi_kohada.jpg",
     "answers": [
       { "text": "サバ", "correct": false },
       { "text": "コハダ", "correct": true },
@@ -45,7 +45,7 @@
   },
   {
     "question": "この寿司ネタは何でしょう？",
-    "image": "images/sushi/sushi_aji.jpg",
+    "image": "quiz_data/images/sushi/sushi_aji.jpg",
     "answers": [
       { "text": "アジ", "correct": true },
       { "text": "サワラ", "correct": false },
@@ -56,7 +56,7 @@
   },
   {
     "question": "この独特の食感が人気の寿司ネタは何でしょう？",
-    "image": "images/sushi/sushi_engawa.jpg",
+    "image": "quiz_data/images/sushi/sushi_engawa.jpg",
     "answers": [
       { "text": "イカの耳", "correct": false },
       { "text": "ホタテのヒモ", "correct": false },
@@ -67,7 +67,7 @@
   },
   {
     "question": "この寿司ネタは何でしょう？",
-    "image": "images/sushi/sushi_shako.jpg",
+    "image": "quiz_data/images/sushi/sushi_shako.jpg",
     "answers": [
       { "text": "エビ", "correct": false },
       { "text": "シャコ", "correct": true },
@@ -78,7 +78,7 @@
   },
   {
     "question": "この細巻き寿司の名前は何でしょう？",
-    "image": "images/sushi/sushi_kappa.jpg",
+    "image": "quiz_data/images/sushi/sushi_kappa.jpg",
     "answers": [
       { "text": "鉄火巻き", "correct": false },
       { "text": "かんぴょう巻き", "correct": false },
