@@ -1,0 +1,35 @@
+[
+  {
+    "question": "この寿司ネタは何でしょう？",
+    "image": "images/sushi/maguro.jpg",
+    "answers": [
+      { "text": "マグロ", "correct": true },
+      { "text": "サーモン", "correct": false },
+      { "text": "ブリ", "correct": false },
+      { "text": "カツオ", "correct": false }
+    ],
+    "additionalInfo": "マグロは寿司の王様とも呼ばれる人気のネタです。"
+  },
+  {
+    "question": "「ガリ」の主な原料は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "大根", "correct": false },
+      { "text": "生姜", "correct": true },
+      { "text": "わさび", "correct": false },
+      { "text": "きゅうり", "correct": false }
+    ],
+    "additionalInfo": "ガリは、口の中をさっぱりさせ、次の寿司を美味しく味わうための口直しの役割があります。"
+  },
+  {
+    "question": "「軍艦巻き」を考案したとされる寿司屋はどこでしょう？",
+    "image": "images/sushi/gunkan.jpg",
+    "answers": [
+      { "text": "すきやばし次郎", "correct": false },
+      { "text": "寿司善", "correct": false },
+      { "text": "久兵衛", "correct": true },
+      { "text": "鮨さいとう", "correct": false }
+    ],
+    "additionalInfo": "銀座「久兵衛」の初代店主が、ウニやイクラのような崩れやすいネタを提供するために考案したと言われています。"
+  }
+]
