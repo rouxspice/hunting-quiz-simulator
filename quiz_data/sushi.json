@@ -165,17 +165,6 @@
     "additionalInfo": "従来の「なれずし」より発酵期間を短くし、まだ魚が生々しい状態であったため「生なれ（半なれ）」と呼ばれました。"
   },
   {
-    "question": "1680年頃、発酵させずに酢で酸味を加える「早ずし」が誕生しました。この「早ずし」の総称に含まれないものはどれでしょう？",
-    "image": "quiz_data/images/sushi/sushi_hayazushi.jpg",
-    "answers": [
-      { "text": "押しずし", "correct": false },
-      { "text": "ちらしずし", "correct": false },
-      { "text": "巻きずし", "correct": false },
-      { "text": "握りずし", "correct": true }
-    ],
-    "additionalInfo": "「早ずし」として、押しずし、姿ずし、ちらしずし、巻きずしなどが登場しました。「握りずし」が誕生するのは、さらに後の時代です。"
-  },
-  {
     "question": "現在、私たちがよく目にする「握りずし」が誕生したのは、いつ頃でしょう？",
     "image": "quiz_data/images/sushi/sushi_nigirizushi.jpg",
     "answers": [
