@@ -647,5 +647,335 @@
       { "text": "寿司業界では伝統を重んじるため", "correct": false }
     ],
     "additionalInfo": "古米は水分量が少なく、酢を混ぜたときにベチャッとなりにくいのが特徴です。酢が米粒の内部まで均一に浸透し、パラリとした理想的なシャリに仕上がります。"
+  },
+    {
+    "question": "次のうち、近畿地方のご当地寿司ネタではないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "伊根ブリ", "correct": false },
+      { "text": "的矢牡蠣", "correct": false },
+      { "text": "泉州マアナゴ", "correct": false },
+      { "text": "城下かれい", "correct": true }
+    ],
+    "additionalInfo": "城下かれいは大分県のご当地ネタです。伊根ブリ（京都）、的矢牡蠣（三重）、泉州マアナゴ（大阪）は近畿地方の有名な寿司ネタです。"
+  },
+  {
+    "question": "次のうち、北海道・東北地方のご当地寿司ネタではないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "金華サバ", "correct": false },
+      { "text": "松輪サバ", "correct": true },
+      { "text": "関上の赤貝", "correct": false },
+      { "text": "男鹿ブリコ", "correct": false }
+    ],
+    "additionalInfo": "松輪サバは神奈川県三浦半島の名産です。金華サバ（宮城）、関上の赤貝（宮城）、男鹿ブリコ（秋田）は北海道・東北地方のご当地ネタです。"
+  },
+  {
+    "question": "高級カニ「間人ガニ」。この「間人」の正しい読み方はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "まびとがに", "correct": false },
+      { "text": "かんじんがに", "correct": false },
+      { "text": "たいざがに", "correct": true },
+      { "text": "けんにんがに", "correct": false }
+    ],
+    "additionalInfo": "京都府京丹後市の間人（たいざ）漁港で水揚げされるズワイガニは「間人ガニ」と呼ばれ、幻のカニとして知られる高級ブランドです。"
+  },
+  {
+    "question": "ヒラマサの旬の目安はいつ頃でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": true },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "ヒラマサはブリの仲間ですが、旬は夏です。さっぱりとした上品な脂と、引き締まった身の食感が楽しめます。"
+  },
+  {
+    "question": "静岡県で獲れるキンメダイの旬の目安はいつ頃でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": true }
+    ],
+    "additionalInfo": "キンメダイは一年中獲れますが、特に脂がのって美味しくなるのは冬の時期とされています。"
+  },
+  {
+    "question": "江戸前寿司の華ともいわれる「シンコ」。この魚の旬の目安はいつ頃でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "3月～5月", "correct": false },
+      { "text": "6月～8月", "correct": true },
+      { "text": "9月～11月", "correct": false },
+      { "text": "12月～2月", "correct": false }
+    ],
+    "additionalInfo": "シンコはコハダの幼魚で、夏の短い期間だけ味わえる貴重なネタです。その年の初物（はつもの）は特に高値で取引されます。"
+  },
+  {
+    "question": "水産業における「養殖」とは、どのような意味でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "成魚から取り出した卵を人工孵化させて、成魚まで育てること", "correct": true },
+      { "text": "稚魚を捕まえて育てること", "correct": false },
+      { "text": "若魚を捕まえて太らせること", "correct": false },
+      { "text": "人の手を介して人工授精させ、魚介の子をつくること", "correct": false }
+    ],
+    "additionalInfo": "「養殖」は、卵から成魚まで一貫して人の手で育てることを指します。一方、天然の稚魚を捕まえて育てることは「畜養」と呼び区別されます。"
+  },
+    {
+    "question": "写真の寿司職人が使う専門の道具はなんと呼ぶでしょう？",
+    "image": "quiz_data/images/sushi/sushi_kiridai.jpg",
+    "answers": [
+      { "text": "まな板", "correct": false },
+      { "text": "飯台", "correct": false },
+      { "text": "切り台（つけ台）", "correct": true },
+      { "text": "抜き板", "correct": false }
+    ],
+    "additionalInfo": "これは「切り台」または「つけ台」と呼ばれる寿司職人専用のまな板です。客の目の前で寿司を切りつけ、そのまま提供するために使われます。"
+  },
+  {
+    "question": "魚をさばいたり、骨を断ったりするなどの下処理に使う和包丁はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "出刃包丁", "correct": true },
+      { "text": "柳刃包丁", "correct": false },
+      { "text": "薄刃包丁", "correct": false },
+      { "text": "牛刀", "correct": false }
+    ],
+    "additionalInfo": "出刃包丁は、刃が厚く頑丈なのが特徴で、魚の頭を落としたり、骨ごと切ったりする力強い作業に向いています。柳刃包丁は刺身を引くための包丁です。"
+  },
+  {
+    "question": "貝類をさばく際に、殻から身を外すために使われる専門の道具は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "アワビ", "correct": false },
+      { "text": "アナゴ", "correct": false },
+      { "text": "カツオ", "correct": false },
+      { "text": "貝むき（目打ち）", "correct": true }
+    ],
+    "additionalInfo": "「貝むき」や「目打ち」と呼ばれる道具は、アワビやホッキ貝など、殻に強く付着した貝柱を効率よく外すために使われます。"
+  },
+  {
+    "question": "ワサビをすりおろす専門の道具の名前は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "おろし金", "correct": false },
+      { "text": "ノノジおろし", "correct": false },
+      { "text": "鮫皮おろし", "correct": true },
+      { "text": "鮫皮おろし", "correct": false }
+    ],
+    "additionalInfo": "本ワサビの香りや風味を最大限に引き出すには、鮫の皮を張った「鮫皮おろし」が最適とされています。きめ細かくクリーミーにおろせます。"
+  },
+  {
+    "question": "寿司屋で使われる「竹串」は、主にどのような時に使うでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "エビを茹でる時", "correct": true },
+      { "text": "海苔を焼くとき", "correct": false },
+      { "text": "コハダを酢で締めるとき", "correct": false },
+      { "text": "昆布締めにするため", "correct": false }
+    ],
+    "additionalInfo": "エビを茹でる際に竹串を打つのは、加熱しても身が丸まらず、まっすぐ綺麗に仕上がるようにするためです。"
+  },
+  {
+    "question": "本ワサビの特徴として、正しくないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "すりおろして空気に触れさせることで辛味成分が生じる", "correct": false },
+      { "text": "目の粗いおろし金を使うと甘みが強くなる", "correct": false },
+      { "text": "きめの細かいものでおろすと辛味が強くなる", "correct": false },
+      { "text": "比較的安価で辛さが長持ちする", "correct": true }
+    ],
+    "additionalInfo": "本ワサビは高価で、すりおろした後の辛味や風味は揮発性が高く、長持ちしません。チューブわさびは西洋わさびを主原料とし、辛さが長持ちするように作られています。"
+  },
+  {
+    "question": "寿司屋で使う海苔に関する説明で、間違っているものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "炙ると海苔の細胞が壊れて、歯切れも香りも悪くなる", "correct": true },
+      { "text": "つるっとしている方が表でザラついてる方が裏", "correct": false },
+      { "text": "使わないときは必ず密閉して冷暗所に保管する", "correct": false },
+      { "text": "香りが良いこと、歯切れが良いこと、口どけが良いことが大事", "correct": false }
+    ],
+    "additionalInfo": "海苔は、提供する直前に軽く炙ることで、湿気が飛んでパリッとした食感になり、香りが一層引き立ちます。"
+  },
+    {
+    "question": "寿司と一緒に出てくる「ガリ」。その効果として正しいものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "鉄分を補給する", "correct": false },
+      { "text": "免疫力を向上させる", "correct": false },
+      { "text": "魚の生臭さを消す", "correct": true },
+      { "text": "デンプンを分解する", "correct": false }
+    ],
+    "additionalInfo": "ガリには殺菌作用のほか、口の中をさっぱりさせて前のネタの味をリセットし、次の寿司を美味しく味わうための「口直し」の役割があります。"
+  },
+  {
+    "question": "ワサビを鮫皮おろしで擦る際に、香りや辛味を最大限に引き出すための正しい擦り方はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "「の」の字を描くようにして擦る", "correct": true },
+      { "text": "回しながら擦る", "correct": false },
+      { "text": "直線上に擦る", "correct": false },
+      { "text": "力強く擦る", "correct": false }
+    ],
+    "additionalInfo": "ワサビは、力を入れずに優しく「の」の字を描くように円を描きながら擦ることで、細胞が細かく壊れ、香りや辛味、甘みが最大限に引き出されます。"
+  },
+  {
+    "question": "寿司ネタ全般に一番合いやすいとされ、寿司屋で最も一般的に使われる醤油はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "濃口醤油", "correct": true },
+      { "text": "再仕込み醤油", "correct": false },
+      { "text": "淡口醤油", "correct": false },
+      { "text": "白醤油", "correct": false }
+    ],
+    "additionalInfo": "濃口醤油は、色・味・香りのバランスが良く、寿司ネタの味を邪魔しないため、最も一般的に使われています。"
+  },
+  {
+    "question": "シャリに混ぜる「合わせ酢」をつくるとき、砂糖と塩を溶かす上で正しい方法はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "沸騰するまでよくかき混ぜる", "correct": false },
+      { "text": "完全に溶かすために、手を止めずによくかき混ぜる", "correct": false },
+      { "text": "強火で一気に溶かすが、沸騰しないように気をつける", "correct": false },
+      { "text": "火はあまり強くしすぎず、沸騰させないようにする", "correct": true }
+    ],
+    "additionalInfo": "合わせ酢を火にかけるのは、砂糖と塩を溶かすためです。沸騰させてしまうと酢の酸味が飛んでしまうため、弱火でゆっくりと溶かすのが基本です。"
+  },
+  {
+    "question": "シャリ用の米を炊く前に行う「浸水」。この工程の主な目的は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "米の表面についた埃や不純物を洗い流すため", "correct": false },
+      { "text": "米と水を混ぜ、粒々がくっつかないようにするため", "correct": false },
+      { "text": "米の中心まで水が入るようにするため", "correct": true },
+      { "text": "米の余分な糖質を除去するため", "correct": false }
+    ],
+    "additionalInfo": "炊く前にしっかりと浸水させることで、米の中心部まで水分を均一に行き渡らせ、ふっくらとムラなく炊き上げることができます。"
+  },
+  {
+    "question": "シャリを切るための「飯台（半切り）」を使用する方法として、正しくないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "シャリ切りをする前に水に浸す", "correct": false },
+      { "text": "水に浸した上で15分ほど冷蔵庫の中で冷やす", "correct": true },
+      { "text": "水に浸したあと、布巾で水気をよく拭き、水が溜まらないようにする", "correct": false },
+      { "text": "水分がついておらず且つ飯台全体が湿っている状態を目指す", "correct": false }
+    ],
+    "additionalInfo": "飯台を冷蔵庫で冷やすと、急激な温度変化で木が傷んだり、結露の原因になったりするため、通常は行いません。"
+  },
+  {
+    "question": "炊きあがったご飯を飯台に移し、「シャリ切り」をする際にダマをほぐすのはなぜでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "シャリの中に空気を入れるため", "correct": false },
+      { "text": "ほぐすことによって、シャリに艶が出るため", "correct": false },
+      { "text": "ほぐさないと、味にムラができるため", "correct": true },
+      { "text": "ほぐしながらシャリの水分を弾き飛ばすため", "correct": false }
+    ],
+    "additionalInfo": "ダマになった部分があると、合わせ酢が均一に行き渡らず、味にムラができてしまいます。全体に素早く酢を馴染ませるために、ダマをほぐすことは重要です。"
+  },
+  {
+    "question": "「シャリ切り」の途中で、うちわなどでシャリを冷ます主な理由は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "シャリの粘りを減らし、シャリ切りをしやすくするため", "correct": false },
+      { "text": "冷めるときに酢がシャリに染み込んでおいしくなるため", "correct": true },
+      { "text": "手触りがよくなり、シャリを取りやすくなるため", "correct": false },
+      { "text": "寿司を握ったときに形を維持しやすくなり、見た目が美しくなるため", "correct": false }
+    ],
+    "additionalInfo": "シャリは、温度が下がる過程で米粒の表面にある酢を吸収します。うちわで扇いで人肌まで冷ますことで、余分な水分を飛ばし、酢をしっかりと染み込ませることができます。"
+  },
+    {
+    "question": "寿司を食べる順番として、最も推奨される食べ始めのネタは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "白身", "correct": true },
+      { "text": "赤身", "correct": false },
+      { "text": "光り物", "correct": false },
+      { "text": "巻物", "correct": false }
+    ],
+    "additionalInfo": "一般的に、味の淡白な白身から食べ始め、徐々に味の濃い赤身や光り物、そして最後に巻物で締めると、それぞれのネタの味を最大限に楽しめると言われています。"
+  },
+  {
+    "question": "寿司屋の隠語（専門用語）で、「ガリ」が指すものは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "醤油", "correct": false },
+      { "text": "わさび", "correct": false },
+      { "text": "甘酢生姜", "correct": true },
+      { "text": "お茶", "correct": false }
+    ],
+    "additionalInfo": "「ガリ」は、生姜を薄切りにして甘酢に漬けたものです。その食感がガリガリすることからこの名がつきました。"
+  },
+  {
+    "question": "寿司屋の隠語で、「ムラサキ」が指すものは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "醤油", "correct": true },
+      { "text": "赤身のマグロ", "correct": false },
+      { "text": "梅肉", "correct": false },
+      { "text": "赤貝", "correct": false }
+    ],
+    "additionalInfo": "醤油の色が紫色に見えることから、「ムラサキ」という隠語が使われるようになりました。"
+  },
+  {
+    "question": "寿司屋の隠語で、「ギョク」が指すものは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "魚の卵", "correct": false },
+      { "text": "玉子焼き", "correct": true },
+      { "text": "ハマグリ", "correct": false },
+      { "text": "イクラ", "correct": false }
+    ],
+    "additionalInfo": "「ギョク」は、玉子焼きのことです。「玉」の音読みから来ています。その店の腕がわかるとも言われる重要なネタです。"
+  },
+  {
+    "question": "寿司屋の隠語で、「アガリ」が指すものは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "会計", "correct": false },
+      { "text": "最後の一貫", "correct": false },
+      { "text": "お茶", "correct": true },
+      { "text": "おしぼり", "correct": false }
+    ],
+    "additionalInfo": "「アガリ」は、食事の最後に出されるお茶のことです。「上がり花」という言葉に由来し、芸者の世界から伝わったと言われています。"
+  },
+  {
+    "question": "寿司屋の隠語で、「ナミダ」が指すものは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "わさび", "correct": true },
+      { "text": "塩", "correct": false },
+      { "text": "酢", "correct": false },
+      { "text": "日本酒", "correct": false }
+    ],
+    "additionalInfo": "わさびが効きすぎると涙が出そうになることから、「ナミダ」という隠語が使われます。「サビ抜き」は「ナミダ抜き」とも言います。"
+  },
+  {
+    "question": "寿司屋の隠語で、「おあいそ」の本来の意味として正しいものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "客が「会計してください」と伝える言葉", "correct": false },
+      { "text": "店側が「お勘定書です」と伝える言葉", "correct": true },
+      { "text": "「愛想がなくてすみません」という謙遜の言葉", "correct": true },
+      { "text": "「またのお越しを」という挨拶の言葉", "correct": false }
+    ],
+    "additionalInfo": "「お愛想がなくて申し訳ありません」という意味で、店側が会計を伝える際に使う言葉でした。客側が使うのは本来間違いですが、現在では広く使われています。"
+  },
+  {
+    "question": "寿司屋の隠語で、「シャリ」の語源は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "舎利（仏舎利）", "correct": true },
+      { "text": "砂利（じゃり）", "correct": false },
+      { "text": "英語の \"share\"", "correct": false },
+      { "text": "考案した職人の名前", "correct": false }
+    ],
+    "additionalInfo": "炊きあがった白米が、仏様の遺骨である「仏舎利（ぶっしゃり）」に似ていることから、「シャリ」と呼ばれるようになりました。"
   }
 ]
