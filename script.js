@@ -345,7 +345,9 @@ window.onload = () => {
         const options = [...question.distractors, question.name].sort(() => Math.random() - 0.5);
         options.forEach(name => {
             const button = document.createElement('button');
-            button.innerText = name;
+            // ★★★ ここを変更 ★★★
+            button.innerText = `${index + 1}. ${name}`; // 番号とドット、スペースを追加
+            // ★★★ ここまで ★★★
             button.classList.add('answer-btn');
             button.addEventListener('click', (e) => {
                 const selectedButton = e.target;
@@ -406,9 +408,11 @@ window.onload = () => {
         }
         questionElement.innerText = question.question;
         const shuffledAnswers = [...question.answers].sort(() => Math.random() - 0.5);
-        shuffledAnswers.forEach(answer => {
+        shuffledAnswers.forEach((answer, index) => { // ← index を受け取る
             const button = document.createElement('button');
-            button.innerText = answer.text;
+            // ★★★ ここを変更 ★★★
+            button.innerText = `${index + 1}. ${answer.text}`; // 番号とドット、スペースを追加
+            // ★★★ ここまで ★★★
             button.classList.add('answer-btn');
             if (answer.correct) {
                 button.dataset.correct = answer.correct;
