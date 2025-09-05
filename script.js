@@ -77,7 +77,7 @@ window.onload = () => {
                     const modeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
                     const modeName = button.textContent; // "ベーシック" や "マニアック"
                     highScoreText += `${modeName}: ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}  
-                    `;
+`;
                 });
                 const highScoreEl = card.querySelector('.quiz-card-highscore');
                 if (highScoreEl) highScoreEl.innerHTML = highScoreText;
