@@ -264,49 +264,7 @@ window.onload = () => {
             });
         }
 
-        // ★★★ ここからキーボード操作の処理関数を追加 ★★★
 
-        /**
-         * 数字キー（1-4）が押された時の処理
-         * @param {number} number - 押された数字
-         */
-        function handleNumericKeyPress(number) {
-            const isChoujuuQuiz = quizContainerChoujuu.style.display === 'block';
-            let targetButtons;
-
-            if (isChoujuuQuiz) {
-                // 鳥獣クイズの場合
-                const isStep1 = choujuuStep1.style.display === 'block';
-                // ステップ1かステップ2かで対象のボタンを切り替える
-                targetButtons = isStep1 
-                    ? choujuuStep1.querySelectorAll('.choujuu-choice-btn') 
-                    : choujuuNameOptions.querySelectorAll('.answer-btn');
-            } else {
-                // 通常クイズの場合
-                targetButtons = answerButtonsElement.querySelectorAll('.answer-btn');
-            }
-
-            // 押された数字に対応するボタンがあればクリック
-            if (targetButtons && targetButtons.length >= number) {
-                const buttonToClick = targetButtons[number - 1]; // 配列は0から始まるので-1する
-                if (!buttonToClick.disabled) { // ボタンが無効化されていなければ
-                    buttonToClick.click();
-                }
-            }
-        }
-
-        /**
-         * Enterキーが押された時の処理
-         */
-        function handleEnterKeyPress() {
-            // 表示されている方の「次へ」または「結果を見る」ボタンを取得してクリック
-            const visibleSubmitButton = document.querySelector('#submit:not([style*="display: none"]), #choujuu-submit:not([style*="display: none"])');
-            if (visibleSubmitButton) {
-                visibleSubmitButton.click();
-            }
-        }
-
-        // ★★★ ここまで追加 ★★★
     }
 
     // --- クイズ開始ロジック ---
@@ -540,6 +498,74 @@ window.onload = () => {
             resultDetailsSection.style.display = 'none';
         }
     }
+        // ★★★ ここからキーボード操作の処理関数を追加 ★★★
+
+        /**
+         * 数字キー（1-4）が押された時の処理
+         * @param {number} number - 押された数字
+         */
+        function handleNumericKeyPress(number) {
+            const isChoujuuQuiz = quizContainerChoujuu.style.display === 'block';
+            let targetButtons;
+
+            if (isChoujuuQuiz) {
+                // 鳥獣クイズの場合
+                const isStep1 = choujuuStep1.style.display === 'block';
+                // ステップ1かステップ2かで対象のボタンを切り替える
+                targetButtons = isStep1 
+                    ? choujuuStep1.querySelectorAll('.choujuu-choice-btn') 
+                    : choujuuNameOptions.querySelectorAll('.answer-btn');
+            } else {
+                // 通常クイズの場合
+                targetButtons = answerButtonsElement.querySelectorAll('.answer-btn');
+            }
+
+            // 押された数字に対応するボタンがあればクリック
+            if (targetButtons && targetButtons.length >= number) {
+                const buttonToClick = targetButtons[number - 1]; // 配列は0から始まるので-1する
+                if (!buttonToClick.disabled) { // ボタンが無効化されていなければ
+                    buttonToClick.click();
+                }
+            }
+        }
+
+            /**
+             * Enterキーが押された時の処理
+             */
+            function handleEnterKeyPress() {
+                // 表示されている方の「次へ」または「結果を見る」ボタンを取得してクリック
+                const visibleSubmitButton = document.querySelector('#submit:not([style*="display: none"]), #choujuu-submit:not([style*="display: none"])');
+                if (visibleSubmitButton) {
+                    visibleSubmitButton.click();
+                }
+            }
+        // ★★★ この部分をコピーして、すぐ下に追加してください ★★★
+        document.addEventListener('keydown', (event) => {
+            const isQuizActive = quizContainer.style.display === 'block' || quizContainerChoujuu.style.display === 'block';
+            if (!isQuizActive) return;
+
+            switch (event.key) {
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                    handleNumericKeyPress(parseInt(event.key, 10));
+                    break;
+                case 'Enter':
+                    handleEnterKeyPress();
+                    break;
+                case 'Escape':
+                    const backButton = document.querySelector('.quiz-container:not([style*="display: none"]) .back-to-top-btn, .quiz-container-choujuu:not([style*="display: none"]) .back-to-top-btn');
+                    if (backButton) {
+                        backButton.click();
+                    }
+                    break;
+            }
+        });
+        // ★★★ ここまで ★★★
+
+
+
 
     // --- キーボード操作 ---
     function handleNumericKeyPress(number) {
