@@ -54,7 +54,38 @@ window.onload = () => {
     const storageKey = 'huntingQuizScores';
     function getScoresFromStorage() { const storedScores = localStorage.getItem(storageKey); return storedScores ? JSON.parse(storedScores) : {}; }
     function saveScoresToStorage(scores) { localStorage.setItem(storageKey, JSON.stringify(scores)); }
-    function updateTopPageUI() { const scores = getScoresFromStorage(); document.querySelectorAll('.quiz-card').forEach(card => { const category = card.dataset.quizCategory; const categoryScores = scores[category] || { highScore: 0, cleared: false }; const highScoreEl = card.querySelector('.quiz-card-highscore'); const clearMarkEl = card.querySelector('.quiz-card-clear-mark'); highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`; if (categoryScores.cleared) { clearMarkEl.textContent = '👑'; } else { clearMarkEl.textContent = ''; } }); }
+    function updateTopPageUI() {
+        const scores = getScoresFromStorage();
+        document.querySelectorAll('.quiz-card').forEach(card => {
+            const category = card.dataset.quizCategory;
+            const buttons = card.querySelectorAll('.challenge-btn');
+
+            // ボタンが1つの場合（従来の処理）
+            if (buttons.length === 1 && !buttons[0].dataset.mode) {
+                const categoryScores = scores[category] || { highScore: 0, cleared: false };
+                const highScoreEl = card.querySelector('.quiz-card-highscore');
+                const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
+                if (highScoreEl) highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`;
+                if (clearMarkEl) clearMarkEl.textContent = categoryScores.cleared ? '👑' : '';
+            } 
+            // ボタンが複数ある場合（寿司クイズや第一種銃猟など）
+            else if (buttons.length > 0) {
+                let highScoreText = '';
+                buttons.forEach(button => {
+                    const mode = button.dataset.mode;
+                    const storageKeyForMode = `${category}-${mode}`;
+                    const modeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
+                    const modeName = button.textContent; // "ベーシック" や "マニアック"
+                    highScoreText += `${modeName}: ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''} `;
+                });
+                const highScoreEl = card.querySelector('.quiz-card-highscore');
+                if (highScoreEl) highScoreEl.innerHTML = highScoreText;
+                // 複数のモードがある場合、カード全体のクリアマークは非表示にする
+                const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
+                if (clearMarkEl) clearMarkEl.textContent = '';
+            }
+        });
+    }
 
     // --- 画像プリロード関数 ---
     function preloadImages(urls, onProgress) {
@@ -154,6 +185,7 @@ window.onload = () => {
                 if (currentQuizCategoryKey === 'choujuu') {
                     startChoujuuQuiz();
                 } else {
+                    // currentQuizMode を渡して、正しいモードでリトライするようにする
                     startNormalQuiz(currentQuizCategoryKey, currentQuizMode);
                 }
             });
@@ -422,14 +454,17 @@ window.onload = () => {
         const totalQuestions = currentQuiz.length;
         const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
         const scores = getScoresFromStorage();
-        const currentCategoryScores = scores[currentQuizCategoryKey] || { highScore: 0, cleared: false };
-        if (percentage > currentCategoryScores.highScore) {
-            currentCategoryScores.highScore = percentage;
+        // モード別のストレージキーを生成 (例: "sushi-basic")
+        const storageKeyForMode = `${currentQuizCategoryKey}-${currentQuizMode}`;
+        
+        const currentModeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
+        if (percentage > currentModeScores.highScore) {
+            currentModeScores.highScore = percentage;
         }
         if (percentage === 100) {
-            currentCategoryScores.cleared = true;
+            currentModeScores.cleared = true;
         }
-        scores[currentQuizCategoryKey] = currentCategoryScores;
+        scores[storageKeyForMode] = currentModeScores;
         saveScoresToStorage(scores);
         resultScore.textContent = `正答率: ${percentage}% (${score}/${totalQuestions}問)`;
         if (percentage === 100) { resultMessage.textContent = '素晴らしい！全問正解です！'; }
@@ -443,7 +478,6 @@ window.onload = () => {
                 const li = document.createElement('li');
                 let additionalInfoHTML = '';
                 if (item.additionalInfo) {
-                    // ★★★ ここが、最後の、修正箇所 ★★★
                   additionalInfoHTML = `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, ' ')}</div>`;
                 }
                 li.innerHTML = ` <div class="question-text">${item.question}</div> <div class="correct-answer-text">正解: ${item.correctAnswer}</div> ${additionalInfoHTML} `;
