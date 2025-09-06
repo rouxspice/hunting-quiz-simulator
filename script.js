@@ -25,6 +25,7 @@ window.onload = () => {
     const wrongQuestionsList = document.getElementById('wrong-questions-list');
     const retryQuizBtn = document.getElementById('retry-quiz-btn');
     const backToTopFromResultBtn = document.getElementById('back-to-top-from-result-btn');
+    const trainingModeBtn = document.getElementById('training-mode-btn');
     const resetScoresBtn = document.getElementById('reset-scores-btn');
     const normalQuizImageContainer = document.getElementById('normal-quiz-image-container');
     const normalQuizImage = document.getElementById('normal-quiz-image');
@@ -218,6 +219,12 @@ window.onload = () => {
             backToTopFromResultBtn.addEventListener('click', goToTopPage);
         }
 
+        // ★★★ ここから追加 ★★★
+        if (trainingModeBtn) {
+            trainingModeBtn.addEventListener('click', startTrainingMode);
+        }
+        // ★★★ ここまで追加 ★★★
+
         if (resetScoresBtn) {
             resetScoresBtn.addEventListener('click', () => {
                 if (confirm('本当に、すべてのハイスコアをリセットしますか？この操作は、取り消せません。')) {
@@ -230,25 +237,43 @@ window.onload = () => {
 
         if (submitButton) {
             submitButton.addEventListener('click', () => {
-                currentQuestionIndex++;
-                if (currentQuestionIndex < currentQuiz.length) {
+                // ★★★ ここから変更 ★★★
+                if (currentQuizMode === 'training') {
+                    // 特訓モードの場合、ランダムに次の問題へ
+                    currentQuestionIndex = Math.floor(Math.random() * currentQuiz.length);
                     showNormalQuestion();
                 } else {
-                    showResult();
+                    // 通常モードの場合
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < currentQuiz.length) {
+                        showNormalQuestion();
+                    } else {
+                        showResult();
+                    }
                 }
+                // ★★★ ここまで変更 ★★★
             });
         }
 
         if (choujuuSubmitButton) {
             choujuuSubmitButton.addEventListener('click', () => {
-                currentQuestionIndex++;
-                if (currentQuestionIndex < currentQuiz.length) {
-                    showChoujuuQuestion();
-                } else {
-                    showResult();
-                }
-            });
-        }
+                // ★★★ ここから変更 ★★★
+                if (currentQuizMode === 'training') {
+                    // 特訓モードの場合、ランダムに次の問題へ
+                    currentQuestionIndex = Math.floor(Math.random() * currentQuiz.length);
+                showChoujuuQuestion();
+            } else {
+                    // 通常モードの場合
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < currentQuiz.length) {
+                        showChoujuuQuestion();
+                    } else {
+                        showResult();
+                    }
+                }       
+                // ★★★ ここまで変更 ★★★
+    });
+}
 
         if (choujuuStep1) {
             choujuuStep1.addEventListener('click', (e) => {
@@ -334,6 +359,41 @@ window.onload = () => {
             quizContainer.style.display = 'block';
             showNormalQuestion();
         });
+
+        // ★★★ ここから追加 ★★★
+        /**
+         * 間違えた問題だけで特訓モードを開始する
+         */
+        function startTrainingMode() {
+            // 現在のクイズタイプとモードを「特訓」に設定
+            currentQuizMode = 'training';
+            
+            // 間違えた問題のリストを現在のクイズセットとして設定
+            // 各問題オブジェクトをディープコピーして、元の配列に影響が出ないようにする
+            currentQuiz = JSON.parse(JSON.stringify(wrongQuestions));
+            
+            // 状態をリセット
+            currentQuestionIndex = 0;
+            score = 0;
+            wrongQuestions = []; // 特訓モードでの間違いは、ここでは記録しない
+
+            // クイズ画面を表示
+            resultContainer.style.display = 'none';
+            
+            // クイズの種類に応じて適切な画面を表示
+            if (currentQuizCategoryKey === 'choujuu') {
+                quizContainerChoujuu.style.display = 'block';
+                showChoujuuQuestion();
+            } else {
+                quizContainer.style.display = 'block';
+                showNormalQuestion();
+            }
+        }
+        // ★★★ ここまで追加 ★★★
+
+
+
+
     }
 
     // --- 鳥獣判別クイズ表示 ---
@@ -407,18 +467,23 @@ window.onload = () => {
 
     // --- 通常クイズ表示 ---
     function showNormalQuestion() {
-    // ★ここから変更・追加★
-    const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
-    const progressBarEl = document.getElementById('normal-quiz-progress-bar');
-    const progressTextEl = document.getElementById('normal-quiz-progress-text');
-
-    if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
-    if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
-    // ★ここまで変更・追加★
-
-    // 元の進捗表示テキストを削除（またはコメントアウト）
-    // normalQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
     
+    // ★ここから変更・追加★
+    if (currentQuizMode === 'training') {
+        const progressTextEl = document.getElementById('normal-quiz-progress-text');
+        if(progressTextEl) progressTextEl.textContent = '💪 特訓中！';
+        // 特訓モードではプログレスバーを非表示にするか、満タン表示にする
+        const progressBarEl = document.getElementById('normal-quiz-progress-bar');
+        if(progressBarEl) progressBarEl.style.width = '100%';
+    } else {
+        const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
+        const progressBarEl = document.getElementById('normal-quiz-progress-bar');
+        const progressTextEl = document.getElementById('normal-quiz-progress-text');
+        if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
+        if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
+    }
+    // ★★★ ここまで変更 ★★★
+
     resetNormalState();
         const question = currentQuiz[currentQuestionIndex];
         if (question.image) {
@@ -478,7 +543,13 @@ window.onload = () => {
             additionalInfoContainer.style.display = 'block';
         }
         setTimeout(() => {
-            submitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る";
+            // ★★★ ここから変更 ★★★
+            if (currentQuizMode === 'training') {
+                submitButton.innerText = "次の特訓へ";
+            } else {
+                submitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る";
+            }
+            // ★★★ ここまで変更 ★★★
             submitButton.style.display = 'block';
         }, 500);
     }
@@ -509,6 +580,7 @@ window.onload = () => {
         else { resultMessage.textContent = 'もう少し頑張りましょう！'; }
         if (wrongQuestions.length > 0) {
             resultDetailsSection.style.display = 'block';
+            trainingModeBtn.style.display = 'inline-block'; 
             wrongQuestionsList.innerHTML = '';
             wrongQuestions.forEach(item => {
                 const li = document.createElement('li');
@@ -521,6 +593,7 @@ window.onload = () => {
             });
         } else {
             resultDetailsSection.style.display = 'none';
+            trainingModeBtn.style.display = 'none';
         }
     }
         // ★★★ ここからキーボード操作の処理関数を追加 ★★★
