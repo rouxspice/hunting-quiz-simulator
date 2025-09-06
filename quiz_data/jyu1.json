@@ -836,5 +836,222 @@
         ],
         "additionalInfo": "キジやヤマドリには5～6号、カモ・ノウサギには3～4号、タシギには9号",
         "importance": "high"
+    },
+        {
+        "question": "12番スラッグ弾の最大有効射程は、およそ何メートルとされているか？",
+        "answers": [
+            { "text": "50m", "correct": false },
+            { "text": "100m", "correct": true },
+            { "text": "150m", "correct": false },
+            { "text": "200m", "correct": false }
+        ],
+        "additionalInfo": "スラッグ弾は単体の大きな弾丸であるため、散弾に比べて有効射程が長く、大物猟に適しています。最大到達距離は700mにも及びます。",
+        "importance": "high"        
+    },
+    {
+        "question": "クマ、イノシシ、シカなどの大型獣猟に適した散弾銃の弾丸は、次のうちどれか？",
+        "answers": [
+            { "text": "1号弾", "correct": false },
+            { "text": "5号弾", "correct": false },
+            { "text": "9号弾", "correct": false },
+            { "text": "スラッグ弾（12番）", "correct": true }
+        ],
+        "additionalInfo": "単体弾であるスラッグ弾は、大きな運動エネルギーを持ち、大型獣に対して十分な殺傷能力を発揮します。",
+        "importance": "high"
+    },
+    {
+        "question": "散弾の「BB」の最大有効射程と、最大到達距離の組み合わせとして正しいものはどれか？",
+        "answers": [
+            { "text": "有効射程50m、到達距離340m", "correct": true },
+            { "text": "有効射程45m、到達距離315m", "correct": false },
+            { "text": "有効射程40m、到達距離300m", "correct": false },
+            { "text": "有効射程50m、到達距離515m", "correct": false }
+        ],
+        "additionalInfo": "BB弾（直径4.5mm）は、中型獣猟などに用いられます。有効射程は50m、最大到達距離は約340mです。",
+        "importance": "high"
+    },
+    {
+        "question": "カモの沖撃ちや、中型獣猟に適した散弾の号数は、次のうちどれか？",
+        "answers": [
+            { "text": "5号", "correct": false },
+            { "text": "3号", "correct": false },
+            { "text": "1号", "correct": true },
+            { "text": "7号", "correct": false }
+        ],
+        "additionalInfo": "1号弾（直径4.0mm）やBB弾は、比較的遠距離のカモや、キツネなどの中型獣猟に適しています。",
+        "importance": "high"
+    },
+    {
+        "question": "散弾の「3号」弾の適用鳥獣として、最も適切なものはどれか？",
+        "answers": [
+            { "text": "スズメ", "correct": false },
+            { "text": "キジバト", "correct": false },
+            { "text": "カモ・ノウサギ", "correct": true },
+            { "text": "イノシシ", "correct": false }
+        ],
+        "additionalInfo": "3号弾（直径3.5mm）や4号弾は、カモやノウサギといった、比較的大きな鳥類や小型獣に適しています。",
+        "importance": "high"
+    },
+    {
+        "question": "キジ、ヤマドリ、カラス、テンなどの猟で、近射でない場合に使われる散弾の号数として最も一般的なものはどれか？",
+        "answers": [
+            { "text": "9号", "correct": false },
+            { "text": "7号", "correct": false },
+            { "text": "5号", "correct": true },
+            { "text": "3号", "correct": false }
+        ],
+        "additionalInfo": "5号弾（直径3.0mm）や6号弾は、キジやヤマドリなどの中型鳥獣に対して十分な威力を持ち、汎用性が高い号数です。",
+        "importance": "high"
+    },
+    {
+        "question": "散弾の「5号」弾の最大有効射程は、およそ何メートルか？",
+        "answers": [
+            { "text": "30m", "correct": false },
+            { "text": "40m", "correct": false },
+            { "text": "45m", "correct": true },
+            { "text": "50m", "correct": false }
+        ],
+        "additionalInfo": "5号や6号弾の最大有効射程は45mとされています。これ以上離れると、威力が減衰し、半矢（半死半生の状態）のリスクが高まります。",
+        "importance": "high"
+    },
+    {
+        "question": "コジュケイ、キジバト、ヤマシギなどの小型鳥類の猟に適した散弾の号数は、次のうちどれか？",
+        "answers": [
+            { "text": "1号", "correct": false },
+            { "text": "4号", "correct": false },
+            { "text": "7.5号", "correct": true },
+            { "text": "10号", "correct": false }
+        ],
+        "additionalInfo": "7号、7.5号、8号などの比較的小粒な散弾が、コジュケイやキジバトなどの小型鳥類に適しています。弾が小さい分、弾数が多く命中しやすいのが特徴です。",
+        "importance": "high"
+    },
+    {
+        "question": "散弾の「7.5号」弾の最大到達距離は、およそ何メートルか？",
+        "answers": [
+            { "text": "195m", "correct": false },
+            { "text": "210m", "correct": false },
+            { "text": "225m", "correct": false },
+            { "text": "235m", "correct": true }
+        ],
+        "additionalInfo": "7.5号弾の最大到達距離は約235mです。有効射程（40m）を大きく超えて飛翔するため、矢先の安全確認は極めて重要です。",
+        "importance": "high"
+    },
+    {
+        "question": "タシギやスズメ猟に使われる、非常に小粒な散弾の号数は、次のうちどれか？",
+        "answers": [
+            { "text": "7号", "correct": false },
+            { "text": "9号", "correct": true },
+            { "text": "5号", "correct": false },
+            { "text": "3号", "correct": false }
+        ],
+        "additionalInfo": "9号（直径2.0mm）や10号（直径1.75mm）は、散弾の中で最も小さい部類に入り、タシギやスズメなどの非常に小さい鳥の猟に用いられます。",
+        "importance": "high"
+    },
+    {
+        "question": "30-06スプリングフィールド弾を使用するライフルの最大到達距離は、どのくらいになる可能性があるか？",
+        "answers": [
+            { "text": "約1,500m", "correct": false },
+            { "text": "約2,200m", "correct": false },
+            { "text": "3,200～4,000m", "correct": true },
+            { "text": "約5,000m以上", "correct": false }
+        ],
+        "additionalInfo": "30-06ライフル弾は非常に強力で、最大で4,000m（4km）も飛翔する可能性があります。散弾とは比較にならないほど、矢先の安全確保が重要です。",
+        "importance": "high"
+    },
+    {
+        "question": "クマやイノシシ、シカなどの大型獣猟において、300mという長い最大有効射程を持つ弾丸の種類はどれか？",
+        "answers": [
+            { "text": "スラッグ弾", "correct": false },
+            { "text": "30カービン弾", "correct": false },
+            { "text": "308ウィンチェスター弾", "correct": true },
+            { "text": "空気銃弾", "correct": false }
+        ],
+        "additionalInfo": "308ウィンチェスターや30-06スプリングフィールドなどのライフル弾は、長距離での精度と威力に優れ、300mという遠距離での大型獣猟を可能にします。",
+        "importance": "high"
+    },
+    {
+        "question": "空気銃弾（4.5mm～5.5mm）の最大有効射程と最大到達距離の組み合わせとして、正しいものはどれか？",
+        "answers": [
+            { "text": "有効射程30m、到達距離310m", "correct": true },
+            { "text": "有効射程40m、到達距離210m", "correct": false },
+            { "text": "有効射程50m、到達距離290m", "correct": false },
+            { "text": "有効射程100m、到達距離700m", "correct": false }
+        ],
+        "additionalInfo": "空気銃は装薬銃に比べて威力は劣りますが、それでも最大到達距離は300mを超えます。有効射程は30m程度とされています。",
+        "importance": "high"
+    },
+    {
+        "question": "スズメ、キジバト、ヒヨドリ、カラス、キジ、カモなどを捕獲するのに、空気銃弾は使用できるか？",
+        "answers": [
+            { "text": "できる", "correct": true },
+            { "text": "できない", "correct": false }
+        ],
+        "additionalInfo": "空気銃は、これらの比較的小型の鳥類の捕獲に用いられます。ただし、十分な威力を持つ空気銃を使用し、有効射程内（30m）で狙う必要があります。",
+        "importance": "high"
+    },
+    {
+        "question": "散弾の号数が大きくなるほど、一粒の弾の直径はどうなるか？",
+        "answers": [
+            { "text": "大きくなる", "correct": false },
+            { "text": "小さくなる", "correct": true },
+            { "text": "変わらない", "correct": false }
+        ],
+        "additionalInfo": "散弾の号数は、数字が大きいほど弾の直径が小さくなります。例えば、1号（4.0mm）は9号（2.0mm）よりも大きな弾です。",
+        "importance": "high"
+    },
+    {
+        "question": "イノシシ・シカ猟において、散弾銃を使用する場合、スラッグ弾の他に選択肢となる大粒の散弾はどれか？",
+        "answers": [
+            { "text": "BB", "correct": false },
+            { "text": "1号", "correct": false },
+            { "text": "OOB（ダブルオーバック）", "correct": true },
+            { "text": "3号", "correct": false }
+        ],
+        "additionalInfo": "OOB（直径8.6mm）は、9粒または12粒の大粒の弾が発射される強力な装弾で、近距離でのイノシシ・シカ猟に用いられます。通称「九粒（きゅうつぶ）」とも呼ばれます。",
+        "importance": "high"
+    },
+    {
+        "question": "散弾の「00B」の最大到達距離は、およそ何メートルか？",
+        "answers": [
+            { "text": "340m", "correct": false },
+            { "text": "700m", "correct": false },
+            { "text": "315m", "correct": false },
+            { "text": "515m", "correct": true }
+        ],
+        "additionalInfo": "00Bは大粒で重いため、最大到達距離も長くなり、約515mに達します。使用には特に慎重な矢先の確認が必要です。",
+        "importance": "high"
+    },
+    {
+        "question": "シカ猟において、ライフル弾である「30カービン」の最大有効射程はどのくらいか？",
+        "answers": [
+            { "text": "50m", "correct": false },
+            { "text": "100m", "correct": true },
+            { "text": "200m", "correct": false },
+            { "text": "300m", "correct": false }
+        ],
+        "additionalInfo": "30カービン弾は、308ウィンチェスター弾などよりは威力が劣りますが、シカ猟において100m程度の有効射程を持つとされています。",
+        "importance": "high"
+    },
+    {
+        "question": "散弾の「6号」弾の最大到達距離は、およそ何メートルか？",
+        "answers": [
+            { "text": "240m", "correct": false },
+            { "text": "250m", "correct": true },
+            { "text": "265m", "correct": false },
+            { "text": "275m", "correct": false }
+        ],
+        "additionalInfo": "6号弾（直径2.75mm）の最大到達距離は約250mです。有効射程45mの約5.5倍も飛ぶことを常に意識する必要があります。",
+        "importance": "high"
+    },
+    {
+        "question": "カモ猟において、近射（比較的近い距離）で撃つ場合に適した散弾の号数は、5号の他にどれが挙げられるか？",
+        "answers": [
+            { "text": "1号", "correct": false },
+            { "text": "3号", "correct": false },
+            { "text": "7号", "correct": true },
+            { "text": "9号", "correct": false }
+        ],
+        "additionalInfo": "カモの近射では、5号や6号だけでなく、より弾数の多い7号なども有効です。獲物との距離に応じて適切な号数を選択する判断力が求められます。",
+        "importance": "high"
     }
 ]
