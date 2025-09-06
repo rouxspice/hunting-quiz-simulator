@@ -354,13 +354,7 @@ window.onload = () => {
         });
     }
 
-    function startNormalQuiz(categoryKey, mode = 'all') {
-        startQuiz(categoryKey, mode, () => {
-            quizContainer.style.display = 'block';
-            showNormalQuestion();
-        });
-
-        // ★★★ ここから追加 ★★★
+            // ★★★ ここから追加 ★★★
         /**
          * 間違えた問題だけで特訓モードを開始する
          */
@@ -390,6 +384,14 @@ window.onload = () => {
             }
         }
         // ★★★ ここまで追加 ★★★
+
+
+    function startNormalQuiz(categoryKey, mode = 'all') {
+        startQuiz(categoryKey, mode, () => {
+            quizContainer.style.display = 'block';
+            showNormalQuestion();
+        });
+
 
 
 
