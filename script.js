@@ -593,19 +593,24 @@ window.onload = () => {
         resultContainer.style.display = 'block';
         const totalQuestions = currentQuiz.length;
         const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
-        const scores = getScoresFromStorage();
-        // モード別のストレージキーを生成 (例: "sushi-basic")
-        const storageKeyForMode = `${currentQuizCategoryKey}-${currentQuizMode}`;
+
+        // ★★★ ここから追加 ★★★
+        // 特訓モードでない場合のみ、スコアを保存する
+        if (currentQuizMode !== 'training') {
+            const scores = getScoresFromStorage();
+            const storageKeyForMode = `${currentQuizCategoryKey}-${currentQuizMode}`;
+            
+            const currentModeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
+            if (percentage > currentModeScores.highScore) {
+                currentModeScores.highScore = percentage;
+            }
+            if (percentage === 100) {
+                currentModeScores.cleared = true;
+            }
+            scores[storageKeyForMode] = currentModeScores;
+            saveScoresToStorage(scores);
+        }
         
-        const currentModeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
-        if (percentage > currentModeScores.highScore) {
-            currentModeScores.highScore = percentage;
-        }
-        if (percentage === 100) {
-            currentModeScores.cleared = true;
-        }
-        scores[storageKeyForMode] = currentModeScores;
-        saveScoresToStorage(scores);
         resultScore.textContent = `正答率: ${percentage}% (${score}/${totalQuestions}問)`;
         if (percentage === 100) { resultMessage.textContent = '素晴らしい！全問正解です！'; }
         else if (percentage >= 80) { resultMessage.textContent = 'お見事！あと一歩です！'; }
