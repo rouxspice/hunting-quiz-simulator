@@ -116,18 +116,23 @@
                         <div class="quiz-card-header">
                             <div class="quiz-card-icon">🍣</div>
                             <h3>寿司クイズ</h3>
+                            <!-- 階級別のクリアマークはハイスコア表示に含めるため、ここは空にする -->
                             <div class="quiz-card-clear-mark"></div>
                         </div>
                         <p>日本の食文化である寿司に関する知識を問うクイズです。</p>
                         <div class="quiz-card-footer">
-                            <div class="quiz-card-highscore">ハイスコア: ---%</div>
+                            <!-- ハイスコア表示エリアは、JSで動的に書き換える -->
+                            <div class="quiz-card-highscore">
+                                <!-- JSでここにスコアが入る -->
+                            </div>
                             <div class="challenge-buttons-wrapper">
-                                <button class="challenge-btn" data-mode="basic">ベーシック</button>
+                                <button class="challenge-btn" data-mode="basic3">ベーシック３級</button>
+                                <button class="challenge-btn" data-mode="basic2">ベーシック２級</button>
+                                <button class="challenge-btn" data-mode="basic1">ベーシック１級</button>
                                 <button class="challenge-btn cram-mode-btn" data-mode="maniac">マニアック</button>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>            </div>
             </section>
             <section class="app-settings">
                 <h2>設定</h2>

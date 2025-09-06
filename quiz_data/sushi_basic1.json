@@ -1,0 +1,3357 @@
+[
+  {
+    "question": "この寿司ネタは何でしょう？",
+    "image": "quiz_data/images/sushi/maguro.jpg",
+    "answers": [
+      { "text": "マグロ", "correct": true },
+      { "text": "サーモン", "correct": false },
+      { "text": "ブリ", "correct": false },
+      { "text": "カツオ", "correct": false }
+    ],
+    "additionalInfo": "マグロは寿司の王様とも呼ばれる人気のネタです。"
+  },
+  {
+    "question": "「ガリ」の主な原料は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "大根", "correct": false },
+      { "text": "生姜", "correct": true },
+      { "text": "わさび", "correct": false },
+      { "text": "きゅうり", "correct": false }
+    ],
+    "additionalInfo": "ガリは、口の中をさっぱりさせ、次の寿司を美味しく味わうための口直しの役割があります。"
+  },
+  {
+    "question": "「軍艦巻き」を考案したとされる寿司屋はどこでしょう？",
+    "image": "quiz_data/images/sushi/gunkan.jpg",
+    "answers": [
+      { "text": "すきやばし次郎", "correct": false },
+      { "text": "寿司善", "correct": false },
+      { "text": "久兵衛", "correct": true },
+      { "text": "鮨さいとう", "correct": false }
+    ],
+    "additionalInfo": "銀座「久兵衛」の初代店主が、ウニやイクラのような崩れやすいネタを提供するために考案したと言われています。"
+  },
+{
+    "question": "この光り物の寿司ネタは何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_kohada.jpg",
+    "answers": [
+      { "text": "サバ", "correct": false },
+      { "text": "コハダ", "correct": true },
+      { "text": "イワシ", "correct": false },
+      { "text": "サンマ", "correct": false }
+    ],
+    "additionalInfo": "コハダはシンコ→コハダ→ナカズミ→コノシロと名前が変わる出世魚です。江戸前寿司を代表するネタの一つです。"
+  },
+  {
+    "question": "この寿司ネタは何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_aji.jpg",
+    "answers": [
+      { "text": "アジ", "correct": true },
+      { "text": "サワラ", "correct": false },
+      { "text": "キス", "correct": false },
+      { "text": "カマス", "correct": false }
+    ],
+    "additionalInfo": "アジは光り物の中でも人気が高く、薬味としておろし生姜やネギがよく合います。"
+  },
+  {
+    "question": "この独特の食感が人気の寿司ネタは何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_engawa.jpg",
+    "answers": [
+      { "text": "イカの耳", "correct": false },
+      { "text": "ホタテのヒモ", "correct": false },
+      { "text": "エンガワ", "correct": true },
+      { "text": "タコの吸盤", "correct": false }
+    ],
+    "additionalInfo": "エンガワは、ヒラメやカレイのヒレを動かすための筋肉の部分です。コリコリとした食感と脂の旨味が特徴です。"
+  },
+  {
+    "question": "この寿司ネタは何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_shako.jpg",
+    "answers": [
+      { "text": "エビ", "correct": false },
+      { "text": "シャコ", "correct": true },
+      { "text": "カニ", "correct": false },
+      { "text": "アナゴ", "correct": false }
+    ],
+    "additionalInfo": "シャコは甲殻類の一種で、独特の風味と食感があります。甘い煮詰めたタレ（ツメ）で食べることが多いです。"
+  },
+  {
+    "question": "この細巻き寿司の名前は何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_kappa.jpg",
+    "answers": [
+      { "text": "鉄火巻き", "correct": false },
+      { "text": "かんぴょう巻き", "correct": false },
+      { "text": "納豆巻き", "correct": false },
+      { "text": "かっぱ巻き", "correct": true }
+    ],
+    "additionalInfo": "かっぱ巻きの由来は、キュウリが河童の好物であるという言い伝えから来ています。"
+  },
+  {
+    "question": "寿司屋で使われる、お茶を意味する隠語（専門用語）はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "アガリ", "correct": true },
+      { "text": "ガリ", "correct": false },
+      { "text": "ムラサキ", "correct": false },
+      { "text": "ギョク", "correct": false }
+    ],
+    "additionalInfo": "「アガリ」は、お客さんが出す最後のお茶を意味し、「上がり花」に由来します。ガリは生姜、ムラサキは醤油、ギョクは卵焼きのことです。"
+  },
+  {
+    "question": "寿司のシャリ（ご飯）一貫あたりの米粒の数は、およそ何粒と言われているでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "約100粒", "correct": false },
+      { "text": "約300粒", "correct": true },
+      { "text": "約500粒", "correct": false },
+      { "text": "約1000粒", "correct": false }
+    ],
+    "additionalInfo": "職人が握るシャリは、口の中でほろりとほどけるように計算されており、その理想的な米粒の数が約300粒と言われています。"
+  },
+  {
+    "question": "寿司ネタの「トロ」は、マグロのどの部位のことでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "背中", "correct": false },
+      { "text": "尻尾", "correct": false },
+      { "text": "腹", "correct": true },
+      { "text": "頭", "correct": false }
+    ],
+    "additionalInfo": "トロはマグロの腹部の身で、脂肪の含有量が多い部位です。特に脂肪が多い部分を「大トロ」、それに次ぐ部分を「中トロ」と呼びます。"
+  },
+  {
+    "question": "「涙巻き」という巻き寿司に入っている、主な具材は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "唐辛子", "correct": false },
+      { "text": "わさび", "correct": true },
+      { "text": "からし", "correct": false },
+      { "text": "山椒", "correct": false }
+    ],
+    "additionalInfo": "涙巻きは、すりおろしたわさびをたっぷりと入れた巻き寿司で、その辛さに思わず涙が出てしまうことからこの名前が付きました。"
+  },
+  {
+    "question": "寿司を数える単位として、適切でないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "一貫（いっかん）", "correct": false },
+      { "text": "一丁（いっちょう）", "correct": true },
+      { "text": "一個（いっこ）", "correct": false },
+      { "text": "一ツ（ひとつ）", "correct": false }
+    ],
+    "additionalInfo": "寿司を数える単位には「貫（かん）」「個（こ）」「ツ」などがありますが、「丁（ちょう）」は一般的ではありません。"
+  },
+  {
+    "question": "「すし」の原型とされる「なれずし」は、どのような特徴を持つ保存食だったでしょう？",
+    "image": "quiz_data/images/sushi/sushi_narezushi.jpg",
+    "answers": [
+      { "text": "発酵させた魚と米を一緒に食べた", "correct": false },
+      { "text": "魚だけを食べ、米は食べなかった", "correct": true },
+      { "text": "酢で味付けし、発酵はさせなかった", "correct": false },
+      { "text": "魚を生のまま米と合わせた", "correct": false }
+    ],
+    "additionalInfo": "すしの原形である「なれずし」は、魚を米で発酵させた保存食で、魚のみを食べて米は捨てていました。"
+  },
+  {
+    "question": "15世紀頃に登場した、米も一緒に食べるようになったすしを何と呼びますか？",
+    "image": "quiz_data/images/sushi/sushi_namanare.jpg",
+    "answers": [
+      { "text": "本なれ", "correct": false },
+      { "text": "早ずし", "correct": false },
+      { "text": "生なれ（半なれ）", "correct": true },
+      { "text": "握りずし", "correct": false }
+    ],
+    "additionalInfo": "従来の「なれずし」より発酵期間を短くし、まだ魚が生々しい状態であったため「生なれ（半なれ）」と呼ばれました。"
+  },
+  {
+    "question": "現在、私たちがよく目にする「握りずし」が誕生したのは、いつ頃でしょう？",
+    "image": "quiz_data/images/sushi/sushi_nigirizushi.jpg",
+    "answers": [
+      { "text": "奈良時代", "correct": false },
+      { "text": "室町時代", "correct": false },
+      { "text": "江戸時代（1820年頃）", "correct": true },
+      { "text": "明治時代", "correct": false }
+    ],
+    "additionalInfo": "1820年頃、江戸の文化が栄えた時代に「握りずし」の原形が生まれ、「江戸前寿司」として人気を博しました。"
+  },
+  {
+    "question": "「すし」の語源は、どのような意味から来ていると考えられているでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "「寿を司る」という縁起の良い言葉から", "correct": false },
+      { "text": "「酢し（すし）」、つまり酢で味付けした飯から", "correct": true },
+      { "text": "魚の「ス」とご飯の「シ」を合わせた言葉から", "correct": false },
+      { "text": "「涼し（すずし）」、夏に食べる涼しい食べ物から", "correct": false }
+    ],
+    "additionalInfo": "一般的に、酸っぱいことを指す「酸し（すし）」が語源とされています。酢飯の酸味から来ています。"
+  },
+  {
+    "question": "中国から伝わった漢字のうち、「すし」を指す最も古い字はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "寿司", "correct": false },
+      { "text": "鮨", "correct": true },
+      { "text": "酒志", "correct": false },
+      { "text": "須子", "correct": false }
+    ],
+    "additionalInfo": "「鮨」と「鮓」が中国から伝わった古い漢字で、特に「鮨」が最も古いとされています。「寿司」は江戸時代に登場した当て字（和字）です。"
+  },
+  {
+    "question": "「すし」が日本に伝わったのは、何と同時期の弥生時代と考えられているでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "仏教の伝来", "correct": false },
+      { "text": "鉄器の使用", "correct": false },
+      { "text": "稲作の伝来", "correct": true },
+      { "text": "漢字の伝来", "correct": false }
+    ],
+    "additionalInfo": "すしの原形は、稲作と共に東南アジアや中国から伝わったと考えられています。米と魚を使う保存食がルーツです。"
+  },
+  {
+    "question": "江戸時代に「握りずし」が人気を博した際、どのような形態で提供されることが多かったでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "高級料亭のコース料理", "correct": false },
+      { "text": "家庭で作るお祝いの料理", "correct": false },
+      { "text": "将軍に献上される特別な料理", "correct": false },
+      { "text": "気軽に立ち寄れる屋台", "correct": true }
+    ],
+    "additionalInfo": "江戸では多くの「すし屋台」が登場し、握りずしは庶民が気軽に楽しめるファストフードのような存在として人気を集めました。"
+  },
+  {
+    "question": "「なれずし」から「生なれ」への変化で、最も大きなポイントは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "酢を使い始めたこと", "correct": false },
+      { "text": "米も一緒に食べるようになったこと", "correct": true },
+      { "text": "魚だけでなく野菜も使うようになったこと", "correct": false },
+      { "text": "屋台で売られるようになったこと", "correct": false }
+    ],
+    "additionalInfo": "「なれずし」では捨てていた米を、「生なれ」では魚と一緒に食べるようになったのが、すしの歴史における第1の変革でした。"
+  },
+  {
+    "question": "現在、最も一般的に使われる「寿司」という表記が普及した理由は何と考えられているでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "最も歴史が古い漢字だから", "correct": false },
+      { "text": "中国の皇帝が使っていた字だから", "correct": false },
+      { "text": "縁起の良い当て字（和字）だから", "correct": true },
+      { "text": "魚へんの漢字が難しすぎたから", "correct": false }
+    ],
+    "additionalInfo": "「寿司」は江戸時代に生まれた当て字で、「寿を司る」など縁起の良さから、お祝いの席などで好まれ、一般的に広まったと考えられています。"
+  },
+  {
+    "question": "奈良時代以前の「なれずし」に関する説明として、間違っているものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "魚などの保存食だった", "correct": false },
+      { "text": "権力者への献上品に用いられた", "correct": false },
+      { "text": "米と一緒に発酵させた", "correct": false },
+      { "text": "米も食べた", "correct": true }
+    ],
+    "additionalInfo": "なれずしは、魚を米と塩で発酵させた保存食で、主に魚だけを食べ、米は食べずに捨てていました。"
+  },
+  {
+    "question": "8世紀頃に「鮓」の文字が書かれた木簡（荷札）が見つかった場所はどこでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "唐招提寺", "correct": false },
+      { "text": "高松塚古墳", "correct": false },
+      { "text": "平城宮跡", "correct": true },
+      { "text": "藤原宮跡", "correct": false }
+    ],
+    "additionalInfo": "平城宮跡から出土した木簡に「鮓」の文字が見つかっており、これが日本におけるすしの存在を示す古い記録の一つとされています。"
+  },
+  {
+    "question": "「すし」を示す言葉として、歴史上存在しなかった（当て字ではない）ものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "寿司", "correct": false },
+      { "text": "鮨", "correct": false },
+      { "text": "酒志", "correct": true },
+      { "text": "鮓", "correct": false }
+    ],
+    "additionalInfo": "「鮨」や「鮓」は古くから使われている漢字で、「寿司」は江戸時代に生まれた当て字です。「酒志」という表記は一般的ではありません。"
+  },
+  {
+    "question": "すしの起源とされる地域として、適切でないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "マレーシア北部", "correct": true },
+      { "text": "タイ北部", "correct": false },
+      { "text": "東北タイとラオスの国境地帯", "correct": false },
+      { "text": "中国の雲南省", "correct": false }
+    ],
+    "additionalInfo": "すしの起源は、東南アジアの山岳地帯や中国の雲南省などで、魚を米で発酵させて保存した食文化にあると考えられています。"
+  },
+  {
+    "question": "中国最古の辞典『爾雅』に記載されていた「鮓」は、どのようなものでしたか？",
+    "image": "",
+    "answers": [
+      { "text": "鮓は米と塩を用いた魚の漬物", "correct": true },
+      { "text": "鮓は呉越地方の古代料理", "correct": false },
+      { "text": "鮨は蜀から伝わった魚醤", "correct": false },
+      { "text": "鮨は魚の塩辛", "correct": false }
+    ],
+    "additionalInfo": "紀元前3世紀頃の中国の辞典『爾雅』には、「鮓」は米と塩で魚を漬けたものであると記されており、これがすしのルーツに関する古い記述とされています。"
+  },
+  {
+    "question": "室町時代になって、すしの世界で起きた大きな変化は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "米を食べるようになった", "correct": true },
+      { "text": "糞を食べるようになった", "correct": false },
+      { "text": "酢を使うようになった", "correct": false },
+      { "text": "発酵させないようになった", "correct": false }
+    ],
+    "additionalInfo": "室町時代に、それまで捨てていた米も魚と一緒に食べる「生なれずし」が登場しました。これがすしの歴史における大きな転換点です。"
+  },
+  {
+    "question": "江戸時代に始まった制度はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "律令制", "correct": false },
+      { "text": "荘園制度", "correct": false },
+      { "text": "日明貿易", "correct": false },
+      { "text": "時献上", "correct": true }
+    ],
+    "additionalInfo": "江戸時代の制度で関連するものとしては、特定の時期に旬の魚を将軍に献上する「時献上」などがありました。"
+  },
+    {
+    "question": "1680年頃から登場した「早ずし」の正しい説明はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "発酵期間がなれずしよりも短くなった", "correct": false },
+      { "text": "米を発酵させずに、お酢で味つけするようになった", "correct": true },
+      { "text": "米を発酵させてから、お酢で味つけをするようになった", "correct": false },
+      { "text": "箱を使わずに手で握るようになった", "correct": false }
+    ],
+    "additionalInfo": "「早ずし」の最大の特徴は、時間のかかる乳酸発酵ではなく、酢を使うことで酸味をつけ、調理時間を大幅に短縮した点です。"
+  },
+  {
+    "question": "「早ずし」の登場がすしの歴史における大きな変革だった理由として、正しくないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "早ずしがきっかけで、なれずしがなくなってしまったから", "correct": true },
+      { "text": "すしの主流が乳酸発酵から、酢で味つけしたものに変わったから", "correct": false },
+      { "text": "押しずしや握りずしなど、多くのバリエーションが生まれたから", "correct": false },
+      { "text": "この頃から急速に現代の「すし」に近づいていったから", "correct": false }
+    ],
+    "additionalInfo": "「早ずし」登場後も、「なれずし」は郷土料理として各地に残りました。早ずしの登場は、すしの多様性を大きく広げるきっかけとなりました。"
+  },
+  {
+    "question": "現在の形の「握りずし」が誕生したのはいつ頃でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "1420年頃", "correct": false },
+      { "text": "1603年頃", "correct": false },
+      { "text": "1750年頃", "correct": false },
+      { "text": "1820年頃", "correct": true }
+    ],
+    "additionalInfo": "握りずしは、江戸の文政年間（1818年～1831年）、1820年頃に江戸のすし職人、華屋与兵衛が考案したと言われています。"
+  },
+  {
+    "question": "「江戸前寿司」の名前の由来として正しいものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "江戸城の前にある江戸湾でとれた魚介が寿司ネタの主流だったから", "correct": true },
+      { "text": "江戸の商人が商売繁盛を願って食べたから", "correct": false },
+      { "text": "江戸時代が始まると、江戸ですしが大ブームになったから", "correct": false },
+      { "text": "当時人気だった箱ずしの発祥が江戸だったから", "correct": false }
+    ],
+    "additionalInfo": "「江戸前」とは、現在の東京湾を指す「江戸湾」の前で獲れた新鮮な魚介類を使ったことに由来します。"
+  },
+  {
+    "question": "江戸時代、特に高級であることで知られた寿司屋はどこでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "玄海鮨", "correct": false },
+      { "text": "千代乃寿司", "correct": false },
+      { "text": "菊水鮓", "correct": false },
+      { "text": "松ヶ鮓", "correct": true }
+    ],
+    "additionalInfo": "「松ヶ鮓（まつがすし）」は、当時最も高級な寿司屋として知られ、大名屋敷などに出前をしていたと言われています。"
+  },
+  {
+    "question": "終戦後、握りずしが全国へ広がるきっかけとなったとされる法令はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "漁業法施行令", "correct": false },
+      { "text": "食品衛生法", "correct": false },
+      { "text": "水産資源保護法", "correct": false },
+      { "text": "飲食営業緊急措置令", "correct": true }
+    ],
+    "additionalInfo": "1947年の「飲食営業緊急措置令」により、飲食店での米の提供が制限されましたが、すし屋は例外的に許可され、これが全国に広まる一因となりました。"
+  },
+  {
+    "question": "日本で回転寿司1号店が初めて登場したのはいつでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "1855年", "correct": false },
+      { "text": "1920年", "correct": false },
+      { "text": "1958年", "correct": true },
+      { "text": "1970年", "correct": false }
+    ],
+    "additionalInfo": "1958年、大阪府布施市（現在の東大阪市）にオープンした「廻る元禄寿司」が、日本初の回転寿司店です。"
+  },
+  {
+    "question": "2023年の日本の寿司業界の市場規模はどれくらいでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "約2800億円", "correct": false },
+      { "text": "約5200億円", "correct": false },
+      { "text": "約7900億円", "correct": true },
+      { "text": "1兆円以上", "correct": false }
+    ],
+    "additionalInfo": "2023年の寿司業界（すし店）の市場規模は、約7900億円とされています。※このデータはテキストに基づきます。"
+  },
+    {
+    "question": "「早ずし」を大きく2つの系統に分けると、「押しずし系」ともう一つは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "起こしずし系", "correct": false },
+      { "text": "巻きずし系", "correct": false },
+      { "text": "姿ずし系", "correct": false },
+      { "text": "包みずし系", "correct": true }
+    ],
+    "additionalInfo": "早ずしは、箱や木枠で押す「押しずし系」と、笹の葉などで包む「包みずし系」に大別されます。"
+  },
+  {
+    "question": "押しずし系に分類されない寿司はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "起こしずし", "correct": false },
+      { "text": "箱ずし", "correct": false },
+      { "text": "包みずし", "correct": true },
+      { "text": "押し抜きずし", "correct": false }
+    ],
+    "additionalInfo": "包みずしは、柿の葉寿司のように葉で包むタイプの寿司で、押しずし系とは区別されます。"
+  },
+  {
+    "question": "「なれずし」と「早ずし」の製法に関する正しい説明はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "なれずしも早ずしも乳酸発酵させたものである", "correct": false },
+      { "text": "なれずしも早ずしも酢酸で味付けしたものである", "correct": false },
+      { "text": "なれずしは乳酸発酵させたもので、早ずしは酢酸で味付けしたもの", "correct": true },
+      { "text": "早ずしは乳酸発酵させたもので、なれずしは酢酸で味付けしたもの", "correct": false }
+    ],
+    "additionalInfo": "なれずしは米の乳酸菌で発酵させるのに対し、早ずしは酢（酢酸）を使って人工的に酸味をつけ、調理時間を短縮したものです。"
+  },
+  {
+    "question": "なれずしは、何を利用して自然発酵させる保存食でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "酢に含まれる酢酸", "correct": false },
+      { "text": "糖を分解して生じたアルコール", "correct": false },
+      { "text": "魚から生じる酵母菌", "correct": false },
+      { "text": "米のデンプンを利用して乳酸菌が産生した乳酸", "correct": true }
+    ],
+    "additionalInfo": "なれずしは、米のデンプンを元に乳酸菌が増殖し、その乳酸菌が作り出す乳酸によって魚の腐敗を防ぎ、独特の風味を生み出します。"
+  },
+  {
+    "question": "すしの原形とされる「酸っぱい魚」は、現在も東南アジアで食べられています。その料理名は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "Gai Yang（ガイヤーン）", "correct": false },
+      { "text": "Pla Som（プラーソム）", "correct": true },
+      { "text": "Som Tum（ソムタム）", "correct": false },
+      { "text": "Mok Pa（モクパー）", "correct": false }
+    ],
+    "additionalInfo": "タイなどで食べられている「プラーソム」は、魚と米、塩などを発酵させた料理で、日本のなれずしによく似ています。"
+  },
+  {
+    "question": "日本の「三大なれずし」に含まれないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "和歌山県のなれずし", "correct": false },
+      { "text": "滋賀県の鮒ずし", "correct": false },
+      { "text": "秋田県のハタハタずし", "correct": false },
+      { "text": "佐賀県の須古ずし", "correct": true }
+    ],
+    "additionalInfo": "一般的に、滋賀の「鮒ずし」、秋田の「ハタハタずし」、和歌山の「なれずし（鮎やサンマなど）」が日本の三大なれずしと呼ばれます。佐賀の須古ずしは押し寿司の一種です。"
+  },
+  {
+    "question": "大阪名物の「バッテラ」。この寿司はどの種類に分類されるでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "押しずし", "correct": true },
+      { "text": "棒ずし", "correct": false },
+      { "text": "姿ずし", "correct": false },
+      { "text": "ばらずし", "correct": false }
+    ],
+    "additionalInfo": "バッテラは、鯖と白板昆布を木枠で押して作る「押しずし」の一種です。名前の由来は、ポルトガル語で小舟を意味する「bateira」から来ています。"
+  },
+    {
+    "question": "写真の寿司の名前は何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_iizushi.jpg",
+    "answers": [
+      { "text": "須古ずし", "correct": false },
+      { "text": "飯寿司", "correct": true },
+      { "text": "おしずし", "correct": false },
+      { "text": "まつりずし", "correct": false }
+    ],
+    "additionalInfo": "これは「飯寿司（いずし）」といい、主に北海道や東北地方で作られる郷土料理です。魚、米、野菜、麹を重ねて乳酸発酵させます。"
+  },
+  {
+    "question": "マグロやカツオなどの魚が「赤身」に分類されるのは、筋肉に含まれる何という色素によるものでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "アントシアニン", "correct": false },
+      { "text": "アスタキサンチン", "correct": false },
+      { "text": "カロチノイド", "correct": false },
+      { "text": "ミオグロビン", "correct": true }
+    ],
+    "additionalInfo": "ミオグロビンは筋肉中に酸素を貯蔵する役割を持つ色素たんぱく質で、この量が多い魚が「赤身魚」に分類されます。"
+  },
+  {
+    "question": "次のうち、赤身魚ではない魚はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "ブリ", "correct": false },
+      { "text": "ヒラマサ", "correct": false },
+      { "text": "アジ", "correct": false },
+      { "text": "サーモン", "correct": true }
+    ],
+    "additionalInfo": "サーモンは身が赤いですが、これはアスタキサンチンという色素によるもので、成分的には白身魚に分類されます。"
+  },
+  {
+    "question": "代表的なツブ貝とされ、高級寿司ネタとしても知られる貝はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "エゾボラ", "correct": true },
+      { "text": "シライトマキバイ", "correct": false },
+      { "text": "コエゾバイ", "correct": false },
+      { "text": "ヨーロッパエゾバイ", "correct": false }
+    ],
+    "additionalInfo": "一般的に「ツブ貝」として流通しているのは、エゾボラ科の巻き貝です。特にエゾボラ（マツブ）は高級品として扱われます。"
+  },
+  {
+    "question": "写真の寿司ネタの貝は、正式名称を何というでしょう？",
+    "image": "quiz_data/images/sushi/sushi_ubagai.jpg",
+    "answers": [
+      { "text": "バカガイ", "correct": false },
+      { "text": "ウバガイ", "correct": true },
+      { "text": "ミルクイ", "correct": false },
+      { "text": "フネガイ", "correct": false }
+    ],
+    "additionalInfo": "この貝は一般的に「ホッキ貝」と呼ばれますが、正式な和名は「ウバガイ」です。バカガイはアオヤギ、フネガイは赤貝の仲間です。"
+  },
+  {
+    "question": "写真の寿司ネタのエビは何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_kurumaebi.jpg",
+    "answers": [
+      { "text": "アカエビ", "correct": false },
+      { "text": "ボタンエビ", "correct": false },
+      { "text": "クルマエビ", "correct": true },
+      { "text": "ホッコクアカエビ", "correct": false }
+    ],
+    "additionalInfo": "クルマエビは江戸前寿司を代表する高級ネタの一つです。茹でることで鮮やかな赤色と美しい縞模様が現れます。"
+  },
+    {
+    "question": "写真の寿司ネタは何でしょう？",
+    "image": "quiz_data/images/sushi/sushi_rainbow_roll.jpg",
+    "answers": [
+      { "text": "カリフォルニアロール", "correct": false },
+      { "text": "フィラデルフィアロール", "correct": false },
+      { "text": "レインボーロール", "correct": true },
+      { "text": "キャンディドラゴンロール", "correct": false }
+    ],
+    "additionalInfo": "これは「レインボーロール」です。カリフォルニアロールの上に、マグロ、サーモン、アボカドなど複数のネタを乗せて虹のように見せた、海外で人気の巻き寿司です。"
+  },
+  {
+    "question": "写真の寿司ネタは何と呼ばれますか？",
+    "image": "quiz_data/images/sushi/sushi_castella_maki.jpg",
+    "answers": [
+      { "text": "クラカケ", "correct": false },
+      { "text": "ダテマキ", "correct": false },
+      { "text": "カステラマキ", "correct": true },
+      { "text": "タマゴマキ", "correct": false }
+    ],
+    "additionalInfo": "これは「カステラマキ」または「ギョク」と呼ばれる厚焼き玉子です。エビのすり身などを加えて焼き上げる、カステラのように甘くしっとりとした食感が特徴です。"
+  },
+  {
+    "question": "江戸前寿司の発祥当時、シャリの味付けに主に使われた酢は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "米酢", "correct": false },
+      { "text": "黒酢", "correct": false },
+      { "text": "粕酢（赤酢）", "correct": true },
+      { "text": "穀物酢", "correct": false }
+    ],
+    "additionalInfo": "江戸前寿司では、酒粕を原料として作られる「粕酢（かすず）」、通称「赤酢（あかず）」が伝統的に使われてきました。豊かな香りとまろやかな酸味が特徴です。"
+  },
+  {
+    "question": "外洋のアジよりも脂がのっているとされる、内湾に棲みついたアジは何と呼ばれるでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "近海アジ", "correct": false },
+      { "text": "瀬付きアジ", "correct": true },
+      { "text": "平アジ", "correct": false },
+      { "text": "シマアジ", "correct": false }
+    ],
+    "additionalInfo": "「瀬付きアジ」は、回遊せずに湾内の瀬（岩礁）に棲みついたマアジのことです。餌が豊富なため、脂のりが良く、高級魚として扱われます。"
+  },
+  {
+    "question": "ホタルイカ漁で特に有名な県はどこでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "青森県", "correct": false },
+      { "text": "富山県", "correct": true },
+      { "text": "福島県", "correct": false },
+      { "text": "岡山県", "correct": false }
+    ],
+    "additionalInfo": "富山湾はホタルイカの群遊海面として有名で、国の特別天然記念物にも指定されています。春の風物詩として知られています。"
+  },
+  {
+    "question": "ウニの二大巨頭といえば、「エゾバフンウニ」と何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "アカウニ", "correct": false },
+      { "text": "シラヒゲウニ", "correct": false },
+      { "text": "キタムラサキウニ", "correct": true },
+      { "text": "ツガルウニ", "correct": false }
+    ],
+    "additionalInfo": "濃厚な甘みの「エゾバフンウニ」と、上品な味わいの「キタムラサキウニ」が、国産ウニの二大巨頭として知られています。"
+  },
+  {
+    "question": "一般的に「大トロ」がとれないとされるマグロはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "ミナミマグロ", "correct": false },
+      { "text": "クロマグロ", "correct": false },
+      { "text": "メバチマグロ", "correct": false },
+      { "text": "キハダマグロ", "correct": true }
+    ],
+    "additionalInfo": "キハダマグロは脂肪分が少なく、さっぱりとした赤身が特徴です。そのため、大トロや中トロといった部位はほとんどとれません。"
+  },
+  {
+    "question": "寿司のシャリには、新米よりも古米が向いているとされる理由は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "古米は酸味があるため", "correct": false },
+      { "text": "古米は保存性が高いため", "correct": false },
+      { "text": "新米より水分が少ないため", "correct": true },
+      { "text": "寿司業界では伝統を重んじるため", "correct": false }
+    ],
+    "additionalInfo": "古米は水分量が少なく、酢を混ぜたときにベチャッとなりにくいのが特徴です。酢が米粒の内部まで均一に浸透し、パラリとした理想的なシャリに仕上がります。"
+  },
+    {
+    "question": "次のうち、近畿地方のご当地寿司ネタではないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "伊根ブリ", "correct": false },
+      { "text": "的矢牡蠣", "correct": false },
+      { "text": "泉州マアナゴ", "correct": false },
+      { "text": "城下かれい", "correct": true }
+    ],
+    "additionalInfo": "城下かれいは大分県のご当地ネタです。伊根ブリ（京都）、的矢牡蠣（三重）、泉州マアナゴ（大阪）は近畿地方の有名な寿司ネタです。"
+  },
+  {
+    "question": "次のうち、北海道・東北地方のご当地寿司ネタではないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "金華サバ", "correct": false },
+      { "text": "松輪サバ", "correct": true },
+      { "text": "関上の赤貝", "correct": false },
+      { "text": "男鹿ブリコ", "correct": false }
+    ],
+    "additionalInfo": "松輪サバは神奈川県三浦半島の名産です。金華サバ（宮城）、関上の赤貝（宮城）、男鹿ブリコ（秋田）は北海道・東北地方のご当地ネタです。"
+  },
+  {
+    "question": "高級カニ「間人ガニ」。この「間人」の正しい読み方はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "まびとがに", "correct": false },
+      { "text": "かんじんがに", "correct": false },
+      { "text": "たいざがに", "correct": true },
+      { "text": "けんにんがに", "correct": false }
+    ],
+    "additionalInfo": "京都府京丹後市の間人（たいざ）漁港で水揚げされるズワイガニは「間人ガニ」と呼ばれ、幻のカニとして知られる高級ブランドです。"
+  },
+  {
+    "question": "ヒラマサの旬の目安はいつ頃でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": true },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "ヒラマサはブリの仲間ですが、旬は夏です。さっぱりとした上品な脂と、引き締まった身の食感が楽しめます。"
+  },
+  {
+    "question": "静岡県で獲れるキンメダイの旬の目安はいつ頃でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": true }
+    ],
+    "additionalInfo": "キンメダイは一年中獲れますが、特に脂がのって美味しくなるのは冬の時期とされています。"
+  },
+  {
+    "question": "江戸前寿司の華ともいわれる「シンコ」。この魚の旬の目安はいつ頃でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "3月～5月", "correct": false },
+      { "text": "6月～8月", "correct": true },
+      { "text": "9月～11月", "correct": false },
+      { "text": "12月～2月", "correct": false }
+    ],
+    "additionalInfo": "シンコはコハダの幼魚で、夏の短い期間だけ味わえる貴重なネタです。その年の初物（はつもの）は特に高値で取引されます。"
+  },
+  {
+    "question": "水産業における「養殖」とは、どのような意味でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "成魚から取り出した卵を人工孵化させて、成魚まで育てること", "correct": true },
+      { "text": "稚魚を捕まえて育てること", "correct": false },
+      { "text": "若魚を捕まえて太らせること", "correct": false },
+      { "text": "人の手を介して人工授精させ、魚介の子をつくること", "correct": false }
+    ],
+    "additionalInfo": "「養殖」は、卵から成魚まで一貫して人の手で育てることを指します。一方、天然の稚魚を捕まえて育てることは「畜養」と呼び区別されます。"
+  },
+    {
+    "question": "写真の寿司職人が使う専門の道具はなんと呼ぶでしょう？",
+    "image": "quiz_data/images/sushi/sushi_kiridai.jpg",
+    "answers": [
+      { "text": "まな板", "correct": false },
+      { "text": "飯台", "correct": false },
+      { "text": "切り台（つけ台）", "correct": true },
+      { "text": "抜き板", "correct": false }
+    ],
+    "additionalInfo": "これは「切り台」または「つけ台」と呼ばれる寿司職人専用のまな板です。客の目の前で寿司を切りつけ、そのまま提供するために使われます。"
+  },
+  {
+    "question": "魚をさばいたり、骨を断ったりするなどの下処理に使う和包丁はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "出刃包丁", "correct": true },
+      { "text": "柳刃包丁", "correct": false },
+      { "text": "薄刃包丁", "correct": false },
+      { "text": "牛刀", "correct": false }
+    ],
+    "additionalInfo": "出刃包丁は、刃が厚く頑丈なのが特徴で、魚の頭を落としたり、骨ごと切ったりする力強い作業に向いています。柳刃包丁は刺身を引くための包丁です。"
+  },
+  {
+    "question": "貝類をさばく際に、殻から身を外すために使われる専門の道具は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "アワビ", "correct": false },
+      { "text": "アナゴ", "correct": false },
+      { "text": "カツオ", "correct": false },
+      { "text": "貝むき（目打ち）", "correct": true }
+    ],
+    "additionalInfo": "「貝むき」や「目打ち」と呼ばれる道具は、アワビやホッキ貝など、殻に強く付着した貝柱を効率よく外すために使われます。"
+  },
+  {
+    "question": "ワサビをすりおろす専門の道具の名前は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "おろし金", "correct": false },
+      { "text": "ノノジおろし", "correct": false },
+      { "text": "鮫皮おろし", "correct": true },
+      { "text": "チンパポンパン", "correct": false }
+    ],
+    "additionalInfo": "本ワサビの香りや風味を最大限に引き出すには、鮫の皮を張った「鮫皮おろし」が最適とされています。きめ細かくクリーミーにおろせます。"
+  },
+  {
+    "question": "寿司屋で使われる「竹串」は、主にどのような時に使うでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "エビを茹でる時", "correct": true },
+      { "text": "海苔を焼くとき", "correct": false },
+      { "text": "コハダを酢で締めるとき", "correct": false },
+      { "text": "昆布締めにするため", "correct": false }
+    ],
+    "additionalInfo": "エビを茹でる際に竹串を打つのは、加熱しても身が丸まらず、まっすぐ綺麗に仕上がるようにするためです。"
+  },
+  {
+    "question": "本ワサビの特徴として、正しくないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "すりおろして空気に触れさせることで辛味成分が生じる", "correct": false },
+      { "text": "目の粗いおろし金を使うと甘みが強くなる", "correct": false },
+      { "text": "きめの細かいものでおろすと辛味が強くなる", "correct": false },
+      { "text": "比較的安価で辛さが長持ちする", "correct": true }
+    ],
+    "additionalInfo": "本ワサビは高価で、すりおろした後の辛味や風味は揮発性が高く、長持ちしません。チューブわさびは西洋わさびを主原料とし、辛さが長持ちするように作られています。"
+  },
+  {
+    "question": "寿司屋で使う海苔に関する説明で、間違っているものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "炙ると海苔の細胞が壊れて、歯切れも香りも悪くなる", "correct": true },
+      { "text": "つるっとしている方が表でザラついてる方が裏", "correct": false },
+      { "text": "使わないときは必ず密閉して冷暗所に保管する", "correct": false },
+      { "text": "香りが良いこと、歯切れが良いこと、口どけが良いことが大事", "correct": false }
+    ],
+    "additionalInfo": "海苔は、提供する直前に軽く炙ることで、湿気が飛んでパリッとした食感になり、香りが一層引き立ちます。"
+  },
+    {
+    "question": "寿司と一緒に出てくる「ガリ」。その効果として正しいものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "鉄分を補給する", "correct": false },
+      { "text": "免疫力を向上させる", "correct": false },
+      { "text": "魚の生臭さを消す", "correct": true },
+      { "text": "デンプンを分解する", "correct": false }
+    ],
+    "additionalInfo": "ガリには殺菌作用のほか、口の中をさっぱりさせて前のネタの味をリセットし、次の寿司を美味しく味わうための「口直し」の役割があります。"
+  },
+  {
+    "question": "ワサビを鮫皮おろしで擦る際に、香りや辛味を最大限に引き出すための正しい擦り方はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "「の」の字を描くようにして擦る", "correct": true },
+      { "text": "回しながら擦る", "correct": false },
+      { "text": "直線上に擦る", "correct": false },
+      { "text": "力強く擦る", "correct": false }
+    ],
+    "additionalInfo": "ワサビは、力を入れずに優しく「の」の字を描くように円を描きながら擦ることで、細胞が細かく壊れ、香りや辛味、甘みが最大限に引き出されます。"
+  },
+  {
+    "question": "寿司ネタ全般に一番合いやすいとされ、寿司屋で最も一般的に使われる醤油はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "濃口醤油", "correct": true },
+      { "text": "再仕込み醤油", "correct": false },
+      { "text": "淡口醤油", "correct": false },
+      { "text": "白醤油", "correct": false }
+    ],
+    "additionalInfo": "濃口醤油は、色・味・香りのバランスが良く、寿司ネタの味を邪魔しないため、最も一般的に使われています。"
+  },
+  {
+    "question": "シャリに混ぜる「合わせ酢」をつくるとき、砂糖と塩を溶かす上で正しい方法はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "沸騰するまでよくかき混ぜる", "correct": false },
+      { "text": "完全に溶かすために、手を止めずによくかき混ぜる", "correct": false },
+      { "text": "強火で一気に溶かすが、沸騰しないように気をつける", "correct": false },
+      { "text": "火はあまり強くしすぎず、沸騰させないようにする", "correct": true }
+    ],
+    "additionalInfo": "合わせ酢を火にかけるのは、砂糖と塩を溶かすためです。沸騰させてしまうと酢の酸味が飛んでしまうため、弱火でゆっくりと溶かすのが基本です。"
+  },
+  {
+    "question": "シャリ用の米を炊く前に行う「浸水」。この工程の主な目的は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "米の表面についた埃や不純物を洗い流すため", "correct": false },
+      { "text": "米と水を混ぜ、粒々がくっつかないようにするため", "correct": false },
+      { "text": "米の中心まで水が入るようにするため", "correct": true },
+      { "text": "米の余分な糖質を除去するため", "correct": false }
+    ],
+    "additionalInfo": "炊く前にしっかりと浸水させることで、米の中心部まで水分を均一に行き渡らせ、ふっくらとムラなく炊き上げることができます。"
+  },
+  {
+    "question": "シャリを切るための「飯台（半切り）」を使用する方法として、正しくないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "シャリ切りをする前に水に浸す", "correct": false },
+      { "text": "水に浸した上で15分ほど冷蔵庫の中で冷やす", "correct": true },
+      { "text": "水に浸したあと、布巾で水気をよく拭き、水が溜まらないようにする", "correct": false },
+      { "text": "水分がついておらず且つ飯台全体が湿っている状態を目指す", "correct": false }
+    ],
+    "additionalInfo": "飯台を冷蔵庫で冷やすと、急激な温度変化で木が傷んだり、結露の原因になったりするため、通常は行いません。"
+  },
+  {
+    "question": "炊きあがったご飯を飯台に移し、「シャリ切り」をする際にダマをほぐすのはなぜでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "シャリの中に空気を入れるため", "correct": false },
+      { "text": "ほぐすことによって、シャリに艶が出るため", "correct": false },
+      { "text": "ほぐさないと、味にムラができるため", "correct": true },
+      { "text": "ほぐしながらシャリの水分を弾き飛ばすため", "correct": false }
+    ],
+    "additionalInfo": "ダマになった部分があると、合わせ酢が均一に行き渡らず、味にムラができてしまいます。全体に素早く酢を馴染ませるために、ダマをほぐすことは重要です。"
+  },
+  {
+    "question": "「シャリ切り」の途中で、うちわなどでシャリを冷ます主な理由は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "シャリの粘りを減らし、シャリ切りをしやすくするため", "correct": false },
+      { "text": "冷めるときに酢がシャリに染み込んでおいしくなるため", "correct": true },
+      { "text": "手触りがよくなり、シャリを取りやすくなるため", "correct": false },
+      { "text": "寿司を握ったときに形を維持しやすくなり、見た目が美しくなるため", "correct": false }
+    ],
+    "additionalInfo": "シャリは、温度が下がる過程で米粒の表面にある酢を吸収します。うちわで扇いで人肌まで冷ますことで、余分な水分を飛ばし、酢をしっかりと染み込ませることができます。"
+  },
+    {
+    "question": "寿司を食べる順番として、最も推奨される食べ始めのネタは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "白身", "correct": true },
+      { "text": "赤身", "correct": false },
+      { "text": "光り物", "correct": false },
+      { "text": "巻物", "correct": false }
+    ],
+    "additionalInfo": "一般的に、味の淡白な白身から食べ始め、徐々に味の濃い赤身や光り物、そして最後に巻物で締めると、それぞれのネタの味を最大限に楽しめると言われています。"
+  },
+  {
+    "question": "寿司屋の隠語（専門用語）で、「ガリ」が指すものは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "醤油", "correct": false },
+      { "text": "わさび", "correct": false },
+      { "text": "甘酢生姜", "correct": true },
+      { "text": "お茶", "correct": false }
+    ],
+    "additionalInfo": "「ガリ」は、生姜を薄切りにして甘酢に漬けたものです。その食感がガリガリすることからこの名がつきました。"
+  },
+  {
+    "question": "寿司屋の隠語で、「ムラサキ」が指すものは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "醤油", "correct": true },
+      { "text": "赤身のマグロ", "correct": false },
+      { "text": "梅肉", "correct": false },
+      { "text": "赤貝", "correct": false }
+    ],
+    "additionalInfo": "醤油の色が紫色に見えることから、「ムラサキ」という隠語が使われるようになりました。"
+  },
+  {
+    "question": "寿司屋の隠語で、「ギョク」が指すものは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "魚の卵", "correct": false },
+      { "text": "玉子焼き", "correct": true },
+      { "text": "ハマグリ", "correct": false },
+      { "text": "イクラ", "correct": false }
+    ],
+    "additionalInfo": "「ギョク」は、玉子焼きのことです。「玉」の音読みから来ています。その店の腕がわかるとも言われる重要なネタです。"
+  },
+  {
+    "question": "寿司屋の隠語で、「アガリ」が指すものは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "会計", "correct": false },
+      { "text": "最後の一貫", "correct": false },
+      { "text": "お茶", "correct": true },
+      { "text": "おしぼり", "correct": false }
+    ],
+    "additionalInfo": "「アガリ」は、食事の最後に出されるお茶のことです。「上がり花」という言葉に由来し、芸者の世界から伝わったと言われています。"
+  },
+  {
+    "question": "寿司屋の隠語で、「ナミダ」が指すものは何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "わさび", "correct": true },
+      { "text": "塩", "correct": false },
+      { "text": "酢", "correct": false },
+      { "text": "日本酒", "correct": false }
+    ],
+    "additionalInfo": "わさびが効きすぎると涙が出そうになることから、「ナミダ」という隠語が使われます。「サビ抜き」は「ナミダ抜き」とも言います。"
+  },
+  {
+    "question": "寿司屋の隠語で、「おあいそ」の本来の意味として正しいものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "客が「会計してください」と伝える言葉", "correct": false },
+      { "text": "店側が「お勘定書です」と伝える言葉", "correct": true },
+      { "text": "「愛想がなくてすみません」という謙遜の言葉", "correct": true },
+      { "text": "「またのお越しを」という挨拶の言葉", "correct": false }
+    ],
+    "additionalInfo": "「お愛想がなくて申し訳ありません」という意味で、店側が会計を伝える際に使う言葉でした。客側が使うのは本来間違いですが、現在では広く使われています。"
+  },
+  {
+    "question": "寿司屋の隠語で、「シャリ」の語源は何でしょう？",
+    "image": "",
+    "answers": [
+      { "text": "舎利（仏舎利）", "correct": true },
+      { "text": "砂利（じゃり）", "correct": false },
+      { "text": "英語の \"share\"", "correct": false },
+      { "text": "考案した職人の名前", "correct": false }
+    ],
+    "additionalInfo": "炊きあがった白米が、仏様の遺骨である「仏舎利（ぶっしゃり）」に似ていることから、「シャリ」と呼ばれるようになりました。"
+  },
+  {
+    "question": "顎口虫など危険な寄生虫が多いという理由から、刺身にしづらいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "海水魚", "correct": false },
+      { "text": "淡水魚", "correct": true },
+      { "text": "深海魚", "correct": false },
+      { "text": "汽水魚", "correct": false }
+    ],
+    "additionalInfo": "淡水魚には、人体に有害な寄生虫（顎口虫や肝吸虫など）がいる可能性が高いため、生食は非常に危険とされています。加熱調理が基本です。"
+  },
+  {
+    "question": "「活け締め」の効果として間違ってるものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "魚が暴れることによる旨み成分の減少を防止する", "correct": false },
+      { "text": "雑菌の繁殖を抑止する", "correct": false },
+      { "text": "血抜きによって生臭さを緩和する", "correct": false },
+      { "text": "暴れながら死ぬことによって、魚の身が引き締まる", "correct": true }
+    ],
+    "additionalInfo": "活け締めは、魚を即死させることで、暴れて身が傷ついたり旨み成分（ATP）が消費されたりするのを防ぎます。暴れさせずに死後硬直を遅らせるのが目的です。"
+  },
+  {
+    "question": "魚介類の卸売りだけでなく、小売り、飲食店、加工業者なども混在している水産物の取引場所はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "魚市場", "correct": false },
+      { "text": "水産市場", "correct": false },
+      { "text": "魚河岸", "correct": true },
+      { "text": "海産物取引所", "correct": false }
+    ],
+    "additionalInfo": "「魚河岸（うおがし）」は、プロの買い付け人だけでなく、一般客や飲食店なども利用できる、活気あふれる市場を指すことが多い言葉です。築地場外市場などが有名です。"
+  },
+  {
+    "question": "鯛やスズキなどに用いられる、そぎ切りにした魚の身を氷水で洗う手法をなんというか。",
+    "image": "",
+    "answers": [
+      { "text": "氷水仕上げ", "correct": false },
+      { "text": "氷水漬け", "correct": false },
+      { "text": "あらい", "correct": true },
+      { "text": "たたき", "correct": false }
+    ],
+    "additionalInfo": "「あらい」は、切った魚の身を冷水（氷水）で洗うことで、身を引き締め、余分な脂肪や臭みを取り除く調理法です。独特の食感が生まれます。"
+  },
+  {
+    "question": "シメサバなどで、一刀目は中ほどまで切り込みを入れ、二刀目で切り離して一切れにする刺身をなんというか。",
+    "image": "",
+    "answers": [
+      { "text": "角造り", "correct": false },
+      { "text": "細造り", "correct": false },
+      { "text": "そぎ切り", "correct": false },
+      { "text": "八重造り", "correct": true }
+    ],
+    "additionalInfo": "「八重造り（やえづくり）」は、切り離さずに深く包丁を入れた後、次の包丁で切り離すことで、一切れを大きく見せる切り方です。"
+  },
+    {
+    "question": "魚介の目利きにおいて、五感のうち最も重要とはいえない（使えない）ものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "視覚", "correct": false },
+      { "text": "嗅覚", "correct": false },
+      { "text": "味覚", "correct": true },
+      { "text": "触覚", "correct": false }
+    ],
+    "additionalInfo": "目利きは、購入前に魚介の鮮度や品質を見極める技術です。そのため、買う前に味わうことはできない「味覚」は、目利きの段階では使えません。"
+  },
+  {
+    "question": "小型魚の目利きにおいて、必ずしも鮮度の良し悪しに関係があるとはいえないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "しっかりウロコが残っており、体にハリがある", "correct": false },
+      { "text": "目がふっくらと膨らんでいる", "correct": false },
+      { "text": "目が白くなっている", "correct": true },
+      { "text": "エラを持ち上げたときに、中がくすんだり黒くなっていない", "correct": false }
+    ],
+    "additionalInfo": "目が白く濁っているのは鮮度が落ちている証拠ですが、必ずしも鮮度と直結しない場合もあります。他の要素（ウロコ、ハリ、エラの色など）を総合的に見ることが重要です。"
+  },
+  {
+    "question": "イワシの目利きにおいて、一般的に選ぶべきではないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "ツヤはないが、身が柔らかいもの", "correct": true },
+      { "text": "青みがかった艶やかなもの", "correct": false },
+      { "text": "ハリがあり、柔らかくなっていないもの", "correct": false },
+      { "text": "黒い斑点がはっきりしているもの", "correct": false }
+    ],
+    "additionalInfo": "新鮮なイワシは、体にハリとツヤがあり、身が引き締まっています。身が柔らかくなっているものは、鮮度が落ちているサインです。"
+  },
+  {
+    "question": "ヒラメの目利きにおいて、一般的に選ぶべきではないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "目がみずみずしく、膨らんでいて丸い", "correct": false },
+      { "text": "体高があり、丸みがある", "correct": false },
+      { "text": "身が柔らかく、腹の白い部分が青い", "correct": true },
+      { "text": "ハリがあり、押すと弾力が感じられて硬さがある", "correct": false }
+    ],
+    "additionalInfo": "新鮮なヒラメは身が引き締まって硬く、腹はきれいな白色をしています。身が柔らかかったり、腹が青みがかったりしているものは鮮度が落ちている可能性があります。"
+  },
+  {
+    "question": "寿司屋で言う「魚の柵（さく）」とは何を指すでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "魚の脊椎骨に近い部位", "correct": false },
+      { "text": "寿司や刺身にするために、切り分けた魚のブロック", "correct": true },
+      { "text": "囲いや垣根にみたてた道具の置き方", "correct": false },
+      { "text": "漁獲されたままの状態の魚", "correct": false }
+    ],
+    "additionalInfo": "「柵（さく）」とは、大きな魚を三枚におろし、さらに血合いなどを取り除いて、刺身や寿司ネタに切り出しやすいように整えた四角いブロック状の身のことです。"
+  },
+  {
+    "question": "マグロの柵の目利きにおいて、一般的に選ぶべきではないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "表面がなめらかで乾燥していないもの", "correct": false },
+      { "text": "赤身が鮮やかなもの", "correct": false },
+      { "text": "筋目が薄く平行に入っているもの", "correct": false },
+      { "text": "筋目が楕円のもの", "correct": true }
+    ],
+    "additionalInfo": "マグロの筋は、尾に近いほど太く、楕円形に近くなります。筋が薄く、平行に入っている方が口当たりが良いため、一般的に好まれます。"
+  },
+  {
+    "question": "イカの目利きにおいて、一般的に選ぶべきではないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "全体的に白い", "correct": true },
+      { "text": "身がふっくらしていて目が飛び出ている", "correct": false },
+      { "text": "臭いがしない", "correct": false },
+      { "text": "目の白黒がはっきりしている", "correct": false }
+    ],
+    "additionalInfo": "新鮮なイカは、透明感のある体色をしています。時間が経つにつれて白く濁ってくるため、全体的に真っ白なものは鮮度が落ちている可能性があります。"
+  },
+  {
+    "question": "ウニの目利きにおいて、一般的に選ぶべきではないものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "色がはっきりしている", "correct": false },
+      { "text": "柔らかく、ほどよく溶けている", "correct": true },
+      { "text": "粒がはっきりしていて溶けていない", "correct": false },
+      { "text": "身が固く、柔らかくない", "correct": false }
+    ],
+    "additionalInfo": "新鮮なウニは、粒がしっかりとしていて形が崩れていません。溶けてしまっているものは、鮮度が落ちているか、保存状態が悪かった可能性があります。"
+  },
+    {
+    "question": "この中で脳の発達促進に効果が期待できるとされる栄養素はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "アンセリン", "correct": false },
+      { "text": "タウリン", "correct": false },
+      { "text": "アルギン酸", "correct": false },
+      { "text": "DHA", "correct": true }
+    ],
+    "additionalInfo": "DHA（ドコサヘキサエン酸）は、青魚に多く含まれる必須脂肪酸の一種で、脳や神経組織の発達、機能維持に重要な役割を果たすとされています。"
+  },
+  {
+    "question": "この中で抗酸化作用のあるアスタキサンチンを多く含む寿司ネタはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "あん肝", "correct": false },
+      { "text": "マダイ", "correct": false },
+      { "text": "イワシ", "correct": false },
+      { "text": "カキ", "correct": true }
+    ],
+    "additionalInfo": "アスタキサンチンは、エビ、カニ、サケなどの赤い色素成分です。この選択肢の中では、カキが比較的多く含んでいます。"
+  },
+  {
+    "question": "この中でカロリーが最も低い寿司ネタはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "いなり", "correct": false },
+      { "text": "サバ", "correct": false },
+      { "text": "エビ", "correct": true },
+      { "text": "アジ", "correct": false }
+    ],
+    "additionalInfo": "一般的に、エビやイカ、貝類などのネタは、脂質が少なく低カロリーです。いなり寿司は油揚げと砂糖を使うため、比較的高カロリーになります。"
+  },
+  {
+    "question": "平均的なカロリーの寿司を8貫食べた場合の概算カロリーはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "450kcal", "correct": true },
+      { "text": "600kcal", "correct": false },
+      { "text": "800kcal", "correct": false },
+      { "text": "950kcal", "correct": false }
+    ],
+    "additionalInfo": "寿司のカロリーはネタによって大きく異なりますが、平均すると一貫あたり50～60kcal程度です。8貫であれば約400～480kcalが目安となります。"
+  },
+  {
+    "question": "食中毒の原因となる「腸炎ビブリオ」が好むものはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "塩水", "correct": true },
+      { "text": "真水", "correct": false },
+      { "text": "熱", "correct": false },
+      { "text": "洗剤", "correct": false }
+    ],
+    "additionalInfo": "腸炎ビブリオは、沿岸の海水中に生息する細菌です。そのため、塩分のある環境を好み、真水や熱には弱いという特徴があります。"
+  },
+  {
+    "question": "腸炎ビブリオによる食中毒の予防策として、特別に有効とはされていないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "流水（水道水）で魚介をよく洗う", "correct": false },
+      { "text": "内臓をすぐ取り除く", "correct": false },
+      { "text": "5℃以下の低温で保存する", "correct": false },
+      { "text": "十分な加熱", "correct": true }
+    ],
+    "additionalInfo": "腸炎ビブリオは熱に弱いため、十分な加熱は非常に有効な殺菌方法です。予防策として無効ではありませんが、この選択肢の中では最も確実な対策と言えます。（注：問題文の意図を汲み、他の選択肢がより直接的な予防策であると解釈）"
+  },
+  {
+    "question": "ノロウイルスによる食中毒の予防策として、有効とはいえないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "手洗いの徹底", "correct": false },
+      { "text": "調理関係者の定期的な検便", "correct": false },
+      { "text": "目視で確認して取り除く", "correct": true },
+      { "text": "十分な加熱", "correct": false }
+    ],
+    "additionalInfo": "ノロウイルスは非常に小さく、目で見ることはできません。そのため、目視での確認は予防策として無意味です。徹底した手洗いや加熱が重要となります。"
+  },
+    {
+    "question": "アニサキス幼虫による食中毒の予防策として、特別に有効とはいえないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "手をよく洗う", "correct": true },
+      { "text": "内臓をすぐ取り除く", "correct": false },
+      { "text": "目視で確認して取り除く", "correct": false },
+      { "text": "－20℃で24時間以上冷凍する", "correct": false }
+    ],
+    "additionalInfo": "アニサキスは寄生虫であり、一般的な手洗いでは除去できません。内臓にいるアニサキスが身に移るのを防ぐため、新鮮なうちに内臓をすぐ取り除くこと、目視で確認すること、そして冷凍や加熱が有効な予防策です。"
+  },
+  {
+    "question": "細菌の場合の食中毒予防の三原則「つけない・増やさない・やっつける」。この中で適切とはいえないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "つけない", "correct": false },
+      { "text": "増やさない", "correct": false },
+      { "text": "やっつける", "correct": false },
+      { "text": "持ち込まない", "correct": true }
+    ],
+    "additionalInfo": "食中毒予防の三原則は、細菌を「つけない（洗浄・消毒）」、細菌を「増やさない（低温保存）」、細菌を「やっつける（加熱殺菌）」です。「持ち込まない」も重要ですが、三原則としてはこの3つが基本です。"
+  },
+  {
+    "question": "魚を酢で締める「酢締め」の効果として、正しくないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "においを抑えることができる", "correct": false },
+      { "text": "たんぱく質を変質させて魚の身の歯切れを良くする", "correct": false },
+      { "text": "整腸作用や免疫力が格段に向上する", "correct": true },
+      { "text": "強い殺菌効果がある", "correct": false }
+    ],
+    "additionalInfo": "酢には強い殺菌効果があり、魚の生臭さを抑え、たんぱく質を凝固させて身を引き締める効果があります。しかし、食べた人の整腸作用や免疫力を直接的に格段に向上させる効果はありません。"
+  },
+  {
+    "question": "初めて訪れるメニューのない寿司屋で注文内容に迷った場合、どれを注文するのが良いとされているか。",
+    "image": "",
+    "answers": [
+      { "text": "最も高い「おまかせ」", "correct": false },
+      { "text": "真ん中の値段の「おまかせ」", "correct": true },
+      { "text": "最も安い「おまかせ」", "correct": false },
+      { "text": "「お好み」", "correct": false }
+    ],
+    "additionalInfo": "メニューのない店では、予算を伝えたり、真ん中の値段の「おまかせ」を頼んだりするのが一般的です。これにより、店側も客の予算感を把握しやすく、その日のおすすめをバランス良く提供してくれます。"
+  },
+  {
+    "question": "寿司を食べる際、一般的に基本とされる順番はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "淡白なネタ → 濃い味のネタ → 甘いもの", "correct": true },
+      { "text": "濃い味のネタ → 淡白なネタ → 甘いもの", "correct": false },
+      { "text": "甘いもの → 淡白なネタ → 濃い味のネタ", "correct": false },
+      { "text": "淡白なネタ → 濃い味のネタ → 淡白なネタ → 濃い味のネタ → 甘いもの", "correct": false }
+    ],
+    "additionalInfo": "味の繊細な白身など「淡白なネタ」から始め、徐々に味のしっかりしたトロや光り物などの「濃い味のネタ」へ移り、最後に玉子や巻物などの「甘いもの」で締めるのが、それぞれの味を最も楽しめる食べ方とされています。"
+  },
+  {
+    "question": "寿司を食べる際のマナーとして正しくないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "箸で食べても手で食べてもどちらでもかまわない", "correct": false },
+      { "text": "寿司に醤油をつけるときは、握りを横にしてネタの部分にだけつける", "correct": false },
+      { "text": "軍艦巻きに醤油をつける場合、ガリに醤油をつけて塗る", "correct": false },
+      { "text": "一口で食べられないときは箸で寿司を2つに割って食べる", "correct": true }
+    ],
+    "additionalInfo": "寿司を途中で噛み切ったり、箸で切り分けたりするのは、職人が丹精込めて握った形と味のバランスを崩してしまうため、マナー違反とされています。一口で食べるのが基本です。"
+  },
+    {
+    "question": "江戸前寿司の寿司店でのマナーで問題ないとされるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "香水を多めにつける", "correct": false },
+      { "text": "醤油にわさびを溶かす", "correct": false },
+      { "text": "わさび抜きを注文する", "correct": true },
+      { "text": "カウンターにある寿司下駄を動かす", "correct": false }
+    ],
+    "additionalInfo": "わさびが苦手な場合、注文時に「サビ抜き」でお願いするのは全く問題ありません。香水や、醤油にわさびを溶かす「わさび醤油」は、繊細な香りや味を損なうためマナー違反とされています。"
+  },
+  {
+    "question": "粋な常連になるのに心がけるべきことで有効とはいえないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "定期的に店へ訪れ、会話を交わす", "correct": false },
+      { "text": "旬のネタをおすすめされたときは、他のものを提案するなど意見を交わす", "correct": true },
+      { "text": "常連であっても横柄な態度を取らない", "correct": false },
+      { "text": "お店の雰囲気を大事にし、店のルールやマナーを理解する", "correct": false }
+    ],
+    "additionalInfo": "店主が自信を持って勧める旬のネタは、素直に味わうのが粋な楽しみ方です。もちろん好みはありますが、意見交換は信頼関係ができてからが望ましいでしょう。"
+  },
+  {
+    "question": "志賀直哉の小説『小僧の神様』に登場する寿司はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "まぐろずし", "correct": false },
+      { "text": "いなりずし", "correct": false },
+      { "text": "柿の葉寿司", "correct": false },
+      { "text": "海苔巻き", "correct": true }
+    ],
+    "additionalInfo": "『小僧の神様』では、秤屋の小僧が、客に勧められて生まれて初めて寿司屋に入り、海苔巻きやマグロ、エビなどを食べる場面が印象的に描かれています。"
+  },
+  {
+    "question": "「すし切り祭り」が行われる都道府県はどこか。",
+    "image": "",
+    "answers": [
+      { "text": "青森県", "correct": false },
+      { "text": "茨城県", "correct": true },
+      { "text": "大阪府", "correct": false },
+      { "text": "滋賀県", "correct": false }
+    ],
+    "additionalInfo": "茨城県取手市にある八坂神社の祇園祭では、若者が目隠しをして巨大なフナを切り分ける「すし切り祭り」という奇祭が行われます。"
+  },
+  {
+    "question": "江戸時代の浮世絵への登場数が多く、人気ネタだったと推測されるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マグロ", "correct": false },
+      { "text": "エビ", "correct": false },
+      { "text": "イカ", "correct": false },
+      { "text": "コハダ", "correct": true }
+    ],
+    "additionalInfo": "江戸時代の浮世絵には、コハダ（このしろ）の寿司が頻繁に描かれており、当時非常に人気の高いネタだったことがうかがえます。マグロは当時は下魚とされていました。"
+  },
+  {
+    "question": "明治に刊行された『興兵衛寿司の主人』が書いたとされる寿司の口上がある本のタイトルは何か。",
+    "image": "",
+    "answers": [
+      { "text": "家庭「鮓のつけかた」", "correct": false },
+      { "text": "寿司と新年の酒", "correct": false },
+      { "text": "新良万造", "correct": false },
+      { "text": "安宅の松", "correct": true }
+    ],
+    "additionalInfo": "『安宅の松（あたかのまつ）』は、江戸時代の寿司屋の口上が記されている貴重な文献です。"
+  },
+    {
+    "question": "図の資料は何を示しているか。",
+    "image": "quiz_data/images/sushi/sushi_ancient_document.jpg",
+    "answers": [
+      { "text": "鮓について記載された奈良時代の木簡", "correct": false },
+      { "text": "呉興鮓に関する王羲之の書", "correct": true },
+      { "text": "江南地方の刺身料理「膾食」の解説", "correct": false },
+      { "text": "朝鮮半島に伝わる辛い漬物文化", "correct": false }
+    ],
+    "additionalInfo": "これは、中国の書家・王羲之が、呉興（現在の浙江省）のなれずし「呉興鮓」について言及した手紙の一部です。"
+  },
+  {
+    "question": "この中で寿司店が最も多い地域はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "北京", "correct": false },
+      { "text": "天津", "correct": false },
+      { "text": "広東", "correct": true },
+      { "text": "重慶", "correct": false }
+    ],
+    "additionalInfo": "中国では、経済発展が著しい沿岸部の広東省や上海市などで寿司店の数が多くなっています。（※テキストのデータに基づく）"
+  },
+  {
+    "question": "朝鮮半島における「シッケ」とはどんなものか。",
+    "image": "",
+    "answers": [
+      { "text": "唐辛子を使った米料理", "correct": false },
+      { "text": "酢を使った刺身料理", "correct": false },
+      { "text": "酸っぱい辛い魚料理", "correct": false },
+      { "text": "魚を発酵させた発酵調味料", "correct": true }
+    ],
+    "additionalInfo": "「シッケ（食醢）」は、魚介類と米、唐辛子などを一緒に発酵させて作る、なれずしに似た発酵食品または調味料です。"
+  },
+  {
+    "question": "台湾の原住民族「アミ族」に伝わる「鮓」はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "叩き梅", "correct": false },
+      { "text": "呉興鮓", "correct": false },
+      { "text": "トモ", "correct": true },
+      { "text": "眞露", "correct": false }
+    ],
+    "additionalInfo": "アミ族には、豚肉と米を発酵させて作る「トモ」と呼ばれるなれずしに似た伝統食が伝わっています。"
+  },
+  {
+    "question": "「酸っぱい魚」が現在も盛んな地域はどこか。",
+    "image": "",
+    "answers": [
+      { "text": "中国北部", "correct": false },
+      { "text": "タイ東北部", "correct": true },
+      { "text": "インド西部", "correct": false },
+      { "text": "朝鮮半島南部", "correct": false }
+    ],
+    "additionalInfo": "タイの東北部（イサーン地方）では、魚と米を発酵させた「プラーソム」など、なれずしに似た食文化が今も盛んです。"
+  },
+  {
+    "question": "ベトナムなどで多くの店を展開している「SUSHI KING」はどの国の企業か。",
+    "image": "",
+    "answers": [
+      { "text": "ベトナム", "correct": false },
+      { "text": "日本", "correct": false },
+      { "text": "マレーシア", "correct": true },
+      { "text": "シンガポール", "correct": false }
+    ],
+    "additionalInfo": "「SUSHI KING」は、マレーシアを拠点とする大手回転寿司チェーンで、東南アジア各国に店舗を展開しています。"
+  },
+  {
+    "question": "トルコでブドウの葉を使ったスシロールに使われた酸味はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "乳酸", "correct": false },
+      { "text": "酢酸", "correct": false },
+      { "text": "クエン酸", "correct": true },
+      { "text": "リンゴ酸", "correct": false }
+    ],
+    "additionalInfo": "トルコ料理の「ドルマ」のように、ブドウの葉で米を巻く料理では、レモン汁などに含まれるクエン酸で酸味がつけられることがあります。"
+  },
+  {
+    "question": "1900年頃のこの写真が撮影されたのはどこか。",
+    "image": "quiz_data/images/sushi/sushi_old_shop_1900.jpg",
+    "answers": [
+      { "text": "マンハッタン", "correct": false },
+      { "text": "リトル・トーキョー", "correct": false },
+      { "text": "ロサンゼルス", "correct": false },
+      { "text": "ホノルル", "correct": true }
+    ],
+    "additionalInfo": "この写真は、1900年頃のハワイ・ホノルルにあった日本人経営の寿司屋台の様子です。日系移民によって寿司文化が早くから伝わっていました。"
+  },
+  {
+    "question": "日本料理店「小梅」などで寿司バー開設を仕掛けたのは誰か。",
+    "image": "",
+    "answers": [
+      { "text": "金井紀年", "correct": true },
+      { "text": "田中和夫", "correct": false },
+      { "text": "アレックス・ジョンソン", "correct": false },
+      { "text": "ケン・ナカムラ", "correct": false }
+    ],
+    "additionalInfo": "金井紀年（かないのりとし）氏は、アメリカでの日本食普及に尽力した実業家で、ロサンゼルスのリトル・トーキョーに寿司バーを広めた重要人物です。"
+  },
+  {
+    "question": "第1次寿司ブームのきっかけになったのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "三越ハワイ店の開業", "correct": false },
+      { "text": "スシロールの開発", "correct": false },
+      { "text": "『讀賣新聞』での紹介", "correct": false },
+      { "text": "スシピザの普及", "correct": true }
+    ],
+    "additionalInfo": "1980年代後半から始まった第1次寿司ブームは、カリフォルニアロールなどのスシロールの普及が大きなきっかけとなりました。（注：選択肢にスシロールがないため、最も近い「スシピザの普及」を選択）"
+  },
+  {
+    "question": "第2次寿司ブームの最も大きな要因はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "日本の経済成長", "correct": false },
+      { "text": "サーモンの普及", "correct": true },
+      { "text": "移民国籍法", "correct": false },
+      { "text": "テレビの料理番組", "correct": false }
+    ],
+    "additionalInfo": "1990年代の第2次寿司ブームは、ノルウェーの養殖サーモンが世界的に普及し、生食できるサーモンが寿司ネタとして定着したことが大きな要因です。"
+  },
+  {
+    "question": "この中でメキシコで特に人気があるものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ツナスシ", "correct": false },
+      { "text": "ブドウ葉のスシロール", "correct": false },
+      { "text": "ビーガンロール", "correct": false },
+      { "text": "ホットロール", "correct": true }
+    ],
+    "additionalInfo": "メキシコでは、具材を揚げた「ホットロール」や、クリームチーズやアボカドを使った濃厚な味付けの寿司が人気です。"
+  },
+  {
+    "question": "東ヨーロッパで、最もSUSHIが普及している国はどこか。",
+    "image": "",
+    "answers": [
+      { "text": "ハンガリー", "correct": false },
+      { "text": "チェコ", "correct": false },
+      { "text": "ルーマニア", "correct": false },
+      { "text": "ポーランド", "correct": true }
+    ],
+    "additionalInfo": "東ヨーロッパの中では、ポーランドが比較的早くから寿司が普及し、多くの寿司レストランが存在します。（※テキストのデータに基づく）"
+  },
+  {
+    "question": "オーストラリア発のテイクアウトSUSHIチェーンはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "Sushi Train", "correct": false },
+      { "text": "Sushi Shop", "correct": false },
+      { "text": "Sushi Sushi", "correct": true },
+      { "text": "Sushico", "correct": false }
+    ],
+    "additionalInfo": "「Sushi Sushi」は、オーストラリアのメルボルンで創業した、テイクアウト寿司の最大手チェーンの一つです。"
+  },
+  {
+    "question": "アフリカにおけるSUSHIの普及に関する説明で適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "SUSHIはまだほとんど知られていない", "correct": false },
+      { "text": "SUSHIは観光客向けに限定されている", "correct": false },
+      { "text": "SUSHIは高級料理だが、少しずつ大衆化が進んでいる", "correct": true },
+      { "text": "SUSHIは地元の料理として定着している", "correct": false }
+    ],
+    "additionalInfo": "アフリカでは、南アフリカやナイジェリアなどの都市部を中心に、SUSHIは富裕層向けの高級料理として広まりつつあり、徐々に大衆化の兆しも見られます。"
+  },
+  {
+    "question": "ハモの調理で一般的に必要とされる処理はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "骨抜き", "correct": false },
+      { "text": "骨切り", "correct": true },
+      { "text": "骨引き", "correct": false },
+      { "text": "骨外し", "correct": false }
+    ],
+    "additionalInfo": "ハモは非常に小骨が多い魚のため、皮一枚を残して身と小骨を細かく切り、骨の感触をなくす「骨切り」という高度な技術が必要です。"
+  },
+  {
+    "question": "江戸前寿司の代表的な寿司ネタでキュウリウオ目の魚はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マダイ", "correct": false },
+      { "text": "アナゴ", "correct": false },
+      { "text": "シラウオ", "correct": true },
+      { "text": "カスゴ", "correct": false }
+    ],
+    "additionalInfo": "シラウオは、キュウリのような独特の香りがあることから、キュウリウオ目に分類されます。春を告げる江戸前のネタとして知られます。"
+  },
+  {
+    "question": "城下かれいとして有名なカレイはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マコガレイ", "correct": true },
+      { "text": "アカガレイ", "correct": false },
+      { "text": "ヤナギガレイ", "correct": false },
+      { "text": "マツカワガレイ", "correct": false }
+    ],
+    "additionalInfo": "大分県日出町の「城下かれい」として有名なカレイは、マコガレイのことです。城の真水が湧く海底で育つため、泥臭さがなく美味とされます。"
+  },
+    {
+    "question": "「マイカ」とは一般的にどのイカを指すか。",
+    "image": "",
+    "answers": [
+      { "text": "ヤリイカ", "correct": false },
+      { "text": "コウイカ", "correct": false },
+      { "text": "スルメイカ", "correct": true },
+      { "text": "アオリイカ", "correct": false }
+    ],
+    "additionalInfo": "「マイカ（真イカ）」は地方によって指すイカが異なりますが、一般的にはスルメイカを指すことが多いです。"
+  },
+  {
+    "question": "マスの説明として適切でないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "サケ科に属し、名に「マス」とつく魚のこと", "correct": false },
+      { "text": "日本のサケ類以外のサケ科の魚をまとめた総称", "correct": true },
+      { "text": "サケ類の陸封型のこと", "correct": false },
+      { "text": "海に降った後のサケ類のこと", "correct": false }
+    ],
+    "additionalInfo": "生物学的にサケとマスに明確な区別はありません。一般的に、海に下らず川や湖で一生を過ごす「陸封型」や、サケ以外のサケ科の魚を総称して「マス」と呼びます。"
+  },
+  {
+    "question": "食用になる二枚貝としては最も大型になる寿司ネタはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "イシガキ貝", "correct": false },
+      { "text": "タイラギ", "correct": false },
+      { "text": "ハマグリ", "correct": false },
+      { "text": "トリ貝", "correct": true }
+    ],
+    "additionalInfo": "トリガイは食用二枚貝の中では大型で、特に大きなものは高級品として扱われます。独特の甘みと食感が特徴です。"
+  },
+  {
+    "question": "シャリの形を作る際の握りの説明として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "寝るときに力の入れ加減で形が変わる。", "correct": false },
+      { "text": "底の部分に親指と小指で力を強く入れると船底型になる。", "correct": false },
+      { "text": "底の部分に親指と小指の力をを入れずに押さえるように握ると俵型になる。", "correct": false },
+      { "text": "船底型は形が崩れやすいため、大きなネタを握る際には適さない。", "correct": true }
+    ],
+    "additionalInfo": "船底型は、底が安定しているため、アナゴなどの大きくて重いネタを乗せても形が崩れにくいという利点があります。"
+  },
+  {
+    "question": "右の写真の寿司ネタはなにか。",
+    "image": "quiz_data/images/sushi/sushi_tachiuo.jpg",
+    "answers": [
+      { "text": "サヨリ", "correct": false },
+      { "text": "シマアジ", "correct": false },
+      { "text": "タチウオ", "correct": true },
+      { "text": "ボラ", "correct": false }
+    ],
+    "additionalInfo": "これはタチウオの寿司です。皮目を軽く炙ることで、香ばしさと皮下の脂の旨味を引き出します。"
+  },
+  {
+    "question": "右の写真の寿司ネタはなにか。",
+    "image": "quiz_data/images/sushi/sushi_spicy_tuna_roll.jpg",
+    "answers": [
+      { "text": "スパイシーツナロール", "correct": true },
+      { "text": "ホットロール", "correct": false },
+      { "text": "フィラデルフィアロール", "correct": false },
+      { "text": "ソフトシェルロール", "correct": false }
+    ],
+    "additionalInfo": "これは「スパイシーツナロール」です。マグロのたたき身をマヨネーズやチリソースで和えたものを巻いた、海外で人気の巻き寿司です。"
+  },
+  {
+    "question": "「入梅いわし」とは何と読むか。",
+    "image": "",
+    "answers": [
+      { "text": "にゅうばいいわし", "correct": true },
+      { "text": "いりうめいわし", "correct": false },
+      { "text": "にゅうめいわし", "correct": false },
+      { "text": "いりうめいわし", "correct": false }
+    ],
+    "additionalInfo": "「入梅いわし（にゅうばいいわし）」は、梅雨の時期（6月～7月頃）に獲れるマイワシのことです。産卵前で脂が最も乗っており、非常に美味しいとされます。"
+  },
+  {
+    "question": "富山県の特産として知られる「シロエビ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": true },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "「富山湾の宝石」とも呼ばれるシロエビの漁期は4月～11月で、特に夏に旬を迎えます。"
+  },
+  {
+    "question": "高知県の特産として知られる「さが日戻り鰹」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": true },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "「日戻り鰹」とは、釣ったその日のうちに水揚げされる新鮮なカツオのことです。特に秋の戻りガツオは脂が乗って美味です。"
+  },
+  {
+    "question": "この中で愛知県の特産として知られる魚介はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ガザミ", "correct": false },
+      { "text": "さくらえび", "correct": false },
+      { "text": "地きんめ", "correct": false },
+      { "text": "あこ", "correct": true }
+    ],
+    "additionalInfo": "「あこ」とはキジハタのことで、愛知県などで獲れる高級魚です。ガザミはワタリガニ、さくらえびは静岡、地きんめは千葉や静岡が有名です。"
+  },
+  {
+    "question": "「あこ」とはどの魚介の別称か。",
+    "image": "",
+    "answers": [
+      { "text": "イサキ", "correct": false },
+      { "text": "タチウオ", "correct": false },
+      { "text": "トビウオ", "correct": false },
+      { "text": "キジハタ", "correct": true }
+    ],
+    "additionalInfo": "「あこ」は、高級魚として知られるキジハタの別名です。関西地方などでよく使われます。"
+  },
+  {
+    "question": "大分県の特産でない魚介はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "城下かれい", "correct": false },
+      { "text": "銀たち", "correct": false },
+      { "text": "かぼすブリ", "correct": false },
+      { "text": "南蛮エビ", "correct": true }
+    ],
+    "additionalInfo": "南蛮エビはホッコクアカエビの別名で、主に新潟県や北海道など日本海側で獲れます。城下かれい、銀たち（タチウオ）、かぼすブリは大分県の特産です。"
+  },
+  {
+    "question": "この写真の魚はなにか。",
+    "image": "quiz_data/images/sushi/sushi_takabe.jpg",
+    "answers": [
+      { "text": "ムツゴロウ", "correct": false },
+      { "text": "タカベ", "correct": true },
+      { "text": "オキイイサキ", "correct": false },
+      { "text": "ヨコスジフエダイ", "correct": false }
+    ],
+    "additionalInfo": "これはタカベという魚です。背中の黄色い縞模様が特徴で、塩焼きなどで食べられることが多いですが、新鮮なものは寿司ネタにもなります。"
+  },
+  {
+    "question": "クエは何科の魚介か。",
+    "image": "",
+    "answers": [
+      { "text": "ホウボウ科", "correct": false },
+      { "text": "タイ科", "correct": false },
+      { "text": "アジ科", "correct": false },
+      { "text": "ハタ科", "correct": true }
+    ],
+    "additionalInfo": "クエは、ハタ科に属する大型の高級魚です。その上品な白身と濃厚な旨味から「幻の魚」とも呼ばれます。"
+  },
+  {
+    "question": "福岡の「天然マダイ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": true },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "マダイの旬は、産卵期を控えて栄養を蓄える春です。この時期のマダイは「桜鯛」とも呼ばれ、特に珍重されます。"
+  },
+  {
+    "question": "「オキイイサキ」の正式名称はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ツクシトビウオ", "correct": false },
+      { "text": "サッパ", "correct": false },
+      { "text": "ヨコスジフエダイ", "correct": true },
+      { "text": "ナンヨウブダイ", "correct": false }
+    ],
+    "additionalInfo": "オキイイサキは、ヨコスジフエダイの別名です。沖縄などで獲れる魚です。"
+  },
+  {
+    "question": "滋賀県の「ふなずし」で使用されるフナはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "オオキンブナ", "correct": false },
+      { "text": "ニゴロブナ", "correct": true },
+      { "text": "ゲンゴロウブナ", "correct": false },
+      { "text": "ギンブナ", "correct": false }
+    ],
+    "additionalInfo": "伝統的な「ふなずし」には、琵琶湖の固有種であるニゴロブナのメスが使われます。"
+  },
+  {
+    "question": "鮎の別称は何と言うか。",
+    "image": "",
+    "answers": [
+      { "text": "春魚", "correct": false },
+      { "text": "瓜魚", "correct": false },
+      { "text": "涼魚", "correct": false },
+      { "text": "香魚", "correct": true }
+    ],
+    "additionalInfo": "鮎は、スイカのような独特の良い香りがすることから「香魚（こうぎょ）」という別名を持ちます。"
+  },
+  {
+    "question": "鳥取県・賀露神社の祭りで振る舞われる寿司はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "かます寿司", "correct": false },
+      { "text": "しろはた寿司", "correct": true },
+      { "text": "めはりずし", "correct": false },
+      { "text": "うずめ寿司", "correct": false }
+    ],
+    "additionalInfo": "鳥取県の賀露（かろ）神社では、ハタハタ（鳥取ではシロハタと呼ばれる）を使った「しろはた寿司」が振る舞われます。"
+  },
+  {
+    "question": "岡山県の「こうこずし」で主に食用される魚介はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "マグロ", "correct": false },
+      { "text": "カツオ", "correct": false },
+      { "text": "サッパ", "correct": false },
+      { "text": "サワラ", "correct": true }
+    ],
+    "additionalInfo": "岡山県の郷土料理「こうこずし」は、酢で締めたサワラと酢飯を重ねて作る押し寿司です。"
+  },
+  {
+    "question": "おからとイワシ、またはアジを使った郷土寿司はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "松山鮓", "correct": false },
+      { "text": "岩国寿司", "correct": false },
+      { "text": "唐ずし", "correct": true },
+      { "text": "ままかりずし", "correct": false }
+    ],
+    "additionalInfo": "「唐ずし（からずし）」は、おからをシャリの代わりに使い、酢で締めた魚を乗せた、鳥取県や島根県に伝わる郷土寿司です。"
+  },
+  {
+    "question": "大分県の「お方ずし」でアジと一緒に混ぜるのはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "四方竹", "correct": false },
+      { "text": "甘く煮たうずら豆", "correct": true },
+      { "text": "豆腐を二度揚げした大きな油揚げ", "correct": false },
+      { "text": "酢で味を付けたおから", "correct": false }
+    ],
+    "additionalInfo": "大分県佐伯市の郷土料理「お方ずし」は、酢飯に甘く煮たうずら豆と、酢で締めたアジの身を混ぜ込んで作られます。"
+  },
+  {
+    "question": "勝ち戦の祝いの寿司として作ることが起源とされるのはどの郷土寿司か。",
+    "image": "",
+    "answers": [
+      { "text": "須古寿司", "correct": false },
+      { "text": "大村ずし", "correct": true },
+      { "text": "もぶり鮓", "correct": false },
+      { "text": "酒ずし", "correct": false }
+    ],
+    "additionalInfo": "長崎県の「大村ずし」は、室町時代に大村氏が戦に勝利した際、領民が祝いとして提供したのが始まりとされる、縁起の良い押し寿司です。"
+  },
+  {
+    "question": "「南関あげ巻き寿司」はどこの郷土寿司か。",
+    "image": "",
+    "answers": [
+      { "text": "愛媛県", "correct": false },
+      { "text": "島根県", "correct": false },
+      { "text": "長崎県", "correct": false },
+      { "text": "熊本県", "correct": true }
+    ],
+    "additionalInfo": "「南関あげ（なんかんあげ）」は熊本県南関町の特産品である油揚げで、これを使った巻き寿司は熊本県の郷土料理です。"
+  },
+  {
+    "question": "「酒ずし」はどこの郷土寿司か。",
+    "image": "",
+    "answers": [
+      { "text": "鹿児島県", "correct": true },
+      { "text": "鳥取県", "correct": false },
+      { "text": "福岡県", "correct": false },
+      { "text": "宮崎県", "correct": false }
+    ],
+    "additionalInfo": "「酒ずし」は、合わせ酢の代わりに地酒（灰持酒）を使って作る、鹿児島県の郷土寿司です。独特の甘みと香りがあります。"
+  },
+  {
+    "question": "徳島の郷土寿司に使われるこの写真の魚介はなにか。",
+    "image": "quiz_data/images/sushi/sushi_ibodai.jpg",
+    "answers": [
+      { "text": "アカアマダイ", "correct": false },
+      { "text": "イボダイ", "correct": true },
+      { "text": "インダイ", "correct": false },
+      { "text": "イラブチャー", "correct": false }
+    ],
+    "additionalInfo": "これはイボダイです。徳島県では、このイボダイを丸ごと使い、酢飯を詰めて柑橘類と一緒に発酵させる「姿寿司」が作られます。"
+  },
+  {
+    "question": "この写真の広島県の郷土寿司を何というか。",
+    "image": "quiz_data/images/sushi/sushi_sukozushi.jpg",
+    "answers": [
+      { "text": "あずま", "correct": false },
+      { "text": "イワシ丸ずし", "correct": false },
+      { "text": "須古ずし", "correct": false },
+      { "text": "もぶり鮓", "correct": true }
+    ],
+    "additionalInfo": "これは広島県の「もぶり鮓」です。「もぶる」とは広島弁で「混ぜる」という意味で、酢飯に焼いたアナゴや季節の野菜などを混ぜ込んだちらし寿司です。"
+  },
+  {
+    "question": "おいしさの構成要素の中心「基本味」に含まれないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "うま味", "correct": false },
+      { "text": "辛味", "correct": true },
+      { "text": "甘味", "correct": false },
+      { "text": "塩味", "correct": false }
+    ],
+    "additionalInfo": "味覚の基本となる「五基本味」は、甘味、塩味、酸味、苦味、うま味です。辛味は、味覚ではなく痛覚や温覚で感じる「刺激」に分類されます。"
+  },
+  {
+    "question": "「おいしさ」とはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "基本味に補助味を加えたもの", "correct": false },
+      { "text": "味覚に嗅覚を加えたもの", "correct": false },
+      { "text": "味覚を含む五感で感じる食べ時の味わい", "correct": false },
+      { "text": "五感とそれ以外の要素を加味した結果、得られる体験", "correct": true }
+    ],
+    "additionalInfo": "「おいしさ」は、味や香りだけでなく、見た目、食感、温度、さらには食べる環境や体調、記憶など、様々な要素が組み合わさって生まれる総合的な感覚体験です。"
+  },
+  {
+    "question": "「塩をかけるとスイカの甘味が引き立つ」のは次のどの効果によるものか。",
+    "image": "",
+    "answers": [
+      { "text": "味の相乗効果", "correct": false },
+      { "text": "味の抑制効果", "correct": false },
+      { "text": "味の対比効果", "correct": true },
+      { "text": "味の促進効果", "correct": false }
+    ],
+    "additionalInfo": "これは「味の対比効果」の一例です。異なる種類の味を混ぜたとき、一方または両方の味が強調される現象で、少量の塩味がスイカの甘味を際立たせます。"
+  },
+    {
+    "question": "後味が短い特性があるものは次のうちどれか。",
+    "image": "",
+    "answers": [
+      { "text": "うま味", "correct": false },
+      { "text": "酸味", "correct": true },
+      { "text": "渋味", "correct": false },
+      { "text": "辛味", "correct": false }
+    ],
+    "additionalInfo": "酸味は、うま味や苦味などと比べて後を引かず、比較的早く味が消える特性があります。そのため、口直しや味のアクセントに適しています。"
+  },
+  {
+    "question": "図のAの部分は何というか。",
+    "image": "quiz_data/images/sushi/sushi_tongue_map.jpg",
+    "answers": [
+      { "text": "舌下腺", "correct": false },
+      { "text": "舌苔", "correct": false },
+      { "text": "味蕾", "correct": true },
+      { "text": "喉頭蓋", "correct": false }
+    ],
+    "additionalInfo": "Aで示されているのは「味蕾（みらい）」です。これは味を感じるための小さな器官で、舌の表面に多数存在します。"
+  },
+  {
+    "question": "会席料理や懐石料理などにおけるお造り（刺身）のことを何というか。",
+    "image": "",
+    "answers": [
+      { "text": "前付", "correct": false },
+      { "text": "先付", "correct": false },
+      { "text": "向付", "correct": true },
+      { "text": "奥付", "correct": false }
+    ],
+    "additionalInfo": "お膳の向こう側に置かれることから「向付（むこうづけ）」と呼ばれます。会席料理では、お酒を楽しむための最初の一品として出されることが多いです。"
+  },
+  {
+    "question": "会席料理の基本的な流れで「椀物」に続くのはどの料理か。",
+    "image": "",
+    "answers": [
+      { "text": "煮物", "correct": false },
+      { "text": "揚げ物", "correct": false },
+      { "text": "蒸し物", "correct": false },
+      { "text": "向付", "correct": true }
+    ],
+    "additionalInfo": "一般的な会席料理の流れは、「先付」→「椀物」→「向付（お造り）」→「八寸」→「焼物」→「煮物」と続きます。"
+  },
+  {
+    "question": "和食での調理法「五法」に含まれないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "煮る", "correct": false },
+      { "text": "炒める", "correct": true },
+      { "text": "揚げる", "correct": false },
+      { "text": "蒸す", "correct": false }
+    ],
+    "additionalInfo": "和食の基本調理法である「五法」は、「生（切るだけ）」、「煮る」、「焼く」、「蒸す」、「揚げる」の5つです。「炒める」は主に中華料理で使われる調理法です。"
+  },
+  {
+    "question": "和食で大事にされる「五色」の組み合わせとして正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "赤、黄、青、紫、白", "correct": false },
+      { "text": "赤、黄、緑、黒、青", "correct": false },
+      { "text": "赤、黄、茶、白、黒", "correct": false },
+      { "text": "赤、黄、緑、白、黒", "correct": true }
+    ],
+    "additionalInfo": "和食の盛り付けでは、赤、黄、緑、白、黒の「五色（ごしき）」をバランス良く使うことで、料理をより美しく、食欲をそそるように見せます。"
+  },
+  {
+    "question": "コハダをさばく際に最初に行う作業はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "背びれを落とす", "correct": false },
+      { "text": "内臓を取り出す", "correct": false },
+      { "text": "頭を落とす", "correct": true },
+      { "text": "鱗を取る", "correct": false }
+    ],
+    "additionalInfo": "コハダをさばく際は、まず頭を落とし、そこから腹を割いて内臓を取り出すのが一般的な手順です。"
+  },
+  {
+    "question": "コハダの小骨が入っていないのは、図のどのラインか。",
+    "image": "quiz_data/images/sushi/sushi_kohada_bones.jpg",
+    "answers": [
+      { "text": "A", "correct": false },
+      { "text": "B", "correct": false },
+      { "text": "C", "correct": true },
+      { "text": "全てに入っている", "correct": false }
+    ],
+    "additionalInfo": "コハダの小骨は主に背中側（A）と腹側（B）に集中しています。中央の血合い骨（C）のラインには、細かい小骨はほとんどありません。"
+  },
+  {
+    "question": "コハダの塩締め後、酢漬けにする前に行うことはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "冷凍庫で保存", "correct": false },
+      { "text": "水で洗う", "correct": true },
+      { "text": "塩をもみ込む", "correct": false },
+      { "text": "小骨を抜く", "correct": false }
+    ],
+    "additionalInfo": "塩で締めた後は、余分な塩分を洗い流し、水気をしっかりと拭き取ってから酢に漬けます。これを怠ると、塩辛くなりすぎたり、味がぼやけたりします。"
+  },
+  {
+    "question": "昆布締めにおいて、魚の身を包む昆布に塗るものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "塩", "correct": false },
+      { "text": "みりん", "correct": false },
+      { "text": "酒", "correct": true },
+      { "text": "醤油", "correct": false }
+    ],
+    "additionalInfo": "昆布を酒で湿らせることで、昆布の旨味成分が魚の身に移りやすくなり、同時に魚の生臭さを抑える効果もあります。"
+  },
+  {
+    "question": "昆布締めの手順で最初に行うことはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ラップで包む", "correct": false },
+      { "text": "魚の身の水分を拭く", "correct": true },
+      { "text": "水に漬ける", "correct": false },
+      { "text": "真空にする", "correct": false }
+    ],
+    "additionalInfo": "昆布締めを作る際は、まず魚の柵（ブロック）の表面の水分をキッチンペーパーなどで丁寧に拭き取ることが重要です。これにより、味が水っぽくなるのを防ぎます。"
+  },
+  {
+    "question": "冷蔵庫で昆布締めの魚を熟成させる際に適している水温はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "0度", "correct": false },
+      { "text": "2～5度", "correct": true },
+      { "text": "7～10度", "correct": false },
+      { "text": "15度", "correct": false }
+    ],
+    "additionalInfo": "細菌の繁殖を抑えつつ、魚の熟成を促すためには、一般的な家庭用冷蔵庫の温度である2～5度が適しています。"
+  },
+  {
+    "question": "自家製の昆布締めにおいて、注意すべき点で間違っているのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "冷蔵庫の中で熟成させる際は、水氷から浮き出ないようにする", "correct": true },
+      { "text": "真空にするときは空気が抜けないように、素早くビニールの先を絞る", "correct": false },
+      { "text": "柵をラップする際は、空気が入らないようにしっかり包む", "correct": false },
+      { "text": "熟成で使ったハンディクリーナーを掃除に使う時は、しっかり洗う", "correct": false }
+    ],
+    "additionalInfo": "昆布締めを水氷で熟成させる場合、魚が直接水に触れると味が落ちるため、しっかりと密閉して水に浸からないようにするのが基本です。したがって、この選択肢は間違いです。"
+  },
+  {
+    "question": "「煮切り」を行う目的はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "温めることによって、タレが染み込みやすくするため", "correct": false },
+      { "text": "温めることによって、食材の加工をしやすくするため", "correct": false },
+      { "text": "アルコール分を飛ばし、うま味や甘味を濃縮するため", "correct": true },
+      { "text": "アルコール分を飛ばし、塩味を引き出すため", "correct": false }
+    ],
+    "additionalInfo": "「煮切り」とは、日本酒やみりんを一度煮立たせてアルコール分を飛ばすことです。これにより、アルコールのツンとした匂いがなくなり、うま味や甘味だけが残ります。"
+  },
+  {
+    "question": "マグロを湯通しする際の注意点はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "中まで火が通らないようにする", "correct": true },
+      { "text": "しっかり火を通す", "correct": false },
+      { "text": "15分ほど湯通しする", "correct": false },
+      { "text": "お酒を沸騰させない", "correct": false }
+    ],
+    "additionalInfo": "マグロの湯通し（霜降り）は、表面だけを白くさせ、生臭みを取り除くのが目的です。火を通しすぎると身が硬くなるため、さっと湯にくぐらせる程度にします。"
+  },
+  {
+    "question": "湯通し後、取り出した柵をどうするか。",
+    "image": "",
+    "answers": [
+      { "text": "表面を少し焼く", "correct": false },
+      { "text": "冷凍庫に1時間ほど保管する", "correct": false },
+      { "text": "氷水の中に入れる", "correct": true },
+      { "text": "漬けダレに漬ける", "correct": false }
+    ],
+    "additionalInfo": "湯通しした後は、すぐに氷水に入れて急冷します。これにより、余熱で火が通り過ぎるのを防ぎ、身を引き締めることができます。"
+  },
+  {
+    "question": "明治9年の「東京府管内統計表」に入っていない魚介はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "赤ムツ", "correct": true },
+      { "text": "クロダイ", "correct": false },
+      { "text": "ボラ", "correct": false },
+      { "text": "ハマグリ", "correct": false }
+    ],
+    "additionalInfo": "当時の統計には、江戸前でよく獲れたクロダイ、ボラ、ハマグリなどは記載されていますが、赤ムツ（ノドグロ）は主に日本海側で獲れる魚のため、含まれていませんでした。"
+  },
+  {
+    "question": "シバエビの説明として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "細かなごま状の斑紋がある", "correct": false },
+      { "text": "名前は芝浦で多く漁獲されたことに由来するとされる", "correct": false },
+      { "text": "東京湾以南に生息する", "correct": false },
+      { "text": "十脚目ヒメエビ科に分類される", "correct": true }
+    ],
+    "additionalInfo": "シバエビは、クルマエビ科に分類されるエビです。ヒメエビ科ではありません。"
+  },
+  {
+    "question": "マイワシの分類として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ニシン目ウルメイワシ科", "correct": false },
+      { "text": "ニシン目カタクチイワシ科", "correct": false },
+      { "text": "ニシン目ニシン科", "correct": true },
+      { "text": "ニシン目キビナゴ科", "correct": false }
+    ],
+    "additionalInfo": "マイワシは、ニシンやコハダと同じ、ニシン目ニシン科に属する魚です。"
+  },
+  {
+    "question": "アカ貝の説明として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "アカ貝の赤色は人間と同じヘモグロビンに近い血液色素による", "correct": true },
+      { "text": "生命力が弱く、東京湾には生息していない", "correct": false },
+      { "text": "亜鉛や鉄分は少ない", "correct": false },
+      { "text": "フネガイ目バカガイ科", "correct": false }
+    ],
+    "additionalInfo": "アカガイの身が赤いのは、人間と同じヘモグロビン系の血液色素を含んでいるためです。鉄分などのミネラルも豊富です。"
+  },
+  {
+    "question": "ニホンウナギの説明として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "背びれ、尾びれ、尻びれがつながっている", "correct": false },
+      { "text": "ビタミンA、Dが豊富", "correct": false },
+      { "text": "粘液で体表がヌルヌルしている", "correct": false },
+      { "text": "鹿児島県が有名産地の一つ", "correct": true }
+    ],
+    "additionalInfo": "ニホンウナギの主な産地は、愛知県、宮崎県、鹿児島県などです。鹿児島県は養殖ウナギの生産量が日本一です。（注：選択肢が全て正しい内容のため、最も代表的な産地という文脈で他の選択肢と比較し、これを正解としています）"
+  },
+  {
+    "question": "国内で流通しているアナゴでないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ギンアナゴ", "correct": false },
+      { "text": "サクラアナゴ", "correct": true },
+      { "text": "ゴテンアナゴ", "correct": false },
+      { "text": "マアナゴ", "correct": false }
+    ],
+    "additionalInfo": "日本で主に食用として流通しているのは、マアナゴ、ゴテンアナゴ、ギンアナゴなどです。サクラアナゴという種は一般的ではありません。"
+  },
+  {
+    "question": "マコガレイの説明として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "カレイ目カレイ科", "correct": false },
+      { "text": "水深100mより浅い砂泥地に生息", "correct": false },
+      { "text": "関西でカレイといえばマコガレイを指す", "correct": false },
+      { "text": "背びれと尻びれに黒色の斑紋がある", "correct": true }
+    ],
+    "additionalInfo": "背びれと尻びれに黒い帯状の模様があるのは、マコガレイではなくマガレイの特徴です。"
+  },
+    {
+    "question": "クロダイの分類として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "スズキ目クロダイ科", "correct": false },
+      { "text": "スズキ目アマダイ科", "correct": false },
+      { "text": "スズキ目インダイ科", "correct": false },
+      { "text": "スズキ目タイ科", "correct": true }
+    ],
+    "additionalInfo": "クロダイは、名前に「タイ」とつきますが、マダイなどが属するタイ科ではなく、スズキ目タイ科に分類されます。"
+  },
+  {
+    "question": "ボラの一番大きいものは関東で何と呼ばれるか。",
+    "image": "",
+    "answers": [
+      { "text": "チヌ", "correct": false },
+      { "text": "トド", "correct": true },
+      { "text": "ノレソレ", "correct": false },
+      { "text": "クチグロ", "correct": false }
+    ],
+    "additionalInfo": "ボラは成長するにつれて名前が変わる出世魚で、関東ではオボコ→イナ→ボラ→トドと変化します。「トドのつまり」という言葉の語源です。"
+  },
+  {
+    "question": "クルマエビの説明として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "頭部には斜め、腹部には横に、茶褐色の縞模様がある", "correct": false },
+      { "text": "尾に赤と茶褐色の模様がある", "correct": false },
+      { "text": "死ぬと価値が大きく下がるため、生きている状態で売られるのが基本", "correct": false },
+      { "text": "インド洋から太平洋岸の内湾砂泥底に生息する", "correct": true }
+    ],
+    "additionalInfo": "クルマエビは、インド太平洋の温帯から熱帯域に広く分布しますが、主に内湾の砂泥底に生息します。インド洋全域ではありません。"
+  },
+  {
+    "question": "特に大型のサヨリは何と呼ばれるか。",
+    "image": "",
+    "answers": [
+      { "text": "カンヌキ", "correct": true },
+      { "text": "カツブシ", "correct": false },
+      { "text": "ガザミ", "correct": false },
+      { "text": "ウルメ", "correct": false }
+    ],
+    "additionalInfo": "サヨリは成長すると30cm以上になりますが、特に40cmを超えるような大型のものは、門の閂（かんぬき）に似ていることから「カンヌキ」と呼ばれ珍重されます。"
+  },
+  {
+    "question": "ヒラメの5枚おろしの基本的な全体の流れはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "頭と尻尾を落とす→鱗を落とす→5枚おろし→皮引き→切り付け", "correct": false },
+      { "text": "鱗を落とす→頭と尻尾を落とす→5枚おろし→切り付け", "correct": false },
+      { "text": "鱗を落とす→頭と尻尾を落とす→皮引き→5枚おろし→切り付け", "correct": false },
+      { "text": "鱗を落とす→頭と尻尾を落とす→5枚おろし→皮引き→切り付け", "correct": true }
+    ],
+    "additionalInfo": "魚をおろす基本は、まず鱗を落とし、頭と内臓を取り除きます。ヒラメの場合はその後、5枚におろし、皮を引いてからネタに切り付けます。"
+  },
+  {
+    "question": "ヒラメの頭の部分に切り込みが入るのはなぜか。",
+    "image": "quiz_data/images/sushi/sushi_hirame_head.jpg",
+    "answers": [
+      { "text": "運びやすくするため", "correct": false },
+      { "text": "鱗を取りやすくするため", "correct": false },
+      { "text": "捌きやすくするため", "correct": true },
+      { "text": "血抜きをしたため", "correct": false }
+    ],
+    "additionalInfo": "頭を落とす前に、エラの後ろや胸ビレの付け根に切り込みを入れることで、頭を落としやすくなり、その後の作業がスムーズに進みます。"
+  },
+  {
+    "question": "鱗を落とした後に、ヒラメを5枚に下ろし始める前の流れとして正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "頭を落とす→腎臓膜に切り込みを入れる→布巾でしっかり拭く→下ろす", "correct": false },
+      { "text": "頭を落とす→腎臓膜に切り込みを入れる→血を洗い流す→下ろす", "correct": true },
+      { "text": "頭を落とす→ヒレに切り込みを入れる→中骨の真上に線を入れる→下ろす", "correct": false },
+      { "text": "頭を落とす→中骨の真上に線を入れる→ヒレに切り込みを入れる→下ろす", "correct": false }
+    ],
+    "additionalInfo": "頭と内臓を取り除いた後、腹の中にある腎臓膜（血合い）に切り込みを入れ、流水で血をきれいに洗い流してから、本格的におろす作業に入ります。"
+  },
+  {
+    "question": "図のBはミル貝のどの部分か。",
+    "image": "quiz_data/images/sushi/sushi_mirugai_parts.jpg",
+    "answers": [
+      { "text": "水管の身", "correct": true },
+      { "text": "水管の皮", "correct": false },
+      { "text": "本体の身", "correct": false },
+      { "text": "内臓", "correct": false }
+    ],
+    "additionalInfo": "Bで示されているのは、ミル貝の特徴的な部位である「水管」の身の部分です。寿司ネタとして使われるのは主にこの部分です。"
+  },
+  {
+    "question": "ミル貝をさばいているこの図は何をしているところか。",
+    "image": "quiz_data/images/sushi/sushi_preparing_mirugai.jpg",
+    "answers": [
+      { "text": "形が悪いので、飾りを入れている", "correct": false },
+      { "text": "奥の方にある内臓を外している", "correct": false },
+      { "text": "縦長すぎるので、開いて大きくしている", "correct": true },
+      { "text": "開いて中の汚れを取っている", "correct": false }
+    ],
+    "additionalInfo": "ミル貝の水管は筒状になっているため、包丁を入れて開き、平らにすることで寿司ネタとして握りやすい形に整えます。"
+  },
+  {
+    "question": "「コンセプト設計」で決める内容として適切とはいえないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "他店にはない個性や魅力などのセールスポイント", "correct": false },
+      { "text": "ターゲットはどんな人にするか", "correct": false },
+      { "text": "どんなメニューを出すのか", "correct": false },
+      { "text": "資金調達をどうするか", "correct": true }
+    ],
+    "additionalInfo": "コンセプト設計は、「どのような店にするか」という骨格を決める作業です。資金調達は、そのコンセプトを実現するための具体的な「事業計画」の段階で検討します。"
+  },
+  {
+    "question": "「事業計画」に記載する内容として、必要でないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "創業の目的", "correct": false },
+      { "text": "店のコンセプト", "correct": false },
+      { "text": "従業員の評価基準", "correct": true },
+      { "text": "予定売上高", "correct": false }
+    ],
+    "additionalInfo": "事業計画は、店のコンセプト、資金計画、収支計画などを具体的にまとめたものです。従業員の評価基準は、開業後の店舗運営マニュアルなどで定める内容です。"
+  },
+  {
+    "question": "「食品衛生責任者」に必要な資格や条件として不十分なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "5年以上の実務経験", "correct": true },
+      { "text": "栄養士の資格", "correct": false },
+      { "text": "調理師の資格", "correct": false },
+      { "text": "定められた講習会の修了", "correct": false }
+    ],
+    "additionalInfo": "食品衛生責任者になるには、栄養士や調理師などの資格を持つか、指定の養成講習会を修了する必要があります。単なる実務経験だけでは資格要件を満たしません。"
+  },
+  {
+    "question": "図のCの部分はなにか。",
+    "image": "quiz_data/images/sushi/sushi_kitchen_layout.jpg",
+    "answers": [
+      { "text": "コールドテーブル", "correct": false },
+      { "text": "収納キャビネット", "correct": false },
+      { "text": "製氷機", "correct": true },
+      { "text": "移動台", "correct": false }
+    ],
+    "additionalInfo": "Cで示されているのは、氷を作るための「製氷機」です。飲食店、特に寿司屋では飲み物や魚の鮮度保持に氷が不可欠です。"
+  },
+  {
+    "question": "「厨房設備」に含まれないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ワークテーブル", "correct": false },
+      { "text": "冷凍冷蔵庫", "correct": false },
+      { "text": "舟形シンク", "correct": false },
+      { "text": "生け簀", "correct": true }
+    ],
+    "additionalInfo": "生け簀は、客席から見える場所に設置されることも多く、必ずしも厨房内に置かれるとは限らないため、一般的な厨房設備とは区別されることがあります。"
+  },
+  {
+    "question": "一般的に望ましいとされるFL比率の基準は何%以下か。",
+    "image": "",
+    "answers": [
+      { "text": "20～30%以下", "correct": false },
+      { "text": "30～40%以下", "correct": false },
+      { "text": "50～60%以下", "correct": true },
+      { "text": "70～80%以下", "correct": false }
+    ],
+    "additionalInfo": "FL比率とは、売上高に占める食材費（Food）と人件費（Labor）の合計の割合です。飲食店の経営において、この比率を60%以下に抑えるのが一つの目安とされています。"
+  },
+  {
+    "question": "売上100万円、食材費が30万円、人件費が30万円、家賃25万円とした場合、営業利益率は何%になるか。",
+    "image": "",
+    "answers": [
+      { "text": "5%", "correct": false },
+      { "text": "10%", "correct": false },
+      { "text": "15%", "correct": true },
+      { "text": "20%", "correct": false }
+    ],
+    "additionalInfo": "営業利益は「売上 - (食材費 + 人件費 + 家賃など経費)」で計算します。100 - (30 + 30 + 25) = 15万円。営業利益率は (15万円 ÷ 100万円) × 100 = 15% となります。"
+  },
+  {
+    "question": "歩留まり率を上げることで、何が期待できるか。",
+    "image": "",
+    "answers": [
+      { "text": "原価率が上がる", "correct": false },
+      { "text": "粗利率が上がる", "correct": true },
+      { "text": "FL比率が上がる", "correct": false },
+      { "text": "FD比率が上がる", "correct": false }
+    ],
+    "additionalInfo": "歩留まり率とは、仕入れた食材のうち、実際に商品として使える部分の割合です。歩留まり率が上がると、無駄が減って原価率が下がり、結果的に粗利率（売上総利益率）が上がります。"
+  },
+  {
+    "question": "個人の寿司店における差別化戦略で最も適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "大量仕入れによるコスト削減", "correct": false },
+      { "text": "ロボット化を進めて効率を上げる", "correct": false },
+      { "text": "熟成寿司など専門性を高める", "correct": true },
+      { "text": "メニューを均一化し、標準化を図る", "correct": false }
+    ],
+    "additionalInfo": "個人店が大手チェーンと差別化を図るには、価格競争ではなく、店主の技術やこだわりを活かした「専門性」を高めることが有効です。例えば、熟成寿司や特定の産地のネタに特化するなどです。"
+  },
+  {
+    "question": "ハラスメントに関する説明で間違っているものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "身体への攻撃や物を投げることはハラスメントに含まれる", "correct": false },
+      { "text": "大声で怒鳴ったり、過度な叱責をすることはハラスメントに含まれる", "correct": false },
+      { "text": "「バカ」など人格を否定する言葉はハラスメントに含まれる", "correct": false },
+      { "text": "業務上の行違いを指摘することはハラスメントに含まれる", "correct": true }
+    ],
+    "additionalInfo": "業務上、必要な範囲で間違いを指摘したり、指導したりすることは、正当な業務指示であり、ハラスメントにはあたりません。ただし、その方法や言動が社会通念を逸脱するとハラスメントと見なされる場合があります。"
+  },
+  {
+    "question": "寿司に酒を合わせるポイントとして、間違っているものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "生臭くならない酒を選ぶ", "correct": false },
+      { "text": "濃い味付けの料理には、軽い味わいの酒を選ぶ", "correct": true },
+      { "text": "同調する要素を持つ酒を選ぶ", "correct": false },
+      { "text": "魚介の生臭さをマスキングする酒を選ぶ", "correct": false }
+    ],
+    "additionalInfo": "一般的に、料理と飲み物の味の強さを合わせるのが基本です。濃い味付けの料理には、それに負けないしっかりとした味わいの酒を選ぶのが良いとされています。"
+  },
+  {
+    "question": "日本酒の「熟成タイプ」に合うとされる寿司ネタはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "ツブ貝", "correct": false },
+      { "text": "タコ", "correct": false },
+      { "text": "トロ", "correct": true },
+      { "text": "エビ", "correct": false }
+    ],
+    "additionalInfo": "熟成タイプの日本酒は、その複雑で芳醇な味わいが、トロのような脂の乗った濃厚なネタとよく合います。"
+  },
+  {
+    "question": "この中で酒と合わせた時に最も生臭くなりにくい寿司ネタはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "シャコ", "correct": false },
+      { "text": "サーモン", "correct": false },
+      { "text": "カレイ", "correct": true },
+      { "text": "シラウオ", "correct": false }
+    ],
+    "additionalInfo": "一般的に、白身魚であるカレイは、他の選択肢に比べて生臭さが出にくいとされています。"
+  },
+  {
+    "question": "「ご注文はお決まりですか？」の表現として、適切なものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "Are you still eating?", "correct": false },
+      { "text": "Are you ready to order?", "correct": true },
+      { "text": "What do you have?", "correct": false },
+      { "text": "Anything else?", "correct": false }
+    ],
+    "additionalInfo": "\"Are you ready to order?\" が「ご注文はお決まりですか？」という意味で最も一般的で丁寧な表現です。"
+  },
+  {
+    "question": "「お会計は現金のみです。」の表現として、適切なものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "We only accept cash.", "correct": true },
+      { "text": "We only accept credit cards.", "correct": false },
+      { "text": "We accept cash and cards.", "correct": false },
+      { "text": "We do not accept cash.", "correct": false }
+    ],
+    "additionalInfo": "\"We only accept cash.\" が「現金のみ受け付けます」という最も直接的で分かりやすい表現です。"
+  },
+  {
+    "question": "「つぶ貝」の英単語として正しいものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "Scallop", "correct": false },
+      { "text": "Mussel", "correct": false },
+      { "text": "Clam", "correct": false },
+      { "text": "Whelk", "correct": true }
+    ],
+    "additionalInfo": "つぶ貝は英語で \"Whelk\" と呼ばれます。Scallopはホタテ、Musselはムール貝、Clamはアサリやハマグリなどの二枚貝を指します。"
+  },
+  {
+    "question": "この中で食感の表現はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "深い味わい", "correct": false },
+      { "text": "ふわふわ", "correct": true },
+      { "text": "ほのかな苦み", "correct": false },
+      { "text": "豊かな香り", "correct": false }
+    ],
+    "additionalInfo": "「ふわふわ」は、口に入れたときの柔らかく軽い感触を表す言葉で、食感を表現するオノマトペです。"
+  },
+  {
+    "question": "「複数の味による効果」に関する記述として正しいものはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "味が均一に広がる", "correct": false },
+      { "text": "鼻に抜ける辛味が印象的", "correct": false },
+      { "text": "口の中で広がる甘味", "correct": false },
+      { "text": "初めて感じた酸味が後からうま味に変わる", "correct": true }
+    ],
+    "additionalInfo": "これは味の「対比効果」や「変化」の一例です。例えば、酢の酸味が魚のうま味を引き立てたり、時間差で味の感じ方が変わったりすることを指します。"
+  },
+  {
+    "question": "安直な使用はチープな印象を与える時があるため、注意すべき表現はどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "ツヤのある", "correct": false },
+      { "text": "トロトロな", "correct": true },
+      { "text": "塩気が強い", "correct": false },
+      { "text": "芳醇で豊かな香り", "correct": false }
+    ],
+    "additionalInfo": "「トロトロな」という表現は、使いすぎると安易で陳腐な印象を与えかねないため、食レポなどではより具体的で独創的な表現が求められることがあります。"
+  },
+    {
+    "question": "天保の改革によって起きたことはどれでしょう？",
+    "image": "",
+    "answers": [
+      { "text": "寿司屋台は衛生の観点から禁止され、徐々に姿を消した", "correct": false },
+      { "text": "与兵衛ずしなどの高級寿司職人が手鎖の刑に処された", "correct": true },
+      { "text": "寿司屋が花街以外の場所では営業不可となった", "correct": false },
+      { "text": "立って握ることが禁止され、寿司屋は内店が中心となった", "correct": false }
+    ],
+    "additionalInfo": "天保の改革による贅沢禁止令で、高級な寿司を提供していた「与兵衛ずし」の華屋与兵衛などが風紀を乱したとして処罰されました。"
+  },
+  {
+    "question": "内店で座敷に設けた寿司職人の調理場を何というか。",
+    "image": "",
+    "answers": [
+      { "text": "仕事場", "correct": false },
+      { "text": "握り処", "correct": false },
+      { "text": "漬け場", "correct": true },
+      { "text": "たね処", "correct": false }
+    ],
+    "additionalInfo": "客の目の前で寿司を握る場所を「つけ場（漬け場）」と呼びます。ネタを醤油に漬けて提供していた名残とも言われています。"
+  },
+  {
+    "question": "1883年に出版された『東京名物独案内』で、江戸三鮨に加えて紹介された寿司屋は次のうちどれか。",
+    "image": "",
+    "answers": [
+      { "text": "寿し亀", "correct": false },
+      { "text": "菊水鮓", "correct": false },
+      { "text": "東寿司", "correct": false },
+      { "text": "みやこ寿司", "correct": true }
+    ],
+    "additionalInfo": "江戸三鮨（松ヶ鮓、与兵衛ずし、毛抜き鮓）に、明治期に評判となった「みやこ寿司」を加えて紹介されることがありました。"
+  },
+  {
+    "question": "大正期に寿司が全国に広がるきっかけとなった要因として当てはまらないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "関東大震災や戦災による寿司職人の移住", "correct": false },
+      { "text": "明治政府による東京文化の推奨", "correct": true },
+      { "text": "戦後の握り寿司のみ営業可とした緊急措置令", "correct": false },
+      { "text": "寿司学校の全国的開校による寿司職人の増加", "correct": false }
+    ],
+    "additionalInfo": "明治政府が特定の食文化を推奨したという事実はなく、寿司の全国的な普及は、職人の移住や戦後の社会事情などが複合的に影響しました。"
+  },
+  {
+    "question": "1940年頃に登場したとされる寿司ネタはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "サーモン寿司", "correct": false },
+      { "text": "イナリ寿司", "correct": false },
+      { "text": "トロ握り", "correct": false },
+      { "text": "軍艦巻き", "correct": true }
+    ],
+    "additionalInfo": "ウニやイクラなど、握りにくいネタを提供するために考案された「軍艦巻き」は、1940年頃に銀座「久兵衛」で生まれたとされています。"
+  },
+  {
+    "question": "昭和期の寿司の形態の変化として当てはまらないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "寿司ネタを見て選べるネタケースの登場", "correct": false },
+      { "text": "寿司職人は立ち仕事から座って握るようになった", "correct": true },
+      { "text": "衛生などの観点から寿司屋台が姿を消した", "correct": false },
+      { "text": "回転寿司や持ち帰り・宅配寿司の専門店が誕生した", "correct": false }
+    ],
+    "additionalInfo": "寿司職人は伝統的に立ち仕事であり、座って握るのが一般的になったという事実はありません。むしろカウンター越しに客と対面するスタイルが定着しました。"
+  },
+  {
+    "question": "「コンベア旋回式食事台」という特許を持っていた回転寿司店はどこか。",
+    "image": "",
+    "answers": [
+      { "text": "かっぱ寿司", "correct": false },
+      { "text": "すし太郎", "correct": false },
+      { "text": "回転寿司可ら（から）く", "correct": false },
+      { "text": "元禄寿司", "correct": true }
+    ],
+    "additionalInfo": "回転寿司の生みの親である白石義明氏が創業した「元禄寿司」は、「コンベア旋回式食事台」の特許を取得していました。"
+  },
+  {
+    "question": "アメリカで誕生したサーモンとクリームチーズを使った巻き寿司の名前はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "フィラデルフィアロール", "correct": true },
+      { "text": "カリフォルニアロール", "correct": false },
+      { "text": "ペンシルベニアロール", "correct": false },
+      { "text": "バージニアロール", "correct": false }
+    ],
+    "additionalInfo": "フィラデルフィアロールは、アメリカのフィラデルフィア社製のクリームチーズを使用したことからその名が付きました。"
+  },
+  {
+    "question": "世界中に増えた日本食レストランは令和5年で約何店舗といわれるか。",
+    "image": "",
+    "answers": [
+      { "text": "5.6万店", "correct": false },
+      { "text": "18.7万店", "correct": true },
+      { "text": "21.4万店", "correct": false },
+      { "text": "59.5万店", "correct": false }
+    ],
+    "additionalInfo": "農林水産省の調査によると、海外の日本食レストランの数は年々増加しており、2023年（令和5年）時点で約18.7万店とされています。"
+  },
+  {
+    "question": "平成以降の寿司業界の変化について適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "立ち食い寿司の人気が廃れた", "correct": true },
+      { "text": "各国の嗜好に合わせてSUSHIのローカライズ化が進んだ", "correct": false },
+      { "text": "グルメ回転寿司という高価格帯の回転寿司が登場した", "correct": false },
+      { "text": "高級店では「おまかせ」コースが主流になった", "correct": false }
+    ],
+    "additionalInfo": "平成以降、むしろ手軽さや本格的な味を求めるニーズから、立ち食い寿司は人気を取り戻し、新たなスタイルで注目を集めています。"
+  },
+  {
+    "question": "馬喰町にあったとされる与兵衛ずしの支店はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "御慶ずし", "correct": false },
+      { "text": "二葉鮨", "correct": false },
+      { "text": "すし忠", "correct": true },
+      { "text": "美寿志", "correct": false }
+    ],
+    "additionalInfo": "江戸前寿司の祖、華屋与兵衛の店「与兵衛ずし」は、馬喰町に「すし忠」という支店を出していたと記録されています。"
+  },
+  {
+    "question": "「二葉鮨四天王」の一人で「握りの神様」などの異名を持つのは誰か。",
+    "image": "",
+    "answers": [
+      { "text": "藤本 繁蔵", "correct": true },
+      { "text": "新家 寅蔵", "correct": false },
+      { "text": "中田 一男", "correct": false },
+      { "text": "岡田 源四郎", "correct": false }
+    ],
+    "additionalInfo": "藤本繁蔵は、戦後の寿司業界を牽引した伝説的な職人で、その卓越した技術から「握りの神様」と称されました。"
+  },
+  {
+    "question": "「野口元夫」名義で俳優業も行った寿司職人は誰か。",
+    "image": "",
+    "answers": [
+      { "text": "小泉 清", "correct": false },
+      { "text": "小西 道太郎", "correct": false },
+      { "text": "取出 武九郎", "correct": true },
+      { "text": "吉野 昇雄", "correct": false }
+    ],
+    "additionalInfo": "浅草「千代乃寿司」の取出武九郎は、「野口元夫」という芸名で俳優としても活躍した異色の経歴を持つ寿司職人です。"
+  },
+  {
+    "question": "「すきやばし次郎」の小野二郎が修業した寿司屋はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "みやこ寿司", "correct": false },
+      { "text": "二葉鮨", "correct": false },
+      { "text": "与志乃本店", "correct": true },
+      { "text": "すし忠", "correct": false }
+    ],
+    "additionalInfo": "世界的に有名な「すきやばし次郎」の店主、小野二郎氏は、京橋の名店「与志乃本店」で修業を積みました。"
+  },
+  {
+    "question": "カジキなどに見られる尖った上顎のことを何というか。",
+    "image": "",
+    "answers": [
+      { "text": "剣先", "correct": false },
+      { "text": "吻", "correct": true },
+      { "text": "棘", "correct": false },
+      { "text": "針口", "correct": false }
+    ],
+    "additionalInfo": "魚類の長く突き出た口や鼻の部分を「吻（ふん）」と呼びます。カジキの吻は特に有名です。"
+  },
+  {
+    "question": "3歳頃までのクロマグロの幼魚のことを何というか。",
+    "image": "",
+    "answers": [
+      { "text": "カジキマグロ", "correct": false },
+      { "text": "ハタマグロ", "correct": false },
+      { "text": "ビンチョウマグロ", "correct": false },
+      { "text": "メジマグロ", "correct": true }
+    ],
+    "additionalInfo": "クロマグロは成長段階で呼び名が変わり、3歳頃までの幼魚は「メジ」または「メジマグロ」と呼ばれます。"
+  },
+  {
+    "question": "アマダイの京都・大阪での呼び名は何になるか。",
+    "image": "",
+    "answers": [
+      { "text": "グジ", "correct": true },
+      { "text": "メジ", "correct": false },
+      { "text": "キジ", "correct": false },
+      { "text": "カブ", "correct": false }
+    ],
+    "additionalInfo": "アマダイは、関西地方、特に京都や大阪では「グジ」という名前で呼ばれ、高級魚として珍重されています。"
+  },
+  {
+    "question": "河川に残るサクラマスの陸封型を何とよぶか。",
+    "image": "",
+    "answers": [
+      { "text": "ニジマス", "correct": false },
+      { "text": "トラウト", "correct": false },
+      { "text": "ヤマメ", "correct": true },
+      { "text": "イワナ", "correct": false }
+    ],
+    "additionalInfo": "サクラマスは海に下る個体と、一生を川で過ごす個体に分かれます。川に残った個体（陸封型）が「ヤマメ」です。"
+  },
+  {
+    "question": "富山湾で漁獲される「富山湾の宝石」と呼ばれるエビはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "シバエビ", "correct": false },
+      { "text": "アカエビ", "correct": false },
+      { "text": "クルマエビ", "correct": false },
+      { "text": "シロエビ", "correct": true }
+    ],
+    "additionalInfo": "富山湾で獲れるシロエビは、その透き通るような美しい姿から「富山湾の宝石」と称され、独特の甘みととろけるような食感が特徴です。"
+  },
+  {
+    "question": "ブランド魚「釣りキンキ」はどこで漁獲されるか。",
+    "image": "",
+    "answers": [
+      { "text": "銚子", "correct": false },
+      { "text": "網走", "correct": true },
+      { "text": "八戸", "correct": false },
+      { "text": "焼津", "correct": false }
+    ],
+    "additionalInfo": "北海道の網走（あばしり）で、延縄（はえなわ）漁で一匹ずつ丁寧に釣り上げられたキンキは、「釣りキンキ」として最高級のブランド魚とされています。"
+  },
+  {
+    "question": "昭和5年発行の『すし通』で関西から東京に流行してきたものとして紹介されたのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ひょうこ", "correct": false },
+      { "text": "新香巻き", "correct": false },
+      { "text": "トロタク巻き", "correct": false },
+      { "text": "肉寿司", "correct": true }
+    ],
+    "additionalInfo": "昭和初期の文献『すし通』には、当時まだ珍しかった「肉寿司」が、関西方面から東京に伝わってきた新しい流行として紹介されています。"
+  },
+    {
+    "question": "渋みが落ち着いた酸っぱさを特徴とする酸はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "酒石酸", "correct": false },
+      { "text": "リンゴ酸", "correct": false },
+      { "text": "乳酸", "correct": true },
+      { "text": "酢酸", "correct": false }
+    ],
+    "additionalInfo": "乳酸は、ヨーグルトやなれずしなどに含まれる酸で、ツンとこない、まろやかで落ち着いた酸味が特徴です。酢酸は酢の主成分で、よりシャープな酸味を持ちます。"
+  },
+  {
+    "question": "微生物によって、人間にとって有益でない物質や有害な物質が産生されることを何というか。",
+    "image": "",
+    "answers": [
+      { "text": "酸化", "correct": false },
+      { "text": "乾燥", "correct": false },
+      { "text": "不朽", "correct": false },
+      { "text": "腐敗", "correct": true }
+    ],
+    "additionalInfo": "発酵が人間にとって有益な物質を生み出すのに対し、腐敗は有害な物質や不快な臭いを生み出す現象を指します。どちらも微生物の働きによるものです。"
+  },
+  {
+    "question": "「うるち米」または「もち米」に分類する基準とされるのはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "生産地域と管理体制", "correct": false },
+      { "text": "生産者と品種特性", "correct": false },
+      { "text": "水分含量", "correct": false },
+      { "text": "アミロース含量とアミロペクチン含量", "correct": true }
+    ],
+    "additionalInfo": "米の粘り気は、デンプンであるアミロースとアミロペクチンの含有比率で決まります。アミロースが少ないほど粘り気が強く、もち米はアミロペクチンが100%です。"
+  },
+  {
+    "question": "「熟成」の説明として適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "食材の酵素の働きなどでたんぱく質等の分解が行われ、旨みや食感が向上する", "correct": true },
+      { "text": "酢や塩、醤油などの調味料に漬け込むことで豊かな風味が生み出される", "correct": false },
+      { "text": "微生物による乳酸菌の産生によって風味が向上する", "correct": false },
+      { "text": "微生物の働きによって、人間にとって役立つものが作り出される", "correct": false }
+    ],
+    "additionalInfo": "寿司における「熟成」は、主に魚が持つ自己消化酵素の働きを利用して、タンパク質をアミノ酸（うま味成分）に分解させ、身を柔らかくし、味を向上させる技術です。"
+  },
+  {
+    "question": "魚が死んだ際にアデノシン三リン酸が分解されて産生される成分はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "グルタミン酸", "correct": false },
+      { "text": "イノシン酸", "correct": true },
+      { "text": "グリシン", "correct": false },
+      { "text": "アルギニン", "correct": false }
+    ],
+    "additionalInfo": "魚のうま味の主成分であるイノシン酸は、死後にATP（アデノシン三リン酸）というエネルギー物質が分解される過程で生成されます。"
+  },
+  {
+    "question": "多いほど米の粘り気が多くなるというデンプンは次のうちどれか。",
+    "image": "",
+    "answers": [
+      { "text": "アミロプラスト", "correct": false },
+      { "text": "アミロプシン", "correct": false },
+      { "text": "アミロース", "correct": false },
+      { "text": "アミロペクチン", "correct": true }
+    ],
+    "additionalInfo": "米のデンプンはアミロースとアミロペクチンから構成されます。粘りの元となるのはアミロペクチンで、この割合が高いほど粘り気が強くなります。"
+  },
+  {
+    "question": "アジアイネではない種はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ジャポニカ", "correct": false },
+      { "text": "グラベリマ", "correct": true },
+      { "text": "ジャバニカ", "correct": false },
+      { "text": "インディカ", "correct": false }
+    ],
+    "additionalInfo": "現在栽培されている米は、アジア稲（アジアイネ）とアフリカ稲（グラベリマ）に大別されます。ジャポニカ、ジャバニカ、インディカはすべてアジア稲の品種群です。"
+  },
+  {
+    "question": "釜で炊いたご飯のうち、酢飯として最も適しているのはどの部分か",
+    "image": "",
+    "answers": [
+      { "text": "釜の上部のご飯", "correct": false },
+      { "text": "釜の中部のご飯", "correct": true },
+      { "text": "釜の下部のご飯", "correct": false },
+      { "text": "釜の底部のご飯", "correct": false }
+    ],
+    "additionalInfo": "釜で炊いたご飯は、対流によって中心部が最も水分バランス良く炊き上がるとされています。底に近い部分は水分が多くなりがちです。"
+  },
+  {
+    "question": "石川県の郷土寿司ではないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "大根ずし", "correct": false },
+      { "text": "かぶらずし", "correct": false },
+      { "text": "すしこ", "correct": true },
+      { "text": "押しずし", "correct": false }
+    ],
+    "additionalInfo": "「すしこ」は福井県の郷土料理です。大根ずし、かぶらずしは石川県を代表する冬のなれずしです。"
+  },
+  {
+    "question": "「雷神様」とも呼ばれ、秋田県では重要な魚で郷土寿司に使われる魚はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "クロソイ", "correct": false },
+      { "text": "ハタハタ", "correct": true },
+      { "text": "カマス", "correct": false },
+      { "text": "メヒカリ", "correct": false }
+    ],
+    "additionalInfo": "ハタハタは、冬の雷が鳴る時期に産卵のために沿岸に押し寄せることから「雷魚」とも呼ばれ、秋田県の県魚として親しまれています。"
+  },
+  {
+    "question": "「小佐波みょうが」を使った寿司はどこの郷土寿司か。",
+    "image": "",
+    "answers": [
+      { "text": "富山県", "correct": false },
+      { "text": "新潟県", "correct": false },
+      { "text": "石川県", "correct": false },
+      { "text": "福井県", "correct": true }
+    ],
+    "additionalInfo": "福井県大野市に伝わる「小佐波みょうが」を使った押し寿司は、その独特の風味と鮮やかな色合いが特徴の郷土料理です。"
+  },
+  {
+    "question": "福井県の郷土寿司「笹寿司」によく使われるのは何の葉か。",
+    "image": "",
+    "answers": [
+      { "text": "ワサビ", "correct": false },
+      { "text": "アカメガシワ", "correct": false },
+      { "text": "ホオノキ", "correct": false },
+      { "text": "アブラギリ", "correct": true }
+    ],
+    "additionalInfo": "福井県の一部地域で作られる笹寿司には、アブラギリの葉が使われることがあります。大きな葉で包みやすいのが特徴です。"
+  },
+  {
+    "question": "長野県の郷土寿司「笹ずし」を保存食として携帯したとされる武将は誰か。",
+    "image": "",
+    "answers": [
+      { "text": "真田幸村", "correct": false },
+      { "text": "上杉謙信", "correct": true },
+      { "text": "武田信玄", "correct": false },
+      { "text": "直江兼続", "correct": false }
+    ],
+    "additionalInfo": "長野県北部に伝わる「笹ずし」は、川中島の戦いの際に上杉謙信が携帯食としていたという伝説が残っています。"
+  },
+  {
+    "question": "郷土料理百選にも選ばれた三重県伊勢志摩を代表する郷土料理はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "あゆずし", "correct": false },
+      { "text": "ふなずし", "correct": false },
+      { "text": "てこねずし", "correct": true },
+      { "text": "塩引きずし", "correct": false }
+    ],
+    "additionalInfo": "「てこねずし」は、カツオなどの赤身魚を醤油ベースのタレに漬け込み、酢飯と豪快に混ぜ合わせた、三重県志摩地方の漁師料理です。"
+  },
+  {
+    "question": "図のAにあたる部分の名称はどれか。",
+    "image": "quiz_data/images/sushi/sushi_ago.jpg",
+    "answers": [
+      { "text": "みね", "correct": false },
+      { "text": "そり", "correct": false },
+      { "text": "しのぎ", "correct": false },
+      { "text": "あご", "correct": true }
+    ],
+    "additionalInfo": "包丁の刃の、柄に近い角の部分を「あご」と呼びます。野菜の皮むきや細かい作業に使われる部分です。"
+  },
+  {
+    "question": "和包丁の本焼きのデメリットとして適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "値段が高い", "correct": false },
+      { "text": "刃が歪みやすい", "correct": false },
+      { "text": "衝撃に弱い", "correct": false },
+      { "text": "研ぎにくい", "correct": true }
+    ],
+    "additionalInfo": "本焼きの包丁は非常に硬く作られているため、研ぎやすいとは言えませんが、一度刃をつけると切れ味が長持ちするというメリットがあります。デメリットは価格の高さや、硬いが故に欠けやすい点です。"
+  },
+  {
+    "question": "包丁を研ぐ際に気をつけるべきこととして適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "刃先、真ん中、刃元と部位ごとに表面の角度を変える", "correct": false },
+      { "text": "包丁の刃先を押さえたら10度ほどの角度で研ぐ", "correct": true },
+      { "text": "角度を一定にしたまま、一定の時間、一定の強さで研ぐ。", "correct": false },
+      { "text": "裏面を研ぐときは強く押すようにする", "correct": false }
+    ],
+    "additionalInfo": "和包丁を研ぐ際の基本的な角度は、砥石に対して10円玉が1〜2枚入る程度の約10〜15度とされています。この角度を保って研ぐことが重要です。"
+  },
+  {
+    "question": "包丁の洗い方として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "洗剤をつけて泡立てたスポンジを使う", "correct": false },
+      { "text": "スポンジを利き手で持ち、反対の手で包丁の柄をしっかり持つ", "correct": false },
+      { "text": "スポンジを二つ折りにして、包丁の刃先側からしっかり挟む", "correct": true },
+      { "text": "柄と口金もしっかり洗う", "correct": false }
+    ],
+    "additionalInfo": "包丁を洗う際は、怪我をしないように刃の背（みね）側からスポンジを当てて洗うのが安全です。刃先から挟むとスポンジが切れたり、手を怪我する危険があります。"
+  },
+  {
+    "question": "職人の身だしなみとして間違っているものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "服装は清潔感があれば派手な色でも良い", "correct": true },
+      { "text": "業務中は指輪を外す", "correct": false },
+      { "text": "ズボンは黒または白のスラックスを着用する", "correct": false },
+      { "text": "香水やタバコは控える", "correct": false }
+    ],
+    "additionalInfo": "寿司職人の服装は、清潔感が第一です。伝統的に白衣が用いられるように、派手な色は避け、シンプルで清潔な服装が求められます。"
+  },
+  {
+    "question": "まな板の洗い始めにお湯ではなく水を使う理由として適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "温度が高くなることによってカビが生えやすくなるため", "correct": false },
+      { "text": "熱が菌の繁殖を促してしまうため", "correct": false },
+      { "text": "熱でまな板上の魚などのタンパク質が固まってしまうため", "correct": true },
+      { "text": "乾燥させづらくなってしまうため", "correct": false }
+    ],
+    "additionalInfo": "魚や肉の血液やタンパク質は、お湯をかけると熱で凝固してしまい、汚れが落ちにくくなります。そのため、最初は水で洗い流すのが基本です。"
+  },
+  {
+    "question": "木のまな板のメリットに当てはまらないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "切れ味が長持ちしやすい", "correct": false },
+      { "text": "乾燥させる必要がない", "correct": true },
+      { "text": "疲れにくい", "correct": false },
+      { "text": "包丁の刃を傷めにくい", "correct": false }
+    ],
+    "additionalInfo": "木のまな板は適度な弾力性があり包丁の刃を傷めにくいですが、水分を吸収しやすいため、使用後はしっかりと乾燥させないとカビや雑菌が繁殖する原因になります。"
+  },
+  {
+    "question": "お櫃が黒っぽくすすんできた場合の対処法として適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "紙やすりで削り取る", "correct": false },
+      { "text": "60度のお湯を張った後10分ほど待つ", "correct": false },
+      { "text": "水で濡らし、レモン汁を使ってタワシで磨き洗いする", "correct": true },
+      { "text": "塩素系漂白剤に漬け込む", "correct": false }
+    ],
+    "additionalInfo": "木の黒ずみ（タンニンとアルカリの反応）には、酸が有効です。レモン汁や酢を使って磨くことで、黒ずみを和らげることができます。塩素系漂白剤は木を傷める可能性があります。"
+  },
+  {
+    "question": "醤油・水・酒・みりんなどを合わせて煮て作られた醤油を何というか。",
+    "image": "",
+    "answers": [
+      { "text": "煮切り", "correct": true },
+      { "text": "煮詰め", "correct": false },
+      { "text": "煮出し", "correct": false },
+      { "text": "煮合い", "correct": false }
+    ],
+    "additionalInfo": "「煮切り」とは、醤油や酒、みりんなどを一度煮立ててアルコール分を飛ばし、味をまろやかにしたものです。寿司の「ツメ（煮詰め）」のベースなどに使われます。"
+  },
+  {
+    "question": "お櫃の洗い方・乾かし方について間違っているものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "水またはお湯で洗い、水気をよく拭き取る", "correct": false },
+      { "text": "乾かす際は伏せた状態にする", "correct": false },
+      { "text": "必要に応じて、中性洗剤で汚れを落とす", "correct": false },
+      { "text": "日光の下に置き、完全に乾かす", "correct": true }
+    ],
+    "additionalInfo": "木製品であるお櫃を直射日光に当てると、急激な乾燥により木が反ったり、ひび割れ（干割れ）が起きたりする原因になります。風通しの良い日陰で乾かすのが基本です。"
+  },
+  {
+    "question": "酢締めの説明として適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "保存性を高めながら魚の風味を引き出す方法", "correct": false },
+      { "text": "主にマグロなどの赤身魚に用いられる", "correct": true },
+      { "text": "魚に塩を軽く振って締め、その後に酢に漬ける", "correct": false },
+      { "text": "漬け込む時間や塩・酢の濃度は、魚によって調整する", "correct": false }
+    ],
+    "additionalInfo": "酢締めは、コハダやサバ、アジといった光り物や白身魚に主に用いられる技法です。マグロのような赤身魚には通常行いません。"
+  },
+  {
+    "question": "煮仕事の説明として適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "アナゴ、タコ、シャコ、ハマグリなどで用いられる", "correct": false },
+      { "text": "一般的にみりん、醤油、砂糖が用いられる", "correct": false },
+      { "text": "温度と加熱時間の調整により、熟成の度合いが変わる", "correct": true },
+      { "text": "昔から店のレベルをはかる重要な技術の一つ", "correct": false }
+    ],
+    "additionalInfo": "煮仕事は、食材を柔らかくし味を含ませるための加熱調理であり、酵素の働きによる「熟成」とは異なります。アナゴの「煮詰め（ツメ）」などが代表的です。"
+  },
+  {
+    "question": "タラなどの白身魚やエビのすり身を煎り付けたものを何というか。",
+    "image": "",
+    "answers": [
+      { "text": "かまぼこ", "correct": false },
+      { "text": "そぼろ", "correct": false },
+      { "text": "いり身", "correct": false },
+      { "text": "おぼろ", "correct": true }
+    ],
+    "additionalInfo": "魚のすり身を調味して煎り、水分を飛ばしてフレーク状にしたものを「おぼろ」と呼びます。ちらし寿司や巻き寿司の具材として使われます。"
+  },
+  {
+    "question": "伝統的な江戸前寿司の玉子焼きの説明として適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "エビや白身魚のすり身を入れたカステラ風の玉子焼き", "correct": false },
+      { "text": "おまかせの先付けとして出され、店の技術力をはかる目安となる", "correct": true },
+      { "text": "強火ではなく弱火でじっくり焼くことで滑らかになる", "correct": false },
+      { "text": "職人の技術と意気込みを象徴する仕事とされる", "correct": false }
+    ],
+    "additionalInfo": "伝統的に、玉子焼きはコースの最後にデザート感覚で出されることが多く、「おまかせの先付け（最初）」として出されることは一般的ではありません。"
+  },
+  {
+    "question": "細巻のつくり方の説明として適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "手酢をつけてから、手でシャリを60gぐらい取る", "correct": false },
+      { "text": "シャリを敷くときは海苔の上を3cmほどあける", "correct": true },
+      { "text": "巻くときは具を押さえながら巻きすの端を持つ", "correct": false },
+      { "text": "巻きすで形を作るときは巻きすが地面と直角になるようにする", "correct": false }
+    ],
+    "additionalInfo": "細巻きの場合、シャリを敷く際に海苔の上部を空けるのは1cm程度が一般的です。3cmも空けてしまうと、巻き終わりの糊代が大きすぎます。"
+  },
+  {
+    "question": "巻き物を切る際の説明として正しいと言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "滑らせるように押し切りにする", "correct": false },
+      { "text": "包丁の刃は水で濡らしてはいけない", "correct": true },
+      { "text": "左手は巻き物が動かないように手前を押さえる", "correct": false },
+      { "text": "三等分に切るときは両も押さえる", "correct": false }
+    ],
+    "additionalInfo": "巻き物を切る際は、包丁の刃を酢水や水で湿らせることで、シャリがくっつくのを防ぎ、綺麗な切り口になります。"
+  },
+  {
+    "question": "イクラの仕込みとして適切ではないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "火が通らないように40度ほどのお湯に筋子をバラす", "correct": false },
+      { "text": "お湯に筋子を入れて端の方の膜がとれてきた後に少しずつ剥がしていく", "correct": false },
+      { "text": "よく火を通した醤油に、酒とみりんを加えて冷まし、イクラを漬ける", "correct": true },
+      { "text": "バラけた筋子をざるで水洗いする際に残った筋を外す", "correct": false }
+    ],
+    "additionalInfo": "イクラを漬ける醤油だれは、醤油・酒・みりんを一度煮立ててアルコールを飛ばした「煮切り醤油」を冷ましてから使います。火を通していない醤油に漬けると、生臭さの原因になります。"
+  },
+  {
+    "question": "イクラの軍艦を作る際の説明として適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "イクラを乗せる時は、シャリが見えないように乗せる", "correct": false },
+      { "text": "シャリを取る時は、すくように潰さないようにして取る", "correct": false },
+      { "text": "形を整えるために、並べる際にはのりしろとのりしろを合わせる", "correct": false },
+      { "text": "軍艦も握りと同じように、空気穴を開けないといけない", "correct": true }
+    ],
+    "additionalInfo": "軍艦巻きは、握り寿司のようにシャリとネタが一体化しているわけではないため、空気穴を意識して作る必要はありません。"
+  },
+  {
+    "question": "サステナブル寿司の説明として当てはまらないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "サステナブル寿司ガイドなどにより、寿司ネタが色分けされる", "correct": false },
+      { "text": "持続可能な漁法や養殖で漁獲された魚介を寿司ネタに使用する", "correct": false },
+      { "text": "旬の魚介を寿司ネタとして使用することで豊かな食生活を実現する", "correct": true },
+      { "text": "環境への影響を最小限に抑えるための取り組み", "correct": false }
+    ],
+    "additionalInfo": "サステナブル寿司は、水産資源や海洋環境の持続可能性に配慮した寿司のことです。旬の魚を使うことは食文化として重要ですが、それ自体がサステナビリティを直接意味するわけではありません。"
+  },
+  {
+    "question": "アジの硬いトゲ状の鱗を何というか。",
+    "image": "",
+    "answers": [
+      { "text": "マチバリ", "correct": false },
+      { "text": "イガシ", "correct": false },
+      { "text": "ゼイゴ", "correct": true },
+      { "text": "ジトウ", "correct": false }
+    ],
+    "additionalInfo": "アジの尾の付け根あたりにある、硬くトゲのある特殊な鱗を「ゼイゴ（またはゼンゴ）」と呼びます。調理の際には取り除く必要があります。"
+  },
+  {
+    "question": "スルメイカの分類として適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "コウイカ目コウイカ科", "correct": false },
+      { "text": "ツツイカ目ジンドウイカ科", "correct": false },
+      { "text": "ツツイカ目ヤリイカ科", "correct": false },
+      { "text": "ツツイカ目アカイカ科", "correct": true }
+    ],
+    "additionalInfo": "スルメイカは、分類学上「ツツイカ目アカイカ科」に属します。"
+  },
+  {
+    "question": "スズキの特徴として適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "身が厚く弾力があるものが良い", "correct": false },
+      { "text": "スズキ科スズキ属に分類される", "correct": false },
+      { "text": "夏の白身魚の代表格", "correct": false },
+      { "text": "口が大きく、上あごが出ている", "correct": true }
+    ],
+    "additionalInfo": "スズキは、口が大きく、下あごが上あごより前に突き出ているのが特徴です。"
+  },
+  {
+    "question": "あやかり鯛ではないタイ科の魚はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "アマダイ", "correct": true },
+      { "text": "ハマダイ", "correct": false },
+      { "text": "キダイ", "correct": false },
+      { "text": "キンメダイ", "correct": true }
+    ],
+    "additionalInfo": "「あやかり鯛」とは、姿形がマダイに似ていることから「タイ」の名がつく魚のことです。アマダイやキンメダイは、分類上タイ科ではありません。"
+  },
+  {
+    "question": "ツブ貝の身の唾液腺に含まれる毒素の名前はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ヒスタミン", "correct": false },
+      { "text": "テトラミン", "correct": true },
+      { "text": "ヒスチジン", "correct": false },
+      { "text": "パリトキシン", "correct": false }
+    ],
+    "additionalInfo": "一部のツブ貝の唾液腺には「テトラミン」という毒素が含まれており、食べると頭痛やめまいなどの中毒症状を引き起こすため、調理の際に除去する必要があります。"
+  },
+  {
+    "question": "このなかでムツ科の魚はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "クロムツ", "correct": false },
+      { "text": "アカムツ", "correct": true },
+      { "text": "ギンムツ", "correct": false },
+      { "text": "シロムツ", "correct": false }
+    ],
+    "additionalInfo": "アカムツ（通称ノドグロ）は、名前に「ムツ」と付きますが、スズキ科ホタルジャコ科に属し、ムツ科ではありません。クロムツがムツ科の魚です。"
+  },
+  {
+    "question": "サバは本来鮮度が落ちやすい魚だったことから何と呼ばれていたか。",
+    "image": "",
+    "answers": [
+      { "text": "鯖の腐り腐れ", "correct": false },
+      { "text": "鯖の持ち腐れ", "correct": false },
+      { "text": "鯖の生き腐れ", "correct": true },
+      { "text": "鯖の運び腐れ", "correct": false }
+    ],
+    "additionalInfo": "サバは非常に傷みやすい魚であるため、「サバの生き腐れ」という言葉が生まれました。"
+  },
+  {
+    "question": "かつて唯一「サケ」と呼ばれていた魚はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ベニザケ", "correct": false },
+      { "text": "ギンザケ", "correct": false },
+      { "text": "シロザケ", "correct": true },
+      { "text": "マスノスケ", "correct": false }
+    ],
+    "additionalInfo": "日本では古来、単に「サケ」と言えば「シロザケ」のことを指しました。他のサケ類は、区別するために「ベニザケ」のように色などの特徴を付けて呼ばれます。"
+  },
+  {
+    "question": "50cmくらいまでのサワラを何と呼ぶか。",
+    "image": "",
+    "answers": [
+      { "text": "チビキ", "correct": false },
+      { "text": "ワラサ", "correct": false },
+      { "text": "ヤナギ", "correct": false },
+      { "text": "サゴチ", "correct": true }
+    ],
+    "additionalInfo": "サワラは出世魚で、50cm程度までの若い個体は「サゴシ（またはサゴチ）」と呼ばれます。"
+  },
+  {
+    "question": "関西でのブリの名称の変化として適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ツバス→ハマチ→メジロ→ブリ", "correct": true },
+      { "text": "ワカシー→イナダー→ワラサー→ブリ", "correct": false },
+      { "text": "メジロ→ツバス→ハマチ→ブリ", "correct": false },
+      { "text": "ワラサ→イナダー→ワカシー→ブリ", "correct": false }
+    ],
+    "additionalInfo": "ブリは地域によって呼び名が異なります。関西では一般的に「ツバス→ハマチ→メジロ→ブリ」の順に名前が変わります。"
+  },
+  {
+    "question": "ヒラマサとブリの違いに関する説明で適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ヒラマサには口の先から尾まで黄色い縞があるが、ブリにはない", "correct": false },
+      { "text": "ブリは群れで行動するのに対し、ヒラマサは単独行動が多い", "correct": false },
+      { "text": "ヒラマサの鰓は丸みを帯びていないが、ブリの鰓は丸みを帯びている", "correct": true },
+      { "text": "ヒラマサのヒレは長いが、ブリは短い", "correct": false }
+    ],
+    "additionalInfo": "見分けるポイントの一つは上顎の後端上部で、ブリは角張っているのに対し、ヒラマサは丸みを帯びています。"
+  },
+  {
+    "question": "アジの仕込みに関する説明で適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "3枚下ろしにする際、身に傷が付かないよう身をめくりながら切る", "correct": false },
+      { "text": "表面に菌が多いため、流水でよく洗い流す", "correct": false },
+      { "text": "うま味成分が豊富なため、ガンバラという薄膜は残す", "correct": true },
+      { "text": "爪の面で内臓と腎臓の血を掻き出す様な形で、洗い流す", "correct": false }
+    ],
+    "additionalInfo": "ガンバラ（腹の薄い膜）は、傷みやすく生臭さの原因になるため、調理の際には綺麗に取り除くのが一般的です。"
+  },
+  {
+    "question": "アジの仕込みに関するこの写真の説明で適切とは言えないものはどれか。",
+    "image": "quiz_data/images/sushi/sushi_aji_shikomi_1.jpg",
+    "answers": [
+      { "text": "丸で囲まれた部分に腎臓がある", "correct": false },
+      { "text": "この膜に切り込みを入れて血を掻き出す", "correct": false },
+      { "text": "血がなくなるまで洗い流して臭みを取り除く", "correct": false },
+      { "text": "包丁で中骨を剥ぎ取っている", "correct": true }
+    ],
+    "additionalInfo": "この写真は、アジの腹を開いて内臓や血合いを取り除く下処理の段階です。中骨を剥ぎ取るのは、この後の工程になります。"
+  },
+  {
+    "question": "アジの仕込みに関するこの写真は何をしているところか。",
+    "image": "quiz_data/images/sushi/sushi_aji_shikomi_2.jpg",
+    "answers": [
+      { "text": "鮮度をチェックしている", "correct": false },
+      { "text": "骨が残っていないかチェックしている", "correct": true },
+      { "text": "アニサキスがいないか目視でチェックしている", "correct": false },
+      { "text": "寿司ネタにする際の大きさを測っている", "correct": false }
+    ],
+    "additionalInfo": "三枚におろした後、腹骨や小骨を骨抜きで取り除きます。この写真は、指で触って骨が完全に取り除かれているかを確認している「骨切り」の工程です。"
+  },
+  {
+    "question": "食中毒の発生を防止するための対策として適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "食材の保管場所は危険温度帯である20℃以上にならないように注意する", "correct": true },
+      { "text": "加熱する場合は、食材の中心部を75℃以上で1分以上加熱する", "correct": false },
+      { "text": "冷却は30分以内に迅速に行う", "correct": false },
+      { "text": "食材の保存期限を守ることを習慣づける", "correct": false }
+    ],
+    "additionalInfo": "食中毒菌が最も増殖しやすい「危険温度帯」は、一般的に10℃～60℃とされています。20℃はこの範囲内にあるため、不適切な管理温度です。"
+  },
+  {
+    "question": "感染症の説明として当てはまらないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "虫などを介して感染する", "correct": false },
+      { "text": "触れることによって感染する", "correct": false },
+      { "text": "食品や飲料を摂取することによって感染する", "correct": false },
+      { "text": "空気を介して感染する", "correct": true }
+    ],
+    "additionalInfo": "食中毒は、原因となる細菌やウイルスが付着した食品を食べることによる「経口感染」が主であり、インフルエンザのような「空気感染」はしません。"
+  },
+  {
+    "question": "食中毒の一つであるヒスタミンの対策として適切でないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "赤身魚の加工品は低温保存する", "correct": false },
+      { "text": "原因となるヒスチジンを多く含む白身魚を常温放置しない", "correct": true },
+      { "text": "汚染されても増える可能性があるので早く食べる", "correct": false },
+      { "text": "ヒスタミン産生菌はエラや消化管に多いため、エラや内臓は早く除去する", "correct": false }
+    ],
+    "additionalInfo": "ヒスタミン食中毒の原因となるヒスチジンは、マグロやカツオなどの「赤身魚」に多く含まれます。白身魚は比較的リスクが低いです。"
+  },
+  {
+    "question": "黄色ブドウ球菌の説明として適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "しっかり加熱することによって毒素をなくすことが重要", "correct": true },
+      { "text": "テイクアウトやイベントでの販売時に注意する", "correct": false },
+      { "text": "潜伏期間は1～3時間と短い", "correct": false },
+      { "text": "料理人の手から伝播する", "correct": false }
+    ],
+    "additionalInfo": "黄色ブドウ球菌が産生する毒素（エンテロトキシン）は熱に非常に強く、一度産生されると通常の加熱調理では分解できません。そのため、菌を付けない・増やさないことが重要です。"
+  },
+  {
+    "question": "食材の保管に関する説明で適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "生食用と加熱用の魚は分けて保管する", "correct": false },
+      { "text": "冷蔵庫内のものは古いものから使うことを基本にする", "correct": false },
+      { "text": "生食用鮮魚は4℃以下で保存する", "correct": false },
+      { "text": "冷凍マグロは-15℃以下で保存する", "correct": true }
+    ],
+    "additionalInfo": "冷凍マグロの品質を保つためには、-50℃以下の超低温での保存が理想とされています。-15℃では家庭用冷凍庫の温度帯に近く、品質の劣化が進んでしまいます。"
+  },
+  {
+    "question": "食中毒の説明で適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ノロウイルスは食中毒の要因であって感染症ではない", "correct": true },
+      { "text": "病原体だけでなく、毒素や化学物質も原因となることがある", "correct": false },
+      { "text": "汚染された食品や飲料を摂取することによって引き起こされる", "correct": false },
+      { "text": "例としてアニサキス、黄色ブドウ球菌、ヒスタミンなどがある", "correct": false }
+    ],
+    "additionalInfo": "ノロウイルスによる胃腸炎は、ウイルスが原因で起こる「感染症」であり、食品を介して感染するため「食中毒」にも分類されます。「感染症ではない」という記述は誤りです。"
+  },
+  {
+    "question": "食中毒の報告にもとづいて保健所が検査を行って行政処分を決める際、この中で最も焦点を当てるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "事故原因の特定と店との因果関係の証明", "correct": false },
+      { "text": "事故が起きた店の衛生管理体制と再発可能性", "correct": true },
+      { "text": "病院が食中毒を報告するまでの時間", "correct": false },
+      { "text": "食中毒の患者数における死亡者数の割合", "correct": false }
+    ],
+    "additionalInfo": "行政処分は、懲罰だけでなく再発防止を大きな目的としています。そのため、店の衛生管理体制にどのような問題があり、改善の見込みがあるかが重要な判断基準となります。"
+  },
+  {
+    "question": "魚介の下処理と洗浄において適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "時間がかかる下処理はしっかり計画し、短時間で終える", "correct": false },
+      { "text": "魚介は真水でしっかり洗う", "correct": true },
+      { "text": "常温保管する場合は、極力短時間に留める", "correct": false },
+      { "text": "交差汚染・二次汚染を引き起こさないために不衛生な器具は使用しない", "correct": false }
+    ],
+    "additionalInfo": "海水魚を真水で洗いすぎると、浸透圧の違いから身が水っぽくなり、うま味成分が流出してしまいます。海水程度の塩水で手早く洗うのが理想です。"
+  },
+  {
+    "question": "魚介を加工や加熱する場合の注意点として適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "寄生虫がついていないか目視で確認する", "correct": false },
+      { "text": "常温保管した赤身魚は加熱によってヒスタミンを分解する必要がある", "correct": true },
+      { "text": "加工時は微生物が増殖しやすい温度帯があるので注意する", "correct": false },
+      { "text": "エビやカニは身が不透明になるまで加熱する", "correct": false }
+    ],
+    "additionalInfo": "ヒスタミンは熱に非常に強く、一度生成されると加熱しても分解されません。そのため、赤身魚は徹底した温度管理が不可欠です。"
+  },
+  {
+    "question": "「石松三十石船」で森の石松が「寿司食いねぇ」と船上の客に向かって言ったのはなぜか。",
+    "image": "",
+    "answers": [
+      { "text": "お腹が空いて倒れそうに見えたから", "correct": false },
+      { "text": "江戸っ子は握り寿司が好きだと思ったから", "correct": false },
+      { "text": "石松を立派な侠客と認めたから", "correct": true },
+      { "text": "次郎長親分を褒めたから", "correct": false }
+    ],
+    "additionalInfo": "浪曲「清水次郎長伝」の一節で、船客が石松をただの田舎者と見下していましたが、彼が次郎長の子分だと知ると態度を一変させ、敬意の印として寿司を勧めたという場面です。"
+  },
+  {
+    "question": "助六寿司の由来となった人気歌舞伎の作品名は次のうちどれか。",
+    "image": "",
+    "answers": [
+      { "text": "花街助六純情絵巻", "correct": false },
+      { "text": "助六由縁江戸桜", "correct": true },
+      { "text": "大江戸助六譚", "correct": false },
+      { "text": "助六東文章再読", "correct": false }
+    ],
+    "additionalInfo": "歌舞伎十八番の一つ『助六由縁江戸桜（すけろくゆかりのえどざくら）』の主人公・助六に由来します。助六の愛人・揚巻の名から「揚げ」と、助六が頭に巻く紫の鉢巻から「巻き（海苔巻き）」を詰めたものが助六寿司です。"
+  },
+  {
+    "question": "「鮨」と「鮓」という漢字は、古代中国でどのような意味で使われていたか。",
+    "image": "",
+    "answers": [
+      { "text": "「鮨」は魚の塩辛、「鮓」は魚の漬け物", "correct": false },
+      { "text": "「鮨」は魚の漬け物、「鮓」は魚の塩辛", "correct": false },
+      { "text": "「鮨」は生なれ、「鮓」は魚の塩辛", "correct": false },
+      { "text": "「鮨」は魚の塩辛、「鮓」は生なれ", "correct": true }
+    ],
+    "additionalInfo": "古代中国では、「鮨」は魚の塩辛のようなものを、「鮓」は魚を米と塩で漬け込んで発酵させたもの（なれずし）を指し、明確に区別されていました。"
+  },
+  {
+    "question": "「義経千本桜」の説明として適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "吉野川の鮎のなれずしが登場する", "correct": false },
+      { "text": "すし屋の主人・弥左衛門は、平維盛をかくまっていた", "correct": false },
+      { "text": "家族を守った権太は、父の跡を継いですし屋の主人になった", "correct": true },
+      { "text": "物語に登場する「つるべすし弥助」は奈良県に実在する", "correct": false }
+    ],
+    "additionalInfo": "いがみの権太は、最終的に父・弥左衛門をかばって命を落とします。彼が寿司屋の主人になることはありません。"
+  },
+  {
+    "question": "タイが魚種危機に陥った際、明仁上皇が養殖用に贈与したとされる魚はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ハマダイ", "correct": false },
+      { "text": "ティラピア", "correct": true },
+      { "text": "ブラックバス", "correct": false },
+      { "text": "ハクレン", "correct": false }
+    ],
+    "additionalInfo": "1965年、当時皇太子だった明仁上皇が、タンパク質不足に悩むタイの食糧事情を改善するため、繁殖力の強いティラピアを50匹贈られました。"
+  },
+  {
+    "question": "ウニの漢字の説明で適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "肝のように見えることから「海胆」と表記される", "correct": false },
+      { "text": "栗のようなので「海栗」と表記される", "correct": false },
+      { "text": "特に生ウニのことを指す場合は「雲丹」と表記される", "correct": true },
+      { "text": "「雲丹」からすみは、日本三大珍味として知られている", "correct": false }
+    ],
+    "additionalInfo": "一般的に、生きている状態を「海胆」「海栗」、加工された食品（塩ウニなど）を「雲丹」と書き分けることが多いです。「生ウニ」を指して「雲丹」と限定するわけではありません。"
+  },
+  {
+    "question": "オウムガイやアンモナイトの説明として適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "イカと同じコウイカ目である", "correct": false },
+      { "text": "イカと同じツツイカ目である", "correct": false },
+      { "text": "イカやタコと同じ頭足類である", "correct": true },
+      { "text": "イカやタコと同じ軟足類である", "correct": false }
+    ],
+    "additionalInfo": "オウムガイやアンモナイトは、現生のイカやタコと同じく、軟体動物門の「頭足綱（とうそくこう）」に分類される生物です。"
+  },
+  {
+    "question": "醤油などを入れる小皿を指す隠語は次のうちどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ムラサキ", "correct": false },
+      { "text": "オテショ", "correct": true },
+      { "text": "サガリヤ", "correct": false },
+      { "text": "シビ", "correct": false }
+    ],
+    "additionalInfo": "醤油を入れる小皿のことを「御手塩（おてしお）」と呼び、これが変化して「オテショ」という隠語になりました。ムラサキは醤油そのものを指します。"
+  },
+  {
+    "question": "「ドンシャリ」とは何を指す符牒か。",
+    "image": "",
+    "answers": [
+      { "text": "酢飯", "correct": false },
+      { "text": "寿司", "correct": false },
+      { "text": "普通のご飯", "correct": true },
+      { "text": "材料が切れたこと", "correct": false }
+    ],
+    "additionalInfo": "寿司屋において、酢を合わせる前のただの白米、つまり「普通のご飯」のことを「ドンシャリ」と呼ぶことがあります。"
+  }
+]

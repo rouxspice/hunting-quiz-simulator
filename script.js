@@ -87,7 +87,7 @@ window.onload = () => {
                     const storageKeyForMode = `${category}-${mode}`;
                     const modeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
                     const modeName = button.textContent; // "ベーシック" や "マニアック"
-                    highScoreText += `${modeName}: ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}`;
+                    highScoreText += `<div>${modeName}: ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}</div>`;
                 });
                 const highScoreEl = card.querySelector('.quiz-card-highscore');
                 if (highScoreEl) highScoreEl.innerHTML = highScoreText;
@@ -133,8 +133,12 @@ window.onload = () => {
 
         // 寿司クイズの場合、モードによってファイル名を変更
         if (categoryKey === 'sushi') {
-            if (mode === 'basic') {
-                fileName = 'sushi_basic.json';
+            if (mode === 'basic1') {
+                fileName = 'sushi_basic1.json';
+            } else if (mode === 'basic2') {
+                fileName = 'sushi_basic2.json';
+            } else if (mode === 'basic3') {
+                fileName = 'sushi_basic3.json';
             } else if (mode === 'maniac') {
                 fileName = 'sushi_maniac.json';
             }
