@@ -529,7 +529,7 @@ window.onload = () => {
         } else {
             playSound(wrongSound);
             const correctAnswer = question.answers.find(ans => ans.correct).text;
-            wrongQuestions.push({ question: question.question, correctAnswer: correctAnswer, additionalInfo: question.additionalInfo });
+            wrongQuestions.push({ question: question.question, correctAnswer: correctAnswer, additionalInfo: question.additionalInfo, answers: question.answers });
         }
         Array.from(answerButtonsElement.children).forEach(button => {
             button.disabled = true;
