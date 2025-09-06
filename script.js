@@ -1,5 +1,5 @@
 // ===================================================================
-// ★★★ script.js (真・完全再構築・最終版) ★★★
+// ★★★ script.js (2025/09/06 最終修正版) ★★★
 // ===================================================================
 window.onload = () => {
 
@@ -32,21 +32,16 @@ window.onload = () => {
     const additionalInfoContainer = document.getElementById('additional-info-container');
     const additionalInfoText = document.getElementById('additional-info-text');
     const resultDetailsSection = document.getElementById('result-details-section');
-    const normalQuizProgress = document.getElementById('normal-quiz-progress');
-    const choujuuQuizProgress = document.getElementById('choujuu-quiz-progress');
     const progressBar = document.getElementById('progress-bar');
     const progressText = document.getElementById('progress-text');
     const soundToggleCheckbox = document.getElementById('sound-toggle-checkbox');
     
     // --- 音声ファイルの読み込み ---
-    const correctSound = new Audio('sounds/correct.mp3');
-    const wrongSound = new Audio('sounds/incorrect.mp3');
+    const correctSound = new Audio('./sounds/correct.mp3');
+    const wrongSound = new Audio('./sounds/incorrect.mp3');
     correctSound.volume = 0.5;
     wrongSound.volume = 0.5;
-    /**
-     * 設定に応じて効果音を再生する関数
-     * @param {HTMLAudioElement} sound - 再生するAudioオブジェクト
-     */
+    
     function playSound(sound) {
         if (soundToggleCheckbox && soundToggleCheckbox.checked) {
             sound.play();
@@ -65,16 +60,16 @@ window.onload = () => {
     const storageKey = 'huntingQuizScores';
     function getScoresFromStorage() { const storedScores = localStorage.getItem(storageKey); return storedScores ? JSON.parse(storedScores) : {}; }
     function saveScoresToStorage(scores) { localStorage.setItem(storageKey, JSON.stringify(scores)); }
+    
     function updateTopPageUI() {
         const scores = getScoresFromStorage();
         document.querySelectorAll('.quiz-card').forEach(card => {
             const category = card.dataset.quizCategory;
 
-            // ★★★ 寿司クイズカードの特別な処理 ★★★
             if (category === 'sushi') {
                 const footer = card.querySelector('.quiz-card-footer-sushi');
                 if (!footer) return;
-                footer.innerHTML = ''; // 中身を一旦空にする
+                footer.innerHTML = ''; 
 
                 const modes = [
                     { mode: 'basic3', text: 'ベーシック３級', class: '' },
@@ -98,7 +93,7 @@ window.onload = () => {
                     footer.innerHTML += buttonHTML;
                 });
 
-            } else { // ★★★ 寿司クイズ以外のカードの処理 ★★★
+            } else {
                 const buttons = card.querySelectorAll('.challenge-btn');
                 if (buttons.length === 1 && !buttons[0].dataset.mode) {
                     const categoryScores = scores[category] || { highScore: 0, cleared: false };
@@ -155,30 +150,29 @@ window.onload = () => {
 
     // --- クイズデータ読み込み＆状態リセット ---
     async function loadQuizData(categoryKey, mode = 'all') {
-        // デフォルトのファイル名を決定
-        let fileName = `${categoryKey}.json`;
+        let fileName;
 
-        // 寿司クイズの場合、モードによってファイル名を変更
+        // ★★★ ここから修正 ★★★
+        // カテゴリとモードに基づいてファイル名を決定する
         if (categoryKey === 'sushi') {
-            if (mode === 'basic1') {
-                fileName = 'sushi_basic1.json';
-            } else if (mode === 'basic2') {
-                fileName = 'sushi_basic2.json';
-            } else if (mode === 'basic3') {
-                fileName = 'sushi_basic3.json';
-            } else if (mode === 'maniac') {
-                fileName = 'sushi_maniac.json';
-            }
+            // 'sushi'カテゴリの場合、モード名をファイル名に直接利用する
+            // 例: modeが'basic1'なら、'sushi_basic1.json'となる
+            fileName = `sushi_${mode}.json`;
+        } else {
+            // その他のカテゴリは、従来通りのファイル名
+            fileName = `${categoryKey}.json`;
         }
+        // ★★★ ここまで修正 ★★★
 
         try {
-            const response = await fetch(`quiz_data/${fileName}`);
+            const response = await fetch(`./quiz_data/${fileName}`);
             if (!response.ok) { throw new Error(`Failed to fetch quiz_data/${fileName}. Status: ${response.status}`); }
             const data = await response.json();
             console.log(`Successfully loaded quiz data for '${categoryKey}' (mode: ${mode}) from external JSON: ${fileName}`);
             return data;
         } catch (error) {
-            console.warn(`Could not load from quiz_data/${fileName}. Reason: ${error.message}.`);
+            console.error(`Could not load from ./quiz_data/${fileName}. Reason: ${error.message}.`);
+            alert(`クイズデータ（${fileName}）の読み込みに失敗しました。ファイルが存在するか、パスが正しいか確認してください。`);
             return [];
         }
     }
@@ -187,6 +181,11 @@ window.onload = () => {
         currentQuizCategoryKey = categoryKey;
         currentQuizMode = mode;
         const originalQuizData = await loadQuizData(categoryKey, mode);
+        // loadQuizDataが空配列を返した場合（読み込み失敗時）の処理
+        if (originalQuizData.length === 0) {
+            currentQuiz = [];
+            return; // ここで処理を中断
+        }
         let filteredData = originalQuizData.filter(q => q.question || q.image);
         if (mode === 'cram') {
             filteredData = filteredData.filter(q => q.importance === 'high');
@@ -200,13 +199,9 @@ window.onload = () => {
     // --- イベントリスナー初期化 ---
     function initializeEventListeners() {
  
-        // サウンド設定の読み込みとイベントリスナー
         if (soundToggleCheckbox) {
-            // ページ読み込み時に保存された設定を反映
-            const isSoundEnabled = localStorage.getItem('soundEnabled') !== 'false'; // デフォルトはON
+            const isSoundEnabled = localStorage.getItem('soundEnabled') !== 'false';
             soundToggleCheckbox.checked = isSoundEnabled;
-
-            // トグルが変更されたら設定を保存
             soundToggleCheckbox.addEventListener('change', () => {
                 localStorage.setItem('soundEnabled', soundToggleCheckbox.checked);
             });
@@ -214,12 +209,15 @@ window.onload = () => {
         
         if (quizOptionsContainer) {
             quizOptionsContainer.addEventListener('click', (event) => {
-                const button = event.target.closest('.challenge-btn');
+                const button = event.target.closest('.challenge-btn, .challenge-btn-sushi');
                 if (!button) return;
+
                 const quizCard = button.closest('.quiz-card');
                 if (!quizCard) return;
+
                 const quizCategoryKey = quizCard.dataset.quizCategory;
                 const selectedMode = button.dataset.mode || 'all';
+
                 if (quizCategoryKey === 'choujuu') {
                     startChoujuuQuiz();
                 } else {
@@ -240,7 +238,6 @@ window.onload = () => {
                 if (currentQuizCategoryKey === 'choujuu') {
                     startChoujuuQuiz();
                 } else {
-                    // currentQuizMode を渡して、正しいモードでリトライするようにする
                     startNormalQuiz(currentQuizCategoryKey, currentQuizMode);
                 }
             });
@@ -250,11 +247,9 @@ window.onload = () => {
             backToTopFromResultBtn.addEventListener('click', goToTopPage);
         }
 
-        // ★★★ ここから追加 ★★★
         if (trainingModeBtn) {
             trainingModeBtn.addEventListener('click', startTrainingMode);
         }
-        // ★★★ ここまで追加 ★★★
 
         if (resetScoresBtn) {
             resetScoresBtn.addEventListener('click', () => {
@@ -268,13 +263,10 @@ window.onload = () => {
 
         if (submitButton) {
             submitButton.addEventListener('click', () => {
-                // ★★★ ここから変更 ★★★
                 if (currentQuizMode === 'training') {
-                    // 特訓モードの場合、ランダムに次の問題へ
                     currentQuestionIndex = Math.floor(Math.random() * currentQuiz.length);
                     showNormalQuestion();
                 } else {
-                    // 通常モードの場合
                     currentQuestionIndex++;
                     if (currentQuestionIndex < currentQuiz.length) {
                         showNormalQuestion();
@@ -282,19 +274,15 @@ window.onload = () => {
                         showResult();
                     }
                 }
-                // ★★★ ここまで変更 ★★★
             });
         }
 
         if (choujuuSubmitButton) {
             choujuuSubmitButton.addEventListener('click', () => {
-                // ★★★ ここから変更 ★★★
                 if (currentQuizMode === 'training') {
-                    // 特訓モードの場合、ランダムに次の問題へ
                     currentQuestionIndex = Math.floor(Math.random() * currentQuiz.length);
-                showChoujuuQuestion();
-            } else {
-                    // 通常モードの場合
+                    showChoujuuQuestion();
+                } else {
                     currentQuestionIndex++;
                     if (currentQuestionIndex < currentQuiz.length) {
                         showChoujuuQuestion();
@@ -302,9 +290,8 @@ window.onload = () => {
                         showResult();
                     }
                 }       
-                // ★★★ ここまで変更 ★★★
-    });
-}
+            });
+        }
 
         if (choujuuStep1) {
             choujuuStep1.addEventListener('click', (e) => {
@@ -342,8 +329,6 @@ window.onload = () => {
                 }, 500);
             });
         }
-
-
     }
 
     // --- クイズ開始ロジック ---
@@ -354,7 +339,6 @@ window.onload = () => {
         try {
             await resetQuizState(categoryKey, mode);
             if (currentQuiz.length === 0) {
-                alert('このモードで表示できる問題がありません。');
                 goToTopPage();
                 return;
             }
@@ -385,66 +369,40 @@ window.onload = () => {
         });
     }
 
-            // ★★★ ここから追加 ★★★
-        /**
-         * 間違えた問題だけで特訓モードを開始する
-         */
-        function startTrainingMode() {
-            // 現在のクイズタイプとモードを「特訓」に設定
-            currentQuizMode = 'training';
-            
-            // 間違えた問題のリストを現在のクイズセットとして設定
-            // 各問題オブジェクトをディープコピーして、元の配列に影響が出ないようにする
-            currentQuiz = JSON.parse(JSON.stringify(wrongQuestions));
-            
-            // 状態をリセット
-            currentQuestionIndex = 0;
-            score = 0;
-            wrongQuestions = []; // 特訓モードでの間違いは、ここでは記録しない
-
-            // クイズ画面を表示
-            resultContainer.style.display = 'none';
-            
-            // クイズの種類に応じて適切な画面を表示
-            if (currentQuizCategoryKey === 'choujuu') {
-                quizContainerChoujuu.style.display = 'block';
-                showChoujuuQuestion();
-            } else {
-                quizContainer.style.display = 'block';
-                showNormalQuestion();
-            }
+    function startTrainingMode() {
+        currentQuizMode = 'training';
+        currentQuiz = JSON.parse(JSON.stringify(wrongQuestions));
+        currentQuestionIndex = 0;
+        score = 0;
+        wrongQuestions = [];
+        resultContainer.style.display = 'none';
+        if (currentQuizCategoryKey === 'choujuu') {
+            quizContainerChoujuu.style.display = 'block';
+            showChoujuuQuestion();
+        } else {
+            quizContainer.style.display = 'block';
+            showNormalQuestion();
         }
-        // ★★★ ここまで追加 ★★★
-
+    }
 
     function startNormalQuiz(categoryKey, mode = 'all') {
         startQuiz(categoryKey, mode, () => {
             quizContainer.style.display = 'block';
             showNormalQuestion();
         });
-
-
-
-
-
     }
 
     // --- 鳥獣判別クイズ表示 ---
     function showChoujuuQuestion() {
-    // ★ここから変更・追加★
-    const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
-    const progressBarEl = document.getElementById('choujuu-quiz-progress-bar'); // IDを修正
-    const progressTextEl = document.getElementById('choujuu-quiz-progress-text'); // IDを修正
+        const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
+        const progressBarEl = document.getElementById('choujuu-quiz-progress-bar');
+        const progressTextEl = document.getElementById('choujuu-quiz-progress-text');
 
-    if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
-    if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
-    // ★ここまで変更・追加★
+        if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
+        if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
 
-    // 元の進捗表示テキストを削除（またはコメントアウト）
-    // choujuuQuizProgress.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
-
-    document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); });
-    choujuuStep1.style.display = 'block';
+        document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); });
+        choujuuStep1.style.display = 'block';
         choujuuStep2.style.display = 'none';
         choujuuFeedback.style.display = 'none';
         choujuuSubmitButton.style.display = 'none';
@@ -459,7 +417,7 @@ window.onload = () => {
     function setupNameSelection(question) {
         choujuuNameOptions.innerHTML = '';
         const options = [...question.distractors, question.name].sort(() => Math.random() - 0.5);
-        options.forEach((name, index) => { // ← (name, index) のように index を受け取る
+        options.forEach((name, index) => {
             const button = document.createElement('button');
             button.innerText = `${index + 1}. ${name}`; 
             button.classList.add('answer-btn');
@@ -475,7 +433,7 @@ window.onload = () => {
                 }
                 Array.from(choujuuNameOptions.children).forEach(btn => {
                     btn.disabled = true;
-                    if (btn.innerText === question.name) {
+                    if (btn.innerText.endsWith(question.name)) {
                         if (!isCorrect && btn !== selectedButton) {
                             btn.classList.add('reveal-correct');
                         }
@@ -500,24 +458,20 @@ window.onload = () => {
 
     // --- 通常クイズ表示 ---
     function showNormalQuestion() {
-    
-    // ★ここから変更・追加★
-    if (currentQuizMode === 'training') {
-        const progressTextEl = document.getElementById('normal-quiz-progress-text');
-        if(progressTextEl) progressTextEl.textContent = '💪 特訓中！';
-        // 特訓モードではプログレスバーを非表示にするか、満タン表示にする
-        const progressBarEl = document.getElementById('normal-quiz-progress-bar');
-        if(progressBarEl) progressBarEl.style.width = '100%';
-    } else {
-        const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
-        const progressBarEl = document.getElementById('normal-quiz-progress-bar');
-        const progressTextEl = document.getElementById('normal-quiz-progress-text');
-        if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
-        if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
-    }
-    // ★★★ ここまで変更 ★★★
+        if (currentQuizMode === 'training') {
+            const progressTextEl = document.getElementById('normal-quiz-progress-text');
+            if(progressTextEl) progressTextEl.textContent = '💪 特訓中！';
+            const progressBarEl = document.getElementById('normal-quiz-progress-bar');
+            if(progressBarEl) progressBarEl.style.width = '100%';
+        } else {
+            const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
+            const progressBarEl = document.getElementById('normal-quiz-progress-bar');
+            const progressTextEl = document.getElementById('normal-quiz-progress-text');
+            if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
+            if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
+        }
 
-    resetNormalState();
+        resetNormalState();
         const question = currentQuiz[currentQuestionIndex];
         if (question.image) {
             normalQuizImage.src = question.image;
@@ -527,11 +481,9 @@ window.onload = () => {
         }
         questionElement.innerText = question.question;
         const shuffledAnswers = [...question.answers].sort(() => Math.random() - 0.5);
-        shuffledAnswers.forEach((answer, index) => { // ← index を受け取る
+        shuffledAnswers.forEach((answer, index) => {
             const button = document.createElement('button');
-            // ★★★ ここを変更 ★★★
-            button.innerText = `${index + 1}. ${answer.text}`; // 番号とドット、スペースを追加
-            // ★★★ ここまで ★★★
+            button.innerText = `${index + 1}. ${answer.text}`;
             button.classList.add('answer-btn');
             if (answer.correct) {
                 button.dataset.correct = answer.correct;
@@ -576,13 +528,11 @@ window.onload = () => {
             additionalInfoContainer.style.display = 'block';
         }
         setTimeout(() => {
-            // ★★★ ここから変更 ★★★
             if (currentQuizMode === 'training') {
                 submitButton.innerText = "次の特訓へ";
             } else {
                 submitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る";
             }
-            // ★★★ ここまで変更 ★★★
             submitButton.style.display = 'block';
         }, 500);
     }
@@ -594,8 +544,6 @@ window.onload = () => {
         const totalQuestions = currentQuiz.length;
         const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
 
-        // ★★★ ここから追加 ★★★
-        // 特訓モードでない場合のみ、スコアを保存する
         if (currentQuizMode !== 'training') {
             const scores = getScoresFromStorage();
             const storageKeyForMode = `${currentQuizCategoryKey}-${currentQuizMode}`;
@@ -634,68 +582,6 @@ window.onload = () => {
             trainingModeBtn.style.display = 'none';
         }
     }
-        // ★★★ ここからキーボード操作の処理関数を追加 ★★★
-
-        /**
-         * 数字キー（1-4）が押された時の処理
-         * @param {number} number - 押された数字
-         */
-        function handleNumericKeyPress(number) {
-            const isChoujuuQuiz = quizContainerChoujuu.style.display === 'block';
-            let targetButtons;
-
-            if (isChoujuuQuiz) {
-                const isStep1 = choujuuStep1.style.display === 'block';
-                targetButtons = isStep1 
-                    ? choujuuStep1.querySelectorAll('.choujuu-choice-btn') 
-                    : choujuuNameOptions.querySelectorAll('.answer-btn');
-            } else {
-                targetButtons = answerButtonsElement.querySelectorAll('.answer-btn');
-            }
-
-            if (targetButtons && targetButtons.length >= number) {
-                const buttonToClick = targetButtons[number - 1];
-                if (!buttonToClick.disabled) {
-                    buttonToClick.click();
-                }
-            }
-        }
-
-        /**
-         * Enterキーが押された時の処理
-         */
-        function handleEnterKeyPress() {
-            const visibleSubmitButton = document.querySelector('#submit:not([style*="display: none"]), #choujuu-submit:not([style*="display: none"])');
-            if (visibleSubmitButton) {
-                visibleSubmitButton.click();
-            }
-        }
-
-        // キーボード入力を監視するイベントリスナーを登録
-        document.addEventListener('keydown', (event) => {
-            const isQuizActive = quizContainer.style.display === 'block' || quizContainerChoujuu.style.display === 'block';
-            if (!isQuizActive) return;
-
-            switch (event.key) {
-                case '1':
-                case '2':
-                case '3':
-                case '4':
-                    handleNumericKeyPress(parseInt(event.key, 10));
-                    break;
-                case ' ': // Spaceキーを追加
-                case 'Enter':
-                    handleEnterKeyPress();
-                    break;
-                case 'Escape':
-                    const backButton = document.querySelector('.quiz-container:not([style*="display: none"]) .back-to-top-btn, .quiz-container-choujuu:not([style*="display: none"]) .back-to-top-btn');
-                    if (backButton) {
-                        backButton.click();
-                    }
-                    break;
-            }
-        });
-        // ★★★ ここまでキーボード操作のロジック ★★★
 
     // --- キーボード操作 ---
     function handleNumericKeyPress(number) {
@@ -718,17 +604,33 @@ window.onload = () => {
         if (visibleSubmitButton) visibleSubmitButton.click();
     }
 
+    document.addEventListener('keydown', (event) => {
+        const isQuizActive = quizContainer.style.display === 'block' || quizContainerChoujuu.style.display === 'block';
+        if (!isQuizActive) return;
+
+        switch (event.key) {
+            case '1': case '2': case '3': case '4':
+                handleNumericKeyPress(parseInt(event.key, 10));
+                break;
+            case ' ': case 'Enter':
+                handleEnterKeyPress();
+                break;
+            case 'Escape':
+                const backButton = document.querySelector('.quiz-container:not([style*="display: none"]) .back-to-top-btn, .quiz-container-choujuu:not([style*="display: none"]) .back-to-top-btn');
+                if (backButton) {
+                    backButton.click();
+                }
+                break;
+        }
+    });
+
     // --- 初期化処理の、実行 ---
     initializeEventListeners();
     goToTopPage();
 
-    // ★★★ ここから追加 ★★★
-    // ページの初期読み込みが完了したら、ローディング画面を非表示にする
-    // 少し遅延させることで、表示のチラつきを防ぐ
     setTimeout(() => {
         if (loaderWrapper) {
             loaderWrapper.classList.add('loaded');
         }
     }, 100); 
-    // ★★★ ここまで追加 ★★★
 };
