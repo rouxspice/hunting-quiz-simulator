@@ -757,6 +757,46 @@
         "additionalInfo": "OOB～4号が50m、5～6号が45m",
         "importance": "high"
     },    
+        {
+        "question": "3号散弾の最大有効射程距離を正しく示したものはどれか",
+        "answers": [
+            { "text": "50メートル", "correct": true },
+            { "text": "70メートル", "correct": false },
+            { "text": "90メートル", "correct": false }
+        ],
+        "additionalInfo": "OOB～4号が50m、5～6号が45m",
+        "importance": "high"
+    },    
+        {
+        "question": "7.5号散弾の最大有効射程距離を正しく示したものはどれか",
+        "answers": [
+            { "text": "30メートル", "correct": false },
+            { "text": "40メートル", "correct": true },
+            { "text": "50メートル", "correct": false }
+        ],
+        "additionalInfo": "空気散弾が30m、7～10号が40m、OOB～4号が50m",
+        "importance": "high"
+    }, 
+        {
+        "question": "9号散弾の最大有効射程距離を正しく示したものはどれか",
+        "answers": [
+            { "text": "30メートル", "correct": false },
+            { "text": "40メートル", "correct": true },
+            { "text": "50メートル", "correct": false }
+        ],
+        "additionalInfo": "空気散弾が30m、7～10号が40m、OOB～4号が50m",
+        "importance": "high"
+    },    
+        {
+        "question": "一般の30口径級ライフル弾の最大有効射程距離を正しく示したものはどれか",
+        "answers": [
+            { "text": "100メートル", "correct": false },
+            { "text": "200メートル", "correct": false },
+            { "text": "300メートル", "correct": true }
+        ],
+        "additionalInfo": "30カービン（ホーワ300）が100m、一般の30口径級ライフルが300m",
+        "importance": "high"
+    },    
     {
         "question": "散弾の最大有効射程距離についての次の記述のうち、適切なものはどれか",
         "answers": [
@@ -784,7 +824,17 @@
             { "text": "イノシシやニホンジカには、OOB号散弾やスラッグ弾を使用する。", "correct": true },
             { "text": "カモやノウサギには、OOB号散弾やスラッグ弾を使用する。", "correct": false }
         ],
-        "additionalInfo": "イノシシ・シカにはOOB号やスラッグ弾、カモ・ノウサギには5,6号、キジバト・コジュケイには7,7.5,8号",
+        "additionalInfo": "イノシシ・シカにはOOB号やスラッグ弾、カモ・ノウサギには3～4号、キジバト・コジュケイには7,7.5,8号",
+        "importance": "high"
+    },
+    {
+        "question": "散弾についての次の記述のうち、適切なものはどれか。",
+        "answers": [
+            { "text": "キジやヤマドリには、3号前後の散弾を使用する。", "correct": false },
+            { "text": "カモやノウサギには、7号前後の散弾を使用する。", "correct": false },
+            { "text": "タシギには9号前後の散弾を使用する。", "correct": true }
+        ],
+        "additionalInfo": "キジやヤマドリには5～6号、カモ・ノウサギには3～4号、タシギには9号",
         "importance": "high"
     }
 ]
