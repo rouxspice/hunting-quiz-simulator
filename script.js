@@ -69,31 +69,58 @@ window.onload = () => {
         const scores = getScoresFromStorage();
         document.querySelectorAll('.quiz-card').forEach(card => {
             const category = card.dataset.quizCategory;
-            const buttons = card.querySelectorAll('.challenge-btn');
 
-            // ボタンが1つの場合（従来の処理）
-            if (buttons.length === 1 && !buttons[0].dataset.mode) {
-                const categoryScores = scores[category] || { highScore: 0, cleared: false };
-                const highScoreEl = card.querySelector('.quiz-card-highscore');
-                const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
-                if (highScoreEl) highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`;
-                if (clearMarkEl) clearMarkEl.textContent = categoryScores.cleared ? '👑' : '';
-            } 
-            // ボタンが複数ある場合（寿司クイズや第一種銃猟など）
-            else if (buttons.length > 0) {
-                let highScoreText = '';
-                buttons.forEach(button => {
-                    const mode = button.dataset.mode;
-                    const storageKeyForMode = `${category}-${mode}`;
+            // ★★★ 寿司クイズカードの特別な処理 ★★★
+            if (category === 'sushi') {
+                const footer = card.querySelector('.quiz-card-footer-sushi');
+                if (!footer) return;
+                footer.innerHTML = ''; // 中身を一旦空にする
+
+                const modes = [
+                    { mode: 'basic3', text: 'ベーシック３級', class: '' },
+                    { mode: 'basic2', text: 'ベーシック２級', class: '' },
+                    { mode: 'basic1', text: 'ベーシック１級', class: '' },
+                    { mode: 'maniac', text: 'マニアック', class: 'cram-mode-btn' }
+                ];
+
+                modes.forEach(item => {
+                    const storageKeyForMode = `${category}-${item.mode}`;
                     const modeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
-                    const modeName = button.textContent; // "ベーシック" や "マニアック"
-                    highScoreText += `<div>${modeName}: ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}</div>`;
+                    
+                    const buttonHTML = `
+                        <button class="challenge-btn-sushi ${item.class}" data-mode="${item.mode}">
+                            <span class="sushi-btn-label">${item.text}</span>
+                            <span class="sushi-btn-score">
+                                達成率 ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}
+                            </span>
+                        </button>
+                    `;
+                    footer.innerHTML += buttonHTML;
                 });
-                const highScoreEl = card.querySelector('.quiz-card-highscore');
-                if (highScoreEl) highScoreEl.innerHTML = highScoreText;
-                // 複数のモードがある場合、カード全体のクリアマークは非表示にする
-                const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
-                if (clearMarkEl) clearMarkEl.textContent = '';
+
+            } else { // ★★★ 寿司クイズ以外のカードの処理 ★★★
+                const buttons = card.querySelectorAll('.challenge-btn');
+                if (buttons.length === 1 && !buttons[0].dataset.mode) {
+                    const categoryScores = scores[category] || { highScore: 0, cleared: false };
+                    const highScoreEl = card.querySelector('.quiz-card-highscore');
+                    const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
+                    if (highScoreEl) highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`;
+                    if (clearMarkEl) clearMarkEl.textContent = categoryScores.cleared ? '👑' : '';
+                } 
+                else if (buttons.length > 0) {
+                    let highScoreText = '';
+                    buttons.forEach(button => {
+                        const mode = button.dataset.mode;
+                        const storageKeyForMode = `${category}-${mode}`;
+                        const modeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
+                        const modeName = button.textContent;
+                        highScoreText += `<div>${modeName}: ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}</div>`;
+                    });
+                    const highScoreEl = card.querySelector('.quiz-card-highscore');
+                    if (highScoreEl) highScoreEl.innerHTML = highScoreText;
+                    const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
+                    if (clearMarkEl) clearMarkEl.textContent = '';
+                }
             }
         });
     }

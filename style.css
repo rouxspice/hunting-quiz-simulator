@@ -270,3 +270,65 @@ input:focus + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
+/* =================================================================== */
+/* ★★★ 寿司クイズカード専用スタイル (ここから追加) ★★★ */
+/* =================================================================== */
+.quiz-card-footer-sushi {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* ボタン間の余白 */
+    margin-top: 15px;
+}
+
+.challenge-btn-sushi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0; /* 内側の余白は子要素で調整 */
+    border: 1px solid #4a7c59;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden; /* 角丸を維持 */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: #333;
+    font-weight: bold;
+}
+
+.challenge-btn-sushi:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.sushi-btn-label {
+    padding: 12px 15px;
+    background-color: #4a7c59;
+    color: white;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.sushi-btn-score {
+    padding: 12px 15px;
+    background-color: #e8f5e9;
+    color: #4a7c59;
+    min-width: 100px; /* スコア部分の最小幅を確保 */
+    text-align: center;
+    border-left: 1px solid #4a7c59;
+}
+
+/* マニアック（オタク）ボタンの特別スタイル */
+.challenge-btn-sushi.cram-mode-btn {
+    border-color: #e67e22;
+}
+
+.challenge-btn-sushi.cram-mode-btn .sushi-btn-label {
+    background-color: #e67e22;
+}
+
+.challenge-btn-sushi.cram-mode-btn .sushi-btn-score {
+    background-color: #fff3e0;
+    color: #e67e22;
+    border-left-color: #e67e22;
+}
