@@ -136,7 +136,7 @@
             { "text": "なげ網", "correct": false }
         ],
         "additionalInfo": "これが代表的な「むそう網」です。おとりや餌で鳥をおびき寄せ、遠隔操作で網を動かして捕獲します。",
-        "image": "/images/musou-ami.jpg"
+        "image": "quiz_data/images/musou-ami.jpg"
     },
     {
         "question": "網の材料として、自然環境への配慮から推奨されていることは何か？",
@@ -219,7 +219,7 @@
             { "text": "かすみ網", "correct": false }
         ],
         "additionalInfo": "これが代表的な「はり網」です。勢子（せこ）がウサギを追い立て、網に駆け込ませて捕獲します。",
-        "image": "/images/hari-ami.jpg"
+        "image": "quiz_data/images/hari-ami.jpg"
     },
     {
         "question": "狩猟免許の有効期間は、概ね何年間か？",
