@@ -1,0 +1,267 @@
+[
+  {
+    "question": "まな板の洗い始めにお湯ではなく水を使う理由として適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "温度が高くなることによってカビが生えやすくなるため", "correct": false },
+      { "text": "熱が菌の繁殖を促進してしまったため", "correct": false },
+      { "text": "熱でまな板上の魚などのタンパク質が固まってしまうため", "correct": true },
+      { "text": "乾燥させづらくなってしまったため", "correct": false }
+    ],
+    "additionalInfo": "まな板の洗い始めに水を使うのは、熱湯だとタンパク質が固まって汚れが落ちにくくなるためです。"
+  },
+  {
+    "question": "お櫃を長期間使用しない場合の保管方法として適切でないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "温度変化が少ない場所で保管する", "correct": false },
+      { "text": "蓋をして紙や布巾などに包む", "correct": false },
+      { "text": "湿気は避けて保管する", "correct": false },
+      { "text": "ビニール袋や段ボール箱に入れる", "correct": true }
+    ],
+    "additionalInfo": "お櫃の長期保管では、ビニール袋や段ボール箱は湿気がこもりやすく、カビの原因となるため適切ではありません。"
+  },
+  {
+    "question": "木のまな板のメリットに当てはまらないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "切れ味が長持ちしやすい", "correct": false },
+      { "text": "乾燥させる必要がない", "correct": true },
+      { "text": "疲れにくい", "correct": false },
+      { "text": "包丁の刃を傷めにくい", "correct": false }
+    ],
+    "additionalInfo": "木のまな板は使用後に十分な乾燥が必要です。乾燥させないとカビや雑菌の繁殖の原因となります。"
+  },
+  {
+    "question": "お櫃が黒っぽくすんだ場合の対処法として適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "紙やすりで削り取る", "correct": false },
+      { "text": "60度のお湯を張った後10分ほど待つ", "correct": false },
+      { "text": "水で濡らし、レモン汁を使ってタワシで磨き洗いする", "correct": true },
+      { "text": "塩素系漂白剤に漬け込む", "correct": false }
+    ],
+    "additionalInfo": "お櫃が黒ずんだ場合は、レモン汁の酸性成分を利用してタワシで磨き洗いするのが効果的です。"
+  },
+  {
+    "question": "醤油・水・酒・みりんなどを合わせて煮て作られた醤油を何というか。",
+    "image": "",
+    "answers": [
+      { "text": "煮切り", "correct": false },
+      { "text": "煮詰め", "correct": false },
+      { "text": "煮出し", "correct": false },
+      { "text": "煮合い", "correct": true }
+    ],
+    "additionalInfo": "醤油・水・酒・みりんなどを合わせて煮て作る調味料は「煮合い」と呼ばれます。"
+  },
+  {
+    "question": "お櫃の洗い方・乾かし方について間違っているものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "水またはお湯で洗い、水気をよく拭き取る", "correct": false },
+      { "text": "乾かす際は伏せた状態にする", "correct": false },
+      { "text": "必要に応じて、中性洗剤で汚れを落とす", "correct": false },
+      { "text": "日光の下に置き、完全に乾かす", "correct": true }
+    ],
+    "additionalInfo": "お櫃は直射日光に当てると割れやひび割れの原因となるため、風通しの良い日陰で乾燥させます。"
+  },
+  {
+    "question": "寿司職人の身だしなみとして間違っているものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "服装は清潔感があれば派手な色でも良い", "correct": true },
+      { "text": "業務中は指輪を外す", "correct": false },
+      { "text": "ズボンは黒または白のスラックスを着用する", "correct": false },
+      { "text": "香水やタバコは控える", "correct": false }
+    ],
+    "additionalInfo": "寿司職人の服装は清潔感だけでなく、白を基調とした控えめな色合いが求められます。派手な色は適切ではありません。"
+  },
+  {
+    "question": "包丁の洗い方として正しくないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "洗剤をつけて泡立てたスポンジを使う", "correct": true },
+      { "text": "スポンジを利き手で持ち、反対の手で包丁の柄をしっかり持つ", "correct": false },
+      { "text": "スポンジを二つ折りにして、包丁の刃先側からしっかり挟む", "correct": false },
+      { "text": "柄と口金もしっかり洗う", "correct": false }
+    ],
+    "additionalInfo": "包丁の洗浄では、洗剤を泡立てたスポンジは滑りやすく危険です。洗剤は直接つけて使用します。"
+  },
+  {
+    "question": "和包丁の本焼きのデメリットとして適切とは言えないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "値段が高い", "correct": false },
+      { "text": "刃が歪みやすい", "correct": false },
+      { "text": "衝撃に弱い", "correct": false },
+      { "text": "研ぎにくい", "correct": true }
+    ],
+    "additionalInfo": "本焼きの包丁は高品質な鋼材を使用しているため、適切に研げば非常によく切れます。研ぎにくいというのは適切ではありません。"
+  },
+  {
+    "question": "包丁を研ぐ際に気を付けるべきこととして適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "刃先、真ん中、刃元と部位ごとに表面の角度を変える", "correct": false },
+      { "text": "包丁の刃先を押さえたら10度ほどの角度で研ぐ", "correct": false },
+      { "text": "角度を一定にしたまま、一定の時間、一定の強さで研ぐ", "correct": true },
+      { "text": "裏面を研ぐときは強く押すようにする", "correct": false }
+    ],
+    "additionalInfo": "包丁を研ぐ際は、角度を一定に保ち、一定の時間と強さで研ぐことが重要です。これにより均一な刃付けができます。"
+  },
+  {
+    "question": "図のAにある部分の名称はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "みね", "correct": true },
+      { "text": "そり", "correct": false },
+      { "text": "しのぎ", "correct": false },
+      { "text": "あご", "correct": false }
+    ],
+    "additionalInfo": "図のAの部分は包丁の「みね」（峰）です。刃の反対側の厚い部分を指します。"
+  },
+  {
+    "question": "釜で炊いたご飯のうち、酢飯として最も適しているのはどの部分か。",
+    "image": "",
+    "answers": [
+      { "text": "釜の上部のご飯", "correct": false },
+      { "text": "釜の中部のご飯", "correct": true },
+      { "text": "釜の下部のご飯", "correct": false },
+      { "text": "釜の底部のご飯", "correct": false }
+    ],
+    "additionalInfo": "釜で炊いたご飯の中部は水分と熱の加減が最も適切で、酢飯に最も適しています。"
+  },
+  {
+    "question": "石川県の郷土寿司ではないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "大根ずし", "correct": false },
+      { "text": "かぶらずし", "correct": false },
+      { "text": "すしこ", "correct": true },
+      { "text": "押しずし", "correct": false }
+    ],
+    "additionalInfo": "「すしこ」は石川県の郷土寿司ではありません。石川県の代表的な郷土寿司は大根ずし、かぶらずし、押しずしです。"
+  },
+  {
+    "question": "「露霞神」とも呼ばれ、秋田県では重要な魚で郷土寿司に使われる魚はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "クロソイ", "correct": false },
+      { "text": "ハタハタ", "correct": true },
+      { "text": "カマス", "correct": false },
+      { "text": "メヒカリ", "correct": false }
+    ],
+    "additionalInfo": "「露霞神」と呼ばれるハタハタは、秋田県の重要な魚で、郷土寿司「ハタハタ寿司」に使われます。"
+  },
+  {
+    "question": "「小佐波みょうが」を使ったみょうが寿司はどこの郷土寿司か。",
+    "image": "",
+    "answers": [
+      { "text": "富山県", "correct": false },
+      { "text": "新潟県", "correct": false },
+      { "text": "石川県", "correct": false },
+      { "text": "福井県", "correct": true }
+    ],
+    "additionalInfo": "「小佐波みょうが」を使ったみょうが寿司は福井県の郷土寿司です。"
+  },
+  {
+    "question": "福井県の郷土寿司「葉っぱ寿司」によく使われるのは何の葉か。",
+    "image": "",
+    "answers": [
+      { "text": "ワサビ", "correct": false },
+      { "text": "アカメガシワ", "correct": false },
+      { "text": "ホオノキ", "correct": true },
+      { "text": "アブラギリ", "correct": false }
+    ],
+    "additionalInfo": "福井県の「葉っぱ寿司」には、ホオノキの葉がよく使われます。抗菌作用があり、香りも良いです。"
+  },
+  {
+    "question": "長野県の郷土寿司「笹ずし」を保存食として携帯したとされる武将は誰か。",
+    "image": "",
+    "answers": [
+      { "text": "真田幸村", "correct": false },
+      { "text": "上杉謙信", "correct": true },
+      { "text": "武田信玄", "correct": false },
+      { "text": "直江兼続", "correct": false }
+    ],
+    "additionalInfo": "長野県の「笹ずし」は、上杉謙信が保存食として携帯したとされる郷土寿司です。"
+  },
+  {
+    "question": "郷土料理百選にも選ばれた三重県伊勢志摩を代表する郷土料理はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "あゆずし", "correct": false },
+      { "text": "ふなずし", "correct": false },
+      { "text": "てこねずし", "correct": true },
+      { "text": "塩引きずし", "correct": false }
+    ],
+    "additionalInfo": "三重県伊勢志摩の代表的な郷土料理は「てこねずし」で、郷土料理百選にも選ばれています。"
+  },
+  {
+    "question": "カジキなどに見られる尖った上顎のことを何というか。",
+    "image": "",
+    "answers": [
+      { "text": "剣先", "correct": false },
+      { "text": "吻", "correct": true },
+      { "text": "棘", "correct": false },
+      { "text": "針口", "correct": false }
+    ],
+    "additionalInfo": "カジキなどに見られる尖った上顎は「吻（ふん）」と呼ばれます。"
+  },
+  {
+    "question": "3歳頃までのクロマグロの幼魚のことを何というか。",
+    "image": "",
+    "answers": [
+      { "text": "カジキマグロ", "correct": false },
+      { "text": "ハタマグロ", "correct": false },
+      { "text": "ビンチョウマグロ", "correct": false },
+      { "text": "メジマグロ", "correct": true }
+    ],
+    "additionalInfo": "3歳頃までのクロマグロの幼魚は「メジマグロ」と呼ばれます。"
+  },
+  {
+    "question": "アマダイの京都・大阪での呼び名はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "グジ", "correct": true },
+      { "text": "メジ", "correct": false },
+      { "text": "キジ", "correct": false },
+      { "text": "カブ", "correct": false }
+    ],
+    "additionalInfo": "アマダイは京都・大阪では「グジ」と呼ばれています。高級魚として珍重されています。"
+  },
+  {
+    "question": "河川に残るサクラマスの陸封型を何とよぶか。",
+    "image": "",
+    "answers": [
+      { "text": "ニジマス", "correct": false },
+      { "text": "トラウト", "correct": false },
+      { "text": "ヤマメ", "correct": true },
+      { "text": "イワナ", "correct": false }
+    ],
+    "additionalInfo": "河川に残るサクラマスの陸封型は「ヤマメ」と呼ばれます。"
+  },
+  {
+    "question": "富山湾で漁獲される「富山湾の宝石」と呼ばれるエビはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "シバエビ", "correct": false },
+      { "text": "アカエビ", "correct": false },
+      { "text": "クルマエビ", "correct": false },
+      { "text": "シロエビ", "correct": true }
+    ],
+    "additionalInfo": "富山湾で漁獲される「富山湾の宝石」と呼ばれるエビは「シロエビ」です。透明で美しい外観が特徴です。"
+  },
+  {
+    "question": "ブランド魚「釣りキンキ」はどこで漁獲されるか。",
+    "image": "",
+    "answers": [
+      { "text": "銚子", "correct": false },
+      { "text": "網走", "correct": false },
+      { "text": "八戸", "correct": true },
+      { "text": "焼津", "correct": false }
+    ],
+    "additionalInfo": "ブランド魚「釣りキンキ」は八戸で漁獲されます。一本釣りで獲られる高品質なキンキです。"
+  }
+]
+
