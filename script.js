@@ -1,5 +1,5 @@
 // ===================================================================
-// ★★★ script.js (完全・決定版) ★★★
+// ★★★ script.js (鳥獣名フィードバック機能追加・決定版) ★★★
 // ===================================================================
 window.onload = () => {
 
@@ -215,40 +215,57 @@ window.onload = () => {
             });
         }
 
+        // ★★★ ここからが修正箇所 ★★★
         if (choujuuStep1) {
             choujuuStep1.addEventListener('click', (e) => {
                 if (!e.target.matches('.choujuu-choice-btn')) return;
+                
                 const question = currentQuiz[currentQuestionIndex];
                 if (!question) return;
+
                 const selectedBtn = e.target;
                 const choice = selectedBtn.dataset.choice;
                 const isCorrect = (choice === 'no') ? !question.isHuntable : question.isHuntable;
+
                 if (isCorrect) {
-                    if (choice === 'no') { playSound(correctSound); score++; }
+                    // 「獲れません」が正解の場合のみ、スコアを加算
+                    if (choice === 'no') { 
+                        playSound(correctSound); 
+                        score++; 
+                    }
+                    // 「獲れます」が正解の場合は、次のステップに進むので、ここでは音もスコアも処理しない
                 } else {
                     playSound(wrongSound);
                     wrongQuestions.push({ question: `この鳥獣は「${question.name}」です。捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' });
                 }
+                
                 document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
                 selectedBtn.classList.add(isCorrect ? 'correct' : 'wrong');
+                
                 setTimeout(() => {
                     if (isCorrect) {
                         if (choice === 'yes') {
+                            // 「獲れます」が正解 → 次のステップ（名前当て）へ
                             choujuuStep1.style.display = 'none';
                             choujuuStep2.style.display = 'block';
                             setupNameSelection(question);
                         } else {
-                            showChoujuuFeedback(true, `正解！この鳥獣（${question.name}）は非狩猟鳥獣のため、捕獲できません。`);
+                            // 「獲れません」が正解 → フィードバック表示
+                            // ★★★ ここで鳥獣の名前を含んだメッセージを生成 ★★★
+                            showChoujuuFeedback(true, `正解！「${question.name}」は非狩猟鳥獣のため、捕獲できません。`);
                         }
                     } else {
-                        let feedbackMessage = (choice === 'yes') ? `不正解。この鳥獣（${question.name}）は、非狩猟鳥獣のため、捕獲できません。` : `不正解。この鳥獣は「${question.name}」といい、狩猟対象です。`;
+                        // 不正解の場合のフィードバック
+                        let feedbackMessage = (choice === 'yes') 
+                            ? `不正解。「${question.name}」は非狩猟鳥獣のため、捕獲できません。`
+                            : `不正解。この鳥獣は「${question.name}」といい、狩猟対象です。`;
                         showChoujuuFeedback(false, feedbackMessage);
                     }
                 }, 500);
             });
         }
+        // ★★★ ここまでが修正箇所 ★★★
     }
-
     // --- クイズ開始ロジック ---
     async function startQuiz(categoryKey, mode, startFunction) {
         loaderWrapper.style.display = 'flex';
@@ -372,7 +389,7 @@ window.onload = () => {
             const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
             const progressBarEl = document.getElementById('normal-quiz-progress-bar');
             const progressTextEl = document.getElementById('normal-quiz-progress-text');
-            if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
+            if(progressBarEl) progressBarEl.style.width = `${percentage}%`;
             if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         }
         resetNormalState();
