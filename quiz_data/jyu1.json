@@ -7,6 +7,7 @@
             { "text": "鳥類、哺乳類、爬虫類に属する野生動物", "correct": false }
         ],
         "additionalInfo": "鳥獣保護管理法第二条で、「鳥獣」は鳥類または哺乳類に属する野生動物と定義されています。魚類や両生類、爬虫類は含まれません。"
+        ,"image": "quiz_data/images/scenes/choju01.jpg"
     },
     {
         "question": "狩猟免許の有効期間について、正しいものはどれか。",
@@ -16,6 +17,7 @@
             { "text": "有効期間は10年で更新が必要", "correct": false }
         ],
         "additionalInfo": "狩猟免許の有効期間は、許可日から3回目の誕生日まで、つまり約3年です。有効期間が満了する前に、適性検査を受けて更新手続きを行う必要があります。"
+        ,"image": "quiz_data/images/scenes/license01.png"
     },
     {
         "question": "狩猟を行うために、狩猟免許の他に必要な手続きは何か。",
@@ -25,6 +27,7 @@
             { "text": "国への、年間狩猟計画の提出", "correct": false }
         ],
         "additionalInfo": "狩猟を行うには、狩猟免許の他に、狩猟をしようとする都道府県ごとに狩猟者登録を行い、狩猟税を納める必要があります。"
+        ,"image": "quiz_data/images/scenes/choju01.jpg"    
     },
     {
         "question": "次のうち、銃猟が禁止されている場所に該当しないものはどれか。",
@@ -34,6 +37,7 @@
             { "text": "公道や公園", "correct": false }
         ],
         "additionalInfo": "自分の所有地であっても、そこが鳥獣保護区や公道などに該当する場合は銃猟は禁止されます。禁止区域でなければ、私有林でも狩猟は可能です。"
+        ,"image": "quiz_data/images/scenes/hunt02.jpg"
     },
     {
         "question": "夜間の銃猟について、正しい記述はどれか。",
@@ -43,6 +47,7 @@
             { "text": "イノシシやシカ猟に限り許可されている", "correct": false }
         ],
         "additionalInfo": "矢先の確認が困難で非常に危険なため、日没後から日の出前までの夜間銃猟は原則として全面的に禁止されています。"
+        ,"image": "quiz_data/images/scenes/hunt03.jpg"
     },
     {
         "question": "ライフル銃の所持許可を受けるための一般的な条件として、正しいものはどれか。",
@@ -52,6 +57,7 @@
             { "text": "狩猟経験が20年以上あること", "correct": false }
         ],
         "additionalInfo": "銃刀法により、ライフル銃の所持許可は、推薦を受けた者や散弾銃の継続10年以上の所持経験者などに、厳しく制限されています。"
+        ,"image": "quiz_data/images/scenes/hunt04.jpg"
     },
     {
         "question": "自分の所持する猟銃の取り扱いについて、正しいものはどれか。",
@@ -247,8 +253,8 @@
             { "text": "脱包し、銃と弾を分けて運搬する", "correct": true },
             { "text": "助手席にそのまま置く", "correct": false }
         ],
-        "additionalInfo": "車両での移動時は必ず脱包し、銃と弾を分けてガンケースなどに収納することが法律で定められています。",
-        "image": "quiz_data/images/scenes/carryagunbycar01.jpg"
+        "additionalInfo": "車両での移動時は必ず脱包し、銃と弾を分けてガンケースなどに収納することが法律で定められています。"
+        ,"image": "quiz_data/images/scenes/carryagunbycar01.jpg"
     },
     {
         "question": "射撃時に、不発が起きた場合、最初にすべきことは何か。",
