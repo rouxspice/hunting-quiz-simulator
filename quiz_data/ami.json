@@ -1,28 +1,264 @@
 [
-    { 
+    {
         "question": "網猟免許で捕獲が許可されている鳥獣は？",
         "answers": [
             { "text": "鳥類のみ", "correct": false },
             { "text": "獣類のみ", "correct": false },
             { "text": "鳥類と獣類の両方", "correct": true }
         ],
-        "additionalInfo": "網猟免許では、鳥類と獣類（ノウサギ）が可能です。"
+        "additionalInfo": "網猟免許では、鳥類（26種）と獣類（ノウサギ、ユキウサギ）が捕獲対象です。"
     },
-    { 
-        "question": "禁止されている網猟具は次のうちどれか？",
+    {
+        "question": "使用が全面的に禁止されている網は、次のうちどれか？",
         "answers": [
             { "text": "むそう網", "correct": false },
             { "text": "はり網", "correct": false },
-            { "text": "かすみ網", "correct": true }
+            { "text": "かすみ網", "correct": true },
+            { "text": "つき網", "correct": false }
         ],
-        "additionalInfo": "かすみ網は、鳥類保護の観点から、狩猟での使用が全面的に禁止されています。"
+        "additionalInfo": "かすみ網は、鳥類を無差別に捕獲してしまうため、狩猟での使用は法律で固く禁止されています。"
     },
-    { 
+    {
         "question": "公道上で網を使用して鳥獣を捕獲することは、全面的に許可されている。",
         "answers": [
             { "text": "正しい", "correct": false },
             { "text": "誤り", "correct": true }
         ],
-        "additionalInfo": "公道上での狩猟は、安全確保の観点から、網猟を含め、すべての猟法で禁止されています。"
+        "additionalInfo": "公道上での狩猟は、人や車両の安全を脅かすため、網猟を含めすべての猟法で禁止されています。"
+    },
+    {
+        "question": "「むそう網」の猟法として、最も一般的な対象鳥獣は？",
+        "answers": [
+            { "text": "カモ類", "correct": true },
+            { "text": "ノウサギ", "correct": false },
+            { "text": "キジ", "correct": false },
+            { "text": "スズメ", "correct": false }
+        ],
+        "additionalInfo": "むそう網は、水辺に集まるカモ類などを、おびき寄せて捕獲するために広く用いられます。"
+    },
+    {
+        "question": "ノウサギを捕獲する際に用いられる「はり網」を設置する場所として、最も適切なのはどこか？",
+        "answers": [
+            { "text": "広々とした田んぼの中央", "correct": false },
+            { "text": "ウサギ道（獣道）", "correct": true },
+            { "text": "川の中", "correct": false },
+            { "text": "木の枝の上", "correct": false }
+        ],
+        "additionalInfo": "はり網は、ノウサギが頻繁に通る「ウサギ道」と呼ばれる獣道に、通り道を遮るように設置するのが基本です。"
+    },
+    {
+        "question": "網を設置する際、土地の所有者や管理者から許可を得る必要はない。",
+        "answers": [
+            { "text": "正しい", "correct": false },
+            { "text": "誤り", "correct": true }
+        ],
+        "additionalInfo": "他人の土地に網を設置する場合は、必ず事前に土地の所有者または管理者の承諾を得なければなりません。"
+    },
+    {
+        "question": "「はり網」の高さに関する規制で、正しいものはどれか？",
+        "answers": [
+            { "text": "地面からの高さに制限はない", "correct": false },
+            { "text": "網の最下部が地面に接していなければならない", "correct": false },
+            { "text": "網の上端の高さが地面から1メートル以内でなければならない", "correct": true }
+        ],
+        "additionalInfo": "はり網は、対象外の大型獣がかかるのを防ぐため、網の上端の高さを地面から1m以内に抑える必要があります。"
+    },
+    {
+        "question": "網猟において、おとり（囮）を使用することは全面的に禁止されている。",
+        "answers": [
+            { "text": "正しい", "correct": false },
+            { "text": "誤り", "correct": true }
+        ],
+        "additionalInfo": "むそう網猟などでは、生きた鳥類（おとり）を使用して仲間をおびき寄せる猟法が認められています。ただし、おとりの管理には適切な配慮が必要です。"
+    },
+    {
+        "question": "網を設置したまま、翌日まで見回りをしなくても法律上問題ない。",
+        "answers": [
+            { "text": "正しい", "correct": false },
+            { "text": "誤り", "correct": true }
+        ],
+        "additionalInfo": "網を設置した狩猟者は、定期的に見回りを行う義務があります。捕獲した鳥獣を放置することは、鳥獣への不要な苦痛を与えるため、禁止されています。"
+    },
+    {
+        "question": "鳥獣保護区内で網猟を行うことは、原則としてどうなるか？",
+        "answers": [
+            { "text": "自由にできる", "correct": false },
+            { "text": "禁止されている", "correct": true },
+            { "text": "許可があればできる", "correct": false }
+        ],
+        "additionalInfo": "鳥獣保護区は、鳥獣の保護繁殖を図るための区域であり、原則としてすべての狩猟が禁止されています。"
+    },
+    {
+        "question": "網にかかった鳥獣が、狩猟対象外の鳥獣（非狩猟鳥獣）だった場合、どうすべきか？",
+        "answers": [
+            { "text": "そのまま持ち帰る", "correct": false },
+            { "text": "直ちに放鳥・放獣する", "correct": true },
+            { "text": "その場で処分する", "correct": false }
+        ],
+        "additionalInfo": "誤って非狩猟鳥獣を捕獲した場合は、速やかに、そして安全に放さなければなりません。これを混獲（こんかく）と呼びます。"
+    },
+    {
+        "question": "「谷切（やぎり）」や「架（とや）」とも呼ばれる、長い竿の先につけた網で鳥を捕獲する猟具は？",
+        "answers": [
+            { "text": "むそう網", "correct": false },
+            { "text": "なげ網", "correct": false },
+            { "text": "つき網", "correct": true }
+        ],
+        "additionalInfo": "つき網は、主に休息している鳥類などにそっと近づき、上からかぶせるようにして捕獲する際に使用します。"
+    },
+    {
+        "question": "網猟の猟期（狩猟期間）は、全国どこでも完全に同一である。",
+        "answers": [
+            { "text": "正しい", "correct": false },
+            { "text": "誤り", "correct": true }
+        ],
+        "additionalInfo": "猟期は、原則として11月15日から翌年2月15日までですが、都道府県や対象鳥獣によって異なる場合があります。必ず狩猟を行う地域の最新情報を確認する必要があります。"
+    },
+    {
+        "question": "網猟免許を持っていれば、わな猟免許がなくても「くくりわな」を設置できる。",
+        "answers": [
+            { "text": "正しい", "correct": false },
+            { "text": "誤り", "correct": true }
+        ],
+        "additionalInfo": "猟法ごとに免許が分かれています。網猟免許で許可されているのは網猟具のみであり、わな猟具である「くくりわな」を使用するには、わな猟免許が別途必要です。"
+    },
+    {
+        "question": "日の出前や日没後に網を使用して狩猟を行うことは？",
+        "answers": [
+            { "text": "原則として禁止されている", "correct": true },
+            { "text": "自由にできる", "correct": false },
+            { "text": "網の種類による", "correct": false }
+        ],
+        "additionalInfo": "安全確保と鳥獣保護の観点から、狩猟は日の出から日没までの間に行うのが原則です。夜間の狩猟は禁止されています。"
+    },
+    {
+        "question": "この画像のような、網を地面に隠し、鳥の群れが来た時に引き綱を引いて覆いかぶせる網を何というか？",
+        "answers": [
+            { "text": "はり網", "correct": false },
+            { "text": "むそう網", "correct": true },
+            { "text": "なげ網", "correct": false }
+        ],
+        "additionalInfo": "これが代表的な「むそう網」です。おとりや餌で鳥をおびき寄せ、遠隔操作で網を動かして捕獲します。",
+        "image": "images/musou-ami.jpg"
+    },
+    {
+        "question": "網の材料として、自然環境に配慮し、生分解性の素材を使うことが推奨されている。",
+        "answers": [
+            { "text": "正しい", "correct": true },
+            { "text": "誤り", "correct": false }
+        ],
+        "additionalInfo": "万が一、網を山野に放置・紛失してしまった場合でも、自然に還る素材を選ぶことは、環境負荷を低減する上で非常に重要です。"
+    },
+    {
+        "question": "猟具である網には、所有者の住所、氏名、登録番号などを記載した標識を付けなければならない。",
+        "answers": [
+            { "text": "正しい", "correct": true },
+            { "text": "誤り", "correct": false }
+        ],
+        "additionalInfo": "猟具には、誰の所有物であるかを明確にするための標識の装着が法律で義務付けられています。これにより、違法な設置や放置を防ぎます。"
+    },
+    {
+        "question": "網猟免許で捕獲が許可されている唯一の「獣類」は何か？",
+        "answers": [
+            { "text": "タヌキ", "correct": false },
+            { "text": "キツネ", "correct": false },
+            { "text": "ノウサギ・ユキウサギ", "correct": true },
+            { "text": "イノシシ", "correct": false }
+        ],
+        "additionalInfo": "現在の法律では、網猟免許で捕獲できる獣類はノウサギとユキウサギの2種類のみです。"
+    },
+    {
+        "question": "都市公園内で網猟を行うことは、特別な許可がなくても可能である。",
+        "answers": [
+            { "text": "正しい", "correct": false },
+            { "text": "誤り", "correct": true }
+        ],
+        "additionalInfo": "都市公園や自然公園の特別保護地区など、多くの人が利用する場所や保護を目的とした区域での狩猟は厳しく制限・禁止されています。"
+    },
+    {
+        "question": "「なげ網」とは、どのような猟法か？",
+        "answers": [
+            { "text": "鳥の群れに網を投げて捕獲する", "correct": true },
+            { "text": "魚を捕る投網と同じものである", "correct": false },
+            { "text": "網を罠として地面に設置する", "correct": false }
+        ],
+        "additionalInfo": "なげ網は、主に小鳥の群れなどに対して、手で直接網を投げて捕獲する猟法です。"
+    },
+    {
+        "question": "網猟を行う際、双眼鏡を使って鳥獣の種類や周囲の安全を確認することは重要である。",
+        "answers": [
+            { "text": "正しい", "correct": true },
+            { "text": "誤り", "correct": false }
+        ],
+        "additionalInfo": "対象鳥獣の正確な識別、矢先の安全確認ならぬ「網の作動範囲」の安全確認のために、双眼鏡は非常に有効な道具です。"
+    },
+    {
+        "question": "捕獲した鳥獣は、食用にする場合でも、苦痛を最小限にするための適切な処置（止めさし）を速やかに行う必要がある。",
+        "answers": [
+            { "text": "正しい", "correct": true },
+            { "text": "誤り", "correct": false }
+        ],
+        "additionalInfo": "狩猟は命をいただく行為です。捕獲した鳥獣に対して、不要な苦痛を与え続けることのないよう、敬意をもって速やかに処置することが狩猟者の責務です。"
+    },
+    {
+        "question": "網猟の猟果（捕獲した鳥獣）について、報告する義務はない。",
+        "answers": [
+            { "text": "正しい", "correct": false },
+            { "text": "誤り", "correct": true }
+        ],
+        "additionalInfo": "狩猟者は、猟期終了後、定められた期間内に、捕獲した鳥獣の種類と数量を知事（または指定された機関）に報告する義務があります。"
+    },
+    {
+        "question": "この画像のように、ウサギの通り道に設置する網を何というか？",
+        "answers": [
+            { "text": "むそう網", "correct": false },
+            { "text": "はり網", "correct": true },
+            { "text": "かすみ網", "correct": false }
+        ],
+        "additionalInfo": "これが代表的な「はり網」です。勢子（せこ）がウサギを追い立て、網に駆け込ませて捕獲します。",
+        "image": "images/hari-ami.jpg"
+    },
+    {
+        "question": "網猟免許の有効期間は何年間か？",
+        "answers": [
+            { "text": "1年間", "correct": false },
+            { "text": "約3年間", "correct": true },
+            { "text": "5年間", "correct": false },
+            { "text": "永久", "correct": false }
+        ],
+        "additionalInfo": "狩猟免許の有効期間は、取得した日から起算して3回目の誕生日を経過した年の9月14日まで、概ね3年間です。更新手続きが必要になります。"
+    },
+    {
+        "question": "自分の家の庭であれば、狩猟期間外でも自由に網を使って鳥獣を捕獲してよい。",
+        "answers": [
+            { "text": "正しい", "correct": false },
+            { "text": "誤り", "correct": true }
+        ],
+        "additionalInfo": "たとえ私有地であっても、狩猟期間や対象鳥獣などの法律は遵守しなければなりません。期間外の捕獲は鳥獣保護法違反となります。"
+    },
+    {
+        "question": "網の網目の大きさ（目合い）には、鳥獣の種類に応じて制限が設けられている場合がある。",
+        "answers": [
+            { "text": "正しい", "correct": true },
+            { "text": "誤り", "correct": false }
+        ],
+        "additionalInfo": "小さな鳥獣を保護するため、または特定の鳥獣のみを効率的に捕獲するために、網目の大きさに規制が設けられていることがあります。"
+    },
+    {
+        "question": "狩猟者登録をしないで網猟を行った場合、どうなるか？",
+        "answers": [
+            { "text": "厳重注意のみ", "correct": false },
+            { "text": "法律違反となり、罰則の対象となる", "correct": true },
+            { "text": "次回の免許更新が不可となる", "correct": false }
+        ],
+        "additionalInfo": "狩猟免許を持っているだけでは狩猟はできません。実際に狩猟を行う都道府県ごとに、毎年度「狩猟者登録」を行い、狩猟税を納める必要があります。"
+    },
+    {
+        "question": "悪天候（強風、豪雨、濃霧など）の際に網猟を行うことは、安全上、避けるべきである。",
+        "answers": [
+            { "text": "正しい", "correct": true },
+            { "text": "誤り", "correct": false }
+        ],
+        "additionalInfo": "悪天候は、網の設置や操作を困難にするだけでなく、自身の安全を脅かします。無理な狩猟は絶対に避けるべきです。"
     }
 ]
