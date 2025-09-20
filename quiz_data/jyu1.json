@@ -2,8 +2,8 @@
     {
         "question": "鳥獣保護管理法における「鳥獣」の定義として、正しいものはどれか。",
         "answers": [
-            { "text": "野生の、すべての、動物", "correct": false },
-            { "text": "鳥類と、哺乳類に属する野生動物", "correct": true },
+            { "text": "野生のすべての動物", "correct": false },
+            { "text": "鳥類と哺乳類に属する野生動物", "correct": true },
             { "text": "鳥類、哺乳類、爬虫類に属する野生動物", "correct": false }
         ],
         "additionalInfo": "鳥獣保護管理法第二条で、「鳥獣」は鳥類または哺乳類に属する野生動物と定義されています。魚類や両生類、爬虫類は含まれません。"
@@ -67,6 +67,7 @@
             { "text": "家族であれば共有して使ってもよい", "correct": false }
         ],
         "additionalInfo": "銃刀法により、許可なく銃を他人に貸し出すことは厳しく禁止されています。たとえ相手が銃の所持許可を持っていても同様です。"
+        ,"image": "quiz_data/images/scenes/hunt05.jpg"
     },
     {
         "question": "狩猟鳥獣の捕獲数について正しいものはどれか。",
@@ -76,6 +77,7 @@
             { "text": "捕獲数の制限は わな猟のみで銃猟にはない", "correct": false }
         ],
         "additionalInfo": "例えば、マガモやキジバトなど一部の鳥獣には、資源保護の観点から、1日あたりの捕獲数の上限が定められています。"
+        ,"image": "quiz_data/images/scenes/hunt06.jpg"
     },
     {
         "question": "複数人で行う「巻き狩り」について、正しい記述はどれか。",
@@ -85,9 +87,11 @@
             { "text": "5人以上でなければ行ってはならない", "correct": false }
         ],
         "additionalInfo": "巻き狩りは適切な安全管理のもとで行われる一般的な猟法の一つです。法律で禁止されてはいません。勢子（せこ）と射手（まち）の連携が重要です。"
+        ,"image": "quiz_data/images/scenes/makigari.png"
     },
     {
         "question": "捕獲した鳥獣の販売について、正しいものはどれか。",
+        "image": "quiz_data/images/scenes/sale01.jpg",
         "answers": [
             { "text": "販売するには特別な許可が必要", "correct": false },
             { "text": "狩猟者登録をしていれば販売目的の捕獲も可能", "correct": true },
