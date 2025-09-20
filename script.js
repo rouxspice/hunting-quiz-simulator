@@ -1,5 +1,5 @@
 // ===================================================================
-// ★★★ script.js (鳥獣名フィードバック機能追加・決定版) ★★★
+// ★★★ script.js (鳥獣名フィードバック不具合修正・決定版) ★★★
 // ===================================================================
 window.onload = () => {
 
@@ -228,12 +228,12 @@ window.onload = () => {
                 const isCorrect = (choice === 'no') ? !question.isHuntable : question.isHuntable;
 
                 if (isCorrect) {
-                    // 「獲れません」が正解の場合のみ、スコアを加算
+                    playSound(correctSound);
+                    // 「獲れません」が正解の場合のみ、ここでスコアを加算
                     if (choice === 'no') { 
-                        playSound(correctSound); 
                         score++; 
                     }
-                    // 「獲れます」が正解の場合は、次のステップに進むので、ここでは音もスコアも処理しない
+                    // 「獲れます」が正解の場合は、次のステップ（名前当て）で正解した時にスコアが加算される
                 } else {
                     playSound(wrongSound);
                     wrongQuestions.push({ question: `この鳥獣は「${question.name}」です。捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' });
@@ -251,7 +251,6 @@ window.onload = () => {
                             setupNameSelection(question);
                         } else {
                             // 「獲れません」が正解 → フィードバック表示
-                            // ★★★ ここで鳥獣の名前を含んだメッセージを生成 ★★★
                             showChoujuuFeedback(true, `正解！「${question.name}」は非狩猟鳥獣のため、捕獲できません。`);
                         }
                     } else {
@@ -389,7 +388,7 @@ window.onload = () => {
             const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
             const progressBarEl = document.getElementById('normal-quiz-progress-bar');
             const progressTextEl = document.getElementById('normal-quiz-progress-text');
-            if(progressBarEl) progressBarEl.style.width = `${percentage}%`;
+            if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
             if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         }
         resetNormalState();
