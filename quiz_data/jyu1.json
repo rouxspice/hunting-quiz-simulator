@@ -247,7 +247,8 @@
             { "text": "脱包し、銃と弾を分けて運搬する", "correct": true },
             { "text": "助手席にそのまま置く", "correct": false }
         ],
-        "additionalInfo": "車両での移動時は必ず脱包し、銃と弾を分けてガンケースなどに収納することが法律で定められています。"
+        "additionalInfo": "車両での移動時は必ず脱包し、銃と弾を分けてガンケースなどに収納することが法律で定められています。",
+        "image": "quiz_data/images/scenes/carryagunbycar01.jpg"
     },
     {
         "question": "射撃時に、不発が起きた場合、最初にすべきことは何か。",
