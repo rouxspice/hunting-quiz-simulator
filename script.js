@@ -1,5 +1,5 @@
 // ===================================================================
-// ★★★ script.js (全クイズ開始バグ修正・完全版) ★★★
+// ★★★ script.js (JSON分割読み込み対応・決定版) ★★★
 // ===================================================================
 window.onload = () => {
 
@@ -104,21 +104,70 @@ window.onload = () => {
         topPageContainer.style.display = 'block';
     }
 
+    // ★★★ ここからが修正箇所 ★★★
     // --- クイズデータ読み込み＆状態リセット ---
     async function loadQuizData(categoryKey, mode = 'all') {
-        let fileName = (categoryKey === 'sushi') ? `sushi_${mode}.json` : `${categoryKey}.json`;
-        try {
-            const response = await fetch(`./quiz_data/${fileName}`);
-            if (!response.ok) throw new Error(`Failed to fetch quiz_data/${fileName}. Status: ${response.status}`);
-            const data = await response.json();
-            console.log(`Successfully loaded quiz data for '${categoryKey}' (mode: ${mode}) from external JSON: ${fileName}`);
-            return data;
-        } catch (error) {
-            console.error(`Could not load from ./quiz_data/${fileName}. Reason: ${error.message}.`);
-            alert(`クイズデータ（${fileName}）の読み込みに失敗しました。ファイルが存在するか、パスが正しいか確認してください。`);
+        let filesToLoad = [];
+
+        if (categoryKey === 'sushi') {
+            // 寿司クイズの場合、分割されたファイルを動的に読み込む
+            let fileIndex = 1;
+            while (true) {
+                const fileName = `sushi_${mode}-${fileIndex}.json`;
+                // ファイルの存在をチェックするために `HEAD` リクエストを使用
+                try {
+                    const response = await fetch(`./quiz_data/${fileName}`, { method: 'HEAD' });
+                    if (response.ok) {
+                        filesToLoad.push(fileName);
+                        fileIndex++;
+                    } else {
+                        // ファイルが見つからなかったらループを終了
+                        break;
+                    }
+                } catch (error) {
+                    // ネットワークエラーなどでチェックに失敗した場合もループを終了
+                    break;
+                }
+            }
+            // もし分割ファイルが見つからなかった場合、従来の単一ファイルを試す
+            if (filesToLoad.length === 0) {
+                const singleFileName = `sushi_${mode}.json`;
+                try {
+                    const response = await fetch(`./quiz_data/${singleFileName}`, { method: 'HEAD' });
+                    if (response.ok) {
+                        filesToLoad.push(singleFileName);
+                    }
+                } catch (error) { /* 何もしない */ }
+            }
+        } else {
+            // 寿司クイズ以外は、従来通り単一のファイル名をリストに入れる
+            filesToLoad.push(`${categoryKey}.json`);
+        }
+
+        if (filesToLoad.length === 0) {
+            console.error(`No quiz data files found for category '${categoryKey}' and mode '${mode}'.`);
+            alert(`クイズデータが見つかりませんでした。(カテゴリ: ${categoryKey}, モード: ${mode})`);
             return [];
         }
+
+        // 見つかったすべてのファイルを読み込み、内容を結合する
+        let allQuizData = [];
+        for (const fileName of filesToLoad) {
+            try {
+                const response = await fetch(`./quiz_data/${fileName}`);
+                if (!response.ok) throw new Error(`Failed to fetch ${fileName}. Status: ${response.status}`);
+                const data = await response.json();
+                allQuizData = allQuizData.concat(data); // 配列を結合
+                console.log(`Successfully loaded and merged: ${fileName}`);
+            } catch (error) {
+                console.error(`Could not load ${fileName}. Reason: ${error.message}.`);
+                // 1つのファイルの読み込みに失敗しても、他のファイルで続行する
+            }
+        }
+        
+        return allQuizData;
     }
+    // ★★★ ここまでが修正箇所 ★★★
 
     async function resetQuizState(categoryKey, mode = 'all') {
         currentQuizCategoryKey = categoryKey;
