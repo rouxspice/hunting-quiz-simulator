@@ -121,26 +121,26 @@
     "additionalInfo": "船底型は実際には安定した形で、大きなネタを握る際にも適しています。形が崩れやすいということはありません。"
   },
   {
-    "question": "右の写真の寿司ネタはなにか。",
-    "image": "",
+    "question": "写真の寿司ネタはなにか。",
+    "image": "quiz_data/images/sushi/sushi_tachiuo.jpg",
     "answers": [
       { "text": "サヨリ", "correct": false },
-      { "text": "シマアジ", "correct": true },
-      { "text": "タチウオ", "correct": false },
+      { "text": "シマアジ", "correct": false },
+      { "text": "タチウオ", "correct": true },
       { "text": "ボラ", "correct": false }
     ],
-    "additionalInfo": "写真はシマアジの寿司です。シマアジは高級魚として知られ、上品な味わいが特徴的です。"
+    "additionalInfo": "写真はタチウオの寿司です。"
   },
   {
-    "question": "右の写真の寿司ネタはなにか。",
-    "image": "",
+    "question": "写真の寿司ネタはなにか。",
+    "image": "quiz_data/images/sushi/sushi_spicy_tuna_roll.jpg",
     "answers": [
-      { "text": "スパイシーツナロール", "correct": false },
+      { "text": "スパイシーツナロール", "correct": true },
       { "text": "ホットロール", "correct": false },
-      { "text": "フィラデルフィアロール", "correct": true },
+      { "text": "フィラデルフィアロール", "correct": false },
       { "text": "ソフトシェルロール", "correct": false }
     ],
-    "additionalInfo": "写真はフィラデルフィアロールです。クリームチーズとサーモンを使ったアメリカ発祥の寿司ロールです。"
+    "additionalInfo": "写真はスパイシーツナロールです。"
   },
   {
     "question": "「入梅いわし」とは何と読むか。",

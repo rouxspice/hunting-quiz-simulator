@@ -33,28 +33,6 @@
     "additionalInfo": "ヒラメを下ろす前は、頭を落とし、腎臓膜に切り込みを入れ、布巾でしっかり拭いてから下ろし始めます。"
   },
   {
-    "question": "図のBはミル貝のどの部分か。",
-    "image": "",
-    "answers": [
-      { "text": "水管の身", "correct": false },
-      { "text": "水管の皮", "correct": true },
-      { "text": "本体の身", "correct": false },
-      { "text": "内臓", "correct": false }
-    ],
-    "additionalInfo": "図のBはミル貝の水管の皮の部分です。この部分は通常取り除いて調理します。"
-  },
-  {
-    "question": "ミル貝をさばいているこの図は何をしているところか。",
-    "image": "",
-    "answers": [
-      { "text": "形が悪いので、飾りを入れている", "correct": false },
-      { "text": "奥の方にある内臓を外している", "correct": false },
-      { "text": "細長すぎるので、開いて大きくしている", "correct": false },
-      { "text": "開いて中の汚れを取っている", "correct": true }
-    ],
-    "additionalInfo": "ミル貝をさばく際は、開いて中の汚れや砂を丁寧に取り除きます。これにより美味しく食べられます。"
-  },
-  {
     "question": "「コンセプト設計」で決める内容として適切とはいえないものはどれか。",
     "image": "",
     "answers": [
@@ -86,17 +64,6 @@
       { "text": "定められた講習会の修了", "correct": false }
     ],
     "additionalInfo": "食品衛生責任者には実務経験の年数制限はありません。資格や講習会修了が条件となります。"
-  },
-  {
-    "question": "図のCの部分はなにか。",
-    "image": "",
-    "answers": [
-      { "text": "コールドテーブル", "correct": false },
-      { "text": "収納キャビネット", "correct": false },
-      { "text": "製氷機", "correct": true },
-      { "text": "移動台", "correct": false }
-    ],
-    "additionalInfo": "図のCの部分は製氷機です。寿司店では氷が重要な役割を果たします。"
   },
   {
     "question": "「厨房設備」に含まれないのはどれか。",
@@ -152,17 +119,6 @@
       { "text": "メニューを均一化し、標準化を図る", "correct": false }
     ],
     "additionalInfo": "個人店では熟成寿司などの専門性を高めることで、大手チェーンとの差別化を図ることが効果的です。"
-  },
-  {
-    "question": "ハラスメントに関する説明で間違っているものはどれか。",
-    "image": "",
-    "answers": [
-      { "text": "身体への攻撃や物を投げることはハラスメントに含まれる", "correct": false },
-      { "text": "大声で怒鳴ったり、過度な叱責をすることはハラスメントに含まれる", "correct": false },
-      { "text": "「バカ」など人格を否定する言葉はハラスメントに含まれる", "correct": false },
-      { "text": "業務上の行為の間違いを指摘することはハラスメントに含まれる", "correct": true }
-    ],
-    "additionalInfo": "業務上の適切な指導や間違いの指摘は、ハラスメントには該当しません。方法や程度が問題となります。"
   },
   {
     "question": "寿司に酒を合わせるポイントとして、間違っているものはどれか。",

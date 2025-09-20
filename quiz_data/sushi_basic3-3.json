@@ -1,0 +1,267 @@
+[
+  {
+    "question": "本ワサビの特徴として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "擦りおろして空気に触れさせることで辛味成分が生じる", "correct": false },
+      { "text": "目の粗いおろし金を使うと甘みが強くなる", "correct": false },
+      { "text": "きめの細かいものでおろすと辛味が強くなる", "correct": false },
+      { "text": "比較的安価で辛さが長持ちする", "correct": true }
+    ],
+    "additionalInfo": "本ワサビは高価で、辛さは時間とともに失われやすいのが特徴です。比較的安価で辛さが長持ちするのは粉ワサビなどの代用品です。"
+  },
+  {
+    "question": "海苔の説明で間違っているのではどれか。",
+    "image": "",
+    "answers": [
+      { "text": "炙ると海苔の細胞が壊れて、歯切れも香りも悪くなる", "correct": true },
+      { "text": "つるっとしている方が表でザラついている方が裏", "correct": false },
+      { "text": "使わないときは必ず密閉して冷暗所に保管する", "correct": false },
+      { "text": "香りが良いこと、歯切れが良いこと、口どけが良いことが大事", "correct": false }
+    ],
+    "additionalInfo": "海苔は炙ることで香りが立ち、歯切れも良くなります。炙ると悪くなるという説明は間違いです。"
+  },
+  {
+    "question": "ガリの効果として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "鉄分を補給する", "correct": false },
+      { "text": "免疫力を向上させる", "correct": false },
+      { "text": "魚の生臭さを消す", "correct": true },
+      { "text": "デンプンを分解する", "correct": false }
+    ],
+    "additionalInfo": "ガリ（生姜の甘酢漬け）は魚の生臭さを消し、口の中をさっぱりさせる効果があります。"
+  },
+  {
+    "question": "ワサビを擦る時に意識すべきことはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "コの字を描くようにして擦る", "correct": false },
+      { "text": "回しながら擦る", "correct": true },
+      { "text": "直線上に擦る", "correct": false },
+      { "text": "力強く擦る", "correct": false }
+    ],
+    "additionalInfo": "ワサビは回しながら擦ることで、きめ細かく美味しく仕上がります。"
+  },
+  {
+    "question": "この中で寿司ネタ全般に一番合いやすいとされる醤油はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "濃口醤油", "correct": false },
+      { "text": "再仕込み醤油", "correct": false },
+      { "text": "淡口醤油", "correct": true },
+      { "text": "白醤油", "correct": false }
+    ],
+    "additionalInfo": "淡口醤油は塩分が高めで色が薄く、寿司ネタの味を邪魔せずに引き立てるため、寿司に最も適しています。"
+  },
+  {
+    "question": "合わせ酢をつくるとき、砂糖と塩を溶かす上で正しいものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "沸騰するまでよくかき混ぜる", "correct": false },
+      { "text": "完全に溶かすために、手を止めずによくかき混ぜる", "correct": false },
+      { "text": "強火で一気に溶かすが、沸騰しないように気をつける", "correct": true },
+      { "text": "火はあまり強くしすぎず、沸騰させないようにする", "correct": false }
+    ],
+    "additionalInfo": "合わせ酢を作る際は、強火で一気に溶かしますが、沸騰させると酢の酸味が飛んでしまうので注意が必要です。"
+  },
+  {
+    "question": "シャリ用のご飯を炊くときに行う「浸水」はなんのために行うのか。",
+    "image": "",
+    "answers": [
+      { "text": "米の表面についた挟や不純物を洗い流すため", "correct": false },
+      { "text": "米と水を混ぜ、粒々がくっつかないようにするため", "correct": false },
+      { "text": "米の中心まで水をが入るようにするため", "correct": true },
+      { "text": "米の余分な糊質を除去するため", "correct": false }
+    ],
+    "additionalInfo": "浸水は米の中心部まで水を浸透させ、均一に炊き上げるために行います。"
+  },
+  {
+    "question": "飯台を使用する方法として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "シャリ切りをする前に水に浸す", "correct": false },
+      { "text": "水に浸した上で15分ほど冷蔵庫の中で冷やす", "correct": true },
+      { "text": "水に浸したあとに布巾で水気をよく拭き、水が溜まらないようにする", "correct": false },
+      { "text": "水分がついておらず且つ飯台全体が湿っている状態を目指す", "correct": false }
+    ],
+    "additionalInfo": "飯台は水に浸した後、冷蔵庫で冷やすのではなく、常温で布巾で水気を拭き取って使用します。"
+  },
+  {
+    "question": "シャリ切りをする時にダマをほぐすのはなぜか。",
+    "image": "",
+    "answers": [
+      { "text": "シャリの中に空気を入れるため", "correct": false },
+      { "text": "ほぐすことによって、シャリに艶が出るため", "correct": false },
+      { "text": "ほぐさないと、味にムラができるため", "correct": true },
+      { "text": "ほぐしながらシャリの水分を弾き飛ばすため", "correct": false }
+    ],
+    "additionalInfo": "ダマをほぐさないと合わせ酢が均一に混ざらず、味にムラができてしまいます。"
+  },
+  {
+    "question": "シャリ切りの途中で、シャリを冷ます理由はなぜか。",
+    "image": "",
+    "answers": [
+      { "text": "シャリの粘りを減らし、シャリ切りをしやすくするため", "correct": false },
+      { "text": "冷めるときに酢がシャリに染み込んでおいしくなるため", "correct": true },
+      { "text": "手触りがよくなり、シャリを取りやすくなるため", "correct": false },
+      { "text": "寿司を握ったときに形を維持しやすくなり、見た目が美しくなるため", "correct": false }
+    ],
+    "additionalInfo": "シャリを冷ますことで、酢がご飯に染み込み、味が馴染んで美味しくなります。"
+  },
+  {
+    "question": "静岡のキンメダイの旬の目安はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": true }
+    ],
+    "additionalInfo": "静岡のキンメダイの旬は冬です。この時期のキンメダイは脂がのって最も美味しくなります。"
+  },
+  {
+    "question": "シンコの季節の目安はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "3～5月", "correct": false },
+      { "text": "6～8月", "correct": true },
+      { "text": "9～11月", "correct": false },
+      { "text": "12～2月", "correct": false }
+    ],
+    "additionalInfo": "シンコ（コノシロの幼魚）の季節は6～8月の夏です。この時期の小さなシンコは特に珍重されます。"
+  },
+  {
+    "question": "畜養とはどういう意味か。",
+    "image": "",
+    "answers": [
+      { "text": "成魚から取り出した卵を人工孵化させて、成魚まで育てること", "correct": false },
+      { "text": "稚魚を捕まえて育てること", "correct": false },
+      { "text": "若魚を捕まえて太らせること", "correct": true },
+      { "text": "人の手を介して人工授精させ、魚介の子をつくること", "correct": false }
+    ],
+    "additionalInfo": "畜養とは、天然の若魚を捕獲して生け簀などで太らせ、品質を向上させることです。"
+  },
+  {
+    "question": "右の写真の道具はなんと呼ぶか。",
+    "image": "",
+    "answers": [
+      { "text": "まな板", "correct": false },
+      { "text": "飯台", "correct": true },
+      { "text": "切り台", "correct": false },
+      { "text": "抜き板", "correct": false }
+    ],
+    "additionalInfo": "写真の道具は飯台（はんだい）です。シャリ切りに使用する木製の桶状の道具です。"
+  },
+  {
+    "question": "魚をさばいたり、骨を断ったりするときなどの下処理に使う和包丁はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "出刃包丁", "correct": true },
+      { "text": "柳刃包丁", "correct": false },
+      { "text": "薄刃包丁", "correct": false },
+      { "text": "牛刀", "correct": false }
+    ],
+    "additionalInfo": "出刃包丁は魚をさばいたり、骨を断ったりする下処理に使用する和包丁です。刃が厚く丈夫な作りになっています。"
+  },
+  {
+    "question": "目打ちはどの魚介をさばくときに使われるか。",
+    "image": "",
+    "answers": [
+      { "text": "アワビ", "correct": false },
+      { "text": "アナゴ", "correct": true },
+      { "text": "カツオ", "correct": false },
+      { "text": "サヨリ", "correct": false }
+    ],
+    "additionalInfo": "目打ちはアナゴをさばくときに使用する専用の道具です。アナゴの頭部に刺して固定します。"
+  },
+  {
+    "question": "ワサビをすりおろす専門の道具の名前はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "おろし金", "correct": false },
+      { "text": "ノノジおろし", "correct": false },
+      { "text": "鱗おろし", "correct": false },
+      { "text": "鮫皮おろし", "correct": true }
+    ],
+    "additionalInfo": "鮫皮おろしはワサビをすりおろす専門の道具です。サメの皮を使った目の細かいおろし器です。"
+  },
+  {
+    "question": "竹串はどんな時に使うか。",
+    "image": "",
+    "answers": [
+      { "text": "エビを茹でる時", "correct": true },
+      { "text": "海苔を焼くとき", "correct": false },
+      { "text": "コハダを酢で締めるとき", "correct": false },
+      { "text": "昆布締めにするとき", "correct": false }
+    ],
+    "additionalInfo": "竹串はエビを茹でる時に背中に刺して、まっすぐに茹で上げるために使用します。"
+  },
+  {
+    "question": "右の写真のすしの名前はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "須古ずし", "correct": true },
+      { "text": "飯寿司", "correct": false },
+      { "text": "おしずし", "correct": false },
+      { "text": "まつりずし", "correct": false }
+    ],
+    "additionalInfo": "写真のすしは須古ずし（すこずし）です。佐賀県の郷土寿司で、ムツゴロウなどを使った押し寿司です。"
+  },
+  {
+    "question": "1750年の料理本『料理山海郷』で見られたすしは何か。",
+    "image": "",
+    "answers": [
+      { "text": "巻きずし", "correct": false },
+      { "text": "野菜ずし", "correct": false },
+      { "text": "芋ずし", "correct": true },
+      { "text": "江戸前寿司", "correct": false }
+    ],
+    "additionalInfo": "1750年の料理本『料理山海郷』には芋ずしが記載されています。これは早ずしの一種です。"
+  },
+  {
+    "question": "魚が赤身に分類されるのは、なんと呼ばれる色素によるものか。",
+    "image": "",
+    "answers": [
+      { "text": "アントシアニン", "correct": false },
+      { "text": "アスタキサンチン", "correct": false },
+      { "text": "カロチノイド", "correct": false },
+      { "text": "ミオグロビン", "correct": true }
+    ],
+    "additionalInfo": "魚が赤身に分類されるのは、筋肉中のミオグロビンという色素によるものです。"
+  },
+  {
+    "question": "江戸時代、特に高級であることで知られた寿司屋はどこか。",
+    "image": "",
+    "answers": [
+      { "text": "玄海鮨", "correct": false },
+      { "text": "千代乃寿司", "correct": false },
+      { "text": "菊水鮨", "correct": true },
+      { "text": "松ヶ鮨", "correct": false }
+    ],
+    "additionalInfo": "江戸時代に特に高級で知られた寿司屋は菊水鮨です。当時の高級寿司店として有名でした。"
+  },
+  {
+    "question": "終戦後、握り寿司が全国へ広がるきっかけとなったとされる法令はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "漁業法施行令", "correct": false },
+      { "text": "食品衛生法", "correct": false },
+      { "text": "水産資源保護法", "correct": false },
+      { "text": "飲食営業緊急措置令", "correct": true }
+    ],
+    "additionalInfo": "終戦後の飲食営業緊急措置令により、寿司屋が全国に広がるきっかけとなりました。"
+  },
+  {
+    "question": "回転寿司1号店が初めて登場したのはいつか。",
+    "image": "",
+    "answers": [
+      { "text": "1855年", "correct": false },
+      { "text": "1920年", "correct": false },
+      { "text": "1958年", "correct": true },
+      { "text": "1970年", "correct": false }
+    ],
+    "additionalInfo": "回転寿司1号店は1958年に大阪で開店した「廻る元禄寿司」です。"
+  }
+]
+

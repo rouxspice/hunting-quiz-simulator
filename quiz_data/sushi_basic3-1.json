@@ -1,0 +1,267 @@
+[
+  {
+    "question": "奈良時代以前のなれずしの説明として間違っているのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "魚などの保存食だった", "correct": true },
+      { "text": "権力者への献上品に用いられた", "correct": false },
+      { "text": "米と一緒に発酵させた", "correct": false },
+      { "text": "米も食べた", "correct": false }
+    ],
+    "additionalInfo": "奈良時代以前のなれずしは魚の保存食として作られ、発酵に使った米は捨てられていました。米も食べるようになったのは後の時代です。"
+  },
+  {
+    "question": "8世紀頃の「鮨」の文字が書かれた木簡が見つかった場所はどこか。",
+    "image": "",
+    "answers": [
+      { "text": "唐招提寺", "correct": false },
+      { "text": "高松塚古墳", "correct": false },
+      { "text": "平城宮跡", "correct": true },
+      { "text": "藤原宮跡", "correct": false }
+    ],
+    "additionalInfo": "8世紀頃の「鮨」の文字が書かれた木簡は平城宮跡で発見されました。これは古代の寿司の歴史を示す重要な資料です。"
+  },
+  {
+    "question": "「すし」を示す「和字」ではなかったのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "寿司", "correct": false },
+      { "text": "鮨", "correct": true },
+      { "text": "酢志", "correct": false },
+      { "text": "須子", "correct": false }
+    ],
+    "additionalInfo": "「鮨」は中国から伝来した漢字で、和字（日本で作られた文字）ではありません。寿司、酢志、須子は日本で作られた和字です。"
+  },
+  {
+    "question": "すしの起源とされる地域ではないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マレーシア北部", "correct": false },
+      { "text": "タイ北部", "correct": false },
+      { "text": "東北タイとラオスの国境地帯", "correct": false },
+      { "text": "中国の雲南省", "correct": true }
+    ],
+    "additionalInfo": "すしの起源は東南アジアの山間部とされており、中国の雲南省は起源地域には含まれていません。"
+  },
+  {
+    "question": "前3世紀頃の中国最古の辞典『爾雅』に記載されていた内容はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "鮨は米と塩を用いた魚の漬物", "correct": true },
+      { "text": "鮨は呉越地方の古代料理", "correct": false },
+      { "text": "鮨は蜀から伝わった魚醤", "correct": false },
+      { "text": "鮨は魚の塩辛", "correct": false }
+    ],
+    "additionalInfo": "中国最古の辞典『爾雅』には、鮨は米と塩を用いた魚の漬物と記載されています。"
+  },
+  {
+    "question": "室町時代になって、すしの世界で起きた変化はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "米を食べるようになった", "correct": true },
+      { "text": "栗を食べるようになった", "correct": false },
+      { "text": "酢を使うようになった", "correct": false },
+      { "text": "発酵させないようになった", "correct": false }
+    ],
+    "additionalInfo": "室町時代になって、発酵に使った米も一緒に食べるようになりました。これは現代の寿司につながる重要な変化です。"
+  },
+  {
+    "question": "江戸時代になって始まった制度はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "律令制", "correct": false },
+      { "text": "荘園制度", "correct": false },
+      { "text": "日明貿易", "correct": false },
+      { "text": "時献上", "correct": true }
+    ],
+    "additionalInfo": "江戸時代になって「時献上」という制度が始まりました。これは季節の魚を将軍に献上する制度でした。"
+  },
+  {
+    "question": "1680年頃から登場した早ずしの説明として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "発酵期間がなれずしより短くなった", "correct": true },
+      { "text": "米を発酵させずに、お酢で味つけするようになった", "correct": false },
+      { "text": "米を発酵させてから、お酢で味つけをするようになった", "correct": false },
+      { "text": "箱を使わずに手で握るようになった", "correct": false }
+    ],
+    "additionalInfo": "早ずしは発酵期間を短縮したもので、なれずしより早く食べられるようになりました。"
+  },
+  {
+    "question": "早ずしの登場が大きな変革だった理由として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "早ずしがきっかけで、なれずしがなくなってしまったから", "correct": true },
+      { "text": "すしの主流が乳酸発酵から、発酵させずに酢で味つけしたすしに変わったから", "correct": false },
+      { "text": "押しずしや握りずしなど、早ずしから多くのバリエーションが生まれたから", "correct": false },
+      { "text": "この頃から急速に現代の「すし」に近づいていったから", "correct": false }
+    ],
+    "additionalInfo": "早ずしの登場後も、なれずしは完全になくなったわけではなく、現在でも一部地域で作られています。"
+  },
+  {
+    "question": "握りずしが誕生したのはいつ頃か。",
+    "image": "",
+    "answers": [
+      { "text": "1420年頃", "correct": false },
+      { "text": "1603年頃", "correct": false },
+      { "text": "1750年頃", "correct": false },
+      { "text": "1820年頃", "correct": true }
+    ],
+    "additionalInfo": "握りずしが誕生したのは1820年頃とされています。江戸時代後期の文化・文政期に当たります。"
+  },
+  {
+    "question": "江戸前寿司の名前の由来として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "江戸城の前にある江戸湾でとれた魚介が寿司ネタの主流だったから", "correct": true },
+      { "text": "江戸の商人が商売繁盛を願って食べたから", "correct": false },
+      { "text": "江戸時代が始まると、江戸ですしが大ブームになったから", "correct": false },
+      { "text": "当時人気だった箱ずしの発祥が江戸だったから", "correct": false }
+    ],
+    "additionalInfo": "江戸前寿司の名前は、江戸城の前にある江戸湾（現在の東京湾）でとれた新鮮な魚介を使ったことに由来します。"
+  },
+  {
+    "question": "江戸時代の寿司屋について正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "高級料理店として営業していた", "correct": false },
+      { "text": "屋台での営業が主流だった", "correct": true },
+      { "text": "宅配サービスが中心だった", "correct": false },
+      { "text": "完全予約制だった", "correct": false }
+    ],
+    "additionalInfo": "江戸時代の寿司屋は屋台での営業が主流でした。手軽に食べられるファストフードのような存在でした。"
+  },
+  {
+    "question": "明治時代の寿司業界で起きた変化として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "屋台から店舗への移行が始まった", "correct": true },
+      { "text": "回転寿司が登場した", "correct": false },
+      { "text": "冷蔵技術が普及した", "correct": false },
+      { "text": "海外展開が始まった", "correct": false }
+    ],
+    "additionalInfo": "明治時代には、屋台中心だった寿司屋が徐々に店舗を構えるようになりました。"
+  },
+  {
+    "question": "大正時代の寿司業界の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "関西風の寿司が主流になった", "correct": false },
+      { "text": "電気冷蔵庫が普及した", "correct": true },
+      { "text": "寿司の機械化が進んだ", "correct": false },
+      { "text": "海外からの観光客が増えた", "correct": false }
+    ],
+    "additionalInfo": "大正時代には電気冷蔵庫が普及し始め、寿司の保存や品質管理が向上しました。"
+  },
+  {
+    "question": "昭和初期の寿司業界について正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "戦争の影響で営業が困難になった", "correct": true },
+      { "text": "海外展開が本格化した", "correct": false },
+      { "text": "回転寿司が登場した", "correct": false },
+      { "text": "冷凍技術が確立された", "correct": false }
+    ],
+    "additionalInfo": "昭和初期から戦時中にかけて、戦争の影響で食材の入手が困難になり、寿司屋の営業も制限されました。"
+  },
+  {
+    "question": "戦後の寿司業界の復興について正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "すぐに戦前の状態に戻った", "correct": false },
+      { "text": "配給制度の影響で復興が遅れた", "correct": true },
+      { "text": "海外からの技術導入が進んだ", "correct": false },
+      { "text": "機械化が一気に進んだ", "correct": false }
+    ],
+    "additionalInfo": "戦後は配給制度や食材不足の影響で、寿司業界の復興は段階的に進みました。"
+  },
+  {
+    "question": "1958年に登場した画期的な寿司店の形態はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "立ち食い寿司", "correct": false },
+      { "text": "回転寿司", "correct": true },
+      { "text": "宅配寿司", "correct": false },
+      { "text": "セルフサービス寿司", "correct": false }
+    ],
+    "additionalInfo": "1958年に大阪で世界初の回転寿司店「廻る元禄寿司」が開店し、寿司業界に革命をもたらしました。"
+  },
+  {
+    "question": "1970年代の寿司業界の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "海外展開が本格化した", "correct": true },
+      { "text": "完全に機械化された", "correct": false },
+      { "text": "価格が大幅に下がった", "correct": false },
+      { "text": "伝統的な技法が失われた", "correct": false }
+    ],
+    "additionalInfo": "1970年代には寿司の海外展開が本格化し、世界各地に日本の寿司文化が広まりました。"
+  },
+  {
+    "question": "現代の寿司業界の特徴として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "多様な価格帯の店舗が存在する", "correct": false },
+      { "text": "海外でも人気が高い", "correct": false },
+      { "text": "伝統技法が完全に失われた", "correct": true },
+      { "text": "健康志向の高まりで注目されている", "correct": false }
+    ],
+    "additionalInfo": "現代でも伝統的な寿司の技法は大切に受け継がれており、完全に失われたわけではありません。"
+  },
+  {
+    "question": "寿司の国際化について正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "1960年代から始まった", "correct": false },
+      { "text": "アメリカから始まった", "correct": true },
+      { "text": "ヨーロッパから始まった", "correct": false },
+      { "text": "アジア諸国から始まった", "correct": false }
+    ],
+    "additionalInfo": "寿司の国際化は1960年代後半にアメリカから始まり、その後世界各地に広まりました。"
+  },
+  {
+    "question": "現代の寿司職人に求められる技能として最も重要なのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "機械操作技術", "correct": false },
+      { "text": "伝統的な技法と現代的な感覚の両立", "correct": true },
+      { "text": "外国語能力", "correct": false },
+      { "text": "経営学の知識", "correct": false }
+    ],
+    "additionalInfo": "現代の寿司職人には、伝統的な技法を守りながら、現代の顧客ニーズに応える感覚の両立が求められます。"
+  },
+  {
+    "question": "寿司の未来について考えられる展開として最も可能性が高いのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "完全な機械化", "correct": false },
+      { "text": "伝統と革新の融合", "correct": true },
+      { "text": "価格の一律化", "correct": false },
+      { "text": "地域性の消失", "correct": false }
+    ],
+    "additionalInfo": "寿司の未来は、伝統的な技法を大切にしながら、新しい技術や食材を取り入れる「伝統と革新の融合」が最も可能性が高いと考えられます。"
+  },
+  {
+    "question": "寿司文化の継承について正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "若い世代には関心が薄い", "correct": false },
+      { "text": "海外でも積極的に学ばれている", "correct": true },
+      { "text": "技術の標準化が進んでいる", "correct": false },
+      { "text": "地域差がなくなっている", "correct": false }
+    ],
+    "additionalInfo": "寿司文化は海外でも高く評価され、多くの外国人が日本の寿司技術を学びに来ています。"
+  },
+  {
+    "question": "寿司の健康面での注目点として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "高カロリー食品として注意が必要", "correct": false },
+      { "text": "低脂肪・高たんぱくの健康食品", "correct": true },
+      { "text": "塩分が多すぎる", "correct": false },
+      { "text": "栄養バランスが悪い", "correct": false }
+    ],
+    "additionalInfo": "寿司は魚介類を中心とした低脂肪・高たんぱくの健康食品として、世界的に注目されています。"
+  }
+]
+

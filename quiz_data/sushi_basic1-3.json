@@ -1,7 +1,7 @@
 [
   {
     "question": "この写真の魚はなにか。",
-    "image": "",
+    "image": "quiz_data/images/sushi/sushi_takabe.jpg",
     "answers": [
       { "text": "ムツゴロウ", "correct": false },
       { "text": "タカベ", "correct": false },
@@ -144,25 +144,25 @@
   },
   {
     "question": "徳島県の郷土寿司に使われるこの写真の魚介はなにか。",
-    "image": "",
+    "image": "quiz_data/images/sushi/sushi_ibodai.jpg",
     "answers": [
       { "text": "アカアマダイ", "correct": false },
-      { "text": "イボダイ", "correct": false },
+      { "text": "イボダイ", "correct": true },
       { "text": "イシダイ", "correct": false },
-      { "text": "イラブチャー", "correct": true }
+      { "text": "イラブチャー", "correct": false }
     ],
-    "additionalInfo": "写真はイラブチャー（ブダイ）です。徳島県などの郷土寿司に使用される魚です。"
+    "additionalInfo": "写真はイボダイです。"
   },
   {
     "question": "この写真の広島県の郷土寿司を何というか。",
-    "image": "",
+    "image": "quiz_data/images/sushi/sushi_sukozushi.jpg",
     "answers": [
       { "text": "あずま", "correct": false },
       { "text": "イワシ丸ずし", "correct": false },
-      { "text": "須古ずし", "correct": false },
-      { "text": "田舎ずし", "correct": true }
+      { "text": "須古ずし", "correct": true },
+      { "text": "田舎ずし", "correct": false }
     ],
-    "additionalInfo": "写真は広島県の「田舎ずし」です。野菜を多く使った素朴な郷土寿司です。"
+    "additionalInfo": "写真は広島県の「須古ずし」です。"
   },
   {
     "question": "おいしさの構成要素の中心「基本味」に含まれないものはどれか。",

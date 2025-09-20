@@ -1,0 +1,267 @@
+[
+  {
+    "question": "この中で赤身でない魚はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ブリ", "correct": false },
+      { "text": "ヒラマサ", "correct": true },
+      { "text": "アジ", "correct": false },
+      { "text": "サーモン", "correct": false }
+    ],
+    "additionalInfo": "ヒラマサは白身魚です。ブリ、アジ、サーモンは赤身魚に分類されます。"
+  },
+  {
+    "question": "代表的なツブ貝とされる高級寿司ネタはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "エゾボラ", "correct": true },
+      { "text": "シライトマキバイ", "correct": false },
+      { "text": "コエゾバイ", "correct": false },
+      { "text": "ヨーロッパエゾバイ", "correct": false }
+    ],
+    "additionalInfo": "エゾボラは代表的なツブ貝として知られる高級寿司ネタです。北海道近海で獲れる大型の巻貝です。"
+  },
+  {
+    "question": "右の写真の寿司ネタはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "ハカガイ", "correct": false },
+      { "text": "ウバガイ", "correct": true },
+      { "text": "ミルクイ", "correct": false },
+      { "text": "フネガイ", "correct": false }
+    ],
+    "additionalInfo": "写真の寿司ネタはウバガイ（ホッキガイ）です。北海道などで獲れる二枚貝で、甘みがあり寿司ネタとして人気です。"
+  },
+  {
+    "question": "右の写真の寿司ネタはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "アカエビ", "correct": false },
+      { "text": "ボタンエビ", "correct": true },
+      { "text": "クルマエビ", "correct": false },
+      { "text": "ホッコクアカエビ", "correct": false }
+    ],
+    "additionalInfo": "写真の寿司ネタはボタンエビです。甘みが強く、高級寿司ネタとして珍重されています。"
+  },
+  {
+    "question": "右の写真の寿司ネタはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "イワシ", "correct": false },
+      { "text": "アジ", "correct": false },
+      { "text": "コハダ", "correct": true },
+      { "text": "サバ", "correct": false }
+    ],
+    "additionalInfo": "写真の寿司ネタはコハダです。コノシロの幼魚で、江戸前寿司の代表的な光り物として親しまれています。"
+  },
+  {
+    "question": "マグロの部位で最も脂肪分が多いのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "赤身", "correct": false },
+      { "text": "中トロ", "correct": false },
+      { "text": "大トロ", "correct": true },
+      { "text": "血合い", "correct": false }
+    ],
+    "additionalInfo": "大トロはマグロの腹部の最も脂肪分が多い部位で、最高級品とされています。"
+  },
+  {
+    "question": "寿司ネタとして使われる「ヒラメ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": true }
+    ],
+    "additionalInfo": "ヒラメの旬は冬です。この時期のヒラメは身が締まり、脂がのって最も美味しくなります。"
+  },
+  {
+    "question": "「コハダ」は何の魚の幼魚か。",
+    "image": "",
+    "answers": [
+      { "text": "イワシ", "correct": false },
+      { "text": "アジ", "correct": false },
+      { "text": "コノシロ", "correct": true },
+      { "text": "サバ", "correct": false }
+    ],
+    "additionalInfo": "コハダはコノシロの幼魚です。成長段階によって呼び名が変わる出世魚の一つです。"
+  },
+  {
+    "question": "寿司ネタの「アナゴ」で最も高級とされるのはどこ産か。",
+    "image": "",
+    "answers": [
+      { "text": "東京湾産", "correct": true },
+      { "text": "瀬戸内海産", "correct": false },
+      { "text": "有明海産", "correct": false },
+      { "text": "三河湾産", "correct": false }
+    ],
+    "additionalInfo": "東京湾産のアナゴは江戸前アナゴとして最高級品とされ、身が柔らかく上品な味わいが特徴です。"
+  },
+  {
+    "question": "「イクラ」は何の魚の卵か。",
+    "image": "",
+    "answers": [
+      { "text": "マス", "correct": false },
+      { "text": "サケ", "correct": true },
+      { "text": "ニジマス", "correct": false },
+      { "text": "イワナ", "correct": false }
+    ],
+    "additionalInfo": "イクラはサケの卵です。ロシア語の「ikra（魚卵）」が語源とされています。"
+  },
+  {
+    "question": "寿司ネタの「ウニ」で最高級とされるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "バフンウニ", "correct": true },
+      { "text": "ムラサキウニ", "correct": false },
+      { "text": "キタムラサキウニ", "correct": false },
+      { "text": "アカウニ", "correct": false }
+    ],
+    "additionalInfo": "バフンウニは最高級のウニとされ、濃厚な甘みと上品な風味が特徴です。"
+  },
+  {
+    "question": "「タイ」の寿司ネタで最も一般的なのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マダイ", "correct": true },
+      { "text": "チダイ", "correct": false },
+      { "text": "キダイ", "correct": false },
+      { "text": "ヘダイ", "correct": false }
+    ],
+    "additionalInfo": "マダイは「タイ」の寿司ネタとして最も一般的で、上品な白身と甘みが特徴です。"
+  },
+  {
+    "question": "寿司ネタの「エビ」で茹でて使うのが一般的なのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "甘エビ", "correct": false },
+      { "text": "ボタンエビ", "correct": false },
+      { "text": "車エビ", "correct": true },
+      { "text": "シャコ", "correct": false }
+    ],
+    "additionalInfo": "車エビは茹でて使うのが一般的です。茹でることで甘みが増し、美しい赤色になります。"
+  },
+  {
+    "question": "「光り物」と呼ばれる寿司ネタに含まれないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "サバ", "correct": false },
+      { "text": "アジ", "correct": false },
+      { "text": "イワシ", "correct": false },
+      { "text": "タイ", "correct": true }
+    ],
+    "additionalInfo": "タイは白身魚で「光り物」には含まれません。光り物は青魚の総称です。"
+  },
+  {
+    "question": "寿司ネタの「カツオ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春と秋", "correct": true },
+      { "text": "夏と冬", "correct": false },
+      { "text": "春のみ", "correct": false },
+      { "text": "秋のみ", "correct": false }
+    ],
+    "additionalInfo": "カツオは春（初ガツオ）と秋（戻りガツオ）の2回旬があります。それぞれ異なる味わいが楽しめます。"
+  },
+  {
+    "question": "寿司ネタの「ハマチ」は何の魚の幼魚か。",
+    "image": "",
+    "answers": [
+      { "text": "ブリ", "correct": true },
+      { "text": "ヒラマサ", "correct": false },
+      { "text": "カンパチ", "correct": false },
+      { "text": "スズキ", "correct": false }
+    ],
+    "additionalInfo": "ハマチはブリの幼魚です。ブリは成長段階によって呼び名が変わる出世魚です。"
+  },
+  {
+    "question": "寿司ネタの「アワビ」で最高級とされるのはどこ産か。",
+    "image": "",
+    "answers": [
+      { "text": "岩手県産", "correct": true },
+      { "text": "静岡県産", "correct": false },
+      { "text": "千葉県産", "correct": false },
+      { "text": "和歌山県産", "correct": false }
+    ],
+    "additionalInfo": "岩手県産のアワビは最高級品とされ、特に三陸産は身が厚く味が濃いことで知られています。"
+  },
+  {
+    "question": "寿司ネタの「ホタテ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": true },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "ホタテの旬は春です。この時期のホタテは身が肥えて甘みが最も強くなります。"
+  },
+  {
+    "question": "寿司ネタの「サヨリ」の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "赤身魚である", "correct": false },
+      { "text": "光り物である", "correct": false },
+      { "text": "白身で上品な味", "correct": true },
+      { "text": "脂が多い", "correct": false }
+    ],
+    "additionalInfo": "サヨリは白身魚で、上品で淡泊な味わいが特徴です。春の代表的な寿司ネタの一つです。"
+  },
+  {
+    "question": "寿司ネタの「キス」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": true },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "キスの旬は夏です。この時期のキスは身が締まり、上品な甘みが楽しめます。"
+  },
+  {
+    "question": "寿司ネタの「カレイ」で最も高級とされるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マコガレイ", "correct": true },
+      { "text": "イシガレイ", "correct": false },
+      { "text": "メイタガレイ", "correct": false },
+      { "text": "ババガレイ", "correct": false }
+    ],
+    "additionalInfo": "マコガレイは最高級のカレイとされ、身が厚く上品な甘みがあります。"
+  },
+  {
+    "question": "寿司ネタの「スズキ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": true },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "スズキの旬は夏です。この時期のスズキは脂がのり、身が締まって最も美味しくなります。"
+  },
+  {
+    "question": "寿司ネタの「アオリイカ」の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "身が硬い", "correct": false },
+      { "text": "甘みが強い", "correct": true },
+      { "text": "色が赤い", "correct": false },
+      { "text": "小型である", "correct": false }
+    ],
+    "additionalInfo": "アオリイカは甘みが強く、身が柔らかいのが特徴です。イカ類の中でも最高級品とされています。"
+  },
+  {
+    "question": "寿司ネタの「タコ」で一般的に使われるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マダコ", "correct": true },
+      { "text": "ミズダコ", "correct": false },
+      { "text": "イイダコ", "correct": false },
+      { "text": "テナガダコ", "correct": false }
+    ],
+    "additionalInfo": "マダコが寿司ネタとして一般的に使われます。茹でて使うことが多く、弾力のある食感が特徴です。"
+  }
+]
+

@@ -1,0 +1,267 @@
+[
+  {
+    "question": "寿司ネタの「サンマ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": true },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "サンマの旬は秋です。この時期のサンマは脂がのって最も美味しくなります。"
+  },
+  {
+    "question": "寿司ネタの「イワシ」で最も高級とされるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マイワシ", "correct": true },
+      { "text": "ウルメイワシ", "correct": false },
+      { "text": "カタクチイワシ", "correct": false },
+      { "text": "キビナゴ", "correct": false }
+    ],
+    "additionalInfo": "マイワシは最も高級なイワシとされ、身が厚く脂がのっています。"
+  },
+  {
+    "question": "寿司ネタの「アマダイ」の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "赤身魚である", "correct": false },
+      { "text": "上品な甘みがある", "correct": true },
+      { "text": "脂が非常に多い", "correct": false },
+      { "text": "身が硬い", "correct": false }
+    ],
+    "additionalInfo": "アマダイは上品な甘みがある白身魚で、高級寿司ネタとして珍重されています。"
+  },
+  {
+    "question": "寿司ネタの「カワハギ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": true }
+    ],
+    "additionalInfo": "カワハギの旬は冬です。この時期のカワハギは身が締まり、肝も美味しくなります。"
+  },
+  {
+    "question": "寿司ネタの「メバル」の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "赤身魚である", "correct": false },
+      { "text": "白身で淡泊な味", "correct": true },
+      { "text": "非常に脂が多い", "correct": false },
+      { "text": "身が赤い", "correct": false }
+    ],
+    "additionalInfo": "メバルは白身魚で、淡泊で上品な味わいが特徴です。"
+  },
+  {
+    "question": "寿司ネタの「ノドグロ」の正式名称はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "アカムツ", "correct": true },
+      { "text": "キンメダイ", "correct": false },
+      { "text": "アマダイ", "correct": false },
+      { "text": "メバル", "correct": false }
+    ],
+    "additionalInfo": "ノドグロの正式名称はアカムツです。のどの奥が黒いことからノドグロと呼ばれます。"
+  },
+  {
+    "question": "寿司ネタの「ハタハタ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": true }
+    ],
+    "additionalInfo": "ハタハタの旬は冬です。特に11月から12月にかけてが最も美味しい時期です。"
+  },
+  {
+    "question": "寿司ネタの「キンキ」の正式名称はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "キチジ", "correct": true },
+      { "text": "キンメダイ", "correct": false },
+      { "text": "アカムツ", "correct": false },
+      { "text": "メバル", "correct": false }
+    ],
+    "additionalInfo": "キンキの正式名称はキチジです。北海道などで獲れる高級魚です。"
+  },
+  {
+    "question": "寿司ネタの「ホウボウ」の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "赤身魚である", "correct": false },
+      { "text": "白身で上品な味", "correct": true },
+      { "text": "非常に脂が多い", "correct": false },
+      { "text": "身が硬い", "correct": false }
+    ],
+    "additionalInfo": "ホウボウは白身魚で、上品で淡泊な味わいが特徴です。"
+  },
+  {
+    "question": "寿司ネタの「イサキ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": true },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "イサキの旬は夏です。この時期のイサキは脂がのって最も美味しくなります。"
+  },
+  {
+    "question": "寿司ネタの「カマス」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": true },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "カマスの旬は秋です。この時期のカマスは身が締まり、美味しくなります。"
+  },
+  {
+    "question": "アニサキス幼虫による食中毒の予防策として、特別に有効とはいえないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "手をよく洗う", "correct": true },
+      { "text": "内臓をすぐ取り除く", "correct": false },
+      { "text": "目視で確認して取り除く", "correct": false },
+      { "text": "-20℃で24時間以上冷凍する", "correct": false }
+    ],
+    "additionalInfo": "アニサキス対策として手洗いは特別に有効ではありません。内臓の除去、目視確認、冷凍処理が有効です。"
+  },
+  {
+    "question": "細菌の場合の食中毒予防の原則で、適切とはいえないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "つけない", "correct": false },
+      { "text": "増やさない", "correct": false },
+      { "text": "やっつける", "correct": false },
+      { "text": "持ち込まない", "correct": true }
+    ],
+    "additionalInfo": "細菌性食中毒予防の三原則は「つけない」「増やさない」「やっつける」です。「持ち込まない」は含まれません。"
+  },
+  {
+    "question": "酢締めの効果として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "においを抑えることができる", "correct": false },
+      { "text": "たんぱく質を変質させて魚の身の歯切れを良くする", "correct": false },
+      { "text": "整腸作用や免疫力が格段に向上する", "correct": false },
+      { "text": "強い殺菌効果がある", "correct": true }
+    ],
+    "additionalInfo": "酢締めには強い殺菌効果はありません。においの抑制、たんぱく質の変質による食感改善、整腸作用などの効果があります。"
+  },
+  {
+    "question": "初めて訪れるメニューのない寿司屋で注文する内容に迷った場合、どれを注文するのが良いとされているか。",
+    "image": "",
+    "answers": [
+      { "text": "最も高い「おまかせ」", "correct": false },
+      { "text": "真ん中の値段の「おまかせ」", "correct": false },
+      { "text": "最も安い「おまかせ」", "correct": false },
+      { "text": "「お好み」", "correct": true }
+    ],
+    "additionalInfo": "初めて訪れる寿司屋では「お好み」を注文し、大将との会話を通じて店の特徴を知ることが良いとされています。"
+  },
+  {
+    "question": "寿司を食べる際、一般的に基本とされる順番はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "淡白なネタ → 濃い味のネタ → 甘いもの", "correct": true },
+      { "text": "濃い味のネタ → 淡白なネタ → 甘いもの", "correct": false },
+      { "text": "甘いもの → 淡白なネタ → 濃い味のネタ", "correct": false },
+      { "text": "淡白なネタ → 濃い味のネタ → 淡白なネタ → 濃い味のネタ → 甘いもの", "correct": false }
+    ],
+    "additionalInfo": "寿司を食べる基本的な順番は、淡白なネタから濃い味のネタへ、最後に甘いものという流れが一般的です。"
+  },
+  {
+    "question": "寿司を食べる際のマナーとして正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "箸で食べても手で食べてもどちらでもかまわない", "correct": false },
+      { "text": "寿司に醤油をつけるときは、握りを横にしてネタの部分にだけつける", "correct": false },
+      { "text": "軍艦巻きに醤油をつける場合、ガリに醤油をつけて塗る", "correct": false },
+      { "text": "一口で食べられないときは箸で寿司を2つに割って食べる", "correct": true }
+    ],
+    "additionalInfo": "寿司を2つに割って食べるのはマナー違反です。一口で食べられない場合は、小さく握ってもらうか、手で支えながら食べます。"
+  },
+  {
+    "question": "江戸前寿司の寿司店でのマナーで問題ないとされるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "香水を多めにつける", "correct": false },
+      { "text": "醤油にわさびを溶かす", "correct": false },
+      { "text": "わさび抜きを注文する", "correct": true },
+      { "text": "カウンターにある寿司下駄を動かす", "correct": false }
+    ],
+    "additionalInfo": "わさび抜きを注文するのは問題ありません。香水、醤油にわさびを溶かす、寿司下駄を動かすのはマナー違反です。"
+  },
+  {
+    "question": "粋な常連になるのに心がけるべきことで有効とはいえないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "定期的に店へ訪れ、会話を交わす", "correct": false },
+      { "text": "旬のネタをおすすめされたときは、他のものを提案するなど意見を交わす", "correct": true },
+      { "text": "常連であっても横柄な態度を取らない", "correct": false },
+      { "text": "お店の雰囲気を大事にし、店のルールやマナーを理解する", "correct": false }
+    ],
+    "additionalInfo": "旬のネタをおすすめされた時に他のものを提案するのは適切ではありません。大将の提案を尊重することが大切です。"
+  },
+  {
+    "question": "志賀直哉の『小僧の神様』に登場する寿司はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "まぐろずし", "correct": false },
+      { "text": "いなりずし", "correct": true },
+      { "text": "柿の葉寿司", "correct": false },
+      { "text": "海苔巻き", "correct": false }
+    ],
+    "additionalInfo": "志賀直哉の『小僧の神様』に登場する寿司はいなりずしです。"
+  },
+  {
+    "question": "すし切り祭りが行われる都道府県はどこか。",
+    "image": "",
+    "answers": [
+      { "text": "青森県", "correct": false },
+      { "text": "茨城県", "correct": false },
+      { "text": "大阪府", "correct": false },
+      { "text": "滋賀県", "correct": true }
+    ],
+    "additionalInfo": "すし切り祭りは滋賀県で行われる伝統的な祭りです。"
+  },
+  {
+    "question": "右の漢字の読み方として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "かます", "correct": false },
+      { "text": "さより", "correct": false },
+      { "text": "めばる", "correct": true },
+      { "text": "はまち", "correct": false }
+    ],
+    "additionalInfo": "漢字「鮴」の読み方は「めばる」です。"
+  },
+  {
+    "question": "江戸時代の浮世絵への登場数が多く、人気ネタだったと推測されるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マグロ", "correct": false },
+      { "text": "エビ", "correct": false },
+      { "text": "イカ", "correct": false },
+      { "text": "タコ", "correct": true }
+    ],
+    "additionalInfo": "江戸時代の浮世絵にはタコの寿司がよく登場し、人気ネタだったと推測されます。"
+  },
+  {
+    "question": "明治に刊行された「興兵衛寿しの主人」が書いたとされる寿司の口絵がある本のタイトルは何か。",
+    "image": "",
+    "answers": [
+      { "text": "家庭「鮨のつけかた」", "correct": false },
+      { "text": "寿司と新年の酒", "correct": false },
+      { "text": "新良万造", "correct": true },
+      { "text": "安宅の松", "correct": false }
+    ],
+    "additionalInfo": "明治に刊行された「興兵衛寿しの主人」が書いたとされる寿司の口絵がある本のタイトルは「新良万造」です。"
+  }
+]
+

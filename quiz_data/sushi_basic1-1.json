@@ -1,7 +1,7 @@
 [
   {
     "question": "図の資料は何を示しているか。",
-    "image": "",
+    "image": "quiz_data/images/sushi/sushi_ancient_document.jpg",
     "answers": [
       { "text": "鮨について記載された奈良時代の木簡", "correct": false },
       { "text": "呉興鮨に関する王羲之の書", "correct": true },
@@ -78,7 +78,7 @@
   },
   {
     "question": "1900年頃のこの写真が撮影されたのはどこか。",
-    "image": "",
+    "image": "quiz_data/images/sushi_old_shop_1900.jpg",
     "answers": [
       { "text": "マンハッタン", "correct": false },
       { "text": "リトル・トーキョー", "correct": false },
