@@ -1,5 +1,5 @@
 // ===================================================================
-// ★★★ script.js (鳥獣名フィードバック機能追加・決定版) ★★★
+// ★★★ script.js (完全・決定版) ★★★
 // ===================================================================
 window.onload = () => {
 
@@ -215,56 +215,38 @@ window.onload = () => {
             });
         }
 
-        // ★★★ ここからが修正箇所 ★★★
         if (choujuuStep1) {
             choujuuStep1.addEventListener('click', (e) => {
                 if (!e.target.matches('.choujuu-choice-btn')) return;
-                
                 const question = currentQuiz[currentQuestionIndex];
                 if (!question) return;
-
                 const selectedBtn = e.target;
                 const choice = selectedBtn.dataset.choice;
                 const isCorrect = (choice === 'no') ? !question.isHuntable : question.isHuntable;
-
                 if (isCorrect) {
-                    // 「獲れません」が正解の場合のみ、スコアを加算
-                    if (choice === 'no') { 
-                        playSound(correctSound); 
-                        score++; 
-                    }
-                    // 「獲れます」が正解の場合は、次のステップに進むので、ここでは音もスコアも処理しない
+                    if (choice === 'no') { playSound(correctSound); score++; }
                 } else {
                     playSound(wrongSound);
                     wrongQuestions.push({ question: `この鳥獣は「${question.name}」です。捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' });
                 }
-                
                 document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
                 selectedBtn.classList.add(isCorrect ? 'correct' : 'wrong');
-                
                 setTimeout(() => {
                     if (isCorrect) {
                         if (choice === 'yes') {
-                            // 「獲れます」が正解 → 次のステップ（名前当て）へ
                             choujuuStep1.style.display = 'none';
                             choujuuStep2.style.display = 'block';
                             setupNameSelection(question);
                         } else {
-                            // 「獲れません」が正解 → フィードバック表示
-                            // ★★★ ここで鳥獣の名前を含んだメッセージを生成 ★★★
-                            showChoujuuFeedback(true, `正解！「${question.name}」は非狩猟鳥獣のため、捕獲できません。`);
+                            showChoujuuFeedback(true, `正解！この鳥獣（${question.name}）は非狩猟鳥獣のため、捕獲できません。`);
                         }
                     } else {
-                        // 不正解の場合のフィードバック
-                        let feedbackMessage = (choice === 'yes') 
-                            ? `不正解。「${question.name}」は非狩猟鳥獣のため、捕獲できません。`
-                            : `不正解。この鳥獣は「${question.name}」といい、狩猟対象です。`;
+                        let feedbackMessage = (choice === 'yes') ? `不正解。この鳥獣（${question.name}）は、非狩猟鳥獣のため、捕獲できません。` : `不正解。この鳥獣は「${question.name}」といい、狩猟対象です。`;
                         showChoujuuFeedback(false, feedbackMessage);
                     }
                 }, 500);
             });
         }
-        // ★★★ ここまでが修正箇所 ★★★
     }
 
     // --- クイズ開始ロジック ---
@@ -340,7 +322,7 @@ window.onload = () => {
         const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
         const progressBarEl = document.getElementById('choujuu-quiz-progress-bar');
         const progressTextEl = document.getElementById('choujuu-quiz-progress-text');
-        if(progressBarEl) progressBarEl.style.width = `${percentage}%`;
+        if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
         if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); });
         choujuuStep1.style.display = 'block';
@@ -390,7 +372,7 @@ window.onload = () => {
             const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
             const progressBarEl = document.getElementById('normal-quiz-progress-bar');
             const progressTextEl = document.getElementById('normal-quiz-progress-text');
-            if(progressBarEl) progressBarEl.style.width = `${percentage}%`;
+            if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
             if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         }
         resetNormalState();
@@ -419,4 +401,84 @@ window.onload = () => {
         const isCorrect = selectedButton.dataset.correct === "true";
         const question = currentQuiz[currentQuestionIndex];
         if (isCorrect) { playSound(correctSound); score++; }
-        else { playSound(wrongSound); const correctAnswer = question.answers.find(ans => ans
+        else { playSound(wrongSound); const correctAnswer = question.answers.find(ans => ans.correct).text; wrongQuestions.push({ question: question.question, correctAnswer: correctAnswer, additionalInfo: question.additionalInfo, answers: question.answers }); }
+        Array.from(answerButtonsElement.children).forEach(button => {
+            button.disabled = true;
+            if (button.dataset.correct === "true" && !isCorrect && button !== selectedButton) button.classList.add('reveal-correct');
+        });
+        selectedButton.classList.add(isCorrect ? 'correct' : 'wrong');
+        if (question.additionalInfo) { additionalInfoText.innerText = question.additionalInfo; additionalInfoContainer.style.display = 'block'; }
+        setTimeout(() => {
+            submitButton.innerText = (currentQuizMode === 'training') ? "次の特訓へ" : ((currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る");
+            submitButton.style.display = 'block';
+        }, 500);
+    }
+    function showResult() {
+        quizContainers.forEach(container => container.style.display = 'none');
+        resultContainer.style.display = 'block';
+        const totalQuestions = currentQuiz.length;
+        const percentage = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
+        if (currentQuizMode !== 'training') {
+            const scores = getScoresFromStorage();
+            const storageKeyForMode = (currentQuizMode === 'all') ? currentQuizCategoryKey : `${currentQuizCategoryKey}-${currentQuizMode}`;
+            const currentModeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
+            if (percentage > currentModeScores.highScore) currentModeScores.highScore = percentage;
+            if (percentage === 100) currentModeScores.cleared = true;
+            scores[storageKeyForMode] = currentModeScores;
+            saveScoresToStorage(scores);
+        }
+        resultScore.textContent = `正答率: ${percentage}% (${score}/${totalQuestions}問)`;
+        if (percentage === 100) resultMessage.textContent = '素晴らしい！全問正解です！';
+        else if (percentage >= 80) resultMessage.textContent = 'お見事！あと一歩です！';
+        else if (percentage >= 50) resultMessage.textContent = 'お疲れ様でした！';
+        else resultMessage.textContent = 'もう少し頑張りましょう！';
+        if (wrongQuestions.length > 0) {
+            resultDetailsSection.style.display = 'block';
+            trainingModeBtn.style.display = 'inline-block'; 
+            wrongQuestionsList.innerHTML = '';
+            wrongQuestions.forEach(item => {
+                const li = document.createElement('li');
+                let additionalInfoHTML = item.additionalInfo ? `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, ' ')}</div>` : '';
+                li.innerHTML = `<div class="question-text">${item.question}</div><div class="correct-answer-text">正解: ${item.correctAnswer}</div>${additionalInfoHTML}`;
+                wrongQuestionsList.appendChild(li);
+            });
+        } else {
+            resultDetailsSection.style.display = 'none';
+            trainingModeBtn.style.display = 'none';
+        }
+    }
+    function handleNumericKeyPress(number) {
+        const isChoujuuQuiz = quizContainerChoujuu.style.display === 'block';
+        let targetButtons = isChoujuuQuiz ? (choujuuStep1.style.display === 'block' ? choujuuStep1.querySelectorAll('.choujuu-choice-btn') : choujuuNameOptions.querySelectorAll('.answer-btn')) : answerButtonsElement.querySelectorAll('.answer-btn');
+        if (targetButtons && targetButtons.length >= number && !targetButtons[number - 1].disabled) targetButtons[number - 1].click();
+    }
+    function handleEnterKeyPress() {
+        const visibleSubmitButton = document.querySelector('#submit:not([style*="display: none"]), #choujuu-submit:not([style*="display: none"])');
+        if (visibleSubmitButton) visibleSubmitButton.click();
+    }
+
+    // --- キーボードイベントリスナー ---
+    document.addEventListener('keydown', (event) => {
+        const isQuizActive = quizContainer.style.display === 'block' || quizContainerChoujuu.style.display === 'block';
+        if (!isQuizActive) return;
+        switch (event.key) {
+            case '1': case '2': case '3': case '4': handleNumericKeyPress(parseInt(event.key, 10)); break;
+            case ' ': case 'Enter': handleEnterKeyPress(); break;
+            case 'Escape':
+                const backButton = document.querySelector('.quiz-container:not([style*="display: none"]) .back-to-top-btn, .quiz-container-choujuu:not([style*="display: none"]) .back-to-top-btn');
+                if (backButton) backButton.click();
+                break;
+        }
+    });
+
+    // --- アプリケーション初期化処理 ---
+    function initializeApp() {
+        initializeEventListeners();
+        updateTopPageUI();
+        goToTopPage();
+        loaderWrapper.style.display = 'none';
+    }
+
+    // --- 初期化処理の実行 ---
+    initializeApp();
+};
