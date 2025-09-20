@@ -145,7 +145,7 @@ window.onload = () => {
         quizContainers.forEach(container => container.style.display = 'none');
         resultContainer.style.display = 'none';
         topPageContainer.style.display = 'block';
-        updateTopPageUI();
+        //updateTopPageUI();
     }
 
     // --- クイズデータ読み込み＆状態リセット ---
@@ -244,7 +244,11 @@ window.onload = () => {
         }
 
         if (backToTopFromResultBtn) {
-            backToTopFromResultBtn.addEventListener('click', goToTopPage);
+            backToTopFromResultBtn.addEventListener('click', () => {
+                // トップページに戻る前に、必ずUIの更新をかける
+                updateTopPageUI(); 
+                goToTopPage();
+            });
         }
 
         if (trainingModeBtn) {
@@ -626,6 +630,7 @@ window.onload = () => {
 
     // --- 初期化処理の、実行 ---
     initializeEventListeners();
+    updateTopPageUI();
     goToTopPage();
 
     setTimeout(() => {
