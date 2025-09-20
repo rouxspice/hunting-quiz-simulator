@@ -62,97 +62,80 @@ window.onload = () => {
     function saveScoresToStorage(scores) { localStorage.setItem(storageKey, JSON.stringify(scores)); }
     
     function updateTopPageUI() {
+        // 各クイズカテゴリのボタン構成を定義する設定オブジェクト
+        const quizModesConfig = {
+            choujuu: [
+                { mode: 'all', text: 'ベーシック', class: '' }
+            ],
+            ami: [
+                { mode: 'all', text: 'ベーシック', class: '' }
+            ],
+            wana: [
+                { mode: 'all', text: 'ベーシック', class: '' }
+            ],
+            jyu1: [
+                { mode: 'all', text: 'ベーシック', class: '' },
+                { mode: 'cram', text: '厳選問題', class: 'cram-mode-btn' }
+            ],
+            jyu2: [
+                { mode: 'all', text: 'ベーシック', class: '' }
+            ],
+            beginner: [
+                { mode: 'all', text: 'ベーシック', class: '' }
+            ],
+            sushi: [
+                { mode: 'basic3', text: 'ベーシック３級', class: '' },
+                { mode: 'basic2', text: 'ベーシック２級', class: '' },
+                { mode: 'basic1', text: 'ベーシック１級', class: '' },
+                { mode: 'maniac', text: 'マニアック', class: 'cram-mode-btn' }
+            ]
+        };
+
         const scores = getScoresFromStorage();
+
         document.querySelectorAll('.quiz-card').forEach(card => {
             const category = card.dataset.quizCategory;
+            const footer = card.querySelector('.quiz-card-footer-sushi'); // 統一されたフッタークラス
+            const modes = quizModesConfig[category]; // カテゴリに対応するボタン構成を取得
 
-            if (category === 'sushi') {
-                const footer = card.querySelector('.quiz-card-footer-sushi');
-                if (!footer) return;
-                footer.innerHTML = ''; 
+            if (!footer || !modes) return; // フッターや設定がなければ何もしない
 
-                const modes = [
-                    { mode: 'basic3', text: 'ベーシック３級', class: '' },
-                    { mode: 'basic2', text: 'ベーシック２級', class: '' },
-                    { mode: 'basic1', text: 'ベーシック１級', class: '' },
-                    { mode: 'maniac', text: 'マニアック', class: 'cram-mode-btn' }
-                ];
+            footer.innerHTML = ''; // フッターを一旦空にする
+            let isAllModesCleared = true; // カテゴリ内の全モードクリアフラグ
 
-                modes.forEach(item => {
-                    const storageKeyForMode = `${category}-${item.mode}`;
-                    const modeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
-                    
-                    const buttonHTML = `
-                        <button class="challenge-btn-sushi ${item.class}" data-mode="${item.mode}">
-                            <span class="sushi-btn-label">${item.text}</span>
-                            <span class="sushi-btn-score">
-                                達成率 ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}
-                            </span>
-                        </button>
-                    `;
-                    footer.innerHTML += buttonHTML;
-                });
+            modes.forEach(item => {
+                // ストレージキーを生成（'all'モードはカテゴリ名のみをキーとする）
+                const storageKeyForMode = (item.mode === 'all') ? category : `${category}-${item.mode}`;
+                const modeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
 
-            } else {
-                const buttons = card.querySelectorAll('.challenge-btn');
-                if (buttons.length === 1 && !buttons[0].dataset.mode) {
-                    const categoryScores = scores[category] || { highScore: 0, cleared: false };
-                    const highScoreEl = card.querySelector('.quiz-card-highscore');
-                    const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
-                    if (highScoreEl) highScoreEl.textContent = `ハイスコア: ${categoryScores.highScore}%`;
-                    if (clearMarkEl) clearMarkEl.textContent = categoryScores.cleared ? '👑' : '';
-                } 
-                else if (buttons.length > 0) {
-                    let highScoreText = '';
-                    buttons.forEach(button => {
-                        const mode = button.dataset.mode;
-                        const storageKeyForMode = `${category}-${mode}`;
-                        const modeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
-                        const modeName = button.textContent;
-                        highScoreText += `<div>${modeName}: ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}</div>`;
-                    });
-                    const highScoreEl = card.querySelector('.quiz-card-highscore');
-                    if (highScoreEl) highScoreEl.innerHTML = highScoreText;
-                    const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
-                    if (clearMarkEl) clearMarkEl.textContent = '';
+                if (!modeScores.cleared) {
+                    isAllModesCleared = false; // 一つでも未クリアがあればフラグを下ろす
                 }
+                
+                // 動的にボタンのHTMLを生成
+                const buttonHTML = `
+                    <button class="challenge-btn-sushi ${item.class}" data-mode="${item.mode}">
+                        <span class="sushi-btn-label">${item.text}</span>
+                        <span class="sushi-btn-score">
+                            達成率 ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}
+                        </span>
+                    </button>
+                `;
+                footer.innerHTML += buttonHTML;
+            });
+
+            // カテゴリ内の全モードをクリアしていたら、カード右上の王冠を表示
+            const clearMarkEl = card.querySelector('.quiz-card-clear-mark');
+            if (clearMarkEl) {
+                clearMarkEl.textContent = isAllModesCleared ? '👑' : '';
             }
         });
-    }
-
-    // --- 画像プリロード関数 ---
-    function preloadImages(urls, onProgress) {
-        let loadedCount = 0;
-        const totalCount = urls.length;
-        if (totalCount === 0) {
-            if(onProgress) onProgress(1, 1, "画像なし");
-            return Promise.resolve([]);
-        }
-        if(onProgress) onProgress(0, totalCount, '');
-        const promises = urls.map(url => {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => { loadedCount++; if(onProgress) onProgress(loadedCount, totalCount, url.split('/').pop()); resolve({ url, status: 'ok' }); };
-                img.onerror = () => { loadedCount++; console.warn(`Warning: Failed to load image, but continuing. URL: ${url}`); if(onProgress) onProgress(loadedCount, totalCount, url.split('/').pop()); resolve({ url, status: 'error' }); };
-                img.src = url;
-            });
-        });
-        return Promise.all(promises);
-    }
-
-    // --- 汎用関数 ---
-    function goToTopPage() {
-        quizContainers.forEach(container => container.style.display = 'none');
-        resultContainer.style.display = 'none';
-        topPageContainer.style.display = 'block';
-        //updateTopPageUI();
     }
 
     // --- クイズデータ読み込み＆状態リセット ---
     async function loadQuizData(categoryKey, mode = 'all') {
         let fileName;
 
-        // ★★★ ここから修正 ★★★
         // カテゴリとモードに基づいてファイル名を決定する
         if (categoryKey === 'sushi') {
             // 'sushi'カテゴリの場合、モード名をファイル名に直接利用する
@@ -162,7 +145,6 @@ window.onload = () => {
             // その他のカテゴリは、従来通りのファイル名
             fileName = `${categoryKey}.json`;
         }
-        // ★★★ ここまで修正 ★★★
 
         try {
             const response = await fetch(`./quiz_data/${fileName}`);
@@ -181,15 +163,19 @@ window.onload = () => {
         currentQuizCategoryKey = categoryKey;
         currentQuizMode = mode;
         const originalQuizData = await loadQuizData(categoryKey, mode);
-        // loadQuizDataが空配列を返した場合（読み込み失敗時）の処理
+        
         if (originalQuizData.length === 0) {
             currentQuiz = [];
-            return; // ここで処理を中断
+            return;
         }
-        let filteredData = originalQuizData.filter(q => q.question || q.image);
+
+        let filteredData = originalQuizData; // まず全データをコピー
+        
+        // 'cram'モードの場合、importanceが'high'の問題のみに絞り込む
         if (mode === 'cram') {
-            filteredData = filteredData.filter(q => q.importance === 'high');
+            filteredData = originalQuizData.filter(q => q.importance === 'high');
         }
+        
         currentQuiz = [...filteredData].sort(() => Math.random() - 0.5);
         currentQuestionIndex = 0;
         score = 0;
@@ -550,7 +536,8 @@ window.onload = () => {
 
         if (currentQuizMode !== 'training') {
             const scores = getScoresFromStorage();
-            const storageKeyForMode = `${currentQuizCategoryKey}-${currentQuizMode}`;
+            // 'all'モードの場合はカテゴリ名を、それ以外は'category-mode'をキーにする
+            const storageKeyForMode = (currentQuizMode === 'all') ? currentQuizCategoryKey : `${currentQuizCategoryKey}-${currentQuizMode}`;
             
             const currentModeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
             if (percentage > currentModeScores.highScore) {
