@@ -1,72 +1,6 @@
 [
   {
-    "question": "この中で赤身でない魚はどれか。",
-    "image": "",
-    "answers": [
-      { "text": "ブリ", "correct": false },
-      { "text": "ヒラマサ", "correct": true },
-      { "text": "アジ", "correct": false },
-      { "text": "サーモン", "correct": false }
-    ],
-    "additionalInfo": "ヒラマサは白身魚です。ブリ、アジ、サーモンは赤身魚に分類されます。"
-  },
-  {
-    "question": "代表的なツブ貝とされる高級寿司ネタはどれか。",
-    "image": "",
-    "answers": [
-      { "text": "エゾボラ", "correct": true },
-      { "text": "シライトマキバイ", "correct": false },
-      { "text": "コエゾバイ", "correct": false },
-      { "text": "ヨーロッパエゾバイ", "correct": false }
-    ],
-    "additionalInfo": "エゾボラは代表的なツブ貝として知られる高級寿司ネタです。北海道近海で獲れる大型の巻貝です。"
-  },
-  {
-    "question": "右の写真の寿司ネタはなにか。",
-    "image": "",
-    "answers": [
-      { "text": "ハカガイ", "correct": false },
-      { "text": "ウバガイ", "correct": true },
-      { "text": "ミルクイ", "correct": false },
-      { "text": "フネガイ", "correct": false }
-    ],
-    "additionalInfo": "写真の寿司ネタはウバガイ（ホッキガイ）です。北海道などで獲れる二枚貝で、甘みがあり寿司ネタとして人気です。"
-  },
-  {
-    "question": "右の写真の寿司ネタはなにか。",
-    "image": "",
-    "answers": [
-      { "text": "アカエビ", "correct": false },
-      { "text": "ボタンエビ", "correct": true },
-      { "text": "クルマエビ", "correct": false },
-      { "text": "ホッコクアカエビ", "correct": false }
-    ],
-    "additionalInfo": "写真の寿司ネタはボタンエビです。甘みが強く、高級寿司ネタとして珍重されています。"
-  },
-  {
-    "question": "右の写真の寿司ネタはなにか。",
-    "image": "",
-    "answers": [
-      { "text": "イワシ", "correct": false },
-      { "text": "アジ", "correct": false },
-      { "text": "コハダ", "correct": true },
-      { "text": "サバ", "correct": false }
-    ],
-    "additionalInfo": "写真の寿司ネタはコハダです。コノシロの幼魚で、江戸前寿司の代表的な光り物として親しまれています。"
-  },
-  {
-    "question": "マグロの部位で最も脂肪分が多いのはどれか。",
-    "image": "",
-    "answers": [
-      { "text": "赤身", "correct": false },
-      { "text": "中トロ", "correct": false },
-      { "text": "大トロ", "correct": true },
-      { "text": "血合い", "correct": false }
-    ],
-    "additionalInfo": "大トロはマグロの腹部の最も脂肪分が多い部位で、最高級品とされています。"
-  },
-  {
-    "question": "寿司ネタとして使われる「ヒラメ」の旬はいつか。",
+    "question": "寿司ネタの「ヒラメ」の旬はいつか。",
     "image": "",
     "answers": [
       { "text": "春", "correct": false },
@@ -77,117 +11,40 @@
     "additionalInfo": "ヒラメの旬は冬です。この時期のヒラメは身が締まり、脂がのって最も美味しくなります。"
   },
   {
-    "question": "「コハダ」は何の魚の幼魚か。",
+    "question": "寿司ネタの「カレイ」の特徴として正しいのはどれか。",
     "image": "",
     "answers": [
-      { "text": "イワシ", "correct": false },
-      { "text": "アジ", "correct": false },
-      { "text": "コノシロ", "correct": true },
-      { "text": "サバ", "correct": false }
+      { "text": "左ヒラメ右カレイと言われる", "correct": true },
+      { "text": "赤身魚である", "correct": false },
+      { "text": "非常に脂が多い", "correct": false },
+      { "text": "身が硬い", "correct": false }
     ],
-    "additionalInfo": "コハダはコノシロの幼魚です。成長段階によって呼び名が変わる出世魚の一つです。"
+    "additionalInfo": "「左ヒラメ右カレイ」という言葉があり、カレイは右向きに泳ぐ魚として知られています。"
   },
   {
-    "question": "寿司ネタの「アナゴ」で最も高級とされるのはどこ産か。",
+    "question": "寿司ネタの「アジ」の旬はいつか。",
     "image": "",
     "answers": [
-      { "text": "東京湾産", "correct": true },
-      { "text": "瀬戸内海産", "correct": false },
-      { "text": "有明海産", "correct": false },
-      { "text": "三河湾産", "correct": false }
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": true },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
     ],
-    "additionalInfo": "東京湾産のアナゴは江戸前アナゴとして最高級品とされ、身が柔らかく上品な味わいが特徴です。"
+    "additionalInfo": "アジの旬は夏です。この時期のアジは脂がのって最も美味しくなります。"
   },
   {
-    "question": "「イクラ」は何の魚の卵か。",
+    "question": "寿司ネタの「サバ」の特徴として正しいのはどれか。",
     "image": "",
     "answers": [
-      { "text": "マス", "correct": false },
-      { "text": "サケ", "correct": true },
-      { "text": "ニジマス", "correct": false },
-      { "text": "イワナ", "correct": false }
+      { "text": "白身魚である", "correct": false },
+      { "text": "脂が少ない", "correct": false },
+      { "text": "青魚の代表格", "correct": true },
+      { "text": "身が硬い", "correct": false }
     ],
-    "additionalInfo": "イクラはサケの卵です。ロシア語の「ikra（魚卵）」が語源とされています。"
+    "additionalInfo": "サバは青魚の代表格で、DHA・EPAが豊富に含まれています。"
   },
   {
-    "question": "寿司ネタの「ウニ」で最高級とされるのはどれか。",
-    "image": "",
-    "answers": [
-      { "text": "バフンウニ", "correct": true },
-      { "text": "ムラサキウニ", "correct": false },
-      { "text": "キタムラサキウニ", "correct": false },
-      { "text": "アカウニ", "correct": false }
-    ],
-    "additionalInfo": "バフンウニは最高級のウニとされ、濃厚な甘みと上品な風味が特徴です。"
-  },
-  {
-    "question": "「タイ」の寿司ネタで最も一般的なのはどれか。",
-    "image": "",
-    "answers": [
-      { "text": "マダイ", "correct": true },
-      { "text": "チダイ", "correct": false },
-      { "text": "キダイ", "correct": false },
-      { "text": "ヘダイ", "correct": false }
-    ],
-    "additionalInfo": "マダイは「タイ」の寿司ネタとして最も一般的で、上品な白身と甘みが特徴です。"
-  },
-  {
-    "question": "寿司ネタの「エビ」で茹でて使うのが一般的なのはどれか。",
-    "image": "",
-    "answers": [
-      { "text": "甘エビ", "correct": false },
-      { "text": "ボタンエビ", "correct": false },
-      { "text": "車エビ", "correct": true },
-      { "text": "シャコ", "correct": false }
-    ],
-    "additionalInfo": "車エビは茹でて使うのが一般的です。茹でることで甘みが増し、美しい赤色になります。"
-  },
-  {
-    "question": "「光り物」と呼ばれる寿司ネタに含まれないのはどれか。",
-    "image": "",
-    "answers": [
-      { "text": "サバ", "correct": false },
-      { "text": "アジ", "correct": false },
-      { "text": "イワシ", "correct": false },
-      { "text": "タイ", "correct": true }
-    ],
-    "additionalInfo": "タイは白身魚で「光り物」には含まれません。光り物は青魚の総称です。"
-  },
-  {
-    "question": "寿司ネタの「カツオ」の旬はいつか。",
-    "image": "",
-    "answers": [
-      { "text": "春と秋", "correct": true },
-      { "text": "夏と冬", "correct": false },
-      { "text": "春のみ", "correct": false },
-      { "text": "秋のみ", "correct": false }
-    ],
-    "additionalInfo": "カツオは春（初ガツオ）と秋（戻りガツオ）の2回旬があります。それぞれ異なる味わいが楽しめます。"
-  },
-  {
-    "question": "寿司ネタの「ハマチ」は何の魚の幼魚か。",
-    "image": "",
-    "answers": [
-      { "text": "ブリ", "correct": true },
-      { "text": "ヒラマサ", "correct": false },
-      { "text": "カンパチ", "correct": false },
-      { "text": "スズキ", "correct": false }
-    ],
-    "additionalInfo": "ハマチはブリの幼魚です。ブリは成長段階によって呼び名が変わる出世魚です。"
-  },
-  {
-    "question": "寿司ネタの「アワビ」で最高級とされるのはどこ産か。",
-    "image": "",
-    "answers": [
-      { "text": "岩手県産", "correct": true },
-      { "text": "静岡県産", "correct": false },
-      { "text": "千葉県産", "correct": false },
-      { "text": "和歌山県産", "correct": false }
-    ],
-    "additionalInfo": "岩手県産のアワビは最高級品とされ、特に三陸産は身が厚く味が濃いことで知られています。"
-  },
-  {
-    "question": "寿司ネタの「ホタテ」の旬はいつか。",
+    "question": "寿司ネタの「イワシ」の旬はいつか。",
     "image": "",
     "answers": [
       { "text": "春", "correct": true },
@@ -195,21 +52,43 @@
       { "text": "秋", "correct": false },
       { "text": "冬", "correct": false }
     ],
-    "additionalInfo": "ホタテの旬は春です。この時期のホタテは身が肥えて甘みが最も強くなります。"
+    "additionalInfo": "イワシの旬は春です。この時期のイワシは脂がのって最も美味しくなります。"
   },
   {
-    "question": "寿司ネタの「サヨリ」の特徴として正しいのはどれか。",
+    "question": "寿司ネタの「コハダ」の成長段階として正しいのはどれか。",
     "image": "",
     "answers": [
-      { "text": "赤身魚である", "correct": false },
-      { "text": "光り物である", "correct": false },
-      { "text": "白身で上品な味", "correct": true },
-      { "text": "脂が多い", "correct": false }
+      { "text": "シンコ→コハダ→ナカズミ→コノシロ", "correct": false },
+      { "text": "ナカズミ→シンコ→コハダ→コノシロ", "correct": false },
+      { "text": "シンコ→ナカズミ→コハダ→コノシロ", "correct": true },
+      { "text": "コハダ→シンコ→ナカズミ→コノシロ", "correct": false }
     ],
-    "additionalInfo": "サヨリは白身魚で、上品で淡泊な味わいが特徴です。春の代表的な寿司ネタの一つです。"
+    "additionalInfo": "コノシロの成長段階は、シンコ→ナカズミ→コハダ→コノシロの順です。"
   },
   {
-    "question": "寿司ネタの「キス」の旬はいつか。",
+    "question": "寿司ネタの「アナゴ」の調理法として一般的なのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "煮る", "correct": true },
+      { "text": "焼く", "correct": false },
+      { "text": "蒸す", "correct": false },
+      { "text": "揚げる", "correct": false }
+    ],
+    "additionalInfo": "アナゴは煮て調理するのが一般的です。甘辛いタレで煮込んで寿司ネタにします。"
+  },
+  {
+    "question": "寿司ネタの「ウニ」の産地として有名なのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "沖縄県", "correct": false },
+      { "text": "静岡県", "correct": false },
+      { "text": "北海道", "correct": true },
+      { "text": "鹿児島県", "correct": false }
+    ],
+    "additionalInfo": "ウニの産地として北海道が特に有名です。利尻島や礼文島のウニは最高級品とされています。"
+  },
+  {
+    "question": "寿司ネタの「イクラ」の旬はいつか。",
     "image": "",
     "answers": [
       { "text": "春", "correct": false },
@@ -217,21 +96,65 @@
       { "text": "秋", "correct": false },
       { "text": "冬", "correct": false }
     ],
-    "additionalInfo": "キスの旬は夏です。この時期のキスは身が締まり、上品な甘みが楽しめます。"
+    "additionalInfo": "イクラの旬は夏です。この時期のサケの卵が最も美味しくなります。"
   },
   {
-    "question": "寿司ネタの「カレイ」で最も高級とされるのはどれか。",
+    "question": "寿司ネタの「数の子」の原料となる魚はどれか。",
     "image": "",
     "answers": [
-      { "text": "マコガレイ", "correct": true },
-      { "text": "イシガレイ", "correct": false },
-      { "text": "メイタガレイ", "correct": false },
-      { "text": "ババガレイ", "correct": false }
+      { "text": "サケ", "correct": false },
+      { "text": "ニシン", "correct": true },
+      { "text": "タラ", "correct": false },
+      { "text": "サンマ", "correct": false }
     ],
-    "additionalInfo": "マコガレイは最高級のカレイとされ、身が厚く上品な甘みがあります。"
+    "additionalInfo": "数の子はニシンの卵です。正月料理としても親しまれています。"
   },
   {
-    "question": "寿司ネタの「スズキ」の旬はいつか。",
+    "question": "寿司ネタの「タコ」の調理法として一般的なのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "生のまま", "correct": false },
+      { "text": "焼く", "correct": false },
+      { "text": "茹でる", "correct": true },
+      { "text": "蒸す", "correct": false }
+    ],
+    "additionalInfo": "タコは茹でて調理するのが一般的です。茹でることで身が締まり、甘みが増します。"
+  },
+  {
+    "question": "寿司ネタの「イカ」の種類で、最も高級とされるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "スルメイカ", "correct": false },
+      { "text": "ヤリイカ", "correct": false },
+      { "text": "コウイカ", "correct": false },
+      { "text": "アオリイカ", "correct": true }
+    ],
+    "additionalInfo": "アオリイカは最も高級なイカとされ、身が厚く甘みが強いのが特徴です。"
+  },
+  {
+    "question": "寿司ネタの「エビ」で、生で食べられるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "車エビ", "correct": false },
+      { "text": "ブラックタイガー", "correct": false },
+      { "text": "甘エビ", "correct": true },
+      { "text": "大正エビ", "correct": false }
+    ],
+    "additionalInfo": "甘エビは生で食べることができる代表的なエビです。甘みが強く、とろけるような食感が特徴です。"
+  },
+  {
+    "question": "寿司ネタの「カニ」で、最も高級とされるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ズワイガニ", "correct": false },
+      { "text": "毛ガニ", "correct": false },
+      { "text": "タラバガニ", "correct": false },
+      { "text": "松葉ガニ", "correct": true }
+    ],
+    "additionalInfo": "松葉ガニは最も高級なカニとされ、身が甘く繊細な味わいが特徴です。"
+  },
+  {
+    "question": "寿司ネタの「ホタテ」の旬はいつか。",
     "image": "",
     "answers": [
       { "text": "春", "correct": false },
@@ -239,29 +162,116 @@
       { "text": "秋", "correct": false },
       { "text": "冬", "correct": false }
     ],
-    "additionalInfo": "スズキの旬は夏です。この時期のスズキは脂がのり、身が締まって最も美味しくなります。"
+    "additionalInfo": "ホタテの旬は夏です。この時期のホタテは身が肥えて最も美味しくなります。"
   },
   {
-    "question": "寿司ネタの「アオリイカ」の特徴として正しいのはどれか。",
+    "question": "寿司ネタの「アワビ」の調理法として一般的なのはどれか。",
     "image": "",
     "answers": [
-      { "text": "身が硬い", "correct": false },
-      { "text": "甘みが強い", "correct": true },
-      { "text": "色が赤い", "correct": false },
-      { "text": "小型である", "correct": false }
+      { "text": "生のまま", "correct": false },
+      { "text": "焼く", "correct": false },
+      { "text": "蒸す", "correct": true },
+      { "text": "揚げる", "correct": false }
     ],
-    "additionalInfo": "アオリイカは甘みが強く、身が柔らかいのが特徴です。イカ類の中でも最高級品とされています。"
+    "additionalInfo": "アワビは蒸して調理するのが一般的です。蒸すことで身が柔らかくなり、旨味が凝縮されます。"
   },
   {
-    "question": "寿司ネタの「タコ」で一般的に使われるのはどれか。",
+    "question": "寿司ネタの「サザエ」の特徴として正しいのはどれか。",
     "image": "",
     "answers": [
-      { "text": "マダコ", "correct": true },
-      { "text": "ミズダコ", "correct": false },
-      { "text": "イイダコ", "correct": false },
-      { "text": "テナガダコ", "correct": false }
+      { "text": "軟体動物である", "correct": false },
+      { "text": "茹でて調理する", "correct": true },
+      { "text": "生で食べる", "correct": false },
+      { "text": "焼いて調理する", "correct": false }
     ],
-    "additionalInfo": "マダコが寿司ネタとして一般的に使われます。茹でて使うことが多く、弾力のある食感が特徴です。"
+    "additionalInfo": "サザエは茹でて調理するのが一般的です。茹でることで身が締まり、独特の食感が楽しめます。"
+  },
+  {
+    "question": "寿司ネタの「赤貝」の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "白い身をしている", "correct": false },
+      { "text": "赤い色をしている", "correct": true },
+      { "text": "非常に硬い", "correct": false },
+      { "text": "茹でて調理する", "correct": false }
+    ],
+    "additionalInfo": "赤貝は名前の通り赤い色をしており、生で食べるのが一般的です。"
+  },
+  {
+    "question": "寿司ネタの「ミル貝」の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "非常に小さい", "correct": false },
+      { "text": "コリコリした食感", "correct": true },
+      { "text": "非常に柔らかい", "correct": false },
+      { "text": "甘みが強い", "correct": false }
+    ],
+    "additionalInfo": "ミル貝はコリコリした独特の食感が特徴で、高級寿司ネタとして珍重されています。"
+  },
+  {
+    "question": "寿司ネタの「つぶ貝」の産地として有名なのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "沖縄県", "correct": false },
+      { "text": "静岡県", "correct": false },
+      { "text": "北海道", "correct": true },
+      { "text": "鹿児島県", "correct": false }
+    ],
+    "additionalInfo": "つぶ貝の産地として北海道が特に有名です。北海道産のつぶ貝は身が大きく美味しいとされています。"
+  },
+  {
+    "question": "寿司ネタの「バイ貝」の調理法として一般的なのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "茹でる", "correct": true },
+      { "text": "焼く", "correct": false },
+      { "text": "蒸す", "correct": false },
+      { "text": "揚げる", "correct": false }
+    ],
+    "additionalInfo": "バイ貝は茹でて調理するのが一般的です。茹でることで身が締まり、甘みが増します。"
+  },
+  {
+    "question": "寿司ネタの「青柳」の正式名称はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "バカガイ", "correct": false },
+      { "text": "アサリ", "correct": true },
+      { "text": "ハマグリ", "correct": false },
+      { "text": "シジミ", "correct": false }
+    ],
+    "additionalInfo": "青柳の正式名称はアサリです。千葉県の青柳地区で多く獲れることから青柳と呼ばれます。"
+  },
+  {
+    "question": "寿司ネタの「平貝」の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "非常に小さい", "correct": false },
+      { "text": "平たい形をしている", "correct": true },
+      { "text": "非常に硬い", "correct": false },
+      { "text": "赤い色をしている", "correct": false }
+    ],
+    "additionalInfo": "平貝は名前の通り平たい形をしており、上品な甘みが特徴です。"
+  },
+  {
+    "question": "寿司ネタの「とり貝」の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "鳥のような味がする", "correct": false },
+      { "text": "鳥のような形をしている", "correct": false },
+      { "text": "鳥のような色をしている", "correct": false },
+      { "text": "鳥のくちばしのような形をしている", "correct": true }
+    ],
+    "additionalInfo": "とり貝は鳥のくちばしのような形をしていることから、この名前がつきました。"
+  },
+  {
+    "question": "寿司ネタの「みる貝」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": true },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "みる貝の旬は春です。この時期のみる貝は身が肥えて最も美味しくなります。"
   }
 ]
-

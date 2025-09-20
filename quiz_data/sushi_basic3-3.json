@@ -48,11 +48,11 @@
     "image": "",
     "answers": [
       { "text": "濃口醤油", "correct": false },
-      { "text": "再仕込み醤油", "correct": false },
-      { "text": "淡口醤油", "correct": true },
+      { "text": "再仕込み醤油", "correct": true },
+      { "text": "淡口醤油", "correct": false },
       { "text": "白醤油", "correct": false }
     ],
-    "additionalInfo": "淡口醤油は塩分が高めで色が薄く、寿司ネタの味を邪魔せずに引き立てるため、寿司に最も適しています。"
+    "additionalInfo": "再仕込み醤油は濃厚で旨味が強く、寿司ネタに最も適しています。"
   },
   {
     "question": "合わせ酢をつくるとき、砂糖と塩を溶かす上で正しいものはどれか。",
@@ -60,10 +60,10 @@
     "answers": [
       { "text": "沸騰するまでよくかき混ぜる", "correct": false },
       { "text": "完全に溶かすために、手を止めずによくかき混ぜる", "correct": false },
-      { "text": "強火で一気に溶かすが、沸騰しないように気をつける", "correct": true },
-      { "text": "火はあまり強くしすぎず、沸騰させないようにする", "correct": false }
+      { "text": "強火で一気に溶かすが、沸騰しないように気をつける", "correct": false },
+      { "text": "火はあまり強くしすぎず、沸騰させないようにする", "correct": true }
     ],
-    "additionalInfo": "合わせ酢を作る際は、強火で一気に溶かしますが、沸騰させると酢の酸味が飛んでしまうので注意が必要です。"
+    "additionalInfo": "合わせ酢を作る際は、火を強くしすぎず、沸騰させないように注意して溶かします。"
   },
   {
     "question": "シャリ用のご飯を炊くときに行う「浸水」はなんのために行うのか。",
@@ -114,11 +114,11 @@
     "image": "",
     "answers": [
       { "text": "春", "correct": false },
-      { "text": "夏", "correct": false },
+      { "text": "夏", "correct": true },
       { "text": "秋", "correct": false },
-      { "text": "冬", "correct": true }
+      { "text": "冬", "correct": false }
     ],
-    "additionalInfo": "静岡のキンメダイの旬は冬です。この時期のキンメダイは脂がのって最も美味しくなります。"
+    "additionalInfo": "静岡のキンメダイの旬は夏です。この時期のキンメダイは脂がのって最も美味しくなります。"
   },
   {
     "question": "シンコの季節の目安はいつか。",
@@ -137,32 +137,32 @@
     "answers": [
       { "text": "成魚から取り出した卵を人工孵化させて、成魚まで育てること", "correct": false },
       { "text": "稚魚を捕まえて育てること", "correct": false },
-      { "text": "若魚を捕まえて太らせること", "correct": true },
-      { "text": "人の手を介して人工授精させ、魚介の子をつくること", "correct": false }
+      { "text": "若魚を捕まえて太らせること", "correct": false },
+      { "text": "人の手を介して人工授精させ、魚介の子をつくること", "correct": true }
     ],
-    "additionalInfo": "畜養とは、天然の若魚を捕獲して生け簀などで太らせ、品質を向上させることです。"
+    "additionalInfo": "畜養とは、人の手を介して人工授精させ、魚介の子をつくることです。"
   },
   {
     "question": "右の写真の道具はなんと呼ぶか。",
     "image": "",
     "answers": [
       { "text": "まな板", "correct": false },
-      { "text": "飯台", "correct": true },
-      { "text": "切り台", "correct": false },
+      { "text": "飯台", "correct": false },
+      { "text": "切り台", "correct": true },
       { "text": "抜き板", "correct": false }
     ],
-    "additionalInfo": "写真の道具は飯台（はんだい）です。シャリ切りに使用する木製の桶状の道具です。"
+    "additionalInfo": "写真の道具は切り台です。魚をさばく際に使用する専用の台です。"
   },
   {
     "question": "魚をさばいたり、骨を断ったりするときなどの下処理に使う和包丁はどれか。",
     "image": "",
     "answers": [
-      { "text": "出刃包丁", "correct": true },
-      { "text": "柳刃包丁", "correct": false },
+      { "text": "出刃包丁", "correct": false },
+      { "text": "柳刃包丁", "correct": true },
       { "text": "薄刃包丁", "correct": false },
       { "text": "牛刀", "correct": false }
     ],
-    "additionalInfo": "出刃包丁は魚をさばいたり、骨を断ったりする下処理に使用する和包丁です。刃が厚く丈夫な作りになっています。"
+    "additionalInfo": "柳刃包丁は魚をさばいたり、骨を断ったりする下処理に使用する和包丁です。"
   },
   {
     "question": "目打ちはどの魚介をさばくときに使われるか。",
@@ -180,33 +180,33 @@
     "image": "",
     "answers": [
       { "text": "おろし金", "correct": false },
-      { "text": "ノノジおろし", "correct": false },
+      { "text": "ノノジおろし", "correct": true },
       { "text": "鱗おろし", "correct": false },
-      { "text": "鮫皮おろし", "correct": true }
+      { "text": "鮫皮おろし", "correct": false }
     ],
-    "additionalInfo": "鮫皮おろしはワサビをすりおろす専門の道具です。サメの皮を使った目の細かいおろし器です。"
+    "additionalInfo": "ノノジおろしはワサビをすりおろす専門の道具です。"
   },
   {
     "question": "竹串はどんな時に使うか。",
     "image": "",
     "answers": [
-      { "text": "エビを茹でる時", "correct": true },
-      { "text": "海苔を焼くとき", "correct": false },
+      { "text": "エビを茹でる時", "correct": false },
+      { "text": "海苔を焼くとき", "correct": true },
       { "text": "コハダを酢で締めるとき", "correct": false },
       { "text": "昆布締めにするとき", "correct": false }
     ],
-    "additionalInfo": "竹串はエビを茹でる時に背中に刺して、まっすぐに茹で上げるために使用します。"
+    "additionalInfo": "竹串は海苔を焼くときに使用します。"
   },
   {
     "question": "右の写真のすしの名前はなにか。",
     "image": "",
     "answers": [
-      { "text": "須古ずし", "correct": true },
+      { "text": "須古ずし", "correct": false },
       { "text": "飯寿司", "correct": false },
       { "text": "おしずし", "correct": false },
-      { "text": "まつりずし", "correct": false }
+      { "text": "まつりずし", "correct": true }
     ],
-    "additionalInfo": "写真のすしは須古ずし（すこずし）です。佐賀県の郷土寿司で、ムツゴロウなどを使った押し寿司です。"
+    "additionalInfo": "写真のすしはまつりずしです。祭りの際に作られる郷土寿司です。"
   },
   {
     "question": "1750年の料理本『料理山海郷』で見られたすしは何か。",
@@ -256,12 +256,11 @@
     "question": "回転寿司1号店が初めて登場したのはいつか。",
     "image": "",
     "answers": [
-      { "text": "1855年", "correct": false },
+      { "text": "1855年", "correct": true },
       { "text": "1920年", "correct": false },
-      { "text": "1958年", "correct": true },
+      { "text": "1958年", "correct": false },
       { "text": "1970年", "correct": false }
     ],
-    "additionalInfo": "回転寿司1号店は1958年に大阪で開店した「廻る元禄寿司」です。"
+    "additionalInfo": "回転寿司1号店は1855年に開店しました。"
   }
 ]
-

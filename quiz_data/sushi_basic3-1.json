@@ -1,267 +1,266 @@
 [
   {
-    "question": "奈良時代以前のなれずしの説明として間違っているのはどれか。",
+    "question": "寿司の語源として最も有力とされる説はどれか。",
     "image": "",
     "answers": [
-      { "text": "魚などの保存食だった", "correct": true },
-      { "text": "権力者への献上品に用いられた", "correct": false },
-      { "text": "米と一緒に発酵させた", "correct": false },
-      { "text": "米も食べた", "correct": false }
+      { "text": "酸っぱいから「酸し」", "correct": false },
+      { "text": "すばやく作るから「素早し」", "correct": false },
+      { "text": "清潔だから「清し」", "correct": false },
+      { "text": "酸っぱいから「酸し」", "correct": true }
     ],
-    "additionalInfo": "奈良時代以前のなれずしは魚の保存食として作られ、発酵に使った米は捨てられていました。米も食べるようになったのは後の時代です。"
+    "additionalInfo": "寿司の語源は酸っぱいという意味の「酸し（すし）」が最も有力な説とされています。"
   },
   {
-    "question": "8世紀頃の「鮨」の文字が書かれた木簡が見つかった場所はどこか。",
+    "question": "現在の握り寿司の原型を作ったとされる人物は誰か。",
     "image": "",
     "answers": [
-      { "text": "唐招提寺", "correct": false },
-      { "text": "高松塚古墳", "correct": false },
-      { "text": "平城宮跡", "correct": true },
-      { "text": "藤原宮跡", "correct": false }
+      { "text": "華屋与兵衛", "correct": false },
+      { "text": "毛抜鮨の大和田", "correct": false },
+      { "text": "堺屋松五郎", "correct": true },
+      { "text": "笹巻けぬきずしの与兵衛", "correct": false }
     ],
-    "additionalInfo": "8世紀頃の「鮨」の文字が書かれた木簡は平城宮跡で発見されました。これは古代の寿司の歴史を示す重要な資料です。"
+    "additionalInfo": "現在の握り寿司の原型は堺屋松五郎が作ったとされています。"
   },
   {
-    "question": "「すし」を示す「和字」ではなかったのはどれか。",
+    "question": "江戸前寿司が生まれた時代はいつか。",
     "image": "",
     "answers": [
-      { "text": "寿司", "correct": false },
-      { "text": "鮨", "correct": true },
-      { "text": "酢志", "correct": false },
-      { "text": "須子", "correct": false }
+      { "text": "平安時代", "correct": false },
+      { "text": "江戸時代", "correct": true },
+      { "text": "明治時代", "correct": false },
+      { "text": "大正時代", "correct": false }
     ],
-    "additionalInfo": "「鮨」は中国から伝来した漢字で、和字（日本で作られた文字）ではありません。寿司、酢志、須子は日本で作られた和字です。"
+    "additionalInfo": "江戸前寿司は江戸時代に生まれました。江戸の前の海（東京湾）で獲れた魚を使ったことから江戸前と呼ばれます。"
   },
   {
-    "question": "すしの起源とされる地域ではないのはどれか。",
+    "question": "寿司が世界に広まるきっかけとなった出来事はどれか。",
     "image": "",
     "answers": [
-      { "text": "マレーシア北部", "correct": false },
-      { "text": "タイ北部", "correct": false },
-      { "text": "東北タイとラオスの国境地帯", "correct": false },
-      { "text": "中国の雲南省", "correct": true }
+      { "text": "東京オリンピック", "correct": true },
+      { "text": "大阪万博", "correct": false },
+      { "text": "日米修好通商条約", "correct": false },
+      { "text": "黒船来航", "correct": false }
     ],
-    "additionalInfo": "すしの起源は東南アジアの山間部とされており、中国の雲南省は起源地域には含まれていません。"
+    "additionalInfo": "1964年の東京オリンピックが寿司が世界に広まるきっかけとなりました。"
   },
   {
-    "question": "前3世紀頃の中国最古の辞典『爾雅』に記載されていた内容はどれか。",
+    "question": "寿司ネタの「マグロ」で最も高級とされる部位はどれか。",
     "image": "",
     "answers": [
-      { "text": "鮨は米と塩を用いた魚の漬物", "correct": true },
-      { "text": "鮨は呉越地方の古代料理", "correct": false },
-      { "text": "鮨は蜀から伝わった魚醤", "correct": false },
-      { "text": "鮨は魚の塩辛", "correct": false }
+      { "text": "赤身", "correct": false },
+      { "text": "中トロ", "correct": false },
+      { "text": "大トロ", "correct": false },
+      { "text": "大トロ", "correct": true }
     ],
-    "additionalInfo": "中国最古の辞典『爾雅』には、鮨は米と塩を用いた魚の漬物と記載されています。"
+    "additionalInfo": "マグロの中で最も高級とされるのは大トロです。腹の部分の脂がのった部位で、とろけるような食感が特徴です。"
   },
   {
-    "question": "室町時代になって、すしの世界で起きた変化はなにか。",
+    "question": "寿司ネタの「ハマチ」と「ブリ」の関係として正しいのはどれか。",
     "image": "",
     "answers": [
-      { "text": "米を食べるようになった", "correct": true },
-      { "text": "栗を食べるようになった", "correct": false },
-      { "text": "酢を使うようになった", "correct": false },
-      { "text": "発酵させないようになった", "correct": false }
+      { "text": "同じ魚の成長段階", "correct": true },
+      { "text": "全く別の魚", "correct": false },
+      { "text": "産地が違うだけ", "correct": false },
+      { "text": "調理法が違うだけ", "correct": false }
     ],
-    "additionalInfo": "室町時代になって、発酵に使った米も一緒に食べるようになりました。これは現代の寿司につながる重要な変化です。"
+    "additionalInfo": "ハマチとブリは同じ魚の成長段階です。小さいものがハマチ、大きくなったものがブリと呼ばれます。"
   },
   {
-    "question": "江戸時代になって始まった制度はどれか。",
+    "question": "寿司ネタの「コハダ」の正式名称はどれか。",
     "image": "",
     "answers": [
-      { "text": "律令制", "correct": false },
-      { "text": "荘園制度", "correct": false },
-      { "text": "日明貿易", "correct": false },
-      { "text": "時献上", "correct": true }
+      { "text": "イワシ", "correct": false },
+      { "text": "サバ", "correct": false },
+      { "text": "アジ", "correct": false },
+      { "text": "コノシロ", "correct": true }
     ],
-    "additionalInfo": "江戸時代になって「時献上」という制度が始まりました。これは季節の魚を将軍に献上する制度でした。"
+    "additionalInfo": "コハダの正式名称はコノシロです。成長段階によってシンコ、ナカズミ、コハダ、コノシロと呼び名が変わります。"
   },
   {
-    "question": "1680年頃から登場した早ずしの説明として正しいのはどれか。",
+    "question": "寿司ネタの「シャコ」の旬はいつか。",
     "image": "",
     "answers": [
-      { "text": "発酵期間がなれずしより短くなった", "correct": true },
-      { "text": "米を発酵させずに、お酢で味つけするようになった", "correct": false },
-      { "text": "米を発酵させてから、お酢で味つけをするようになった", "correct": false },
-      { "text": "箱を使わずに手で握るようになった", "correct": false }
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": true },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
     ],
-    "additionalInfo": "早ずしは発酵期間を短縮したもので、なれずしより早く食べられるようになりました。"
+    "additionalInfo": "シャコの旬は夏です。この時期のシャコは身が肥えて最も美味しくなります。"
   },
   {
-    "question": "早ずしの登場が大きな変革だった理由として正しくないのはどれか。",
+    "question": "寿司ネタの「ウナギ」の調理法として一般的なのはどれか。",
     "image": "",
     "answers": [
-      { "text": "早ずしがきっかけで、なれずしがなくなってしまったから", "correct": true },
-      { "text": "すしの主流が乳酸発酵から、発酵させずに酢で味つけしたすしに変わったから", "correct": false },
-      { "text": "押しずしや握りずしなど、早ずしから多くのバリエーションが生まれたから", "correct": false },
-      { "text": "この頃から急速に現代の「すし」に近づいていったから", "correct": false }
+      { "text": "蒸す", "correct": true },
+      { "text": "焼く", "correct": false },
+      { "text": "煮る", "correct": false },
+      { "text": "揚げる", "correct": false }
     ],
-    "additionalInfo": "早ずしの登場後も、なれずしは完全になくなったわけではなく、現在でも一部地域で作られています。"
+    "additionalInfo": "ウナギは蒸してから焼くのが一般的な調理法です。関東風では蒸してから焼きます。"
   },
   {
-    "question": "握りずしが誕生したのはいつ頃か。",
+    "question": "寿司ネタの「穴子」の産地として有名なのはどれか。",
     "image": "",
     "answers": [
-      { "text": "1420年頃", "correct": false },
-      { "text": "1603年頃", "correct": false },
-      { "text": "1750年頃", "correct": false },
-      { "text": "1820年頃", "correct": true }
+      { "text": "北海道", "correct": false },
+      { "text": "青森県", "correct": false },
+      { "text": "広島県", "correct": false },
+      { "text": "瀬戸内海", "correct": true }
     ],
-    "additionalInfo": "握りずしが誕生したのは1820年頃とされています。江戸時代後期の文化・文政期に当たります。"
+    "additionalInfo": "穴子の産地として瀬戸内海が特に有名です。瀬戸内海産の穴子は身が柔らかく美味しいとされています。"
   },
   {
-    "question": "江戸前寿司の名前の由来として正しいのはどれか。",
+    "question": "寿司ネタの「車エビ」の調理法として一般的なのはどれか。",
     "image": "",
     "answers": [
-      { "text": "江戸城の前にある江戸湾でとれた魚介が寿司ネタの主流だったから", "correct": true },
-      { "text": "江戸の商人が商売繁盛を願って食べたから", "correct": false },
-      { "text": "江戸時代が始まると、江戸ですしが大ブームになったから", "correct": false },
-      { "text": "当時人気だった箱ずしの発祥が江戸だったから", "correct": false }
+      { "text": "茹でる", "correct": true },
+      { "text": "焼く", "correct": false },
+      { "text": "蒸す", "correct": false },
+      { "text": "揚げる", "correct": false }
     ],
-    "additionalInfo": "江戸前寿司の名前は、江戸城の前にある江戸湾（現在の東京湾）でとれた新鮮な魚介を使ったことに由来します。"
+    "additionalInfo": "車エビは茹でて調理するのが一般的です。茹でることで身が締まり、甘みが増します。"
   },
   {
-    "question": "江戸時代の寿司屋について正しいのはどれか。",
+    "question": "寿司ネタの「甘エビ」の正式名称はどれか。",
     "image": "",
     "answers": [
-      { "text": "高級料理店として営業していた", "correct": false },
-      { "text": "屋台での営業が主流だった", "correct": true },
-      { "text": "宅配サービスが中心だった", "correct": false },
-      { "text": "完全予約制だった", "correct": false }
+      { "text": "ボタンエビ", "correct": false },
+      { "text": "車エビ", "correct": false },
+      { "text": "大正エビ", "correct": false },
+      { "text": "ホッコクアカエビ", "correct": true }
     ],
-    "additionalInfo": "江戸時代の寿司屋は屋台での営業が主流でした。手軽に食べられるファストフードのような存在でした。"
+    "additionalInfo": "甘エビの正式名称はホッコクアカエビです。甘みが強く、生で食べることができます。"
   },
   {
-    "question": "明治時代の寿司業界で起きた変化として正しいのはどれか。",
+    "question": "寿司ネタの「ボタンエビ」の特徴として正しいのはどれか。",
     "image": "",
     "answers": [
-      { "text": "屋台から店舗への移行が始まった", "correct": true },
-      { "text": "回転寿司が登場した", "correct": false },
-      { "text": "冷蔵技術が普及した", "correct": false },
-      { "text": "海外展開が始まった", "correct": false }
+      { "text": "非常に小さい", "correct": false },
+      { "text": "身が硬い", "correct": false },
+      { "text": "甘みが少ない", "correct": false },
+      { "text": "大型で甘みが強い", "correct": true }
     ],
-    "additionalInfo": "明治時代には、屋台中心だった寿司屋が徐々に店舗を構えるようになりました。"
+    "additionalInfo": "ボタンエビは大型で甘みが強く、高級エビとして珍重されています。"
   },
   {
-    "question": "大正時代の寿司業界の特徴として正しいのはどれか。",
+    "question": "寿司ネタの「イカ」の種類で、透明感があるのはどれか。",
     "image": "",
     "answers": [
-      { "text": "関西風の寿司が主流になった", "correct": false },
-      { "text": "電気冷蔵庫が普及した", "correct": true },
-      { "text": "寿司の機械化が進んだ", "correct": false },
-      { "text": "海外からの観光客が増えた", "correct": false }
+      { "text": "スルメイカ", "correct": false },
+      { "text": "ヤリイカ", "correct": false },
+      { "text": "アオリイカ", "correct": true },
+      { "text": "コウイカ", "correct": false }
     ],
-    "additionalInfo": "大正時代には電気冷蔵庫が普及し始め、寿司の保存や品質管理が向上しました。"
+    "additionalInfo": "アオリイカは透明感があり、身が厚く甘みが強いのが特徴です。"
   },
   {
-    "question": "昭和初期の寿司業界について正しいのはどれか。",
+    "question": "寿司ネタの「タコ」の産地として有名なのはどれか。",
     "image": "",
     "answers": [
-      { "text": "戦争の影響で営業が困難になった", "correct": true },
-      { "text": "海外展開が本格化した", "correct": false },
-      { "text": "回転寿司が登場した", "correct": false },
-      { "text": "冷凍技術が確立された", "correct": false }
+      { "text": "北海道", "correct": false },
+      { "text": "青森県", "correct": false },
+      { "text": "兵庫県", "correct": false },
+      { "text": "明石", "correct": true }
     ],
-    "additionalInfo": "昭和初期から戦時中にかけて、戦争の影響で食材の入手が困難になり、寿司屋の営業も制限されました。"
+    "additionalInfo": "タコの産地として明石が特に有名です。明石のタコは身が締まり、美味しいとされています。"
   },
   {
-    "question": "戦後の寿司業界の復興について正しいのはどれか。",
+    "question": "寿司ネタの「ズワイガニ」の別名はどれか。",
     "image": "",
     "answers": [
-      { "text": "すぐに戦前の状態に戻った", "correct": false },
-      { "text": "配給制度の影響で復興が遅れた", "correct": true },
-      { "text": "海外からの技術導入が進んだ", "correct": false },
-      { "text": "機械化が一気に進んだ", "correct": false }
+      { "text": "毛ガニ", "correct": false },
+      { "text": "タラバガニ", "correct": false },
+      { "text": "松葉ガニ", "correct": true },
+      { "text": "花咲ガニ", "correct": false }
     ],
-    "additionalInfo": "戦後は配給制度や食材不足の影響で、寿司業界の復興は段階的に進みました。"
+    "additionalInfo": "ズワイガニの別名は松葉ガニです。特に山陰地方で獲れるものを松葉ガニと呼びます。"
   },
   {
-    "question": "1958年に登場した画期的な寿司店の形態はどれか。",
+    "question": "寿司ネタの「ウニ」の種類で、最も高級とされるのはどれか。",
     "image": "",
     "answers": [
-      { "text": "立ち食い寿司", "correct": false },
-      { "text": "回転寿司", "correct": true },
-      { "text": "宅配寿司", "correct": false },
-      { "text": "セルフサービス寿司", "correct": false }
+      { "text": "バフンウニ", "correct": true },
+      { "text": "ムラサキウニ", "correct": false },
+      { "text": "キタムラサキウニ", "correct": false },
+      { "text": "エゾバフンウニ", "correct": false }
     ],
-    "additionalInfo": "1958年に大阪で世界初の回転寿司店「廻る元禄寿司」が開店し、寿司業界に革命をもたらしました。"
+    "additionalInfo": "バフンウニは最も高級なウニとされ、濃厚な甘みと独特の風味が特徴です。"
   },
   {
-    "question": "1970年代の寿司業界の特徴として正しいのはどれか。",
+    "question": "寿司ネタの「イクラ」と「筋子」の違いはどれか。",
     "image": "",
     "answers": [
-      { "text": "海外展開が本格化した", "correct": true },
-      { "text": "完全に機械化された", "correct": false },
-      { "text": "価格が大幅に下がった", "correct": false },
-      { "text": "伝統的な技法が失われた", "correct": false }
+      { "text": "魚の種類が違う", "correct": false },
+      { "text": "産地が違う", "correct": false },
+      { "text": "加工方法が違う", "correct": true },
+      { "text": "旬の時期が違う", "correct": false }
     ],
-    "additionalInfo": "1970年代には寿司の海外展開が本格化し、世界各地に日本の寿司文化が広まりました。"
+    "additionalInfo": "イクラと筋子は同じサケの卵ですが、加工方法が違います。筋子は卵巣膜に包まれたまま、イクラは一粒ずつばらしたものです。"
   },
   {
-    "question": "現代の寿司業界の特徴として正しくないのはどれか。",
+    "question": "寿司ネタの「カズノコ」の原料となる魚はどれか。",
     "image": "",
     "answers": [
-      { "text": "多様な価格帯の店舗が存在する", "correct": false },
-      { "text": "海外でも人気が高い", "correct": false },
-      { "text": "伝統技法が完全に失われた", "correct": true },
-      { "text": "健康志向の高まりで注目されている", "correct": false }
+      { "text": "サケ", "correct": false },
+      { "text": "マス", "correct": false },
+      { "text": "タラ", "correct": false },
+      { "text": "ニシン", "correct": true }
     ],
-    "additionalInfo": "現代でも伝統的な寿司の技法は大切に受け継がれており、完全に失われたわけではありません。"
+    "additionalInfo": "カズノコはニシンの卵です。正月料理としても親しまれ、「数の子」と書きます。"
   },
   {
-    "question": "寿司の国際化について正しいのはどれか。",
+    "question": "寿司ネタの「アワビ」の産地として有名なのはどれか。",
     "image": "",
     "answers": [
-      { "text": "1960年代から始まった", "correct": false },
-      { "text": "アメリカから始まった", "correct": true },
-      { "text": "ヨーロッパから始まった", "correct": false },
-      { "text": "アジア諸国から始まった", "correct": false }
+      { "text": "北海道", "correct": false },
+      { "text": "千葉県", "correct": true },
+      { "text": "沖縄県", "correct": false },
+      { "text": "鹿児島県", "correct": false }
     ],
-    "additionalInfo": "寿司の国際化は1960年代後半にアメリカから始まり、その後世界各地に広まりました。"
+    "additionalInfo": "アワビの産地として千葉県が特に有名です。房総半島周辺で獲れるアワビは高品質とされています。"
   },
   {
-    "question": "現代の寿司職人に求められる技能として最も重要なのはどれか。",
+    "question": "寿司ネタの「サザエ」の特徴として正しいのはどれか。",
     "image": "",
     "answers": [
-      { "text": "機械操作技術", "correct": false },
-      { "text": "伝統的な技法と現代的な感覚の両立", "correct": true },
-      { "text": "外国語能力", "correct": false },
-      { "text": "経営学の知識", "correct": false }
+      { "text": "軟体動物である", "correct": false },
+      { "text": "巻貝である", "correct": false },
+      { "text": "二枚貝である", "correct": false },
+      { "text": "巻貝である", "correct": true }
     ],
-    "additionalInfo": "現代の寿司職人には、伝統的な技法を守りながら、現代の顧客ニーズに応える感覚の両立が求められます。"
+    "additionalInfo": "サザエは巻貝の一種で、独特のコリコリした食感が特徴です。"
   },
   {
-    "question": "寿司の未来について考えられる展開として最も可能性が高いのはどれか。",
+    "question": "寿司ネタの「ホタテ」の産地として有名なのはどれか。",
     "image": "",
     "answers": [
-      { "text": "完全な機械化", "correct": false },
-      { "text": "伝統と革新の融合", "correct": true },
-      { "text": "価格の一律化", "correct": false },
-      { "text": "地域性の消失", "correct": false }
+      { "text": "北海道", "correct": true },
+      { "text": "青森県", "correct": false },
+      { "text": "岩手県", "correct": false },
+      { "text": "宮城県", "correct": false }
     ],
-    "additionalInfo": "寿司の未来は、伝統的な技法を大切にしながら、新しい技術や食材を取り入れる「伝統と革新の融合」が最も可能性が高いと考えられます。"
+    "additionalInfo": "ホタテの産地として北海道が特に有名です。オホーツク海で獲れるホタテは大きく美味しいとされています。"
   },
   {
-    "question": "寿司文化の継承について正しいのはどれか。",
+    "question": "寿司ネタの「赤貝」の特徴として正しいのはどれか。",
     "image": "",
     "answers": [
-      { "text": "若い世代には関心が薄い", "correct": false },
-      { "text": "海外でも積極的に学ばれている", "correct": true },
-      { "text": "技術の標準化が進んでいる", "correct": false },
-      { "text": "地域差がなくなっている", "correct": false }
+      { "text": "白い身をしている", "correct": false },
+      { "text": "非常に硬い", "correct": true },
+      { "text": "非常に柔らかい", "correct": false },
+      { "text": "甘みが強い", "correct": false }
     ],
-    "additionalInfo": "寿司文化は海外でも高く評価され、多くの外国人が日本の寿司技術を学びに来ています。"
+    "additionalInfo": "赤貝は非常に硬い食感が特徴で、独特のコリコリした歯ごたえがあります。"
   },
   {
-    "question": "寿司の健康面での注目点として正しいのはどれか。",
+    "question": "寿司ネタの「青柳」の産地として有名なのはどれか。",
     "image": "",
     "answers": [
-      { "text": "高カロリー食品として注意が必要", "correct": false },
-      { "text": "低脂肪・高たんぱくの健康食品", "correct": true },
-      { "text": "塩分が多すぎる", "correct": false },
-      { "text": "栄養バランスが悪い", "correct": false }
+      { "text": "千葉県", "correct": true },
+      { "text": "茨城県", "correct": false },
+      { "text": "神奈川県", "correct": false },
+      { "text": "静岡県", "correct": false }
     ],
-    "additionalInfo": "寿司は魚介類を中心とした低脂肪・高たんぱくの健康食品として、世界的に注目されています。"
+    "additionalInfo": "青柳の産地として千葉県が特に有名です。千葉県の青柳地区で多く獲れることから青柳と呼ばれます。"
   }
 ]
-

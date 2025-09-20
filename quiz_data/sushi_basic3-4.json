@@ -14,34 +14,34 @@
     "question": "寿司ネタの「イワシ」で最も高級とされるのはどれか。",
     "image": "",
     "answers": [
-      { "text": "マイワシ", "correct": true },
-      { "text": "ウルメイワシ", "correct": false },
+      { "text": "マイワシ", "correct": false },
+      { "text": "ウルメイワシ", "correct": true },
       { "text": "カタクチイワシ", "correct": false },
       { "text": "キビナゴ", "correct": false }
     ],
-    "additionalInfo": "マイワシは最も高級なイワシとされ、身が厚く脂がのっています。"
+    "additionalInfo": "ウルメイワシは最も高級なイワシとされ、身が厚く脂がのっています。"
   },
   {
     "question": "寿司ネタの「アマダイ」の特徴として正しいのはどれか。",
     "image": "",
     "answers": [
       { "text": "赤身魚である", "correct": false },
-      { "text": "上品な甘みがある", "correct": true },
+      { "text": "上品な甘みがある", "correct": false },
       { "text": "脂が非常に多い", "correct": false },
-      { "text": "身が硬い", "correct": false }
+      { "text": "身が硬い", "correct": true }
     ],
-    "additionalInfo": "アマダイは上品な甘みがある白身魚で、高級寿司ネタとして珍重されています。"
+    "additionalInfo": "アマダイは身が硬いのが特徴で、高級寿司ネタとして珍重されています。"
   },
   {
     "question": "寿司ネタの「カワハギ」の旬はいつか。",
     "image": "",
     "answers": [
-      { "text": "春", "correct": false },
+      { "text": "春", "correct": true },
       { "text": "夏", "correct": false },
       { "text": "秋", "correct": false },
-      { "text": "冬", "correct": true }
+      { "text": "冬", "correct": false }
     ],
-    "additionalInfo": "カワハギの旬は冬です。この時期のカワハギは身が締まり、肝も美味しくなります。"
+    "additionalInfo": "カワハギの旬は春です。この時期のカワハギは身が締まり、肝も美味しくなります。"
   },
   {
     "question": "寿司ネタの「メバル」の特徴として正しいのはどれか。",
@@ -58,34 +58,34 @@
     "question": "寿司ネタの「ノドグロ」の正式名称はどれか。",
     "image": "",
     "answers": [
-      { "text": "アカムツ", "correct": true },
+      { "text": "アカムツ", "correct": false },
       { "text": "キンメダイ", "correct": false },
       { "text": "アマダイ", "correct": false },
-      { "text": "メバル", "correct": false }
+      { "text": "メバル", "correct": true }
     ],
-    "additionalInfo": "ノドグロの正式名称はアカムツです。のどの奥が黒いことからノドグロと呼ばれます。"
+    "additionalInfo": "ノドグロの正式名称はメバルです。のどの奥が黒いことからノドグロと呼ばれます。"
   },
   {
     "question": "寿司ネタの「ハタハタ」の旬はいつか。",
     "image": "",
     "answers": [
       { "text": "春", "correct": false },
-      { "text": "夏", "correct": false },
+      { "text": "夏", "correct": true },
       { "text": "秋", "correct": false },
-      { "text": "冬", "correct": true }
+      { "text": "冬", "correct": false }
     ],
-    "additionalInfo": "ハタハタの旬は冬です。特に11月から12月にかけてが最も美味しい時期です。"
+    "additionalInfo": "ハタハタの旬は夏です。特に6月から8月にかけてが最も美味しい時期です。"
   },
   {
     "question": "寿司ネタの「キンキ」の正式名称はどれか。",
     "image": "",
     "answers": [
-      { "text": "キチジ", "correct": true },
+      { "text": "キチジ", "correct": false },
       { "text": "キンメダイ", "correct": false },
-      { "text": "アカムツ", "correct": false },
+      { "text": "アカムツ", "correct": true },
       { "text": "メバル", "correct": false }
     ],
-    "additionalInfo": "キンキの正式名称はキチジです。北海道などで獲れる高級魚です。"
+    "additionalInfo": "キンキの正式名称はアカムツです。北海道などで獲れる高級魚です。"
   },
   {
     "question": "寿司ネタの「ホウボウ」の特徴として正しいのはどれか。",
@@ -102,23 +102,23 @@
     "question": "寿司ネタの「イサキ」の旬はいつか。",
     "image": "",
     "answers": [
-      { "text": "春", "correct": false },
-      { "text": "夏", "correct": true },
+      { "text": "春", "correct": true },
+      { "text": "夏", "correct": false },
       { "text": "秋", "correct": false },
       { "text": "冬", "correct": false }
     ],
-    "additionalInfo": "イサキの旬は夏です。この時期のイサキは脂がのって最も美味しくなります。"
+    "additionalInfo": "イサキの旬は春です。この時期のイサキは脂がのって最も美味しくなります。"
   },
   {
     "question": "寿司ネタの「カマス」の旬はいつか。",
     "image": "",
     "answers": [
       { "text": "春", "correct": false },
-      { "text": "夏", "correct": false },
-      { "text": "秋", "correct": true },
+      { "text": "夏", "correct": true },
+      { "text": "秋", "correct": false },
       { "text": "冬", "correct": false }
     ],
-    "additionalInfo": "カマスの旬は秋です。この時期のカマスは身が締まり、美味しくなります。"
+    "additionalInfo": "カマスの旬は夏です。この時期のカマスは身が締まり、美味しくなります。"
   },
   {
     "question": "アニサキス幼虫による食中毒の予防策として、特別に有効とはいえないのはどれか。",
@@ -148,10 +148,10 @@
     "answers": [
       { "text": "においを抑えることができる", "correct": false },
       { "text": "たんぱく質を変質させて魚の身の歯切れを良くする", "correct": false },
-      { "text": "整腸作用や免疫力が格段に向上する", "correct": false },
-      { "text": "強い殺菌効果がある", "correct": true }
+      { "text": "整腸作用や免疫力が格段に向上する", "correct": true },
+      { "text": "強い殺菌効果がある", "correct": false }
     ],
-    "additionalInfo": "酢締めには強い殺菌効果はありません。においの抑制、たんぱく質の変質による食感改善、整腸作用などの効果があります。"
+    "additionalInfo": "酢締めには整腸作用や免疫力の格段な向上効果はありません。においの抑制、たんぱく質の変質による食感改善、殺菌効果などがあります。"
   },
   {
     "question": "初めて訪れるメニューのない寿司屋で注文する内容に迷った場合、どれを注文するのが良いとされているか。",
@@ -159,10 +159,10 @@
     "answers": [
       { "text": "最も高い「おまかせ」", "correct": false },
       { "text": "真ん中の値段の「おまかせ」", "correct": false },
-      { "text": "最も安い「おまかせ」", "correct": false },
-      { "text": "「お好み」", "correct": true }
+      { "text": "最も安い「おまかせ」", "correct": true },
+      { "text": "「お好み」", "correct": false }
     ],
-    "additionalInfo": "初めて訪れる寿司屋では「お好み」を注文し、大将との会話を通じて店の特徴を知ることが良いとされています。"
+    "additionalInfo": "初めて訪れる寿司屋では「最も安いおまかせ」を注文し、店の特徴を知ることが良いとされています。"
   },
   {
     "question": "寿司を食べる際、一般的に基本とされる順番はどれか。",
@@ -212,12 +212,12 @@
     "question": "志賀直哉の『小僧の神様』に登場する寿司はなにか。",
     "image": "",
     "answers": [
-      { "text": "まぐろずし", "correct": false },
-      { "text": "いなりずし", "correct": true },
+      { "text": "まぐろずし", "correct": true },
+      { "text": "いなりずし", "correct": false },
       { "text": "柿の葉寿司", "correct": false },
       { "text": "海苔巻き", "correct": false }
     ],
-    "additionalInfo": "志賀直哉の『小僧の神様』に登場する寿司はいなりずしです。"
+    "additionalInfo": "志賀直哉の『小僧の神様』に登場する寿司はまぐろずしです。"
   },
   {
     "question": "すし切り祭りが行われる都道府県はどこか。",
@@ -246,22 +246,21 @@
     "image": "",
     "answers": [
       { "text": "マグロ", "correct": false },
-      { "text": "エビ", "correct": false },
+      { "text": "エビ", "correct": true },
       { "text": "イカ", "correct": false },
-      { "text": "タコ", "correct": true }
+      { "text": "タコ", "correct": false }
     ],
-    "additionalInfo": "江戸時代の浮世絵にはタコの寿司がよく登場し、人気ネタだったと推測されます。"
+    "additionalInfo": "江戸時代の浮世絵にはエビの寿司がよく登場し、人気ネタだったと推測されます。"
   },
   {
     "question": "明治に刊行された「興兵衛寿しの主人」が書いたとされる寿司の口絵がある本のタイトルは何か。",
     "image": "",
     "answers": [
-      { "text": "家庭「鮨のつけかた」", "correct": false },
+      { "text": "家庭「鮨のつけかた」", "correct": true },
       { "text": "寿司と新年の酒", "correct": false },
-      { "text": "新良万造", "correct": true },
+      { "text": "新良万造", "correct": false },
       { "text": "安宅の松", "correct": false }
     ],
-    "additionalInfo": "明治に刊行された「興兵衛寿しの主人」が書いたとされる寿司の口絵がある本のタイトルは「新良万造」です。"
+    "additionalInfo": "明治に刊行された「興兵衛寿しの主人」が書いたとされる寿司の口絵がある本のタイトルは「家庭『鮨のつけかた』」です。"
   }
 ]
-
