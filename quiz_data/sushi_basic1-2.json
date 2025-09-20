@@ -1,0 +1,267 @@
+[
+  {
+    "question": "この中でメキシコで特に人気があるものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ツナスシ", "correct": false },
+      { "text": "ブドウ葉のスシロール", "correct": false },
+      { "text": "ビーガンロール", "correct": false },
+      { "text": "ホットロール", "correct": true }
+    ],
+    "additionalInfo": "メキシコではホットロール（温かい寿司ロール）が特に人気があります。現地の食文化に合わせたアレンジが受け入れられています。"
+  },
+  {
+    "question": "東ヨーロッパで、最もSUSHIが普及している国はどこか。",
+    "image": "",
+    "answers": [
+      { "text": "ハンガリー", "correct": false },
+      { "text": "チェコ", "correct": true },
+      { "text": "ルーマニア", "correct": false },
+      { "text": "ポーランド", "correct": false }
+    ],
+    "additionalInfo": "チェコは東ヨーロッパで最も寿司が普及している国の一つです。プラハを中心に多くの寿司レストランが営業しています。"
+  },
+  {
+    "question": "オーストラリア発のテイクアウトSUSHIチェーンはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "Sushi Train", "correct": true },
+      { "text": "Sushi Shop", "correct": false },
+      { "text": "Sushi Sushi", "correct": false },
+      { "text": "Sushico", "correct": false }
+    ],
+    "additionalInfo": "Sushi Trainはオーストラリア発祥のテイクアウト寿司チェーンで、現在では世界各国に展開しています。"
+  },
+  {
+    "question": "アフリカにおけるSUSHIの普及に関する説明で適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "SUSHIはまだほとんど知られていない", "correct": false },
+      { "text": "SUSHIは観光客向けに限定されている", "correct": false },
+      { "text": "SUSHIは高級料理だが、少しずつ大衆化が進んでいる", "correct": true },
+      { "text": "SUSHIは地元の料理として定着している", "correct": false }
+    ],
+    "additionalInfo": "アフリカでは寿司は高級料理として認識されていますが、経済発展とともに徐々に大衆化が進んでいます。"
+  },
+  {
+    "question": "ハモの調理で一般的に必要とされる処理はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "骨抜き", "correct": false },
+      { "text": "骨切り", "correct": true },
+      { "text": "骨引き", "correct": false },
+      { "text": "骨外し", "correct": false }
+    ],
+    "additionalInfo": "ハモは小骨が多いため、「骨切り」という細かく包丁を入れる技法で処理します。これにより食べやすくなります。"
+  },
+  {
+    "question": "江戸前寿司の代表的な寿司ネタでキュウリウオ目の魚はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マダイ", "correct": false },
+      { "text": "アナゴ", "correct": false },
+      { "text": "シラウオ", "correct": true },
+      { "text": "カスゴ", "correct": false }
+    ],
+    "additionalInfo": "シラウオはキュウリウオ目の魚で、江戸前寿司の春の代表的なネタです。透明で美しい見た目が特徴です。"
+  },
+  {
+    "question": "城下かれいとして有名なカレイはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "マコガレイ", "correct": true },
+      { "text": "アカガレイ", "correct": false },
+      { "text": "ヤナギガレイ", "correct": false },
+      { "text": "マツカワガレイ", "correct": false }
+    ],
+    "additionalInfo": "マコガレイは「城下かれい」として有名で、特に大分県の臼杵湾で獲れるものが高級品として知られています。"
+  },
+  {
+    "question": "「マイカ」とは一般的にどのイカを指すか。",
+    "image": "",
+    "answers": [
+      { "text": "ヤリイカ", "correct": false },
+      { "text": "コウイカ", "correct": false },
+      { "text": "スルメイカ", "correct": true },
+      { "text": "アオリイカ", "correct": false }
+    ],
+    "additionalInfo": "「マイカ」は一般的にスルメイカを指します。日本で最も多く消費されるイカの種類です。"
+  },
+  {
+    "question": "マスの説明として適切でないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "サケ科に属し、名に「マス」とつく魚のこと", "correct": false },
+      { "text": "日本のサケ類以外のサケ科の魚をまとめた総称", "correct": false },
+      { "text": "サケ類の陸封型のこと", "correct": false },
+      { "text": "海に降りた後のサケ類のこと", "correct": true }
+    ],
+    "additionalInfo": "マスは陸封型（海に降りずに淡水で一生を過ごす）のサケ類を指します。海に降りた後はサケと呼ばれます。"
+  },
+  {
+    "question": "食用になる二枚貝として最も大型になる寿司ネタはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "イシガキ貝", "correct": false },
+      { "text": "タイラ貝", "correct": true },
+      { "text": "ハマグリ", "correct": false },
+      { "text": "トリ貝", "correct": false }
+    ],
+    "additionalInfo": "タイラ貝（平貝）は食用になる二枚貝の中で最も大型になる種類の一つで、寿司ネタとしても人気があります。"
+  },
+  {
+    "question": "シャリの形を作る際の説明として正しくないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "握るときに力の入れ加減で形が変わる。", "correct": false },
+      { "text": "底の部分に親指と小指で力を強く入れると船底型になる。", "correct": false },
+      { "text": "底の部分に親指と小指の力をを入れずに押さえるように握ると俵型になる。", "correct": false },
+      { "text": "船底型は形が崩れやすいため、大きなネタを握る際には適さない。", "correct": true }
+    ],
+    "additionalInfo": "船底型は実際には安定した形で、大きなネタを握る際にも適しています。形が崩れやすいということはありません。"
+  },
+  {
+    "question": "右の写真の寿司ネタはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "サヨリ", "correct": false },
+      { "text": "シマアジ", "correct": true },
+      { "text": "タチウオ", "correct": false },
+      { "text": "ボラ", "correct": false }
+    ],
+    "additionalInfo": "写真はシマアジの寿司です。シマアジは高級魚として知られ、上品な味わいが特徴的です。"
+  },
+  {
+    "question": "右の写真の寿司ネタはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "スパイシーツナロール", "correct": false },
+      { "text": "ホットロール", "correct": false },
+      { "text": "フィラデルフィアロール", "correct": true },
+      { "text": "ソフトシェルロール", "correct": false }
+    ],
+    "additionalInfo": "写真はフィラデルフィアロールです。クリームチーズとサーモンを使ったアメリカ発祥の寿司ロールです。"
+  },
+  {
+    "question": "「入梅いわし」とは何と読むか。",
+    "image": "",
+    "answers": [
+      { "text": "にゅうばいいわし", "correct": false },
+      { "text": "いりばいいわし", "correct": false },
+      { "text": "にゅうめいわし", "correct": true },
+      { "text": "いりうめいわし", "correct": false }
+    ],
+    "additionalInfo": "「入梅いわし」は「にゅうめいわし」と読みます。梅雨の時期に脂がのって美味しくなるイワシのことです。"
+  },
+  {
+    "question": "富山県の特産として知られる「シロエビ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": true },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "富山県の特産品であるシロエビの旬は春（4月～6月頃）です。この時期が最も美味しいとされています。"
+  },
+  {
+    "question": "高知県の特産として知られる「さが日戻り鰹」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": true },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "「さが日戻り鰹」は秋が旬です。南下する際に脂がのって美味しくなる戻り鰹の高知県ブランドです。"
+  },
+  {
+    "question": "この中で愛知県の特産として知られる魚介はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ガザミ", "correct": false },
+      { "text": "さくらえび", "correct": false },
+      { "text": "地きんめ", "correct": false },
+      { "text": "あこ", "correct": true }
+    ],
+    "additionalInfo": "「あこ」（キジハタ）は愛知県の特産として知られる高級魚です。上品な白身が特徴的です。"
+  },
+  {
+    "question": "「あこ」とはどの魚介の別称か。",
+    "image": "",
+    "answers": [
+      { "text": "イサキ", "correct": false },
+      { "text": "タチウオ", "correct": false },
+      { "text": "トビウオ", "correct": false },
+      { "text": "ハモ", "correct": true }
+    ],
+    "additionalInfo": "「あこ」はハモの別称の一つです。関西地方でよく使われる呼び方です。"
+  },
+  {
+    "question": "大分県の特産でない魚介はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "城下かれい", "correct": false },
+      { "text": "銀たち", "correct": false },
+      { "text": "かぼすブリ", "correct": false },
+      { "text": "南蛮エビ", "correct": true }
+    ],
+    "additionalInfo": "南蛮エビは主に日本海側（新潟県など）の特産品で、大分県の特産ではありません。"
+  },
+  {
+    "question": "寿司における「ワサビ」の主な効果として最も適切なのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "辛味による食欲増進", "correct": false },
+      { "text": "殺菌効果と風味向上", "correct": true },
+      { "text": "消化促進のみ", "correct": false },
+      { "text": "口の中をさっぱりさせる", "correct": false }
+    ],
+    "additionalInfo": "ワサビは殺菌効果があり、生魚を食べる際の食中毒予防に役立ちます。また、独特の風味で寿司の味を引き立てます。"
+  },
+  {
+    "question": "江戸前寿司における「昆布締め」の効果として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "魚の水分を抜いて旨味を凝縮", "correct": true },
+      { "text": "魚を柔らかくする", "correct": false },
+      { "text": "魚の臭みを取る", "correct": false },
+      { "text": "保存期間を延ばす", "correct": false }
+    ],
+    "additionalInfo": "昆布締めは魚の水分を適度に抜き、昆布の旨味を移すことで、魚本来の旨味を凝縮させる技法です。"
+  },
+  {
+    "question": "寿司における「手酢」とは何か。",
+    "image": "",
+    "answers": [
+      { "text": "手を洗うための酢水", "correct": true },
+      { "text": "寿司に付ける酢", "correct": false },
+      { "text": "魚を締めるための酢", "correct": false },
+      { "text": "シャリに混ぜる酢", "correct": false }
+    ],
+    "additionalInfo": "手酢は寿司を握る際に手に付けるための酢水です。シャリが手に付くのを防ぎ、衛生的に握ることができます。"
+  },
+  {
+    "question": "江戸前寿司の「仕込み」で最も重要とされるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "魚の目利き", "correct": false },
+      { "text": "シャリの温度管理", "correct": true },
+      { "text": "ネタの切り方", "correct": false },
+      { "text": "握りの速さ", "correct": false }
+    ],
+    "additionalInfo": "シャリの温度管理は江戸前寿司で最も重要な要素の一つです。人肌程度の温度を保つことで最高の食感と味を実現します。"
+  },
+  {
+    "question": "寿司屋の「おあいそ」とは何を指すか。",
+    "image": "",
+    "answers": [
+      { "text": "お会計", "correct": true },
+      { "text": "お茶", "correct": false },
+      { "text": "お箸", "correct": false },
+      { "text": "お手拭き", "correct": false }
+    ],
+    "additionalInfo": "「おあいそ」は寿司屋でお会計を指す隠語です。「お愛想」が語源とされています。"
+  }
+]
+

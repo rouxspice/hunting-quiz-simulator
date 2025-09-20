@@ -1,0 +1,267 @@
+[
+  {
+    "question": "図の資料は何を示しているか。",
+    "image": "",
+    "answers": [
+      { "text": "鮨について記載された奈良時代の木簡", "correct": false },
+      { "text": "呉興鮨に関する王羲之の書", "correct": true },
+      { "text": "江南地方の刺身料理「膾食」の解説", "correct": false },
+      { "text": "朝鮮半島に伝わる辛い漬物文化", "correct": false }
+    ],
+    "additionalInfo": "呉興鮨は中国の古典的な発酵食品で、王羲之の書に記載されています。これは寿司の原型となった発酵技術の歴史を示す重要な資料です。"
+  },
+  {
+    "question": "この中で寿司店が最も多い地域はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "北京", "correct": false },
+      { "text": "天津", "correct": false },
+      { "text": "広東", "correct": true },
+      { "text": "重慶", "correct": false }
+    ],
+    "additionalInfo": "広東省は中国で最も寿司店が多い地域として知られています。経済発展と国際化により、日本料理への関心が高まっています。"
+  },
+  {
+    "question": "朝鮮半島における「シッケ」とはどんなものか。",
+    "image": "",
+    "answers": [
+      { "text": "唐辛子を使った米料理", "correct": false },
+      { "text": "酢を使った刺身料理", "correct": false },
+      { "text": "酸っぱ辛い魚料理", "correct": true },
+      { "text": "魚を発酵させた発酵調味料", "correct": false }
+    ],
+    "additionalInfo": "シッケは朝鮮半島の伝統的な発酵食品で、酸味と辛味が特徴的です。寿司の発酵技術のルーツの一つとされています。"
+  },
+  {
+    "question": "台湾の原住民族「阿美族」に伝わる「鮨」はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "明瑪瑜", "correct": false },
+      { "text": "呉興鮨", "correct": false },
+      { "text": "醃糟", "correct": false },
+      { "text": "喜格", "correct": true }
+    ],
+    "additionalInfo": "喜格は台湾原住民族阿美族に伝わる伝統的な発酵食品で、魚を発酵させて作る保存食です。"
+  },
+  {
+    "question": "「酸っぱい魚」が現在も盛んな地域はどこか。",
+    "image": "",
+    "answers": [
+      { "text": "中国北部", "correct": false },
+      { "text": "タイ東北部", "correct": true },
+      { "text": "インド西部", "correct": false },
+      { "text": "朝鮮半島南部", "correct": false }
+    ],
+    "additionalInfo": "タイ東北部（イサーン地方）では現在でも「プラーソム」という酸っぱい魚の発酵食品が日常的に食べられています。"
+  },
+  {
+    "question": "ベトナムなどで多くの店を展開している「SUSHI KING」はどの国の企業か。",
+    "image": "",
+    "answers": [
+      { "text": "ベトナム", "correct": false },
+      { "text": "日本", "correct": false },
+      { "text": "マレーシア", "correct": true },
+      { "text": "シンガポール", "correct": false }
+    ],
+    "additionalInfo": "SUSHI KINGはマレーシア発祥の回転寿司チェーンで、東南アジア各国に展開している代表的な寿司ブランドです。"
+  },
+  {
+    "question": "トルコでブドウの葉を使ったスシロールに使われた酸味はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "乳酸", "correct": false },
+      { "text": "酢酸", "correct": false },
+      { "text": "クエン酸", "correct": true },
+      { "text": "リンゴ酸", "correct": false }
+    ],
+    "additionalInfo": "トルコのブドウの葉を使ったスシロールでは、ブドウに含まれるクエン酸が酸味の主成分となっています。"
+  },
+  {
+    "question": "1900年頃のこの写真が撮影されたのはどこか。",
+    "image": "",
+    "answers": [
+      { "text": "マンハッタン", "correct": false },
+      { "text": "リトル・トーキョー", "correct": false },
+      { "text": "ロサンゼルス", "correct": false },
+      { "text": "ホノルル", "correct": true }
+    ],
+    "additionalInfo": "1900年頃のホノルルで撮影された写真で、ハワイにおける日本人移民の寿司文化の始まりを示す貴重な資料です。"
+  },
+  {
+    "question": "日本料理店「川福」などで寿司バー開設を仕掛けたのは誰か。",
+    "image": "",
+    "answers": [
+      { "text": "金井紀年", "correct": true },
+      { "text": "田中和夫", "correct": false },
+      { "text": "アレックス・ジョンソン", "correct": false },
+      { "text": "ケン・ナカムラ", "correct": false }
+    ],
+    "additionalInfo": "金井紀年氏は1960年代にアメリカで寿司バーの普及に大きく貢献した日本人料理人です。"
+  },
+  {
+    "question": "第1次SUSHIブームのきっかけになったのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "三越ハワイ店の開業", "correct": false },
+      { "text": "スシロールの開発", "correct": true },
+      { "text": "『羅府新報』での紹介", "correct": false },
+      { "text": "スシピザの普及", "correct": false }
+    ],
+    "additionalInfo": "カリフォルニアロールなどのスシロールの開発が、アメリカでの第1次SUSHIブームの大きなきっかけとなりました。"
+  },
+  {
+    "question": "第2次SUSHIブームの最も大きな要因は何か。",
+    "image": "",
+    "answers": [
+      { "text": "日本の経済成長", "correct": false },
+      { "text": "サーモンの普及", "correct": true },
+      { "text": "移民国籍法", "correct": false },
+      { "text": "テレビの料理番組", "correct": false }
+    ],
+    "additionalInfo": "ノルウェー産サーモンの普及により、生魚に慣れていない外国人にも受け入れられやすい寿司ネタが広まり、第2次ブームが起こりました。"
+  },
+  {
+    "question": "寿司の歴史において、江戸前寿司の特徴として正しいものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "発酵による保存を重視", "correct": false },
+      { "text": "生魚をそのまま使用", "correct": false },
+      { "text": "酢飯と魚の組み合わせ", "correct": false },
+      { "text": "仕事を施した魚介類の使用", "correct": true }
+    ],
+    "additionalInfo": "江戸前寿司の最大の特徴は、魚介類に「仕事」（下処理や調理）を施すことです。醤油漬け、酢締め、煮付けなどの技法が発達しました。"
+  },
+  {
+    "question": "現在の回転寿司システムの原型を考案したのは誰か。",
+    "image": "",
+    "answers": [
+      { "text": "白石義明", "correct": true },
+      { "text": "元禄太郎", "correct": false },
+      { "text": "廻る元禄寿司", "correct": false },
+      { "text": "スシロー創業者", "correct": false }
+    ],
+    "additionalInfo": "白石義明氏が1958年に大阪で「元禄寿司」を開店し、現在の回転寿司システムの原型を作り上げました。"
+  },
+  {
+    "question": "寿司における「シャリ」の語源として最も有力とされるのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "仏教用語の「舎利」", "correct": false },
+      { "text": "米粒の形状から", "correct": false },
+      { "text": "「しゃりしゃり」という食感", "correct": true },
+      { "text": "中国語の「沙粒」", "correct": false }
+    ],
+    "additionalInfo": "「シャリ」は米を噛んだ時の「しゃりしゃり」という食感から来ているという説が最も有力です。"
+  },
+  {
+    "question": "握り寿司の発祥地として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "京都", "correct": false },
+      { "text": "大阪", "correct": false },
+      { "text": "江戸（東京）", "correct": true },
+      { "text": "名古屋", "correct": false }
+    ],
+    "additionalInfo": "握り寿司は江戸時代後期の江戸（現在の東京）で誕生しました。華屋与兵衛が考案したとされています。"
+  },
+  {
+    "question": "寿司における「ガリ」の主な効果として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "口の中をさっぱりさせる", "correct": false },
+      { "text": "口直しと殺菌効果", "correct": true },
+      { "text": "食欲増進", "correct": false },
+      { "text": "消化促進のみ", "correct": false }
+    ],
+    "additionalInfo": "ガリ（生姜の酢漬け）は口直しの効果と、生姜の殺菌作用により食中毒予防の効果があります。"
+  },
+  {
+    "question": "寿司の「ネタ」という言葉の語源として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "「種」の逆読み", "correct": false },
+      { "text": "「タネ」の逆読み", "correct": true },
+      { "text": "魚の「根っこ」から", "correct": false },
+      { "text": "「ねた」という古語", "correct": false }
+    ],
+    "additionalInfo": "「ネタ」は「タネ」を逆読みした寿司業界の隠語です。寿司の材料となる魚介類を指します。"
+  },
+  {
+    "question": "江戸前寿司で使われる「煮切り醤油」の特徴として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "アルコールを飛ばした醤油", "correct": true },
+      { "text": "塩分を濃くした醤油", "correct": false },
+      { "text": "砂糖を加えた醤油", "correct": false },
+      { "text": "酢を加えた醤油", "correct": false }
+    ],
+    "additionalInfo": "煮切り醤油は醤油を煮立ててアルコール分を飛ばし、まろやかな味にした調味料です。"
+  },
+  {
+    "question": "寿司における「ヅケ」とは何を指すか。",
+    "image": "",
+    "answers": [
+      { "text": "酢で締めた魚", "correct": false },
+      { "text": "塩で締めた魚", "correct": false },
+      { "text": "醤油に漬けた魚", "correct": true },
+      { "text": "味噌に漬けた魚", "correct": false }
+    ],
+    "additionalInfo": "ヅケは魚を醤油ベースのタレに漬け込む江戸前寿司の伝統的な技法です。マグロのヅケが代表的です。"
+  },
+  {
+    "question": "寿司屋で「アガリ」と呼ばれるものは何か。",
+    "image": "",
+    "answers": [
+      { "text": "最後の一貫", "correct": false },
+      { "text": "お会計", "correct": false },
+      { "text": "お茶", "correct": false },
+      { "text": "食事の終わり", "correct": true }
+    ],
+    "additionalInfo": "「アガリ」は食事の終わりを意味する寿司屋の用語です。転じてお茶を指すこともありますが、本来は食事の締めくくりを表します。"
+  },
+  {
+    "question": "江戸前寿司の「仕事」として正しくないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "酢締め", "correct": false },
+      { "text": "醤油漬け", "correct": false },
+      { "text": "塩締め", "correct": false },
+      { "text": "生のまま使用", "correct": true }
+    ],
+    "additionalInfo": "江戸前寿司では魚介類に必ず何らかの「仕事」を施します。生のまま使用するのは江戸前の技法ではありません。"
+  },
+  {
+    "question": "寿司における「シャリ切り」とは何を指すか。",
+    "image": "",
+    "answers": [
+      { "text": "米を研ぐこと", "correct": false },
+      { "text": "酢飯を作ること", "correct": true },
+      { "text": "米を炊くこと", "correct": false },
+      { "text": "米を冷ますこと", "correct": false }
+    ],
+    "additionalInfo": "シャリ切りは炊いたご飯に酢を混ぜて酢飯（シャリ）を作る工程を指します。寿司作りの基本技術です。"
+  },
+  {
+    "question": "寿司の「ムラサキ」とは何を指すか。",
+    "image": "",
+    "answers": [
+      { "text": "紫色の海苔", "correct": false },
+      { "text": "醤油", "correct": true },
+      { "text": "紫蘇", "correct": false },
+      { "text": "ウニ", "correct": false }
+    ],
+    "additionalInfo": "「ムラサキ」は醤油を指す寿司屋の隠語です。醤油の色が紫色に見えることから名付けられました。"
+  },
+  {
+    "question": "江戸前寿司における「コハダ」の処理方法として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "生のまま使用", "correct": true },
+      { "text": "塩と酢で締める", "correct": false },
+      { "text": "醤油に漬ける", "correct": false },
+      { "text": "煮付ける", "correct": false }
+    ],
+    "additionalInfo": "コハダは塩で締めた後、酢で締める「酢締め」という技法で処理されます。江戸前寿司の代表的な仕事の一つです。"
+  }
+]
+

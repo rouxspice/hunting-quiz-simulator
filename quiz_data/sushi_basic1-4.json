@@ -1,0 +1,223 @@
+[
+  {
+    "question": "ヒラメの5枚おろしの基本的な全体の流れはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "頭と尻尾を落とす→鱗を落とす→5枚おろし→皮引き→切り付け", "correct": true },
+      { "text": "鱗を落とす→頭と尻尾を落とす→5枚おろし→切り付け", "correct": false },
+      { "text": "鱗を落とす→頭と尻尾を落とす→皮引き→5枚おろし→切り付け", "correct": false },
+      { "text": "鱗を落とす→頭と尻尾を落とす→5枚おろし→皮引き→切り付け", "correct": false }
+    ],
+    "additionalInfo": "ヒラメの5枚おろしは、まず頭と尻尾を落とし、鱗を取ってから5枚におろし、皮を引いて切り付けるのが基本的な流れです。"
+  },
+  {
+    "question": "ヒラメの頭の部分に切り込みがあるのはなぜか。",
+    "image": "",
+    "answers": [
+      { "text": "運びやすくするため", "correct": false },
+      { "text": "鱗を取りやすくするため", "correct": false },
+      { "text": "捌きやすくするため", "correct": false },
+      { "text": "血抜きをしたため", "correct": true }
+    ],
+    "additionalInfo": "ヒラメの頭部の切り込みは血抜きをした跡です。鮮度を保つための重要な処理です。"
+  },
+  {
+    "question": "鱗を落とした後に、ヒラメを5枚に下ろし始める前の流れとして正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "頭を落とす→腎臓膜に切り込みを入れる→布巾でしっかり拭く→下ろす", "correct": true },
+      { "text": "頭を落とす→腎臓膜に切り込みを入れる→血を洗い流す→下ろす", "correct": false },
+      { "text": "頭を落とす→ヒレに切り込みを入れる→中骨の真上に線を入れる→下ろす", "correct": false },
+      { "text": "頭を落とす→中骨の真上に線を入れる→ヒレに切り込みを入れる→下ろす", "correct": false }
+    ],
+    "additionalInfo": "ヒラメを下ろす前は、頭を落とし、腎臓膜に切り込みを入れ、布巾でしっかり拭いてから下ろし始めます。"
+  },
+  {
+    "question": "図のBはミル貝のどの部分か。",
+    "image": "",
+    "answers": [
+      { "text": "水管の身", "correct": false },
+      { "text": "水管の皮", "correct": true },
+      { "text": "本体の身", "correct": false },
+      { "text": "内臓", "correct": false }
+    ],
+    "additionalInfo": "図のBはミル貝の水管の皮の部分です。この部分は通常取り除いて調理します。"
+  },
+  {
+    "question": "ミル貝をさばいているこの図は何をしているところか。",
+    "image": "",
+    "answers": [
+      { "text": "形が悪いので、飾りを入れている", "correct": false },
+      { "text": "奥の方にある内臓を外している", "correct": false },
+      { "text": "細長すぎるので、開いて大きくしている", "correct": false },
+      { "text": "開いて中の汚れを取っている", "correct": true }
+    ],
+    "additionalInfo": "ミル貝をさばく際は、開いて中の汚れや砂を丁寧に取り除きます。これにより美味しく食べられます。"
+  },
+  {
+    "question": "「コンセプト設計」で決める内容として適切とはいえないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "他店にはない個性や魅力などのセールスポイント", "correct": false },
+      { "text": "ターゲットはどんな人にするか", "correct": false },
+      { "text": "どんなメニューを出すのか", "correct": false },
+      { "text": "資金調達をどうするか", "correct": true }
+    ],
+    "additionalInfo": "コンセプト設計では店の方向性を決めますが、資金調達は別の段階で検討する事項です。"
+  },
+  {
+    "question": "「事業計画」に記載する内容として、必要でないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "創業の目的", "correct": false },
+      { "text": "店のコンセプト", "correct": false },
+      { "text": "従業員の評価基準", "correct": true },
+      { "text": "予定売上高", "correct": false }
+    ],
+    "additionalInfo": "事業計画には基本的な経営方針を記載しますが、従業員の評価基準は運営開始後に詳細を決める項目です。"
+  },
+  {
+    "question": "「食品衛生責任者」に必要な資格や条件として不十分なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "5年以上の実務経験", "correct": true },
+      { "text": "栄養士の資格", "correct": false },
+      { "text": "調理師の資格", "correct": false },
+      { "text": "定められた講習会の修了", "correct": false }
+    ],
+    "additionalInfo": "食品衛生責任者には実務経験の年数制限はありません。資格や講習会修了が条件となります。"
+  },
+  {
+    "question": "図のCの部分はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "コールドテーブル", "correct": false },
+      { "text": "収納キャビネット", "correct": false },
+      { "text": "製氷機", "correct": true },
+      { "text": "移動台", "correct": false }
+    ],
+    "additionalInfo": "図のCの部分は製氷機です。寿司店では氷が重要な役割を果たします。"
+  },
+  {
+    "question": "「厨房設備」に含まれないのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ワークテーブル", "correct": false },
+      { "text": "冷凍冷蔵庫", "correct": false },
+      { "text": "舟形シンク", "correct": false },
+      { "text": "生け簀", "correct": true }
+    ],
+    "additionalInfo": "生け簀は厨房設備というより、店舗設備や特殊設備に分類されます。"
+  },
+  {
+    "question": "一般的に望ましいとされるFL比率の基準は何%以下か。",
+    "image": "",
+    "answers": [
+      { "text": "20～30%以下", "correct": false },
+      { "text": "30～40%以下", "correct": false },
+      { "text": "50～60%以下", "correct": true },
+      { "text": "70～80%以下", "correct": false }
+    ],
+    "additionalInfo": "FL比率（Food cost + Labor cost）は一般的に50～60%以下が望ましいとされています。"
+  },
+  {
+    "question": "売上100万円、食材費が30万円、人件費が30万円、家賃25万円とした場合、営業利益率は何%になるか。",
+    "image": "",
+    "answers": [
+      { "text": "5%", "correct": false },
+      { "text": "10%", "correct": false },
+      { "text": "15%", "correct": true },
+      { "text": "20%", "correct": false }
+    ],
+    "additionalInfo": "営業利益率は（売上100万円 - 食材費30万円 - 人件費30万円 - 家賃25万円）÷ 売上100万円 × 100 = 15%です。"
+  },
+  {
+    "question": "歩留まり率を上げることで、何が期待できるか。",
+    "image": "",
+    "answers": [
+      { "text": "原価率が上がる", "correct": false },
+      { "text": "粗利率が上がる", "correct": false },
+      { "text": "FL比率が上がる", "correct": true },
+      { "text": "FD比率が上がる", "correct": false }
+    ],
+    "additionalInfo": "歩留まり率を上げることで食材の無駄が減り、結果的にFL比率（食材費と人件費の合計比率）が改善されます。"
+  },
+  {
+    "question": "個人店の寿司屋における差別化戦略で最も適切なものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "大量仕入れによるコスト削減", "correct": false },
+      { "text": "ロボット化を進めて効率を上げる", "correct": false },
+      { "text": "熟成寿司などの専門性を高める", "correct": true },
+      { "text": "メニューを均一化し、標準化を図る", "correct": false }
+    ],
+    "additionalInfo": "個人店では熟成寿司などの専門性を高めることで、大手チェーンとの差別化を図ることが効果的です。"
+  },
+  {
+    "question": "ハラスメントに関する説明で間違っているものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "身体への攻撃や物を投げることはハラスメントに含まれる", "correct": false },
+      { "text": "大声で怒鳴ったり、過度な叱責をすることはハラスメントに含まれる", "correct": false },
+      { "text": "「バカ」など人格を否定する言葉はハラスメントに含まれる", "correct": false },
+      { "text": "業務上の行為の間違いを指摘することはハラスメントに含まれる", "correct": true }
+    ],
+    "additionalInfo": "業務上の適切な指導や間違いの指摘は、ハラスメントには該当しません。方法や程度が問題となります。"
+  },
+  {
+    "question": "寿司に酒を合わせるポイントとして、間違っているものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "生臭くならない酒を選ぶ", "correct": false },
+      { "text": "濃い味付けの料理には、軽い味わいの酒を選ぶ", "correct": true },
+      { "text": "同調する要素を持つ酒を選ぶ", "correct": false },
+      { "text": "魚介の生臭さをマスキングする酒を選ぶ", "correct": false }
+    ],
+    "additionalInfo": "濃い味付けの料理には、それに負けない濃い味わいの酒を合わせるのが基本です。"
+  },
+  {
+    "question": "日本酒の「熟成タイプ」に合うとされる寿司ネタはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ツブ貝", "correct": false },
+      { "text": "タコ", "correct": false },
+      { "text": "トロ", "correct": true },
+      { "text": "エビ", "correct": false }
+    ],
+    "additionalInfo": "熟成タイプの日本酒は濃厚な味わいなので、脂ののったトロなどの濃厚なネタによく合います。"
+  },
+  {
+    "question": "この中で酒と合わせた時に最も生臭くなりやすい寿司ネタはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "シャコ", "correct": false },
+      { "text": "サーモン", "correct": true },
+      { "text": "カレイ", "correct": false },
+      { "text": "シラウオ", "correct": false }
+    ],
+    "additionalInfo": "サーモンは脂分が多く、酒と合わせた時に生臭さが強調されやすいネタです。"
+  },
+  {
+    "question": "寿司職人として最も大切な心構えはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "常にお客様の立場に立って考える", "correct": true },
+      { "text": "伝統的な技法を厳格に守る", "correct": false },
+      { "text": "効率的な作業を心がける", "correct": false },
+      { "text": "新しい技術を積極的に取り入れる", "correct": false }
+    ],
+    "additionalInfo": "寿司職人として最も大切なのは、常にお客様の立場に立って、最高のおもてなしを提供することです。"
+  },
+  {
+    "question": "江戸前寿司の真髄として正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "新鮮な魚をそのまま使用すること", "correct": false },
+      { "text": "季節感を大切にした仕事を施すこと", "correct": true },
+      { "text": "大きなネタで満足感を提供すること", "correct": false },
+      { "text": "珍しい魚介類を使用すること", "correct": false }
+    ],
+    "additionalInfo": "江戸前寿司の真髄は、季節に応じて魚介類に適切な「仕事」を施し、最高の状態で提供することです。"
+  }
+]
+

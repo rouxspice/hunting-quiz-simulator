@@ -1,0 +1,278 @@
+[
+  {
+    "question": "この写真の魚はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "ムツゴロウ", "correct": false },
+      { "text": "タカベ", "correct": false },
+      { "text": "オキイサキ", "correct": false },
+      { "text": "ヨコスジフエダイ", "correct": true }
+    ],
+    "additionalInfo": "写真はヨコスジフエダイです。沖縄などの南方系の魚で、美しい縞模様が特徴的です。"
+  },
+  {
+    "question": "クエは何科の魚介か。",
+    "image": "",
+    "answers": [
+      { "text": "ホウボウ科", "correct": false },
+      { "text": "タイ科", "correct": false },
+      { "text": "アジ科", "correct": false },
+      { "text": "ハタ科", "correct": true }
+    ],
+    "additionalInfo": "クエはハタ科の魚です。高級魚として知られ、特に和歌山県などで珍重されています。"
+  },
+  {
+    "question": "福岡の「天然マダイ」の旬はいつか。",
+    "image": "",
+    "answers": [
+      { "text": "春", "correct": true },
+      { "text": "夏", "correct": false },
+      { "text": "秋", "correct": false },
+      { "text": "冬", "correct": false }
+    ],
+    "additionalInfo": "福岡の天然マダイの旬は春です。桜の季節と重なることから「桜鯛」とも呼ばれます。"
+  },
+  {
+    "question": "「オキイサキ」の正式名称はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "ツクシトビウオ", "correct": false },
+      { "text": "サッパ", "correct": false },
+      { "text": "ヨコスジフエダイ", "correct": true },
+      { "text": "ナンヨウブダイ", "correct": false }
+    ],
+    "additionalInfo": "オキイサキの正式名称はヨコスジフエダイです。沖縄地方でよく食べられる魚です。"
+  },
+  {
+    "question": "滋賀県の「ふなずし」で使用されるフナはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "オオキンブナ", "correct": false },
+      { "text": "ニゴロブナ", "correct": true },
+      { "text": "ゲンゴロウブナ", "correct": false },
+      { "text": "ギンブナ", "correct": false }
+    ],
+    "additionalInfo": "滋賀県のふなずしには主にニゴロブナが使用されます。琵琶湖固有の魚で、発酵寿司の代表格です。"
+  },
+  {
+    "question": "鮎の別称は何と言うか。",
+    "image": "",
+    "answers": [
+      { "text": "春魚", "correct": false },
+      { "text": "瓜魚", "correct": false },
+      { "text": "涼魚", "correct": false },
+      { "text": "香魚", "correct": true }
+    ],
+    "additionalInfo": "鮎の別称は「香魚」です。独特の香りがあることから名付けられました。"
+  },
+  {
+    "question": "鳥取県・賀露神社の祭りで振る舞われる寿司はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "かます寿司", "correct": false },
+      { "text": "しろはた寿司", "correct": false },
+      { "text": "めはりずし", "correct": false },
+      { "text": "うずめ寿司", "correct": true }
+    ],
+    "additionalInfo": "鳥取県賀露神社の祭りでは「うずめ寿司」が振る舞われます。地域の伝統的な祭り寿司です。"
+  },
+  {
+    "question": "岡山県の「こうこずし」で主に使用される魚介はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "マグロ", "correct": false },
+      { "text": "カツオ", "correct": false },
+      { "text": "サッパ", "correct": true },
+      { "text": "サワラ", "correct": false }
+    ],
+    "additionalInfo": "岡山県の「こうこずし」では主にサッパ（ママカリ）が使用されます。岡山の郷土料理として親しまれています。"
+  },
+  {
+    "question": "おからとイワシ、またはアジを使った郷土寿司はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "松山鮨", "correct": false },
+      { "text": "岩国寿司", "correct": false },
+      { "text": "唐ずし", "correct": true },
+      { "text": "ままかりずし", "correct": false }
+    ],
+    "additionalInfo": "「唐ずし」はおからとイワシやアジを使った郷土寿司です。経済的で栄養価の高い庶民の寿司として親しまれました。"
+  },
+  {
+    "question": "大分県の「おかずし」でアジと一緒に混ぜるのはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "四方竹", "correct": true },
+      { "text": "甘く煮たうずら豆", "correct": false },
+      { "text": "豆腐を二度揚げした大きな油揚げ", "correct": false },
+      { "text": "酢で味を付けたおから", "correct": false }
+    ],
+    "additionalInfo": "大分県の「おかずし」では、アジと一緒に四方竹を混ぜます。四方竹は大分県の特産品です。"
+  },
+  {
+    "question": "勝ち戦の祝いの寿司として作ったことが起源とされるのはどの郷土寿司か。",
+    "image": "",
+    "answers": [
+      { "text": "須古寿司", "correct": true },
+      { "text": "大村ずし", "correct": false },
+      { "text": "もぶり鮨", "correct": false },
+      { "text": "酒ずし", "correct": false }
+    ],
+    "additionalInfo": "須古寿司は勝ち戦の祝いの寿司として作られたことが起源とされています。佐賀県の郷土料理です。"
+  },
+  {
+    "question": "「南関あげ巻き寿司」はどこの郷土寿司か。",
+    "image": "",
+    "answers": [
+      { "text": "愛媛県", "correct": false },
+      { "text": "島根県", "correct": false },
+      { "text": "長崎県", "correct": false },
+      { "text": "熊本県", "correct": true }
+    ],
+    "additionalInfo": "「南関あげ巻き寿司」は熊本県の郷土寿司です。南関町の特産品である薄い油揚げを使用します。"
+  },
+  {
+    "question": "「酒ずし」とはどこの郷土寿司か。",
+    "image": "",
+    "answers": [
+      { "text": "鹿児島県", "correct": true },
+      { "text": "鳥取県", "correct": false },
+      { "text": "福岡県", "correct": false },
+      { "text": "宮崎県", "correct": false }
+    ],
+    "additionalInfo": "「酒ずし」は鹿児島県の郷土寿司です。酒を使って作る独特の風味が特徴的です。"
+  },
+  {
+    "question": "徳島県の郷土寿司に使われるこの写真の魚介はなにか。",
+    "image": "",
+    "answers": [
+      { "text": "アカアマダイ", "correct": false },
+      { "text": "イボダイ", "correct": false },
+      { "text": "イシダイ", "correct": false },
+      { "text": "イラブチャー", "correct": true }
+    ],
+    "additionalInfo": "写真はイラブチャー（ブダイ）です。徳島県などの郷土寿司に使用される魚です。"
+  },
+  {
+    "question": "この写真の広島県の郷土寿司を何というか。",
+    "image": "",
+    "answers": [
+      { "text": "あずま", "correct": false },
+      { "text": "イワシ丸ずし", "correct": false },
+      { "text": "須古ずし", "correct": false },
+      { "text": "田舎ずし", "correct": true }
+    ],
+    "additionalInfo": "写真は広島県の「田舎ずし」です。野菜を多く使った素朴な郷土寿司です。"
+  },
+  {
+    "question": "おいしさの構成要素の中心「基本味」に含まれないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "うま味", "correct": false },
+      { "text": "辛味", "correct": true },
+      { "text": "甘味", "correct": false },
+      { "text": "塩味", "correct": false }
+    ],
+    "additionalInfo": "基本味は甘味、塩味、酸味、苦味、うま味の5つです。辛味は基本味には含まれません。"
+  },
+  {
+    "question": "「おいしさ」とはなにか。",
+    "image": "",
+    "answers": [
+      { "text": "基本味に補助味を加えたもの", "correct": false },
+      { "text": "味覚に嗅覚を加えたもの", "correct": false },
+      { "text": "味覚を含む五感で感じる食べた時の味わい", "correct": true },
+      { "text": "五感とそれ以外の要素を加味した結果、得られる体験", "correct": false }
+    ],
+    "additionalInfo": "おいしさは味覚だけでなく、視覚、嗅覚、聴覚、触覚の五感すべてで感じる総合的な体験です。"
+  },
+  {
+    "question": "「塩をかけるとスイカの甘味が引き立つ」のは次のどの効果によるものか。",
+    "image": "",
+    "answers": [
+      { "text": "味の相乗効果", "correct": false },
+      { "text": "味の抑制効果", "correct": false },
+      { "text": "味の対比効果", "correct": true },
+      { "text": "味の促進効果", "correct": false }
+    ],
+    "additionalInfo": "塩をかけることでスイカの甘味が引き立つのは「味の対比効果」によるものです。異なる味が互いを引き立て合います。"
+  },
+  {
+    "question": "後味が短い特性があるものは次のうちどれか。",
+    "image": "",
+    "answers": [
+      { "text": "うま味", "correct": true },
+      { "text": "酸味", "correct": false },
+      { "text": "渋味", "correct": false },
+      { "text": "辛味", "correct": false }
+    ],
+    "additionalInfo": "うま味は後味が短い特性があります。これにより、次の料理の味を邪魔しません。"
+  },
+  {
+    "question": "図のAの部分は何というか。",
+    "image": "",
+    "answers": [
+      { "text": "舌下腺", "correct": false },
+      { "text": "舌苔", "correct": true },
+      { "text": "味蕾", "correct": false },
+      { "text": "喉頭蓋", "correct": false }
+    ],
+    "additionalInfo": "図のAの部分は舌苔（ぜったい）です。舌の表面にある細かい突起で、味蕾が分布しています。"
+  },
+  {
+    "question": "会席料理や懐石料理などにおけるお造り（刺身）のことを何というか。",
+    "image": "",
+    "answers": [
+      { "text": "前付", "correct": false },
+      { "text": "先付", "correct": false },
+      { "text": "向付", "correct": true },
+      { "text": "奥付", "correct": false }
+    ],
+    "additionalInfo": "会席料理や懐石料理では、お造り（刺身）を「向付」と呼びます。客に向けて出すことから名付けられました。"
+  },
+  {
+    "question": "会席料理の基本的な流れで「椀物」に続くのはどの料理か。",
+    "image": "",
+    "answers": [
+      { "text": "煮物", "correct": false },
+      { "text": "揚げ物", "correct": false },
+      { "text": "蒸し物", "correct": false },
+      { "text": "向付", "correct": true }
+    ],
+    "additionalInfo": "会席料理では椀物の後に向付（お造り）が続きます。これが基本的な流れです。"
+  },
+  {
+    "question": "和食での調理法「五法」に含まれないものはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "煮る", "correct": false },
+      { "text": "炒める", "correct": true },
+      { "text": "揚げる", "correct": false },
+      { "text": "蒸す", "correct": false }
+    ],
+    "additionalInfo": "和食の五法は「煮る、焼く、蒸す、揚げる、生」です。炒めるは含まれません。"
+  },
+  {
+    "question": "和食で大事にされる「五色」の組み合わせとして正しいのはどれか。",
+    "image": "",
+    "answers": [
+      { "text": "赤、黄、青、紫、白", "correct": false },
+      { "text": "赤、黄、緑、紫、青", "correct": false },
+      { "text": "赤、黄、茶、白、黒", "correct": true },
+      { "text": "赤、黄、緑、白、黒", "correct": false }
+    ],
+    "additionalInfo": "和食の五色は「赤、黄、茶、白、黒」です。これらの色を組み合わせることで美しい盛り付けを実現します。"
+  },
+  {
+    "question": "コハダをさばく際に最初に行う作業はどれか。",
+    "image": "",
+    "answers": [
+      { "text": "背びれを落とす", "correct": true },
+      { "text": "内臓を取り出す", "correct": false },
+      { "text": "頭を落とす", "correct": false },
+      { "text": "鱗を取る", "correct": false }
+    ],
+    "additionalInfo": "コハダをさばく際は、まず背びれを落とします。これにより作業がしやすくなります。"
+  }
+]
+
