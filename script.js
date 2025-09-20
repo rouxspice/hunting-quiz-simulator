@@ -1,5 +1,5 @@
 // ===================================================================
-// ★★★ script.js (鳥獣名フィードバック機能追加・決定版) ★★★
+// ★★★ script.js (全クイズ開始バグ修正・完全版) ★★★
 // ===================================================================
 window.onload = () => {
 
@@ -145,14 +145,20 @@ window.onload = () => {
         
         if (quizOptionsContainer) {
             quizOptionsContainer.addEventListener('click', (event) => {
-                const button = event.target.closest('.challenge-btn-sushi');
+                const button = event.target.closest('.challenge-btn, .challenge-btn-sushi');
                 if (!button) return;
+
                 const quizCard = button.closest('.quiz-card');
                 if (!quizCard) return;
+
                 const quizCategoryKey = quizCard.dataset.quizCategory;
                 const selectedMode = button.dataset.mode || 'all';
-                if (quizCategoryKey === 'choujuu') startChoujuuQuiz();
-                else startNormalQuiz(quizCategoryKey, selectedMode);
+
+                if (quizCategoryKey === 'choujuu') {
+                    startChoujuuQuiz();
+                } else {
+                    startNormalQuiz(quizCategoryKey, selectedMode);
+                }
             });
         }
 
@@ -215,7 +221,6 @@ window.onload = () => {
             });
         }
 
-        // ★★★ ここからが修正箇所 ★★★
         if (choujuuStep1) {
             choujuuStep1.addEventListener('click', (e) => {
                 if (!e.target.matches('.choujuu-choice-btn')) return;
@@ -228,12 +233,10 @@ window.onload = () => {
                 const isCorrect = (choice === 'no') ? !question.isHuntable : question.isHuntable;
 
                 if (isCorrect) {
-                    // 「獲れません」が正解の場合のみ、スコアを加算
+                    playSound(correctSound);
                     if (choice === 'no') { 
-                        playSound(correctSound); 
                         score++; 
                     }
-                    // 「獲れます」が正解の場合は、次のステップに進むので、ここでは音もスコアも処理しない
                 } else {
                     playSound(wrongSound);
                     wrongQuestions.push({ question: `この鳥獣は「${question.name}」です。捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' });
@@ -245,17 +248,13 @@ window.onload = () => {
                 setTimeout(() => {
                     if (isCorrect) {
                         if (choice === 'yes') {
-                            // 「獲れます」が正解 → 次のステップ（名前当て）へ
                             choujuuStep1.style.display = 'none';
                             choujuuStep2.style.display = 'block';
                             setupNameSelection(question);
                         } else {
-                            // 「獲れません」が正解 → フィードバック表示
-                            // ★★★ ここで鳥獣の名前を含んだメッセージを生成 ★★★
                             showChoujuuFeedback(true, `正解！「${question.name}」は非狩猟鳥獣のため、捕獲できません。`);
                         }
                     } else {
-                        // 不正解の場合のフィードバック
                         let feedbackMessage = (choice === 'yes') 
                             ? `不正解。「${question.name}」は非狩猟鳥獣のため、捕獲できません。`
                             : `不正解。この鳥獣は「${question.name}」といい、狩猟対象です。`;
@@ -264,7 +263,6 @@ window.onload = () => {
                 }, 500);
             });
         }
-        // ★★★ ここまでが修正箇所 ★★★
     }
     // --- クイズ開始ロジック ---
     async function startQuiz(categoryKey, mode, startFunction) {
@@ -389,7 +387,7 @@ window.onload = () => {
             const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
             const progressBarEl = document.getElementById('normal-quiz-progress-bar');
             const progressTextEl = document.getElementById('normal-quiz-progress-text');
-            if(progressBarEl) progressBarEl.style.width = `${percentage}%`;
+            if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
             if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         }
         resetNormalState();
