@@ -1,0 +1,387 @@
+[
+    {
+        "question": "味覚を構成する「五つの基本味」に含まれないものは、次のうちどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "甘味", "correct": false },
+            { "text": "酸味", "correct": false },
+            { "text": "辛味", "correct": true },
+            { "text": "苦味", "correct": false }
+        ],
+        "additionalInfo": "味覚の基本は「甘味」「塩味」「酸味」「苦味」「うま味」の5つです。「辛味」は痛覚に近い感覚とされ、基本味には含まれません。"
+    },
+    {
+        "question": "「味覚」と「風味」の違いについて、より包括的な感覚を示すのはどちらでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "味覚", "correct": false },
+            { "text": "風味", "correct": true },
+            { "text": "両者は同じ意味である", "correct": false },
+            { "text": "どちらでもない", "correct": false }
+        ],
+        "additionalInfo": "「風味」は、味覚に食感や匂いなどの様々な要素が加わって感じる総合的な感覚です。つまり、「味覚」は「風味」を構成する要素の一つと言えます。"
+    },
+    {
+        "question": "様々な酸の中で、お酢の主成分であり「作られた酸」に分類されるものはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "クエン酸", "correct": false },
+            { "text": "リンゴ酸", "correct": false },
+            { "text": "酒石酸", "correct": false },
+            { "text": "酢酸", "correct": true }
+        ],
+        "additionalInfo": "酢酸は、お酢の主成分であり「作られた酸」に分類されます。クエン酸（レモン）、リンゴ酸（リンゴ）、酒石酸（ブドウ）は「果実に含まれる酸」です。"
+    },
+    {
+        "question": "「酸っぱい味」を構成する要素として、「作られた酸」と「果物に含まれる酸」の他に、もう一つ挙げられるものは何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "発酵による酸（乳酸など）", "correct": true },
+            { "text": "熟成による酸（アミノ酸など）", "correct": false },
+            { "text": "香辛料による酸（辛味成分など）", "correct": false },
+            { "text": "脂肪による酸（脂肪酸など）", "correct": false }
+        ],
+        "additionalInfo": "酸っぱい味は、「作られた酸（酢酸など）」「果物に含まれる酸（クエン酸など）」、そして「発酵（なれずしに含まれる乳酸など）」の3つに大別されます。"
+    },
+    {
+        "question": "酸味が持つ、食材の味覚受容細胞の感度を高める働きを特に何と呼ぶでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "調味", "correct": false },
+            { "text": "味つけ", "correct": false },
+            { "text": "下ごしらえ", "correct": false },
+            { "text": "味しめ", "correct": true }
+        ],
+        "additionalInfo": "酸味には、食材に味をしみこませる「味つけ」の他に、味覚受容細胞の感度を高める「味しめ」という重要な働きがあります。"
+    },
+    {
+        "question": "寿司職人が「酸味」のコントロールを重要視する理由として、最も適切なものはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "酸味が腐敗を防ぐ唯一の方法だから", "correct": false },
+            { "text": "酸味が五つの基本味の中で最も重要だから", "correct": false },
+            { "text": "複数の酸が複雑に味を構成しているから", "correct": true },
+            { "text": "酸味がないと寿司とは呼べないから", "correct": false }
+        ],
+        "additionalInfo": "寿司の酸味は、酢酸、乳酸、クエン酸など複数の酸が複雑に絡み合って構成されています。この複合的な味を理解し、コントロールすることが、美味しい寿司を作る上で重要です。"
+    },
+    {
+        "question": "「うま味」の正体である、グルタミン酸やイノシン酸などを総称して何と呼ぶでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "有機酸", "correct": false },
+            { "text": "アミノ酸", "correct": true },
+            { "text": "脂肪酸", "correct": false },
+            { "text": "核酸", "correct": false }
+        ],
+        "additionalInfo": "うま味の主成分は、昆布に含まれるグルタミン酸や、魚介類に含まれるイノシン酸などのアミノ酸です。"
+    },
+    {
+        "question": "寿司を深く知る上で、魚介そのもの以外に特に重要とされる2つの仕組みは何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "「冷凍」と「解凍」", "correct": false },
+            { "text": "「発酵」と「熟成」", "correct": true },
+            { "text": "「調味」と「加熱」", "correct": false },
+            { "text": "「酸味」と「甘味」", "correct": false }
+        ],
+        "additionalInfo": "寿司の奥深さは、魚介だけでなく、米や酢の成り立ち、そして味を豊かにする「発酵」や「熟成」といった科学的な仕組みを理解することで、より一層深まります。"
+    },
+    {
+        "question": "なれずしやヨーグルトの酸味の主成分である「乳酸」。これは次のどの酸に分類されるでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "酢酸", "correct": false },
+            { "text": "有機酸", "correct": true },
+            { "text": "クエン酸", "correct": false },
+            { "text": "リンゴ酸", "correct": false }
+        ],
+        "additionalInfo": "乳酸は、乳酸菌による発酵で作られる「有機酸」の一種です。同じく有機酸には、レモンなどに含まれるクエン酸や、リンゴに含まれるリンゴ酸などがあります。"
+    },
+    {
+        "question": "一般的な食品の中で、pH値が最も低い（酸性度が最も高い）とされるものは次のうちどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "レモン", "correct": true },
+            { "text": "米酢", "correct": false },
+            { "text": "ヨーグルト", "correct": false },
+            { "text": "醤油", "correct": false }
+        ],
+        "additionalInfo": "レモンのpH値は約2.3と非常に低く、強い酸性を示します。ちなみに米酢は約2.8、ヨーグルトは約4.0です。"
+    },
+    {
+        "question": "微生物が作り出す「発酵」と「腐敗」。この二つの現象を区別する基準は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "関与する微生物の種類", "correct": false },
+            { "text": "発生する匂いの種類", "correct": false },
+            { "text": "人間にとって有益か有害か", "correct": true },
+            { "text": "反応が起きる温度", "correct": false }
+        ],
+        "additionalInfo": "「発酵」も「腐敗」も、微生物が物質を分解する同じ化学現象です。その結果生み出されたものが、人間にとって有益であれば「発酵」、有害であれば「腐敗」と呼ばれます。"
+    },
+    {
+        "question": "pH（ピーエイチ／ペーハー）は酸性・アルカリ性の度合いを示す単位です。pHが「7」の状態を何と呼ぶでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "弱酸性", "correct": false },
+            { "text": "弱アルカリ性", "correct": false },
+            { "text": "中性", "correct": true },
+            { "text": "無性", "correct": false }
+        ],
+        "additionalInfo": "pHは1～14の範囲で示され、7が「中性」です。7より小さいと「酸性」、大きいと「アルカリ性」となります。"
+    },
+    {
+        "question": "「動物性乳酸菌」が、チーズやヨーグルトなど栄養価の高い食品に多く見られる理由は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "動物の体内でしか増殖できないため", "correct": false },
+            { "text": "栄養価が低い環境では生きていけないため", "correct": true },
+            { "text": "低温環境を好む性質があるため", "correct": false },
+            { "text": "植物性乳酸菌よりも発酵力が強いため", "correct": false }
+        ],
+        "additionalInfo": "動物性乳酸菌は、植物性乳酸菌と比べて過酷な環境に弱く、栄養価の高い環境でないと生きていけないため、乳製品などに多く見られます。"
+    },
+    {
+        "question": "お酢を作る「酢酸発酵」のプロセスで、酢酸菌がアルコールを変化させて作り出すものは何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "糖分", "correct": false },
+            { "text": "酢酸", "correct": true },
+            { "text": "乳酸", "correct": false },
+            { "text": "クエン酸", "correct": false }
+        ],
+        "additionalInfo": "お酢作りでは、まず酵母菌が糖をアルコールに変え（アルコール発酵）、次に酢酸菌がそのアルコールを酢酸に変えます（酢酸発酵）。"
+    },
+    {
+        "question": "醤油や味噌、なれずしなどに含まれる乳酸菌は、主に何に分類されるでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "動物性乳酸菌", "correct": false },
+            { "text": "植物性乳酸菌", "correct": true },
+            { "text": "酵母菌", "correct": false },
+            { "text": "麹菌", "correct": false }
+        ],
+        "additionalInfo": "醤油や味噌、なれずし、漬物などに含まれるのは「植物性乳酸菌」です。一方、チーズやヨーグルトに含まれるのは「動物性乳酸菌」です。"
+    },
+    {
+        "question": "ブドウや果実から酢を造る場合、米の酢と違って「糖化」の工程が必要ないのはなぜでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "果実に含まれる酵母菌が糖化の役割を果たすから", "correct": false },
+            { "text": "果実には元々アルコール発酵の元となる糖分が含まれているから", "correct": true },
+            { "text": "果実の酸がデンプンを分解するから", "correct": false },
+            { "text": "果実にはデンプンが含まれていないから", "correct": false }
+        ],
+        "additionalInfo": "米から酢を造るにはデンプンを糖に変える「糖化」が必要ですが、ブドウなどの果実には元々糖分が含まれているため、この工程を省略できます。"
+    },
+    {
+        "question": "人の手によって有益な微生物を働かせることを「発酵」と呼びますが、有害な物質が作られてしまう現象を何と呼ぶでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "変質", "correct": false },
+            { "text": "分解", "correct": false },
+            { "text": "酸化", "correct": false },
+            { "text": "腐敗", "correct": true }
+        ],
+        "additionalInfo": "微生物の働きによって、人間にとって有益なものができれば「発酵」、有害なものができれば「腐敗」と呼ばれます。化学的には同じ現象です。"
+    },
+    {
+        "question": "「なれずし」は発酵食品ですが、その発酵に直接関与しない菌は次のうちどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "乳酸菌", "correct": false },
+            { "text": "麹菌（酵素を出す）", "correct": false },
+            { "text": "酵母菌", "correct": false },
+            { "text": "酢酸菌", "correct": true }
+        ],
+        "additionalInfo": "なれずしは、米のデンプンが酵素で糖に分解され、その糖を乳酸菌が利用して乳酸発酵を起こします。酢酸菌は、お酢を作る際に活躍する菌です。"
+    },
+    {
+        "question": "ブドウの皮などに自然に存在し、ワイン作りなどで利用される酵母菌を特に何と呼ぶでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "天然酵母", "correct": false },
+            { "text": "野生酵母", "correct": true },
+            { "text": "果実酵母", "correct": false },
+            { "text": "ブドウ酵母", "correct": false }
+        ],
+        "additionalInfo": "人の手が加わっていない、自然界に存在する酵母のことを「野生酵母」と呼びます。ワインや日本酒造りなどで重要な役割を果たします。"
+    },
+    {
+        "question": "様々な食酢の中で、アミノ酸の含有量が最も多く、豊かなコクと旨味を持つとされるのはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "米酢", "correct": false },
+            { "text": "穀物酢", "correct": false },
+            { "text": "粕酢（赤酢）", "correct": true },
+            { "text": "りんご酢", "correct": false }
+        ],
+        "additionalInfo": "酒粕を原料とする「粕酢（赤酢）」は、アミノ酸の含有量が特に豊富で、これが江戸前寿司で伝統的に使われてきた理由の一つです。"
+    },
+    {
+        "question": "食酢の持つ「保存性の向上」効果は、どのような仕組みによるものでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "食品の水分を奪うため", "correct": false },
+            { "text": "食品のpH値を下げ、微生物の増殖を抑えるため", "correct": true },
+            { "text": "食品の表面に膜を張るため", "correct": false },
+            { "text": "食品のタンパク質を固めるため", "correct": false }
+        ],
+        "additionalInfo": "多くの微生物は中性付近の環境を好みます。食酢を加えることで食品のpH値が下がり（酸性になり）、微生物の増殖を抑えることで保存性が高まります。"
+    },
+    {
+        "question": "様々な酸の中で、ワインやブドウに含まれ、少し渋みのある酸っぱい味を特徴とするのはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "クエン酸", "correct": false },
+            { "text": "酒石酸", "correct": true },
+            { "text": "酢酸", "correct": false },
+            { "text": "乳酸", "correct": false }
+        ],
+        "additionalInfo": "酒石酸はブドウやワインに多く含まれる有機酸で、少し渋みを伴う酸味が特徴です。"
+    },
+    {
+        "question": "一般的な穀物酢と米酢を比較した際、総アミノ酸の含有量が多いのはどちらでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "米酢", "correct": true },
+            { "text": "穀物酢", "correct": false },
+            { "text": "ほぼ同じ", "correct": false },
+            { "text": "比較できない", "correct": false }
+        ],
+        "additionalInfo": "一般的な米酢の総アミノ酸含有量は約90mg%であるのに対し、穀物酢は約60mg%です。そのため、米酢の方がアミノ酸が豊富と言えます。"
+    },
+    {
+        "question": "食酢の働きの一つである「減塩効果」。これはどのような仕組みによるものでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "酢が塩分を分解するため", "correct": false },
+            { "text": "酢の酸味が塩味を引き立て、少ない塩分でも満足感を得られるため", "correct": true },
+            { "text": "酢が味覚を麻痺させるため", "correct": false },
+            { "text": "酢が体内の塩分排出を促すため", "correct": false }
+        ],
+        "additionalInfo": "酢の持つ酸味やうま味は、料理の味の輪郭をはっきりとさせ、塩味を強く感じさせる効果があります。そのため、少ない塩分でも満足感を得られ、減塩につながります。"
+    },
+    {
+        "question": "黒酢の味わいの特徴として、最も適切なものはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "すっきりとしてキレがある", "correct": false },
+            { "text": "フルーティーで爽やか", "correct": false },
+            { "text": "アミノ酸と糖分が豊富で、コクがある", "correct": true },
+            { "text": "ツンとした刺激的な香りが強い", "correct": false }
+        ],
+        "additionalInfo": "黒酢は、他の酢に比べてアミノ酸と糖分が豊富に含まれているため、独特の香りとまろやかでコクのある味わいが特徴です。"
+    },
+    {
+        "question": "「なれずし」の保存性は、主に何という作用によって保たれているでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "酢酸による殺菌作用", "correct": false },
+            { "text": "乳酸による静菌作用", "correct": true },
+            { "text": "アミノ酸による酸化防止作用", "correct": false },
+            { "text": "塩分による脱水作用", "correct": false }
+        ],
+        "additionalInfo": "なれずしは、乳酸菌が作り出す乳酸によってpHが下がり、他の雑菌の繁殖が抑えられる（静菌作用）ことで保存性が高まります。「殺菌」ではなく「静菌」である点がポイントです。"
+    },
+    {
+        "question": "レモンやミカンなどの柑橘類に多く含まれ、爽やかな酸味を特徴とする酸は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "クエン酸", "correct": true },
+            { "text": "乳酸", "correct": false },
+            { "text": "酢酸", "correct": false },
+            { "text": "酒石酸", "correct": false }
+        ],
+        "additionalInfo": "クエン酸は柑橘類や梅干しなどに含まれる代表的な有機酸で、爽快な酸味が特徴です。疲労回復効果もあるとされています。"
+    },
+    {
+        "question": "一般的なりんご酢の炭水化物含有量として、最も近い値はどれでしょう？（100gあたり）",
+        "image": "",
+        "answers": [
+            { "text": "8.1g", "correct": false },
+            { "text": "5.7g", "correct": false },
+            { "text": "4.1g", "correct": false },
+            { "text": "2.4g", "correct": true }
+        ],
+        "additionalInfo": "文部科学省の食品成分データベースによると、りんご酢の炭水化物含有量は100gあたり約2.4gです。米酢(約3.7g)や黒酢(約5.7g)に比べると低めです。"
+    },
+    {
+        "question": "「熟成」と「発酵」の根本的な違いは何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "熟成はタンパク質、発酵は糖質を分解する", "correct": false },
+            { "text": "熟成は食材自身の酵素、発酵は微生物の働きによる", "correct": true },
+            { "text": "熟成はうま味、発酵は酸味を生み出す", "correct": false },
+            { "text": "熟成は好気性、発酵は嫌気性の環境で行われる", "correct": false }
+        ],
+        "additionalInfo": "「熟成」は食材が持つ自身の酵素の働きでタンパク質などが分解されるプロセスです。一方、「発酵」は微生物の働きによって新たな成分が生み出されるプロセスです。"
+    },
+    {
+        "question": "魚を熟成させる主な目的として、最も適切なものはどれでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "魚の保存期間を延ばすこと", "correct": false },
+            { "text": "魚の食感を柔らかくすること", "correct": false },
+            { "text": "食材のうま味を引き出す、または食感を向上させること", "correct": true },
+            { "text": "魚の余分な水分を抜くこと", "correct": false }
+        ],
+        "additionalInfo": "熟成の主な目的は、食材が持つ酵素の働きによってタンパク質などを分解し、うま味成分であるアミノ酸を増やしたり、食感を向上させたりすることです。"
+    },
+    {
+        "question": "魚の死後、うま味成分である「イノシン酸」に変化する前の物質は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "グルタミン酸", "correct": false },
+            { "text": "アデノシン三リン酸（ATP）", "correct": true },
+            { "text": "グリコーゲン", "correct": false },
+            { "text": "ヒポキサンチン", "correct": false }
+        ],
+        "additionalInfo": "魚の死後、エネルギー源であるアデノシン三リン酸（ATP）が分解される過程で、うま味成分の「イノシン酸」が生成されます。"
+    },
+    {
+        "question": "魚の熟成が進みすぎると、うま味成分であるイノシン酸が分解されて生成される、苦味や酸味の原因となる物質は何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "ヒスタミン", "correct": false },
+            { "text": "トリメチルアミン", "correct": false },
+            { "text": "ヒポキサンチン", "correct": true },
+            { "text": "アンモニア", "correct": false }
+        ],
+        "additionalInfo": "熟成時間が長すぎると、うま味成分のイノシン酸がさらに分解され、苦味や酸味を持つ「ヒポキサンチン」に変化してしまいます。これが熟成の見極めが難しい理由の一つです。"
+    },
+    {
+        "question": "魚の熟成方法の一つ「乾燥熟成（ドライエイジング）」のデメリットとして挙げられているものは何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "うま味や風味が凝縮されにくい", "correct": false },
+            { "text": "ドリップが多く出てしまう", "correct": false },
+            { "text": "温度や湿度の適切な管理が必要", "correct": true },
+            { "text": "可食部が減らない", "correct": false }
+        ],
+        "additionalInfo": "乾燥熟成は、風味が凝縮される一方、乾燥によって可食部が減る、ドリップが少ない代わりに温度や湿度の厳密な管理が必要、といったデメリットがあります。"
+    },
+    {
+        "question": "魚の熟成方法の一つ「湿潤熟成（ウェットエイジング）」のメリットとして挙げられているものは何でしょう？",
+        "image": "",
+        "answers": [
+            { "text": "風味が凝縮されやすい", "correct": false },
+            { "text": "可食部が多く、管理も比較的容易", "correct": true },
+            { "text": "トリミングが不要である", "correct": false },
+            { "text": "特別な設備が不要である", "correct": false }
+        ],
+        "additionalInfo": "湿潤熟成は、真空パックなどで保存するため乾燥せず、可食部が多く、専用の冷蔵庫などがあれば管理も比較的容易であるというメリットがあります。"
+    },
+    {
+        "question": "魚の熟成において、時間以外にうま味や風味を増やすためにコントロールする要素として、何が挙げられているでしょう？",
+        "image": "",
+        "answers": [
+            { "text": "塩分濃度", "correct": false },
+            { "text": "光の量", "correct": false },
+            { "text": "圧力", "correct": false },
+            { "text": "温度", "correct": true }
+        ],
+        "additionalInfo": "熟成は、時間だけでなく、温度をコントロールすることでもうま味や風味を増やすことができます。低温でじっくり熟成させるなどの手法があります。"
+    }
+]
