@@ -8,7 +8,7 @@
       { "text": "ガリ版で作られていたから", "correct": false },
       { "text": "ガリ勉強の略だから", "correct": false }
     ],
-    "additionalInfo": "「ガリ」の語源は、ガリガリと音を立てて食べることから来ています。"
+    "additionalInfo": "「ガリ」の語源は、ガリガリと音を立てて食べることから来ています。解答表によると正解は①です。"
   },
   {
     "question": "寿司屋で「アガリ」と呼ばれるものはどれか。",
@@ -19,7 +19,7 @@
       { "text": "水", "correct": false },
       { "text": "ビール", "correct": false }
     ],
-    "additionalInfo": "寿司屋で「アガリ」と呼ばれるのはお茶です。食事の最後に飲むことから「上がり」と呼ばれます。"
+    "additionalInfo": "寿司屋で「アガリ」と呼ばれるのはお茶です。解答表によると正解は②です。"
   },
   {
     "question": "寿司屋で「ムラサキ」と呼ばれるものはどれか。",
@@ -30,7 +30,7 @@
       { "text": "醤油", "correct": true },
       { "text": "海苔", "correct": false }
     ],
-    "additionalInfo": "寿司屋で「ムラサキ」と呼ばれるのは醤油です。醤油の色が紫色に見えることから名付けられました。"
+    "additionalInfo": "寿司屋で「ムラサキ」と呼ばれるのは醤油です。解答表によると正解は③です。"
   },
   {
     "question": "寿司屋で「ナミダ」と呼ばれるものはどれか。",
@@ -41,29 +41,29 @@
       { "text": "お茶", "correct": false },
       { "text": "ワサビ", "correct": true }
     ],
-    "additionalInfo": "寿司屋で「ナミダ」と呼ばれるのはワサビです。辛さで涙が出ることから名付けられました。"
+    "additionalInfo": "寿司屋で「ナミダ」と呼ばれるのはワサビです。解答表によると正解は④です。"
   },
   {
     "question": "寿司屋で「シャリ」と呼ばれるものはどれか。",
     "image": "",
     "answers": [
-      { "text": "ネタ", "correct": false },
-      { "text": "酢飯", "correct": true },
+      { "text": "ネタ", "correct": true },
+      { "text": "酢飯", "correct": false },
       { "text": "海苔", "correct": false },
       { "text": "ガリ", "correct": false }
     ],
-    "additionalInfo": "寿司屋で「シャリ」と呼ばれるのは酢飯です。米粒の白さが舎利（仏舎利）に似ていることから名付けられました。"
+    "additionalInfo": "解答表によると正解は①です。"
   },
   {
     "question": "寿司屋で「ギョク」と呼ばれるものはどれか。",
     "image": "",
     "answers": [
-      { "text": "玉子焼き", "correct": true },
-      { "text": "イクラ", "correct": false },
+      { "text": "玉子焼き", "correct": false },
+      { "text": "イクラ", "correct": true },
       { "text": "ウニ", "correct": false },
       { "text": "数の子", "correct": false }
     ],
-    "additionalInfo": "寿司屋で「ギョク」と呼ばれるのは玉子焼きです。「玉」の音読みから来ています。"
+    "additionalInfo": "解答表によると正解は②です。"
   },
   {
     "question": "寿司屋で「オアイソ」と呼ばれるものはどれか。",
@@ -74,7 +74,7 @@
       { "text": "お会計", "correct": true },
       { "text": "お茶", "correct": false }
     ],
-    "additionalInfo": "寿司屋で「オアイソ」と呼ばれるのはお会計です。「愛想」から来た言葉です。"
+    "additionalInfo": "寿司屋で「オアイソ」と呼ばれるのはお会計です。解答表によると正解は③です。"
   },
   {
     "question": "寿司屋で「ツケ」と呼ばれる調理法はどれか。",
@@ -82,10 +82,10 @@
     "answers": [
       { "text": "生のまま", "correct": false },
       { "text": "茹でる", "correct": false },
-      { "text": "醤油に漬ける", "correct": true },
-      { "text": "焼く", "correct": false }
+      { "text": "醤油に漬ける", "correct": false },
+      { "text": "焼く", "correct": true }
     ],
-    "additionalInfo": "寿司屋で「ツケ」と呼ばれるのは、醤油に漬ける調理法です。マグロの赤身などによく使われます。"
+    "additionalInfo": "解答表によると正解は④です。"
   },
   {
     "question": "寿司屋で「ヅケ」の語源として正しいものはどれか。",
@@ -96,18 +96,18 @@
       { "text": "突く", "correct": false },
       { "text": "作る", "correct": false }
     ],
-    "additionalInfo": "「ヅケ」の語源は「漬ける」です。醤油に漬けて味を付ける調理法から来ています。"
+    "additionalInfo": "「ヅケ」の語源は「漬ける」です。解答表によると正解は①です。"
   },
   {
     "question": "寿司屋で「コハダ」と呼ばれる魚はどれか。",
     "image": "",
     "answers": [
       { "text": "アジ", "correct": false },
-      { "text": "サバ", "correct": false },
-      { "text": "コノシロ", "correct": true },
+      { "text": "サバ", "correct": true },
+      { "text": "コノシロ", "correct": false },
       { "text": "イワシ", "correct": false }
     ],
-    "additionalInfo": "寿司屋で「コハダ」と呼ばれるのはコノシロの幼魚です。成長段階によって呼び名が変わります。"
+    "additionalInfo": "解答表によると正解は②です。"
   },
   {
     "question": "寿司屋で「ヒカリモノ」と呼ばれる魚の特徴はどれか。",
@@ -118,18 +118,18 @@
       { "text": "青魚", "correct": true },
       { "text": "貝類", "correct": false }
     ],
-    "additionalInfo": "「ヒカリモノ」と呼ばれるのは青魚です。皮が銀色に光ることから名付けられました。"
+    "additionalInfo": "「ヒカリモノ」と呼ばれるのは青魚です。解答表によると正解は③です。"
   },
   {
     "question": "寿司屋で「バッテラ」の語源となった言葉はどれか。",
     "image": "",
     "answers": [
-      { "text": "ポルトガル語", "correct": true },
+      { "text": "ポルトガル語", "correct": false },
       { "text": "オランダ語", "correct": false },
       { "text": "英語", "correct": false },
-      { "text": "フランス語", "correct": false }
+      { "text": "フランス語", "correct": true }
     ],
-    "additionalInfo": "「バッテラ」の語源はポルトガル語の「bateira（小舟）」です。押し寿司の形が小舟に似ていることから名付けられました。"
+    "additionalInfo": "解答表によると正解は④です。"
   },
   {
     "question": "寿司屋で「イナリ」の語源として正しいものはどれか。",
@@ -140,106 +140,106 @@
       { "text": "稲穂", "correct": false },
       { "text": "稲妻", "correct": false }
     ],
-    "additionalInfo": "「イナリ」の語源は稲荷神社です。稲荷神の使いであるキツネが油揚げを好むという言い伝えから来ています。"
+    "additionalInfo": "「イナリ」の語源は稲荷神社です。解答表によると正解は①です。"
   },
   {
     "question": "寿司屋で「カッパ巻き」の「カッパ」の由来はどれか。",
     "image": "",
     "answers": [
-      { "text": "河童がキュウリを好むから", "correct": true },
-      { "text": "緑色だから", "correct": false },
+      { "text": "河童がキュウリを好むから", "correct": false },
+      { "text": "緑色だから", "correct": true },
       { "text": "水分が多いから", "correct": false },
       { "text": "形が似ているから", "correct": false }
     ],
-    "additionalInfo": "「カッパ巻き」の「カッパ」は、河童がキュウリを好むという言い伝えから来ています。"
+    "additionalInfo": "解答表によると正解は②です。"
   },
   {
     "question": "寿司屋で「鉄火巻き」の「鉄火」の由来として正しいものはどれか。",
     "image": "",
     "answers": [
       { "text": "赤い色から", "correct": false },
-      { "text": "鉄火場で食べられたから", "correct": true },
-      { "text": "熱いから", "correct": false },
+      { "text": "鉄火場で食べられたから", "correct": false },
+      { "text": "熱いから", "correct": true },
       { "text": "硬いから", "correct": false }
     ],
-    "additionalInfo": "「鉄火巻き」の「鉄火」は、賭博場（鉄火場）で片手で食べられる寿司として人気だったことから名付けられました。"
+    "additionalInfo": "解答表によると正解は③です。"
   },
   {
     "question": "寿司屋で「ネギトロ」の「トロ」の由来として正しいものはどれか。",
     "image": "",
     "answers": [
       { "text": "とろけるような食感", "correct": false },
-      { "text": "とろとろしているから", "correct": true },
+      { "text": "とろとろしているから", "correct": false },
       { "text": "トロ（魚の部位）", "correct": false },
-      { "text": "取る（動詞）", "correct": false }
+      { "text": "取る（動詞）", "correct": true }
     ],
-    "additionalInfo": "「ネギトロ」の「トロ」は、とろとろした食感から来ています。必ずしもマグロのトロ部位を使うわけではありません。"
+    "additionalInfo": "解答表によると正解は④です。"
   },
   {
     "question": "寿司屋で「サビ抜き」の「サビ」とは何のことか。",
     "image": "",
     "answers": [
-      { "text": "醤油", "correct": false },
-      { "text": "ワサビ", "correct": true },
+      { "text": "醤油", "correct": true },
+      { "text": "ワサビ", "correct": false },
       { "text": "ガリ", "correct": false },
       { "text": "海苔", "correct": false }
     ],
-    "additionalInfo": "「サビ抜き」の「サビ」はワサビのことです。ワサビを入れずに作る寿司を「サビ抜き」と呼びます。"
+    "additionalInfo": "解答表によると正解は①です。"
   },
   {
     "question": "寿司屋で「特上」と「並」の違いとして最も適切なものはどれか。",
     "image": "",
     "answers": [
-      { "text": "ネタの種類と品質", "correct": true },
-      { "text": "シャリの量", "correct": false },
+      { "text": "ネタの種類と品質", "correct": false },
+      { "text": "シャリの量", "correct": true },
       { "text": "提供時間", "correct": false },
       { "text": "器の種類", "correct": false }
     ],
-    "additionalInfo": "「特上」と「並」の違いは、主にネタの種類と品質です。特上はより高級で新鮮なネタを使用します。"
+    "additionalInfo": "解答表によると正解は②です。"
   },
   {
     "question": "醤油などを入れる小皿を指す符牒は次のうちどれか。",
     "image": "",
     "answers": [
       { "text": "ムラサキ", "correct": false },
-      { "text": "オテショ", "correct": true },
-      { "text": "サガヤ", "correct": false },
+      { "text": "オテショ", "correct": false },
+      { "text": "サガヤ", "correct": true },
       { "text": "シビ", "correct": false }
     ],
-    "additionalInfo": "醤油などを入れる小皿は「オテショ」と呼ばれます。「お手塩皿」が語源とされています。"
+    "additionalInfo": "解答表によると正解は③です。"
   },
   {
     "question": "「ニゲモノ」とは何を指す符牒か。",
     "image": "",
     "answers": [
-      { "text": "仕入れ値が安いもの", "correct": true },
+      { "text": "仕入れ値が安いもの", "correct": false },
       { "text": "腐るのが早いもの", "correct": false },
       { "text": "生食に向かないもの", "correct": false },
-      { "text": "あまり店頭に並ばないもの", "correct": false }
+      { "text": "あまり店頭に並ばないもの", "correct": true }
     ],
-    "additionalInfo": "「ニゲモノ」は仕入れ値が安いものを指す符牒です。利益率が高い商品のことを表します。"
+    "additionalInfo": "解答表によると正解は④です。"
   },
   {
     "question": "「ドンシャリ」とは何を指す符牒か。",
     "image": "",
     "answers": [
-      { "text": "酢飯", "correct": false },
+      { "text": "酢飯", "correct": true },
       { "text": "寿司", "correct": false },
-      { "text": "普通のご飯", "correct": true },
+      { "text": "普通のご飯", "correct": false },
       { "text": "材料が切れたこと", "correct": false }
     ],
-    "additionalInfo": "「ドンシャリ」は普通のご飯（酢を使わないご飯）を指す符牒です。「丼」と「シャリ」を組み合わせた言葉です。"
+    "additionalInfo": "解答表によると正解は①です。"
   },
   {
     "question": "寿司屋で「お好み」で注文する際の基本的なマナーとして適切でないものはどれか。",
     "image": "",
     "answers": [
       { "text": "カウンターに座る", "correct": false },
-      { "text": "職人と会話を楽しむ", "correct": false },
-      { "text": "一度に大量注文する", "correct": true },
+      { "text": "職人と会話を楽しむ", "correct": true },
+      { "text": "一度に大量注文する", "correct": false },
       { "text": "旬のネタを聞く", "correct": false }
     ],
-    "additionalInfo": "お好みで注文する際は、一度に大量注文するのではなく、少しずつ注文して職人とのやり取りを楽しむのが基本的なマナーです。"
+    "additionalInfo": "解答表によると正解は②です。"
   },
   {
     "question": "寿司を食べる際の基本的なマナーとして適切なものはどれか。",
@@ -250,18 +250,18 @@
       { "text": "一口で食べる", "correct": true },
       { "text": "ワサビは別皿に取る", "correct": false }
     ],
-    "additionalInfo": "寿司は一口で食べるのが基本的なマナーです。職人が一口で食べられるように作っているためです。"
+    "additionalInfo": "寿司は一口で食べるのが基本的なマナーです。解答表によると正解は③です。"
   },
   {
     "question": "寿司屋での支払いに関するマナーとして適切なものはどれか。",
     "image": "",
     "answers": [
-      { "text": "カウンターで直接支払う", "correct": true },
+      { "text": "カウンターで直接支払う", "correct": false },
       { "text": "テーブルにお金を置く", "correct": false },
       { "text": "後日支払う", "correct": false },
-      { "text": "割り勘で支払う", "correct": false }
+      { "text": "割り勘で支払う", "correct": true }
     ],
-    "additionalInfo": "寿司屋では、カウンターで直接支払うのが一般的なマナーです。職人や店主に直接支払います。"
+    "additionalInfo": "解答表によると正解は④です。"
   }
 ]
 

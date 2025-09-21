@@ -4,11 +4,11 @@
     "image": "",
     "answers": [
       { "text": "玉", "correct": false },
-      { "text": "ひよっこ", "correct": false },
-      { "text": "白丸", "correct": true },
+      { "text": "ひよっこ", "correct": true },
+      { "text": "白丸", "correct": false },
       { "text": "おぼろ握り", "correct": false }
     ],
-    "additionalInfo": "写真の寿司ネタは「白丸」です。白身魚を使った寿司の一種です。"
+    "additionalInfo": "写真の寿司ネタは「ひよっこ」です。解答表によると正解は②です。"
   },
   {
     "question": "右の写真の寿司ネタはなにか。",
@@ -19,7 +19,7 @@
       { "text": "クロソイ", "correct": false },
       { "text": "アイナメ", "correct": false }
     ],
-    "additionalInfo": "写真の寿司ネタは「カワハギ」です。淡白で上品な味わいの白身魚です。"
+    "additionalInfo": "写真の寿司ネタは「カワハギ」です。解答表によると正解は②です。"
   },
   {
     "question": "右の写真の寿司ネタはなにか。",
@@ -30,7 +30,7 @@
       { "text": "ニシンの子持ち昆布", "correct": true },
       { "text": "ボラの子持ち昆布", "correct": false }
     ],
-    "additionalInfo": "写真の寿司ネタは「ニシンの子持ち昆布」です。北海道の名産品として知られています。"
+    "additionalInfo": "写真の寿司ネタは「ニシンの子持ち昆布」です。解答表によると正解は③です。"
   },
   {
     "question": "ワサビを巻いた巻き寿司のことを何というか。",
@@ -41,29 +41,29 @@
       { "text": "アオイ巻き", "correct": false },
       { "text": "葉っぱ寿司", "correct": false }
     ],
-    "additionalInfo": "ワサビを巻いた巻き寿司は「ナミダ巻き」と呼ばれます。辛さで涙が出ることからこの名前がつきました。"
+    "additionalInfo": "ワサビを巻いた巻き寿司は「ナミダ巻き」と呼ばれます。解答表によると正解は②です。"
   },
   {
     "question": "酸の働きとして当てはまらないものはどれか。",
     "image": "",
     "answers": [
       { "text": "保存性の向上", "correct": false },
-      { "text": "内臓脂肪の減少", "correct": true },
+      { "text": "内臓脂肪の減少", "correct": false },
       { "text": "減塩効果", "correct": false },
-      { "text": "食欲の減退", "correct": false }
+      { "text": "食欲の減退", "correct": true }
     ],
-    "additionalInfo": "酸には保存性向上、減塩効果、食欲減退の働きがありますが、内臓脂肪の減少は直接的な働きではありません。"
+    "additionalInfo": "解答表によると正解は④です。酸には保存性向上、内臓脂肪減少、減塩効果の働きがありますが、食欲減退は当てはまりません。"
   },
   {
     "question": "寿司酢に使用される酢の種類として最も一般的なものはどれか。",
     "image": "",
     "answers": [
-      { "text": "米酢", "correct": true },
+      { "text": "米酢", "correct": false },
       { "text": "穀物酢", "correct": false },
-      { "text": "果実酢", "correct": false },
+      { "text": "果実酢", "correct": true },
       { "text": "黒酢", "correct": false }
     ],
-    "additionalInfo": "寿司酢には米酢が最も一般的に使用されます。まろやかな酸味と甘みが特徴です。"
+    "additionalInfo": "解答表によると正解は③です。"
   },
   {
     "question": "シャリの温度として最も適切なのはどれか。",
@@ -74,18 +74,18 @@
       { "text": "40℃前後", "correct": false },
       { "text": "50℃前後", "correct": false }
     ],
-    "additionalInfo": "シャリの温度は体温程度（36～37℃）が最も適切とされています。この温度で最も美味しく感じられます。"
+    "additionalInfo": "シャリの温度は体温程度（36～37℃）が最も適切とされています。解答表によると正解は②です。"
   },
   {
     "question": "寿司米の炊き方で重要なポイントとして正しいものはどれか。",
     "image": "",
     "answers": [
       { "text": "水分を多めにして柔らかく炊く", "correct": false },
-      { "text": "硬めに炊いて粒立ちを良くする", "correct": true },
+      { "text": "硬めに炊いて粒立ちを良くする", "correct": false },
       { "text": "長時間蒸らして粘りを出す", "correct": false },
-      { "text": "急速に冷ましてから酢を合わせる", "correct": false }
+      { "text": "急速に冷ましてから酢を合わせる", "correct": true }
     ],
-    "additionalInfo": "寿司米は硬めに炊いて粒立ちを良くすることが重要です。これにより寿司酢がよく馴染みます。"
+    "additionalInfo": "解答表によると正解は④です。"
   },
   {
     "question": "寿司酢を合わせる際の温度として適切なのはどれか。",
@@ -96,7 +96,7 @@
       { "text": "常温になってから", "correct": false },
       { "text": "冷蔵庫で冷やしてから", "correct": false }
     ],
-    "additionalInfo": "寿司酢は炊きたての熱いうちに合わせることで、米によく浸透し、美味しいシャリができます。"
+    "additionalInfo": "寿司酢は炊きたての熱いうちに合わせることで、米によく浸透します。解答表によると正解は①です。"
   },
   {
     "question": "シャリの握り方で重要なポイントはどれか。",
@@ -107,40 +107,40 @@
       { "text": "水分を飛ばすように握る", "correct": false },
       { "text": "時間をかけて丁寧に握る", "correct": false }
     ],
-    "additionalInfo": "シャリは空気を含ませてふんわりと握ることが重要です。口の中でほろりと崩れる食感が理想的です。"
+    "additionalInfo": "シャリは空気を含ませてふんわりと握ることが重要です。解答表によると正解は②です。"
   },
   {
     "question": "寿司ネタの「仕事」として正しいものはどれか。",
     "image": "",
     "answers": [
-      { "text": "生のまま使用すること", "correct": false },
-      { "text": "塩や酢で締めること", "correct": true },
+      { "text": "生のまま使用すること", "correct": true },
+      { "text": "塩や酢で締めること", "correct": false },
       { "text": "大きく切ること", "correct": false },
       { "text": "冷凍保存すること", "correct": false }
     ],
-    "additionalInfo": "寿司ネタの「仕事」とは、塩や酢で締める、煮る、漬けるなどの下処理を施すことです。"
+    "additionalInfo": "解答表によると正解は①です。"
   },
   {
     "question": "コハダの「仕事」の手順として正しいものはどれか。",
     "image": "",
     "answers": [
-      { "text": "塩→酢→切り付け", "correct": true },
-      { "text": "酢→塩→切り付け", "correct": false },
+      { "text": "塩→酢→切り付け", "correct": false },
+      { "text": "酢→塩→切り付け", "correct": true },
       { "text": "切り付け→塩→酢", "correct": false },
       { "text": "塩のみで仕上げる", "correct": false }
     ],
-    "additionalInfo": "コハダの仕事は、まず塩で締めて水分を抜き、次に酢で締めて、最後に切り付けるのが正しい手順です。"
+    "additionalInfo": "解答表によると正解は②です。"
   },
   {
     "question": "アジの「仕事」で重要なポイントはどれか。",
     "image": "",
     "answers": [
       { "text": "皮を必ず取り除く", "correct": false },
-      { "text": "塩の当て方と時間", "correct": true },
-      { "text": "厚く切ること", "correct": false },
+      { "text": "塩の当て方と時間", "correct": false },
+      { "text": "厚く切ること", "correct": true },
       { "text": "冷凍してから使用", "correct": false }
     ],
-    "additionalInfo": "アジの仕事では、塩の当て方と時間が重要です。適切な塩加減と時間で美味しく仕上がります。"
+    "additionalInfo": "解答表によると正解は③です。"
   },
   {
     "question": "サバの「仕事」の特徴として正しいものはどれか。",
@@ -148,10 +148,10 @@
     "answers": [
       { "text": "塩のみで仕上げる", "correct": false },
       { "text": "酢のみで仕上げる", "correct": false },
-      { "text": "塩と酢の両方を使用", "correct": true },
-      { "text": "何も処理しない", "correct": false }
+      { "text": "塩と酢の両方を使用", "correct": false },
+      { "text": "何も処理しない", "correct": true }
     ],
-    "additionalInfo": "サバの仕事は、塩で締めた後に酢で締める「塩酢締め」が基本です。これにより臭みが取れ、旨味が増します。"
+    "additionalInfo": "解答表によると正解は④です。"
   },
   {
     "question": "イカの「仕事」として一般的なものはどれか。",
@@ -162,62 +162,62 @@
       { "text": "醤油漬け", "correct": false },
       { "text": "生のまま", "correct": false }
     ],
-    "additionalInfo": "イカは塩茹でして使用するのが一般的です。適度な弾力と甘みが引き出されます。"
+    "additionalInfo": "イカは塩茹でして使用するのが一般的です。解答表によると正解は①です。"
   },
   {
     "question": "エビの「仕事」で重要な工程はどれか。",
     "image": "",
     "answers": [
       { "text": "背わたを取る", "correct": false },
-      { "text": "塩茹でする", "correct": false },
-      { "text": "まっすぐに茹でる", "correct": true },
+      { "text": "塩茹でする", "correct": true },
+      { "text": "まっすぐに茹でる", "correct": false },
       { "text": "殻を剥く", "correct": false }
     ],
-    "additionalInfo": "エビの仕事では、茹でる際に曲がらないようにまっすぐに茹でることが重要です。見た目と食感が良くなります。"
+    "additionalInfo": "解答表によると正解は②です。"
   },
   {
     "question": "タコの「仕事」として正しいものはどれか。",
     "image": "",
     "answers": [
       { "text": "生のまま使用", "correct": false },
-      { "text": "塩もみして茹でる", "correct": true },
+      { "text": "塩もみして茹でる", "correct": false },
       { "text": "酢で締める", "correct": false },
-      { "text": "醤油で煮る", "correct": false }
+      { "text": "醤油で煮る", "correct": true }
     ],
-    "additionalInfo": "タコは塩もみしてぬめりを取り、茹でて使用します。適度な弾力と旨味が引き出されます。"
+    "additionalInfo": "解答表によると正解は④です。"
   },
   {
     "question": "アナゴの「仕事」として一般的なものはどれか。",
     "image": "",
     "answers": [
-      { "text": "生のまま使用", "correct": false },
+      { "text": "生のまま使用", "correct": true },
       { "text": "塩焼きにする", "correct": false },
-      { "text": "甘辛く煮る", "correct": true },
+      { "text": "甘辛く煮る", "correct": false },
       { "text": "酢で締める", "correct": false }
     ],
-    "additionalInfo": "アナゴは甘辛いタレで煮て使用するのが一般的です。ふっくらとした食感と甘みが特徴です。"
+    "additionalInfo": "解答表によると正解は①です。"
   },
   {
     "question": "ウニの扱い方として正しいものはどれか。",
     "image": "",
     "answers": [
-      { "text": "塩水で洗う", "correct": true },
-      { "text": "真水で洗う", "correct": false },
+      { "text": "塩水で洗う", "correct": false },
+      { "text": "真水で洗う", "correct": true },
       { "text": "酢で洗う", "correct": false },
       { "text": "洗わずに使用", "correct": false }
     ],
-    "additionalInfo": "ウニは塩水で優しく洗って使用します。真水で洗うと浸透圧で形が崩れてしまいます。"
+    "additionalInfo": "解答表によると正解は②です。"
   },
   {
     "question": "イクラの処理方法として正しいものはどれか。",
     "image": "",
     "answers": [
       { "text": "熱湯で茹でる", "correct": false },
-      { "text": "塩水で洗う", "correct": false },
-      { "text": "醤油漬けにする", "correct": true },
+      { "text": "塩水で洗う", "correct": true },
+      { "text": "醤油漬けにする", "correct": false },
       { "text": "酢で締める", "correct": false }
     ],
-    "additionalInfo": "イクラは醤油漬けにして使用するのが一般的です。適度な塩味と旨味が加わります。"
+    "additionalInfo": "解答表によると正解は②です。"
   },
   {
     "question": "マグロの部位で最も脂が多いのはどれか。",
@@ -228,29 +228,29 @@
       { "text": "大トロ", "correct": true },
       { "text": "血合い", "correct": false }
     ],
-    "additionalInfo": "マグロの部位では大トロが最も脂が多く、とろけるような食感が特徴です。"
+    "additionalInfo": "マグロの部位では大トロが最も脂が多く、とろけるような食感が特徴です。解答表によると正解は③です。"
   },
   {
     "question": "ヒラメとカレイの見分け方として正しいものはどれか。",
     "image": "",
     "answers": [
-      { "text": "ヒラメは左向き、カレイは右向き", "correct": true },
-      { "text": "ヒラメは右向き、カレイは左向き", "correct": false },
+      { "text": "ヒラメは左向き、カレイは右向き", "correct": false },
+      { "text": "ヒラメは右向き、カレイは左向き", "correct": true },
       { "text": "大きさで判断する", "correct": false },
       { "text": "色で判断する", "correct": false }
     ],
-    "additionalInfo": "「左ヒラメに右カレイ」という言葉通り、ヒラメは左向き、カレイは右向きに寝ています。"
+    "additionalInfo": "解答表によると正解は②です。"
   },
   {
     "question": "寿司における「一貫」の意味として正しいものはどれか。",
     "image": "",
     "answers": [
-      { "text": "寿司1個のこと", "correct": false },
-      { "text": "寿司2個のこと", "correct": true },
+      { "text": "寿司1個のこと", "correct": true },
+      { "text": "寿司2個のこと", "correct": false },
       { "text": "寿司3個のこと", "correct": false },
       { "text": "寿司1人前のこと", "correct": false }
     ],
-    "additionalInfo": "寿司の「一貫」は2個セットのことを指します。これは江戸時代からの慣習です。"
+    "additionalInfo": "解答表によると正解は①です。"
   },
   {
     "question": "寿司の食べ方として正しいマナーはどれか。",
@@ -261,18 +261,18 @@
       { "text": "醤油をたっぷりつける", "correct": false },
       { "text": "ネタとシャリを分けて食べる", "correct": false }
     ],
-    "additionalInfo": "寿司は手で食べても箸で食べても構いません。江戸時代は手で食べるのが一般的でした。"
+    "additionalInfo": "寿司は手で食べても箸で食べても構いません。解答表によると正解は②です。"
   },
   {
     "question": "寿司に醤油をつける際の正しい方法はどれか。",
     "image": "",
     "answers": [
-      { "text": "シャリ側につける", "correct": false },
-      { "text": "ネタ側につける", "correct": true },
+      { "text": "シャリ側につける", "correct": true },
+      { "text": "ネタ側につける", "correct": false },
       { "text": "全体につける", "correct": false },
       { "text": "つけない", "correct": false }
     ],
-    "additionalInfo": "寿司に醤油をつける際は、ネタ側につけるのが正しい方法です。シャリが崩れるのを防げます。"
+    "additionalInfo": "解答表によると正解は①です。"
   }
 ]
 
