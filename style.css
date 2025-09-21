@@ -407,3 +407,31 @@ input:checked + .slider:before {
 .hidden {
     display: none !important;
 }
+
+/* =================================================================== */
+/* ★★★ 狩猟ソングプレーヤー (ここから追加) ★★★ */
+/* =================================================================== */
+.music-player-section {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.music-player-section h2 {
+    font-size: 1.4em;
+    color: #4a7c59;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.music-player-section p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.music-player-section audio {
+    margin-top: 10px;
+}
