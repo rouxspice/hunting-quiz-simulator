@@ -412,19 +412,58 @@ window.onload = () => {
     }
 
     function showChoujuuQuestion() {
+        // --- 進捗バーの更新 (変更なし) ---
         const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
         const progressBarEl = document.getElementById('choujuu-quiz-progress-bar');
         const progressTextEl = document.getElementById('choujuu-quiz-progress-text');
         if (progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
         if (progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
-        document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); });
+
+        // --- 表示リセット ---
         choujuuStep1.style.display = 'block';
         choujuuStep2.style.display = 'none';
         choujuuFeedback.style.display = 'none';
-        choujuuSubmitButton.style.display = 'none';
+        choujuuQuizNavigation.style.display = 'none';
+        document.querySelectorAll('.choujuu-choice-btn').forEach(btn => {
+            btn.disabled = false;
+            btn.classList.remove('correct', 'wrong');
+        });
+
+        // --- 問題データ取得 ---
         const question = currentQuiz[currentQuestionIndex];
+        const userAnswer = userAnswers[currentQuestionIndex];
         if (question && question.image) choujuuImage.src = question.image;
         else choujuuImage.src = '';
+
+        // ★★★ 解答済みの場合の復元処理を追加 ★★★
+        if (userAnswer) {
+            // --- Step1の復元 ---
+            const step1Answer = userAnswer.step1;
+            if (step1Answer) {
+                document.querySelectorAll('.choujuu-choice-btn').forEach(btn => {
+                    btn.disabled = true;
+                    if (btn.dataset.choice === step1Answer.selected) {
+                        btn.classList.add(step1Answer.isCorrect ? 'correct' : 'wrong');
+                    }
+                });
+
+                // 正解が「獲れる」で、ユーザーも「獲れる」と答えていた場合 -> Step2へ
+                if (question.isHuntable && step1Answer.isCorrect) {
+                    choujuuStep1.style.display = 'none';
+                    choujuuStep2.style.display = 'block';
+                    setupNameSelectionForReview(question, userAnswer.step2); // 解答済み用の表示関数を呼ぶ
+                } else {
+                    // それ以外はフィードバック表示
+                    const feedbackMessage = step1Answer.isCorrect
+                        ? `正解！「${question.name}」は非狩猟鳥獣のため、捕獲できません。`
+                        : (step1Answer.selected === 'yes'
+                            ? `不正解。「${question.name}」は非狩猟鳥獣のため、捕獲できません。`
+                            : `不正解。この鳥獣は「${question.name}」といい、狩猟対象です。`);
+                    showChoujuuFeedback(step1Answer.isCorrect, feedbackMessage);
+                }
+            }
+        }
+        updateNavigationButtons();
     }
 
     function setupNameSelection(question) {
@@ -437,15 +476,28 @@ window.onload = () => {
             button.addEventListener('click', (e) => {
                 const selectedButton = e.target;
                 const isCorrect = (name === question.name);
+
+            // ★★★ ここから修正・追加 ★★★
+            const userAnswer = userAnswers[currentQuestionIndex];
+            // step2の解答がまだ保存されていない場合のみ処理
+            if (userAnswer && userAnswer.step2 === null) {
+                userAnswer.step2 = {
+                    selected: selectedButton.innerText,
+                    isCorrect: isCorrect
+                };
+
                 if (isCorrect) {
                     playSound(correctSound);
-                    score++;
+                    score++; // 名前当て正解で1点
                     showFeedbackAnimation(true);
                 } else {
                     playSound(wrongSound);
-                    wrongQuestions.push(JSON.parse(JSON.stringify(question)));
+                    // wrongQuestionsへの追加はstep1で既に行っているので不要
                     showFeedbackAnimation(false);
                 }
+            }
+            // ★★★ ここまで修正・追加 ★★★
+
                 Array.from(choujuuNameOptions.children).forEach(btn => {
                     btn.disabled = true;
                     if (btn.innerText.endsWith(question.name) && !isCorrect && btn !== selectedButton) btn.classList.add('reveal-correct');
@@ -457,12 +509,43 @@ window.onload = () => {
         });
     }
 
+    function setupNameSelectionForReview(question, step2Answer) {
+        choujuuNameOptions.innerHTML = '';
+        const options = [...question.distractors, question.name].sort(() => Math.random() - 0.5);
+
+        options.forEach((name, index) => {
+            const button = document.createElement('button');
+            const buttonText = `${index + 1}. ${name}`;
+            button.innerText = buttonText;
+            button.classList.add('answer-btn');
+            button.disabled = true; // 全てのボタンを非活性に
+
+            if (name === question.name) {
+                button.classList.add('reveal-correct'); // 正解をハイライト
+            }
+            if (step2Answer && step2Answer.selected === buttonText) {
+                button.classList.add(step2Answer.isCorrect ? 'correct' : 'wrong'); // ユーザーの選択に色付け
+            }
+            choujuuNameOptions.appendChild(button);
+        });
+
+        const feedbackMessage = step2Answer.isCorrect
+            ? `正解！これは${question.name}です。`
+            : `不正解。正しくは${question.name}です。`;
+        showChoujuuFeedback(step2Answer.isCorrect, feedbackMessage);
+    }
+
+
+
+
+
+
     function showChoujuuFeedback(isCorrect, message) {
         choujuuFeedback.textContent = message;
         choujuuFeedback.className = 'feedback-container';
         choujuuFeedback.classList.add(isCorrect ? 'correct' : 'wrong');
-        choujuuSubmitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る";
-        choujuuSubmitButton.style.display = 'block';
+        choujuuQuizNavigation.style.display = 'flex'; // 新しいナビゲーションを表示
+        updateNavigationButtons(); // ボタンの状態を更新
     }
 
     function showNormalQuestion() {
