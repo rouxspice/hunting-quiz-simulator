@@ -47,17 +47,55 @@ window.onload = () => {
 
 
 
-    // --- 音声ファイルの読み込み ---
-    const correctSound = new Audio('./sounds/correct.mp3');
-    const wrongSound = new Audio('./sounds/incorrect.mp3');
-    correctSound.volume = 0.5;
-    wrongSound.volume = 0.5;
+// --- 音声ファイルの読み込み ---
+let correctSoundFiles = [];   // ★JSONから読み込むため、空の配列で初期化
+let wrongSoundFiles = [];     // ★JSONから読み込むため、空の配列で初期化
 
-    function playSound(sound) {
-        if (soundToggleCheckbox && soundToggleCheckbox.checked) {
-            sound.play();
+// ★★★ JSONから音声ファイルリストを非同期で読み込む関数 ★★★
+async function loadSoundList() {
+    try {
+        const response = await fetch('./sounds/sound-list.json');
+        if (!response.ok) {
+            throw new Error('sound-list.jsonの読み込みに失敗しました。');
         }
+        const data = await response.json();
+        correctSoundFiles = data.correct || [];
+        wrongSoundFiles = data.incorrect || [];
+        console.log('効果音リストを正常に読み込みました。');
+    } catch (error) {
+        console.error(error);
+        // 読み込み失敗時は、フォールバックとして空のままにする
+        correctSoundFiles = [];
+        wrongSoundFiles = [];
     }
+}
+
+// ★★★ ランダム再生関数  ★★★
+function playSound(type) {
+    if (!soundToggleCheckbox || !soundToggleCheckbox.checked) return;
+
+    let soundFiles;
+    let folder;
+
+    if (type === 'correct') {
+        soundFiles = correctSoundFiles;
+        folder = 'correct';
+    } else if (type === 'wrong') {
+        soundFiles = wrongSoundFiles;
+        folder = 'incorrect';
+    } else {
+        return;
+    }
+
+    if (soundFiles.length === 0) return;
+
+    const randomIndex = Math.floor(Math.random() * soundFiles.length);
+    const randomSoundFile = soundFiles[randomIndex];
+    
+    const audio = new Audio(`./sounds/${folder}/${randomSoundFile}`);
+    audio.volume = 0.5;
+    audio.play().catch(error => console.error("Audio play failed:", error));
+}
 
     // --- 状態管理変数 ---
     let currentQuiz = [];
@@ -743,7 +781,8 @@ window.onload = () => {
     });
 
     // --- アプリケーション初期化処理 ---
-    function initializeApp() {
+    async function initializeApp() { // ★★★ asyncを追加 ★★★
+        await loadSoundList(); // ★★★ この行を追加 ★★★
         initializeEventListeners();
         updateTopPageUI();
         goToTopPage();
