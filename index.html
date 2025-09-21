@@ -158,7 +158,10 @@
                     <h4>💡 補足情報</h4>
                     <p id="additional-info-text"></p>
                 </div>
-                <button id="submit" style="display: none;">次へ</button>
+            <div class="quiz-navigation" id="normal-quiz-navigation" style="display: none;">
+                <button id="prev-normal-question-btn" class="nav-btn">＜ 前の問題へ</button>
+                <button id="next-normal-question-btn" class="nav-btn">次の問題へ ＞</button>
+            </div>
             </div>
         </div>
     </div>
@@ -189,7 +192,10 @@
             <div id="choujuu-name-options" class="answer-buttons-grid"></div>
         </div>
         <div id="choujuu-feedback" class="feedback-container"></div>
-        <button id="choujuu-submit" style="display: none;">次の問題へ</button>
+        <div class="quiz-navigation" id="choujuu-quiz-navigation" style="display: none;">
+        <button id="prev-choujuu-question-btn" class="nav-btn">＜ 前の問題へ</button>
+        <button id="next-choujuu-question-btn" class="nav-btn">次の問題へ ＞</button>
+</div>   
     </div>
 
     <!-- ====================================================== -->
