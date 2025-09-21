@@ -475,8 +475,7 @@ input:checked + .slider:before {
 /* =================================================================== */
 
 /* ボタンの親要素と、右側の「達成率」エリアを相対位置の基準にする */
-.challenge-btn-sushi,
-.sushi-btn-score {
+.sushi-btn-score { /* ★★★ .challenge-btn-sushi を削除 ★★★ */
     position: relative;
 }
 

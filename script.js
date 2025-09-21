@@ -147,10 +147,16 @@ function playSound(type) {
                 const buttonHTML = `
                     <button class="challenge-btn-sushi ${item.class}" data-mode="${item.mode}">
                         <span class="sushi-btn-label">${item.text}</span>
-                        <span class="sushi-btn-score">達成率 ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}</span>
+                    <!-- ★★★ ここから修正 ★★★ -->
+                    <span class="sushi-btn-score">
+                        達成率 ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}
+                        
                         <div class="sushi-btn-progress-track">
-                           <div class="sushi-btn-progress-bar ${completedClass}" style="width: ${progressWidth}%;"></div>
+                            <div class="sushi-btn-progress-bar ${completedClass}" style="width: ${progressWidth}%;"></div>
                         </div>
+                    </span>
+                    <!-- ★★★ ここまで修正 ★★★ -->
+
                     </button>
                 `;
                 
