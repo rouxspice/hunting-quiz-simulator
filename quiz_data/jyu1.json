@@ -459,6 +459,7 @@
     },
     {
         "question": "銃の譲渡について正しい手続きはどれか。",
+        "image": "quiz_data/images/scenes/hunt28.jpg",
         "answers": [
             { "text": "個人間で自由に売買できる", "correct": false },
             { "text": "一緒に狩猟した仲であれば自由に売買できる", "correct": false },
