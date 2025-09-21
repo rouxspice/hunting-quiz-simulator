@@ -370,11 +370,11 @@ input:checked + .slider:before {
 }
 
 #feedback-overlay.correct #feedback-symbol {
-    color: rgba(220, 53, 69, 0.8); /* 少し透明な赤色（〇の色） */
+    color: rgba(0, 123, 255, 0.8); /* 少し透明な青色（〇の色） */
 }
 
 #feedback-overlay.wrong #feedback-symbol {
-    color: rgba(0, 123, 255, 0.8); /* 少し透明な青色（×の色） */
+    color: rgba(220, 53, 69, 0.8); /* 少し透明な赤色（×の色） */
 }
 
 #feedback-overlay:not(.hidden) #feedback-symbol {
