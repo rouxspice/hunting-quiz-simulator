@@ -471,39 +471,40 @@ input:checked + .slider:before {
 }
 
 /* =================================================================== */
-/* ★★★ トップページ ボタンプログレスバー (案3：インセット) ★★★ */
+/* ★★★ トップページ ボタンプログレスバー (レイアウト調整版) ★★★ */
 /* =================================================================== */
 
-/* ボタンの親要素を相対位置の基準にする */
-.challenge-btn-sushi {
+/* ボタンの親要素と、右側の「達成率」エリアを相対位置の基準にする */
+.challenge-btn-sushi,
+.sushi-btn-score {
     position: relative;
-    /* overflow: hidden; は不要なので削除 */
 }
 
 /* プログレスバーの背景（未達成部分の薄いバー） */
 .sushi-btn-progress-track {
     position: absolute;
-    bottom: 8px; /* ボタンの下から8pxの位置に配置 */
-    left: 50%;   /* 水平方向の中央から配置を開始 */
-    transform: translateX(-50%); /* 中央揃えにするためのテクニック */
-    width: calc(100% - 30px); /* ボタンの左右に15pxずつの余白を確保 */
+    bottom: 8px; /* 達成率テキストからの距離 */
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* 左右中央揃え */
+    width: 80%; /* 達成率エリアの80%の幅にする */
     height: 6px;
-    background-color: #e0e0e0; /* 未達成部分のバーの色 */
-    border-radius: 3px; /* 角を丸くする */
-    overflow: hidden; /* 中のバーがはみ出ないように */
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1); /* 内側に影をつけて立体感を出す */
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
 
 /* プログレスバー本体（達成部分）のスタイル */
 .sushi-btn-progress-bar {
     height: 100%;
-    background: linear-gradient(45deg, #4caf50, #81c784); /* グラデーションで見栄えを良く */
-    width: 0%;          /* 初期幅は0% */
+    background: linear-gradient(45deg, #4caf50, #81c784);
+    width: 0%;
     transition: width 0.5s ease-in-out;
     border-radius: 3px;
 }
 
 /* 100%達成時のスタイル */
 .sushi-btn-progress-bar.completed {
-    background: linear-gradient(45deg, #ffc107, #ffecb3); /* ゴールドのグラデーション */
+    background: linear-gradient(45deg, #ffc107, #ffecb3);
 }
