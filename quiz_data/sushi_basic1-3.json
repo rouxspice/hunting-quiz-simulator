@@ -5,8 +5,8 @@
     "answers": [
       { "text": "ムツゴロウ", "correct": false },
       { "text": "タカベ", "correct": false },
-      { "text": "オキイサキ", "correct": false },
-      { "text": "ヨコスジフエダイ", "correct": true }
+      { "text": "オキイサキ", "correct": true },
+      { "text": "ヨコスジフエダイ", "correct": false }
     ],
     "additionalInfo": "写真はヨコスジフエダイです。沖縄などの南方系の魚で、美しい縞模様が特徴的です。"
   },
@@ -25,8 +25,8 @@
     "question": "福岡の「天然マダイ」の旬はいつか。",
     "image": "",
     "answers": [
-      { "text": "春", "correct": true },
-      { "text": "夏", "correct": false },
+      { "text": "春", "correct": false },
+      { "text": "夏", "correct": true },
       { "text": "秋", "correct": false },
       { "text": "冬", "correct": false }
     ],
@@ -38,8 +38,8 @@
     "answers": [
       { "text": "ツクシトビウオ", "correct": false },
       { "text": "サッパ", "correct": false },
-      { "text": "ヨコスジフエダイ", "correct": true },
-      { "text": "ナンヨウブダイ", "correct": false }
+      { "text": "ヨコスジフエダイ", "correct": false },
+      { "text": "ナンヨウブダイ", "correct": true }
     ],
     "additionalInfo": "オキイサキの正式名称はヨコスジフエダイです。沖縄地方でよく食べられる魚です。"
   },
@@ -48,9 +48,9 @@
     "image": "",
     "answers": [
       { "text": "オオキンブナ", "correct": false },
-      { "text": "ニゴロブナ", "correct": true },
+      { "text": "ニゴロブナ", "correct": false },
       { "text": "ゲンゴロウブナ", "correct": false },
-      { "text": "ギンブナ", "correct": false }
+      { "text": "ギンブナ", "correct": true }
     ],
     "additionalInfo": "滋賀県のふなずしには主にニゴロブナが使用されます。琵琶湖固有の魚で、発酵寿司の代表格です。"
   },
@@ -60,8 +60,8 @@
     "answers": [
       { "text": "春魚", "correct": false },
       { "text": "瓜魚", "correct": false },
-      { "text": "涼魚", "correct": false },
-      { "text": "香魚", "correct": true }
+      { "text": "涼魚", "correct": true },
+      { "text": "香魚", "correct": false }
     ],
     "additionalInfo": "鮎の別称は「香魚」です。独特の香りがあることから名付けられました。"
   },
@@ -70,9 +70,9 @@
     "image": "",
     "answers": [
       { "text": "かます寿司", "correct": false },
-      { "text": "しろはた寿司", "correct": false },
+      { "text": "しろはた寿司", "correct": true },
       { "text": "めはりずし", "correct": false },
-      { "text": "うずめ寿司", "correct": true }
+      { "text": "うずめ寿司", "correct": false }
     ],
     "additionalInfo": "鳥取県賀露神社の祭りでは「うずめ寿司」が振る舞われます。地域の伝統的な祭り寿司です。"
   },
@@ -92,8 +92,8 @@
     "image": "",
     "answers": [
       { "text": "松山鮨", "correct": false },
-      { "text": "岩国寿司", "correct": false },
-      { "text": "唐ずし", "correct": true },
+      { "text": "岩国寿司", "correct": true },
+      { "text": "唐ずし", "correct": false },
       { "text": "ままかりずし", "correct": false }
     ],
     "additionalInfo": "「唐ずし」はおからとイワシやアジを使った郷土寿司です。経済的で栄養価の高い庶民の寿司として親しまれました。"
@@ -102,8 +102,8 @@
     "question": "大分県の「おかずし」でアジと一緒に混ぜるのはなにか。",
     "image": "",
     "answers": [
-      { "text": "四方竹", "correct": true },
-      { "text": "甘く煮たうずら豆", "correct": false },
+      { "text": "四方竹", "correct": false },
+      { "text": "甘く煮たうずら豆", "correct": true },
       { "text": "豆腐を二度揚げした大きな油揚げ", "correct": false },
       { "text": "酢で味を付けたおから", "correct": false }
     ],
@@ -113,10 +113,10 @@
     "question": "勝ち戦の祝いの寿司として作ったことが起源とされるのはどの郷土寿司か。",
     "image": "",
     "answers": [
-      { "text": "須古寿司", "correct": true },
+      { "text": "須古寿司", "correct": false },
       { "text": "大村ずし", "correct": false },
       { "text": "もぶり鮨", "correct": false },
-      { "text": "酒ずし", "correct": false }
+      { "text": "酒ずし", "correct": true }
     ],
     "additionalInfo": "須古寿司は勝ち戦の祝いの寿司として作られたことが起源とされています。佐賀県の郷土料理です。"
   },
@@ -147,8 +147,8 @@
     "image": "quiz_data/images/sushi/sushi_ibodai.jpg",
     "answers": [
       { "text": "アカアマダイ", "correct": false },
-      { "text": "イボダイ", "correct": true },
-      { "text": "イシダイ", "correct": false },
+      { "text": "イボダイ", "correct": false },
+      { "text": "イシダイ", "correct": true },
       { "text": "イラブチャー", "correct": false }
     ],
     "additionalInfo": "写真はイボダイです。"
@@ -168,8 +168,8 @@
     "question": "おいしさの構成要素の中心「基本味」に含まれないものはどれか。",
     "image": "",
     "answers": [
-      { "text": "うま味", "correct": false },
-      { "text": "辛味", "correct": true },
+      { "text": "うま味", "correct": true },
+      { "text": "辛味", "correct": false },
       { "text": "甘味", "correct": false },
       { "text": "塩味", "correct": false }
     ],
@@ -181,8 +181,8 @@
     "answers": [
       { "text": "基本味に補助味を加えたもの", "correct": false },
       { "text": "味覚に嗅覚を加えたもの", "correct": false },
-      { "text": "味覚を含む五感で感じる食べた時の味わい", "correct": true },
-      { "text": "五感とそれ以外の要素を加味した結果、得られる体験", "correct": false }
+      { "text": "味覚を含む五感で感じる食べた時の味わい", "correct": false },
+      { "text": "五感とそれ以外の要素を加味した結果、得られる体験", "correct": true }
     ],
     "additionalInfo": "おいしさは味覚だけでなく、視覚、嗅覚、聴覚、触覚の五感すべてで感じる総合的な体験です。"
   },
@@ -190,9 +190,9 @@
     "question": "「塩をかけるとスイカの甘味が引き立つ」のは次のどの効果によるものか。",
     "image": "",
     "answers": [
-      { "text": "味の相乗効果", "correct": false },
+      { "text": "味の相乗効果", "correct": true },
       { "text": "味の抑制効果", "correct": false },
-      { "text": "味の対比効果", "correct": true },
+      { "text": "味の対比効果", "correct": false },
       { "text": "味の促進効果", "correct": false }
     ],
     "additionalInfo": "塩をかけることでスイカの甘味が引き立つのは「味の対比効果」によるものです。異なる味が互いを引き立て合います。"
@@ -201,8 +201,8 @@
     "question": "後味が短い特性があるものは次のうちどれか。",
     "image": "",
     "answers": [
-      { "text": "うま味", "correct": true },
-      { "text": "酸味", "correct": false },
+      { "text": "うま味", "correct": false },
+      { "text": "酸味", "correct": true },
       { "text": "渋味", "correct": false },
       { "text": "辛味", "correct": false }
     ],
@@ -213,9 +213,9 @@
     "image": "",
     "answers": [
       { "text": "舌下腺", "correct": false },
-      { "text": "舌苔", "correct": true },
+      { "text": "舌苔", "correct": false },
       { "text": "味蕾", "correct": false },
-      { "text": "喉頭蓋", "correct": false }
+      { "text": "喉頭蓋", "correct": true }
     ],
     "additionalInfo": "図のAの部分は舌苔（ぜったい）です。舌の表面にある細かい突起で、味蕾が分布しています。"
   },
@@ -225,8 +225,8 @@
     "answers": [
       { "text": "前付", "correct": false },
       { "text": "先付", "correct": false },
-      { "text": "向付", "correct": true },
-      { "text": "奥付", "correct": false }
+      { "text": "向付", "correct": false },
+      { "text": "奥付", "correct": true }
     ],
     "additionalInfo": "会席料理や懐石料理では、お造り（刺身）を「向付」と呼びます。客に向けて出すことから名付けられました。"
   },
@@ -236,8 +236,8 @@
     "answers": [
       { "text": "煮物", "correct": false },
       { "text": "揚げ物", "correct": false },
-      { "text": "蒸し物", "correct": false },
-      { "text": "向付", "correct": true }
+      { "text": "蒸し物", "correct": true },
+      { "text": "向付", "correct": false }
     ],
     "additionalInfo": "会席料理では椀物の後に向付（お造り）が続きます。これが基本的な流れです。"
   },
@@ -246,9 +246,9 @@
     "image": "",
     "answers": [
       { "text": "煮る", "correct": false },
-      { "text": "炒める", "correct": true },
+      { "text": "炒める", "correct": false },
       { "text": "揚げる", "correct": false },
-      { "text": "蒸す", "correct": false }
+      { "text": "蒸す", "correct": true }
     ],
     "additionalInfo": "和食の五法は「煮る、焼く、蒸す、揚げる、生」です。炒めるは含まれません。"
   },
@@ -258,8 +258,8 @@
     "answers": [
       { "text": "赤、黄、青、紫、白", "correct": false },
       { "text": "赤、黄、緑、紫、青", "correct": false },
-      { "text": "赤、黄、茶、白、黒", "correct": true },
-      { "text": "赤、黄、緑、白、黒", "correct": false }
+      { "text": "赤、黄、茶、白、黒", "correct": false },
+      { "text": "赤、黄、緑、白、黒", "correct": true }
     ],
     "additionalInfo": "和食の五色は「赤、黄、茶、白、黒」です。これらの色を組み合わせることで美しい盛り付けを実現します。"
   },
@@ -267,8 +267,8 @@
     "question": "コハダをさばく際に最初に行う作業はどれか。",
     "image": "",
     "answers": [
-      { "text": "背びれを落とす", "correct": true },
-      { "text": "内臓を取り出す", "correct": false },
+      { "text": "背びれを落とす", "correct": false },
+      { "text": "内臓を取り出す", "correct": true },
       { "text": "頭を落とす", "correct": false },
       { "text": "鱗を取る", "correct": false }
     ],

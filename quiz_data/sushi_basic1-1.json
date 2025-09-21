@@ -135,10 +135,10 @@
     "question": "現在の回転寿司システムの原型を考案したのは誰か。",
     "image": "",
     "answers": [
-      { "text": "白石義明", "correct": true },
+      { "text": "白石義明", "correct": false },
       { "text": "元禄太郎", "correct": false },
       { "text": "廻る元禄寿司", "correct": false },
-      { "text": "スシロー創業者", "correct": false }
+      { "text": "白石義明", "correct": true }
     ],
     "additionalInfo": "白石義明氏が1958年に大阪で「元禄寿司」を開店し、現在の回転寿司システムの原型を作り上げました。"
   },
@@ -180,9 +180,9 @@
     "image": "",
     "answers": [
       { "text": "「種」の逆読み", "correct": false },
-      { "text": "「タネ」の逆読み", "correct": true },
+      { "text": "「タネ」の逆読み", "correct": false },
       { "text": "魚の「根っこ」から", "correct": false },
-      { "text": "「ねた」という古語", "correct": false }
+      { "text": "「ねた」という古語", "correct": true }
     ],
     "additionalInfo": "「ネタ」は「タネ」を逆読みした寿司業界の隠語です。寿司の材料となる魚介類を指します。"
   },
@@ -190,10 +190,10 @@
     "question": "江戸前寿司で使われる「煮切り醤油」の特徴として正しいのはどれか。",
     "image": "",
     "answers": [
-      { "text": "アルコールを飛ばした醤油", "correct": true },
+      { "text": "アルコールを飛ばした醤油", "correct": false },
       { "text": "塩分を濃くした醤油", "correct": false },
       { "text": "砂糖を加えた醤油", "correct": false },
-      { "text": "酢を加えた醤油", "correct": false }
+      { "text": "酢を加えた醤油", "correct": true }
     ],
     "additionalInfo": "煮切り醤油は醤油を煮立ててアルコール分を飛ばし、まろやかな味にした調味料です。"
   },
@@ -203,8 +203,8 @@
     "answers": [
       { "text": "酢で締めた魚", "correct": false },
       { "text": "塩で締めた魚", "correct": false },
-      { "text": "醤油に漬けた魚", "correct": true },
-      { "text": "味噌に漬けた魚", "correct": false }
+      { "text": "醤油に漬けた魚", "correct": false },
+      { "text": "味噌に漬けた魚", "correct": true }
     ],
     "additionalInfo": "ヅケは魚を醤油ベースのタレに漬け込む江戸前寿司の伝統的な技法です。マグロのヅケが代表的です。"
   },
@@ -213,9 +213,9 @@
     "image": "",
     "answers": [
       { "text": "最後の一貫", "correct": false },
-      { "text": "お会計", "correct": false },
+      { "text": "お会計", "correct": true },
       { "text": "お茶", "correct": false },
-      { "text": "食事の終わり", "correct": true }
+      { "text": "食事の終わり", "correct": false }
     ],
     "additionalInfo": "「アガリ」は食事の終わりを意味する寿司屋の用語です。転じてお茶を指すこともありますが、本来は食事の締めくくりを表します。"
   },
@@ -235,8 +235,8 @@
     "image": "",
     "answers": [
       { "text": "米を研ぐこと", "correct": false },
-      { "text": "酢飯を作ること", "correct": true },
-      { "text": "米を炊くこと", "correct": false },
+      { "text": "酢飯を作ること", "correct": false },
+      { "text": "米を炊くこと", "correct": true },
       { "text": "米を冷ますこと", "correct": false }
     ],
     "additionalInfo": "シャリ切りは炊いたご飯に酢を混ぜて酢飯（シャリ）を作る工程を指します。寿司作りの基本技術です。"
@@ -246,9 +246,9 @@
     "image": "",
     "answers": [
       { "text": "紫色の海苔", "correct": false },
-      { "text": "醤油", "correct": true },
+      { "text": "醤油", "correct": false },
       { "text": "紫蘇", "correct": false },
-      { "text": "ウニ", "correct": false }
+      { "text": "ウニ", "correct": true }
     ],
     "additionalInfo": "「ムラサキ」は醤油を指す寿司屋の隠語です。醤油の色が紫色に見えることから名付けられました。"
   },
