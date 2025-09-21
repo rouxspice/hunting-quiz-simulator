@@ -329,13 +329,13 @@ function playSound(type) {
                     };
 
                     if (isCorrect) {
-                        playSound(correctSound);
+                        playSound('correct'); // ★★★ 'correct' に修正 ★★★
                         showFeedbackAnimation(true);
                         if (choice === 'no') {
-                            score++; // 非狩猟鳥獣を正しく「獲れない」と答えたら1点
+                            score++;
                         }
                     } else {
-                        playSound(wrongSound);
+                        playSound('wrong'); // ★★★ 'wrong' に修正 ★★★
                         showFeedbackAnimation(false);
                         wrongQuestions.push(JSON.parse(JSON.stringify(question)));
                     }
@@ -525,11 +525,11 @@ function playSound(type) {
                 };
 
                 if (isCorrect) {
-                    playSound(correctSound);
-                    score++; // 名前当て正解で1点
+                    playSound('correct'); // ★★★ 'correct' に修正 ★★★
+                    score++;
                     showFeedbackAnimation(true);
                 } else {
-                    playSound(wrongSound);
+                    playSound('wrong'); // ★★★ 'wrong' に修正 ★★★
                     // wrongQuestionsへの追加はstep1で既に行っているので不要
                     showFeedbackAnimation(false);
                 }
@@ -666,13 +666,13 @@ function playSound(type) {
             };
 
             if (isCorrect) {
-                playSound(correctSound);
-                score++;
-                showFeedbackAnimation(true);
+            playSound('correct'); // ★★★ 'correct' に修正 ★★★
+            score++;
+            showFeedbackAnimation(true);
             } else {
-                playSound(wrongSound);
-                wrongQuestions.push(JSON.parse(JSON.stringify(question)));
-                showFeedbackAnimation(false);
+            playSound('wrong'); // ★★★ 'wrong' に修正 ★★★
+            wrongQuestions.push(JSON.parse(JSON.stringify(question)));
+            showFeedbackAnimation(false);
             }
         }
 
