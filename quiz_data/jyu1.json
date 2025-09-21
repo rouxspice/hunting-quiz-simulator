@@ -110,6 +110,7 @@
     },
     {
         "question": "散弾の大きさについて、正しいものはどれか。",
+        "image": "quiz_data/images/scenes/sandan01.jpg",
         "answers": [
             { "text": "号数が大きいほど、粒も大きい", "correct": false },
             { "text": "号数が小さいほど、粒が大きい", "correct": true },
@@ -119,6 +120,7 @@
     },
     {
         "question": "散弾銃のチョーク（絞り）の効果として、正しいものはどれか。",
+        "image": "quiz_data/images/scenes/choke01.png",
         "answers": [
             { "text": "絞りがきついほど、散弾は広がる", "correct": false },
             { "text": "絞りがきついほど、散弾はまとまって遠くへ飛ぶ", "correct": true },
@@ -128,6 +130,7 @@
     },
     {
         "question": "水平二連銃の発射機構について、正しいものはどれか。",
+        "image": "quiz_data/images/scenes/suiheinirensandanjuu01.png",
         "answers": [
             { "text": "引き金を引くと、2発同時に発射される", "correct": false },
             { "text": "1発ずつ順番に発射される", "correct": true },
@@ -137,6 +140,7 @@
     },
     {
         "question": "ボルトアクション式のライフルの特徴として、正しいものはどれか。",
+        "image": "quiz_data/images/scenes/bolt.webp",
         "answers": [
             { "text": "引き金を引くだけで、自動で次弾が装填される", "correct": false },
             { "text": "一発撃つごとに、手動でボルトを操作する必要がある", "correct": true },
@@ -146,6 +150,7 @@
     },
     {
         "question": "「スラッグ弾」とはどのような弾か。",
+        "image": "quiz_data/images/scenes/slugs01.jpg",
         "answers": [
             { "text": "多数の小さな鉛の粒が詰まった弾", "correct": false },
             { "text": "大きな一発の鉛の弾丸", "correct": true },
@@ -155,6 +160,7 @@
     },
     {
         "question": "銃の保管方法として法律上正しいものはどれか。",
+        "image": "quiz_data/images/scenes/hunt07.jpg",
         "answers": [
             { "text": "銃と実包を、同じガンロッカーに保管する", "correct": false },
             { "text": "銃と実包は、それぞれ別の施錠された場所に保管する", "correct": true },
@@ -164,6 +170,7 @@
     },
     {
         "question": "銃の手入れ（クリーニング）を行う最適なタイミングはいつか。",
+        "image": "quiz_data/images/scenes/hunt08.jpg",
         "answers": [
             { "text": "次回の猟の直前", "correct": false },
             { "text": "猟から帰宅後速やかに", "correct": true },
@@ -173,6 +180,7 @@
     },
     {
         "question": "オープンサイトでの照準の合わせ方として、正しいものはどれか。",
+        "image": "quiz_data/images/scenes/hunt09.jpg",
         "answers": [
             { "text": "照星と照門をぼんやりと見て標的に集中する", "correct": false },
             { "text": "標的、照星、照門が、一直線に見えるように狙う", "correct": true },
@@ -182,6 +190,7 @@
     },
     {
         "question": "「矢先の確認」で最も重要なことは何か。",
+        "image": "quiz_data/images/scenes/hunt09.jpg",
         "answers": [
             { "text": "獲物がはっきりと見えること", "correct": false },
             { "text": "弾が届く範囲内に、人や建物などがいないこと", "correct": true },
@@ -191,6 +200,7 @@
     },
     {
         "question": "山中で、他の登山者などに出会った際の対応として、最も適切なものはどれか。",
+        "image": "quiz_data/images/scenes/hunt10.jpg",
         "answers": [
             { "text": "相手に気づかれないよう身を隠す", "correct": false },
             { "text": "脱包し、安全を示した上で、明るく挨拶する", "correct": true },
@@ -201,6 +211,7 @@
     },
     {
         "question": "「脱包」とは具体的にどのような状態にすることか。",
+        "image": "quiz_data/images/scenes/hunt11.jpg",
         "answers": [
             { "text": "安全装置をかけること", "correct": false },
             { "text": "薬室と弾倉から、すべての実包を抜くこと", "correct": true },
@@ -211,6 +222,7 @@
     },
     {
         "question": "銃の安全な取り扱いの原則として、銃口は常にどこへ向けるべきか。",
+        "image": "quiz_data/images/scenes/hunt12.jpg",
         "answers": [
             { "text": "獲物がいそうな方向", "correct": false },
             { "text": "自分以外の人の背中", "correct": false },
@@ -221,6 +233,7 @@
     },
     {
         "question": "引き金に指をかけるのは、いつが適切か。",
+        "image": "quiz_data/images/scenes/hunt13.jpg",
         "answers": [
             { "text": "獲物を見つけたら、すぐ", "correct": false },
             { "text": "発射のまさに、直前", "correct": true },
@@ -231,6 +244,7 @@
     },
     {
         "question": "半矢（手負い）にしてしまった獲物はどうすべきか。",
+        "image": "quiz_data/images/scenes/hunt14.jpg",
         "answers": [
             { "text": "かわいそうなので放置する", "correct": false },
             { "text": "責任を持って、最後まで追跡し止めを刺す", "correct": true },
@@ -241,6 +255,7 @@
     },
     {
         "question": "獲物の止め刺しを行う際の最も安全な方法はどれか。",
+        "image": "quiz_data/images/scenes/hunt14.jpg",
         "answers": [
             { "text": "近距離から銃で撃つ", "correct": false },
             { "text": "素手で首を絞める", "correct": false },
@@ -251,6 +266,7 @@
     },
     {
         "question": "狩猟後、車で移動する際の銃の取り扱いとして、正しいものはどれか。",
+        "image": "quiz_data/images/scenes/carryagunbycar01.jpg",
         "answers": [
             { "text": "弾を装填したままガンケースに入れる", "correct": false },
             { "text": "弾を装填したまま両手で抱える", "correct": false },
@@ -258,10 +274,10 @@
             { "text": "助手席にそのまま置く", "correct": false }
         ],
         "additionalInfo": "車両での移動時は必ず脱包し、銃と弾を分けてガンケースなどに収納することが法律で定められています。"
-        ,"image": "quiz_data/images/scenes/carryagunbycar01.jpg"
     },
     {
         "question": "射撃時に、不発が起きた場合、最初にすべきことは何か。",
+        "image": "quiz_data/images/scenes/hunt15.jpg",
         "answers": [
             { "text": "すぐに銃を開いて、弾を確認する", "correct": false },
             { "text": "何度も引き金をひく", "correct": false },
@@ -271,27 +287,8 @@
         "additionalInfo": "不発の原因が遅発（発射の遅れ）の可能性があるため、すぐに開かず、銃口を安全な方向に向けたまま数十秒から1分程度待つのが安全な対処法です。"
     },
     {
-        "question": "カモ類の中で雌雄の外見がほぼ同じ（雌雄同色）なのはどれか。",
-        "answers": [
-            { "text": "マガモ", "correct": false },
-            { "text": "カルガモ", "correct": true },
-            { "text": "ホボオナジカモ", "correct": false },
-            { "text": "オナガガモ", "correct": false }
-        ],
-        "additionalInfo": "カルガモは多くのカモ類と異なり、オスとメスの外見がほぼ同じであることが特徴です。"
-    },
-    {
-        "question": "キジの雌雄の特徴について、正しいものはどれか。",
-        "answers": [
-            { "text": "メスの方がオスより派手な色をしている", "correct": false },
-            { "text": "オスが派手な色でメスは地味な保護色をしている", "correct": true },
-            { "text": "メスの方がオスより３倍ほど大きい", "correct": false },
-            { "text": "オスとメスはまったく同じ色と形をしている", "correct": false }
-        ],
-        "additionalInfo": "キジは、オスが赤や緑の派手な羽色をしているのに対し、メスは周囲の環境に溶け込む地味な、褐色（保護色）をしています。狩猟が許可されているのはオスのみです。"
-    },
-    {
         "question": "捕獲した獲物の内臓などの残滓（ざんし）の、適切な処理方法はどれか。",
+        "image": "quiz_data/images/scenes/hunt16.jpg",
         "answers": [
             { "text": "他の動物のためにその場に放置する", "correct": false },
             { "text": "木の枝にぶら下げておく", "correct": false },
@@ -302,6 +299,7 @@
     },
     {
         "question": "狩猟期間について、原則として正しいものはどれか。",
+        "image": "quiz_data/images/scenes/hunt17.jpg",
         "answers": [
             { "text": "全国一律で11月15日から2月15日まで", "correct": false },
             { "text": "クリスマスから節分まで", "correct": false },
@@ -312,6 +310,7 @@
     },
     {
         "question": "鳥獣保護区内での狩猟について、正しいものはどれか。",
+        "image": "quiz_data/images/scenes/hunt18.jpg",
         "answers": [
             { "text": "空気銃なら許可されている", "correct": false },
             { "text": "網猟なら許可されている", "correct": false },
@@ -322,6 +321,7 @@
     },
     {
         "question": "銃の所持許可の有効期間は、何年か。",
+        "image": "quiz_data/images/scenes/hunt19.jpg",
         "answers": [
             { "text": "1年", "correct": false },
             { "text": "3年", "correct": true },
@@ -332,6 +332,7 @@
     },
     {
         "question": "猟犬が獲物を捕らえた場合、その獲物は誰のものとみなされるか。",
+        "image": "quiz_data/images/scenes/hunt20.jpg",
         "answers": [
             { "text": "誰のものでもない", "correct": false },
             { "text": "半分は猟犬のもの", "correct": false },
@@ -342,6 +343,7 @@
     },
     {
         "question": "散弾銃の一般的な有効射程距離はどれくらいか。",
+        "image": "quiz_data/images/scenes/hunt21.jpg",
         "answers": [
             { "text": "約10メートル", "correct": false },
             { "text": "約20～30メートル", "correct": false },
@@ -352,6 +354,7 @@
     },
     {
         "question": "狩猟者記章（バッジ）の着用について、正しいものはどれか。",
+        "image": "quiz_data/images/scenes/hunt22.jpg",
         "answers": [
             { "text": "着用は任意である", "correct": false },
             { "text": "貴重なものなので、自宅に置いておく", "correct": false },
@@ -362,6 +365,7 @@
     },
     {
         "question": "空気銃の使用が、禁止されている場所はどこか。",
+        "image": "quiz_data/images/scenes/hunt23.jpg",
         "answers": [
             { "text": "山林のみ", "correct": false },
             { "text": "空気が薄い場所", "correct": false },
@@ -371,37 +375,8 @@
         "additionalInfo": "空気銃も法律上の「銃」であり、住居が集合している地域などでの発砲は、装薬銃と同様に固く禁止されています。"
     },
     {
-        "question": "技能試験の「距離の目測」で判断する距離の組み合わせとして、正しいものはどれか。",
-        "answers": [
-            { "text": "200m, 100m, 50m, 20m", "correct": false },
-            { "text": "1000m, 500m, 250m, 100m", "correct": false },
-            { "text": "300m, 50m, 30m, 10m", "correct": true },
-            { "text": "500m, 200m, 100m, 50m", "correct": false }
-        ],
-        "additionalInfo": "距離の目測試験で判断する距離は、300m、50m、30m、10mの4種類です。"
-    },
-    {
-        "question": "ヤマドリの雌雄の見分け方として正しいものはどれか。",
-        "answers": [
-            { "text": "オスはメスより、体が白い", "correct": false },
-            { "text": "オスはメスより、足が臭い", "correct": false },
-            { "text": "オスはメスより、尾が非常に長い", "correct": true },
-            { "text": "オスとメスは見分けがつかない", "correct": false }
-        ],
-        "additionalInfo": "ヤマドリのオスは非常に長い尾羽を持つのに対し、メスの尾は短い。これも雌雄を見分ける重要なポイントです。"
-    },
-    {
-        "question": "タヌキとアナグマの分類について正しいものはどれか。",
-        "answers": [
-            { "text": "両方ともイヌ科である", "correct": false },
-            { "text": "タヌキはイヌ科、アナグマはイタチ科である", "correct": true },
-            { "text": "元々は同じ生き物である", "correct": true },
-            { "text": "両方ともクマ科である", "correct": false }
-        ],
-        "additionalInfo": "タヌキはイヌ科ですが、アナグマはイタチ科です。外見は似ていますが分類上は異なる動物です。"
-    },
-    {
         "question": "銃の銃口管理の基本として最も重要なことは何か。",
+        "image": "quiz_data/images/scenes/hunt24.jpg",
         "answers": [
             { "text": "常に下に向けておく", "correct": false },
             { "text": "暴発しないように常に湿らせておく", "correct": false },
@@ -412,6 +387,7 @@
     },
     {
         "question": "自分の土地での狩猟について正しいものはどれか。",
+        "image": "quiz_data/images/scenes/hunt25.jpg",
         "answers": [
             { "text": "狩猟期間外でも、自由に狩猟できる", "correct": false },
             { "text": "家族が３人以上揃っていれば狩猟できる", "correct": false },
@@ -422,6 +398,7 @@
     },
     {
         "question": "狩猟中の安全装備として推奨されるものはどれか。",
+        "image": "quiz_data/images/scenes/hunt26.jpg",
         "answers": [
             { "text": "周囲の景色に溶け込む迷彩服", "correct": false },
             { "text": "動物に警戒されない全身を覆う毛皮", "correct": false },
@@ -431,17 +408,8 @@
         "additionalInfo": "他の狩猟者による誤射事故を防ぐため、目立つ色の衣服（ハンターオレンジ）を着用することが強く推奨されています。"
     },
     {
-        "question": "「かすみ網」の使用について正しいものはどれか。",
-        "answers": [
-            { "text": "鳥類捕獲のため使用が許可されている", "correct": false },
-            { "text": "小型のものなら使用できる", "correct": false },
-            { "text": "狩猟での使用は全面的に禁止されている", "correct": true },
-            { "text": "免許があれば使用できる", "correct": false }
-        ],
-        "additionalInfo": "かすみ網は鳥類を無差別に捕獲してしまうため、鳥獣保護の観点から狩猟での使用は全面的に禁止されています。"
-    },
-    {
         "question": "第一種銃猟免許で扱える銃器の組み合わせとして正しいものはどれか。",
+        "image": "quiz_data/images/scenes/hunt27.jpg",
         "answers": [
             { "text": "散弾銃のみ", "correct": false },
             { "text": "散弾銃とボウガン", "correct": false },
@@ -459,16 +427,6 @@
             { "text": "インパクトエリア", "correct": false }
         ],
         "additionalInfo": "「バックストップ」とは弾を安全に止めるための、山や土手などの背景のことです。獲物の向こう側に適切なバックストップがあるかを確認することが重要です。"
-    },
-    {
-        "question": "狩猟税はどこに納める税金か。",
-        "answers": [
-            { "text": "国（国税）", "correct": false },
-            { "text": "猟友会", "correct": false },
-            { "text": "狩猟者登録を行う都道府県（地方税）", "correct": true },
-            { "text": "市町村（地方税）", "correct": false }
-        ],
-        "additionalInfo": "狩猟税は狩猟者登録を行う都道府県に納める地方税（都道府県税）です。"
     },
     {
         "question": "銃の所持許可証を紛失した場合どうすべきか。",
