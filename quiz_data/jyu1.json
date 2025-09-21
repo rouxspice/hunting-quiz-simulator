@@ -470,6 +470,7 @@
     },
     {
         "question": "銃猟中に誤って非狩猟鳥獣を捕獲（誤捕獲）してしまった場合どうすべきか。",
+        "image": "quiz_data/images/scenes/hunt29.jpg",
         "answers": [
             { "text": "誰にも見つからないように隠す", "correct": false },
             { "text": "取り乱す", "correct": false },
@@ -480,6 +481,7 @@
     },
     {
         "question": "銃の引き金の重さ（プルウェイト）について、正しいものはどれか。",
+        "image": "quiz_data/images/scenes/hunt30.jpg",
         "answers": [
             { "text": "重いほど暴発の危険性が高い", "correct": false },
             { "text": "軽すぎると、わずかな接触でも発射される危険がある", "correct": true },
@@ -489,6 +491,7 @@
     },
     {
         "question": "「休猟区」とは、どのような区域か。",
+        "image": "quiz_data/images/scenes/hunt31.jpg",
         "answers": [
             { "text": "ハンターが休憩するための場所", "correct": false },
             { "text": "立ち入ったら一晩休む必要がある場所", "correct": false },
@@ -499,6 +502,7 @@
     },
     {
         "question": "狩猟免許を取り消される事由に該当しないものはどれか。",
+        "image": "quiz_data/images/scenes/hunt32.jpg",
         "answers": [
             { "text": "狩猟に関する法令に違反したとき", "correct": false },
             { "text": "一年間狩猟を行わなかったとき", "correct": true },
@@ -508,6 +512,7 @@
     },
     {
         "question": "銃の所持許可を受けている者が死亡した場合、その親族はどうしなければならないか。",
+        "image": "quiz_data/images/scenes/hunt33.jpg",
         "answers": [
             { "text": "形見として保管してよい", "correct": false },
             { "text": "粉々にして土に埋める", "correct": false },
@@ -518,6 +523,7 @@
     },
     {
         "question": "銃猟が可能な場所であっても、発砲してはならない状況はどれか。",
+        "image": "quiz_data/images/scenes/hunt34.jpg",
         "answers": [
             { "text": "獲物が遠くにいるとき", "correct": false },
             { "text": "空腹時", "correct": false },
@@ -527,34 +533,6 @@
         "additionalInfo": "たとえ狩猟が許可された場所であっても、矢先の安全が確認できない場合は、絶対に発砲してはなりません。安全の確保が最優先です。"
     },
     {
-        "question": "ライフル銃の弾丸の最大到達距離はどれくらいか。",
-        "answers": [
-            { "text": "約500メートル", "correct": false },
-            { "text": "数キロメートルに達する場合がある", "correct": true },
-            { "text": "約1キロメートル", "correct": false }
-        ],
-        "additionalInfo": "ライフル銃の弾丸は、非常に遠くまで飛翔し、その最大到達距離は3000メートルを超えることもあります。有効射程距離と最大到達距離を混同してはなりません。"
-    },
-    {
-        "question": "狩猟者登録証を携帯せずに狩猟を行った場合どうなるか。",
-        "answers": [
-            { "text": "厳重注意を受けるだけである", "correct": false },
-            { "text": "狩猟者登録証は携帯しなくても良い", "correct": false },
-            { "text": "法律違反となり罰則の対象となる", "correct": true },
-            { "text": "次回の更新ができなくなる", "correct": false }
-        ],
-        "additionalInfo": "狩猟中は狩猟免許状、狩猟者登録証、狩猟者記章の携帯・着用が義務付けられています。これを怠ると法令違反となります。"
-    },
-    {
-        "question": "「止め刺し」の目的として、最も重要なことは何か。",
-        "answers": [
-            { "text": "獲物が暴れて、肉質が落ちるのを防ぐため", "correct": false },
-            { "text": "獲物の苦しみをできるだけ早く取り除くため", "correct": true },
-            { "text": "自分の腕前を誇示するため", "correct": false }
-        ],
-        "additionalInfo": "止め刺しは、半矢の獲物を不必要に苦しませないための、狩猟者の倫理に基づいた重要な行為です。"
-    },
-    {
         "question": "銃のガンケースについて正しい記述はどれか。",
         "answers": [
             { "text": "運搬時のみ使用するもので、保管には使えない", "correct": false },
@@ -562,15 +540,6 @@
             { "text": "布製の袋であれば、ガンケースとして認められる", "correct": false }
         ],
         "additionalInfo": "銃を運搬する際は、それが銃であると分からないようなケースに収納することが求められます。裸のまま持ち運ぶことはできません。"
-    },
-    {
-        "question": "アルコールを飲んで銃を取り扱うことについて正しいものはどれか。",
-        "answers": [
-            { "text": "少量であれば問題ない", "correct": false },
-            { "text": "いかなる状況でも、絶対にしてはならない", "correct": true },
-            { "text": "猟が終わった後なら、銃を持っていても飲んでよい", "correct": false }
-        ],
-        "additionalInfo": "酒酔い状態での銃の操作は、判断力を著しく低下させ非常に危険です。法律で固く禁止されており、免許取り消しの対象となる重大な違反行為です。"
     },
     {
         "question": "自分の猟犬が、他人の土地に侵入して、農作物を荒らした場合、誰が責任を負うか。",
