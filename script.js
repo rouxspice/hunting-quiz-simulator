@@ -135,11 +135,23 @@ function playSound(type) {
             if (!footer || !modes) return;
             footer.innerHTML = '';
             let isAllModesCleared = true;
+
             modes.forEach(item => {
                 const storageKeyForMode = (item.mode === 'all') ? category : `${category}-${item.mode}`;
                 const modeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
                 if (!modeScores.cleared) isAllModesCleared = false;
-                const buttonHTML = `<button class="challenge-btn-sushi ${item.class}" data-mode="${item.mode}"><span class="sushi-btn-label">${item.text}</span><span class="sushi-btn-score">達成率 ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}</span></button>`;
+                
+                const progressWidth = modeScores.highScore;
+                const completedClass = modeScores.cleared ? 'completed' : '';
+
+                const buttonHTML = `
+                    <button class="challenge-btn-sushi ${item.class}" data-mode="${item.mode}">
+                        <span class="sushi-btn-label">${item.text}</span>
+                        <span class="sushi-btn-score">達成率 ${modeScores.highScore}% ${modeScores.cleared ? '👑' : ''}</span>
+                        <div class="sushi-btn-progress-bar ${completedClass}" style="width: ${progressWidth}%;"></div>
+                    </button>
+                `;
+                
                 footer.innerHTML += buttonHTML;
             });
             const clearMarkEl = card.querySelector('.quiz-card-clear-mark');

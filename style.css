@@ -469,3 +469,31 @@ input:checked + .slider:before {
     color: #ccc;
     background-color: #f8f9fa;
 }
+/* =================================================================== */
+/* ★★★ トップページ ボタンプログレスバー (ここから追加) ★★★ */
+/* =================================================================== */
+
+/* ボタンの親要素を相対位置の基準にする */
+.challenge-btn-sushi {
+    position: relative;
+    overflow: hidden; /* はみ出したバーを隠す */
+}
+
+/* プログレスバー本体のスタイル */
+.sushi-btn-progress-bar {
+    position: absolute; /* 親要素に対して絶対位置で配置 */
+    bottom: 0;          /* 親要素の真下に配置 */
+    left: 0;
+    height: 5px;        /* バーの高さ */
+    background-color: #4caf50; /* バーの色（クイズ中の進捗バーと色を合わせる） */
+    opacity: 0.6;       /* 少しだけ透明にする */
+    width: 0%;          /* 初期幅は0% */
+    transition: width 0.5s ease-in-out; /* 幅が滑らかに変化するアニメーション */
+    border-radius: 0 2px 2px 0; /* 右側の角を少し丸める */
+}
+
+/* 100%達成時のスタイル */
+.sushi-btn-progress-bar.completed {
+    background-color: #ffc107; /* 100%達成時は王冠と同じ金色に */
+    opacity: 0.8;
+}
