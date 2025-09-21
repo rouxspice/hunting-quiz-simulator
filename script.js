@@ -37,6 +37,15 @@ window.onload = () => {
     const soundToggleCheckbox = document.getElementById('sound-toggle-checkbox');
     const feedbackOverlay = document.getElementById('feedback-overlay');
     const feedbackSymbol = document.getElementById('feedback-symbol');
+    const normalQuizNavigation = document.getElementById('normal-quiz-navigation');
+    const prevNormalQuestionBtn = document.getElementById('prev-normal-question-btn');
+    const nextNormalQuestionBtn = document.getElementById('next-normal-question-btn');
+    const choujuuQuizNavigation = document.getElementById('choujuu-quiz-navigation');
+    const prevChoujuuQuestionBtn = document.getElementById('prev-choujuu-question-btn');
+    const nextChoujuuQuestionBtn = document.getElementById('next-choujuu-question-btn');
+
+
+
 
     // --- 音声ファイルの読み込み ---
     const correctSound = new Audio('./sounds/correct.mp3');
@@ -105,6 +114,27 @@ window.onload = () => {
         quizContainers.forEach(container => container.style.display = 'none');
         resultContainer.style.display = 'none';
         topPageContainer.style.display = 'block';
+    }
+
+    function navigateToQuestion(direction) {
+        const nextIndex = currentQuestionIndex + direction;
+
+        // クイズの範囲外には移動しない
+        if (nextIndex < 0 || nextIndex >= currentQuiz.length) {
+            // 最後の問題で「次へ」を押したら結果表示
+            if (direction === 1 && nextIndex === currentQuiz.length) {
+                showResult();
+            }
+            return;
+        }
+
+        currentQuestionIndex = nextIndex;
+
+        if (currentQuizCategoryKey === 'choujuu') {
+            showChoujuuQuestion();
+        } else {
+            showNormalQuestion();
+        }
     }
 
     function showFeedbackAnimation(isCorrect) {
@@ -242,32 +272,6 @@ window.onload = () => {
             });
         }
 
-        if (submitButton) {
-            submitButton.addEventListener('click', () => {
-                if (currentQuizMode === 'training') {
-                    currentQuestionIndex = Math.floor(Math.random() * currentQuiz.length);
-                    showNormalQuestion();
-                } else {
-                    currentQuestionIndex++;
-                    if (currentQuestionIndex < currentQuiz.length) showNormalQuestion();
-                    else showResult();
-                }
-            });
-        }
-
-        if (choujuuSubmitButton) {
-            choujuuSubmitButton.addEventListener('click', () => {
-                if (currentQuizMode === 'training') {
-                    currentQuestionIndex = Math.floor(Math.random() * currentQuiz.length);
-                    showChoujuuQuestion();
-                } else {
-                    currentQuestionIndex++;
-                    if (currentQuestionIndex < currentQuiz.length) showChoujuuQuestion();
-                    else showResult();
-                }
-            });
-        }
-
         if (choujuuStep1) {
             choujuuStep1.addEventListener('click', (e) => {
                 if (!e.target.matches('.choujuu-choice-btn')) return;
@@ -320,6 +324,20 @@ window.onload = () => {
                 }, 500);
             });
         }
+            if (prevNormalQuestionBtn) {
+                prevNormalQuestionBtn.addEventListener('click', () => navigateToQuestion(-1));
+            }
+            if (nextNormalQuestionBtn) {
+                nextNormalQuestionBtn.addEventListener('click', () => navigateToQuestion(1));
+            }
+            if (prevChoujuuQuestionBtn) {
+                prevChoujuuQuestionBtn.addEventListener('click', () => navigateToQuestion(-1));
+            }
+            if (nextChoujuuQuestionBtn) {
+                nextChoujuuQuestionBtn.addEventListener('click', () => navigateToQuestion(1));
+            }
+
+
     }
     // --- クイズ開始ロジック ---
     async function startQuiz(categoryKey, mode, startFunction) {
@@ -460,24 +478,55 @@ window.onload = () => {
             if (progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
             if (progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         }
+
         resetNormalState();
         const question = currentQuiz[currentQuestionIndex];
+        const userAnswer = userAnswers[currentQuestionIndex];
+
         if (question.image) { normalQuizImage.src = question.image; normalQuizImageContainer.style.display = 'block'; }
         else normalQuizImageContainer.style.display = 'none';
         questionElement.innerText = question.question;
-        const shuffledAnswers = [...question.answers].sort(() => Math.random() - 0.5);
-        shuffledAnswers.forEach((answer, index) => {
-            const button = document.createElement('button');
-            button.innerText = `${index + 1}. ${answer.text}`;
-            button.classList.add('answer-btn');
-            if (answer.correct) button.dataset.correct = answer.correct;
-            button.addEventListener('click', selectNormalAnswer);
-            answerButtonsElement.appendChild(button);
-        });
-    }
+
+        // --- 選択肢の生成と表示 ---
+            const answers = (userAnswer && currentQuizMode !== 'training') 
+                ? question.answers // 解答済みの場合は元の順番で表示
+                : [...question.answers].sort(() => Math.random() - 0.5); // 未解答の場合はシャッフル
+
+            answers.forEach((answer, index) => {
+                const button = document.createElement('button');
+                const buttonText = `${index + 1}. ${answer.text}`;
+                button.innerText = buttonText;
+                button.classList.add('answer-btn');
+                if (answer.correct) button.dataset.correct = answer.correct;
+
+                // ★★★ 解答済みの場合の処理を追加 ★★★
+                if (userAnswer) {
+                    button.disabled = true; // 解答済みならボタンは非活性
+                    if (answer.correct) {
+                        button.classList.add('reveal-correct'); // 正解をハイライト
+                    }
+                    if (userAnswer.selected === buttonText) {
+                        button.classList.add(userAnswer.isCorrect ? 'correct' : 'wrong'); // ユーザーの選択に色付け
+                    }
+                } else {
+                    button.addEventListener('click', selectNormalAnswer); // 未解答の場合のみイベントリスナーを追加
+                }
+                answerButtonsElement.appendChild(button);
+            });
+
+            // ★★★ ナビゲーション表示ロジックの追加 ★★★
+            if (userAnswer) {
+                if (question.additionalInfo) {
+                    additionalInfoText.innerText = question.additionalInfo;
+                    additionalInfoContainer.style.display = 'block';
+                }
+                normalQuizNavigation.style.display = 'flex';
+            }
+            updateNavigationButtons();
+        }
 
     function resetNormalState() {
-        submitButton.style.display = 'none';
+        normalQuizNavigation.style.display = 'none';
         additionalInfoContainer.style.display = 'none';
         normalQuizImageContainer.style.display = 'none';
         while (answerButtonsElement.firstChild) answerButtonsElement.removeChild(answerButtonsElement.firstChild);
@@ -512,11 +561,38 @@ window.onload = () => {
         });
         selectedButton.classList.add(isCorrect ? 'correct' : 'wrong');
         if (question.additionalInfo) { additionalInfoText.innerText = question.additionalInfo; additionalInfoContainer.style.display = 'block'; }
+        
+        
         setTimeout(() => {
-            submitButton.innerText = (currentQuizMode === 'training') ? "次の特訓へ" : ((currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る");
-            submitButton.style.display = 'block';
+            normalQuizNavigation.style.display = 'flex'; // 新しいナビゲーションを表示
+            updateNavigationButtons(); // ボタンの状態を更新
         }, 500);
     }
+
+    function updateNavigationButtons() {
+        const isNormalQuiz = currentQuizCategoryKey !== 'choujuu';
+        const prevBtn = isNormalQuiz ? prevNormalQuestionBtn : prevChoujuuQuestionBtn;
+        const nextBtn = isNormalQuiz ? nextNormalQuestionBtn : nextChoujuuQuestionBtn;
+
+        if (!prevBtn || !nextBtn) return;
+
+        // 「前へ」ボタンの状態制御
+        prevBtn.disabled = currentQuestionIndex === 0;
+
+        // 「次へ」ボタンのテキストと状態制御
+        if (currentQuestionIndex === currentQuiz.length - 1) {
+            nextBtn.innerText = '結果を見る ＞';
+        } else {
+            nextBtn.innerText = '次の問題へ ＞';
+        }
+        
+        // 特訓モードでは常に有効
+        if (currentQuizMode === 'training') {
+            nextBtn.innerText = '次の特訓へ ＞';
+            nextBtn.disabled = false;
+        }
+    }
+
 
     function showResult() {
         quizContainers.forEach(container => container.style.display = 'none');
