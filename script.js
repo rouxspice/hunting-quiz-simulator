@@ -57,6 +57,7 @@ window.onload = () => {
     let currentQuizMode = 'all';
     let score = 0;
     let wrongQuestions = [];
+    let userAnswers = [];
 
     // --- ローカルストレージ関連関数 ---
     const storageKey = 'huntingQuizScores';
@@ -181,6 +182,7 @@ window.onload = () => {
         currentQuestionIndex = 0;
         score = 0;
         wrongQuestions = [];
+        userAnswers = new Array(originalQuizData.length).fill(null);
     }
 
     // --- イベントリスナー初期化 ---
@@ -275,16 +277,26 @@ window.onload = () => {
                 const choice = selectedBtn.dataset.choice;
                 const isCorrect = (choice === 'no') ? !question.isHuntable : question.isHuntable;
 
-                if (isCorrect) {
-                    playSound(correctSound);
-                    showFeedbackAnimation(true);
-                    if (choice === 'no') {
-                        score++;
+                if (userAnswers[currentQuestionIndex] === null) {
+                    userAnswers[currentQuestionIndex] = {
+                        step1: {
+                            selected: choice,
+                            isCorrect: isCorrect
+                        },
+                        step2: null // step2の解答は別途保存
+                    };
+
+                    if (isCorrect) {
+                        playSound(correctSound);
+                        showFeedbackAnimation(true);
+                        if (choice === 'no') {
+                            score++; // 非狩猟鳥獣を正しく「獲れない」と答えたら1点
+                        }
+                    } else {
+                        playSound(wrongSound);
+                        showFeedbackAnimation(false);
+                        wrongQuestions.push(JSON.parse(JSON.stringify(question)));
                     }
-                } else {
-                    playSound(wrongSound);
-                    showFeedbackAnimation(false);
-                    wrongQuestions.push(JSON.parse(JSON.stringify(question)));
                 }
 
                 document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
@@ -475,15 +487,25 @@ window.onload = () => {
         const selectedButton = e.target;
         const isCorrect = selectedButton.dataset.correct === "true";
         const question = currentQuiz[currentQuestionIndex];
-        if (isCorrect) {
-            playSound(correctSound);
-            score++;
-            showFeedbackAnimation(true);
-        } else {
-            playSound(wrongSound);
-            wrongQuestions.push(JSON.parse(JSON.stringify(question)));
-            showFeedbackAnimation(false);
+
+        if (userAnswers[currentQuestionIndex] === null) {
+            userAnswers[currentQuestionIndex] = {
+                selected: selectedButton.innerText,
+                correct: question.answers.find(ans => ans.correct).text,
+                isCorrect: isCorrect
+            };
+
+            if (isCorrect) {
+                playSound(correctSound);
+                score++;
+                showFeedbackAnimation(true);
+            } else {
+                playSound(wrongSound);
+                wrongQuestions.push(JSON.parse(JSON.stringify(question)));
+                showFeedbackAnimation(false);
+            }
         }
+
         Array.from(answerButtonsElement.children).forEach(button => {
             button.disabled = true;
             if (button.dataset.correct === "true" && !isCorrect && button !== selectedButton) button.classList.add('reveal-correct');
