@@ -1,0 +1,11 @@
+{
+  "correct": [
+    "correct1.mp3",
+    "correct2.mp3",
+    "correct3.mp3"
+  ],
+  "incorrect": [
+    "incorrect1.mp3",
+    "incorrect2.mp3"
+  ]
+}

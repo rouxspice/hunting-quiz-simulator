@@ -157,12 +157,12 @@
     "question": "魚をさばいたり、骨を断ったりするときなどの下処理に使う和包丁はどれか。",
     "image": "",
     "answers": [
-      { "text": "出刃包丁", "correct": false },
-      { "text": "柳刃包丁", "correct": true },
+      { "text": "出刃包丁", "correct": true },
+      { "text": "柳刃包丁", "correct": false },
       { "text": "薄刃包丁", "correct": false },
       { "text": "牛刀", "correct": false }
     ],
-    "additionalInfo": "柳刃包丁は魚をさばいたり、骨を断ったりする下処理に使用する和包丁です。"
+    "additionalInfo": " "
   },
   {
     "question": "目打ちはどの魚介をさばくときに使われるか。",
