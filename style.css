@@ -469,31 +469,41 @@ input:checked + .slider:before {
     color: #ccc;
     background-color: #f8f9fa;
 }
+
 /* =================================================================== */
-/* ★★★ トップページ ボタンプログレスバー (ここから追加) ★★★ */
+/* ★★★ トップページ ボタンプログレスバー (案3：インセット) ★★★ */
 /* =================================================================== */
 
 /* ボタンの親要素を相対位置の基準にする */
 .challenge-btn-sushi {
     position: relative;
-    overflow: hidden; /* はみ出したバーを隠す */
+    /* overflow: hidden; は不要なので削除 */
 }
 
-/* プログレスバー本体のスタイル */
+/* プログレスバーの背景（未達成部分の薄いバー） */
+.sushi-btn-progress-track {
+    position: absolute;
+    bottom: 8px; /* ボタンの下から8pxの位置に配置 */
+    left: 50%;   /* 水平方向の中央から配置を開始 */
+    transform: translateX(-50%); /* 中央揃えにするためのテクニック */
+    width: calc(100% - 30px); /* ボタンの左右に15pxずつの余白を確保 */
+    height: 6px;
+    background-color: #e0e0e0; /* 未達成部分のバーの色 */
+    border-radius: 3px; /* 角を丸くする */
+    overflow: hidden; /* 中のバーがはみ出ないように */
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1); /* 内側に影をつけて立体感を出す */
+}
+
+/* プログレスバー本体（達成部分）のスタイル */
 .sushi-btn-progress-bar {
-    position: absolute; /* 親要素に対して絶対位置で配置 */
-    bottom: 0;          /* 親要素の真下に配置 */
-    left: 0;
-    height: 5px;        /* バーの高さ */
-    background-color: #4caf50; /* バーの色（クイズ中の進捗バーと色を合わせる） */
-    opacity: 0.6;       /* 少しだけ透明にする */
+    height: 100%;
+    background: linear-gradient(45deg, #4caf50, #81c784); /* グラデーションで見栄えを良く */
     width: 0%;          /* 初期幅は0% */
-    transition: width 0.5s ease-in-out; /* 幅が滑らかに変化するアニメーション */
-    border-radius: 0 2px 2px 0; /* 右側の角を少し丸める */
+    transition: width 0.5s ease-in-out;
+    border-radius: 3px;
 }
 
 /* 100%達成時のスタイル */
 .sushi-btn-progress-bar.completed {
-    background-color: #ffc107; /* 100%達成時は王冠と同じ金色に */
-    opacity: 0.8;
+    background: linear-gradient(45deg, #ffc107, #ffecb3); /* ゴールドのグラデーション */
 }
