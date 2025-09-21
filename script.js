@@ -1,5 +1,5 @@
 // ===================================================================
-// ★★★ script.js (JSON分割読み込み対応・決定版) ★★★
+// ★★★ script.js (2025-09-21 バグ修正版) ★★★
 // ===================================================================
 window.onload = () => {
 
@@ -36,20 +36,20 @@ window.onload = () => {
     const progressText = document.getElementById('progress-text');
     const soundToggleCheckbox = document.getElementById('sound-toggle-checkbox');
     const feedbackOverlay = document.getElementById('feedback-overlay');
-const feedbackSymbol = document.getElementById('feedback-symbol');
+    const feedbackSymbol = document.getElementById('feedback-symbol');
 
     // --- 音声ファイルの読み込み ---
     const correctSound = new Audio('./sounds/correct.mp3');
     const wrongSound = new Audio('./sounds/incorrect.mp3');
     correctSound.volume = 0.5;
     wrongSound.volume = 0.5;
-    
+
     function playSound(sound) {
         if (soundToggleCheckbox && soundToggleCheckbox.checked) {
             sound.play();
         }
     }
-    
+
     // --- 状態管理変数 ---
     let currentQuiz = [];
     let currentQuestionIndex = 0;
@@ -62,7 +62,7 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
     const storageKey = 'huntingQuizScores';
     function getScoresFromStorage() { const storedScores = localStorage.getItem(storageKey); return storedScores ? JSON.parse(storedScores) : {}; }
     function saveScoresToStorage(scores) { localStorage.setItem(storageKey, JSON.stringify(scores)); }
-    
+
     // --- UI更新関数 ---
     function updateTopPageUI() {
         const quizModesConfig = {
@@ -107,45 +107,33 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
     }
 
     function showFeedbackAnimation(isCorrect) {
-    if (!feedbackOverlay || !feedbackSymbol) return;
+        if (!feedbackOverlay || !feedbackSymbol) return;
+        feedbackSymbol.textContent = isCorrect ? '〇' : '×';
+        feedbackOverlay.className = isCorrect ? 'correct' : 'wrong';
+        setTimeout(() => {
+            feedbackOverlay.classList.add('hidden');
+        }, 800);
+    }
 
-    // 記号と色を設定
-    feedbackSymbol.textContent = isCorrect ? '〇' : '×';
-    feedbackOverlay.className = isCorrect ? 'correct' : 'wrong';
-
-    // アニメーションを実行
-    setTimeout(() => {
-        // 0.8秒後に非表示クラスを追加してフェードアウトさせる
-        feedbackOverlay.classList.add('hidden');
-    }, 800);
-}
-    
-    // ★★★ ここからが修正箇所 ★★★
     // --- クイズデータ読み込み＆状態リセット ---
     async function loadQuizData(categoryKey, mode = 'all') {
         let filesToLoad = [];
-
         if (categoryKey === 'sushi') {
-            // 寿司クイズの場合、分割されたファイルを動的に読み込む
             let fileIndex = 1;
             while (true) {
                 const fileName = `sushi_${mode}-${fileIndex}.json`;
-                // ファイルの存在をチェックするために `HEAD` リクエストを使用
                 try {
                     const response = await fetch(`./quiz_data/${fileName}`, { method: 'HEAD' });
                     if (response.ok) {
                         filesToLoad.push(fileName);
                         fileIndex++;
                     } else {
-                        // ファイルが見つからなかったらループを終了
                         break;
                     }
                 } catch (error) {
-                    // ネットワークエラーなどでチェックに失敗した場合もループを終了
                     break;
                 }
             }
-            // もし分割ファイルが見つからなかった場合、従来の単一ファイルを試す
             if (filesToLoad.length === 0) {
                 const singleFileName = `sushi_${mode}.json`;
                 try {
@@ -156,7 +144,6 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
                 } catch (error) { /* 何もしない */ }
             }
         } else {
-            // 寿司クイズ以外は、従来通り単一のファイル名をリストに入れる
             filesToLoad.push(`${categoryKey}.json`);
         }
 
@@ -166,24 +153,20 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
             return [];
         }
 
-        // 見つかったすべてのファイルを読み込み、内容を結合する
         let allQuizData = [];
         for (const fileName of filesToLoad) {
             try {
                 const response = await fetch(`./quiz_data/${fileName}`);
                 if (!response.ok) throw new Error(`Failed to fetch ${fileName}. Status: ${response.status}`);
                 const data = await response.json();
-                allQuizData = allQuizData.concat(data); // 配列を結合
+                allQuizData = allQuizData.concat(data);
                 console.log(`Successfully loaded and merged: ${fileName}`);
             } catch (error) {
                 console.error(`Could not load ${fileName}. Reason: ${error.message}.`);
-                // 1つのファイルの読み込みに失敗しても、他のファイルで続行する
             }
         }
-        
         return allQuizData;
     }
-    // ★★★ ここまでが修正箇所 ★★★
 
     async function resetQuizState(categoryKey, mode = 'all') {
         currentQuizCategoryKey = categoryKey;
@@ -207,18 +190,15 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
             soundToggleCheckbox.checked = isSoundEnabled;
             soundToggleCheckbox.addEventListener('change', () => localStorage.setItem('soundEnabled', soundToggleCheckbox.checked));
         }
-        
+
         if (quizOptionsContainer) {
             quizOptionsContainer.addEventListener('click', (event) => {
                 const button = event.target.closest('.challenge-btn, .challenge-btn-sushi');
                 if (!button) return;
-
                 const quizCard = button.closest('.quiz-card');
                 if (!quizCard) return;
-
                 const quizCategoryKey = quizCard.dataset.quizCategory;
                 const selectedMode = button.dataset.mode || 'all';
-
                 if (quizCategoryKey === 'choujuu') {
                     startChoujuuQuiz();
                 } else {
@@ -241,7 +221,7 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
 
         if (backToTopFromResultBtn) {
             backToTopFromResultBtn.addEventListener('click', () => {
-                updateTopPageUI(); 
+                updateTopPageUI();
                 goToTopPage();
             });
         }
@@ -282,17 +262,15 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
                     currentQuestionIndex++;
                     if (currentQuestionIndex < currentQuiz.length) showChoujuuQuestion();
                     else showResult();
-                }       
+                }
             });
         }
 
         if (choujuuStep1) {
             choujuuStep1.addEventListener('click', (e) => {
                 if (!e.target.matches('.choujuu-choice-btn')) return;
-                
                 const question = currentQuiz[currentQuestionIndex];
                 if (!question) return;
-
                 const selectedBtn = e.target;
                 const choice = selectedBtn.dataset.choice;
                 const isCorrect = (choice === 'no') ? !question.isHuntable : question.isHuntable;
@@ -300,18 +278,18 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
                 if (isCorrect) {
                     playSound(correctSound);
                     showFeedbackAnimation(true);
-                    if (choice === 'no') { 
-                        score++; 
+                    if (choice === 'no') {
+                        score++;
                     }
                 } else {
                     playSound(wrongSound);
                     showFeedbackAnimation(false);
-                    wrongQuestions.push({ question: `この鳥獣は「${question.name}」です。捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' });
+                    wrongQuestions.push(JSON.parse(JSON.stringify(question)));
                 }
-                
+
                 document.querySelectorAll('.choujuu-choice-btn').forEach(btn => btn.disabled = true);
                 selectedBtn.classList.add(isCorrect ? 'correct' : 'wrong');
-                
+
                 setTimeout(() => {
                     if (isCorrect) {
                         if (choice === 'yes') {
@@ -322,7 +300,7 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
                             showChoujuuFeedback(true, `正解！「${question.name}」は非狩猟鳥獣のため、捕獲できません。`);
                         }
                     } else {
-                        let feedbackMessage = (choice === 'yes') 
+                        let feedbackMessage = (choice === 'yes')
                             ? `不正解。「${question.name}」は非狩猟鳥獣のため、捕獲できません。`
                             : `不正解。この鳥獣は「${question.name}」といい、狩猟対象です。`;
                         showChoujuuFeedback(false, feedbackMessage);
@@ -361,21 +339,21 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
             loaderWrapper.style.display = 'none';
         }
     }
-    
+
     // --- 画像プリロード関数 ---
     function preloadImages(urls, onProgress) {
         let loadedCount = 0;
         const totalCount = urls.length;
         if (totalCount === 0) {
-            if(onProgress) onProgress(1, 1, "画像なし");
+            if (onProgress) onProgress(1, 1, "画像なし");
             return Promise.resolve([]);
         }
-        if(onProgress) onProgress(0, totalCount, '');
+        if (onProgress) onProgress(0, totalCount, '');
         const promises = urls.map(url => {
             return new Promise((resolve) => {
                 const img = new Image();
-                img.onload = () => { loadedCount++; if(onProgress) onProgress(loadedCount, totalCount, url.split('/').pop()); resolve({ url, status: 'ok' }); };
-                img.onerror = () => { loadedCount++; console.warn(`Warning: Failed to load image: ${url}`); if(onProgress) onProgress(loadedCount, totalCount, url.split('/').pop()); resolve({ url, status: 'error' }); };
+                img.onload = () => { loadedCount++; if (onProgress) onProgress(loadedCount, totalCount, url.split('/').pop()); resolve({ url, status: 'ok' }); };
+                img.onerror = () => { loadedCount++; console.warn(`Warning: Failed to load image: ${url}`); if (onProgress) onProgress(loadedCount, totalCount, url.split('/').pop()); resolve({ url, status: 'error' }); };
                 img.src = url;
             });
         });
@@ -385,9 +363,11 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
     // --- 各種クイズ開始・表示関数 ---
     function startChoujuuQuiz() { startQuiz('choujuu', 'all', () => { quizContainerChoujuu.style.display = 'block'; showChoujuuQuestion(); }); }
     function startNormalQuiz(categoryKey, mode = 'all') { startQuiz(categoryKey, mode, () => { quizContainer.style.display = 'block'; showNormalQuestion(); }); }
+
     function startTrainingMode() {
         currentQuizMode = 'training';
-        currentQuiz = JSON.parse(JSON.stringify(wrongQuestions));
+        const uniqueWrongQuestions = [...new Map(wrongQuestions.map(item => [item.name || item.question, item])).values()];
+        currentQuiz = uniqueWrongQuestions.sort(() => Math.random() - 0.5);
         currentQuestionIndex = 0;
         score = 0;
         wrongQuestions = [];
@@ -400,12 +380,13 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
             showNormalQuestion();
         }
     }
+
     function showChoujuuQuestion() {
         const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
         const progressBarEl = document.getElementById('choujuu-quiz-progress-bar');
         const progressTextEl = document.getElementById('choujuu-quiz-progress-text');
-        if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
-        if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
+        if (progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
+        if (progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         document.querySelectorAll('.choujuu-choice-btn').forEach(btn => { btn.disabled = false; btn.classList.remove('correct', 'wrong'); });
         choujuuStep1.style.display = 'block';
         choujuuStep2.style.display = 'none';
@@ -415,22 +396,27 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
         if (question && question.image) choujuuImage.src = question.image;
         else choujuuImage.src = '';
     }
+
     function setupNameSelection(question) {
         choujuuNameOptions.innerHTML = '';
         const options = [...question.distractors, question.name].sort(() => Math.random() - 0.5);
         options.forEach((name, index) => {
             const button = document.createElement('button');
-            button.innerText = `${index + 1}. ${name}`; 
+            button.innerText = `${index + 1}. ${name}`;
             button.classList.add('answer-btn');
             button.addEventListener('click', (e) => {
                 const selectedButton = e.target;
                 const isCorrect = (name === question.name);
-                if (isCorrect) { playSound(correctSound); score++;showFeedbackAnimation(true); }
-                else {
-                     playSound(wrongSound); 
-                     wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name });
-                    showFeedbackAnimation(false); }
-                     Array.from(choujuuNameOptions.children).forEach(btn => {
+                if (isCorrect) {
+                    playSound(correctSound);
+                    score++;
+                    showFeedbackAnimation(true);
+                } else {
+                    playSound(wrongSound);
+                    wrongQuestions.push(JSON.parse(JSON.stringify(question)));
+                    showFeedbackAnimation(false);
+                }
+                Array.from(choujuuNameOptions.children).forEach(btn => {
                     btn.disabled = true;
                     if (btn.innerText.endsWith(question.name) && !isCorrect && btn !== selectedButton) btn.classList.add('reveal-correct');
                 });
@@ -440,6 +426,7 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
             choujuuNameOptions.appendChild(button);
         });
     }
+
     function showChoujuuFeedback(isCorrect, message) {
         choujuuFeedback.textContent = message;
         choujuuFeedback.className = 'feedback-container';
@@ -447,18 +434,19 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
         choujuuSubmitButton.innerText = (currentQuestionIndex < currentQuiz.length - 1) ? "次の問題へ" : "結果を見る";
         choujuuSubmitButton.style.display = 'block';
     }
+
     function showNormalQuestion() {
         if (currentQuizMode === 'training') {
             const progressTextEl = document.getElementById('normal-quiz-progress-text');
-            if(progressTextEl) progressTextEl.textContent = '💪 特訓中！';
+            if (progressTextEl) progressTextEl.textContent = '💪 特訓中！';
             const progressBarEl = document.getElementById('normal-quiz-progress-bar');
-            if(progressBarEl) progressBarEl.style.width = '100%';
+            if (progressBarEl) progressBarEl.style.width = '100%';
         } else {
             const progressPercentage = (currentQuestionIndex / currentQuiz.length) * 100;
             const progressBarEl = document.getElementById('normal-quiz-progress-bar');
             const progressTextEl = document.getElementById('normal-quiz-progress-text');
-            if(progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
-            if(progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
+            if (progressBarEl) progressBarEl.style.width = `${progressPercentage}%`;
+            if (progressTextEl) progressTextEl.textContent = `${currentQuestionIndex + 1} / ${currentQuiz.length} 問`;
         }
         resetNormalState();
         const question = currentQuiz[currentQuestionIndex];
@@ -475,19 +463,27 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
             answerButtonsElement.appendChild(button);
         });
     }
+
     function resetNormalState() {
         submitButton.style.display = 'none';
         additionalInfoContainer.style.display = 'none';
         normalQuizImageContainer.style.display = 'none';
         while (answerButtonsElement.firstChild) answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
+
     function selectNormalAnswer(e) {
         const selectedButton = e.target;
         const isCorrect = selectedButton.dataset.correct === "true";
         const question = currentQuiz[currentQuestionIndex];
-        if (isCorrect) { playSound(correctSound); score++; showFeedbackAnimation(true);}
-        else { playSound(wrongSound); const correctAnswer = question.answers.find(ans => ans.correct).text; wrongQuestions.push({ question: question.question, correctAnswer: correctAnswer, additionalInfo: question.additionalInfo, answers: question.answers });
-        showFeedbackAnimation(false);}
+        if (isCorrect) {
+            playSound(correctSound);
+            score++;
+            showFeedbackAnimation(true);
+        } else {
+            playSound(wrongSound);
+            wrongQuestions.push(JSON.parse(JSON.stringify(question)));
+            showFeedbackAnimation(false);
+        }
         Array.from(answerButtonsElement.children).forEach(button => {
             button.disabled = true;
             if (button.dataset.correct === "true" && !isCorrect && button !== selectedButton) button.classList.add('reveal-correct');
@@ -499,6 +495,7 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
             submitButton.style.display = 'block';
         }, 500);
     }
+
     function showResult() {
         quizContainers.forEach(container => container.style.display = 'none');
         resultContainer.style.display = 'block';
@@ -518,14 +515,19 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
         else if (percentage >= 80) resultMessage.textContent = 'お見事！あと一歩です！';
         else if (percentage >= 50) resultMessage.textContent = 'お疲れ様でした！';
         else resultMessage.textContent = 'もう少し頑張りましょう！';
+
         if (wrongQuestions.length > 0) {
             resultDetailsSection.style.display = 'block';
-            trainingModeBtn.style.display = 'inline-block'; 
+            trainingModeBtn.style.display = 'inline-block';
             wrongQuestionsList.innerHTML = '';
-            wrongQuestions.forEach(item => {
+            // 特訓モード用に保存したオブジェクトからおさらいリストを生成
+            const uniqueWrongQuestions = [...new Map(wrongQuestions.map(item => [item.name || item.question, item])).values()];
+            uniqueWrongQuestions.forEach(item => {
                 const li = document.createElement('li');
+                const questionText = item.question || `この鳥獣（${item.name}）は獲れますか？`;
+                const correctAnswerText = item.answers ? item.answers.find(a => a.correct).text : (item.isHuntable ? '獲れます' : '獲れません');
                 let additionalInfoHTML = item.additionalInfo ? `<div class="wrong-question-additional-info">${String(item.additionalInfo).replace(/\n/g, ' ')}</div>` : '';
-                li.innerHTML = `<div class="question-text">${item.question}</div><div class="correct-answer-text">正解: ${item.correctAnswer}</div>${additionalInfoHTML}`;
+                li.innerHTML = `<div class="question-text">${questionText}</div><div class="correct-answer-text">正解: ${correctAnswerText}</div>${additionalInfoHTML}`;
                 wrongQuestionsList.appendChild(li);
             });
         } else {
@@ -533,11 +535,13 @@ const feedbackSymbol = document.getElementById('feedback-symbol');
             trainingModeBtn.style.display = 'none';
         }
     }
+
     function handleNumericKeyPress(number) {
         const isChoujuuQuiz = quizContainerChoujuu.style.display === 'block';
         let targetButtons = isChoujuuQuiz ? (choujuuStep1.style.display === 'block' ? choujuuStep1.querySelectorAll('.choujuu-choice-btn') : choujuuNameOptions.querySelectorAll('.answer-btn')) : answerButtonsElement.querySelectorAll('.answer-btn');
         if (targetButtons && targetButtons.length >= number && !targetButtons[number - 1].disabled) targetButtons[number - 1].click();
     }
+
     function handleEnterKeyPress() {
         const visibleSubmitButton = document.querySelector('#submit:not([style*="display: none"]), #choujuu-submit:not([style*="display: none"])');
         if (visibleSubmitButton) visibleSubmitButton.click();
