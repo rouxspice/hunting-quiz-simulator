@@ -482,7 +482,7 @@ input:checked + .slider:before {
 /* プログレスバーの背景（未達成部分の薄いバー） */
 .sushi-btn-progress-track {
     position: absolute;
-    bottom: 8px; /* 達成率テキストからの距離 */
+    bottom: 4px; /* 達成率テキストからの距離 */
     left: 0;
     right: 0;
     margin: 0 auto; /* 左右中央揃え */
