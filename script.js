@@ -35,7 +35,9 @@ window.onload = () => {
     const progressBar = document.getElementById('progress-bar');
     const progressText = document.getElementById('progress-text');
     const soundToggleCheckbox = document.getElementById('sound-toggle-checkbox');
-    
+    const feedbackOverlay = document.getElementById('feedback-overlay');
+const feedbackSymbol = document.getElementById('feedback-symbol');
+
     // --- 音声ファイルの読み込み ---
     const correctSound = new Audio('./sounds/correct.mp3');
     const wrongSound = new Audio('./sounds/incorrect.mp3');
@@ -104,6 +106,20 @@ window.onload = () => {
         topPageContainer.style.display = 'block';
     }
 
+    function showFeedbackAnimation(isCorrect) {
+    if (!feedbackOverlay || !feedbackSymbol) return;
+
+    // 記号と色を設定
+    feedbackSymbol.textContent = isCorrect ? '〇' : '×';
+    feedbackOverlay.className = isCorrect ? 'correct' : 'wrong';
+
+    // アニメーションを実行
+    setTimeout(() => {
+        // 0.8秒後に非表示クラスを追加してフェードアウトさせる
+        feedbackOverlay.classList.add('hidden');
+    }, 800);
+}
+    
     // ★★★ ここからが修正箇所 ★★★
     // --- クイズデータ読み込み＆状態リセット ---
     async function loadQuizData(categoryKey, mode = 'all') {
@@ -283,11 +299,13 @@ window.onload = () => {
 
                 if (isCorrect) {
                     playSound(correctSound);
+                    showFeedbackAnimation(true);
                     if (choice === 'no') { 
                         score++; 
                     }
                 } else {
                     playSound(wrongSound);
+                    showFeedbackAnimation(false);
                     wrongQuestions.push({ question: `この鳥獣は「${question.name}」です。捕獲できますか？`, correctAnswer: question.isHuntable ? '獲れます' : '獲れません' });
                 }
                 
@@ -407,9 +425,12 @@ window.onload = () => {
             button.addEventListener('click', (e) => {
                 const selectedButton = e.target;
                 const isCorrect = (name === question.name);
-                if (isCorrect) { playSound(correctSound); score++; }
-                else { playSound(wrongSound); wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name }); }
-                Array.from(choujuuNameOptions.children).forEach(btn => {
+                if (isCorrect) { playSound(correctSound); score++;showFeedbackAnimation(true); }
+                else {
+                     playSound(wrongSound); 
+                     wrongQuestions.push({ question: `この鳥獣（${question.name}）の名前は？`, correctAnswer: question.name });
+                    showFeedbackAnimation(false); }
+                     Array.from(choujuuNameOptions.children).forEach(btn => {
                     btn.disabled = true;
                     if (btn.innerText.endsWith(question.name) && !isCorrect && btn !== selectedButton) btn.classList.add('reveal-correct');
                 });
@@ -464,8 +485,9 @@ window.onload = () => {
         const selectedButton = e.target;
         const isCorrect = selectedButton.dataset.correct === "true";
         const question = currentQuiz[currentQuestionIndex];
-        if (isCorrect) { playSound(correctSound); score++; }
-        else { playSound(wrongSound); const correctAnswer = question.answers.find(ans => ans.correct).text; wrongQuestions.push({ question: question.question, correctAnswer: correctAnswer, additionalInfo: question.additionalInfo, answers: question.answers }); }
+        if (isCorrect) { playSound(correctSound); score++; showFeedbackAnimation(true);}
+        else { playSound(wrongSound); const correctAnswer = question.answers.find(ans => ans.correct).text; wrongQuestions.push({ question: question.question, correctAnswer: correctAnswer, additionalInfo: question.additionalInfo, answers: question.answers });
+        showFeedbackAnimation(false);}
         Array.from(answerButtonsElement.children).forEach(button => {
             button.disabled = true;
             if (button.dataset.correct === "true" && !isCorrect && button !== selectedButton) button.classList.add('reveal-correct');
