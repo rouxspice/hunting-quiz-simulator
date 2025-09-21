@@ -293,7 +293,7 @@ function playSound(type) {
 
         quizContainers.forEach(container => {
             const backBtn = container.querySelector('.back-to-top-btn');
-            if (backBtn) backBtn.addEventListener('click', goToTopPage);
+            if (backBtn) backBtn.addEventListener('click', handleRetire);
         });
 
         if (retryQuizBtn) {
@@ -727,6 +727,50 @@ function playSound(type) {
             nextBtn.disabled = false;
         }
     }
+
+    // ★★★ ここから新しい関数を追加 ★★★
+    function handleRetire() {
+        // 解答済みの問題数をカウント
+        const answeredCount = userAnswers.filter(answer => answer !== null).length;
+
+        // 1問も解答していない場合は、何もせずトップに戻る
+        if (answeredCount === 0) {
+            goToTopPage();
+            return;
+        }
+
+        // 確認ダイアログを表示
+        if (!confirm('クイズの途中です。ここまでの結果を保存してトップに戻りますか？\n（未解答の問題は不正解として扱われます）')) {
+            return; // キャンセルされたら何もしない
+        }
+
+        // --- スコア計算 ---
+        // 現在のスコアは、正しく解答した問題の数
+        const finalScore = score; 
+        const totalQuestions = currentQuiz.length;
+        const percentage = totalQuestions > 0 ? Math.round((finalScore / totalQuestions) * 100) : 0;
+
+        // --- ハイスコア更新処理 (showResult関数から流用) ---
+        if (currentQuizMode !== 'training') {
+            const scores = getScoresFromStorage();
+            const storageKeyForMode = (currentQuizMode === 'all') ? currentQuizCategoryKey : `${currentQuizCategoryKey}-${currentQuizMode}`;
+            const currentModeScores = scores[storageKeyForMode] || { highScore: 0, cleared: false };
+
+            // 今回のスコアがハイスコアを上回っていれば更新
+            if (percentage > currentModeScores.highScore) {
+                currentModeScores.highScore = percentage;
+                scores[storageKeyForMode] = currentModeScores;
+                saveScoresToStorage(scores);
+            }
+        }
+        
+        // UIを更新してからトップページへ戻る
+        updateTopPageUI();
+        goToTopPage();
+    }
+    // ★★★ ここまで追加 ★★★
+
+
 
 
     function showResult() {
