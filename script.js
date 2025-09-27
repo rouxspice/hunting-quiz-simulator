@@ -1,5 +1,4 @@
-// ===================================================================
-// ★★★ script.js (2025-09-21 バグ修正版) ★★★
+// ★★★ script.js (2025-09-21 バグ修正版 + 食品衛生責任者クイズ対応) ★★★
 // ===================================================================
 window.onload = () => {
 
@@ -43,9 +42,6 @@ window.onload = () => {
     const choujuuQuizNavigation = document.getElementById('choujuu-quiz-navigation');
     const prevChoujuuQuestionBtn = document.getElementById('prev-choujuu-question-btn');
     const nextChoujuuQuestionBtn = document.getElementById('next-choujuu-question-btn');
-
-
-
 
 // --- 音声ファイルの読み込み ---
 let correctSoundFiles = [];   // ★JSONから読み込むため、空の配列で初期化
@@ -125,6 +121,14 @@ function playSound(type) {
                 { mode: 'basic2', text: 'ベーシック２級', class: '' },
                 { mode: 'basic1', text: 'ベーシック１級', class: '' },
                 { mode: 'maniac', text: 'マニアック', class: 'cram-mode-btn' }
+            ],
+            // ★★★ 食品衛生責任者クイズの設定を追加 ★★★
+            'food-hygiene': [
+                { mode: 'hygiene_science', text: '食品衛生学', class: '' },
+                { mode: 'hygiene_law', text: '食品衛生法', class: '' },
+                { mode: 'public_health', text: '公衆衛生学', class: '' },
+                { mode: 'food_labeling', text: '食品表示', class: '' },
+                { mode: 'related_laws', text: '食品衛生関連法規', class: '' }
             ]
         };
         const scores = getScoresFromStorage();
@@ -207,7 +211,20 @@ function playSound(type) {
     // --- クイズデータ読み込み＆状態リセット ---
     async function loadQuizData(categoryKey, mode = 'all') {
         let filesToLoad = [];
-        if (categoryKey === 'sushi') {
+        
+        // ★★★ 食品衛生責任者クイズの対応を追加 ★★★
+        if (categoryKey === 'food-hygiene') {
+            // 食品衛生責任者クイズの場合、モードに応じてファイル名を決定
+            const modeFileMap = {
+                'hygiene_science': 'food_hygiene_science',
+                'hygiene_law': 'food_hygiene_law', 
+                'public_health': 'public_health',
+                'food_labeling': 'food_labeling',
+                'related_laws': 'food_related_laws'
+            };
+            const fileName = `${modeFileMap[mode] || mode}.json`;
+            filesToLoad.push(fileName);
+        } else if (categoryKey === 'sushi') {
             let fileIndex = 1;
             while (true) {
                 const fileName = `sushi_${mode}-${fileIndex}.json`;
@@ -272,7 +289,6 @@ function playSound(type) {
         wrongQuestions = [];
         userAnswers = new Array(originalQuizData.length).fill(null);
     }
-
     // --- イベントリスナー初期化 ---
     function initializeEventListeners() {
         if (soundToggleCheckbox) {
@@ -593,11 +609,6 @@ function playSound(type) {
         showChoujuuFeedback(step2Answer.isCorrect, feedbackMessage);
     }
 
-
-
-
-
-
     function showChoujuuFeedback(isCorrect, message) {
         choujuuFeedback.textContent = message;
         choujuuFeedback.className = 'feedback-container';
@@ -776,9 +787,6 @@ function playSound(type) {
     }
     // ★★★ ここまで追加 ★★★
 
-
-
-
     function showResult() {
         quizContainers.forEach(container => container.style.display = 'none');
         resultContainer.style.display = 'block';
@@ -856,3 +864,5 @@ function playSound(type) {
     // --- 初期化処理の実行 ---
     initializeApp();
 };
+
+
